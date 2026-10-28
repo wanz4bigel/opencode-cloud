@@ -1,0 +1,5 @@
+patched
+SHELLCHECK_OK
+--- bad token (ulang) ---
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;33m[vmess] WARN[0m Cloudflare API menolak: Invalid request headers (cek CF_API_TOKEN: izin Zone.DNS:Edit + Zone:Read).

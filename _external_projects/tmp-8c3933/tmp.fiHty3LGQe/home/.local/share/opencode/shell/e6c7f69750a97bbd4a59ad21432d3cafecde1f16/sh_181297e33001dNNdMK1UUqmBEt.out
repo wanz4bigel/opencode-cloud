@@ -1,0 +1,6 @@
+[06:19:02] agent terhubung
+--- health ---
+{"agent":true,"pending":0}
+--- models ---
+{"object": "list", "data": [{"id": "stub-iq3_s"}]}
+HTTP 200
