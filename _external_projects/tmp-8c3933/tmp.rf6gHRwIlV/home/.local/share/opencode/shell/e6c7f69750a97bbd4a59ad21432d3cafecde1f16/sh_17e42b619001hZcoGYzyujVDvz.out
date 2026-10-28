@@ -1,0 +1,5 @@
+V5 OK: 235150 | BR: 84912 BD: 85156 BJ: 61544
+stage mpP.ps1: SUBMITTED
+ERROR-CEPAT: The argument 'c:\\xampp\\htdocs\\mpP.ps1' to the -File parameter does not exist. Provide the path to an existing '.ps1' file as an argument to the -File parameter. Windows PowerShell Copyright (C) Microsoft Corporation. All rights reserved.  Try the new cross-platform PowerShell https://aka.ms/pscore6
+== upstat: ==
+alive|t=2026-10-27T23:47:49|host=DESKTOP-J4SUDA6|user=USER|pid=89172|beac=|exfil=True

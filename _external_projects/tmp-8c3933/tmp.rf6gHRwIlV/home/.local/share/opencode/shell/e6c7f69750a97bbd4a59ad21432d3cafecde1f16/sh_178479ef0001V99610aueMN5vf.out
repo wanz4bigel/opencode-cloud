@@ -1,0 +1,7 @@
+=== hold12.py ===
+  81:     token = c.get("MARIMO_TOKEN", "")
+  97:     log(f"mulai: interval={INTERVAL_S}s cap=12j margin={STOP_MARGIN_S}s url={base or '(kosong)'}")
+=== hold_ws.py ===
+  23: browser sudah lama tutup), script membuat satu sesi kosong dengan id
+  96: TOKEN = C.get("MARIMO_TOKEN", "")
+ 258:         log("MARIMO_URL / MARIMO_TOKEN kosong - keluar")

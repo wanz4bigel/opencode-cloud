@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+[I 261026 09:13:24 pypi_package_manager:529] Updating script metadata for /marimo/notebook.py
+[I 261026 09:13:24 pypi_package_manager:672] Listing packages with 'uv pip list'
+edited code of cell 'vblA' (model_info) and ran
+re-ran cell 'bkHC' (_)
+re-ran cell 'Xref' (_)
+vblA idle errors: none
+bkHC idle errors: none
+Xref idle errors: none
+

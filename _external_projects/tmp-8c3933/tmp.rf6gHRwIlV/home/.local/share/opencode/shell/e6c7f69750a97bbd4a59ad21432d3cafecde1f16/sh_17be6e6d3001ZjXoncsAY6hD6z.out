@@ -1,0 +1,9 @@
+1) / tanpa header     : 200
+   isi / (60 char)    : <!doctype html>
+<html lang="en" data-theme="light">
+<head>curl: (23) Failure writing output to destination, passed 7116 returned 2271
+2) /v1/models?api_key : 401
+3) /v1/models + Bearer: 200
+4) /v1/models tanpa   : 401
+5) /docs              : 404
+6) /v1/chat/completions tanpa header: 401

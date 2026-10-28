@@ -1,0 +1,5 @@
+dns ok
+test-dns ok
+SHELLCHECK_OK
+== 8. DOMAIN CloudFront + CF_RECORD_NAME origin ==
+  PASS=20  FAIL=0

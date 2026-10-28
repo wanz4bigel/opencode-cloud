@@ -1,0 +1,5 @@
+workflow ok
+action.yml ok
+YAML OK .github/workflows/vmess-server.yml
+YAML OK action.yml
+edge inputs: ['edge_port', 'edge_tls']
