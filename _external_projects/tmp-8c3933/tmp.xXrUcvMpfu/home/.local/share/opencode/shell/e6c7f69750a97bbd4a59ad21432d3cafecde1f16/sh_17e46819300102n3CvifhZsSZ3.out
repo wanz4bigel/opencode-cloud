@@ -1,0 +1,20 @@
+string b64 besar: [84912, 85156, 61544]
+decode BR ok: 63683 | judul bener: True | foto: True
+Traceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "/usr/lib/python3.14/re/__init__.py", line 285, in finditer
+    return _compile(pattern, flags).finditer(string)
+           ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/re/__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "/usr/lib/python3.14/re/_compiler.py", line 762, in compile
+    p = _parser.parse(p, flags)
+  File "/usr/lib/python3.14/re/_parser.py", line 966, in parse
+    source = Tokenizer(str)
+  File "/usr/lib/python3.14/re/_parser.py", line 239, in __init__
+    self.__next()
+    ~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/re/_parser.py", line 252, in __next
+    raise error("bad escape (end of pattern)",
+                self.string, len(self.string) - 1) from None
+re.PatternError: bad escape (end of pattern) at position 0

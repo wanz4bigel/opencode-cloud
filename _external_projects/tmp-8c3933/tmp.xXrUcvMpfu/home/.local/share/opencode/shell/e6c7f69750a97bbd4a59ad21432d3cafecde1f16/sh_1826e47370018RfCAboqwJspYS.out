@@ -1,0 +1,9 @@
+echo "== 5. tanpa token -> skip (exit 0, tanpa panggilan API) =="
+start_mock 1.1.1.1
+BEFORE="$(state '[.calls[] | select(.[1] != "/_state")] | length')"
+OUT="$(CF_API_BASE="$BASE" CF_API_TOKEN="" run_dns)"; RC=$?
+expect "$RC" "0" "exit 0"
+expect_log "$OUT" 'CF_API_TOKEN tidak di-set' "log skip"
+expect "$(state '[.calls[] | select(.[1] != "/_state")] | length')" "$BEFORE" "tidak ada request ke API"
+
+  PASS=17  FAIL=0

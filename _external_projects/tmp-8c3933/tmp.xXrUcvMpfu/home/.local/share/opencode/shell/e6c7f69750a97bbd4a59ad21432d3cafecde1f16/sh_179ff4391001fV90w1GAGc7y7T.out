@@ -1,0 +1,7 @@
+=== show-key ===
+strata: There is no API key for that launch. Name a preset with --preset NAME.
+=== status ===
+iq3_s-32k: ready at http://127.0.0.1:8081
+=== tanpa key ===
+200 0.675306s
+{"id": "chatcmpl-1f07c2e0a75d45e38d98861c", "object": "chat.completion", "created": 1793048135, "model": "swift-1.5-iq3_s", "choices": [{"index": 0, "message": {"role": "assistant", "content": null, "reasoning_content": "We need answer user's request in Indonesian: \"Sebutkan 3 bilangan prima pertama, satu baris.\" Means list first 3 prime numbers, one line. Need final only one line"}, "finish_reason": "length"}], "usage": {"prompt_tokens": 66, "completion_tokens": 40, "total_tokens": 106, "prom
