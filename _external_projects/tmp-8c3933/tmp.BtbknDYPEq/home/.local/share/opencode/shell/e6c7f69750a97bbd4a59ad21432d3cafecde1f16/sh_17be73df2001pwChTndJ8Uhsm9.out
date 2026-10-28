@@ -1,0 +1,4 @@
+uptime sandbox: 634.84 s
+UI  / : 200
+API /v1/models + key: 200
+API tanpa key: 401
