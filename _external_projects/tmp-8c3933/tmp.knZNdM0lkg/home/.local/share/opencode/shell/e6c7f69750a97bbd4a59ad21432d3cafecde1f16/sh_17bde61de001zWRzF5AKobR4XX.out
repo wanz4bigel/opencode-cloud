@@ -1,0 +1,22 @@
+=== GPU ===
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 595.71.05
+=== ram ===
+total        used        free      shared  buff/cache   available
+Mem:             160           0         159           0           0         159
+Filesystem      Size  Used Avail Use% Mounted on
+none            504G   48K  504G   1% /dev/shm
+none            8.0E  172K  8.0E   1% /
+uptime: 54.50 s
+=== /marimo ===
+total 5
+drwxr-xr-x 1 marimo marimo  120 Oct 27 05:38 .
+drwxr-xr-x 1 root   root    160 Oct 27 05:38 ..
+drwxr-xr-x 1 root   root     60 Oct 27 05:38 .config
+drwxr-xr-x 1 root   root     80 Oct 27 05:38 __marimo__
+-rw-r--r-- 1 root   root   2024 Oct 27 05:38 notebook.py
+-r--r--r-- 1 root   root   2741 Oct 27 05:38 pyproject.toml
+=== sisa kerja lama ===
+TIDAK ADA /marimo/llm
+
+=== strata ===
+BELUM

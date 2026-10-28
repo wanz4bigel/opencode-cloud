@@ -1,0 +1,18 @@
+Loading the model… 15 s
+    Loading the model… 30 s
+    The model is loaded and answering.
+    Ready: http://127.0.0.1:8081
+    Strata is serving.
+
+Strata is serving.
+  This computer  http://127.0.0.1:8081/v1
+  Anthropic apps http://127.0.0.1:8081   (Claude Code: ANTHROPIC_BASE_URL, no /v1 at the end)
+  API key        sk-strata-••••••••   (show it: strata launch --show-key)
+  Engine log     /home/marimo/.local/state/strata/launch/iq3_s-256k.engine.log   (follow it: strata logs --follow)
+  Watch it:    STRATA_API_KEY=$(strata launch --show-key) strata monitor --url http://127.0.0.1:8081 --credential-env STRATA_API_KEY
+  Connect an app:  strata connect opencode      Stop:  strata launch --stop
+  To keep these settings for next time, add --save-preset NAME.
+--- vram ---
+61092 MiB
+--- api (tanpa key) ---
+401
