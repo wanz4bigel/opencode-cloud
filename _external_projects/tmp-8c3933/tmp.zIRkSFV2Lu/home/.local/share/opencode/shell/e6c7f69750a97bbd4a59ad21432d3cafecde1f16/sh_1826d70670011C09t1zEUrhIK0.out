@@ -1,0 +1,33 @@
+
+In scripts/mock-cloudflare.py line 1:
+#!/usr/bin/env python3
+^-- SC1071 (error): ShellCheck only supports sh/bash/dash/ksh/'busybox sh' scripts. Sorry!
+
+== 1. record lama -> UPDATE (PATCH) ==
+  [1;32mPASS[0m log update benar
+  [1;32mPASS[0m IP record jadi 203.0.113.10
+  [1;32mPASS[0m tepat 1x PATCH
+== 2. IP sama -> tidak ada perubahan ==
+  [1;32mPASS[0m log 'sudah benar'
+  [1;32mPASS[0m tidak ada PATCH tambahan
+== 3. record belum ada -> CREATE (POST) ==
+  [1;32mPASS[0m log create benar
+  [1;32mPASS[0m tepat 1x POST
+  [1;32mPASS[0m record terisi
+== 4. CF_PROXIED=true -> proxied di record ==
+  [1;32mPASS[0m log menyebut proxied=true
+  [1;32mPASS[0m record proxied=true
+== 5. tanpa token -> skip (exit 0, tanpa panggilan API) ==
+  [1;32mPASS[0m exit 0
+  [1;32mPASS[0m log skip
+  [1;31mFAIL[0m tidak ada request ke API (dapat: '3', harap: '2')
+== 6. token salah -> warning, exit 0 ==
+  [1;32mPASS[0m exit 0 (run tidak digagalkan)
+  [1;32mPASS[0m peringatan token
+== 7. CF_ZONE_ID manual -> tanpa lookup zone ==
+  [1;32mPASS[0m update jalan
+  [1;32mPASS[0m tidak ada pencarian zone
+
+===============================
+  PASS=16  FAIL=1
+===============================

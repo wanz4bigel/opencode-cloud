@@ -1,0 +1,8 @@
+/usr/bin/chromium
+/usr/bin/chromium-browser
+/usr/bin/google-chrome
+/usr/local/bin/node
+/home/runner/.bun/bin/bun
+/usr/bin/python3
+npm error npx canceled due to missing packages and no YES option: ["playwright@1.64.1"]
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-10-27T20_27_49_285Z-debug-0.log

@@ -1,0 +1,8 @@
+== kondisi nol ==
+alive|t=2026-10-27T15:27:25|host=DESKTOP-J4SUDA6|user=USER|pid=13024|beac=14|exfil=True
+root=200 dash=200
+== DIAM 110 detik ==
+== hasil (harus bangkit) ==
+alive|t=2026-10-27T15:29:01|host=DESKTOP-J4SUDA6|user=USER|pid=9400|beac=0|exfil=True
+powershell.exe               12260 Console                    1     82.744 K
+powershell.exe                9400 Console                    1     81.992 K

@@ -1,0 +1,77 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+ 754:     def ngrok_once(self) -> None:
+ 755:         if not os.path.exists(self.ngrok):
+ 756:             log("ngrok belum ada, tunggu bootstrap")
+ 757:             time.sleep(30)
+ 758:             return
+ 759: 
+ 760:         # Adopsi ngrok yang sudah sehat: restart brain tidak boleh memutus URL
+ 761:         # publik (ngrok free hanya 1 sesi, jadi jangan spawn instance kedua).
+ 762:         old = self.existing_ngrok()
+ 763:         if old:
+ 764:             try:
+ 765:                 old_url = open(URL_F).read().strip()
+ 766:             except OSError:
+ 767:                 old_url = ""
+ 768:             if old_url and self.public_ok(old_url):
+ 769:                 log(f"ADOPT ngrok pid={old} url={old_url} (URL tidak berkedip)")
+ 770:                 self.watch_ngrok(old, old_url)
+ 771:                 return
+ 772:             log(f"ngrok yatim pid={old} tidak sehat -> restart")
+ 773:             try:
+ 774:                 os.kill(old, signal.SIGKILL)
+ 775:             except OSError:
+ 776:                 pass
+ 777:             time.sleep(2)
+ 778: 
+ 779:         logf = os.path.join(D, "ngrok.log")
+ 780:         rotate(logf, 2 << 20)
+ 781:         # Domain statis harus eksplisit: sandbox baru tidak mewarisi state
+ 782:         # sesi lama, dan tanpa --url ngrok bebas memberi subdomain acak.
+ 783:         cmd = [self.ngrok, "http", f"127.0.0.1:{self.b.port}",
+ 784:                "--log=stdout", "--log-format=logfmt"]
+ 785:         if NGROK_DOMAIN:
+ 786:             cmd += ["--url", NGROK_DOMAIN]
+ 787:         with open(logf, "wb") as lf:
+ 788:             p = subprocess.Popen(cmd, stdout=lf, stderr=subprocess.STDOUT,
+ 789:                                  stdin=subprocess.DEVNULL, start_new_session=True)
+ 790:         url = ""
+ 791:         for _ in range(40):
+ 792:             time.sleep(1)
+ 793:             try:
+ 794:                 txt = open(logf, "rb").read().decode("utf-8", "ignore")
+ 795:             except OSError:
+ 796:                 txt = ""
+ 797:             for tok in txt.split("url="):
+ 798:                 cand = tok.split()[0].strip()
+ 799:                 if cand.startswith("https://"):
+ 800:                     url = cand
+ 801:                     break
+ 802:             if url:
+ 803:                 break
+ 804:             if p.poll() is not None:
+ 805:                 break
+ 806:         if not url:
+ 807:             log("ngrok gagal dapat URL, ulangi 10s")
+ 808:             kill(p)
+ 809:             time.sleep(10)
+ 810:             return
+ 811:         open(URL_F, "w").write(url)
+ 812:         log(f"ngrok URL {url}")
+ 813:         fails = 0
+
+=== siapa saya / HOME ===
+root
+HOME=/home/marimo
+total 1
+drwxr-xr-x 1 root   root   60 Oct 26 09:00 .
+drwxr-xr-x 1 marimo marimo 80 Oct 26 09:00 ..
+-rw------- 1 root   root   74 Oct 26 09:00 ngrok.yml
+
+=== ngrok manual test ===
+{"t":"2026-10-26T09:10:27+0000","lvl":"info","msg":"no configuration paths supplied"}
+{"t":"2026-10-26T09:10:27+0000","lvl":"info","msg":"using configuration at default config path","path":"/home/marimo/.config/ngrok/ngrok.yml"}
+{"t":"2026-10-26T09:10:27+0000","lvl":"info","msg":"open config file","path":"/home/marimo/.config/ngrok/ngrok.yml","err":null}
+ERROR:  Error reading configuration file '/home/marimo/.config/ngrok/ngrok.yml': YAML parsing error: yaml: unmarshal errors:
+ERROR:    line 2: field authtoken not found in type config.v3yamlConfig
+
