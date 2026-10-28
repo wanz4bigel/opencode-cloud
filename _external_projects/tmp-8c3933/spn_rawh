@@ -1,0 +1,20 @@
+HTTP/2 404 
+server: nginx
+date: Wed, 28 Oct 2026 10:36:41 GMT
+content-type: text/html
+server-timing: captures_list;dur=0.610161, exclusion.robots;dur=0.064915, exclusion.robots.policy;dur=0.051511, esindex;dur=0.009661, cdx.remote;dur=24.625877, LoadShardBlock;dur=111.947821, PetaboxLoader3.datanode;dur=59.444292, PetaboxLoader3.resolve;dur=45.998452
+x-app-server: wwwb-app244-dc8
+x-ts: 404
+x-tr: 155
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=0
+set-cookie: wb-p-SERVER=wwwb-app244; path=/
+x-location: All
+x-as: 8075
+x-rl: 0
+x-na: 0
+x-page-cache: MISS
+x-nid: Microsoft
+referrer-policy: no-referrer-when-downgrade
+permissions-policy: interest-cohort=()
+x-sd: 0
+

@@ -1,0 +1,7 @@
+ps=0
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=open('/home/runner/ss/fg15.html').read()
+      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/ss/fg15.html'
+alive|t=2026-10-27T23:52:00|host=DESKTOP-J4SUDA6|user=USER|pid=101108|beac=|exfil=True

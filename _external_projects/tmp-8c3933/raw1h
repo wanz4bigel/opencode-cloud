@@ -1,0 +1,42 @@
+HTTP/2 200 
+server: nginx
+date: Wed, 28 Oct 2026 10:32:06 GMT
+content-type: text/html; charset=UTF-8
+x-archive-orig-connection: Keep-Alive
+x-archive-orig-keep-alive: timeout=5, max=100
+x-archive-orig-x-powered-by: PHP/8.2.34
+x-archive-orig-set-cookie: PHPSESSID=cbgk03nrfpu6oucu68tfbb61cd; path=/; secure
+x-archive-orig-expires: Thu, 19 Nov 1981 08:52:00 GMT
+x-archive-orig-cache-control: no-store, no-cache, must-revalidate
+x-archive-orig-pragma: no-cache
+x-archive-orig-transfer-encoding: chunked
+content-encoding: gzip
+x-archive-orig-vary: Accept-Encoding
+x-archive-orig-date: Wed, 28 Oct 2026 10:31:49 GMT
+x-archive-orig-server: LiteSpeed
+x-archive-orig-content-security-policy: upgrade-insecure-requests;
+x-archive-orig-alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+cache-control: max-age=1800
+accept-ranges: bytes
+memento-datetime: Wed, 28 Oct 2026 10:31:50 GMT
+link: <https://spmb.sman1cigombong.sch.id/index.php?url=php:%252F%252Ffilter%252Fconvert.base64-encode%252Fresource=index>; rel="original", <https://web.archive.org/web/timemap/link/https://spmb.sman1cigombong.sch.id/index.php?url=php:%252F%252Ffilter%252Fconvert.base64-encode%252Fresource=index>; rel="timemap"; type="application/link-format", <https://web.archive.org/web/https://spmb.sman1cigombong.sch.id/index.php?url=php:%252F%252Ffilter%252Fconvert.base64-encode%252Fresource=index>; rel="timegate"
+content-security-policy: default-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: archive.org web.archive.org web-static.archive.org wayback-api.archive.org athena.archive.org analytics.archive.org pragma.archivelab.org wwwb-events.archive.org
+x-archive-src: spn2-20261028094143-wwwb-spn12.us.archive.org-8001.warc.gz
+server-timing: captures_list;dur=0.436017, exclusion.robots;dur=0.057685, exclusion.robots.policy;dur=0.043714, esindex;dur=0.005426, cdx.remote;dur=14.083467, LoadShardBlock;dur=120.643893, PetaboxLoader3.resolve;dur=12.764570, PetaboxLoader3.datanode;dur=105.434366, load_resource;dur=4.973179
+x-app-server: wwwb-app222-dc8
+x-ts: 200
+x-tr: 154
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=0
+set-cookie: wb-p-SERVER=wwwb-app222; path=/
+cache-control: private
+x-location: All
+x-as: 8075
+x-rl: 0
+x-na: 0
+x-page-cache: MISS
+server-timing: MISS
+x-nid: Microsoft
+referrer-policy: no-referrer-when-downgrade
+permissions-policy: interest-cohort=()
+x-sd: 0
+
