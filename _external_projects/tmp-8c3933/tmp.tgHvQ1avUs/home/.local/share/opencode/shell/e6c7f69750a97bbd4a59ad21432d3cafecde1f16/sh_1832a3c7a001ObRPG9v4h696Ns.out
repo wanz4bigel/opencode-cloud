@@ -1,0 +1,13 @@
+scripts/isi.js:9:// Hasilnya ditulis ke data/katalog.json dan dibaca src/db.js waktu mengisi katalog.
+scripts/isi.js:268:  writeFileSync(path.join(dir, "katalog.json"), JSON.stringify({ dibuat: new Date().toISOString(), hasil }, null, 2));
+scripts/isi.js:271:  console.log("Lanjut: npm run reset — berkas katalog.json dibaca otomatis oleh seed.");
+src/db.js:411: * Katalog sungguhan hasil `npm run isi` (data/katalog.json). Di sini kalau ada:
+src/db.js:416:    const isi = JSON.parse(readFileSync(path.join(dataDir, "katalog.json"), "utf8"));
+src/db.js:486:    // cuma dipakai saat data/katalog.json belum ada sama sekali.
+README.md:29:12 kategori **khusus colmek** — **1.666 video sungguhan** (275 jam) dari Eporner.
+README.md:33:npm run isi     # ambil semua video colmek dari API Eporner → data/katalog.json (~25 detik)
+README.md:48:(1.666 video unik), baru dibagi ke 12 kategori berdasarkan kata di judulnya. Yang diambil
+README.md:66:npm run isi                 # ambil semua yang tersedia → 1.666 video (~25 detik)
+README.md:70:npm run reset               # seed baca katalog.json otomatis
+README.md:74:jadi 1.666 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+README.md:77:Video contoh (file uji publik) cuma muncul kalau `data/katalog.json` belum ada. Selama

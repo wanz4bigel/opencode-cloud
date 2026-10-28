@@ -1,0 +1,11 @@
+/usr/bin/chromium
+/usr/bin/chromium-browser
+/usr/bin/google-chrome
+chromedriver
+chromium
+chromium-browser
+firefox
+google-chrome
+google-chrome-stable
+no playwright
+no puppeteer

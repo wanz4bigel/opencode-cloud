@@ -1,0 +1,11 @@
+57:    key: "xvideos",
+58-    label: "XVideos",
+59-    hosts: ["xvideos.com", "xvideos.es"],
+60-    example: "https://www.xvideos.com/video43912891/judul-video",
+61-    embed: (host, path) => idOf(/video(\d{5,})/, path),
+62-    to: (x) => `https://www.xvideos.com/embedframe/${x}`
+63-  },
+64-  {
+65-    key: "pornhub",
+66-    label: "Pornhub",
+67-    hosts: ["pornhub.com", "pornhubselect.com", "pornhub.net"],

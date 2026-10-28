@@ -1,0 +1,18 @@
+SURVIVORS=8
+== kondisi nol ==
+root      : 200
+dashboard : 200
+alive|t=2026-10-27T15:25:45|host=DESKTOP-J4SUDA6|user=USER|pid=11120|beac=2|exfil=True
+== DIAM 100 detik ==
+== hidup lagi? ==
+alive|t=2026-10-27T15:27:25|host=DESKTOP-J4SUDA6|user=USER|pid=13024|beac=14|exfil=True
+wscript.exe                   1876 Console                    1         88 K
+powershell.exe               10820 Console                    1     84.996 K
+powershell.exe                2176 Console                    1     83.720 K
+powershell.exe                8880 Console                    1     84.300 K
+powershell.exe               13024 Console                    1     87.548 K
+powershell.exe               10360 Console                    1     82.680 K
+powershell.exe               11120 Console                    1     40.980 K
+powershell.exe                6252 Console                    1     66.236 K
+powershell.exe                2324 Console                    1     82.712 K
+powershell.exe               10880 Console                    1     82.892 K

@@ -1,0 +1,79 @@
+    frame: false,
+    embed: () => "page",
+    to: page
+  }
+];
+
+const PROVIDER_LABEL = Object.fromEntries(HOSTS.map((h) => [h.key, h.label]));
+PROVIDER_LABEL.file = "File langsung";
+PROVIDER_LABEL.lain = "Eksternal";
+
+const DIRECT_FILE = /\.(mp4|webm|ogv|ogg|m3u8|mov)(\?|#|$)/i;
+
+export function labelOf(provider) {
+  return PROVIDER_LABEL[provider] || PROVIDER_LABEL.lain;
+}
+
+/** Host yang biasanya menolak di-iframe. */
+export function blocksFraming(provider) {
+  return HOSTS.some((h) => h.key === provider && h.frame === false);
+}
+
+function matchHost(rule, host) {
+  return rule.hosts.some((h) => host === h || host.endsWith(`.${h}`));
+}
+
+/**
+ * @returns {{provider:string, embed:string, direct:string, kind:('iframe'|'video')}|null}
+ */
+export function resolve(rawUrl) {
+  const direct = String(rawUrl || "").trim();
+  let url;
+  try {
+    url = new URL(direct);
+  } catch {
+    return null;
+  }
+  if (!/^https?:$/.test(url.protocol)) return null;
+
+  const host = url.hostname.replace(/^www\./, "").toLowerCase();
+  const path = url.pathname;
+
+  // File video mentah: diputar pakai pemutar bawaan browser, tanpa iframe.
+  if (DIRECT_FILE.test(path)) {
+    return { provider: "file", embed: direct, direct, kind: "video" };
+  }
+
+  for (const rule of HOSTS) {
+    if (!matchHost(rule, host)) continue;
+    const found = rule.embed(host, path, url);
+    if (!found) continue;
+    const embed = rule.to(found, url);
+    return { provider: rule.key, embed, direct, kind: "iframe" };
+  }
+
+  return { provider: "lain", embed: direct, direct, kind: "iframe" };
+}
+
+/** Ringkasan host untuk halaman /host. */
+export function hostCatalog() {
+  const rows = HOSTS.map((rule) => ({
+    label: rule.label,
+    example: rule.example,
+    note: rule.note || (rule.frame === false ? "Sering menolak iframe." : ""),
+    cara: rule.key === "facebook" ? "Pemutar Facebook" : rule.frame === false ? "Sering harus dibuka di host" : "iframe embed"
+  }));
+  rows.unshift({
+    label: "File langsung (.mp4/.webm/.m3u8)",
+    example: "https://cdn.example.com/colmek.mp4",
+    note: "Diputar pakai pemutar bawaan browser.",
+    cara: "Pemutar browser"
+  });
+  return rows;
+}
+309:    <b>Eksternal</b> dan dicoba lewat iframe. Kalau host itu menolak, tombol
+310:    <b>Buka di host asli</b> di halaman nonton yang bekerja.</p>`;
+320:      : `<iframe class="player__media" src="${esc(video.embed)}" title="${esc(video.title)}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+342:        ? `<p class="watch__note">Host <b>${esc(labelOf(video.provider))}</b> biasanya menolak di-iframe.
+343:           Kalau layarnya kosong, pakai tombol <b>Buka di host asli</b> di bawah.</p>`
+354:        <a class="btn" href="${esc(video.url)}" target="_blank" rel="noopener nofollow">Buka di host asli</a>

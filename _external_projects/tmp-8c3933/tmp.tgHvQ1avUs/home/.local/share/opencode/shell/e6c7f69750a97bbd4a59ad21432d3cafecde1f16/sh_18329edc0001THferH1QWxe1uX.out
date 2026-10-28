@@ -1,0 +1,71 @@
+    ["Colmek Cewek TikTok Diadu", "viral,tiktok,adu"],
+    ["Colmek Compile Malam Ini", "viral,compile,malam"]
+  ]
+};
+
+/**
+ * Katalog sungguhan hasil `npm run isi` (data/katalog.json). Di sini kalau ada:
+ * judul, durasi, tag, dan gambar semuanya dari host aslinya, bukan karangan.
+ */
+function bacaKatalogAsli() {
+  try {
+    const isi = JSON.parse(readFileSync(path.join(dataDir, "katalog.json"), "utf8"));
+    const keluar = {};
+    for (const [slug, daftar] of Object.entries(isi.hasil || {})) {
+      const bersih = (Array.isArray(daftar) ? daftar : []).filter(
+        (v) => v && v.url && v.title && resolve(v.url)
+      );
+      if (bersih.length) keluar[slug] = bersih;
+    }
+    return keluar;
+  } catch {
+    return {};
+  }
+}
+
+/** Lebar/tinggi gambar seperti dikasih API; 0 kalau host tidak menyebut. */
+function rasioPoster(v) {
+  const r = Number(v.rasio) || 0;
+  if (r > 0 && r < 10) return r;
+  const l = Number(v.lebar) || 0;
+  const t = Number(v.tinggi) || 0;
+  return l > 0 && t > 0 ? l / t : 0;
+}
+
+export function adaKatalogAsli() {
+  return Object.keys(bacaKatalogAsli()).length > 0;
+}
+
+export function reseed() {
+  db.exec("DELETE FROM videos; DELETE FROM categories;");
+  CATEGORY_SEED.forEach(([name, slug], i) => {
+    db.prepare("INSERT INTO categories (name, slug, ord) VALUES (?, ?, ?)").run(name, slug, i);
+  });
+
+  // demo=0: video sungguhan (judul & gambar dari host) — badge "Contoh" tidak pasang.
+  const masuk = db.prepare(
+    `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, poster, poster_ratio, views, demo, added_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+  );
+
+  const asli = bacaKatalogAsli();
+  const adaAsli = Object.keys(asli).length > 0;
+  let menitLalu = 9;
+  for (const [, slug] of CATEGORY_SEED) {
+    const categoryId = categoryIdBySlug(slug);
+    const baseTag = slug.split("-").slice(-1)[0];
+
+    for (const v of asli[slug] || []) {
+      const target = resolve(v.url);
+      if (!target) continue;
+      masuk.run(
+        String(v.title).slice(0, 140),
+        uniqueSlug(slugify(v.title)),
+        target.provider,
+        target.direct,
+        target.embed,
+        target.kind,
+        Math.round(Number(v.detik) || 0),
+        categoryId,
+        normalizeTags(`${baseTag},${v.tag || ""}`),
+        String(v.poster || "").slice(0, 500),

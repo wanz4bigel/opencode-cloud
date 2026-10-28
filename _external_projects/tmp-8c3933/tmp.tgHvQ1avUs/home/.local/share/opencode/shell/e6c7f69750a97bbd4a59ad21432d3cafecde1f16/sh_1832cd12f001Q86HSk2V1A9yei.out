@@ -1,0 +1,40 @@
+191-  },
+192-  {
+193-    key: "vk",
+194-    label: "VK Video",
+195-    hosts: ["vk.com", "vkvideo.ru"],
+196-    example: "https://vk.com/video-12345_67890",
+197:    frame: false,
+--
+209-  },
+210-  {
+211-    key: "streamtape",
+212-    label: "StreamTape",
+213-    hosts: ["streamtape.com", "streamtape.to", "streamnn.com"],
+214-    example: "https://streamtape.com/v/AbCdEf12345/judul",
+215:    frame: false,
+--
+218-  },
+219-  {
+220-    key: "upcloud",
+221-    label: "UpCloud / UpStream",
+222-    hosts: ["upcloud.my", "upstream.to", "upvid.cc"],
+223-    example: "https://upstream.to/embed-abc123.html",
+224:    frame: false,
+--
+227-  },
+228-  {
+229-    key: "mixdrop",
+230-    label: "Mixdrop",
+231-    hosts: ["mixdrop.co", "mixdrop.to", "mixdrop.sx", "mixdrp.to"],
+232-    example: "https://mixdrop.to/f/abc123",
+233:    frame: false,
+--
+236-  },
+237-  {
+238-    key: "dood",
+239-    label: "Dood",
+240-    hosts: ["dood.watch", "dood.pm", "dood.la", "dood.stream"],
+241-    example: "https://dood.pm/e/abc123",
+242:    frame: false,
+--

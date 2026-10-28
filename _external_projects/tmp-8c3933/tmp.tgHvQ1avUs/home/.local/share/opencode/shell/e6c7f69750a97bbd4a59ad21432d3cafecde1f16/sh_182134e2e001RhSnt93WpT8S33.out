@@ -1,0 +1,2 @@
+/bin/bash: -c: line 4: syntax error near unexpected token `('
+/bin/bash: -c: line 4: `const p=await fetch('https://www.youtube.com/watch?v=9bZkp7q19f0',{signal:AbortSignal.timeout(6000),headers:{'user-agent':'Mozilla/5.0 Chrome/120'}}); const h=await p.text(); console.log('halaman', p.status, /og:title/.test(h) ? (h.match(/<meta name="title" content="([^"]{0,60})/)||[])[1] : 'tanpa og:title');'

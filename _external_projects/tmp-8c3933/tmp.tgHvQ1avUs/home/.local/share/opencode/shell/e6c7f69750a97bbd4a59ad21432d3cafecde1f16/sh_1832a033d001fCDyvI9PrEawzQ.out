@@ -1,0 +1,33 @@
+5:const idOf = (re, text) => (text.match(re) || [])[1] || null;
+27:        ? idOf(/^\/([\w-]{6,})/, path)
+28:        : idOf(/^\/(?:embed|shorts|live|v)\/([\w-]{6,})/, path) || (url.searchParams.get("v") || "").slice(0, 12),
+// Peta host video. Situs ini tidak menampung video — yang disimpan cuma alamat,
+// jadi pekerjaan utama kode adalah mengenali host dan mengubahnya ke alamat embed.
+// Daftar ini juga yang menampilkan halaman /host.
+
+const idOf = (re, text) => (text.match(re) || [])[1] || null;
+// Untuk host yang tidak punya alamat embed (halaman videonya juga pemutarnya),
+// alamat aslinya yang dipakai.
+const page = (id, url) => url.href;
+
+/**
+ * Tiap aturan:
+ *   hosts   → domain yang dikenali (pencocokan akhir, subdomain ikut)
+ *   embed   → ambil id dari URL; null kalau URL-nya bukan halaman video
+ *   to      → id (atau URL penuh) jadi alamat embed
+ *   frame   → false = host ini biasanya menolak di-iframe, jadi tautan langsung
+ *             yang dipakai dan halaman nonton memunculkan tombol "Buka di host asli"
+ */
+export const HOSTS = [
+  {
+    key: "youtube",
+    label: "YouTube",
+    hosts: ["youtube.com", "youtu.be"],
+    example: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    note: "Termasuk youtu.be, /shorts/, dan /live/.",
+    embed: (host, path, url) =>
+      host === "youtu.be"
+        ? idOf(/^\/([\w-]{6,})/, path)
+        : idOf(/^\/(?:embed|shorts|live|v)\/([\w-]{6,})/, path) || (url.searchParams.get("v") || "").slice(0, 12),
+    to: (x) => `https://www.youtube-nocookie.com/embed/${x}`
+  },

@@ -1,0 +1,30 @@
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7100-    Order of harm: the KV in 4 bits, then a smaller context (down to 4608), then no draft layer on the GPU (decode
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7101-    up to 2x slower, but 0.8 GB for the cache); a value the user chose (--context, --kv) is not changed."""
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7102-    reserve = UD_FIT_ENGINE_RESERVE_MIB if reserve_mib is None else reserve_mib
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7103-    ctxs = [ctx] if ctx_fixed else [ctx] + [c for c in UD_FIT_CTX_STEPS if c < ctx]
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7104-    kvs = [kv] if kv_fixed or kv == "q4_0" else [kv, "q4_0"]
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7105-    for mtp in (True, False):
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7106-        for c in ctxs:
+/home/marimo/.local/share/strata/terminal/0.1.51/setup.py-7107-            for k in kvs:
+=== kv_gb util ===
+def kv_gb(self, tokens: int, kv: str = "int8") -> float:
+        """The conversation memory for this many tokens, in GB (setup.py's UD_FIT_KV_BYTES: 13 attention layers)."""
+        mod = self.strata.setup_module()
+        table = getattr(mod, "UD_FIT_KV_BYTES", None) or {"fp16": 2112, "int8": 1056, "q4_0": 576, "k8v4": 816}
+        return tokens * 13 * table.get(kv, 1056) / 1e9
+
+    def max_context(self, family: str, model: str, hw: dict | None = None) -> int | None:
+        """The recommended context for this computer and model (setup.py: VRAM rule, then the RAM rule)."""
+        hw = hw or self.hardware()
+        if self.strata.multi_family(family):                   # DeepSeek-V4.1-Flash: the context the engine was checked at
+            return int(getattr(self.strata.setup_module(), "DSV41_CONTEXT", 8192))
+        if hw.get("mac") and hw.get("ram_gb"):                 # a Mac: the context by unified memory (strata_control/mac_fit.py)
+            mac = self.strata.mac()
+            if mac is not None:
+                return int(mac.recommend_context(float(hw["ram_gb"])))
+        usable = [g for g in hw.get("gpus") or [] if g.get("usable", True)]
+        vram = max((float(g.get("vram_gb") or 0) for g in usable), default=12.0)
+        rec = 32768 if vram < 14 else 65536 if vram < 20 else 131072
+        if usable and all(g.get("vendor") == "intel" for g in usable):
+            rec = 8192 if vram < 10 else 16384 if vram < 20 else 32768       # an Arc keeps the session and the experts in the same memory
+        mod = self.strata.setup_module()
