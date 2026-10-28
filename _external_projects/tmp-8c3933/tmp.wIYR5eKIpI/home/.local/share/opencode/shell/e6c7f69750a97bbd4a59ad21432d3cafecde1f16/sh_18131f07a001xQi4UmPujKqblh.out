@@ -1,0 +1,4 @@
+total wall 13.05s untuk 3 request paralel
+ status=200 wall=2.10s tok=65 tps=44.4 -> '2, 3, 5'
+ status=200 wall=2.64s tok=96 tps=98.7 -> '2, 3, 5, 7, 11, 13, 17'
+ status=200 wall=13.04s tok=79 tps=247.9 -> '2, 3, 5, 7, 11'

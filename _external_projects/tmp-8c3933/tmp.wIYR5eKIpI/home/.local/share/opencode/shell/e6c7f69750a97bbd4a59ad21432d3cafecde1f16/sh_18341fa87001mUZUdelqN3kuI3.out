@@ -1,0 +1,21 @@
+name: Self Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ["scripts/**", ".github/workflows/test.yml"]
+  push:
+    paths: ["scripts/**", ".github/workflows/test.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  selftest:
+    name: Uji vmess ws+tls end-to-end
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+--- runs ---

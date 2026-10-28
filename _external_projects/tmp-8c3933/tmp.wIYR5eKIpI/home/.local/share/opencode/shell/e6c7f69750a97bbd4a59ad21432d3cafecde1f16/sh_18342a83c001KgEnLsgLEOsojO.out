@@ -1,0 +1,16 @@
+ERR  https://doostream.com/         fetch failed
+ERR  https://www.doostream.com/     fetch failed
+ERR  https://doostream.net/         fetch failed
+200  https://doodstream.com/        -> https://doodstream.com/                                      DoodStream
+     XFO=- CSP=upgrade-insecure-requests;
+403  https://dood.watch/            -> https://dood.watch/                                          Attention Required! | Cloudflare
+     XFO=SAMEORIGIN CSP=-
+403  https://dood.so/               -> https://playmogo.com/                                        Just a moment...
+     XFO=SAMEORIGIN CSP=default-src 'none'; script-src 'nonce-ItHQfvPwBMxM
+403  https://dood.pm/               -> https://playmogo.com/                                        Just a moment...
+     XFO=SAMEORIGIN CSP=default-src 'none'; script-src 'nonce-8j5kDYbxTIBg
+403  https://doods.pro/             -> https://playmogo.com/                                        Just a moment...
+     XFO=SAMEORIGIN CSP=default-src 'none'; script-src 'nonce-CnkrHY1onUmj
+ERR  https://doo.stream/            fetch failed
+200  https://doodstream.co/         -> https://doodstream.co/                                       DoodStream
+     XFO=- CSP=upgrade-insecure-requests;

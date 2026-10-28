@@ -1,0 +1,7 @@
+--- cek token di file ---
+bersih
+--- cek .git/config ---
+bersih
+--- hapus file token ---
+dihapus
+ls: cannot access '/tmp/opencode/ghpat': No such file or directory

