@@ -1,0 +1,16 @@
+auth: 200
+8842f7a feat(dns): auto-update A record Cloudflare ke IP runner + self-test mock + wiring workflow/action
+38b2cdf test: klien memakai port/path dari isi link vmess:// (bukan state)
+dns-cloudflare.sh
+gen-cert.sh
+gen-config.sh
+gen-link.sh
+get-ip.sh
+healthcheck.sh
+install-v2ray.sh
+lib.sh
+mock-cloudflare.py
+run-server.sh
+test-dns.sh
+test-local.sh
+test-transports.sh

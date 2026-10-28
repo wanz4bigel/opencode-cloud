@@ -1,0 +1,23 @@
+### 📊 Benchmark (median 3 run, ctx 204.800, KV f16)
+
+| Konfigurasi | Easy TG | Hard TG | Acceptance |
+|---|---|---|---|
+| tanpa spekulasi | 41,1 | — | — |
+| FastMTP depth 3 (setelan repo apa adanya) | 96,5 | 64,2 | 64% |
+| **FastMTP depth 4 + p-split 0,3 (dipakai)** | **106,2** | **79,6** | 60,5% |
+| depth 5 · depth 5 + p-split 0,5 | 109,5 · 114,9 | 63,5 · 59,7 | 53% · 58% |
+
+**Live terukur (lewat ngrok, 3 run):** 106,2 t/s · draft 152 token → 96 diterima (63,2%).
+Naik dari 98,3 (depth 3, KV q8) dan 96,5 (setelan repo apa adanya).
+
+**Tuning yang menang** (sweep 15 config): `--spec-draft-n-max 4` (+6,8%),
+`--spec-draft-p-split 0,3` (+7,7%), KV f16 (+4,7%). depth 5 lebih cepat di prompt
+mudah tapi turun di prompt reasoning → ditolak.
+
+**Yang tidak menolong:** ubatch 2048, `--load-mode mmap`, `--swa-full`,
+`--no-kv-unified`, draft-KV q8, p-min 0,1/0,3.
+
+**Biaya membangun ulang sandbox:** unduh 26 GB ±1 menit, clone + build `sm_120a` ±5 menit.
+Model **tidak persist** antar sesi; script `fetch.sh` + `build4.sh` ada di `/marimo/llm/`.
+
+

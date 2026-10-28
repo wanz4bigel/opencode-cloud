@@ -1,0 +1,14 @@
+SHELLCHECK_OK
+YAML OK
+99c45eb feat(edge): EDGE_PORT/EDGE_TLS untuk CDN (CloudFront), origin ws plain + link 443/tls, dedupe inbound, self-test edge
+8842f7a feat(dns): auto-update A record Cloudflare ke IP runner + self-test mock + wiring workflow/action
+ README.md                          |  78 +++++++++++++++++++++++++++
+ action.yml                         |  12 +++++
+ scripts/dns-cloudflare.sh          |   5 +-
+ scripts/gen-config.sh              |  12 ++++-
+ scripts/gen-link.sh                |  53 +++++++++++++-----
+ scripts/lib.sh                     |  19 ++++++-
+ scripts/run-server.sh              |   2 +-
+ scripts/test-dns.sh                |   8 +++
+ scripts/test-edge.sh               | 107 +++++++++++++++++++++++++++++++++++++
+ 11 files changed, 301 insertions(+), 19 deletions(-)

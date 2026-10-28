@@ -1,0 +1,14 @@
+--- streaming: waktu tiap chunk ---
+13.222  data: {"choices": [{"delta": {"content": "tok0 "}}]}
+13.625  data: {"choices": [{"delta": {"content": "tok1 "}}]}
+14.022  data: {"choices": [{"delta": {"content": "tok2 "}}]}
+14.423  data: {"choices": [{"delta": {"content": "tok3 "}}]}
+14.823  data: {"choices": [{"delta": {"content": "tok4 "}}]}
+15.222  data: [DONE]
+--- body besar 3 MB ---
+lokal sha: b68e6ab4acbfa71f7cbf980046fd700f2808185d529996e0e931b0f74f10f6d2
+{"bytes": 3145728, "sha256": "b68e6ab4acbfa71f7cbf980046fd700f2808185d529996e0e931b0f74f10f6d2"}
+real	0m0.298s
+user	0m0.016s
+sys	0m0.012s
+

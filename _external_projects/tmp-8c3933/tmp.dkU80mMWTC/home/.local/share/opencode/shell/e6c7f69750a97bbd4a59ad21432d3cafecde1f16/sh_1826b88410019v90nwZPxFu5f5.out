@@ -1,0 +1,9 @@
+
+In scripts/dns-cloudflare.sh line 104:
+for i in $(seq 1 "$tries"); do
+^-^ SC2034 (warning): i appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- i appears unused. Verify use (or ...
+exit=1
+?? scripts/dns-cloudflare.sh

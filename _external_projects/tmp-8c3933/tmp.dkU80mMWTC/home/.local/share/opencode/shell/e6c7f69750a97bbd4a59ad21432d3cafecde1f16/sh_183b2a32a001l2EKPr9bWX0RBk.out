@@ -1,0 +1,58 @@
+def show_qris_payment(
+    api_key: str,
+    tokens: dict,
+    items: list[PaymentItem],
+    payment_for: str,
+    ask_overwrite: bool,
+    overwrite_amount: int = -1,
+    token_confirmation_idx: int = 0,
+    amount_idx: int = -1,
+    topup_number: str = "",
+    stage_token: str = "",
+):  
+    transaction_id = settlement_qris(
+        api_key,
+        tokens,
+        items,
+        payment_for,
+        ask_overwrite,
+        overwrite_amount,
+        token_confirmation_idx,
+        amount_idx,
+        topup_number,
+        stage_token
+    )
+    
+    if not transaction_id:
+        print("Failed to create QRIS transaction.")
+        return
+    
+    print("Fetching QRIS code...")
+    qris_code = get_qris_code(api_key, tokens, transaction_id)
+    if not qris_code:
+        print("Failed to get QRIS code.")
+        return
+    print(f"QRIS data:\n{qris_code}")
+    
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=1,
+        border=1,
+--- fungsi yang dipanggil ---
+    stage_token: str = "",
+):  
+    transaction_id = settlement_qris(
+        api_key,
+        tokens,
+        items,
+        payment_for,
+        ask_overwrite,
+        overwrite_amount,
+        token_confirmation_idx,
+        amount_idx,
+        topup_number,
+        stage_token
+    )
+    
+    if not transaction_id:
