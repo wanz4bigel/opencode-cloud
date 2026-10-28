@@ -1,0 +1,21 @@
+      }${hasil.dilewati ? ` — ${hasil.dilewati} host tidak kasih metadata` : ""}.`;
+    } else if (pathname.startsWith("/admin/hapus/")) {
+      const id = Number(pathname.split("/")[3]);
+      note = deleteVideo(id) ? "Tautan video dihapus dari katalog." : "Video itu sudah tidak ada.";
+    } else {
+      note = "Aksi tidak dikenali.";
+      kind = "err";
+    }
+
+    res.appendHeader("set-cookie", `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`);
+    res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+    res.end();
+    return done;
+  }
+
+  const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+  res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+  return page(adminPage({ token, note, kind, host }));
+}
+
+function page(html, status = 200) {

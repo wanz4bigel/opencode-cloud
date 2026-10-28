@@ -1,0 +1,11 @@
+220:    label: "DoodStream",
+221:    hosts: ["jwplyr.com", "vidclr.sbs", "vidslr.sbs", "dood.watch", "dood.pm", "dood.la", "dood.stream", "dood.boo"],
+222:    example: "https://jwplyr.com/e/abc123",
+223:    note: "Cermin jwplyr.com: /e/<kode> adalah pemutarnya dan boleh ditanam. Domain dood.* sering diblokir Cloudflare di server ini.",
+224:    // Kode file DoodStream huruf+angka. Alamat /d/<kode> (unduh) dianggap sama.
+226:    to: (x) => `https://jwplyr.com/e/${x}`
+420:const BERKAS_KATALOG = ["katalog.json", "katalog-xv.json", "katalog-dood.json"];
+425:  for (const nama of BERKAS_KATALOG) {
+16:    "isi-dood": "node scripts/isi-dood.js",
+416: * (data/katalog-dood.json dari player DoodStream/jwplyr). Di sini kalau ada:
+420:const BERKAS_KATALOG = ["katalog.json", "katalog-xv.json", "katalog-dood.json"];

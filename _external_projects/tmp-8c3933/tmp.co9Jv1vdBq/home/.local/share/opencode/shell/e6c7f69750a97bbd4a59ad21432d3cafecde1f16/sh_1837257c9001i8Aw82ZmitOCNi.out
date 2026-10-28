@@ -1,0 +1,4 @@
+102:  <a class="card__media" href="${href}" tabindex="-1" aria-hidden="true" style="--th:${tone.mid};--th2:${tone.deep}">
+129:      (v) => `<a class="rail__item" href="/v/${v.slug}" style="--th:${posterPalette(v.slug).mid};--th2:${posterPalette(v.slug).deep}">
+291:        <span class="side__media" style="--th:${posterPalette(v.slug).mid};--th2:${posterPalette(v.slug).deep}">
+306:      <div class="player" style="--th:${tone.mid};--th2:${tone.deep}">${pemutar}</div>

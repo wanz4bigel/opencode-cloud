@@ -1,0 +1,80 @@
+  OLD:   const wants404 = route.includes("tidak-ada") || route === "/entah-apa-ini";
+  NEW:   const wants404 = route.includes("tidak-ada") || route.includes("bukan-slug") || route === "/entah-apa-ini";
+
+[51] src/info.js t=10:24:25
+  OLD: const YT_ID = /^(?:www\.youtube\.com\/(?:watch\?v=|embed/|shorts/|live/)|youtu\.be\/)([\w-]{6,})/;\nconst VIMEO_ID = /^(?:www\.)?vimeo\.com\/(\d{4,})/;\nconst DM_ID = /^(?:www\.daily
+  NEW: const YT_ID = /^(?:(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/;\nconst VIMEO_ID = /^(?:(?:www\.)?vimeo\.com\/)(\d{4,})/;\nconst DM_ID = /^(
+
+[52] src/info.js t=10:24:30
+  OLD:         judul: pickText(data.author_name) ? `${pickText(data.title)}` : pickText(data.title),\n        detik: Math.round(Number(data.duration) || 0) || undefined,\n        gambar: sa
+  NEW:         judul: pickText(data.title),\n        detik: Math.round(Number(data.duration) || 0) || undefined,\n        gambar: safeImage(data.thumbnail_url),\n        via: "YouTube"
+
+[53] src/info.js t=10:24:34
+  OLD: async function getJson(rawUrl) {
+  NEW: /** Cek cepat apakah gambar benar-benar ada, sebelum alamatnya disimpan permanen. */\nasync function liveImage(url) {\n  const picked = safeImage(url);\n  if (!picked) return null;\n  
+
+[54] src/info.js t=10:24:38
+  OLD: /** Hanya gambar yang aman di-hotlink browser pengunjung. */\nfunction safeImage(url) {\n  const picked = pickUrl(url);\n  if (!picked) return null;\n  let url2;\n  try {\n    url2 = new
+  NEW: /** CDN gambar yang aman di-hotlink browser pengunjung (tidak perlu cek dulu). */\nconst SAFE_IMAGE_HOSTS = ["i.ytimg.com", "i.vimeocdn.com", "archive.org", "img.dailymotion.com", "
+
+[55] src/info.js t=10:24:43
+  OLD: const SAFE_IMAGE_HOSTS = ["i.ytimg.com", "i.vimeocdn.com", "archive.org", "img.dailymotion.com", "www.dailymotion.com", "s-ssl.xcdnshae尔.com"];
+  NEW: const SAFE_IMAGE_HOSTS = ["i.ytimg.com", "i.vimeocdn.com", "archive.org", "img.dailymotion.com", "www.dailymotion.com", "s-cashonmobileis.com"];
+
+[56] src/info.js t=10:24:44
+  OLD:   const thumb = safeImage(`https://archive.org/download/${identifier}/__thumbnail.jpg`);
+  NEW:   const thumb = await liveImage(`https://archive.org/services/img/${identifier}`);
+
+[57] public/style.css t=11:10:07
+  OLD: .card__media .tag--demo { position: absolute; left: 7px; top: 7px; }
+  NEW: .card__media .tag--demo { left: 7px; bottom: 7px; }
+
+[58] scripts/isi.js t=11:20:56
+  OLD: function rapikan(v, slug) {\n  const tag = tagDari(v.keywords);\n  const judul = String(v.title).replace(/\s+/g, " ").trim().slice(0, 90);
+  NEW: /** Judul dari host sering ada emoji / karakter asing yang merusak tampilan. */\nfunction bersihkan(text) {\n  return String(text || "")\n    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u
+
+[59] scripts/isi.js t=11:21:03
+  OLD:     const video = (await cari(k)).filter(layak).map((v) => rapikan(v, slug)).filter((v) => !sudah.has(v.id));\n    for (const v of video.slice(0, PER - ambil.length)) {\n      sudah.
+  NEW:     // halaman 2 ikut diambil: kueri lokal sering tipis, dan yang diurutkan\n    // berdasarkan view bikin halaman 1 didominasi video yang sama.\n    const video = (await Promise.all
+
+[60] scripts/isi.js t=11:21:11
+  OLD:   console.log(`\n${jumlah} video sungguhan disimpan ke data/katalog.json (${sudah.size} unik).`);\n  console.log("Lanjut: npm run isi-lalu-reset → atau `npm run reset` saja kalau ka
+  NEW:   console.log(`\n${jumlah} video sungguhan disimpan ke data/katalog.json (${sudah.size} unik).`);\n  console.log("Lanjut: npm run reset — berkas katalog.json dibaca otomatis oleh se
+
+[61] src/db.js t=11:21:34
+  OLD: export function reseed() {\n  db.exec("DELETE FROM videos; DELETE FROM categories;");\n  CATEGORY_SEED.forEach(([name, slug], i) => {\n    db.prepare("INSERT INTO categories (name, sl
+  NEW: /**\n * Katalog sungguhan hasil `npm run isi` (data/katalog.json). Di sini kalau ada:\n * judul, durasi, tag, dan gambar semuanya dari host aslinya, bukan karangan.\n */\nfunction baca
+
+[62] scripts/isi.js t=11:22:49
+  OLD: const sudah = new Set();\nconst hasil = {};\nconst laporan = [];\n\nfor (const [slug, kueri] of Object.entries(PETA)) {\n  if (HANYA && slug !== HANYA) continue;\n  const ambil = [];\n  f
+  NEW: const sudah = new Set();\nconst idSudah = new Set();\nconst hasil = {};\nconst laporan = [];\n\nfor (const [slug, kueri] of Object.entries(PETA)) {\n  if (HANYA && slug !== HANYA) contin
+
+[63] public/style.css t=11:24:19
+  OLD: /* Video potret: gambar yang sama dikaburkan di belakang, bukan bar hitam. */\n.card__media.poster-blur::before, .rail__item.poster-blur::before, .side__media.poster-blur::before {\n
+  NEW: /* Video potret: gambar yang sama dikaburkan di belakang, bukan bar hitam.\n   `:has()` + properti bertipe <image> bikin ini murni CSS, tanpa JavaScript. */\n@property --bkin { synta
+
+[64] src/views.js t=11:25:19
+  OLD: /** Nilai `url("...")` yang aman ditaruh di atribut style. */\nfunction cssUrl(url) {\n  const picked = String(url || "").trim();\n  if (!/^https?:\/\/[^\s"']{5,400}$/i.test(picked)) 
+  NEW: /** Nilai `url('...')` yang aman ditaruh di atribut style. */\nfunction cssUrl(url) {\n  const picked = String(url || "").trim();\n  // cuma karakter URL yang boleh lewat; kalau tidak
+
+[65] public/style.css t=11:26:19
+  OLD: /* Video lokal banyak yang berformat potret. Daripada bar hitam di kiri-kanan,\n   foto yang sama dikaburkan jadi latarnya (nilainya dikirim server di --bkin). */\n.kabur::before {\n 
+  NEW: /* Video lokal banyak yang berformat potret. Daripada bar hitam di kiri-kanan,\n   foto yang sama dikaburkan & di-blend (hitamnya hilang, warna foto nempel di\n   gradasi kartu). Nil
+
+[66] src/db.js t=15:40:02
+  OLD: /**\n * Katalog sungguhan hasil `npm run isi` (data/katalog.json). Di sini kalau ada:\n * judul, durasi, tag, dan gambar semuanya dari host aslinya, bukan karangan.\n */\nfunction baca
+  NEW: /**\n * Katalog sungguhan hasil `npm run isi` (data/katalog.json dari Eporner) dan\n * `npm run isi-xv` (data/katalog-xv.json dari XVideos). Di sini kalau ada:\n * judul, durasi, tag,
+
+[67] scripts/isi-xv.js t=15:40:31
+  OLD: const SINYAL_COLMEK = /(colmek|masturbat|mastrubat|dildo|vibrator|ngocok|onani|coli|main sendiri|solo|squirt|becek|crot|fingering)/i;\nconst BUKAN_COLMEK = /(ngentot|entot|sepong|bl
+  NEW: const SINYAL_COLMEK = /(colmek|masturbat|mastrubat|dildo|vibrator|ngocok|onani|coli|main sendiri|solo|squirt|becek|crot|fingering)/i;\n// Harus kelihatan Indonesia — biar video bule
+
+[68] scripts/isi-xv.js t=15:40:54
+  OLD: function layak(v) {\n  const judul = v.judul;\n  if (!judul || !v.eid || !v.poster) return false;\n  const d = detik(v.durasi);\n  if (d < 45 || d > 3600) return false;\n  if (DILARANG.
+  NEW: function layak(v) {\n  const judul = v.judul;\n  if (!judul || !v.eid || !v.poster) return false;\n  const d = detik(v.durasi);\n  if (d < 45 || d > 3600) return false;\n  if (DILARANG.
+
+[69] scripts/isi-xv.js t=15:46:00
+  OLD: const SINYAL_COLMEK = /(colmek|masturbat|mastrubat|dildo|vibrator|ngocok|onani|coli|main sendiri|solo|squirt|becek|crot|fingering)/i;\n// Harus kelihatan Indonesia — biar video bule
+  NEW: const SINYAL_COLMEK = /(colmek|masturbat|mastrubat|dildo|vibrator|ngocok|onani|coli|main sendiri|solo)/i;\n// Harus kelihatan Indonesia. "hijab"/"jilbab" saja tidak cukup — tag hija
+
+total belum terpasang: 69

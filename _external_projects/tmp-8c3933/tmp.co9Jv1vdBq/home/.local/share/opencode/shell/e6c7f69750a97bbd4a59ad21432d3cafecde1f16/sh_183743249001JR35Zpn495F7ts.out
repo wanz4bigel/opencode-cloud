@@ -1,0 +1,22 @@
+total 56
+drwxr-xr-x  6 runner runner  4096 Oct 28 16:58 .
+drwxr-xr-x 17 runner runner  4096 Oct 28 16:57 ..
+-rw-r--r--  1 runner runner    26 Oct 28 16:56 .gitignore
+-rw-r--r--  1 runner runner  6260 Oct 28 16:56 README.md
+drwxr-xr-x  2 runner runner  4096 Oct 28 16:58 data
+-rw-r--r--  1 runner runner   723 Oct 28 16:56 package.json
+drwxr-xr-x  2 runner runner  4096 Oct 28 16:56 public
+drwxr-xr-x  2 runner runner  4096 Oct 28 16:56 scripts
+-rw-r--r--  1 runner runner 15964 Oct 28 16:56 server.js
+drwxr-xr-x  2 runner runner  4096 Oct 28 16:56 src
+---
+2495 /home/runner/.local/bin/cloudflared tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096
+3147 /bin/bash -c ls -la /home/runner/bokep-id 2>&1 | head -25; echo "---"; pgrep -af "node server.js|cloudflared tunnel" | head -5; echo "---"; ls /home/runner/.local/share/opencode/ 2>/dev/null
+---
+log
+opencode.db
+opencode.db-shm
+opencode.db-wal
+repos
+shell
+tool-output

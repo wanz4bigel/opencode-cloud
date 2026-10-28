@@ -1,0 +1,20 @@
+78:const SINYAL_COLMEK = /(colmek|masturbat|mastrubat|dildo|vibrator|ngocok|onani|coli|main sendiri|solo)/i;
+79-// Harus kelihatan Indonesia. "hijab"/"jilbab" saja tidak cukup — tag hijab XVideos
+80-// penuh video Arab/India/Malaysia, jadi kata itu baru dihitung kalau ada kata Indo lain.
+--
+84:const BUKAN_COLMEK = /(ngentot|entot|ngentit|sepong|blowjob|creampie|threesome|couple|ngesex|\bsex\b|fuck|gilir|bercinta|\bml\b|goyang|selingkuh|skandal|pijat|open ?bo|barber|affair|video call|anal|asshole|hentai|ngewe|ngemut|hisap|kontol|sucks|di ?kocokin|ngocokin|colmekin|genjot|jilat|stepson|stepmom|stepsis|stepbro|rides on|\bpee\b|piss|caught|police|public|outdoor|bus stop|lonte|michat|prank|reuni|crot di mulut|maid|mutual)/i;
+85-// Jangan pernah loloskan judul yang mengarah ke anak sekolah / di bawah umur.
+86:const DILARANG = /(sekolah|siswi|\bsmp\b|\bsd\b|\bsma\b|\bsmk\b|pelajar|bocah|anak kecil|underage|preteen|loli)/i;
+87-
+88-const args = process.argv.slice(2);
+--
+160:function layak(v) {
+161-  const judul = v.judul;
+162-  if (!judul || !v.eid || !v.poster) return false;
+--
+165:  if (DILARANG.test(judul)) return false;
+166-  if (BUKAN_INDO.test(judul)) return false;
+167:  if (BUKAN_COLMEK.test(judul)) return false;
+168:  return SINYAL_COLMEK.test(judul) && SINYAL_INDO.test(judul);
+169-}
+170-

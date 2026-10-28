@@ -1,0 +1,15 @@
+proses: 23746 python3 /marimo/llm/brain.py
+23749 python3 /marimo/llm/hold12.py
+23762 /marimo/llm/ngrok http 127.0.0.1:8081 --log=stdout -
+23777 /marimo/llm/llama-src/build/bin/llama-server --model
+
+guard: [guard 12:53:31] start hold_ws.py
+[guard 12:54:01] start hold_ws.py
+[guard 12:54:31] start hold_ws.py
+[guard 12:55:01] start hold_ws.py
+
+health: b'{"status":"ok"}'
+tier: 200k/f16 | ctx: 204800 | vram: 40781.0
+
+tunnel: 2026-10-26T12:53:44 ngrok URL https://animate-cardstock-detector.ngrok-free.dev
+url: https://animate-cardstock-detector.ngrok-free.dev

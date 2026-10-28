@@ -1,0 +1,3 @@
+scripts/isi.js:94:const DILARANG = /(sekolah|sekolahan|\bsiswi\b|pelajar|seragam|\bkelas\b|\bsmp\b|\bsd\b|\bsma\b|\bsmk\b|bocah|anak|dede|adik|kakak|underage|preteen|loli|\*{2,})/i;
+scripts/isi-xv.js:88:const DILARANG = /(sekolah|sekolahan|\bsiswi\b|pelajar|seragam|\bkelas\b|\bsmp\b|\bsd\b|\bsma\b|\bsmk\b|bocah|anak|dede|adik|kakak|underage|preteen|loli|\*{2,})/i;
+scripts/isi-dood.js:70:const DILARANG = /(sekolah|sekolahan|\bsiswi\b|pelajar|seragam|\bkelas\b|\bsmp\b|\bsd\b|\bsma\b|\bsmk\b|bocah|anak|dede|adik|kakak|tiri|underage|preteen|loli|\*{2,})/i;

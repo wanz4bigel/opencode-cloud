@@ -1,0 +1,30 @@
+ops 169
+unique paths 28
+package.json
+src/embed.js
+src/db.js
+src/poster.js
+src/views.js
+src/admin.js
+server.js
+public/style.css
+public/app.js
+public/favicon.svg
+README.md
+.gitignore
+scripts/smoke.js
+scripts/probe.js
+src/hosts.js
+src/info.js
+scripts/.tes-yt.mjs
+scripts/.tes-oembed.mjs
+scripts/.tes-info.mjs
+scripts/.tes-arsip.mjs
+scripts/asli.js
+scripts/info.js
+scripts/.tes-oembed2.mjs
+scripts/.tes-ulang.mjs
+scripts/.tes-status.mjs
+scripts/isi.js
+scripts/isi-xv.js
+scripts/isi-dood.js

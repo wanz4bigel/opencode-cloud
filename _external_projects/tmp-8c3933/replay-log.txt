@@ -1,0 +1,201 @@
+
+=== FAIL server.js t=2026-10-28T07:54:29.525Z
+--- OLD ---
+      res.writeHead(303, {
+        location: `/admin?token=${encodeURIComponent(token)}`,
+        "set-cookie": `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`
+      });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.setHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+    return page(adminPage({ token, note, host }));
+--- NEW ---
+      res.appendHeader("set-cookie", `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`);
+      res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+    return page(adminPage({ token, note, host }));
+
+=== FAIL server.js t=2026-10-28T07:54:34.572Z
+--- OLD ---
+      res.writeHead(303, {
+        location: `/admin?token=${encodeURIComponent(token)}`,
+        "set-cookie": `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`
+      });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.setHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+--- NEW ---
+      res.appendHeader("set-cookie", `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`);
+      res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+
+=== FAIL server.js t=2026-10-28T07:54:37.685Z
+--- OLD ---
+      res.writeHead(303, {
+        location: `/admin?token=${encodeURIComponent(token)}`,
+        "set-cookie": `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`
+      });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.setHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+--- NEW ---
+      res.appendHeader("set-cookie", `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`);
+      res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+      res.end();
+      return done();
+    }
+
+    const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+    res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+
+=== FAIL public/style.css t=2026-10-28T09:58:58.245Z
+--- OLD ---
+.catalog { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.catalog a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--arang-2);
+}
+.catalog a:hover { border-color: var(--amber); background: var(--surface); }
+.catalog span { font: 700 20px/1 var(--display); color: var(--muted); }
+--- NEW ---
+.catalog { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.catalog a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--arang-2);
+}
+.catalog a:hover { border-color: var(--amber); background: var(--surface); }
+.catalog span { font: 700 20px/1 var(--display); color: var(--muted); }
+
+/* daftar sumber */
+.hostlist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.hostlist__item {
+  display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--arang-2);
+}
+.hostlist__item:hover { border-color: var(--line); background: var(--surface); }
+.hostlist__name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.hostlist__example { margin: 0; font-size: 13px; word-break: break-all; }
+.hostlist__example code { color: var(--muted); }
+.hostlist__note { margin: 5px 0 0; font-size: 12.5px; color: #7d7266; }
+.badge {
+  flex: 0 0 auto; padding: 6px 11px; border-radius: 999px;
+  border: 1px solid var(--green); color: var(--green);
+  font: 700 11px/1 var(--body); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.badge--warn { border-color: var(--amber); color: var(--amber); }
+
+=== FAIL public/style.css t=2026-10-28T10:01:40.933Z
+--- OLD ---
+.catalog span, .foot h4, .gate__title, .card--featured .card__title {
+
+  font-weight: 700;
+--- NEW ---
+.catalog span, .foot h4, .gate__title, .card--featured .card__title {
+  font-weight: 700;
+
+=== FAIL src/info.js t=2026-10-28T10:24:32.959Z
+--- OLD ---
+      return {
+        dipakai: true,
+        judul: pickText(data.title),
+        detik: Math.round(Number(data.duration) || 0) || undefined,
+        gambar: safeImage(data.thumbnail_url),
+        via: "YouTube"
+--- NEW ---
+      return {
+        dipakai: true,
+        judul: pickText(data.title),
+        detik: Math.round(Number(data.duration) || 0) || undefined,
+        gambar: safeImage(String(data.thumbnail_url || "").replace(/\/(?:default|mqdefault)\.jpg$/, "/hqdefault.jpg")),
+        via: "YouTube"
+
+=== FAIL scripts/probe.js t=2026-10-28T10:54:25.959Z
+--- OLD ---
+import { listVideos } from "../src/db.js";
+
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
+--- NEW ---
+import { listVideos } from "../src/db.js";
+import { labelOf } from "../src/hosts.js";
+
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
+
+=== FAIL public/style.css t=2026-10-28T11:24:19.392Z
+--- OLD ---
+/* Video potret: gambar yang sama dikaburkan di belakang, bukan bar hitam. */
+.card__media.poster-blur::before, .rail__item.poster-blur::before, .side__media.poster-blur::before {
+  content: ""; position: absolute; inset: -14px; background: var(--blur, var(--th, #3a2b1f)) center/cover no-repeat;
+  filter: blur(22px) saturate(1.25) brightness(0.72); transform: scale(1.08);
+}
+.card__media.poster-blur img, .rail__item.poster-blur img, .side__media.poster-blur img { position: relative; z-index: 1; }
+--- NEW ---
+/* Video potret: gambar yang sama dikaburkan di belakang, bukan bar hitam.
+   `:has()` + properti bertipe <image> bikin ini murni CSS, tanpa JavaScript. */
+@property --bkin { syntax: "<image>"; inherits: true; initial-value: none; }
+.card__media:has(img[data-blur]), .rail__item:has(img[data-blur]), .side__media:has(img[data-blur]) { --bkin: attr(img data-blur type(<url>)); }
+.card__media:has(img[data-blur])::before, .rail__item:has(img[data-blur])::before, .side__media:has(img[data-blur])::before {
+  content: ""; position: absolute; inset: -18px;
+  background: var(--bkin, var(--th, #3a2b1f)) center / cover no-repeat;
+  filter: blur(24px) saturate(1.3) brightness(0.7);
+}
+.card__media:has(img[data-blur]) img, .rail__item:has(img[data-blur]) img, .side__media:has(img[data-blur]) img { position: relative; z-index: 1; }
+
+=== FAIL src/views.js t=2026-10-28T11:25:19.606Z
+--- OLD ---
+/** Nilai `url("...")` yang aman ditaruh di atribut style. */
+function cssUrl(url) {
+  const picked = String(url || "").trim();
+  if (!/^https?:\/\/[^\s"']{5,400}$/i.test(picked)) return "";
+  return `url("${picked.replace(/["'()\\s]/g, "")}")`;
+}
+--- NEW ---
+/** Nilai `url('...')` yang aman ditaruh di atribut style. */
+function cssUrl(url) {
+  const picked = String(url || "").trim();
+  // cuma karakter URL yang boleh lewat; kalau tidak, url() bisa bocor dari atribut
+  if (!/^https?:\/\/[A-Za-z0-9._~:/?#@!$&*+,;=%-]{5,400}$/.test(picked)) return "";
+  return `url('${picked}')`;
+}
+
+=== FAIL public/style.css t=2026-10-28T11:26:19.801Z
+--- OLD ---
+/* Video lokal banyak yang berformat potret. Daripada bar hitam di kiri-kanan,
+   foto yang sama dikaburkan jadi latarnya (nilainya dikirim server di --bkin). */
+.kabur::before {
+  content: ""; position: absolute; inset: -18px; z-index: 0;
+  background: var(--bkin, var(--th, #3a2b1f)) center / cover no-repeat;
+  filter: blur(24px) saturate(1.3) brightness(0.7);
+}
+.kabur img { position: relative; z-index: 1; }
+--- NEW ---
+/* Video lokal banyak yang berformat potret. Daripada bar hitam di kiri-kanan,
+   foto yang sama dikaburkan & di-blend (hitamnya hilang, warna foto nempel di
+   gradasi kartu). Nilainya dikirim server di --bkin. */
+.kabur::before {
+  content: ""; position: absolute; inset: -20px; z-index: 0;
+  background-image: var(--bkin); background-size: cover; background-position: center;
+  filter: blur(26px) saturate(1.45) brightness(1.15);
+  mix-blend-mode: screen;
+}
+.kabur img { position: relative; z-index: 1; }
+
+selesai: 52 write, 107 edit, 10 gagal

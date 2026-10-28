@@ -1,0 +1,23 @@
+{
+  "name": "bokep-kita",
+  "version": "1.1.0",
+  "description": "Website bokep Indonesia berbasis embed — tanpa upload video",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "smoke": "node scripts/smoke.js",
+    "probe": "node scripts/probe.js",
+    "info": "node scripts/info.js",
+    "asli": "node scripts/asli.js",
+    "isi": "node scripts/isi.js",
+    "isi-xv": "node scripts/isi-xv.js",
+    "isi-dood": "node scripts/isi-dood.js",
+    "reset": "node -e \"import('./src/db.js').then(m=>{m.reseed();console.log('database diisi ulang: '+m.countVideos()+' video')})\""
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "license": "MIT"
+}

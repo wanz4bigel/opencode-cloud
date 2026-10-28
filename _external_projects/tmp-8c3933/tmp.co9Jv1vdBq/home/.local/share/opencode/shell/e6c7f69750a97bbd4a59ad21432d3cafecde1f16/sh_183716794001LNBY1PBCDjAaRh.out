@@ -1,0 +1,41 @@
+GAGAL edit (teks tidak cocok): server.js |       res.writeHead(303, {\n        location: `/admin?token=$
+GAGAL edit (teks tidak cocok): server.js |       res.writeHead(303, {\n        location: `/admin?token=$
+GAGAL edit (teks tidak cocok): server.js |       res.writeHead(303, {\n        location: `/admin?token=$
+GAGAL edit (teks tidak cocok): public/style.css | .catalog { list-style: none; padding: 0; margin: 0; display:
+GAGAL edit (teks tidak cocok): public/style.css | .catalog span, .foot h4, .gate__title, .card--featured .card
+GAGAL edit (teks tidak cocok): src/info.js |       return {\n        dipakai: true,\n        judul: pickTex
+GAGAL edit (teks tidak cocok): scripts/probe.js | import { listVideos } from "../src/db.js";\n\nconst UA = "Mozi
+GAGAL edit (teks tidak cocok): public/style.css | /* Video potret: gambar yang sama dikaburkan di belakang, bu
+GAGAL edit (teks tidak cocok): src/views.js | /** Nilai `url("...")` yang aman ditaruh di atribut style. *
+GAGAL edit (teks tidak cocok): public/style.css | /* Video lokal banyak yang berformat potret. Daripada bar hi
+
+selesai: 52 write, 107 edit, 10 gagal
+---
+/home/runner/bokep-id/.gitignore
+/home/runner/bokep-id/README.md
+/home/runner/bokep-id/package.json
+/home/runner/bokep-id/public/app.js
+/home/runner/bokep-id/public/favicon.svg
+/home/runner/bokep-id/public/style.css
+/home/runner/bokep-id/scripts/.tes-arsip.mjs
+/home/runner/bokep-id/scripts/.tes-info.mjs
+/home/runner/bokep-id/scripts/.tes-oembed.mjs
+/home/runner/bokep-id/scripts/.tes-oembed2.mjs
+/home/runner/bokep-id/scripts/.tes-status.mjs
+/home/runner/bokep-id/scripts/.tes-ulang.mjs
+/home/runner/bokep-id/scripts/.tes-yt.mjs
+/home/runner/bokep-id/scripts/asli.js
+/home/runner/bokep-id/scripts/info.js
+/home/runner/bokep-id/scripts/isi-dood.js
+/home/runner/bokep-id/scripts/isi-xv.js
+/home/runner/bokep-id/scripts/isi.js
+/home/runner/bokep-id/scripts/probe.js
+/home/runner/bokep-id/scripts/smoke.js
+/home/runner/bokep-id/server.js
+/home/runner/bokep-id/src/admin.js
+/home/runner/bokep-id/src/db.js
+/home/runner/bokep-id/src/embed.js
+/home/runner/bokep-id/src/hosts.js
+/home/runner/bokep-id/src/info.js
+/home/runner/bokep-id/src/poster.js
+/home/runner/bokep-id/src/views.js
