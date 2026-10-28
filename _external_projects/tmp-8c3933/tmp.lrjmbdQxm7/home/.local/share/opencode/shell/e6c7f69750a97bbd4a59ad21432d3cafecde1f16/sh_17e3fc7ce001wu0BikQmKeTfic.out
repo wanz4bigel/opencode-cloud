@@ -1,0 +1,11 @@
+n1..n5 ok
+n1: SUBMITTED
+n2: SUBMITTED
+n3: SUBMITTED
+n4: SUBMITTED
+n5: SUBMITTED
+n1: OK-PARSE+RUN
+n2: OK-PARSE+RUN
+n3: OK-PARSE+RUN
+n4: ERR: At C:\xampp\htdocs\n4z.ps1:1 char:190672 + ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(1 -eq ... +                            
+n5: ERR: At C:\xampp\htdocs\n5z.ps1:1 char:603 + ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(1 -eq ... +                               

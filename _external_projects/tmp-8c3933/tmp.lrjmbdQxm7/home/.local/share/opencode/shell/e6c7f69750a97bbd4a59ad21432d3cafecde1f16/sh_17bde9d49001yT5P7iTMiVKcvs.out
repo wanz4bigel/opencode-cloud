@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/marimo_108/__marimo__cell___scratch___.py", line 31, in <module>
+    open('/marimo/llm/setup.sh','w').write(setup)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/marimo/llm/setup.sh'

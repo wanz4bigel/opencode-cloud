@@ -1,0 +1,37 @@
+54:    payment_items = [
+55-        PaymentItem(
+56-            item_code=package_option_code,
+57-            product_type="",
+58-            item_price=price,
+59-            item_name=f"{variant_name} {option_name}".strip(),
+60-            tax=0,
+61-            token_confirmation=token_confirmation,
+62-        )
+63-    ]
+64-    
+65-    print("-------------------------------------------------------")
+66-    print(f"Nama: {title}")
+67-    print(f"Harga: Rp {price}")
+68-    print(f"Payment For: {payment_for}")
+=== decoy qris ===
+{
+    "family_name": "",
+    "family_code": "580c1f94-7dc4-416e-96f6-8faf26567516",
+    "is_enterprise": false,
+    "migration_type": "NONE",
+    "variant_name": "",
+    "variant_code": "b50f954a-696e-46d0-8700-8e4d38521525",
+    "option_name": "",
+    "order": 27,
+    "price": 1000
+}
+{
+    "family_name": "Kuota Aplikasi BIZ 2GB",
+    "family_code": "c6f2cd72-8b21-420a-b8d5-e0186afe5be6",
+    "is_enterprise": true,
+    "migration_type": "NONE",
+    "variant_code": "b7cf278e-c989-4760-8a26-0a20c1a47a40",
+    "option_name": "Vidio 2GB",
+    "order": 11,
+    "price": 0
+}
