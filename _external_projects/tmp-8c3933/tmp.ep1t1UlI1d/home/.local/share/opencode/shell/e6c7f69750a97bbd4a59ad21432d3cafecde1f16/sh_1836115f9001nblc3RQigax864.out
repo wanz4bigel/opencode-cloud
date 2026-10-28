@@ -1,0 +1,29 @@
+14:| Risiko video di-takedown, hosting kena masalah | Host yang kena, katalog tetap hidup |
+29:12 kategori **khusus colmek** — **1.753 video sungguhan** (1.666 dari Eporner + 87 dari
+30:XVideos). Video contoh hanya dipakai kalau katalog sungguhan belum ada sama sekali.
+33:npm run isi     # ambil semua video colmek dari API Eporner → data/katalog.json (~25 detik)
+34:npm run isi-xv  # ambil video colmek Indonesia dari XVideos → data/katalog-xv.json (~20 detik)
+35:npm run reset   # kosongkan lalu isi ulang katalog (tambahan manual ikut terhapus)
+37:npm run probe   # cek semua URL katalog masih menjawab atau tidak
+45:Katalog default diisi **video sungguhan** dari dua sumber:
+47:- **Eporner** lewat `npm run isi` — **API publik** (`/api/v2/video/search/`) pakai 41
+51:- **XVideos** lewat `npm run isi-xv` — halaman tag & pencarian resmi (`/tags/…`,
+56:Dua katalog itu (`data/katalog.json` dan `data/katalog-xv.json`) digabung oleh seed, dan
+66:Tag Eporner tidak dipakai sebagai bukti karena sering nyampur (`ngentot abg indo, colimek, ...`).
+78:npm run isi                 # Eporner: ambil semua yang tersedia → 1.666 video (~25 detik)
+82:npm run isi-xv              # XVideos: 87 video colmek Indonesia (~20 detik)
+83:npm run isi-xv -- --hal 10  # batasi 10 halaman per kueri
+84:npm run reset               # seed baca katalog.json + katalog-xv.json otomatis
+88:jadi 1.753 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+91:Video contoh (file uji publik) cuma muncul kalau kedua berkas katalog belum ada. Selama
+100:2. **`npm run isi`** buat narik video baru dari API Eporner, atau **`npm run asli`**
+116:Daftar host yang dikenal otomatis ada di halaman **`/host`**: 29 sumber — Bitchute,
+117:XHamster, XNXX, XVideos, Pornhub, Eporner, YouPorn, SpankBang, Beeg, TXXX/Tnaflix,
+119:Facebook/Reels, StreamTape, UpCloud, Mixdrop, Dood, Filemoon, SBStream/HD-1, plus
+140:scripts/probe.js   uji hidup semua URL katalog
+143:scripts/isi.js     isi katalog dari API publik Eporner (12 kategori colmek, judul asli)
+153:- Katalog default diisi video **Eporner** lewat `npm run isi`: judul, durasi, tag, view,
+169:- Beberapa host (StreamTape, UpCloud, Mixdrop, Dood, Filemoon, SBStream, VK) sering
+173:  Untuk host semacam itu judul ditulis tangan — jadi tempel judul yang benar. Eporner
+174:  pengecualian: API-nya terbuka tanpa kunci, makanya katalog default memakai host itu.
+175:- Gambar hotlink Eporner mentok di **240px** (video potret: ~240×430). Cukup buat kartu,

@@ -1,0 +1,21 @@
+# artefak runtime
+*.log
+config.json
+vmess-link.txt
+server-info.json
+vmess-qr.png
+vmess-qr.txt
+SUMMARY.md
+cert/
+bin/
+logs/
+vmess.env
+vars.env
+tls.env
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

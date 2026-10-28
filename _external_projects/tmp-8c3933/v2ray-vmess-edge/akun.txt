@@ -1,0 +1,18 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : panel
+CITY           : Dulles Town Center
+ISP            : AS8075 Microsoft Corporation
+Domain         : d37bawnvqx75hf.cloudfront.net
+Port TLS       : 443
+Port none TLS  : -
+Port any       : -
+id             : de9028b7-533a-458e-b08d-6f25245d438b
+alterId        : 0
+Security       : auto
+network        : ws
+path ws        : /a9d0bavy-jew3
+Limit IP       : -
+Expired On     : 2026-10-29 03:56:01 WIB
+————————————————————————————————————

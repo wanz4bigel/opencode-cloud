@@ -1,0 +1,48 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+=== layout cccl-src ===
+AGENTS.md
+CITATION.md
+CMakeLists.txt
+CMakePresets.json
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
+README.md
+SECURITY.md
+benchmarks
+c
+c2h
+cccl-version.json
+ci
+ci-overview.md
+cmake
+cub
+cudax
+docs
+examples
+lib
+libcudacxx
+nvbench_helper
+pyproject.toml
+python
+test
+thrust
+cub: CMakeLists.txt
+LICENSE.TXT
+benchmarks
+thrust: CMakeLists.txt
+LICENSE
+benchmarks
+libcudacxx/include: cuda
+nv
+
+=== buat include/cccl ===
+total 0
+lrwxrwxrwx 1 root root 50 Oct 26 09:03 cub -> /marimo/llm/llama-src/build/_deps/cccl-src/cub/cub
+lrwxrwxrwx 1 root root 66 Oct 26 09:03 cuda -> /marimo/llm/llama-src/build/_deps/cccl-src/libcudacxx/include/cuda
+lrwxrwxrwx 1 root root 62 Oct 26 09:03 cudax -> /marimo/llm/llama-src/build/_deps/cccl-src/cudax/include/cudax
+lrwxrwxrwx 1 root root 56 Oct 26 09:03 thrust -> /marimo/llm/llama-src/build/_deps/cccl-src/thrust/thrust
+agent
+block
+config.cuh
+

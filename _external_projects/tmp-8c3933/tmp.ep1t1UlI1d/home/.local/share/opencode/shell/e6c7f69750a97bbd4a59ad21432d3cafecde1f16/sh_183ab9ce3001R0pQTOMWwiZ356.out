@@ -1,0 +1,30 @@
+{
+ "code": "000",
+ "status": "SUCCESS - 2000003558",
+ "data": {
+  "has_intercept": false,
+  "intercept_id": "",
+  "title": "",
+  "images": [],
+  "image_banners": [],
+  "intercept_type": "",
+  "consent_content": "",
+  "questions": []
+ }
+}
+
+### no.186 Internet 1GB
+{
+ "code": "000",
+ "status": "SUCCESS - 8116163",
+ "data": {
+  "has_intercept": false,
+  "intercept_id": "",
+  "title": "",
+  "images": [],
+  "image_banners": [],
+  "intercept_type": "",
+  "consent_content": "",
+  "questions": []
+ }
+}

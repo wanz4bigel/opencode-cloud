@@ -1,0 +1,214 @@
+name: VMess V2Ray Server
+
+run-name: "VMess ${{ inputs.port || '443' }}/${{ inputs.ws_path || 'auto' }} on ${{ github.event_name }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "simple = 1 port ws+tls | full = multi-port + ws/grpc/upgrade (kartu akun)"
+        required: false
+        default: "simple"
+        type: choice
+        options: [simple, full]
+      core:
+        description: "v2ray = paling kompatibel | xray = wajib untuk upgrade/httpupgrade"
+        required: false
+        default: "v2ray"
+        type: choice
+        options: [v2ray, xray]
+      port:
+        description: "Port inbound TLS (mode simple)"
+        required: false
+        default: "443"
+      ws_path:
+        description: "Path WebSocket (kosongkan = acak)"
+        required: false
+        default: ""
+      uuid:
+        description: "UUID VMess (kosongkan = acak)"
+        required: false
+        default: ""
+      domain:
+        description: "Domain/Host (opsional, misal v2ray.example.com)"
+        required: false
+        default: ""
+      sni:
+        description: "TLS serverName / SNI (default = domain)"
+        required: false
+        default: ""
+      tls_mode:
+        description: "Mode TLS"
+        required: false
+        default: "selfsigned"
+        type: choice
+        options: [selfsigned, custom, off]
+      lifetime_minutes:
+        description: "Umur server per run (menit, maks 355 karena limit job 6 jam)"
+        required: false
+        default: "330"
+      runner_images:
+        description: "Matrix runner (JSON array, 1 image = 1 IP endpoint)"
+        required: false
+        default: '["ubuntu-latest"]'
+
+  # Dipakai self-handoff (restart otomatis) & pemicu dari workflow Keep Alive
+  repository_dispatch:
+    types: [vmess-start, vmess-restart, vmess-handoff]
+
+  # Deploy ulang kalau ada perubahan script
+  push:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/vmess-server.yml"
+      - "action.yml"
+
+  workflow_call:
+    secrets:
+      TLS_CRT: { required: false }
+      TLS_KEY: { required: false }
+      TG_TOKEN: { required: false }
+      TG_CHAT_ID: { required: false }
+      REPO_TOKEN: { required: false }
+      CF_API_TOKEN: { required: false }
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  vmess:
+    name: vmess @ ${{ matrix.image }}
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 360
+    env:
+      # urutan prioritas: payload handoff > input manual > Variables repo > default script
+      PORT: ${{ github.event.client_payload.port || inputs.port || vars.PORT }}
+      WS_PATH: ${{ github.event.client_payload.ws_path || inputs.ws_path || vars.WS_PATH }}
+      VMESS_UUID: ${{ github.event.client_payload.uuid || inputs.uuid || vars.VMESS_UUID }}
+      DOMAIN: ${{ github.event.client_payload.domain || inputs.domain || vars.DOMAIN }}
+      SNI: ${{ github.event.client_payload.sni || inputs.sni || vars.SNI }}
+      TLS_MODE: ${{ github.event.client_payload.tls_mode || inputs.tls_mode || vars.TLS_MODE }}
+      LIFETIME_MINUTES: ${{ github.event.client_payload.lifetime_minutes || inputs.lifetime_minutes || vars.LIFETIME_MINUTES }}
+      V2RAY_VERSION: ${{ vars.V2RAY_VERSION }}
+      ALPN: ${{ vars.V2RAY_ALPN }}
+      RUNNER_TAG: ${{ matrix.image }}
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch || github.ref_name }}
+      KEEPALIVE_WORKFLOW: vmess-server.yml
+      MODE: ${{ github.event.client_payload.mode || inputs.mode || vars.MODE || 'simple' }}
+      CORE: ${{ github.event.client_payload.core || inputs.core || vars.CORE || 'v2ray' }}
+      PORTS_TLS: ${{ vars.PORTS_TLS }}
+      PORTS_PLAIN: ${{ vars.PORTS_PLAIN }}
+      PORT_GRPC: ${{ vars.PORT_GRPC }}
+      PORT_UPGRADE: ${{ vars.PORT_UPGRADE }}
+      GRPC_SERVICE: ${{ vars.GRPC_SERVICE }}
+      UPGRADE_PATH: ${{ vars.UPGRADE_PATH }}
+      LIMIT_IP: ${{ vars.LIMIT_IP }}
+      # --- edge/CDN (CloudFront, Cloudflare proxied) ---
+      EDGE_PORT: ${{ vars.EDGE_PORT }}
+      EDGE_TLS: ${{ vars.EDGE_TLS }}
+      REMARKS: ${{ vars.REMARKS }}
+      # --- Cloudflare DNS otomatis (opsional) ---
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_ZONE_ID: ${{ vars.CF_ZONE_ID }}
+      CF_PROXIED: ${{ vars.CF_PROXIED }}
+      CF_RECORD_NAME: ${{ vars.CF_RECORD_NAME }}
+      CF_DNS_WAIT: ${{ vars.CF_DNS_WAIT }}
+      CF_TTL: ${{ vars.CF_TTL }}
+      LINK_STYLE: ${{ vars.LINK_STYLE }}
+      TLS_CRT: ${{ secrets.TLS_CRT }}
+      TLS_KEY: ${{ secrets.TLS_KEY }}
+      TG_TOKEN: ${{ secrets.TG_TOKEN }}
+      TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+      # PAT (actions:write) kalau GITHUB_TOKEN ditolak; kosongkan saja tidak masalah
+      REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ${{ fromJSON(inputs.runner_images || '["ubuntu-latest"]') }}
+    concurrency:
+      group: vmess-${{ matrix.image }}
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pasang dependency (jq / qrencode)
+        run: |
+          sudo apt-get update -qq >/dev/null 2>&1 || true
+          sudo apt-get install -y -qq jq qrencode >/dev/null 2>&1 || true
+          command -v jq >/dev/null || { echo "jq wajib ada"; exit 1; }
+          echo "bash : $(bash --version | head -n1)"
+          echo "jq   : $(jq --version)"
+          echo "openssl: $(openssl version)"
+
+      - name: Terapkan mode (simple/full)
+        run: |
+          PORT="${PORT:-443}"
+          TLS_EFFECTIVE="${TLS_MODE:-selfsigned}"
+          echo "mode=$MODE core=$CORE tls=$TLS_EFFECTIVE port=$PORT edge=${EDGE_PORT:-none}/${EDGE_TLS:-auto}"
+          if [ "$MODE" = "full" ]; then
+            # hanya isi yang belum di-set lewat Variables
+            [ -n "$PORTS_TLS" ]     || echo "PORTS_TLS=443,8443"  >>"$GITHUB_ENV"
+            [ -n "$PORTS_PLAIN" ]   || echo "PORTS_PLAIN=80,8080" >>"$GITHUB_ENV"
+            [ -n "$PORT_GRPC" ]     || echo "PORT_GRPC=2053"     >>"$GITHUB_ENV"
+            [ -n "$PORT_UPGRADE" ]  || echo "PORT_UPGRADE=2052"  >>"$GITHUB_ENV"
+          elif [ "$TLS_EFFECTIVE" = "off" ]; then
+            # origin plain (mis. di belakang CloudFront): jangan paksa PORTS_TLS
+            if [ -z "$PORTS_TLS" ] && [ -z "$PORTS_PLAIN" ]; then
+              echo "PORTS_PLAIN=$PORT" >>"$GITHUB_ENV"
+            fi
+          else
+            [ -n "$PORTS_TLS" ]     || echo "PORTS_TLS=$PORT"    >>"$GITHUB_ENV"
+          fi
+          if [ "$CORE" = "v2ray" ] && [ -n "$PORT_UPGRADE" ]; then
+            echo "::warning::transport upgrade/httpupgrade butuh CORE=xray, port $PORT_UPGRADE akan dilewati"
+          fi
+          if [ -n "$EDGE_PORT" ]; then
+            echo "::notice::link publik -> ${DOMAIN:-<domain kosong>}:$EDGE_PORT (${EDGE_TLS:-tls}); origin tetap port $PORT"
+            if [ -n "$PORT_GRPC$PORT_UPGRADE" ]; then
+              echo "::warning::grpc/upgrade tidak didukung CloudFront; pakai mode simple (ws) untuk edge"
+            fi
+          fi
+
+      - name: Deteksi Public IP runner
+        id: ip
+        run: echo "PUBLIC_IP=$(bash scripts/get-ip.sh)" >>"$GITHUB_ENV"
+
+      - name: Update DNS Cloudflare (A record -> IP runner)
+        continue-on-error: true
+        run: bash scripts/dns-cloudflare.sh
+
+      - name: Unduh & pasang v2ray-core
+        run: bash scripts/install-v2ray.sh
+
+      - name: Bikin sertifikat TLS
+        run: bash scripts/gen-cert.sh
+
+      - name: Rakit config.json
+        run: bash scripts/gen-config.sh
+
+      - name: Publish link vmess:// + QR
+        id: link
+        run: bash scripts/gen-link.sh
+
+      - name: 🚀 Jalankan server VMess (foreground + watchdog)
+        run: bash scripts/run-server.sh
+
+      - name: Upload info endpoint (link/config/log)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: vmess-info-${{ matrix.image }}
+          path: |
+            ${{ runner.temp }}/v2ray-vmess/vmess-link.txt
+            ${{ runner.temp }}/v2ray-vmess/links.txt
+            ${{ runner.temp }}/v2ray-vmess/akun.txt
+            ${{ runner.temp }}/v2ray-vmess/vmess-qr.png
+            ${{ runner.temp }}/v2ray-vmess/server-info.json
+            ${{ runner.temp }}/v2ray-vmess/config.json
+            ${{ runner.temp }}/v2ray-vmess/logs/
+          if-no-files-found: ignore
+          retention-days: 1

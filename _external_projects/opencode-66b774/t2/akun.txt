@@ -1,0 +1,21 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-247156
+CITY           : Dulles Town Center
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.127.247.156
+Port TLS       : 19443,19444
+Port none TLS  : 19080
+Port any       : 19052,19053
+id             : 3547cf8a-c378-40f2-8000-03ca22390255
+alterId        : 0
+Security       : auto
+network        : ws,grpc,upgrade
+path ws        : /vmess
+serviceName    : vmess
+path upgrade   : /upvmess
+Cert SHA256    : 91cac1e2193d449d90e0aa5d941ab1f83e6c954000d0626add8f41cce566580b
+Limit IP       : -
+Expired On     : 2026-10-29 03:59:35 WIB
+————————————————————————————————————

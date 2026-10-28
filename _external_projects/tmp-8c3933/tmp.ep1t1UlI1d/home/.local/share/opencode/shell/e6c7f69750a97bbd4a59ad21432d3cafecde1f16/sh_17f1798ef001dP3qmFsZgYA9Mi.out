@@ -1,0 +1,12 @@
+
+--- log localhost.run ---
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+
+--- log pinggy ---
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Warning: Permanently added '[a.pinggy.io]:443' (RSA) to the list of known hosts.
+Allocated port 2 for remote forward to localhost:8081
+You are not authenticated.
+Your tunnel will expire in 60 minutes. Upgrade to Pinggy Pro to get unrestricted tunnels. https://dashboard.pinggy.io
+https://kwhwo-166-19-116-221.run.pinggy-free.link
+https://yzsxw-166-19-116-221.free.pinggy.net

@@ -1,0 +1,24 @@
+{
+  "address": "d37bawnvqx75hf.cloudfront.net",
+  "uuid": "c0d8adb1-bf54-4fc1-b711-8bd6bcd0ef5b",
+  "alterId": 0,
+  "core": "v2ray",
+  "endpoints": {
+    "ws_tls": [],
+    "ws_plain": [
+      19080
+    ],
+    "grpc": null,
+    "httpupgrade": null
+  },
+  "path": "/5aafolm2-mem0",
+  "security": "none",
+  "sni": "d37bawnvqx75hf.cloudfront.net",
+  "edge": {
+    "port": 443,
+    "tls": "none"
+  },
+  "runner": "gh-actions",
+  "startedAt": "2026-10-28T20:46:54Z",
+  "link": "vmess://eyJ2IjoiMiIsInBzIjoicGFuZWwiLCJhZGQiOiJkMzdiYXdudnF4NzVoZi5jbG91ZGZyb250Lm5ldCIsInBvcnQiOjQ0MywiaWQiOiJjMGQ4YWRiMS1iZjU0LTRmYzEtYjcxMS04YmQ2YmNkMGVmNWIiLCJuZXQiOiJ3cyIsImhvc3QiOiJkMzdiYXdudnF4NzVoZi5jbG91ZGZyb250Lm5ldCIsInBhdGgiOiIvNWFhZm9sbTItbWVtMCJ9"
+}

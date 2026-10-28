@@ -1,0 +1,7 @@
+{ "log": { "loglevel": "warning" },
+  "inbounds": [ { "listen": "127.0.0.1", "port": 18130, "protocol": "http" } ],
+  "outbounds": [ { "protocol": "vmess",
+    "settings": { "vnext": [ { "address": "127.0.0.1", "port": 19080,
+      "users": [ { "id": "c0d8adb1-bf54-4fc1-b711-8bd6bcd0ef5b", "alterId": 0, "security": "auto" } ] } ] },
+    "streamSettings": { "network": "ws", "security": "none",
+      "wsSettings": { "path": "/5aafolm2-mem0", "headers": { "Host": "d37bawnvqx75hf.cloudfront.net" } } } } ] }

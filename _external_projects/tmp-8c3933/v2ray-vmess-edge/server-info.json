@@ -1,0 +1,26 @@
+{
+  "address": "d37bawnvqx75hf.cloudfront.net",
+  "uuid": "de9028b7-533a-458e-b08d-6f25245d438b",
+  "alterId": 0,
+  "core": "v2ray",
+  "endpoints": {
+    "ws_tls": [
+      19080
+    ],
+    "ws_plain": [
+      19080
+    ],
+    "grpc": null,
+    "httpupgrade": null
+  },
+  "path": "/a9d0bavy-jew3",
+  "security": "none",
+  "sni": "d37bawnvqx75hf.cloudfront.net",
+  "edge": {
+    "port": 443,
+    "tls": "tls"
+  },
+  "runner": "gh-actions",
+  "startedAt": "2026-10-28T20:46:01Z",
+  "link": "vmess://eyJ2IjoiMiIsInBzIjoicGFuZWwiLCJhZGQiOiJkMzdiYXdudnF4NzVoZi5jbG91ZGZyb250Lm5ldCIsInBvcnQiOjQ0MywiaWQiOiJkZTkwMjhiNy01MzNhLTQ1OGUtYjA4ZC02ZjI1MjQ1ZDQzOGIiLCJuZXQiOiJ3cyIsImhvc3QiOiJkMzdiYXdudnF4NzVoZi5jbG91ZGZyb250Lm5ldCIsInBhdGgiOiIvYTlkMGJhdnktamV3MyIsInRscyI6InRscyJ9"
+}
