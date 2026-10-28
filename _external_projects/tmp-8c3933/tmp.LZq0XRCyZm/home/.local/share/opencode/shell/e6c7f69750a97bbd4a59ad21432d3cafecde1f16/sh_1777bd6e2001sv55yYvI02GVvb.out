@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+easy TG: [103.26, 106.15, 107.74] median 106.15 | acc 0.605
+hard TG: 79.63 | acc 0.376
+vision: MARIMO 42
+
+=== penjaga ===
+hold_status.json -> {'state': 'running', 'beats': 1, 'interval_s': 300, 'cap_s': 43200, 'elapsed_s': 875.3, 'elapsed_h': 0.243, 'remaining_s': 42324.7, 'remaining_h': 11.757, 'last_beat': '2026-10-26T09:08:49', 'last_local': 'down', 'last_public': '200', 'last_exec': '200', 'session': 's_gcknn1', 'pid': 19513}
+hold_ws_status.json -> {'state': 'connected', 'connected': True, 'pid': 19516, 'session': 's_gcknn1', 'kiosk': True, 'messages': 178, 'pings': 4, 'reconnects': 0, 'since': '2026-10-26T09:08:49', 'last_message': '2026-10-26T09:13:00', 'last_error': None, 'owned': None, 'restarts': 0}
+

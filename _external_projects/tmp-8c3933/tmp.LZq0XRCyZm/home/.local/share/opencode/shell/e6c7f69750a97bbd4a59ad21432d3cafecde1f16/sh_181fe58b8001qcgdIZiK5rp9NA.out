@@ -1,0 +1,46 @@
+=== nuclei bogor24update (full) ===
+[missing-sri] [http] [info] https://bogor24update.id/ ["https://bogor24update.id/wp-content/litespeed/css/f52b4330d64b872929ebe0405059ec1e.css?ver=9b9d7"]
+[php-detect] [http] [info] https://bogor24update.id ["7.4.33"]
+[php-detect] [http] [info] https://www.bogor24update.id ["7.4.33"]
+[php-eol:version] [http] [info] https://www.bogor24update.id ["7.4.33"]
+[rdap-whois:expirationDate] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["2027-06-28T23:59:59Z"]
+[rdap-whois:lastChangeDate] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["2026-10-27T06:52:43Z"]
+[rdap-whois:nameServers] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["ns1.dns-parking.com","ns2.dns-parking.com"]
+[rdap-whois:registrarEmail] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["support@merekmu.co.id"]
+[rdap-whois:registrarIANAId] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["1"]
+[rdap-whois:registrarName] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["PT Web Commerce Communications"]
+[rdap-whois:registrarPhone] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["tel:+622189452129"]
+[rdap-whois:registrationDate] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["2022-06-28T07:39:38Z"]
+[rdap-whois:secureDNS] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["false"]
+[rdap-whois:status] [http] [info] https://rdap.pandi.id/rdap/domain/bogor24update.id ["client transfer prohibited","server transfer prohibited"]
+[robots-txt] [http] [info] https://bogor24update.id/robots.txt
+[tls-version] [ssl] [info] bogor24update.id:443 ["tls12"]
+[tls-version] [ssl] [info] bogor24update.id:443 ["tls13"]
+[tls-version] [ssl] [info] www.bogor24update.id:443 ["tls12"]
+[tls-version] [ssl] [info] www.bogor24update.id:443 ["tls13"]
+[weak-csp-detect:missing-object-src] [http] [info] https://www.bogor24update.id ["upgrade-insecure-requests"]
+[weak-csp-detect:missing-script-src] [http] [info] https://www.bogor24update.id ["upgrade-insecure-requests"]
+[wordpress-passive-detection:plugin_slug] [http] [info] https://bogor24update.id/ ["litespeed-cache"]
+[wordpress-passive-detection:theme_slug] [http] [info] https://bogor24update.id/ ["jnews"]
+[wordpress-user-enum] [http] [info] https://www.bogor24update.id/?author=1 ["author/admin"]
+[wp-license-file] [http] [info] https://bogor24update.id/license.txt
+
+=== nuclei run 2 ===
+[CVE-2026-109618:version-eol-branch] [http] [critical] https://bogor24update.id ["7.4.33"]
+[CVE-2026-109618:version-eol-branch] [http] [critical] https://www.bogor24update.id ["7.4.33"]
+[missing-sri] [http] [info] https://bogor24update.id/ ["https://bogor24update.id/wp-content/litespeed/css/f52b4330d64b872929ebe0405059ec1e.css?ver=9b9d7"]
+[weak-csp-detect:missing-object-src] [http] [info] https://bogor24update.id ["upgrade-insecure-requests"]
+[weak-csp-detect:missing-object-src] [http] [info] https://www.bogor24update.id ["upgrade-insecure-requests"]
+[weak-csp-detect:missing-script-src] [http] [info] https://bogor24update.id ["upgrade-insecure-requests"]
+[weak-csp-detect:missing-script-src] [http] [info] https://www.bogor24update.id ["upgrade-insecure-requests"]
+[wordpress-readme-file] [http] [info] https://www.bogor24update.id/readme.html
+[wordpress-user-enum] [http] [info] https://bogor24update.id/?author=1 ["author/admin"]
+[wordpress-user-enum] [http] [info] https://www.bogor24update.id/?author=1 ["author/admin"]
+[wp-license-file] [http] [info] https://bogor24update.id/license.txt
+[wp-license-file] [http] [info] https://www.bogor24update.id/license.txt
+[wp-links-opml:version] [http] [info] https://bogor24update.id/wp-links-opml.php ["6.6.10"]
+[wp-links-opml:version] [http] [info] https://www.bogor24update.id/wp-links-opml.php ["6.6.10"]
+[wp-user-enum:usernames] [http] [low] https://www.bogor24update.id/wp-json/wp/v2/users/ ["admin","haris-albasith","chaerul-umam","umam","adit","redaksi","redaksi-cianjur","redaksi-sukabumi","Redaksi","Redaksi Cianjur24update","Redaksi Sukabumi"]
+
+=== spray status ===
+nunggu port 2083 bisa diakses...

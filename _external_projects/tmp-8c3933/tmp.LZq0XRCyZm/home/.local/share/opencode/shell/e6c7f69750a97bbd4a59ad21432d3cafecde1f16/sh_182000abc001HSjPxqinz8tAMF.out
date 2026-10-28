@@ -1,0 +1,3 @@
+50551 /bin/bash -c cd /home/runner && pgrep -af "[c]p_spray" | head -3; ls -la p2s/cp_spray.log; tail -2 p2s/cp_spray.log
+-rw-r--r-- 1 runner runner 33 Oct 28 10:10 p2s/cp_spray.log
+nunggu port 2083 bisa diakses...
