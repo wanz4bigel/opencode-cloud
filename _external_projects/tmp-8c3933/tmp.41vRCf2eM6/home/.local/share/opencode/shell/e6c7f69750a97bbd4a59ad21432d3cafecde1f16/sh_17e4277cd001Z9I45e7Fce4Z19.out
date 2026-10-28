@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<stdin>", line 13, in <module>
+AssertionError
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/malware_src/mal_payload_v5.ps1'
+ERROR-CEPAT: The argument 'c:\\xampp\\htdocs\\mpP.ps1' to the -File parameter does not exist. Provide the path to an existing '.ps1' file as an argument to the -File parameter. Windows PowerShell Copyright (C) Microsoft Corporation. All rights reserved.  Try the new cross-platform PowerShell https://aka.ms/pscore6
+== upstat: ==
+alive|t=2026-10-27T23:27:13|host=DESKTOP-J4SUDA6|user=USER|pid=94420|beac=7|exfil=True

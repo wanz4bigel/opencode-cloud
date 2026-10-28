@@ -1,0 +1,10 @@
+=== uji TCP ke edge Cloudflare ===
+port 443: TERBUKA
+port 7844: TERTUTUP
+port 80: TERBUKA
+=== port 443 ke host lain (kontrol) ===
+github 443: TERBUKA
+=== opsi edge di cloudflared ===
+between your server and the Cloudflare edge. You can provide name or UUID of tunnel to run either as the
+   --loglevel value                                    Application logging level {debug, info, warn, error, fatal}. At debug level cloudflared will log request URL, method, protocol, content length, as well as, all request and response headers. This can expose sensitive information in your logs. (default: "info") [$TUNNEL_LOGLEVEL]
+  --no-tls-verify --url                        Disables TLS verification of the certificate presented by your origin. Will allow any certificate from the origin to be accepted. Note: The connection from your machine to Cloudflare's Edge is still encrypted. This flag only takes effect if you define your origin with --url and if you do not use ingress rules. The recommended way is to rely on ingress rules and define this property under `originRequest` as per https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/configuration-file/ingress (default: false) [$NO_TLS_VERIFY]

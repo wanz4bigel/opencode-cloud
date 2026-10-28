@@ -1,0 +1,12 @@
+bject tools/server/CMakeFiles/llama-server-impl.dir/server.cpp.o
+[666/673] Building CXX object tools/cli/CMakeFiles/llama-cli-impl.dir/cli-context.cpp.o
+[667/673] Building CXX object tools/server/CMakeFiles/llama-server-impl.dir/server-http.cpp.o
+[668/673] Building CXX object tools/server/CMakeFiles/llama-server-impl.dir/server-models.cpp.o
+[669/673] Linking CXX shared library bin/libllama-server-impl.so
+[670/673] Linking CXX executable bin/llama-server
+[671/673] Linking CXX shared library bin/libllama-cli-impl.so
+[672/673] Linking CXX executable bin/llama
+[673/673] Linking CXX executable bin/llama-cli
+[build] 12:53:16 selesai
+-rwxr-xr-x 1 root root 17952 Oct 26 12:53 build/bin/llama-server
+

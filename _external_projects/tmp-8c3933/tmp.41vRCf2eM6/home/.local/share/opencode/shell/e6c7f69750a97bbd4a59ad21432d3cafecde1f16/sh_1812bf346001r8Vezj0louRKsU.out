@@ -1,0 +1,8 @@
+notebook.py
+pyproject.toml
+llm: total 1
+drwxr-xr-x 1 root   root    60 Oct 28 06:21 .
+drwxr-xr-x 1 marimo marimo 140 Oct 28 06:21 ..
+-rw-r--r-- 1 root   root   426 Oct 28 06:21 gen.py
+strata: BELUM
+shm: none            504G   48K  504G   1% /dev/shm
