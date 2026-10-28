@@ -1,0 +1,34 @@
+uptime: 1456.52 s
+=== launch.log (tail 40) ===
+Checking the engine for this computer…
+    No engine is installed yet. Getting the one for your graphics card…
+    Reading the signed update feed
+    Downloading engine 0.1.50 linux-x86_64-cuda-cuda13 (607 MB)
+    Downloading the engine… 10%
+    Downloading the engine… 20%
+    Downloading the engine… 30%
+    Downloading the engine… 40%
+    Downloading the engine… 51%
+    Downloading the engine… 61%
+    Downloading the engine… 71%
+    Downloading the engine… 81%
+    Downloading the engine… 91%
+    Downloading the engine… 100%
+    Unpacking 0.1.50 linux-x86_64-cuda-cuda13
+    Checking the package signature and every file
+    Test-starting engine 0.1.50 linux-x86_64-cuda-cuda13 before switching to it
+    Switching to engine 0.1.50 linux-x86_64-cuda-cuda13
+=== proses ===
+PID     ELAPSED   RSS COMMAND         COMMAND
+   83       24:09 120804 python         /tmp/uv-venv/bin/python -P -c from multi
+    1       24:16 91888 python          python -m marimo -l INFO edit notebook.p
+ 2028       00:29 55128 python3.12      /home/marimo/.local/share/strata/termina
+ 2049       00:28 53648 python3.12      /home/marimo/.local/share/strata/termina
+   77       24:14 17200 python          /tmp/uv-venv/bin/python -P -c from multi
+ 2064       00:00  7836 ps              ps -eo pid,etime,rss,comm,args --sort=-r
+ 2027       00:29  5540 bash            bash /marimo/llm/launch.sh
+=== vram ===
+0 MiB, 97887 MiB
+=== data-dir ===
+787M	/marimo/llm/sc117-data/mtp
+none            8.0E  4.2G  8.0E   1% /

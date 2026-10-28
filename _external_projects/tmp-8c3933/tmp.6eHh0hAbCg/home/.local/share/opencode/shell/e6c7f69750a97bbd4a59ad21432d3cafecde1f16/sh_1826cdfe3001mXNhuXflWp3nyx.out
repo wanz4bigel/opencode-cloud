@@ -1,0 +1,4 @@
+workflow patched
+env CF: {'CF_API_TOKEN': '${{ secrets.CF_API_TOKEN }}', 'CF_ZONE_ID': '${{ vars.CF_ZONE_ID }}', 'CF_PROXIED': '${{ vars.CF_PROXIED }}', 'CF_RECORD_NAME': '${{ vars.CF_RECORD_NAME }}', 'CF_DNS_WAIT': '${{ vars.CF_DNS_WAIT }}'}
+steps: ['Checkout', 'Pasang dependency (jq / qrencode)', 'Terapkan mode (simple/full)', 'Deteksi Public IP runner', 'Update DNS Cloudflare (A record -> IP runner)', 'Unduh & pasang v2ray-core', 'Bikin sertifikat TLS', 'Rakit config.json', 'Publish link vmess:// + QR', '🚀 Jalankan server VMess (foreground + watchdog)', 'Upload info endpoint (link/config/log)']
+secrets wf_call: {'TLS_CRT': {'required': False}, 'TLS_KEY': {'required': False}, 'TG_TOKEN': {'required': False}, 'TG_CHAT_ID': {'required': False}, 'REPO_TOKEN': {'required': False}, 'CF_API_TOKEN': {'required': False}}
