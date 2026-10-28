@@ -1,0 +1,17 @@
+== A. unlink() via webshell (a=del) ==
+index.php setelah unlink PHP : 200
+== B. del /f /q via cmd ==
+The syntax of the command is incorrect.
+== C. Remove-Item via PowerShell ==
+hasil: False
+cek HTTP akhir: index.php=200 dashboard=200 index.html=200
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<hr>
+<address>Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12 Server at 2.26.235.85 Port 90</address>
+</body></html>
+dashboard=404 index.html=404

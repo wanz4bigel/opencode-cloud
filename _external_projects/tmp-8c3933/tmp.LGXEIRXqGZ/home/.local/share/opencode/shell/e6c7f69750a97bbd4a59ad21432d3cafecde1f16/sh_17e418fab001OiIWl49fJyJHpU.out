@@ -1,0 +1,3 @@
+b1: 620
+b1z: SUBMITTED
+ERR: At C:\xampp\htdocs\b1z.ps1:1 char:603 + ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(1 -eq ... +                                                                  ~ The Try statement is missing its Catch or Finally block.     + CategoryInfo          : ParserError: (:) [], Paren

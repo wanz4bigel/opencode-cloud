@@ -1,18 +1,40 @@
-HTTP/2 404 
+HTTP/2 200 
 server: nginx
-date: Wed, 28 Oct 2026 10:36:41 GMT
-content-type: text/html
-server-timing: captures_list;dur=0.610161, exclusion.robots;dur=0.064915, exclusion.robots.policy;dur=0.051511, esindex;dur=0.009661, cdx.remote;dur=24.625877, LoadShardBlock;dur=111.947821, PetaboxLoader3.datanode;dur=59.444292, PetaboxLoader3.resolve;dur=45.998452
-x-app-server: wwwb-app244-dc8
-x-ts: 404
-x-tr: 155
-server-timing: TR;dur=0,Tw;dur=0,Tc;dur=0
-set-cookie: wb-p-SERVER=wwwb-app244; path=/
+date: Wed, 28 Oct 2026 10:37:27 GMT
+content-type: text/html; charset=UTF-8
+x-archive-orig-connection: Keep-Alive
+x-archive-orig-keep-alive: timeout=5, max=100
+x-archive-orig-x-powered-by: PHP/8.2.34
+x-archive-orig-set-cookie: PHPSESSID=vbf7k31kfnnshlqu4p0mq9gvmm; path=/; secure
+x-archive-orig-expires: Thu, 19 Nov 1981 08:52:00 GMT
+x-archive-orig-cache-control: no-store, no-cache, must-revalidate
+x-archive-orig-pragma: no-cache
+x-archive-orig-transfer-encoding: chunked
+content-encoding: gzip
+x-archive-orig-vary: Accept-Encoding
+x-archive-orig-date: Wed, 28 Oct 2026 10:37:06 GMT
+x-archive-orig-server: LiteSpeed
+x-archive-orig-content-security-policy: upgrade-insecure-requests;
+x-archive-orig-alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+cache-control: max-age=1800
+accept-ranges: bytes
+memento-datetime: Wed, 28 Oct 2026 10:37:06 GMT
+link: <https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="original", <https://web.archive.org/web/timemap/link/https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="timemap"; type="application/link-format", <https://web.archive.org/web/https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="timegate"
+content-security-policy: default-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: archive.org web.archive.org web-static.archive.org wayback-api.archive.org athena.archive.org analytics.archive.org pragma.archivelab.org wwwb-events.archive.org
+x-archive-src: spn2-20261028101533-wwwb-spn38.us.archive.org-8002.warc.gz
+server-timing: captures_list;dur=0.333583, exclusion.robots;dur=0.030432, exclusion.robots.policy;dur=0.023045, esindex;dur=0.006160, cdx.remote;dur=9.050157, LoadShardBlock;dur=143.757754, PetaboxLoader3.resolve;dur=64.726097, PetaboxLoader3.datanode;dur=53.933572, load_resource;dur=4568.740078
+x-app-server: wwwb-app266-dc8
+x-ts: 200
+x-tr: 4736
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=2
+set-cookie: wb-p-SERVER=wwwb-app266; path=/
+cache-control: private
 x-location: All
 x-as: 8075
 x-rl: 0
 x-na: 0
 x-page-cache: MISS
+server-timing: MISS
 x-nid: Microsoft
 referrer-policy: no-referrer-when-downgrade
 permissions-policy: interest-cohort=()
