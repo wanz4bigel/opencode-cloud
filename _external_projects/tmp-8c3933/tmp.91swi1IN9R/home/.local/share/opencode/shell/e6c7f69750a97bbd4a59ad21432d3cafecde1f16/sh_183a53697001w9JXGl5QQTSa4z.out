@@ -1,0 +1,12 @@
+### choice 4 (no.5 + XL PASS LITE)
+Success with is_enterprise=False, migration_type=NONE. Family name: XL PASS LITE
+Decoy data for default-balance refreshed successfully.
+Intercept status: SUCCESS - 8216981
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
+### choice 5 (no.5 + XL PASS LITE)
+Success with is_enterprise=False, migration_type=NONE. Family name: XL PASS LITE
+Decoy data for default-balance refreshed successfully.
+Intercept status: SUCCESS - 8216981
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}

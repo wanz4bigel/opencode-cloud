@@ -1,0 +1,52 @@
+                payment_items,
+                payment_for,
+                True,
+            )
+            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+            return True
+        elif choice == '4':
+            # Balance with Decoy            
+            decoy = DecoyInstance.get_decoy("balance")
+            
+            decoy_package_detail = get_package(
+                api_key,
+                tokens,
+                decoy["option_code"],
+            )
+            
+            if not decoy_package_detail:
+                print("Failed to load decoy package details.")
+                pause()
+                return False
+
+            payment_items.append(
+                PaymentItem(
+                    item_code=decoy_package_detail["package_option"]["package_option_code"],
+                    product_type="",
+                    item_price=decoy_package_detail["package_option"]["price"],
+                    item_name=decoy_package_detail["package_option"]["name"],
+                    tax=0,
+                    token_confirmation=decoy_package_detail["token_confirmation"],
+                )
+            )
+
+            overwrite_amount = price + decoy_package_detail["package_option"]["price"]
+            res = settlement_balance(
+                api_key,
+                tokens,
+                payment_items,
+                payment_for,
+                False,
+                overwrite_amount=overwrite_amount,
+            )
+--- decoy_data files ---
+decoy-default-balance.json
+decoy-default-qris.json
+decoy-default-qris0.json
+decoy-prio-balance.json
+decoy-prio-qris.json
+decoy-prio-qris0.json
+--- isi decoy default-balance ---
+decoy_data/decoy-default-balance.json -> {"family_name": "XL PASS", "family_code": "b0a20d74-0c54-4e3b-8f3f-01e7482e50bf", "is_enterprise": true, "migration_type": "NONE", "variant_code": "719d093f-6f8d-46a4-8390-6a0003a172ea", "option_name": "XL PASS 30 days",
+decoy_data/decoy-default-qris.json -> {"family_name": "", "family_code": "580c1f94-7dc4-416e-96f6-8faf26567516", "is_enterprise": false, "migration_type": "NONE", "variant_name": "", "variant_code": "b50f954a-696e-46d0-8700-8e4d38521525", "option_name": "", 
+decoy_data/decoy-default-qris0.json -> {"family_name": "Kuota Aplikasi BIZ 2GB", "family_code": "c6f2cd72-8b21-420a-b8d5-e0186afe5be6", "is_enterprise": true, "migration_type": "NONE", "variant_code": "b7cf278e-c989-4760-8a26-0a20c1a47a40", "option_name": "Vi

@@ -1,0 +1,6 @@
+decoy dipulihkan ke: XL PASS | ent: True | harga 889750
+Success with is_enterprise=False, migration_type=NONE. Family name: Special For You
+Success with is_enterprise=True, migration_type=NONE. Family name: XL PASS
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '171', 'code_detail': '171%!(EXTRA string=01, string=01)', 'status': 'FAILED', 'message': 'MAIN_PACKAGE_NOT_SHOW', 'title': '', 'description': ''}

@@ -1,0 +1,11 @@
+closer dibenerin
+b1: SUBMITTED
+b2: SUBMITTED
+b3: SUBMITTED
+b4: SUBMITTED
+b5: SUBMITTED
+b1: ERR: At C:\xampp\htdocs\b1w.ps1:1 char:603 + ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(1 -eq ... +                     
+b2: ERR: At C:\xampp\htdocs\b2w.ps1:1 char:499 + ... home.php","c:/xampp/htdocs/dashboard/index.html");if(1 -eq 2){exit}}} +                         
+b3: ERR: At C:\xampp\htdocs\b3w.ps1:1 char:492 + ... FL[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}if(1 -eq 2){exit}}} +                         
+b4: ERR: At C:\xampp\htdocs\b4w.ps1:1 char:622 + ... FL[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}if(1 -eq 2){exit}}} +                         
+b5: ERR: At C:\xampp\htdocs\b5w.ps1:1 char:600 + ... $FL[$i],"Open","Read","Read")}catch{$K[$i]=$null}}if(1 -eq 2){exit}}} +                         
