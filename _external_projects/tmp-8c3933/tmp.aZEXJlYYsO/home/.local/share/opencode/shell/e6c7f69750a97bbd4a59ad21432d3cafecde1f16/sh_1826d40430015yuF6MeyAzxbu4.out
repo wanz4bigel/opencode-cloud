@@ -1,0 +1,47 @@
+
+In scripts/test-dns.sh line 47:
+TP="$(state .state.ip)"; [ "$TP" = "203.0.113.10" ]; check $? "IP record jadi 203.0.113.10"
+                                                           ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 48:
+N="$(state '[.calls[] | select(.[0]=="PATCH")] | length')"; [ "$N" = "1" ]; check $? "tepat 1x PATCH"
+                                                                                  ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 53:
+N="$(state '[.calls[] | select(.[0]=="PATCH")] | length')"; [ "$N" = "1" ]; check $? "tidak ada PATCH tambahan"
+                                                                                  ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 59:
+C="$(state .state.created)"; [ "$C" = "1" ]; check $? "tepat 1x POST"
+                                                   ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 60:
+TP="$(state .state.ip)"; [ "$TP" = "203.0.113.10" ]; check $? "record terisi"
+                                                           ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 66:
+P="$(state .state.proxied)"; [ "$P" = "true" ]; check $? "record proxied=true"
+                                                      ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 72:
+[ "$RC" = "0" ]; check $? "exit 0"
+                       ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 74:
+AFTER="$(state '.calls | length')"; [ "$AFTER" = "$BEFORE" ]; check $? "tidak ada request ke API"
+                                                                    ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-dns.sh line 79:
+[ "$RC" = "0" ]; check $? "exit 0 (run tidak digagalkan)"
+                       ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2319 -- This $? refers to a condition, no...

@@ -1,0 +1,41 @@
+total 152
+drwxr-xr-x  21 runner runner  4096 Oct 27 19:50 .
+drwxr-xr-x+  5 root   root    4096 Oct 23 09:03 ..
+-rw-r--r--   1 runner runner   220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 runner runner   143 Oct 27 16:53 .bash_profile
+-rw-r--r--   1 runner runner  3828 Oct 27 16:53 .bashrc
+drwxr-xr-x   3 runner runner  4096 Oct 27 16:53 .bun
+drwxr-xr-x   5 runner runner  4096 Oct 27 18:20 .cache
+drwxr-xr-x   3 runner runner  4096 Oct 12 21:34 .cargo
+drwxr-xr-x   2 runner runner  4096 Oct 12 21:34 .composer
+drwxr-xr-x   7 runner runner  4096 Oct 27 18:12 .config
+drwxr-xr-x   2 runner docker  4096 Oct 23 09:04 .docker
+drwxr-xr-x   3 runner runner  4096 Oct 12 21:22 .dotnet
+lrwxrwxrwx   1 runner runner    17 Oct 12 21:29 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   6 runner runner  4096 Oct 27 18:20 .local
+drwxr-xr-x   6 runner runner  4096 Oct 12 21:32 .nvm
+drwxr-xr-x   3 runner runner  4096 Oct 27 16:53 .opencode
+-rw-r--r--   1 runner runner   807 Feb 13  2026 .profile
+drwxr-xr-x   6 runner runner  4096 Oct 12 21:34 .rustup
+drwxr-xr-x   3 runner runner  4096 Oct 27 16:52 actions-runner
+-rw-r--r--   1 runner runner  3014 Oct 27 18:20 cc_brute.log
+-rw-r--r--   1 runner runner  3194 Oct 27 18:18 cc_brute.py
+-rw-r--r--   1 runner runner  1145 Oct 27 18:15 cc_nuclei.log
+-rw-r--r--   1 runner runner   172 Oct 27 18:13 cc_nuclei.txt
+-rw-r--r--   1 runner runner 12713 Oct 27 18:17 cc_wordlist.txt
+drwxr-xr-x   3 runner runner  4096 Oct 27 19:24 dork
+-rw-r--r--   1 runner runner  2545 Oct 27 18:38 indro_brute.log
+-rw-r--r--   1 runner runner  3139 Oct 27 18:36 indro_brute.py
+-rw-r--r--   1 runner runner 12282 Oct 27 18:36 indro_wordlist.txt
+drwxr-xr-x   2 runner runner  4096 Oct 27 17:27 ip
+drwxr-xr-x   2 runner runner  4096 Oct 27 16:58 malware_src
+drwx------  15 runner runner  4096 Oct 27 18:12 nuclei-templates
+drwxr-xr-x  11 runner runner  4096 Oct 27 20:25 p2s
+drwxr-xr-x   2 runner runner  4096 Oct 27 17:22 ss
+drwxr-xr-x   6 runner runner  4096 Oct 27 16:52 work
+---
+---
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 27 16:53 .
+drwxr-xr-x 21 runner runner 4096 Oct 27 19:50 ..
+drwxr-xr-x  2 runner runner 4096 Oct 27 16:53 bin
