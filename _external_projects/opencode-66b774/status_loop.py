@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import subprocess
 import time
+from collections import deque
 
-MODEL_DIR = "/home/marimo/models/sc117/IQ3_S"
+MODEL_DIR = "/home/marimo/models/sc117"
 TOTAL_BYTES = 83_863_586_496          # shard1 + shard2
 PHASE_FILE = "/marimo/llm/phase"
 OUT = "/marimo/llm/status.json"
@@ -69,8 +69,9 @@ def http_code(url: str, timeout: int = 3) -> int:
 
 def main() -> None:
     t0 = time.time()
-    last_bytes, last_t = 0, t0
+    samples: deque[tuple[float, int]] = deque(maxlen=400)
     speed = 0.0
+
     while True:
         try:
             phase = open(PHASE_FILE).read().strip() or "start"
@@ -78,18 +79,24 @@ def main() -> None:
             phase = "start"
 
         downloading = phase in ("download", "aux")
-        size = du(MODEL_DIR) if phase in ("download", "aux", "prep", "launch") else TOTAL_BYTES
+        if phase in ("download", "aux", "prep", "launch"):
+            size = du(MODEL_DIR)
+        else:
+            size = TOTAL_BYTES
+
         now = time.time()
+        samples.append((now, size))
+        while len(samples) > 2 and now - samples[0][0] > 10:
+            samples.popleft()
+
         if not downloading:
             speed = 0.0
-            last_bytes, last_t = size, now
-        elif now - last_t >= 2:
-            inst = (size - last_bytes) / (now - last_t) / 1e6
-            speed = inst if inst >= 0 else speed
-            last_bytes, last_t = size, now
+        elif len(samples) >= 2 and samples[-1][0] - samples[0][0] >= 2:
+            dt = samples[-1][0] - samples[0][0]
+            speed = max(0.0, (samples[-1][1] - samples[0][1]) / dt / 1e6)
 
-        pct = 100.0 if phase in ("done",) else min(99.9, size / TOTAL_BYTES * 100)
-        eta = int((TOTAL_BYTES - size) / (speed * 1e6)) if speed > 1 and size < TOTAL_BYTES else 0
+        pct = 100.0 if phase == "done" else min(99.9, size / TOTAL_BYTES * 100)
+        eta = int((TOTAL_BYTES - size) / (speed * 1e6)) if speed > 5 and size < TOTAL_BYTES else 0
 
         server = public = 0
         if phase in ("launch", "relay", "done"):

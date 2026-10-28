@@ -1,0 +1,35 @@
+38:function header({ path, query, gate }) {
+50:    ${gate ? "" : nav({ path, query })}
+56:  return `<div class="gate">
+57:  <div class="gate__box">
+58:    <p class="gate__kicker">Situs dewasa</p>
+59:    <h2 class="gate__title">Khusus 18+</h2>
+60:    <p class="gate__text">Masuk kalau kamu sudah 18 tahun ke atas.</p>
+61:    <div class="gate__actions">
+69:export function layout({ title, description = "Koleksi video colmek Indonesia, semuanya embed dari host — tidak ada upload.", path = "/", query = {}, body, ogImage, gate = false }) {
+88:<body class="${gate ? "is-gated" : ""}">${header({ path, query, gate })}
+92:${gate ? ageGate() : ""}
+---
+188:export function homePage({ rows, pages, current, query }) {
+189-  const sortLabel = query.urutan === "populer" ? "Paling banyak ditonton" : "Barang baru malam ini";
+190-  const tubuh = rows.length ? grid(rows) : `<p class="empty">Katalog masih kosong. <a href="/admin">Tempel URL pertama</a>.</p>`;
+191-  const body = `
+192-  <section class="strip">
+193-    <h1 class="strip__title">${sortLabel}</h1>
+194-    <p class="strip__note">${rows.length} video di halaman ini — semuanya ditempel dari host, tidak ada satu file pun yang diunggah ke sini.</p>
+195-    <div class="switch" role="group" aria-label="Urutan">
+196-      <a class="${query.urutan !== "populer" ? "is-on" : ""}" href="/${qs(query, { urutan: null, halaman: null })}">Terbaru</a>
+197-      <a class="${query.urutan === "populer" ? "is-on" : ""}" href="/${qs(query, { urutan: "populer", halaman: null })}">Populer</a>
+198-    </div>
+199-  </section>
+200-  ${chips()}
+201-  ${demoNotice()}
+202-  ${tubuh}
+203-  ${rail(popularVideos(8).filter((v) => !rows.slice(0, 6).some((r) => r.id === v.id)))}
+204-  ${pager({ pages, current, path: "/", query })}`;
+205-  return layout({ title: "BokepKita — video colmek Indonesia, tanpa upload", path: "/", query, body });
+206-}
+207-
+208-function chips() {
+209-  const cats = categoriesWithCounts().filter((c) => c.total).slice(0, 9);
+210-  if (!cats.length) return "";

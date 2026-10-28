@@ -1,0 +1,27 @@
+  return true;
+}
+
+function readCookies(req) {
+  const out = {};
+  for (const part of String(req.headers.cookie || "").split(";")) {
+    const i = part.indexOf("=");
+    if (i < 0) continue;
+    out[part.slice(0, i).trim()] = decodeURIComponent(part.slice(i + 1).trim());
+  }
+  return out;
+}
+
+async function readBody(req) {
+  const chunks = [];
+---
+HTTP/1.1 200 OK
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+content-type: text/html; charset=utf-8
+cache-control: no-cache
+Date: Wed, 28 Oct 2026 17:09:10 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+0

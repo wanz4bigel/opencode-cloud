@@ -1,0 +1,12 @@
+proses hf: 183 /usr/local/bin/python3.13 /usr/local/bin/hf download SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF --include IQ3
+log akhir: path: /home/marimo/models/sc117/IQ3_S/mmproj-Qwen3.8-Flash-Next-BF16.gguf
+  Checksum ok.
+Checking the release's signature…
+  Signature ok.
+Installed. Run: /home/marimo/.local/bin/strata launch
+  (To type just 'strata', add this line to your shell profile: export PATH="/home/marimo/.local/bin:$PATH")
+ukuran: 20G	/home/marimo/models/sc117
+8UqxWMn5s8GLJNm1kW8klCuVClw=.40f369eca301ec6ea318dbb671b3132c26a2f0b89aa5458a7051b33215ee296c.b372063c.incomplete 10128005489
+Yhl8BGDhTRqzMq-NMN1PP0AyMuk=.316b46f3a2dbd68c900f43136ab9449f9dcc3725dfd8c794847c204bc161e113.bec37a68.incomplete 10395163062
+versi strata: 0.1.53
+current

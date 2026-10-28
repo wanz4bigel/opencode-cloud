@@ -1,0 +1,16 @@
+BokepKita jalan di http://localhost:3000
+  katalog: 1703 video · 12 kategori · 0 masih contoh
+  panel:   http://localhost:3000/admin (kata kunci: gus)
+  sumber:  27 host dikenali · SQLite di data/bokep-kita.db
+✓ /entah-apa-ini → 404 (3445 byte)
+✓ beranda menampilkan kartu video
+✓ beranda memanggil thumbnail /t/
+× beranda punya catatan contoh/kosong yang jujur
+✓ halaman nonton memuat pemutar
+✓ halaman nonton punya antrean lanjutan
+✓ gerbang 18+ tampil tanpa kuki
+✓ gerbang menutupi konten buat pengunjung baru
+✓ panel bisa ambil metadata host otomatis
+✓ halaman /host daftar 27 sumber
+
+1 hal perlu dibereskan.

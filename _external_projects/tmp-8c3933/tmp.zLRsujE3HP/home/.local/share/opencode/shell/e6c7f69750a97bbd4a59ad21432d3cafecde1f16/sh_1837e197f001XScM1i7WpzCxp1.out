@@ -1,0 +1,4 @@
+ok
+MODEL_DIR -> MODEL_DIR = "/home/marimo/models/sc117" 
+pid: 819
+{"t": "17:10:49", "elapsed_s": 4, "phase": "download", "phase_label": "mengunduh model", "model_gb": 27.2, "total_gb": 83.9, "pct": 32.4, "speed_mbps": 33.0, "eta_s": 1724, "ram_gb": 3.8, "vram_gb": 0.0, "server": 0, "public": 0}

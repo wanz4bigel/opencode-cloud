@@ -1,0 +1,3 @@
+finish: stop | wall 0.89s
+jawaban: 2, 3, 5
+decode: 190.9 tok/s | draft 38/54 | prompt 150 tok/s

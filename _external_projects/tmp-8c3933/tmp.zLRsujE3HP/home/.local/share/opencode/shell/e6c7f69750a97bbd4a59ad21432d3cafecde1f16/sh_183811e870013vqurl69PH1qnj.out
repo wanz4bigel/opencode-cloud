@@ -1,0 +1,5 @@
+17:13:59  mengunduh model         75.9%   63.7/83.9 GB   329 MB/s  ETA  61s  RAM  3.1  VRAM  0.0  srv 0 pub 0
+17:14:19  mengunduh model         90.1%   75.6/83.9 GB   668 MB/s  ETA  12s  RAM  2.2  VRAM  0.0  srv 0 pub 0
+17:14:38  mengunduh model         97.4%   81.6/83.9 GB   324 MB/s  ETA   6s  RAM  2.7  VRAM  0.0  srv 0 pub 0
+17:14:59  memuat model ke GPU     99.9%   84.8/83.9 GB     0 MB/s  ETA   0s  RAM  0.2  VRAM  0.0  srv 0 pub 0
+17:15:18  memuat model ke GPU     99.9%   84.8/83.9 GB     0 MB/s  ETA   0s  RAM  0.3  VRAM  0.0  srv 0 pub 0

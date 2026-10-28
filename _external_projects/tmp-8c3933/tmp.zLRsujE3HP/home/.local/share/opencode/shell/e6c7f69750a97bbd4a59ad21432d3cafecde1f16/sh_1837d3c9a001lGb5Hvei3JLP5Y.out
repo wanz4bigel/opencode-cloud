@@ -1,0 +1,54 @@
+// Semua HTML dibuat di server: tidak ada framework, tidak ada build step.
+import { categoriesWithCounts, demoCount, popularVideos, stats } from "./db.js";
+import { blocksFraming, hostCatalog, labelOf } from "./hosts.js";
+import { durationText, escapeXml, posterPalette } from "./poster.js";
+
+export const esc = escapeXml;
+
+export function fmtViews(n) {
+  const v = Number(n) || 0;
+  if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1).replace(/\.0$/, "")}jt`;
+  if (v >= 1000) return `${(v / 1000).toFixed(v >= 10_000 ? 0 : 1).replace(/\.0$/, "")}rb`;
+  return String(v);
+}
+
+function qs(base, extra) {
+  const params = new URLSearchParams();
+  for (const [k, v] of Object.entries({ ...base, ...extra })) {
+    if (v === null || v === undefined || v === "" ) continue;
+    params.set(k, String(v));
+  }
+  const q = params.toString();
+  return q ? `?${q}` : "";
+}
+
+const NAV = [
+  { href: "/", label: "Terbaru", pada: (p, q) => p === "/" && q.urutan !== "populer" },
+  { href: "/?urutan=populer", label: "Populer", pada: (p, q) => p === "/" && q.urutan === "populer" },
+  { href: "/katalog", label: "Kategori", pada: (p) => p === "/katalog" || p.startsWith("/k/") || p.startsWith("/tag/") },
+  { href: "/host", label: "Sumber", pada: (p) => p === "/host" },
+  { href: "/admin", label: "Kelola", pada: (p) => p.startsWith("/admin") }
+];
+
+function nav({ path, query }) {
+  const links = NAV.map((item) => `<a class="${item.pada(path, query) ? "is-current" : ""}" href="${item.href}">${item.label}</a>`).join("");
+  return `<nav class="topnav" aria-label="Utama">${links}</nav>`;
+}
+
+function header({ path, query, gate }) {
+  return `<header class="head">
+  <div class="head__row">
+</footer>`;
+}
+
+/** Muncul cuma selama katalog masih berisi video bawaan. */
+function demoNotice() {
+  const n = demoCount();
+  if (!n) return "";
+  return `<aside class="notice">
+  <b>${n} video di bawah masih contoh.</b>
+  Judulnya ditulis untuk uji tampilan, videonya file uji (Big Buck Bunny, Sintel, video musik) — makanya judul dan isinya beda.
+  Tambahkan video sungguhan di <a href="/admin">panel kelola</a>, atau pakai <code>npm run asli</code> buat narik judul &amp; gambar asli dari host.
+</aside>`;
+}
+

@@ -1,0 +1,20 @@
+178:function demoNotice() {
+184:  Tambahkan video sungguhan di <a href="/admin">panel kelola</a>, atau pakai <code>npm run asli</code> buat narik judul &amp; gambar asli dari host.
+201:  ${demoNotice()}
+276:    <b>Buka di host asli</b> di halaman nonton yang bekerja.</p>`;
+309:           Kalau layarnya kosong, pakai tombol <b>Buka di host asli</b> di bawah.</p>`
+320:        <a class="btn" href="${esc(video.url)}" target="_blank" rel="noopener nofollow">Buka di host asli</a>
+331:           host publik. Ganti lewat <a href="/admin">panel kelola</a> atau jalankan <code>npm run asli</code>
+332:           untuk mengambil judul &amp; gambar asli dari host.</p>`
+---
+280:export function watchPage({ video, related, host }) {
+281-  const tone = posterPalette(video.slug);
+282-  const ditolak = blocksFraming(video.provider);
+283-  const pemutar =
+205:  return layout({ title: "BokepKita — video colmek Indonesia, tanpa upload", path: "/", query, body });
+226:  return layout({ title: `Kategori (${cats.length}) — BokepKita`, path: "/katalog", query: {}, body });
+237:  return layout({ title: `${heading} — BokepKita`, path, query, body });
+249:  return layout({ title: `${heading} — BokepKita`, path: "/cari", query, body });
+277:  return layout({ title: `Sumber yang didukung (${rows.length}) — BokepKita`, path: "/host", query: {}, body });
+341:  return layout({
+357:  return layout({ title: "404 — BokepKita", path: "/", query: {}, body });

@@ -1,0 +1,20 @@
+83:    key: "eporner",
+84-    label: "Eporner",
+85:    hosts: ["eporner.com"],
+86:    example: "https://www.eporner.com/video-7A8t2Juhur8/miss-nn/",
+87-    note: "Punya API publik, jadi judul & gambarnya bisa diambil otomatis. Lihat npm run isi.",
+88-    // id-nya acak huruf+angka (bukan cuma angka), jadi [\w]+ harus dipakai.
+89-    embed: (host, path) => idOf(/\/video-([\w-]{4,})\//, path),
+90:    to: (x) => `https://www.eporner.com/embed/${x}/`
+91-  },
+92-  {
+93-    key: "youporn",
+94-    label: "YouPorn",
+95-    hosts: ["youporn.com"],
+96-    example: "https://www.youporn.com/watch/1234567/judul-video/",
+97-    embed: (host, path) => idOf(/\/watch\/(\d{5,})/, path),
+98-    to: (x) => `https://www.youporn.com/embed/${x}`
+99-  },
+100-  {
+101-    key: "spankbang",
+102-    label: "SpankBang",

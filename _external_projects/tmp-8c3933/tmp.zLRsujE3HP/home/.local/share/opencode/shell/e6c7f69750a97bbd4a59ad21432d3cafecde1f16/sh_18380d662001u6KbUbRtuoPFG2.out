@@ -1,0 +1,2 @@
+ok
+pid: 1411 | {"t": "17:13:54", "elapsed_s": 10, "phase": "download", "phase_label": "mengunduh model", "model_gb": 61.4, "total_gb": 83.9, "pct": 73.2, "speed_mbps": 329.0, "eta_s": 68, "ram_gb": 3.0, "vram_gb": 0.0, "server": 0, "public": 0}

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Rebuild Strata + relay agent. Versi 4: paralel, polling rapat, status realtime.
+# Rebuild Strata + relay agent. v4: paralel, polling rapat, status realtime.
 set -uo pipefail
 cd /marimo/llm
 LOG=/marimo/llm/pipeline.log
@@ -13,12 +13,11 @@ echo "$KEY" > /marimo/llm/api_key.txt
 say "===== mulai ====="
 phase start
 
-# status writer (realtime)
 pkill -f "[s]tatus_loop.py" 2>/dev/null
 nohup python3 /marimo/llm/status_loop.py > /marimo/llm/status.log 2>&1 &
 
 phase strata
-# install Strata di latar belakang: jalan bersamaan dengan unduhan
+# install Strata + websockets di latar belakang, bersamaan dengan unduhan
 (
   curl -fsSL https://github.com/Niko1221/Strata/releases/latest/download/install.sh -o /tmp/si.sh
   env -u PYTHONPATH -u PYTHONSAFEPATH -u VIRTUAL_ENV -u PYTHONHOME \
@@ -30,7 +29,7 @@ STRATA=$!
 
 R=SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF
 phase download
-# aux (1.7 GB) jalan paralel dengan unduhan utama (79 GB)
+# runtime + mmproj juga paralel
 ( hf download "$R" --include "strata/rt/*" --local-dir /marimo/llm/sc117-aux \
     && hf download "$R" mmproj-Qwen3.8-Flash-Next-BF16.gguf --local-dir "$MODEL/IQ3_S" ) \
     >> "$LOG" 2>&1 &

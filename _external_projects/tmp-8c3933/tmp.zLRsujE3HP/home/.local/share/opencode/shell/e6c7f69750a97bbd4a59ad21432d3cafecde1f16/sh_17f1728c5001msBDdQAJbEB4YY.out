@@ -1,0 +1,7 @@
+DNS lhr : 54.82.85.249    ssh.localhost.run
+35.171.254.69   ssh.localhost.run
+54.161.197.247  ssh.localhost.run
+DNS pgy : 2600:3c03::2000:bfff:fe9a:8c13 lin.us.7.a.pinggy.click a.pinggy.io us.a.pinggy.io
+DNS serveo: 37.27.37.254    serveo.net
+ssh lhr 443: 
+ssh pinggy 443: ssh: connect to host a.pinggy.io port 443: Network is unreachable

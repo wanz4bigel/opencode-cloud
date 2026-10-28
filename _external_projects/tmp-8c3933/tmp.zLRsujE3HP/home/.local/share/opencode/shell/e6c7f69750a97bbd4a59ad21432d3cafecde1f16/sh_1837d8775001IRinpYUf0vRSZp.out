@@ -1,0 +1,14 @@
+✓ /admin?token=gus → 200 (36403 byte)
+✓ /admin?token=salah → 401 (3834 byte)
+✓ /entah-apa-ini → 404 (3445 byte)
+✓ beranda menampilkan kartu video
+✓ beranda memanggil thumbnail /t/
+✓ beranda punya catatan contoh/kosong yang jujur
+✓ halaman nonton memuat pemutar
+✓ halaman nonton punya antrean lanjutan
+✓ gerbang 18+ tampil tanpa kuki
+✓ gerbang menutupi konten buat pengunjung baru
+✓ panel bisa ambil metadata host otomatis
+✓ halaman /host daftar 27 sumber
+
+Semua rute & isi sehat.
