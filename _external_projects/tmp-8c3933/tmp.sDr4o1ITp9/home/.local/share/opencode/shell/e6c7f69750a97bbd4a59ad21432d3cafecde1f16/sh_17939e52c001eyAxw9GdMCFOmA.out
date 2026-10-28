@@ -1,0 +1,14 @@
+== full headers /page/home ==
+HTTP/2 200 
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+set-cookie: PHPSESSID=3ou5i6f7qa630vbcp9d87eg73c; path=/
+vary: Accept-Encoding
+content-type: text/html; charset=UTF-8
+date: Mon, 26 Oct 2026 17:20:00 GMT
+server: Apache
+
+== size ==
+58564 page_home.html
+== tech hints ==
