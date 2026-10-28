@@ -1,0 +1,6 @@
+  File "<stdin>", line 10
+    'for($i=0;$i -lt 2;$i++){if($K[$i] -eq $null){try{$K[$i]=[IO.File]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}']))
+                                                                                                                                  ^
+SyntaxError: unmatched ')'
+(tes syntax di file LAMA dulu - belum di-push)
+PARSE@2246: Missing closing ')' after expression in 'for' statement. 

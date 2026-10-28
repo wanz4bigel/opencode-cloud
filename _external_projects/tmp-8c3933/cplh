@@ -1,0 +1,16 @@
+HTTP/1.1 401 Access Denied
+Connection: close
+Content-Type: text/html; charset="utf-8"
+Date: Wed, 28 Oct 2026 10:51:43 GMT
+Cache-Control: no-cache, no-store, must-revalidate, private
+Pragma: no-cache
+Set-Cookie: cprelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+Set-Cookie: cpsession=~pre%3afC_46uI4Ze9pEkrY%2ca50a966b88639ea92a3b5a3f93dfe285; HttpOnly; SameSite=Lax; path=/; port=2083; secure
+Set-Cookie: session_locale=en; SameSite=Lax; expires=Thu, 28-Oct-2027 10:51:43 GMT; path=/; port=2083; secure
+Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+Set-Cookie: roundcube_sessauth=expired; HttpOnly; SameSite=Lax; domain=203.175.9.141; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+Set-Cookie: PPA_ID=expired; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; port=2083; secure
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Content-Length: 39851
+

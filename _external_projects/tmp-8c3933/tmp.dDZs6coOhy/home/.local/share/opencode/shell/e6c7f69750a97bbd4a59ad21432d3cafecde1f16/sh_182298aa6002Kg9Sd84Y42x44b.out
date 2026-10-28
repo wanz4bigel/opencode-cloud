@@ -1,0 +1,14 @@
+=== leaklookup v2 docs probe ===
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+=== hibp cloudflare (free, no key needed on some endpoints) ===
+hibp-pwned -> 200
+=== satubangsa official open data ===
+satubangsa -> 000
+

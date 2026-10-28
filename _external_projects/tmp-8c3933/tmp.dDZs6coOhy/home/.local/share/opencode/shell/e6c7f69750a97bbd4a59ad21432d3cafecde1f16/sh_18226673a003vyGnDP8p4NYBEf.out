@@ -1,0 +1,32 @@
+/home/runner/bokep-id:
+total 40
+drwxr-xr-x  5 runner runner  4096 Oct 28 10:54 .
+drwxr-xr-x 19 runner runner  4096 Oct 28 10:51 ..
+-rw-r--r--  1 runner runner   605 Oct 28 10:42 package.json
+drwxr-xr-x  2 runner runner  4096 Oct 28 10:53 public
+drwxr-xr-x  2 runner runner  4096 Oct 28 10:54 scripts
+-rw-r--r--  1 runner runner 15945 Oct 28 10:51 server.js
+drwxr-xr-x  2 runner runner  4096 Oct 28 10:47 src
+
+/home/runner/p2s:
+total 48
+drwxr-xr-x  2 runner runner 4096 Oct 28 10:52 .
+drwxr-xr-x 19 runner runner 4096 Oct 28 10:51 ..
+-rw-r--r--  1 runner runner  648 Oct 28 10:55 cp_spray.log
+-rw-r--r--  1 runner runner 4163 Oct 28 10:54 cp_spray.py
+-rw-r--r--  1 runner runner  635 Oct 28 10:47 inspect.py
+-rw-r--r--  1 runner runner  621 Oct 28 10:51 kelas_spray.log
+-rw-r--r--  1 runner runner 3059 Oct 28 10:44 multi_bf.py
+-rw-r--r--  1 runner runner 2915 Oct 28 10:39 scan.py
+-rw-r--r--  1 runner runner 1694 Oct 28 10:41 skl_bf.py
+-rw-r--r--  1 runner runner 3840 Oct 28 10:49 slow_spray.py
+-rw-r--r--  1 runner runner 2561 Oct 28 10:43 sub_scan.py
+
+/home/runner/work:
+total 24
+drwxr-xr-x  6 runner runner 4096 Oct 28 10:37 .
+drwxr-xr-x 19 runner runner 4096 Oct 28 10:51 ..
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 _PipelineMapping
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 _actions
+drwxr-xr-x  4 runner runner 4096 Oct 28 10:38 _temp
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 opencode-cloud

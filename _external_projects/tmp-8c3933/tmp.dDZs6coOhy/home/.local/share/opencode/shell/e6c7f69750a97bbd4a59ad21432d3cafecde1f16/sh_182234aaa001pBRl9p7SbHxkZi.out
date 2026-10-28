@@ -1,0 +1,11 @@
+FORMS: ['<form action="javascript:void(0)">', '<form novalidate id="login_form" action="/login/" method="post" style="visibility:">', '<form method="get" action=".">']
+INPUTS: ['<input name="user" id="user" autofocus="autofocus" value="" placeholder="Enter your username." class="std_textbox" type="text" autocomplete="off" tabindex="1" data-testid="user" required>', '<input name="pass" id="pass" placeholder="Enter your account password." class="std_textbox" type="password" tabindex="2" autocomplete="off" data-testid="pass" required>']
+ACTION: ['javascript:void(0)', '/login/', '.']
+IDENT: ['copyright {\n  background: url(data:image/svg+xml;base6', 'copyright">CopyrightÂ©Â\xa02026 cPanel, L.L.C.\n    ', 'v1.0']
+LABELS: ['Username', 'Password']
+BTN: ['Continue', 'Log in', 'Change']
+HINTS: ['username', 'username', 'Username', 'username', 'username', 'username']
+=== csrf meta ===
+<form action="javascript:void(0)"
+<form novalidate id="login_form" action="/login/" method="post" style="visibility:"
+<form method="get" action="."

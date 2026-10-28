@@ -1,0 +1,7 @@
+title: ['wanz Abigail shell - ']
+ada daftar DB: True
+ada konsol: True
+SQL: +-----------------+------------+
+| version()       | database() |
++-----------------+------------+
+| 10.4.32-MariaDB | p

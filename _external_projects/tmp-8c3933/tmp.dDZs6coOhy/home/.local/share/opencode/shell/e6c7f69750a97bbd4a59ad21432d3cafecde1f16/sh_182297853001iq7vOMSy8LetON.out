@@ -1,0 +1,5 @@
+16
+48:for (const kolom of ["poster TEXT NOT NULL DEFAULT ''", "demo INTEGER NOT NULL DEFAULT 0"]) {
+113:export function applyHostInfo(id, { title, duration, poster } = {}) {
+134:export function listFetchable({ hanyaContoh = false, batas = 200 } = {}) {
+146:export function demoCount() {

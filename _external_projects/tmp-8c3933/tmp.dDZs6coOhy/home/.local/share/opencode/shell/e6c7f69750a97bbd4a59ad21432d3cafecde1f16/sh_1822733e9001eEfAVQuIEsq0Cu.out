@@ -1,0 +1,12 @@
+https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.co
+  -> 404 13b
+404 Not Found
+https://archive.org/metadata/BigBuckBunny_124
+  -> 200 15161b
+{"alternate_locations":{"servers":[{"server":"dn710604.ca.archive.org","dir":"/0/items/BigBuckBunny_124"}],"workable":[{
+https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube
+  -> 200 841b
+{"title":"PSY - GANGNAM STYLE(\uac15\ub0a8\uc2a4\ud0c0\uc77c) M/V","author_name":"officialpsy","author_url":"https://www
+https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube
+  -> 404 9b
+Not Found

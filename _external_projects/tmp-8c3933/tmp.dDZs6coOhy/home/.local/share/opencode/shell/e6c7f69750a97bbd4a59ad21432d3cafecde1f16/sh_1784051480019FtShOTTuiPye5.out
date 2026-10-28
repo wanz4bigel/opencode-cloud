@@ -1,0 +1,15 @@
+MODEL_CARD.md bench-sweep.py bench.py bench2.py bench3.py bench4.py bench5.py bench_doc.py bench_final.py bench_full.py bench_prod.py bench_sweep.py brain.py cccl cccl-real chaos.py hold12.py hold_ws.py keepalive.py llama-src llama-src.broken.1793005086 llama.cpp-src loadtest.py molab_keep.py notebook-backup-172224.py notebook-backup-173523.py notebook-backup-174149.py notebook-backup-175908.py notebook-backup-180036.py notebook-backup-190652.py notebook-test-backup.py notebook-uji-hapus.py tunnel.py
+
+--- penting ---
+config.env      : HILANG
+brain.py        : ADA 43607B
+brain-guard.sh  : HILANG
+hold12.py       : ADA 6600B
+hold_ws.py      : ADA 9020B
+fetch.sh        : HILANG
+build4.sh       : HILANG
+ngrok           : HILANG
+
+llama-src: tidak ada
+gpu: 0 MiB, 97887 MiB
+ram: 159 GiB tersedia

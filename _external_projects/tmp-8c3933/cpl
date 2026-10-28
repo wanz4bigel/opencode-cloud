@@ -12,7 +12,7 @@
 
     <!-- EXTERNAL CSS -->
     <link href="/cPanel_magic_revision_1748449569/unprotected/cpanel/fonts/open_sans/open_sans.min.css" rel="stylesheet" type="text/css" />
-    <link href="/cPanel_magic_revision_1753092352/unprotected/cpanel/style_v2_optimized.css" rel="stylesheet" type="text/css" />
+    <link href="/cPanel_magic_revision_1749064109/unprotected/cpanel/style_v2_optimized.css" rel="stylesheet" type="text/css" />
 
     <style type="text/css">
 /*
@@ -27,7 +27,7 @@
     <!--[if IE 6]>
     <style type="text/css">
         img {
-            behavior: url(/cPanel_magic_revision_1638282076/unprotected/cp_pngbehavior_login.htc);
+            behavior: url(/cPanel_magic_revision_1713212301/unprotected/cp_pngbehavior_login.htc);
         }
     </style>
     <![endif]-->
@@ -47,7 +47,7 @@
     <div id="notify">
         <noscript>
             <div class="error-notice">
-                <img src="/cPanel_magic_revision_1638200223/unprotected/cpanel/images/notice-error.png" alt="Error" align="left"/>
+                <img src="/cPanel_magic_revision_1713193196/unprotected/cpanel/images/notice-error.png" alt="Error" align="left"/>
                 JavaScript is disabled in your browser.
                 For cPanel to function properly, you must enable JavaScript.
                 If you do not enable JavaScript, certain features in cPanel will not function correctly.
@@ -111,8 +111,6 @@
                         
                             <div class="locale-cell"><a href="?locale=hu">magyar</a></div>
                         
-                            <div class="locale-cell"><a href="?locale=i_en">i_en</a></div>
-                        
                             <div class="locale-cell"><a href="?locale=id">Bahasa Indonesia</a></div>
                         
                             <div class="locale-cell"><a href="?locale=it">italiano</a></div>
@@ -162,7 +160,7 @@
             <div id="login-sub-container">
                     <div id="login-sub-header">
                         
-                        <img class="main-logo" src="/cPanel_magic_revision_1638200223/unprotected/cpanel/images/cpanel-logo.svg" alt="logo" />
+                        <img class="main-logo" src="/cPanel_magic_revision_1713193196/unprotected/cpanel/images/cpanel-logo.svg" alt="logo" />
                         
                     </div>
                     <div id="login-sub"
@@ -177,11 +175,11 @@
                             <form novalidate id="login_form" action="/login/" method="post" style="visibility:">
                                 <div class="input-req-login"><label for="user">Username</label></div>
                                 <div class="input-field-login icon username-container">
-                                    <input name="user" id="user" autofocus="autofocus" value="" placeholder="Enter your username." class="std_textbox" type="text"  tabindex="1" data-testid="user" required>
+                                    <input name="user" id="user" autofocus="autofocus" value="" placeholder="Enter your username." class="std_textbox" type="text" autocomplete="off" tabindex="1" data-testid="user" required>
                                 </div>
                                 <div class="input-req-login login-password-field-label"><label for="pass">Password</label></div>
                                 <div class="input-field-login icon password-container">
-                                    <input name="pass" id="pass" placeholder="Enter your account password." class="std_textbox" type="password" tabindex="2"  data-testid="pass" required>
+                                    <input name="pass" id="pass" placeholder="Enter your account password." class="std_textbox" type="password" tabindex="2" autocomplete="off" data-testid="pass" required>
                                 </div>
                                 <div class="controls">
                                     <div class="login-btn">
@@ -224,7 +222,6 @@
                                                             <option value="fr">français</option>
                                                             <option value="he">עברית</option>
                                                             <option value="hu">magyar</option>
-                                                            <option value="i_en">i_en</option>
                                                             <option value="id">Bahasa Indonesia</option>
                                                             <option value="it">italiano</option>
                                                             <option value="ja">日本語</option>
@@ -289,7 +286,7 @@
 <!--Close login-wrapper -->
 </div>
 <script>
-    var MESSAGES = {"network_error":"A network error occurred during your login request. Please try again. If this condition persists, contact your network service provider.","authenticating":"Authenticating …","no_username":"You must specify a username to log in.","invalid_login":"The login is invalid.","success":"Login successful. Redirecting …","internal_error":"An internal error occurred. If this condition persists, contact the system administrator.","read_below":"Read the important information below.","temp_domain":"You cannot use the Webmail feature for an account that uses a temporary domain.","session_locale":"The desired locale has been saved to your browser. To change the locale in this browser again, select another locale on this screen.","ajax_timeout":"The connection timed out. Please try again."};
+    var MESSAGES = {"ajax_timeout":"The connection timed out. Please try again.","temp_domain":"You cannot use the Webmail feature for an account that uses a temporary domain.","session_locale":"The desired locale has been saved to your browser. To change the locale in this browser again, select another locale on this screen.","internal_error":"An internal error occurred. If this condition persists, contact the system administrator.","read_below":"Read the important information below.","success":"Login successful. Redirecting …","invalid_login":"The login is invalid.","authenticating":"Authenticating …","no_username":"You must specify a username to log in.","network_error":"A network error occurred during your login request. Please try again. If this condition persists, contact your network service provider."};
 
     window.IS_LOGOUT = false;
 

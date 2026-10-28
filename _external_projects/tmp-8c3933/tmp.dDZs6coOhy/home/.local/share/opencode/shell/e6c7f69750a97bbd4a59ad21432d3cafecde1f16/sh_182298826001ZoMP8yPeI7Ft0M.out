@@ -1,0 +1,39 @@
+  CREATE TABLE IF NOT EXISTS categories (
+    id    INTEGER PRIMARY KEY,
+    name  TEXT NOT NULL,
+    slug  TEXT NOT NULL UNIQUE,
+    ord   INTEGER NOT NULL DEFAULT 0
+  );
+
+  CREATE TABLE IF NOT EXISTS videos (
+    id          INTEGER PRIMARY KEY,
+    title       TEXT NOT NULL,
+    slug        TEXT NOT NULL UNIQUE,
+    provider    TEXT NOT NULL,
+    url         TEXT NOT NULL,
+    embed       TEXT NOT NULL,
+    kind        TEXT NOT NULL CHECK (kind IN ('iframe', 'video')),
+    duration    INTEGER NOT NULL DEFAULT 0,
+    category_id INTEGER REFERENCES categories(id) ON DELETE SET NULL,
+    tags        TEXT NOT NULL DEFAULT '',
+    poster      TEXT NOT NULL DEFAULT '',
+    demo        INTEGER NOT NULL DEFAULT 0,
+    views       INTEGER NOT NULL DEFAULT 0,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_videos_added ON videos (added_at DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_views ON videos (views DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_cat   ON videos (category_id);
+`);
+
+// Database lama belum punya kolom ini: tambahkan tanpa bikin ulang tabel.
+const kolomSudahAda = new Set(db.prepare("PRAGMA table_info(videos)").all().map((k) => k.name));
+for (const kolom of ["poster TEXT NOT NULL DEFAULT ''", "demo INTEGER NOT NULL DEFAULT 0"]) {
+  if (!kolomSudahAda.has(kolom.split(" ")[0])) db.exec(`ALTER TABLE videos ADD COLUMN ${kolom}`);
+}
+
+export function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .normalize("NFKD")

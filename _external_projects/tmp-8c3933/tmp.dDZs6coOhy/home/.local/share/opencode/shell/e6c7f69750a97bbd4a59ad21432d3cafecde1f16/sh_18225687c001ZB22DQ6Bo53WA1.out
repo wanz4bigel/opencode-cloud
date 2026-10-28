@@ -1,0 +1,4 @@
+len 39844
+TEXT:  cPanel Login JavaScript is disabled in your browser. For cPanel to function properly, you must enable JavaScript. If you do not enable JavaScript, certain features in cPanel will not function correctly. The login is invalid. The system has detected that you are using Internet Explorer 11. cPanel &amp; WHM no longer supports Internet Explorer 11. For more information, read the cPanel Blog . Please
+ERR-DIVS: ['invalid']
+COOKIES: ['Set-Cookie: cprelogin=no; HttpOnly; SameSite=Lax; expires=Thu, 01-Jan-', 'Set-Cookie: cpsession=~pre%3aaD1FM0Rrb6DxJh4k%2c3aaeae919399700423de6a', 'Set-Cookie: roundcube_sessid=expired; HttpOnly; SameSite=Lax; expires=']

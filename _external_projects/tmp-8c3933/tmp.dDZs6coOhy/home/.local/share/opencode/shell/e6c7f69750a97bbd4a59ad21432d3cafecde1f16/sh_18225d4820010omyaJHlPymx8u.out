@@ -1,0 +1,7 @@
+=== POST format tes ===
+[000 0B] redir=
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    b=open('/tmp/p1',encoding='latin-1',errors='ignore').read()
+      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/p1'

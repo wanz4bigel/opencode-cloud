@@ -1,0 +1,12 @@
+.:
+scripts
+
+./scripts:
+gen-cert.sh
+gen-config.sh
+gen-link.sh
+healthcheck.sh
+install-v2ray.sh
+lib.sh
+run-server.sh
+SYNTAX OK
