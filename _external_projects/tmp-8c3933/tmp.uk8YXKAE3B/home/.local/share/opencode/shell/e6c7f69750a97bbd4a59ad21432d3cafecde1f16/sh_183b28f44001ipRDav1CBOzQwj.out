@@ -1,0 +1,11 @@
+1:app/client/purchase/qris.py:210:def show_qris_payment(
+7:app/client/purchase/qris.py-216-    overwrite_amount: int = -1,
+8:app/client/purchase/qris.py-217-    token_confirmation_idx: int = 0,
+9:app/client/purchase/qris.py-218-    amount_idx: int = -1,
+19:app/client/purchase/qris.py-228-        overwrite_amount,
+20:app/client/purchase/qris.py-229-        token_confirmation_idx,
+21:app/client/purchase/qris.py-230-        amount_idx,
+27:app/client/purchase/qris.py-236-        print("Failed to create QRIS transaction.")
+30:app/client/purchase/qris.py-239-    print("Fetching QRIS code...")
+33:app/client/purchase/qris.py-242-        print("Failed to get QRIS code.")
+35:app/client/purchase/qris.py-244-    print(f"QRIS data:\n{qris_code}")

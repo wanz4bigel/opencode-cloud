@@ -1,0 +1,5 @@
+decoy qris -> XL PASS LITE
+Harga Paket Utama : Rp 1300000  (Bundling Poco F9)
+Harga Paket Decoy : Rp 92000  (XL PASS LITE)
+Total amount is 92000.
+Error: {'code': '213', 'code_detail': '213-01-01-101-400', 'status': 'FAILED', 'message': 'Product is not available', 'title': "There's An Issue In myXL While Loading The Page from config", 'description': 'myXL is under maintenance. Please try again in a few moments later'}
