@@ -1,0 +1,24 @@
+38:function header({ path, query, gate }) {
+50:    ${gate ? "" : nav({ path, query })}
+56:  return `<div class="gate">
+57:  <div class="gate__box">
+58:    <p class="gate__kicker">Situs dewasa</p>
+59:    <h2 class="gate__title">Khusus 18+</h2>
+60:    <p class="gate__text">Masuk kalau kamu sudah 18 tahun ke atas.</p>
+61:    <div class="gate__actions">
+69:export function layout({ title, description = "Koleksi video colmek Indonesia, semuanya embed dari host — tidak ada upload.", path = "/", query = {}, body, ogImage, gate = false }) {
+88:<body class="${gate ? "is-gated" : ""}">${header({ path, query, gate })}
+92:${gate ? ageGate() : ""}
+222:export function homePage({ rows, pages, current, query, gate = false, host = "" }) {
+239:  return layout({ title: "BokepKita — video colmek Indonesia, tanpa upload", path: "/", query, body, gate, ogImage: ogDari(rows, host) });
+263:export function listPage({ heading, note, rows, pages, current, path, query, gate = false, host = "" }) {
+271:  return layout({ title: `${heading} — BokepKita`, path, query, body, gate, ogImage: ogDari(rows, host) });
+274:export function searchPage({ query, rows, pages, current, gate = false, host = "" }) {
+283:  return layout({ title: `${heading} — BokepKita`, path: "/cari", query, body, gate, ogImage: ogDari(rows, host) });
+314:export function watchPage({ video, related, host, gate = false }) {
+385:    gate
+server.js:343:    return kirim(page(homePage({ ...data, query, gate: gerbang, host: hostOf(req) })));
+server.js:351:    return kirim(page(searchPage({ query, ...data, gate: gerbang, host: hostOf(req) })));
+server.js:374:          gate: gerbang,
+server.js:392:          gate: gerbang,
+server.js:403:    return kirim(page(watchPage({ video, related: relatedVideos(video, 12), host, gate: gerbang })));

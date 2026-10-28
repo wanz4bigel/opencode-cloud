@@ -1,0 +1,22 @@
+action.yml:197:        EDGE_PORT: ${{ inputs.edge_port }}
+action.yml:198:        EDGE_TLS: ${{ inputs.edge_tls }}
+action.yml:218:        EDGE_PORT: ${{ inputs.edge_port }}
+action.yml:219:        EDGE_TLS: ${{ inputs.edge_tls }}
+.github/workflows/vmess-server.yml:108:      EDGE_PORT: ${{ vars.EDGE_PORT }}
+.github/workflows/vmess-server.yml:109:      EDGE_TLS: ${{ vars.EDGE_TLS }}
+.github/workflows/vmess-server.yml:149:          echo "mode=$MODE core=$CORE tls=$TLS_EFFECTIVE port=$PORT edge=${EDGE_PORT:-none}/${EDGE_TLS:-auto}"
+.github/workflows/vmess-server.yml:167:          if [ -n "$EDGE_PORT" ]; then
+.github/workflows/vmess-server.yml:168:            echo "::notice::link publik -> ${DOMAIN:-<domain kosong>}:$EDGE_PORT (${EDGE_TLS:-tls}); origin tetap port $PORT"
+scripts/lib.sh:87:EDGE_PORT="${EDGE_PORT:-}"             # port publik di link (mis. 443); kosong = port origin
+scripts/lib.sh:88:EDGE_TLS="${EDGE_TLS:-}"               # tls | none; kosong = ikut cert origin
+scripts/lib.sh:89:case "$EDGE_PORT" in
+scripts/lib.sh:91:  *[!0-9]*) die "EDGE_PORT harus angka, bukan '$EDGE_PORT'." ;;
+scripts/lib.sh:92:  *) [ "$EDGE_PORT" -ge 1 ] && [ "$EDGE_PORT" -le 65535 ] || die "EDGE_PORT di luar rentang 1-65535: $EDGE_PORT" ;;
+scripts/lib.sh:94:case "$EDGE_TLS" in
+scripts/lib.sh:96:  *) die "EDGE_TLS harus 'tls' atau 'none' (dapat: '$EDGE_TLS')." ;;
+scripts/lib.sh:224:             EDGE_PORT EDGE_TLS; do
+scripts/lib.sh:258:    printf 'EDGE_PORT=%s\n' "${EDGE_PORT:-}"
+scripts/lib.sh:259:    printf 'EDGE_TLS=%s\n' "${EDGE_TLS:-}"
+--- tests ---
+  PASS=14  FAIL=0
+==== PASS=5 FAIL=0 ====
