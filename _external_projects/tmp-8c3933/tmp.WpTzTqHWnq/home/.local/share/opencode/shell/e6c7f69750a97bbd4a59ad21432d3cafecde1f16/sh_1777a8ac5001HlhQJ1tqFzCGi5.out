@@ -1,0 +1,15 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+=== ngrok.log mentah (20 baris terakhir) ===
+t=2026-10-26T09:11:13+0000 lvl=info msg="no configuration paths supplied"
+t=2026-10-26T09:11:13+0000 lvl=info msg="using configuration at default config path" path=/home/marimo/.config/ngrok/ngrok.yml
+t=2026-10-26T09:11:13+0000 lvl=info msg="open config file" path=/home/marimo/.config/ngrok/ngrok.yml err=<nil>
+ERROR:  Error reading configuration file '/home/marimo/.config/ngrok/ngrok.yml': YAML parsing error: yaml: unmarshal errors:
+ERROR:    line 2: field authtoken not found in type config.v3yamlConfig
+
+=== tes manual 15s ===
+t=2026-10-26T09:11:22+0000 lvl=info msg="no configuration paths supplied"
+t=2026-10-26T09:11:22+0000 lvl=info msg="using configuration at default config path" path=/home/marimo/.config/ngrok/ngrok.yml
+t=2026-10-26T09:11:22+0000 lvl=info msg="open config file" path=/home/marimo/.config/ngrok/ngrok.yml err=<nil>
+ERROR:  Error reading configuration file '/home/marimo/.config/ngrok/ngrok.yml': YAML parsing error: yaml: unmarshal errors:
+ERROR:    line 2: field authtoken not found in type config.v3yamlConfig
+

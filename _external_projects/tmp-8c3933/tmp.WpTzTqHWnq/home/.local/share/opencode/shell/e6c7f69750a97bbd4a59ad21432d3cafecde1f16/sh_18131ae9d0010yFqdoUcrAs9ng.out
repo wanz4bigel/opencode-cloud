@@ -1,0 +1,7 @@
+agent pid: 1454
+pid baru : 1638
+relay.log: [06:26:10] agent terhubung
+Terminated
+[06:27:59] agent keluar, restart 5s
+[06:28:04] agent terhubung
+publik   : 200
