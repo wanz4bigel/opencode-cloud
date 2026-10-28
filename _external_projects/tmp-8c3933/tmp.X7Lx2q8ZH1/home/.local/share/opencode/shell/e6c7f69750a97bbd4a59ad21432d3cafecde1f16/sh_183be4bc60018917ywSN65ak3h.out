@@ -1,0 +1,31 @@
+    #                 "raw_price": xxxxx,
+    #                 "status": "FINISHED",
+    #                 "timestamp": xxxxxxxxxxx,
+    #             }
+    #         ]
+    #     },
+    #     "status": "SUCCESS"
+    # }
+
+    return res.get("data")
+
+def get_transaction_history(api_key: str, tokens: dict) -> dict:
+    path = "payments/api/v8/transaction-history"
+
+    raw_payload = {
+        "is_enterprise": False,
+        "lang": "en"
+    }
+
+    print("Fetching transaction history...")
+    res = send_api_request(api_key, path, raw_payload, tokens["id_token"], "POST")
+    # print(json.dumps(res, indent=4))
+
+# {
+#   "code": "000",
+#   "data": {"list": [
+#     {
+#       "show_time": false,
+#       "code": "to get detail",
+#       "payment_method_icon": "",
+#       "formated_date": "",

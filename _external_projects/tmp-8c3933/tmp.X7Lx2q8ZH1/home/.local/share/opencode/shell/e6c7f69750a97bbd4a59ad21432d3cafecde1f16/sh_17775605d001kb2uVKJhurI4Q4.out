@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+[672/673] Linking CXX executable bin/llama
+[673/673] Linking CXX executable bin/llama-cli
+[b4] 09:08:17 build selesai rc=0
+-rwxr-xr-x 1 root root 17952 Oct 26 09:08 build/bin/llama-server
+ninja jalan: True
+detail: -rwxr-xr-x 1 root root 17952 Oct 26 09:08 /marimo/llm/llama-src/build/bin/llama-server
+
