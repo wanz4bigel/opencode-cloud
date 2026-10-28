@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --format="json(settings.databaseFlags)" | jq '.[]? | select(.name=="log_lock_waits") | .value'

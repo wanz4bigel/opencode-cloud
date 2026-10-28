@@ -1,0 +1,1 @@
+az keyvault list --query '[*].name' --output json

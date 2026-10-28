@@ -1,0 +1,1 @@
+aws cloudfront get-distribution --id $distribution --query 'Distribution.DistributionConfig.Logging.Enabled' --region $region --output text

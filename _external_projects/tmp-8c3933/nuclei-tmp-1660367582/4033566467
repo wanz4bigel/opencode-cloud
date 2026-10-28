@@ -1,0 +1,1 @@
+aws rds describe-reserved-db-instances --region $region --output json --query 'ReservedDBInstances[*].ReservedDBInstanceId'

@@ -1,0 +1,1 @@
+az synapse sql pool list --workspace-name "$workspaceId" --resource-group "$resourceGroup" --query '[*].id'

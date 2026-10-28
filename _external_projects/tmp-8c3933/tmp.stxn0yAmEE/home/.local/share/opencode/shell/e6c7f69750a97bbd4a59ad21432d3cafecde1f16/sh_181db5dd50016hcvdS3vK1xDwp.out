@@ -1,0 +1,15 @@
+== round 1: probe semua varian 720/1080 sekaligus ==
+ct=8 M3U8_FLV_264_720     -> {"errno":130,"newno":"","request_id":5728323922794
+ct=8 M3U8_AUTO_720        -> {"errno":130,"newno":"","request_id":5728350148308
+ct=8 M3U8_HLS_TS_720      -> {"errno":130,"newno":"","request_id":5728376659946
+ct=8 M3U8_FLV_264_1080    -> {"errno":130,"newno":"","request_id":5728404463295
+ct=8 M3U8_AUTO_1080       -> {"errno":130,"newno":"","request_id":5728430978102
+ct=8 M3U8_HLS_TS_1080     -> {"errno":130,"newno":"","request_id":5728456298092
+ct=8 M3U8                 -> {"errno":31023,"newno":"","request_id":57284831190
+ct=8 M3U8_AUTO            -> {"errno":31023,"newno":"","request_id":57285088683
+ct=0 M3U8_HLS_TS_720      -> {"errno":130,"newno":"","request_id":5728533662385
+
+== round 2-4: poll ulang 720p tiap 20 detik (nunggu transcode kelar) ==
+round 2:  {"errno":130,"newno":"","request_id":57290959192048212,"show
+round 3:  {"errno":130,"newno":"","request_id":57296590706549887,"show
+round 4:  {"errno":130,"newno":"","request_id":57302230216995189,"show

@@ -1,0 +1,1 @@
+aws cloudwatch describe-alarms --region $region --alarm-names "DiskWritesOpsAlarm" --query 'MetricAlarms[*].ActionsEnabled'

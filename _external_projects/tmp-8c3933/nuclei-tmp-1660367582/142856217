@@ -1,0 +1,1 @@
+gcloud container clusters describe $clusterName --location $location --project $projectId --format="value(masterAuth.clientCertificateConfig.issueClientCertificate)"

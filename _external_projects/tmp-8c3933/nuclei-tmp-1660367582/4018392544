@@ -1,0 +1,1 @@
+aws eks describe-nodegroup --cluster-name $cluster --nodegroup-name $nodegroup --region $region --query 'nodegroup.remoteAccess' --output json

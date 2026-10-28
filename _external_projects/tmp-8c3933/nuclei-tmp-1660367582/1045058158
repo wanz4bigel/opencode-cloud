@@ -1,0 +1,1 @@
+az servicebus namespace list --output json --query '[*].{"Name":name,"ResourceGroup":resourceGroup}'

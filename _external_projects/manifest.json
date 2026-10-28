@@ -8,5 +8,10 @@
     "slug": "shot-fde236",
     "worktree": "/tmp/opencode/shot",
     "project_id": "e04231907a96764f227b040c22d35e7832b20da3"
+  },
+  {
+    "slug": "tmp-8c3933",
+    "worktree": "/tmp",
+    "project_id": "470c8549ef01a2a9d3c85b22965766cefc874134"
   }
 ]

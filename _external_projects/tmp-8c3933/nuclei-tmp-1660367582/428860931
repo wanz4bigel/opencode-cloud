@@ -1,0 +1,1 @@
+aws ec2 describe-images --region $region --image-ids $ami --owners self --query 'Images[*].Public'

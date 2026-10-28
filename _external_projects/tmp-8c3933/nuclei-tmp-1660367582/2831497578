@@ -1,0 +1,1 @@
+az webapp auth show --ids "$id" --query 'enabled' --output json

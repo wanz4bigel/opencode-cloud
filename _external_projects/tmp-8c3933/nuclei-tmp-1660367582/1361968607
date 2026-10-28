@@ -1,0 +1,1 @@
+kubectl get netpol --all-namespaces --output=json

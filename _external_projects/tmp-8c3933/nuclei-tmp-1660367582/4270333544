@@ -1,0 +1,1 @@
+gcloud filestore instances describe $instanceName --format="json(kmsKeyName)"

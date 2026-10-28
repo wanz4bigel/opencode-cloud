@@ -1,0 +1,1 @@
+az tag list --resource-id "$resourceId" --output json --query 'properties.tags'

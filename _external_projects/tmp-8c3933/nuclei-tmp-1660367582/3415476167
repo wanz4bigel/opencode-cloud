@@ -1,0 +1,1 @@
+az webapp config backup show --webapp-name $name --resource-group $resourceGroup --query 'backupSchedule.retentionPeriodInDays' --output json

@@ -1,0 +1,1 @@
+gcloud compute addresses describe cc-production-instance-static-ip --region=us-central1 --project=$projectId --format="json(name,region,status)"

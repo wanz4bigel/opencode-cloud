@@ -1,0 +1,1 @@
+az aks get-upgrades --name "$name" --resource-group "$resourceGroup" --output json

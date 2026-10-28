@@ -1,0 +1,1 @@
+az network nic list --output json --query '[*].{name:name, resourceGroup:resourceGroup}'

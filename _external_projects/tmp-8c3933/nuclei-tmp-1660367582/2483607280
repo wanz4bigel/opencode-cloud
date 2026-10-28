@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --format="value(settings.backupConfiguration.enabled)"

@@ -1,0 +1,1 @@
+aws cloudfront list-distributions --output table --query 'DistributionList.Items[*].Id' --region $region --output json

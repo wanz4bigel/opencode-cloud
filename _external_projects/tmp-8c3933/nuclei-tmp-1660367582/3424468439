@@ -1,0 +1,1 @@
+aws ec2 describe-vpc-endpoints --region $region --vpc-endpoint-ids $vpc --query 'VpcEndpoints[*].PolicyDocument' --output json

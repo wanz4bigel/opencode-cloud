@@ -1,0 +1,1 @@
+gcloud compute target-https-proxies list --project $projectId --global --format="json(name,urlMap,sslCertificates)"

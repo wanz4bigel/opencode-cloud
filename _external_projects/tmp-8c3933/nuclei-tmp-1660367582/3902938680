@@ -1,0 +1,1 @@
+az role definition list --name "$roleName" --output json --query '[?(assignableScopes == `/` || assignableScopes == `/subscriptions/` && actions == `*`)].roleName'

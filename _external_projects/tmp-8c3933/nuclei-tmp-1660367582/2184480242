@@ -1,0 +1,1 @@
+gcloud compute backend-services list --global --project $projectId --format="json(name,enableCDN)"

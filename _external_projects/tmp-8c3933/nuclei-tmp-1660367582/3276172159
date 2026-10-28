@@ -1,0 +1,1 @@
+gcloud access-approval settings get --project $projectId --format="json(enrolledServices)"

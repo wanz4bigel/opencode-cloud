@@ -1,0 +1,1 @@
+az role assignment list --scope "$subscription" --output json --query '[*].roleDefinitionName'

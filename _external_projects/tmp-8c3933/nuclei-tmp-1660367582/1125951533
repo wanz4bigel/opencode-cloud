@@ -1,0 +1,1 @@
+az monitor log-profiles list --query '[*].name' --output json

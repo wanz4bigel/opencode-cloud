@@ -1,0 +1,1 @@
+gcloud kms keys get-iam-policy $keyName --keyring=$keyRing --location=global --format="json"

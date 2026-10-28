@@ -1,0 +1,1 @@
+gcloud compute routers list --project=$projectId --filter="network:($networkName)" --format="json(name)"

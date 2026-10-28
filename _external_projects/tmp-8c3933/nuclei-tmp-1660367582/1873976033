@@ -1,0 +1,1 @@
+aws cloudtrail describe-trails --region $region --trail-name-list $trail --query 'trailList[*].KmsKeyId'

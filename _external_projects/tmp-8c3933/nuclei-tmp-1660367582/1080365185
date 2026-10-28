@@ -1,0 +1,1 @@
+aws iam get-policy-version --policy-arn $policy --version-id v1 --query 'PolicyVersion.Document'

@@ -1,0 +1,1 @@
+aws rds describe-db-instances --region $region --output table --query 'DBInstances[?Engine==`mysql` || Engine==`aurora-mysql` || Engine==`mariadb`].DBInstanceIdentifier | []' --output json

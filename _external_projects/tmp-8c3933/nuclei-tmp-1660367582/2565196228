@@ -1,0 +1,1 @@
+az monitor activity-log alert list --output json --query '[?(enabled==`true`)].id'

@@ -1,0 +1,1 @@
+az monitor diagnostic-settings subscription list --query 'value[*].name'

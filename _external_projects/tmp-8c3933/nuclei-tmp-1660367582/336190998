@@ -1,0 +1,1 @@
+aws ec2 describe-security-groups --region $region --filters Name=ip-permission.cidr,Values='0.0.0.0/0' --output json --query 'SecurityGroups[*].GroupId'

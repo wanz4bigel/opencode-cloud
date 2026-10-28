@@ -1,0 +1,1 @@
+aws elasticache describe-replication-groups --region $region --replication-group-id $replicationgroup --query 'ReplicationGroups[*].MultiAZ'

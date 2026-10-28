@@ -1,0 +1,1 @@
+az network nic show --name $name --resource-group $resourcegroup --query 'enableIpForwarding'

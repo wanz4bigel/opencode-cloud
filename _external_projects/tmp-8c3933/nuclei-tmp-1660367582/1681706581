@@ -1,0 +1,1 @@
+az storage logging show --services t --account-name "$name" --output json

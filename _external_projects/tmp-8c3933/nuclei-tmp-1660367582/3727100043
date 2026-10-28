@@ -1,0 +1,1 @@
+aws dms describe-replication-instances --region $region --filters Name=replication-instance-arn,Values=$replication --query "ReplicationInstances[*].MultiAZ" --output json

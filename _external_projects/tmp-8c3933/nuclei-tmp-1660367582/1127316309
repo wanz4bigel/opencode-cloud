@@ -1,0 +1,1 @@
+gcloud compute instance-groups managed describe $instanceGroupName --format="json(distributionPolicy.zones)"

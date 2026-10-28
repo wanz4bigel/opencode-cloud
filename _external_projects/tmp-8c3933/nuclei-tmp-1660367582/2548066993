@@ -1,0 +1,1 @@
+gcloud alpha resource-manager org-policies describe compute.disableGuestAttributesAccess --organization=$orgId --effective --format="json(booleanPolicy)"

@@ -1,0 +1,1 @@
+az storage blob service-properties delete-policy show --account-name "$name" --output json --query 'enabled'

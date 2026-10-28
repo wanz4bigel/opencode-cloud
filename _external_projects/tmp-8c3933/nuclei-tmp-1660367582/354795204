@@ -1,0 +1,1 @@
+az keyvault certificate show --id $certificateId --query 'policy.lifetimeActions[*].action.actionType' --output json

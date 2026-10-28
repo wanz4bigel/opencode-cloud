@@ -1,0 +1,1 @@
+aws dms describe-replication-instances --region $region --query "ReplicationInstances[*].ReplicationInstanceArn" --output json

@@ -1,0 +1,1 @@
+az webapp show --ids $id --query 'httpsOnly' --output json

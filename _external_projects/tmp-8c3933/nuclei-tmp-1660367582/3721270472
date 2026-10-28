@@ -1,0 +1,1 @@
+gcloud functions describe $functionName --format="json(serviceConfig.minInstanceCount)"

@@ -1,0 +1,1 @@
+gcloud kms keyrings list --location=global --format="json(name)"

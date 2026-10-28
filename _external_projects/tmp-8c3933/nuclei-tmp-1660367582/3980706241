@@ -1,0 +1,2 @@
+OUT="$(sudo -n -R woot woot 2>&1 || true)"
+printf "%s\n" "$OUT"

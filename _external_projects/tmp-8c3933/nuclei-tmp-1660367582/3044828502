@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --project $projectId --format=json | jq -r '.settings.databaseFlags[]? | select(.name=="log_min_messages") | .value // "null"'

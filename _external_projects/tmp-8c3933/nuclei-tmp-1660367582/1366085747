@@ -1,0 +1,1 @@
+gcloud alpha services api-keys describe $uid --format="json(restrictions)"

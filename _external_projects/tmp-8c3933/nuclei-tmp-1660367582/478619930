@@ -1,0 +1,1 @@
+az network lb list --output json --query '[*].{"Name":name,"ResourceGroup":resourceGroup}'

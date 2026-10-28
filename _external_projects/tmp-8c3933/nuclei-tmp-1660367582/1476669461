@@ -1,0 +1,1 @@
+gcloud alpha resource-manager org-policies describe iam.automaticIamGrantsForDefaultServiceAccounts --organization=$orgId --effective --format="json(booleanPolicy)"

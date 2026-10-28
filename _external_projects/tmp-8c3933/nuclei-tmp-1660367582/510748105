@@ -1,0 +1,1 @@
+az monitor diagnostic-settings subscription show --name "$subName" --query 'storageAccountId'

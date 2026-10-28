@@ -1,0 +1,1 @@
+az storage logging show --services q --account-name "$name" --output json

@@ -1,0 +1,1 @@
+gcloud access-context-manager perimeters describe $perimeterName --format="json(status.restrictedServices)"

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="noindex,nofollow" />
+	<title>Instalasi WordPress &rsaquo;</title>
+	<link rel='stylesheet' id='dashicons-css' href='https://mediaaksara.id/wp-includes/css/dashicons.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='buttons-css' href='https://mediaaksara.id/wp-includes/css/buttons.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='forms-css' href='https://mediaaksara.id/wp-admin/css/forms.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='l10n-css' href='https://mediaaksara.id/wp-admin/css/l10n.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='wp-base-styles-css' href='https://mediaaksara.id/wp-includes/css/dist/base-styles/admin-schemes.min.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='install-css' href='https://mediaaksara.id/wp-admin/css/install.min.css?ver=7.1.3' media='all' />
+</head>
+<body class="wp-core-ui admin-color-modern">
+<p id="logo">WordPress</p>
+
+	<h1>Sudah Terpasang</h1><p>Anda rupanya sudah memasang WordPress. Untuk memasang ulang silahkan bersihkan tabel basis data lama Anda terlebih dahulu.</p><p class="step"><a href="https://mediaaksara.id/wp-login.php">Log Masuk</a></p></body></html>

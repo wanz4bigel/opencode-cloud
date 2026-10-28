@@ -1,0 +1,1 @@
+az vmss show --name "$name" --resource-group "$resourceGroup" --query 'virtualMachineProfile.extensionProfile.extensions[*].name'

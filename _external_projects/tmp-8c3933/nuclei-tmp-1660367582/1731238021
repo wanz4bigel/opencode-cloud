@@ -1,0 +1,1 @@
+aws iam list-ssh-public-keys --user-name $user | jq -r '.SSHPublicKeys[] | select(.UploadDate | fromdateiso8601 < (now - (90 * 86400))) | .SSHPublicKeyId'

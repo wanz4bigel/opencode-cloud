@@ -1,0 +1,1 @@
+az webapp config appsettings list --name $name --resource-group $resourceGroup --output json

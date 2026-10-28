@@ -1,0 +1,1 @@
+gcloud iam service-accounts keys list --iam-account=$email --format="json"

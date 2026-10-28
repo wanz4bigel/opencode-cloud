@@ -1,0 +1,1 @@
+bq show --format=prettyjson $projectId:$datasetId | jq '.access[] | select(.role != null and (.specialGroup == "allUsers" or .specialGroup == "allAuthenticatedUsers")) | .role'

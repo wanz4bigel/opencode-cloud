@@ -1,0 +1,1 @@
+gsutil retention get gs://$bucketName

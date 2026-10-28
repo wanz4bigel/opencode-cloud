@@ -1,0 +1,1 @@
+aws s3api get-bucket-policy --bucket $bucket --query Policy --output text

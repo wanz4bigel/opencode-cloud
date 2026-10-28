@@ -1,0 +1,1 @@
+az lock list --resource $resource --query '[*].{"name":name,"level":level}'

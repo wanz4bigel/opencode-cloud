@@ -1,0 +1,1 @@
+gcloud compute disks describe $diskName --zone $zone --project $projectId --format="json(users[])" | jq -r '.[] // "null"'

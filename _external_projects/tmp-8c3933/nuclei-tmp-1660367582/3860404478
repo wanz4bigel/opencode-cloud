@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --project $projectId --format=json | jq '.settings.databaseFlags[]? | select(.name=="log_disconnections") | .value'

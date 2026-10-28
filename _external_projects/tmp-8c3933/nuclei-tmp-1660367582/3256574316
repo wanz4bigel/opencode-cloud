@@ -1,0 +1,1 @@
+aws s3api get-bucket-encryption --bucket cc-prod-log-bucket --query 'ServerSideEncryptionConfiguration.Rules[?ApplyServerSideEncryptionByDefault.SSEAlgorithm==`aws:kms`].BucketKeyEnabled'

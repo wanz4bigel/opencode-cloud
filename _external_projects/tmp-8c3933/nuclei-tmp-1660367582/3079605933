@@ -1,0 +1,1 @@
+gcloud organizations list --format="json(name)"

@@ -1,0 +1,1 @@
+gcloud compute project-info describe --project $projectId --format="json(commonInstanceMetadata.items)" | jq '.commonInstanceMetadata.items[]? | select(.key=="enable-oslogin") | .value // "null"'

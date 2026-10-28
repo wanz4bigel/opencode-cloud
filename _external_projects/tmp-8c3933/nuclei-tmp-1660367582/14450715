@@ -1,0 +1,1 @@
+gcloud pubsub subscriptions get-iam-policy $subscriptionName --format=json | jq '.bindings[]'

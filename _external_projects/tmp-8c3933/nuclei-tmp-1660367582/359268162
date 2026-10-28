@@ -1,0 +1,1 @@
+az role definition list --custom-role-only true --query '[].{roleName:roleName}' --output json

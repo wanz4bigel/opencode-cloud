@@ -1,0 +1,1 @@
+az vmss list --output json --query '[*].{"Name":name,"ResourceGroup":resourceGroup}'

@@ -1,0 +1,1 @@
+az search service list --resource-group "$resourceGroup" --query '[].{Name:name}'

@@ -1,0 +1,42 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 28 Oct 2026 07:46:53 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-archive-orig-connection: close
+x-archive-orig-server: nginx/1.18.0 (Ubuntu)
+x-archive-orig-date: Thu, 23 Dec 2021 04:59:40 GMT
+x-archive-orig-expires: Sat, 01 Jan 2000 00:00:01 GMT
+x-archive-orig-cache-control: post-check=0, pre-check=0, max-age=0
+x-archive-orig-last-modified: Thu, 23 Dec 2021 04:59:39 GMT
+x-archive-orig-pragma: no-cache
+x-archive-orig-vary: Accept-Encoding
+x-archive-orig-x-cache: Miss from cloudfront
+x-archive-orig-via: 1.1 73d3ff0182f526d6384b20c342c6483b.cloudfront.net (CloudFront)
+x-archive-orig-x-amz-cf-pop: SFO20-C1
+x-archive-orig-x-amz-cf-id: meCtczC14UaLkxXabP_-djIPr7lDvYj8zTIXynxsvMlY9kcTkIEYmg==
+cache-control: max-age=1800
+accept-ranges: bytes
+memento-datetime: Thu, 23 Dec 2021 04:59:38 GMT
+link: <https://sukabumiupdate.com/>; rel="original", <http://web.archive.org/web/timemap/link/https://sukabumiupdate.com/>; rel="timemap"; type="application/link-format", <http://web.archive.org/web/https://sukabumiupdate.com/>; rel="timegate"
+content-security-policy: default-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: archive.org web.archive.org web-static.archive.org wayback-api.archive.org athena.archive.org analytics.archive.org pragma.archivelab.org wwwb-events.archive.org
+x-archive-src: TWITTER-20211223042325-crawl856/TWITTER-20211223045225-00301.warc.gz
+server-timing: captures_list;dur=0.352937, exclusion.robots;dur=0.032138, exclusion.robots.policy;dur=0.024348, esindex;dur=0.006079, cdx.remote;dur=12.874484, LoadShardBlock;dur=182.037422, PetaboxLoader3.resolve;dur=78.402880, PetaboxLoader3.datanode;dur=84.587389, load_resource;dur=133.359350
+x-app-server: wwwb-app204-dc6
+x-ts: 200
+x-tr: 344
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=0
+set-cookie: wb-p-SERVER=wwwb-app204; path=/
+cache-control: private
+X-location: All
+X-AS: 8075
+X-RL: 0
+X-NA: 0
+X-Page-Cache: MISS
+Server-Timing: MISS
+X-NID: Microsoft
+Referrer-Policy: no-referrer-when-downgrade
+Permissions-Policy: interest-cohort=()
+X-sd: 0
+

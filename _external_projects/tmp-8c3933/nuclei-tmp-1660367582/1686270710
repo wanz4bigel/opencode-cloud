@@ -1,0 +1,1 @@
+aws cloudfront get-distribution --id $distribution --query 'Distribution.DistributionConfig.ViewerCertificate.MinimumProtocolVersion' --region $region --output json

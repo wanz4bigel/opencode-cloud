@@ -1,0 +1,13 @@
+== port 3000 diisi oleh:
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beranda - Koperasi Nusantara</title><style>
+*{box-sizing:border-b
+== bitchute live id:
+== resolit bitchute /video/:
+{
+  provider: 'lain',
+  embed: 'https://www.bitchute.com/video/9c1f4a2e7b3d/',
+  direct: 'https://www.bitchute.com/video/9c1f4a2e7b3d/',
+  kind: 'iframe'
+}

@@ -1,0 +1,1 @@
+gcloud compute images list --project $projectId --no-standard-images --format="json(name)"

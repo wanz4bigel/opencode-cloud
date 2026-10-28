@@ -1,0 +1,1 @@
+az apim api list -g $resourcegroup -n $servicename  --query '[].name'

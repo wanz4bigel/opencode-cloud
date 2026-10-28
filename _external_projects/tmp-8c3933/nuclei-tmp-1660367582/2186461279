@@ -1,0 +1,1 @@
+aws elasticache describe-cache-clusters --region $region --output json --query 'CacheClusters[*].CacheClusterId'

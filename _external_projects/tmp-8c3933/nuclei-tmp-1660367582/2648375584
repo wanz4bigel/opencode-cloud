@@ -1,0 +1,1 @@
+az security jit-policy list --query '[*].virtualMachines[*].{"id":id} | []'

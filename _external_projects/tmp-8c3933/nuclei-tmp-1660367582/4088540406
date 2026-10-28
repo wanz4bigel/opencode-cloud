@@ -1,0 +1,1 @@
+aliyun ram GetLoginProfile --UserName $user --region $region

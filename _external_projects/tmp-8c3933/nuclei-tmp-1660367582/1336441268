@@ -1,0 +1,1 @@
+aliyun ecs DescribeSecurityGroupAttribute --SecurityGroupId "$securitygroup" --Direction ingress --RegionId $region

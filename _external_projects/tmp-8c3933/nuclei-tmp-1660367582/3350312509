@@ -1,0 +1,1 @@
+gcloud functions get-iam-policy $functionName --project $projectId --format=json

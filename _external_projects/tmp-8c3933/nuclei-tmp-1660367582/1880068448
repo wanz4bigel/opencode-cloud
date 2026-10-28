@@ -1,0 +1,1 @@
+aliyun kms DescribeKey --KeyId $KmsID --RegionId $region

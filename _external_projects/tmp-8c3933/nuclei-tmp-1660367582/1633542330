@@ -1,0 +1,20 @@
+# build signature for presigned urls
+import base64, hashlib, datetime, os
+from urllib.parse import urlencode
+
+username = os.getenv('username')
+base_url = os.getenv('BaseURL')
+dav_url = f'{base_url}/remote.php/dav/files/{username}'
+oc_date = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+data = {
+  'OC-Expires': '991200',
+  'OC-Verb': 'PROPFIND',
+  'OC-Credential': username,
+  'OC-Date': oc_date
+}
+sig_url = f'{dav_url}?{urlencode(data)}'
+# derive signature from empty sign key
+dk = hashlib.pbkdf2_hmac('sha512', sig_url.encode(), b'', 10000, dklen=32)
+final_url = f'/remote.php/dav/files/{username}?{urlencode(data)}&OC-Signature={dk.hex()}'
+#final_url = f'{sig_url}&OC-Signature={dk.hex()}'
+print(final_url)

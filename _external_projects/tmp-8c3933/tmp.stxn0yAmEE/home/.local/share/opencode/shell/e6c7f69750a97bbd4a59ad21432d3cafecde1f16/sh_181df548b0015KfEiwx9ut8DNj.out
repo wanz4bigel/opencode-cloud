@@ -1,0 +1,6 @@
+beranda: 200
+27460 /bin/bash -c cd /home/runner/bokep-id && node -e " const hash=(t)=>{let h=2166136261;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}; import('./src/db.js').then(({listVideos})=>{   const {rows}=listVideos({per:100}); const v={};   for(const r of rows){const k=(hash(r.slug)>>>3)%5;v[k]=(v[k]||0)+1;}   console.log('sebaran varian:', v); });" 2>&1 | tail -2; pkill -fx "node server.js"; sleep 1; (cd /home/runner/bokep-id && nohup env PORT=4173 node server.js > /tmp/bk.log 2>&1 &); sleep 2; rm -rf /tmp/bp6; chromium --headless=new --no-sandbox --disable-gpu --hide-scrollbars --user-data-dir=/tmp/bp6 --virtual-time-budget=5000 --window-size=1440,1100 --screenshot=/tmp/shot-final.png "http://localhost:4173/sudah-18?next=/" 2>/dev/null; echo siap
+27462 node server.js
+27924 node server.js
+32437 /bin/bash -c curl -s -o /dev/null -w "beranda: %{http_code}\n" --max-time 4 http://localhost:4173/ ; pgrep -af "node server.js" || echo "process server: TIDAK JALAN"; tail -12 /tmp/bk.log
+BokepKita jalan di http://localhost:4173 — kata kunci panel: gus

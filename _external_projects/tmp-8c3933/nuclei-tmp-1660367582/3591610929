@@ -1,0 +1,1 @@
+aws sqs list-queues --region $region --query 'QueueUrls[*]' --output json
