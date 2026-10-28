@@ -1,0 +1,8 @@
+== hotlink gambar eporner tanpa/tanpa referer (browser pasti kirim referer situs kita):
+referer=<kosong>                         200 image/jpeg 8218b
+referer=https://bokepkita.example/       200 image/jpeg 8218b
+== gambar 16:9 tersedia? cek varian ukuran di path yang sama:
+0_240 404 | 0_320 404 | 0_480 404 | 0_720 404 | 
+1_240 200 | 1_320 404 | 1_480 404 | 1_720 404 | 
+2_240 200 | 2_320 404 | 2_480 404 | 2_720 404 | 
+5_240 200 | 5_320 404 | 5_480 404 | 5_720 404 | 

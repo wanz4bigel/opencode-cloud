@@ -1,0 +1,2 @@
+[13337:13337:1028/111549.631738:INFO:CONSOLE:873] "Uncaught SyntaxError: missing ) after argument list", source: http://localhost:8090/js/main.js (873)
+-rw-r--r-- 1 runner runner 93420 Oct 28 11:15 /tmp/shot-play.png

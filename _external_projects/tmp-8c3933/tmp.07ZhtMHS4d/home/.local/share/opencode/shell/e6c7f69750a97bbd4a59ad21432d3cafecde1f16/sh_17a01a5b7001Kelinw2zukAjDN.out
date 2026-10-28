@@ -1,0 +1,8 @@
+ 30000 tok diminta | prompt_n= 21690 | prefill  5308 tok/s | decode 180.9 tok/s | wall   4.6s
+        reasoning: We need answer user's question in Indonesian likely. User provided huge text and asks: "Ap
+        jawaban  : KUNING-4821
+        cache   : {'cached_tokens': 0}
+120000 tok diminta | prompt_n= 85802 | prefill  5662 tok/s | decode 199.6 tok/s | wall  15.6s
+        reasoning: We need answer user's question in Indonesian likely. User provided huge text with embedded
+        jawaban  : KUNING-4821
+        cache   : {'cached_tokens': 0}

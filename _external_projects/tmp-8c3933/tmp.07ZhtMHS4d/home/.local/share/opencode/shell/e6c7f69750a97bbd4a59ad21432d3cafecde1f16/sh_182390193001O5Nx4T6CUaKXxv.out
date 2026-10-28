@@ -1,0 +1,14 @@
+== UA: Mozilla/5.0
+  aZbR8t                                         [200 23845B]0 <title>Anda mencari aZbR8t - MediaAksara.id
+
+  <img src=x onerror=alert(1)>                   [200 24249B]1 <title>Anda mencari &lt;img src=x onerror=alert(1)&gt; - MediaAksara.id
+
+  </title><img src=x onerror=alert(document.do   [200 24633B]1 <title>Anda mencari &lt;/title&gt;&lt;img src=x onerror=alert(document.domain)&gt; - Me
+
+== UA: Mozilla/5.0 (Windows N
+  aZbR8t                                         [200 23845B]0 <title>Anda mencari aZbR8t - MediaAksara.id
+
+  <img src=x onerror=alert(1)>                   [200 24249B]1 <title>Anda mencari &lt;img src=x onerror=alert(1)&gt; - MediaAksara.id
+
+  </title><img src=x onerror=alert(document.do   [200 24633B]1 <title>Anda mencari &lt;/title&gt;&lt;img src=x onerror=alert(document.domain)&gt; - Me
+

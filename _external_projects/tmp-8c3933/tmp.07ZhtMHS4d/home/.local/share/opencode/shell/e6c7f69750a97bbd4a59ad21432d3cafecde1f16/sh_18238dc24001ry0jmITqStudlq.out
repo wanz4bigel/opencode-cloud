@@ -1,0 +1,8 @@
+
+[7] Penjadwal chunk
+  ok  semua chunk dalam radius selesai dimuat — 29 chunk, 222 ms
+  ok  mesh dikirim ke renderer — 13 chunk
+  ok  daftar gambar terisi — 13 chunk
+  ok  frame tanpa pekerjaan tertunda tetap ringan — 0.09 ms
+
+SEMUA UJI LULUS

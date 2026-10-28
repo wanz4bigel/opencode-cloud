@@ -1,0 +1,10 @@
+== tautan video dari halaman utama:
+== kategori dari halaman utama:
+== API v2 percobaan:
+https://www.eporner.com/api/v2/video/list/?format=json&per_page=3      
+https://www.eporner.com/api/v2/video/search/?query=asian&format=json   {"count":3,"start":0,"per_page":3,"page":1,"time_ms":5,"total_count":100000,"total_pages":33334,"videos":[{"id":"dawbEmXII1Q","tit
+https://www.eporner.com/api/v2/categories/?format=json                 <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>API For Webmasters - EPORNER: HD Porn Tube</title>
+<meta name="robots" content="ind

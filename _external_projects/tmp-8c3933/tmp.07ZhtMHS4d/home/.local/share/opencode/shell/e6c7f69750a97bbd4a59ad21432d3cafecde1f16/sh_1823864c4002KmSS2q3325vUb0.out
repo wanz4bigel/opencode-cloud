@@ -1,0 +1,8 @@
+=== XSS probe: cigombong (jeda 12s) ===
+nunggu target hidup (maks ~30 menit)...
+--- fuzz ma ---
+  [200] 'cc'                                   hilang -> ke-escape: &#039;cc&#039;
+  [000] <i zz>                                 MATI/BLOK
+  [200] <zzz>                                  hilang -> ke-escape: &lt;zzz&gt;
+  [000] <img src=x onerror=alert(1)>           MATI/BLOK
+  [000] <svg onload=alert(1)>                  MATI/BLOK

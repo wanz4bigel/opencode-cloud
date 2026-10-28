@@ -1,0 +1,33 @@
+/home/runner/minecraft-web/js/main.js:873
+}
+^
+
+SyntaxError: missing ) after argument list
+    at checkSyntax (node:internal/main/check_syntax:84:5)
+
+Node.js v24.22.1
+  });
+
+  // Simpan saat halaman ditutup.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && (state === 'playing' || state === 'paused')) saveGame(false);
+  });
+  window.addEventListener('pagehide', () => {
+    if (state === 'playing' || state === 'paused') saveGame(false);
+  });
+  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener('orientationchange', () => setTimeout(resizeCanvas, 250));
+}
+
+function applyInputSettings() {
+  if (touch) {
+    touch.sensitivity = settings.sensitivity;
+    touch.invertY = settings.invertY;
+  }
+  if (keyboard) {
+    keyboard.sensitivity = settings.sensitivity;
+    keyboard.invertY = settings.invertY;
+  }
+}
+
+function bindRange(inputSel, outSel, format, onChange) {

@@ -1,0 +1,4 @@
+ssh: OpenSSH_10.0p2 Debian-7+deb13u4, OpenSSL 3.5.4 30 Sep 2025
+ujian 443 ke localhost.run: TERTUTUP
+ujian 443 ke pinggy: TERTUTUP
+ngrok status: https://animate-cardstock-detector.ngrok-free.dev {'count': 364, 'rate1': 0.0021311779620553813, 'rate5': 0.03455182843005681, 'rate15': 0.04205341000941692, 'p50': 2970898698, 'p90': 8668093572.5, 'p95': 14984677861, 'p99': 34303706055.300114}

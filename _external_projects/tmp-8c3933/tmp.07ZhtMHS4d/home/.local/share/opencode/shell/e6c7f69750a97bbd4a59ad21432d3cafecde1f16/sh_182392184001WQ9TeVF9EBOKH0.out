@@ -1,0 +1,31 @@
+[13174:13186:1028/111544.734951:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13186:1028/111544.737552:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13186:1028/111544.737566:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13186:1028/111544.742817:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13204:13204:1028/111544.764989:WARNING:media/gpu/vaapi/vaapi_wrapper.cc:1655] drmGetDevices2() has not found any devices
+[13204:13204:1028/111544.765233:VERBOSE1:gen/media/gpu/vaapi/va_stubs.cc:663] dlopen(libva.so.2) failed.
+[13204:13204:1028/111544.765321:VERBOSE1:gen/media/gpu/vaapi/va_stubs.cc:665] dlerror() says:
+[13204:13204:1028/111544.765391:VERBOSE1:media/gpu/vaapi/vaapi_wrapper.cc:1750] GetHandle(): Either VADisplayStateSingleton::PreSandboxInitialization() hasn't been called or that method failed to find a suitable render node
+[13204:13204:1028/111544.770533:WARNING:sandbox/policy/linux/sandbox_linux.cc:405] InitializeSandbox() called with multiple threads in process gpu-process.
+[13204:13204:1028/111544.771500:VERBOSE1:components/viz/service/main/viz_main_impl.cc:87] VizNullHypothesis is disabled (not a warning)
+[13174:13174:1028/111544.792865:WARNING:chrome/browser/signin/account_consistency_mode_manager.cc:74] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[13174:13186:1028/111544.798421:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13194:1028/111544.824698:VERBOSE1:components/component_updater/component_installer.cc:513] StartRegistration for Certificate Error Assistant
+[13174:13174:1028/111544.942916:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13186:1028/111544.942997:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13174:1028/111544.943195:VERBOSE1:chrome/browser/lifetime/session_end_listener_linux.cc:165] Failed to connect to org.gnome.SessionManager.SessionOver
+[13174:13174:1028/111544.943215:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13186:1028/111544.943276:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13174:1028/111544.943553:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13174:1028/111544.956847:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13186:1028/111544.961174:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13174:1028/111544.967007:VERBOSE1:components/component_updater/component_installer.cc:584] FinishRegistration for Certificate Error Assistant
+[13174:13174:1028/111545.015339:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13174:1028/111545.017153:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13186:1028/111545.017482:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[13174:13174:1028/111545.021990:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13174:1028/111545.042818:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.Properties.GetAll: object_path= /org/freedesktop/UPower/devices/DisplayDevice: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[13174:13174:1028/111545.042832:WARNING:dbus/property.cc:174] GetAll request failed for: org.freedesktop.UPower.Device
+[13174:13174:1028/111545.042889:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[13174:13186:1028/111545.043684:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+-rw-r--r-- 1 runner runner 93420 Oct 28 11:15 /tmp/shot-title.png
