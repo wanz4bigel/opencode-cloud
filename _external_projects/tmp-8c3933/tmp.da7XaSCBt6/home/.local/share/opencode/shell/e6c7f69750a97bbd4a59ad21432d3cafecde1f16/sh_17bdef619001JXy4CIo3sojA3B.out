@@ -1,0 +1,12 @@
+[05:39:15] mulai setup
+  Signature ok.
+Installed. Run: /home/marimo/.local/bin/strata launch
+[05:39:23] strata install rc=0
+[05:39:24] cloudflared rc=0
+--- ukuran ---
+70G	/dev/shm/sc117
+0	/marimo/llm/sc117-aux
+39M	/marimo/llm/bin
+--- proses ---
+301 /usr/local/bin/python3.13 /usr/local/bin/hf download SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterate
+809 bash -c pgrep -af "hf download|cloudflared|install.sh" | cut -c1-100 | head -5
