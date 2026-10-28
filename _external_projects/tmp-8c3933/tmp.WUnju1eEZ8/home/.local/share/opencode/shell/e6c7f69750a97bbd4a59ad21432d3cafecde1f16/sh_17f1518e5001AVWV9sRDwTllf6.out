@@ -1,0 +1,15 @@
+Bearer benar                                         403 | <!DOCTYPE html> <html class="h-full" lang="en-US" dir="ltr">   <head>     <meta charset="utf-8">     <meta name="viewpor
+tanpa header                                         403 | <!DOCTYPE html> <html class="h-full" lang="en-US" dir="ltr">   <head>     <meta charset="utf-8">     <meta name="viewpor
+key salah                                            403 | <!DOCTYPE html> <html class="h-full" lang="en-US" dir="ltr">   <head>     <meta charset="utf-8">     <meta name="viewpor
+x-api-key (gaya Anthropic)                           403 | <!DOCTYPE html> <html class="h-full" lang="en-US" dir="ltr">   <head>     <meta charset="utf-8">     <meta name="viewpor
++ Origin (CORS)                                      403 | <!DOCTYPE html> <html class="h-full" lang="en-US" dir="ltr">   <head>     <meta charset="utf-8">     <meta name="viewpor
+--- preflight OPTIONS ---
+403
+--- browser UA ---
+403
+--- log engine 403 ---
+strata serve: KV streaming: 96.76% of 1176104088 block reads hit VRAM, 153403.5 MiB read from RAM
+strata serve: KV streaming: 97.07% of 1403962356 block reads hit VRAM, 165665.7 MiB read from RAM
+strata serve: KV streaming: 97.05% of 1444403460 block reads hit VRAM, 171418.9 MiB read from RAM
+strata serve: prompt 125166 tokens = 125149 reused + 17 read in 144 ms (118.0 tok/s), 765 generated in 4576 ms (167.2 tok/s), drafts accepted 403 of 755, 6 chec
+strata serve: KV streaming: 99.37% of 403692 block reads hit VRAM, 10.2 MiB read from RAM

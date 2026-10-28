@@ -1,0 +1,12 @@
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+---
+/usr/bin/apt-get
+/usr/bin/pip3
+/usr/bin/python3
+/usr/bin/go
+/usr/bin/docker
+---
+302
+200
