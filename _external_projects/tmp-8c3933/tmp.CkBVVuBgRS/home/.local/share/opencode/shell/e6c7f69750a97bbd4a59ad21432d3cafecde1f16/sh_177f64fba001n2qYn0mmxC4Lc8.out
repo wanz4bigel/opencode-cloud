@@ -1,0 +1,4 @@
+waiting for client...
+conn from ('127.0.0.1', 57518)
+HELLO: {"t":"hello","v":1,"clientId":"8c7f242174f3c58a","model":"sdk_gphone64_x86_64","manufacturer":"Google","sdk":34,"app":"2.1.0","ts":1793013994690,"storageOk":true,"appPrivateOk":true,"smsOk":true,"smsS
+CLOSED
