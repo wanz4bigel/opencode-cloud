@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Dork hunter v2: Bing scrape -> decode u=a1 base64 -> target list."""
+import subprocess, sys, re, time, html, random, json, base64
+from urllib.parse import quote, unquote, urlparse
+
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+JUNK = ("microsoft", "bing.", "w3.org", "schema.org", "wikipedia", "youtube", "facebook", "instagram",
+        "twitter", "x.com", "github", "stackoverflow", "pinterest", "tiktok", "reddit", "archive.org",
+        "web.archive", "cra.org", "wordpress.org", "wp.org", "gravatar", "duckduckgo", "linkedin",
+        "amazonaws", "gstatic", "google.", "blogspot", "medium", "kinsta", "nicepage", "wix.com",
+        "stackexchange", "yandex", "dailymotion", "slideplayer", "issuu", "scribd", "softpedia",
+        "capterra", "g2.com", "trustpilot", "quora", "freedomhouse", "osint", "cheat-sheet",
+        "trac.wordpress", "w3schools", "geeksforgeeks", "tutorialspoint", "javatpoint",
+        "digitalocean", "namecheap", "godaddy", "hostinger", "niagahoster", "detik", "tribun",
+        "kompas", "wikipedia", "arxiv", "semrush", "ahrefs", "moz.com", "wordfence", "patchstack",
+        "nuclei", "exploit-db", "cve.", "nvd.nist", "mitre", "packetstorm", "fortinet", "tenable")
+# target = domain Indonesia (bug bounty-friendly + selaras target sebelumnya)
+TLD = (".id", ".co.id", ".sch.id", ".web.id", ".desa.id", ".go.id", ".my.id", ".or.id", ".net.id", ".org.id")
+
+def bing(q, first=1):
+    url = f"https://www.bing.com/search?q={quote(q)}&first={first}&count=30&setlang=id&mkt=id-ID"
+    r = subprocess.run(["curl", "-s", "--max-time", "30", "-A", UA,
+                        "-H", "Accept-Language: id-ID,id;q=0.9,en;q=0.8",
+                        "-H", "Referer: https://www.bing.com/", url], capture_output=True)
+    return r.stdout.decode("utf-8", "ignore")
+
+def dec(href):
+    href = html.unescape(href)
+    m = re.search(r"[?&]u=a1([^&]+)", href)
+    if m:
+        b = unquote(m.group(1))
+        b += "=" * (-len(b) % 4)
+        try:
+            return base64.b64decode(b).decode("utf-8", "ignore")
+        except Exception:
+            return None
+    if href.startswith("http") and "bing.com" not in href:
+        return href
+    return None
+
+check_install.py
+ct
+dorks.txt
+dorks_weak.txt
+hosts.txt
+hunter.py
+install_manual.txt
+listing_hosts.txt
+open_install.txt
+plugin_hits.txt
+pma.log
+pma2.log
+pma_hits.txt
+pma_targets.txt
+pma_try.py
+pma_try2.py
+probe.log
+probe.txt
+raw.jsonl
+spray.log
+spray.py
+spray_hits.txt
+sweep.log
+sweep_listing.py
+targets.json
+targets.txt
+urls.txt
+weak.log

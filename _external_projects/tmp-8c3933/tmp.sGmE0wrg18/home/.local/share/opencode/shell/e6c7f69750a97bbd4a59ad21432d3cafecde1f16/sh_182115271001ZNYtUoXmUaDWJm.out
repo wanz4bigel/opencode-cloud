@@ -1,0 +1,8 @@
+seed: vimeo diganti = True | demo=1 = True
+{
+  provider: 'vimeo',
+  embed: 'https://player.vimeo.com/video/213074494',
+  direct: 'https://vimeo.com/213074494',
+  kind: 'iframe'
+}
+vimeo oembed baru: 404
