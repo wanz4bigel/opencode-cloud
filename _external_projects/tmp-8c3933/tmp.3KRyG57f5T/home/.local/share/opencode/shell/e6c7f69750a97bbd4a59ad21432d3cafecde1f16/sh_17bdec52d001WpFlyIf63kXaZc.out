@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/tmp/marimo_108/__marimo__cell___scratch___.py", line 11, in <module>
+    c.edit_cell("Hbol", code=code)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/marimo/_code_mode/_context.py", line 1283, in edit_cell
+    raise StaleCellError(
+        cell_id, tracker.get_stale_cells(self._document)
+    )
+marimo._code_mode._context.StaleCellError: Cell 'Hbol' was modified since the agent last read it.
+Read it first (e.g. `ctx.cells['Hbol'].code`) before editing.
+To override and overwrite without re-reading, pass skip_staleness_check=True to cm.get_context().
