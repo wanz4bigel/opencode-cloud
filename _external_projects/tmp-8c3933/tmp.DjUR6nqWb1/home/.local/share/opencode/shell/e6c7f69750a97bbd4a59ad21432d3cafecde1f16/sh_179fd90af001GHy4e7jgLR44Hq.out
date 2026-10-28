@@ -1,0 +1,4 @@
+line 11
+    cmd=('env -u PYTHONPATH -u PYTHONSAFEPATH -u VIRTUAL_ENV '+T+'/bin/strata launch '\n     '--model-path /dev/shm/sc117/IQ3_S --model iq3_s --family swift '\n     '--data-dir /marimo/llm/sc117-data --context 32k --vision gpu --mtp on '\n     '--kv int8 --tune skip --access local --port 8081 --yes --no-tui')
+                                                                                       ^
+SyntaxError: unexpected character after line continuation character

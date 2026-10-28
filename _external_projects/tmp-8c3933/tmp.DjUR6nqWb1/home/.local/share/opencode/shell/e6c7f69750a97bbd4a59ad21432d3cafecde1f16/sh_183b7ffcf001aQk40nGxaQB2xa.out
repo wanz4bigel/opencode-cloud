@@ -1,0 +1,8 @@
+### no.3 decoy=qris payment_for=BUY_PACKAGE (amount 1000)
+Total amount is 1000.
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213-01-01-101-400', 'status': 'FAILED', 'message': 'Product is not available', 'title': "There's An Issue In myXL While Loading The Page from config", 'description': 'myXL is under maintenance. Please try again in a few moments later'}
+### no.186 decoy=qris payment_for=BUY_PACKAGE (amount 1000)
+Total amount is 1000.
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213-01-01-101-400', 'status': 'FAILED', 'message': 'Product is not available', 'title': "There's An Issue In myXL While Loading The Page from config", 'description': 'myXL is under maintenance. Please try again in a few moments later'}

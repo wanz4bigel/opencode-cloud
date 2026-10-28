@@ -1,0 +1,16 @@
+[1;36m[vmess][0m ===============================================
+[1;36m[vmess][0m  Deadline job : 2026-10-28 20:56 UTC
+[1;36m[vmess][0m  Handoff run  : 2026-10-28 20:53 UTC
+[1;36m[vmess][0m ===============================================
+[1;36m[vmess][0m Start: v2ray run -config /tmp/opencode/edge/config.json
+[1;36m[vmess][0m Inbound: tls=[19080] plain=[19080] ws=/qa7t3q17-9dcn
+[1;33m[vmess] WARN[0m v2ray langsung mati. Log:
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+Failed to start: main/commands: failed to create server > proxy/vmess/inbound: failed to initiate user > proxy/vmess/inbound: User github-actions already exists.
+[1;31m[vmess] ERROR[0m v2ray gagal start sama sekali.
+--- config ---
+[{"listen":"0.0.0.0","port":19080,"protocol":"vmess","tag":"in-ws-19080","settings":{"clients":[{"id":"35d7f7e0-877e-4f74-a2c7-1ce46116c992","alterId":0,"email":"github-actions","level":1}]},"sniffing":{"enabled":true,"destOverride":["http","tls","quic"],"metadataOnly":false},"streamSettings":{"network":"ws","security":"none","wsSettings":{"path":"/qa7t3q17-9dcn","headers":{"Host":"d37bawnvqx75hf.cloudfront.net"}}}},{"listen":"0.0.0.0","port":19080,"protocol":"vmess","tag":"in-ws-19080","settings":{"clients":[{"id":"35d7f7e0-877e-4f74-a2c7-1ce46116c992","alterId":0,"email":"github-actions","le
+--- tls.env ---
+TLS_CRT_FILE=
+TLS_KEY_FILE=
