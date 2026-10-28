@@ -131,7 +131,8 @@ export class Relay {
     const url = new URL(request.url);
 
     if (url.pathname === "/_agent") {
-      if (url.searchParams.get("k") !== this.env.AGENT_TOKEN) {
+      const token = request.headers.get("x-agent-token") || url.searchParams.get("k");
+      if (token !== this.env.AGENT_TOKEN) {
         return new Response("forbidden", { status: 403 });
       }
       if (request.headers.get("Upgrade") !== "websocket") {

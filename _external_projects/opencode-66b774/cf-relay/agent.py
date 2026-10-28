@@ -110,7 +110,8 @@ async def main() -> None:
     backoff = 1
     while True:
         try:
-            async with websockets.connect(RELAY_URL, ping_interval=20, ping_timeout=30,
+            url = RELAY_URL + ("&" if "?" in RELAY_URL else "?") + "k=" + AGENT_TOKEN
+            async with websockets.connect(url, ping_interval=20, ping_timeout=30,
                                           max_size=None, open_timeout=20) as ws:
                 backoff = 1
                 await session(ws)
