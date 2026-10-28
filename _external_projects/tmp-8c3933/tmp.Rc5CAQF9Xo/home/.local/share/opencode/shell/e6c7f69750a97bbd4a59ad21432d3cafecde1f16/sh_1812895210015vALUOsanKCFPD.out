@@ -1,0 +1,18 @@
+--- /_health ---
+{"agent":false,"pending":0}
+HTTP 200 | 0.417916s
+--- /v1/models tanpa key ---
+{"error":{"message":"invalid api key","type":"auth_error"}}
+HTTP 401
+--- /v1/models dengan key ---
+{"error":{"message":"sandbox agent offline","type":"relay_error"}}
+HTTP 503
+--- preflight OPTIONS ---
+HTTP/2 204 
+date: Wed, 28 Oct 2026 06:18:05 GMT
+access-control-allow-origin: *
+access-control-allow-headers: authorization, content-type, x-api-key, anthropic-version, anthropic-beta
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-max-age: 86400
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0gDGU7YYnsQWe70227aAppb0OC%2BpzmPC7PqWtbeT8DGtvwdT8w3Pjtfo0aFX0Csf%2BRKkt7yFKqxQI%2FCf2w1EI8zUr6CJlJ7dkwIMxbIxeoYNa9EIgM%2BckJf84hP9SGaL52aPgMGDGmKcug%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
