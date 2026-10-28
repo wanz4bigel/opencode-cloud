@@ -1,0 +1,12 @@
+Enter new amount if you need to overwrite.
+Press enter to ignore & use default amount: Traceback (most recent call last):
+  File "<stdin>", line 18, in <module>
+  File "/home/runner/me-cli-sunset/app/client/purchase/qris.py", line 222, in show_qris_payment
+    transaction_id = settlement_qris(
+        api_key,
+    ...<8 lines>...
+        stage_token
+    )
+  File "/home/runner/me-cli-sunset/app/client/purchase/qris.py", line 48, in settlement_qris
+    amount_str = input("Press enter to ignore & use default amount: ")
+EOFError: EOF when reading a line

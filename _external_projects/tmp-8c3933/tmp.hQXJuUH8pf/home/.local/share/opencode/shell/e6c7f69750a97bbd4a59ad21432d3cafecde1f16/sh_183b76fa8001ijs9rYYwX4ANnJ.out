@@ -1,0 +1,5 @@
+  amount 1000     -> message': 'Product is not available'
+  amount 1        -> message': 'Product is not available'
+  amount 100      -> message': 'Product is not available'
+  amount 92000    -> message': 'Product is not available'
+  amount 1300000  -> message': 'Product is not available'

