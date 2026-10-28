@@ -1,0 +1,23 @@
+49:.screen {
+62:.panel {
+72:.panel.small { width: min(360px, 100%); }
+73:.panel.wide { width: min(720px, 100%); }
+74:.panel.center { text-align: center; }
+144:.row { display: flex; gap: 8px; flex-wrap: wrap; }
+145:.row > button { flex: 1 1 auto; }
+=== html inv ===
+<div id="screen-inventory" class="screen hidden">
+  <div class="panel wide">
+    <h2>Tas &amp; Blok</h2>
+    <p class="hint" id="inv-note">Ketuk blok untuk menaruhnya ke slot hotbar yang aktif.</p>
+    <div id="palette"></div>
+    <div id="inv-hotbar"></div>
+    <div class="row">
+      <button class="primary" id="btn-close-inv" type="button">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bantuan kontrol -->
+<div id="screen-help" class="screen hidden">
+  <div class="panel wide">

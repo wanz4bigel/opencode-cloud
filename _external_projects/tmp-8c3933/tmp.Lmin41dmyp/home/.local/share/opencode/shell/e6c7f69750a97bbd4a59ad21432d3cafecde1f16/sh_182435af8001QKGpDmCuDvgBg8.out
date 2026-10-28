@@ -1,0 +1,12 @@
+160:.kabur::before {
+161-  content: ""; position: absolute; inset: -20px; z-index: 0;
+162-  background-image: var(--bkin); background-size: cover; background-position: center;
+163-  filter: blur(26px) saturate(1.45) brightness(1.15);
+164-  mix-blend-mode: screen;
+165-}
+166-.kabur img { position: relative; z-index: 1; }
+167-.card:hover .card__media { border-color: var(--amber); }
+168-.card__dur, .rail__dur, .side__dur {
+== yang dikirim server:
+3
+24

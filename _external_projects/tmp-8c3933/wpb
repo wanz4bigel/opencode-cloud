@@ -1,153 +1,131 @@
 <!DOCTYPE html>
-	<html lang="id">
-	<head>
+<html lang="id">
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Log Masuk &lsaquo; MediaAksara.id &#8212; WordPress</title>
-	<meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
-<link rel='stylesheet' id='dashicons-css' href='https://mediaaksara.id/wp-includes/css/dashicons.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='buttons-css' href='https://mediaaksara.id/wp-includes/css/buttons.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='forms-css' href='https://mediaaksara.id/wp-admin/css/forms.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='l10n-css' href='https://mediaaksara.id/wp-admin/css/l10n.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='wp-base-styles-css' href='https://mediaaksara.id/wp-includes/css/dist/base-styles/admin-schemes.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='wp-tooltip-css' href='https://mediaaksara.id/wp-admin/css/wp-tooltip.min.css?ver=7.1.3' media='all' />
-<link rel='stylesheet' id='login-css' href='https://mediaaksara.id/wp-admin/css/login.min.css?ver=7.1.3' media='all' />
-	<meta name='referrer' content='strict-origin-when-cross-origin' />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="https://mediaaksara.id/wp-content/uploads/2025/01/cropped-Logo-Media-Aksara-kotak-32x32.jpg" sizes="32x32" />
-<link rel="icon" href="https://mediaaksara.id/wp-content/uploads/2025/01/cropped-Logo-Media-Aksara-kotak-192x192.jpg" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://mediaaksara.id/wp-content/uploads/2025/01/cropped-Logo-Media-Aksara-kotak-180x180.jpg" />
-<meta name="msapplication-TileImage" content="https://mediaaksara.id/wp-content/uploads/2025/01/cropped-Logo-Media-Aksara-kotak-270x270.jpg" />
-	</head>
-	<body class="login no-js login-action-login wp-core-ui admin-color-modern locale-id-id">
-	<script>
-document.body.className = document.body.className.replace('no-js','js');
-</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+	<title>WordPress &rsaquo; Galat</title>
+	<style>
+		html {
+			background: #f1f1f1;
+		}
+		body {
+			background: #fff;
+			border: 1px solid #ccd0d4;
+			color: #444;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+			margin: 2em auto;
+			padding: 1em 2em;
+			max-width: 700px;
+			-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+		}
+		h1 {
+			border-bottom: 1px solid #dadada;
+			clear: both;
+			color: #666;
+			font-size: 24px;
+			margin: 30px 0 0 0;
+			padding: 0;
+			padding-bottom: 7px;
+		}
+		#error-page {
+			margin-top: 50px;
+		}
+		#error-page p,
+		#error-page .wp-die-message {
+			font-size: 14px;
+			line-height: 1.5;
+			margin: 25px 0 20px;
+		}
+		#error-page code {
+			font-family: Consolas, Monaco, monospace;
+		}
+		ul li {
+			margin-bottom: 10px;
+			font-size: 14px ;
+		}
+		a {
+			color: #3858e9;
+		}
+		a:hover,
+		a:active {
+			color: #183ad6;
+		}
+		a:focus {
+			color: #183ad6;
+			box-shadow: 0 0 0 var(--wp-admin-border-width-focus, 1.5px) var(--wp-admin-theme-color, #3858e9);
+			outline: 2px solid transparent;
+		}
+		.button {
+			background: #f3f5f6;
+			border: 1px solid #016087;
+			color: #016087;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 13px;
+			line-height: 2;
+			height: 28px;
+			margin: 0;
+			padding: 0 10px 1px;
+			cursor: pointer;
+			-webkit-border-radius: 3px;
+			-webkit-appearance: none;
+			border-radius: 3px;
+			white-space: nowrap;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing:    border-box;
+			box-sizing:         border-box;
 
-				<h1 class="screen-reader-text">Log Masuk</h1>
-			<div id="login">
-		<h1 role="presentation" class="wp-login-logo"><a href="https://wordpress.org/">Dipersembahkan oleh WordPress</a></h1>
-	
-		<form name="loginform" id="loginform" action="https://mediaaksara.id/wp-login.php" method="post">
-			<p>
-				<label for="user_login">Nama Pengguna atau Alamat Email</label>
-				<input type="text" name="log" id="user_login" class="input ltr" value="" size="20" autocapitalize="off" autocomplete="username" required="required" />
-			</p>
+			vertical-align: top;
+		}
 
-			<div class="user-pass-wrap">
-				<label for="user_pass">Sandi</label>
-				<div class="wp-pwd">
-					<input type="password" name="pwd" id="user_pass" class="input password-input ltr" value="" size="20" autocomplete="current-password" spellcheck="false" required="required" />
-					<button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="Tampilkan sandi">
-						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
-					</button>
-				</div>
-			</div>
-						<div style="margin: 5px 0 20px;">
+		.button.button-large {
+			line-height: 2.30769231;
+			min-height: 32px;
+			padding: 0 12px;
+		}
+
+		.button:hover,
+		.button:focus {
+			background: #f1f1f1;
+		}
+
+		.button:focus {
+			background: #f3f5f6;
+			border-color: #007cba;
+			-webkit-box-shadow: 0 0 0 1px #007cba;
+			box-shadow: 0 0 0 1px #007cba;
+			color: #016087;
+			outline: 2px solid transparent;
+			outline-offset: 0;
+		}
+
+		.button:active {
+			background: #f3f5f6;
+			border-color: #7e8993;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+			</style>
+</head>
+<body id="error-page">
+	<div class="wp-die-message">			<h2>Harap pecahkan soal matematika ini untuk membuktikan bahwa Anda bukan mesin. Setelah Anda memecahkannya, Anda harus masuk lagi.</h2>
+			
+			<form action="https://mediaaksara.id/wp-login.php" method="post" accept-charset="utf-8">
+							<div style="margin: 5px 0 20px;">
 				<p style="font-size: 14px;">
 					Buktikan sisi kemanusiaan Anda				</p>
 				<br/>
 				<label for="jetpack_protect_answer" style="vertical-align:super;">
-					2 &nbsp; + &nbsp; 6 &nbsp; = &nbsp;				</label>
+					10 &nbsp; + &nbsp; 3 &nbsp; = &nbsp;				</label>
 				<input type="number" id="jetpack_protect_answer" name="jetpack_protect_num" value="" size="2" style="width:50px;height:25px;vertical-align:middle;font-size:13px;" class="input" />
-				<input type="hidden" name="jetpack_protect_answer" value="cb26ff9b9b20bbacc89876648e1228d540f859a1" />
+				<input type="hidden" name="jetpack_protect_answer" value="32afc97a694f58ec5a8ead3ca602b2e2f1dfe297" />
 			</div>
-									<p class="forgetmenot">
-				<input name="rememberme" type="checkbox" id="rememberme" value="forever"  />
-				<label for="rememberme">Ingat Saya</label>
-				<span class="wp-tooltip wp-is-toggletip">
-				<button aria-haspopup="dialog" aria-label="Bantuan" class="wp-tooltip__toggle" popovertarget="rememberme-help-toggletip" type="button"><span aria-hidden="true" class="dashicons dashicons-editor-help"></span></button>
-				<span popover="auto" id="rememberme-help-toggletip" class="wp-tooltip__bubble" role="dialog" aria-label="Bantuan" tabindex="-1" autofocus><span id="rememberme-help-toggletip-text" class="wp-tooltip__text">Selecting &quot;Remember Me&quot; increases the length of time until you&#8217;re asked to log in again on this device. To keep your account secure, use this option only on your personal devices.</span><button type="button" class="wp-tooltip__close" popovertarget="rememberme-help-toggletip" popovertargetaction="hide" aria-label="Tutup"><span class="dashicons dashicons-no-alt" aria-hidden="true"></span></button></span></span>			</p>
-			<p class="submit">
-				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log Masuk" />
-									<input type="hidden" name="redirect_to" value="https://mediaaksara.id/wp-admin/" />
-									<input type="hidden" name="testcookie" value="1" />
-			</p>
-		</form>
-
-					<p id="nav">
-				<a class="wp-login-lost-password" href="https://mediaaksara.id/wp-login.php?action=lostpassword">Lupa sandi Anda?</a>			</p>
-			<script>
-function wp_attempt_focus() {setTimeout( function() {try {d = document.getElementById( "user_login" );d.focus(); d.select();} catch( er ) {}}, 200);}
-wp_attempt_focus();
-if ( typeof wpOnload === 'function' ) { wpOnload() }
-</script>
-		<p id="backtoblog">
-			<a href="https://mediaaksara.id/">&larr; Pergi ke MediaAksara.id</a>		</p>
-			</div>
-				<div class="language-switcher">
-				<form id="language-switcher" method="get">
-
-					<label for="language-switcher-locales">
-						Bahasa<span class="dashicons dashicons-translation" aria-hidden="true"></span>
-					</label>
-
-					<select name="wp_lang" id="language-switcher-locales"><option value="en_US" lang="en" data-installed="1">English (United States)</option>
-<option value="id_ID" lang="id" selected='selected' data-installed="1">Bahasa Indonesia</option></select>
-					
-					
-					
-						<input type="submit" class="button" value="Ubah">
-
-					</form>
-				</div>
-			
-	<script id="clipboard-js" src="https://mediaaksara.id/wp-includes/js/clipboard.min.js?ver=2.0.11"></script>
-<script id="jquery-core-js" src="https://mediaaksara.id/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
-<script id="jquery-migrate-js" src="https://mediaaksara.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
-<script id="zxcvbn-async-js-extra">
-var _zxcvbnSettings = {"src":"https://mediaaksara.id/wp-includes/js/zxcvbn.min.js"};
-//# sourceURL=zxcvbn-async-js-extra
-</script>
-<script id="zxcvbn-async-js" src="https://mediaaksara.id/wp-includes/js/zxcvbn-async.min.js?ver=1.0"></script>
-<script id="wp-hooks-js" src="https://mediaaksara.id/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
-<script id="wp-i18n-js" src="https://mediaaksara.id/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-//# sourceURL=wp-i18n-js-after
-</script>
-<script id="password-strength-meter-js-extra">
-var pwsL10n = {"unknown":"Kekuatan sandi tak diketahui","short":"Sangat lemah","bad":"Lemah","good":"Sedang","strong":"Kuat","mismatch":"Tidak sama"};
-//# sourceURL=password-strength-meter-js-extra
-</script>
-<script id="password-strength-meter-js-translations">
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2026-05-23 17:39:24+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"id"},"%1$s is deprecated since version %2$s! Use %3$s instead. Please consider writing more inclusive code.":["%1$s telah kedaluarsa sejak versi %2$s! Gunakan %3$s sebagai gantinya. Silakan pertimbangkan untuk menulis kode yang lebih inklusif."]}},"comment":{"reference":"wp-admin\/js\/password-strength-meter.js"}} );
-//# sourceURL=password-strength-meter-js-translations
-</script>
-<script id="password-strength-meter-js" src="https://mediaaksara.id/wp-admin/js/password-strength-meter.min.js?ver=7.1.3"></script>
-<script id="underscore-js" src="https://mediaaksara.id/wp-includes/js/underscore.min.js?ver=1.13.8"></script>
-<script id="wp-util-js-extra">
-var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
-//# sourceURL=wp-util-js-extra
-</script>
-<script id="wp-util-js" src="https://mediaaksara.id/wp-includes/js/wp-util.min.js?ver=7.1.3"></script>
-<script id="wp-dom-ready-js" src="https://mediaaksara.id/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
-<script id="wp-a11y-js-translations">
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2026-07-07 08:33:25+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"id"},"Notifications":["Notifikasi"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
-//# sourceURL=wp-a11y-js-translations
-</script>
-<script id="wp-a11y-js" src="https://mediaaksara.id/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
-<script id="user-profile-js-extra">
-var userProfileL10n = {"user_id":"0","nonce":"fcb8c338c1"};
-//# sourceURL=user-profile-js-extra
-</script>
-<script id="user-profile-js-translations">
-( function( domain, translations ) {
-	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
-	localeData[""].domain = domain;
-	wp.i18n.setLocaleData( localeData, domain );
-} )( "default", {"translation-revision-date":"2026-05-23 17:39:24+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"id"},"Your new password has not been saved.":["Sandi baru Anda belum disimpan."],"Application password has been copied to your clipboard.":["Kata sandi aplikasi telah disalin ke papan klip Anda."],"Caps lock is on.":["Caps lock menyala."],"Show":["Tampilkan"],"Hide":["Sembunyikan"],"Show password":["Tampilkan sandi"],"Hide password":["Sembunyikan sandi"],"Confirm use of weak password":["Setujui penggunaan sandi yang lemah"],"The changes you made will be lost if you navigate away from this page.":["Perubahan yang Anda buat akan hilang jika Anda meninggalkan laman ini."]}},"comment":{"reference":"wp-admin\/js\/user-profile.js"}} );
-//# sourceURL=user-profile-js-translations
-</script>
-<script id="user-profile-js" src="https://mediaaksara.id/wp-admin/js/user-profile.min.js?ver=7.1.3"></script>
-<script id="wp-tooltip-js" src="https://mediaaksara.id/wp-includes/js/wp-tooltip.js?ver=7.1.3"></script>
-	</body>
-	</html>
+							<input type="hidden" name="jetpack_protect_process_math_form" value="1" id="jetpack_protect_process_math_form" />
+				<p><input type="submit" value="Lanjutkan →"></p>
+			</form>
+			</div></body>
+</html>
 	

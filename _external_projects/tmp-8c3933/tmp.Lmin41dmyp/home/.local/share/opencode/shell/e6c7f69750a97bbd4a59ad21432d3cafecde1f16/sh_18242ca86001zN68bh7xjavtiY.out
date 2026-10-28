@@ -1,0 +1,12 @@
+certspotter sch.id -> [403] 235B
+certspotter desa.id -> [403] 236B
+certspotter id -> [403] 231B
+-rw-r--r-- 1 runner runner 236 Oct 28 11:23 p2s/lists/cs_desa.id.json
+-rw-r--r-- 1 runner runner 231 Oct 28 11:23 p2s/lists/cs_id.json
+-rw-r--r-- 1 runner runner 235 Oct 28 11:23 p2s/lists/cs_sch.id.json
+--- alive dari screen ---
+https://aan.my.id
+https://aang.my.id
+https://abay.my.id
+127
+46

@@ -1,0 +1,99 @@
+home-automation-colorsZ°
+white
+red
+blue
+green
+purple
+orange
+yellow
+pink
+bright white
+
+daylight
+
+warm white
+
+light blue
+
+soft white
+black
+candlelight	
+magenta
+light green
+	dark blue
+
+cool white
+brown
+teal
+incandescent
+violet
+gold
+	turquoise
+candle light
+
+light pink
+ivory
+
+dark red
+
+hot pink
+indigo
+aqua
+sunset
+light yellow
+dark purple
+
+dark green
+amber
+silver
+cyan
+snow
+
+lavender
+gray
+	navy blue
+
+sky blue	
+fuchsia	
+crimson
+ghost white
+	chocolate
+grey
+maroon
+tan
+
+aquamarine
+forest green
+peach
+	baby blue	
+pumpkin
+
+lime green
+rose
+umber
+
+burgundy
+dark orange
+coral
+
+chartreuse
+
+periwinkle
+
+orange red
+ultramarine
+cream
+beige
+
+alice blue
+antique white
+lime
+	moonlight
+peru
+azure
+bright green
+light turquoise
+
+royal blue
+deep sky blue	
+emerald"$OOV_CLASS_Color

@@ -1,0 +1,35 @@
+BokepKita jalan di http://localhost:3000
+  katalog: 72 video · 18 kategori · 3 masih contoh
+  panel:   http://localhost:3000/admin (kata kunci: gus)
+  sumber:  27 host dikenali · SQLite di data/bokep-kita.db
+ * kosong dan tidak pernah berbohong soal isinya.
+ */
+function gambar(video, { lebar = 960, tinggi = 540 } = {}) {
+  const polos = `/t/${video.slug}.svg`;
+  const berjudul = `/p/${video.slug}.svg`;
+  const awal = video.poster || polos;
+  const sisa = video.poster ? [polos, berjudul] : [berjudul];
+  return `<img src="${esc(awal)}" data-rantai="${esc(sisa.join(","))}" alt="" width="${lebar}" height="${tinggi}" loading="lazy" decoding="async">`;
+}
+
+/** Gaya latar kartu: warna dasar + foto asli yang dikaburkan (video potret). */
+function gayaKartu(video) {
+  const tone = posterPalette(video.slug);
+  return `--th:${tone.mid};--th2:${tone.deep}`;
+}
+
+/** Kartu video: foto asli kalau ada, thumbnail lokal kalau tidak. */
+export function card(video, { featured = false } = {}) {
+  const href = `/v/${video.slug}`;
+  const tone = posterPalette(video.slug);
+  return `<article class="card${featured ? " card--featured" : ""}">
+  <a class=""card__media"" href="${href}" tabindex="-1" aria-hidden="true" style="${gayaKartu(video)}">
+    ${gambar(video)}
+    <span class="card__dur">${durationText(video.duration)}</span>
+    <span class="card__play" aria-hidden="true"></span>
+    ${video.demo ? '<span class="tag tag--demo">Contoh</span>' : ""}
+  </a>
+  <h3 class="card__title"><a href="${href}">${esc(video.title)}</a></h3>
+  <p class="card__meta">
+    ${video.category ? `<a href="/k/${video.category_slug}">${esc(video.category)}</a>` : "<span>Tanpa kategori</span>"}
+    <span>·</span><span>${fmtViews(video.views)} nonton</span>

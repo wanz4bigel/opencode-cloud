@@ -1,3 +1,2 @@
-2026/10/28-10:06:13.717 c274 Reusing MANIFEST /tmp/bp9/Default/Service Worker/Database/MANIFEST-000001
-2026/10/28-10:06:13.717 c274 Recovering log #3
-2026/10/28-10:06:13.717 c274 Reusing old log /tmp/bp9/Default/Service Worker/Database/000003.log 
+2026/10/28-11:26:45.215 61e2 Creating DB /tmp/bp9/Default/Service Worker/Database since it was missing.
+2026/10/28-11:26:45.216 61e2 Reusing MANIFEST /tmp/bp9/Default/Service Worker/Database/MANIFEST-000001

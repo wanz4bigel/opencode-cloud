@@ -1,0 +1,27 @@
+24:    <button class="tbtn" id="btn-jump" type="button">LOMPAT</button>
+25:    <button class="tbtn" id="btn-place" type="button">PASANG</button>
+26:    <button class="tbtn tbtn-small" id="btn-fly" type="button">TERBANG</button>
+27:    <button class="tbtn tbtn-small" id="btn-sneak" type="button">TURUN</button>
+46:      <button class="chip" id="btn-top-info" type="button">INFO</button>
+47:      <button class="chip" id="btn-inv" type="button">TAS</button>
+48:      <button class="chip" id="btn-pause" type="button">MENU</button>
+58:<div id="screen-title" class="screen">
+73:      <button class="primary" id="btn-start" type="button">Mulai Bermain</button>
+80:      <button class="ghost" id="btn-help" type="button">Kontrol</button>
+81:      <button class="ghost" id="btn-settings" type="button">Pengaturan</button>
+82:      <button class="ghost hidden" id="btn-install" type="button">Pasang ke Layar Utama</button>
+88:<div id="screen-loading" class="screen hidden">
+97:<div id="screen-pause" class="screen hidden">
+101:      <button class="primary" id="btn-resume" type="button">Lanjutkan</button>
+102:      <button class="ghost" id="btn-save" type="button">Simpan Sekarang</button>
+103:      <button class="ghost" id="btn-pause-inv" type="button">Tas & Blok</button>
+104:      <button class="ghost" id="btn-quit" type="button">Simpan &amp; Keluar</button>
+133:        <button class="ghost" id="btn-fullscreen" type="button">Layar Penuh</button>
+134:        <button class="ghost" id="btn-reset-world" type="button">Ulangi Dunia</button>
+141:<div id="screen-inventory" class="screen hidden">
+148:      <button class="primary" id="btn-close-inv" type="button">Tutup</button>
+154:<div id="screen-help" class="screen hidden">
+185:    <div class="row"><button class="primary" id="btn-close-help" type="button">Mengerti</button></div>
+189:<div id="screen-death" class="screen hidden">
+194:      <button class="primary" id="btn-respawn" type="button">Lahir Ulang</button>
+195:      <button class="ghost" id="btn-death-quit" type="button">Simpan &amp; Keluar</button>

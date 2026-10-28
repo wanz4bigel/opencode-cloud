@@ -1,0 +1,14 @@
+259:    showTouch(v) {
+260-      el.touch.classList.toggle('hidden', !v);
+261-    },
+262-    initHotbar(inventory, onSelect) {
+263-      hotbarSlots = buildSlots(el.hotbar, inventory, onSelect);
+264-      invSlots = buildSlots(el.invHotbar, inventory, onSelect);
+265-    },
+266-    refreshHotbar(inventory) {
+267-      refreshSlots(hotbarSlots, inventory);
+=== css touch-on / body class ===
+css/style.css:264:#touch { position: fixed; inset: 0; z-index: 25; pointer-events: none; }
+css/style.css:265:#touch #stick {
+css/style.css:278:#touch-buttons {
+css/style.css:335:  #touch-buttons { grid-template-columns: repeat(4, auto); bottom: var(--slot); }

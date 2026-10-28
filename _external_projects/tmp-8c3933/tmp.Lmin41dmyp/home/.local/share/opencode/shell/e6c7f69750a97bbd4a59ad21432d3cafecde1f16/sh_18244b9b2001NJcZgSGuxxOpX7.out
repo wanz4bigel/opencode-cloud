@@ -1,0 +1,4 @@
+--- konsol halaman ---
+[log:warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio http://localhost:8090/js/core/audio.js
+--- konsol halaman ---
+[log:warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio http://localhost:8090/js/core/audio.js

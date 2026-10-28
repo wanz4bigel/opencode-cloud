@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="http://localhost:3000/static/style.css">
+<body style="background:#17130f"><div class="card"><a class="card__media kabur" id="k" href="#" style="--th:#5c2470;--th2:#2b0f36;--bkin:url('https://static-ca-cdn.eporner.com/thumbs/static4/1/18/186/18675492/10_240.jpg')">
+<img src="https://static-ca-cdn.eporner.com/thumbs/static4/1/18/186/18675492/10_240.jpg"></a></div>
+<script>
+addEventListener("load", () => {
+  const k = document.getElementById("k");
+  const s = getComputedStyle(k, "::before");
+  const out = {
+    bkin: getComputedStyle(k).getPropertyValue("--bkin").slice(0, 60),
+    content: s.content, bgImage: s.backgroundImage.slice(0, 70), filter: s.filter, blend: s.mixBlendMode,
+    w: s.width, h: s.height, z: s.zIndex,
+    varTest: (() => { const d = document.createElement("div"); d.style.setProperty("background-image", "var(--bkin)"); document.body.append(d); return getComputedStyle(d).backgroundImage.slice(0, 60); })()
+  };
+  document.title = JSON.stringify(out);
+});
+</script>
