@@ -1,0 +1,4 @@
+[I 261026 12:23:41 pypi_package_manager:529] Updating script metadata for /marimo/notebook.py
+[I 261026 12:23:41 pypi_package_manager:672] Listing packages with 'uv pip list'
+edited code of cell 'Hbol' (_) and ran
+status: idle | errors: none

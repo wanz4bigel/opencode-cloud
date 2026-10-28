@@ -1,0 +1,34 @@
+Preparing your model for Strata (one time)
+    Preparing the model data for the engine (one time)
+    Preparing the draft layer
+    Saving the model's settings
+    swift IQ3_S is ready.
+    Writing this launch's settings…
+    Settings are saved.
+strata: Port 8080 is already in use by another program. Close it, or start with a different port (for example --port 8081).
+
+
+===== relaunch port 8081 =====
+    Checking the engine for this computer…
+    Engine 0.1.50 (cuda) is installed.
+    swift IQ3_S is already installed with these choices.
+    Writing this launch's settings…
+    Settings are saved.
+    Starting the engine and loading the model. The first start can take a few minutes.
+    Loading the model… 15 s
+    Loading the model… 30 s
+    The model is loaded and answering.
+    Ready: http://127.0.0.1:8081
+    Strata is serving.
+
+Strata is serving.
+  This computer  http://127.0.0.1:8081/v1
+  Anthropic apps http://127.0.0.1:8081   (Claude Code: ANTHROPIC_BASE_URL, no /v1 at the end)
+  Engine log     /home/marimo/.local/state/strata/launch/iq3_s-32k.engine.log   (follow it: strata logs --follow)
+  Watch it:    strata monitor --url http://127.0.0.1:8081
+  Connect an app:  strata connect opencode      Stop:  strata launch --stop
+  To keep these settings for next time, add --save-preset NAME.
+--- vram ---
+59070 MiB, 97887 MiB
+--- api ---
+{"object": "list", "data": [{"id": "swift-1.5-iq3_s", "object": "model", "status": {"value": "loaded"}, "meta": {"n_ctx": 32768}, "architecture": {"input_modalities": ["text", "image"], "output_modalities": ["text"]}}]}
