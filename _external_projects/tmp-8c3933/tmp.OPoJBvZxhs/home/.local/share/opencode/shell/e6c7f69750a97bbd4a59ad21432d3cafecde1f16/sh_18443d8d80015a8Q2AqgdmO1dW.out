@@ -1,0 +1,24 @@
+== 1. Siapkan origin (plain ws) ==
+  [1;32mPASS[0m config origin tanpa TLS (security none)
+  [1;32mPASS[0m origin listen di port 19080
+== 2. Link menunjuk edge ==
+  {"v":"2","ps":"panel","add":"d37bawnvqx75hf.cloudfront.net","port":443,"id":"c0d8adb1-bf54-4fc1-b711-8bd6bcd0ef5b","net":"ws","host":"d37bawnvqx75hf.cloudfront.net","path":"/5aafolm2-mem0","tls":"tls"}
+  [1;32mPASS[0m add = domain CDN
+  [1;32mPASS[0m port link = 443 (edge)
+  [1;32mPASS[0m tls link = tls
+  [1;32mPASS[0m host link = domain CDN
+  [1;32mPASS[0m path link = /vmess
+== 3. Kartu pakai port edge ==
+  [1;32mPASS[0m kartu: Port TLS 443
+  [1;32mPASS[0m kartu: none TLS -
+  [1;32mPASS[0m kartu: network ws
+  [1;32mPASS[0m server-info: edge 443/tls
+== 4. Origin tetap melayani (klien ws biasa) ==
+  [1;32mPASS[0m tunnel lewat origin ws: HTTP 204
+== 5. EDGE_TLS=none (link tanpa field tls) ==
+  [1;32mPASS[0m tls dihilangkan saat none
+  [1;32mPASS[0m port tetap 443
+
+===============================
+  PASS=14  FAIL=0
+===============================

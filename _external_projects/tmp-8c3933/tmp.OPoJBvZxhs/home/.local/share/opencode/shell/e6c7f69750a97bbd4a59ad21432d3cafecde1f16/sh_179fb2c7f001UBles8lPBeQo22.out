@@ -1,0 +1,33 @@
+Checking the package signature and every file
+    Test-starting engine 0.1.50 linux-x86_64-cuda-cuda13 before switching to it
+    Switching to engine 0.1.50 linux-x86_64-cuda-cuda13
+    Engine 0.1.50 is installed and will be used on the next start
+    The engine is installed.
+    Preparing swift IQ3_S from your model files…
+    Getting your model ready
+    Checking your computer
+    Getting the helper packages ready
+    Checking the engine for this PC
+    Downloading the small tools used to prepare models
+    Getting the model files
+    The model files are on this computer; checking them
+    Downloading the picture reader: 0.8 of 0.9 GB
+    Downloading the picture reader: 0.9 of 0.9 GB
+    Checking that the model files are complete (a few minutes for a big model; nothing is downloaded): 0.9 of 0.9 GB
+    Downloading the picture reader: 0.9 of 0.9 GB
+    Preparing your model for Strata (one time)
+    Preparing the model data for the engine (one time)
+    Preparing the draft layer
+    Saving the model's settings
+    swift IQ3_S is ready.
+    Writing this launch's settings…
+    Settings are saved.
+strata: Port 8080 is already in use by another program. Close it, or start with a different port (for example --port 8081).
+--- vram ---
+0 MiB
+--- data-dir ---
+866M	/marimo/llm/sc117-data/models
+787M	/marimo/llm/sc117-data/mtp
+1.5G	/marimo/llm/sc117-data/packs
+--- api ---
+{"detail":"Not Found"}

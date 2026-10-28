@@ -1,0 +1,44 @@
+  88:         fcntl.flock(lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+  89:     except OSError:
+  90:         log("sudah ada hold12 lain (lock) - keluar")
+  91:         return 0
+  92: 
+  93:     sid = ""
+  94:     beats = 0
+  95:     sent = []
+  96:     state = "running"
+  97:     log(f"mulai: interval={INTERVAL_S}s cap=12j margin={STOP_MARGIN_S}s url={base or '(kosong)'}")
+  98: 
+  99:     def exec_code(code_str):
+ 100:         nonlocal sid
+ 101:         if not (base and token):
+ 102:             return "no-conf"
+ 103:         if not sid:
+ 104:             try:
+ 105:                 _, s = http_json(base + "/api/sessions", c, auth, timeout=20)
+ 106:                 sid = sorted(s)[0] if s else ""
+ 107:             except Exception:
+ 108:                 sid = ""
+ 109:         if not sid:
+ 110:             return "no-session"
+ 111:         try:
+ 112:             st, _ = http_json(
+ 113:                 base + "/api/kernel/execute",
+ 114:                 c,
+ 115:                 dict(auth_json, **{"Marimo-Session-Id": sid}),
+ 116:                 data=json.dumps({"code": code_str}).encode(),
+ 117:                 timeout=60,
+ 118:             )
+ 119:             return str(st)
+ 120:         except urllib.error.HTTPError as e:
+ 121:             if e.code in (401, 403, 404, 409):
+ 122:                 sid = ""
+ 123:             return f"http{e.code}"
+ 124:         except Exception as e:
+ 125:             sid = ""
+ 126:             return type(e).__name__
+ 127: 
+ 128:     while True:
+ 129:         up = uptime()
+ 130:         if up >= CAP_S - STOP_MARGIN_S:
+ 131:             state = "draining"

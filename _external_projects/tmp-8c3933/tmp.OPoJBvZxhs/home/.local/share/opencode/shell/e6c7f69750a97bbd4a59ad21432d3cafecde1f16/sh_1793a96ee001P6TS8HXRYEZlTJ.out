@@ -1,0 +1,30 @@
+go: github.com/projectdiscovery/subfinder/v2/@latest: argument must be a clean package path
+go: github.com/projectdiscovery/httpx/@latest: argument must be a clean package path
+go: github.com/projectdiscovery/katana/@latest: argument must be a clean package path
+go: github.com/ffuf/ffuf/v2/@latest: argument must be a clean package path
+go: github.com/tomnomnom/waybackurls/@latest: argument must be a clean package path
+go: github.com/lc/gau/v2/@latest: argument must be a clean package path
+go: github.com/projectdiscovery/dnsx/@latest: argument must be a clean package path
+go: github.com/projectdiscovery/naabu/@latest: argument must be a clean package path
+go: github.com/hahwul/dalfox/v3/@latest: argument must be a clean package path
+GO_TOOLS_DONE
+LICENSE.txt
+activate-global-python-argcomplete
+aws
+aws_completer
+azcopy
+azcopy10
+bazel
+bazelisk
+bicep
+ccmake
+cmake
+cmake-gui
+corepack
+cpack
+ctest
+helm
+kind
+kustomize
+minikube
+n

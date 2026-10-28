@@ -1,0 +1,18 @@
+      <div class="st-card">
+        <span class="card-title">Settings</span>
+        <div class="st-field">
+          <label class="st-label" for="api-key">API key <output>only if the server was started with one</output></label>
+          <input class="st-input" id="api-key" type="password" autocomplete="off" placeholder="Not needed">
+        </div>
+        <div class="toggle-row"><span>Dark theme</span>
+---
+        <span class="card-title">Settings</span>
+        <div class="st-field">
+          <label class="st-label" for="api-key">API key <output>only if the server was started with one</output></label>
+          <input class="st-input" id="api-key" type="password" autocomplete="off" placeholder="Not needed">
+        </div>
+        <div class="toggle-row"><span>Dark theme</span>
+          <button class="st-toggle" id="dark-toggle" role="switch" aria-checked="false" aria-label="Dark theme"></button></div>
+---
+=== js yang dimuat ===
+['web/app.css', 'web/app.js', 'web/components.css', 'web/tokens.css']
