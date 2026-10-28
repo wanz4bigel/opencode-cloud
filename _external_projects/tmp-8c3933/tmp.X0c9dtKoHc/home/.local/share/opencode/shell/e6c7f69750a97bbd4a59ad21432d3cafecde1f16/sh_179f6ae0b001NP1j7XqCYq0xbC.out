@@ -1,0 +1,100 @@
+    "--adapt-every": "How often the engine re-chooses which experts stay in graphics memory.",
+    "--pcie-frac": "How much of the link to the graphics card is used for moving experts.",
+    "--suffix-draft": "Guess the next words from text already in the conversation.",
+    "--port": "The network port the server listens on.",
+    "--gpu": "Which graphics card to use.",
+    "--gpu-roles": "A role for each graphics card: main, helper or off.",
+    "--gpus": "Which graphics cards to use together.",
+}
+_CODE = re.compile(r"\b[RTS]\d{1,2}\b[:,)]?\s*")
+
+
+def plain_description(name: str, text: str) -> str:
+    """A person's sentence for a setting: ours when we have one, else the engine's with its internal round codes ("R4", "T2") taken out."""
+    if name in PLAIN:
+        return PLAIN[name]
+    cleaned = _CODE.sub("", text or "").strip(" :;,-")
+    cleaned = re.sub(r"\(\s*\)", "", cleaned).strip()
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned[:1].upper() + cleaned[1:] if cleaned else "An engine setting (the engine's help has no sentence for it)."
+
+
+@dataclass
+class Param:
+    name: str                       # --flag or ENV_NAME
+    kind: str                       # "flag" | "env"
+    metavar: str = ""
+    description: str = ""
+    help_default: str | None = None
+    experimental: bool = False
+    values: list[str] = field(default_factory=list)
+=== adopt.py 40-110 ===
+def find_shards(folder: Path) -> list[Path]:
+    """The shards of one GGUF set in `folder` (-00001-of-0000N ... -0000N-of-0000N), sorted; [] if the set is incomplete."""
+    found: dict[tuple[str, int], dict[int, Path]] = {}
+    for p in sorted(Path(folder).glob("*.gguf")):
+        m = SHARD.match(p.name)
+        if m:
+            found.setdefault((m.group("stem"), int(m.group("n"))), {})[int(m.group("i"))] = p
+    for (_stem, n), items in found.items():
+        if set(items) == set(range(1, n + 1)):
+            return [items[i] for i in range(1, n + 1)]
+    return []
+
+
+def find_single(folder: Path) -> list[Path]:
+    """The one model file of a Gyro folder (a single GGUF, not a picture reader); [] when there is none or several."""
+    files = [p for p in sorted(Path(folder).glob("*.gguf")) if not p.name.lower().startswith("mmproj")]
+    return files if len(files) == 1 else []
+
+
+def plan(*, family: str, model: str, model_dir: Path, data_dir: Path, src: Path, context: int, kv: str | None, model_name: str, family_def: dict,
+         log: Path, backend: str | None, vram_gb: float = 0.0, notes: list | None = None, pack_name: str | None = None) -> tuple[dict | None, list[str]]:
+    """(config, problems): the config to write, or None with plain-words problems (what is missing). `pack_name`: the pack folder under
+    packs/ (default the model's name in lower case; Gyro's is its tag, gyro-gyro-s)."""
+    problems: list[str] = []
+    if family not in FAMILIES:
+        # no full stop: the caller joins the problems with "; " and ends the sentence (a "gyro.." came out of the old text, round 8, N11)
+        return None, [f"Strata can write the settings itself only for the Qwen3.8-Flash-Next, Swift, Coder and Gyro files, not for {family}"]
+    shards = find_single(model_dir) if family == "gyro" else find_shards(model_dir)
+    if not shards:
+        problems.append(f"the model file is not in {model_dir}" if family == "gyro" else
+                        f"the model files are not all in {model_dir} (every -0000N-of-0000N.gguf shard is needed)")
+    pack = Path(data_dir) / "packs" / (pack_name or model.lower())
+    if not (pack / "experts.bin").exists() and not (pack / "index.txt").exists():
+        problems.append(f"the prepared pack {pack} is missing (this installer cannot prepare it for this graphics card)")
+    tokenizer = pack / "tokenizer"
+    if not tokenizer.exists():
+        problems.append(f"the tokenizer {tokenizer} is missing")
+    profile = src / "data" / (family_def.get("profile") or "expert-profile.bin")
+    if not profile.exists():
+        problems.append(f"the expert profile {profile} is missing")
+    if problems:
+        return None, problems
+    mtp = Path(data_dir) / "mtp" / "rt"
+    args = ["--pack", str(pack), "--native", str(shards[0])]
+    if len(shards) > 1 or family == "gyro":            # Gyro's one file holds the n-gram table too
+        args += ["--ple-gguf", str(shards[-1])]
+    if backend == "metal":
+        # a Mac: the Metal defaults metal/setup_mac.py writes for a model that streams from the SSD (one token per step, no draft layer, the GGUF mapped in place)
+        args += ["--expert-profile", str(profile), "--expert-cache", "64", "--prefill", "auto", "--spec", "2", "--suffix-draft", "0",
+                 "--max-context", str(context), "--mmap-experts"]
+    else:
+        args += ["--expert-profile", str(profile), "--expert-cache", "auto", "--prefill", "auto", "--spec", "4", "--spec-min-p", "0.5"]
+        if mtp.exists():
+            args += ["--mtp", str(mtp)]
+        args += ["--max-context", str(context), "--kv", kv or ("int8" if context > 8192 else "fp16")]
+        if backend == "sycl":
+            # an Intel Arc, as sycl/setup_intel.py writes it: an A-series card on i915 loads the experts into a RAM arena and the CPU computes the misses
+            # (--ple-io ram); every other Arc (xe: the B70) streams the experts from the GGUF into VRAM (--stream-experts); both keep a VRAM reserve
+            reserve = "1024" if context <= 32768 else "2048"
+            if vram_gb:                                  # 0.2.2: a card a few hundred MiB short gets a smaller context / reserve (vram_fit)
+                from strata_control import vram_fit
+                fr = vram_fit.plan(model, vram_gb, context, kv or "int8", int(reserve), "auto", "intel", title=model, ctx_fixed=True)   # the context was settled by max_context or the person
+                if fr.changed:
+                    args[args.index("--max-context") + 1] = str(fr.ctx)
+                    reserve = str(fr.reserve_mib)
+                    if fr.prefill:
+                        args[args.index("--prefill") + 1] = fr.prefill
+                    if notes is not None:
+                        notes.append(fr.line)

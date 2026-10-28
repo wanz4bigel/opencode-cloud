@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+=== isi ngrok.yml (cat -A) ===
+version: "3"$
+authtoken: 3L09uCH8mECqv4vzla6oC8n5ClI_276LQj5xux1KxUyJuWv6c$
+
+=== coba add-authtoken ===
+Authtoken saved to configuration file: /home/marimo/.config/ngrok/ngrok.yml
+version: "3"
+authtoken: 3L09uCH8mECqv4vzla6oC8n5ClI_276LQj5xux1KxUyJuWv6c
+agent:
+    authtoken: 3L09uCH8mECqv4vzla6oC8n5ClI_276LQj5xux1KxUyJuWv6c
+

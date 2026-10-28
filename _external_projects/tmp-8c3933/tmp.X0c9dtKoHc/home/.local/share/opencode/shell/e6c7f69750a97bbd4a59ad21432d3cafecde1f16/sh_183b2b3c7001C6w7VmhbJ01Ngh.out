@@ -1,0 +1,56 @@
+                        print(f"  Quota: {quota_kb:.2f} KB")
+                    else:
+                        print(f"  Total: {quota}")
+            elif data_type not in ["DATA", "VOICE", "TEXT"]:
+                print(f"  Total: {benefit['total']} ({data_type})")
+            
+            if benefit["is_unlimited"]:
+                print("  Unlimited: Yes")
+    print("-------------------------------------------------------")
+    addons = get_addons(api_key, tokens, package_option_code)
+    
+
+    bonuses = addons.get("bonuses", [])
+    
+    # Pick 1st bonus if available, need more testing
+    # if len(bonuses) > 0:
+    #     payment_items.append(
+    #         PaymentItem(
+    #             item_code=bonuses[0]["package_option_code"],
+    #             product_type="",
+    #             item_price=0,
+    #             item_name=bonuses[0]["name"],
+    #             tax=0,
+    #             token_confirmation="",
+    #         )
+    #     )
+    
+    # Pick all bonuses, need more testing
+    # for bonus in bonuses:
+    #     payment_items.append(
+    #         PaymentItem(
+    #             item_code=bonus["package_option_code"],
+    #             product_type="",
+    #             item_price=0,
+    #             item_name=bonus["name"],
+    #             tax=0,
+    #             token_confirmation="",
+    #         )
+    #     )
+
+    print(f"Addons:\n{json.dumps(addons, indent=2)}")
+=== settlement_qris ===
+5:17-    payment_for: str,
+6:18-    ask_overwrite: bool,
+7:19-    overwrite_amount: int = -1,
+8:20-    token_confirmation_idx: int = 0,
+9:21-    amount_idx: int = -1,
+14:26-    if overwrite_amount == -1 and not ask_overwrite:
+15:27-        print("Either ask_overwrite must be True or overwrite_amount must be set.")
+18:30-    token_confirmation = items[token_confirmation_idx]["token_confirmation"]
+28:40-    if overwrite_amount != -1:
+29:41-        amount_int = overwrite_amount
+30:42-    elif amount_idx == -1:
+31:43-        amount_int = items[amount_idx]["item_price"]
+34:46-    if ask_overwrite:
+36:48-        amount_str = input("Press enter to ignore & use default amount: ")

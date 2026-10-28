@@ -1,0 +1,6 @@
+https://kwhwo-166-19-116-221.run.pinggy-free.link -> 200 | {"object": "list", "data": [{"id": "swift-1.5-iq3_s", "object": "model", "status": {"value": "loaded"}, "meta": {"n_ctx": 262144}, "architecture": {"i
+https://yzsxw-166-19-116-221.free.pinggy.net -> 200 | {"object": "list", "data": [{"id": "swift-1.5-iq3_s", "object": "model", "status": {"value": "loaded"}, "meta": {"n_ctx": 262144}, "architecture": {"i
+--- tampa header pinggy ---
+200
+--- chat test ---
+{"id": "chatcmpl-f3e0130aa4cc44a28e738c63", "object": "chat.completion", "created": 1793133650, "model": "swift-1.5-iq3_s", "choices": [{"index": 0, "message": {"role": "assistant", "content": "2, 3, 5", "reasoning_content": "We need answer user's request in Indonesian: \"Sebutkan 3 bilangan prima pertama, satu baris.\" Means list first 3 prime numbers, one line. Need final only one line likely \"

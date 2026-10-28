@@ -1,0 +1,15 @@
+11:def settlement_balance(
+12-    api_key: str,
+13-    tokens: dict,
+14-    items: list[PaymentItem],
+15-    payment_for: str,
+16-    ask_overwrite: bool,
+17-    overwrite_amount: int = -1,
+18-    token_confirmation_idx: int = 0,
+19-    amount_idx: int = -1,
+20-    topup_number: str = "",
+21-    stage_token: str = "",
+22-):
+23-    # Sanity check
+24-    if overwrite_amount == -1 and not ask_overwrite:
+25-        print("Either ask_overwrite must be True or overwrite_amount must be set.")

@@ -1,0 +1,29 @@
+total 108
+drwxr-xr-x  22 runner runner 4096 Oct 28 09:56 .
+drwxr-xr-x+  5 root   root   4096 Oct 23 09:03 ..
+-rw-r--r--   1 runner runner  220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 runner runner  143 Oct 28 04:41 .bash_profile
+-rw-r--r--   1 runner runner 3828 Oct 28 04:41 .bashrc
+drwxr-xr-x   3 runner runner 4096 Oct 28 04:41 .bun
+drwxr-xr-x   6 runner runner 4096 Oct 28 06:36 .cache
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:34 .cargo
+drwxr-xr-x   2 runner runner 4096 Oct 12 21:34 .composer
+drwxr-xr-x  10 runner runner 4096 Oct 28 07:51 .config
+drwxr-xr-x   2 runner docker 4096 Oct 23 09:04 .docker
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:22 .dotnet
+lrwxrwxrwx   1 runner runner   17 Oct 12 21:29 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   5 runner runner 4096 Oct 28 04:41 .local
+drwxr-xr-x   5 runner runner 4096 Oct 28 06:09 .npm
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:32 .nvm
+drwxr-xr-x   4 runner runner 4096 Oct 28 06:34 .opencode
+-rw-r--r--   1 runner runner  807 Feb 13  2026 .profile
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:34 .rustup
+drwxr-xr-x   3 runner runner 4096 Oct 28 04:41 actions-runner
+drwxr-xr-x   3 runner runner 4096 Oct 28 06:46 bali-wisata
+drwxr-xr-x   6 runner runner 4096 Oct 28 09:44 bokep-id
+drwxr-xr-x   4 runner runner 4096 Oct 28 07:55 ctf-web
+drwxr-xr-x   2 runner runner 4096 Oct 28 06:35 dork
+drwx------  15 runner runner 4096 Oct 28 07:51 nuclei-templates
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:34 p2s
+-rw-r--r--   1 runner runner   57 Oct 28 09:22 tpost2.html
+drwxr-xr-x   6 runner runner 4096 Oct 28 04:41 work

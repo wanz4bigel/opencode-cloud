@@ -1,0 +1,1 @@
+go: github.com/projectdiscovery/subfinder/v2@latest: module github.com/projectdiscovery/subfinder/v2@latest found (v2.17.0), but does not contain package github.com/projectdiscovery/subfinder/v2

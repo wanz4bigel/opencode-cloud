@@ -1,0 +1,14 @@
+Fetching intercept page...
+Intercept status: SUCCESS - 2000003558
+Getting payment methods...
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
+{
+ "code": "213",
+ "code_detail": "213",
+ "status": "FAILED",
+ "message": "Bizz-err.InvalidProduct",
+ "title": "",
+ "description": ""
+}

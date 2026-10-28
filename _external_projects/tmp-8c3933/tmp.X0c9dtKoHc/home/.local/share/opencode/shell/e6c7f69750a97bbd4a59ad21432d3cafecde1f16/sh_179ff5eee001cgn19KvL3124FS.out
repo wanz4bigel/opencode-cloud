@@ -1,0 +1,34 @@
+=== usage penuh ===
+{
+ "prompt_tokens": 66,
+ "completion_tokens": 40,
+ "total_tokens": 106,
+ "prompt_tokens_details": {
+  "cached_tokens": 0
+ }
+}
+timings: {"cache_n": 0, "prompt_n": 66, "prompt_ms": 439.0, "prompt_per_token_ms": 6.652, "prompt_per_second": 150.3, "predicted_n": 40, "predicted_ms": 232.2, "predicted_per_token_ms": 5.805, "predicted_per_second": 172.3, "draft_n": 35, "draft_n_accepted": 26}
+=== engine log: mtp/draft/accept ===
+[strata] 2026-10-26 20:53:59 engine started: /home/marimo/.local/share/strata/components/engine/0.1.50-linux-x86_64-cuda-cuda13/strata --serve --pack /marimo/llm/sc117-data/packs/swift-iq3_s --native 
+strata: PLE table mlock failed (Cannot allocate memory; raise `ulimit -l`): its pages stay faulted in but may be reclaimed
+strata generate: PLE table loaded (not locked) (--ple-io ram) in 0.7 s
+strata generate: PLE on, table 320001536 rows of /dev/shm/sc117/IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf
+strata mtp: draft layer loaded, 839 MiB of VRAM (experts 675, dense 111), files read in 0.38 s (2094 MiB/s)
+strata generate: expert cache auto: 84.66 GiB free, 700 MiB reserved (+218 MiB for the draft head) -> 24576 slots
+strata mtp: draft head over 106299 tokens (212.9 MiB)
+strata serve: prompt 53 tokens = 0 reused + 53 read in 244 ms (217.0 tok/s), 1 generated in 22 ms (45.0 tok/s), drafts accepted 0 of 0, 1 checkpoints
+strata serve: prompt 66 tokens = 0 reused + 66 read in 439 ms (150.4 tok/s), 40 generated in 232 ms (172.3 tok/s), drafts accepted 26 of 35, 1 checkpoints
+strata serve: suffix drafts: 2 windows, 5 of 7 drafts accepted
+=== engine log tail ===
+strata verify: capturing the 1-token window (38190 MiB of VRAM free)
+strata verify: captured the 1-token window (upload no error, sync no error)
+strata serve: prompt 53 tokens = 0 reused + 53 read in 244 ms (217.0 tok/s), 1 generated in 22 ms (45.0 tok/s), drafts accepted 0 of 0, 1 checkpoints
+strata serve: conversation cache: parked 53 tokens in 182.9 ms; parked=1 bytes=236986092 evictions=0 snapshot_bytes=236986092 reused_kv_bytes=0
+strata verify: capturing the 5-token window (38180 MiB of VRAM free)
+strata verify: captured the 5-token window (upload no error, sync no error)
+strata verify: capturing the 2-token window (38174 MiB of VRAM free)
+strata verify: captured the 2-token window (upload no error, sync no error)
+strata verify: capturing the 3-token window (38168 MiB of VRAM free)
+strata verify: captured the 3-token window (upload no error, sync no error)
+strata serve: prompt 66 tokens = 0 reused + 66 read in 439 ms (150.4 tok/s), 40 generated in 232 ms (172.3 tok/s), drafts accepted 26 of 35, 1 checkpoints
+strata serve: suffix drafts: 2 windows, 5 of 7 drafts accepted
