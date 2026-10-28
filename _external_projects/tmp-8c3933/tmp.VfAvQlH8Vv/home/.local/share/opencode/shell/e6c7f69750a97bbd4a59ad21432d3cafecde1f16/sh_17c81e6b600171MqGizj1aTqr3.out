@@ -1,0 +1,8 @@
+idx.html : LOCKED:MethodInvocationException
+hapus-ps : True
+200 /
+200 /dashboard/
+404 /index.html
+== del via cmd fullpath 1 perintah ==
+del home.php: The syntax of the command is incorrect.
+home.php sekarang: 200

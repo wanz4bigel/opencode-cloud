@@ -1,0 +1,20 @@
+INFO: Created user preferences directory.
+commands (use '<command> --help' for command options):
+  -sc, --select-class                    - GUI: Open the selected class and show the decompiled code
+  -d, --output-dir                       - output directory
+  -ds, --output-dir-src                  - output directory for sources
+  -dr, --output-dir-res                  - output directory for resources
+  -r, --no-res                           - do not decode resources
+  --single-class                         - decompile a single class, full name, raw or alias
+  --single-class-output                  - file or dir for write if decompile a single class
+  -e, --export-gradle                    - save as android gradle project
+  -j, --threads-count                    - processing threads count, default: 2
+                                            'simple' - simplified instructions (linear, with goto's)
+  --no-debug-info                        - disable debug info parsing and processing
+  --add-debug-lines                      - add comments with debug line numbers if available
+  --no-move-inner-classes                - disable move inner classes into parent
+  --no-restore-switch-over-string        - don't restore switch over string
+  --mappings-path                        - deobfuscation mappings file or directory. Allowed formats: Tiny and Tiny v2 (both '.tiny'), Enigma (.mapping) or Enigma directory
+                                            'read-and-autosave-every-change' - read and autosave after every change
+                                            'read-and-autosave-before-closing' - read and autosave before exiting the app or closing the project
+                                            'ignore' - don't read or save (can be used to skip loading mapping files referenced in the project file)

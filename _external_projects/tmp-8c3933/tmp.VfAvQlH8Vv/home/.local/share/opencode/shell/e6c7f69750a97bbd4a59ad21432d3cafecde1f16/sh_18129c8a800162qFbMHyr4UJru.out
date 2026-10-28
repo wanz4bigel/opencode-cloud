@@ -1,0 +1,11 @@
+--- origin mati (agent tetap nyambung) ---
+{"error":"ConnectionRefusedError: [Errno 111] Connection refused"}
+HTTP 502
+--- agent mati ---
+{"agent":true,"pending":0}
+HTTP 200
+{"error":"ConnectionRefusedError: [Errno 111] Connection refused"}
+HTTP 502
+--- token agent salah ---
+[06:19:26] terputus: InvalidStatus: server rejected WebSocket connection: HTTP 403
+[06:19:27] terputus: InvalidStatus: server rejected WebSocket connection: HTTP 403

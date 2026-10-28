@@ -1,0 +1,8 @@
+2. **Auto-exfil**: beacon #2 menjalankan `mysqldump` semua 6 DB (13,9MB) + halaman deface → zip 1,66MB tersembunyi di `http://2.26.235.85:90/up/exfil.zip` (terunduh sbg bukti, isi: `alldbs.sql 13.972.156 B`, `index.php`, `index.html`).
+3. **Deface keep-alive**: `index.php` & `dashboard/index.html` ditulis ulang otomatis oleh beacon tiap siklus kalau dihapus admin.
+4. **Self-healing TERBUKTI**: 10 proses (powershell+wscript) dibunuh semua → dalam ≤110 detik beacon bangkit sendiri dari scheduled task (`upstat` reset `beac=0`, PID baru) — tanpa interaksi manual.
+5. **Kill-switch**: menulis `@KILL` ke `cmd.txt` =卸载 bersih (hapus file, reg key, scheduled task).
+
+**Catatan attribution**: halaman deface = **"HACKED by wanz Abigail"** (root :90, dashboard, :91-:99, dan keep-alive malware). Header webshell masih `p2s-shell v5`.
+
+**Bukti rantai infeksi 1 perintah** (tanpa perlu shell): `root@localhost` MariaDB → FILE privilege → `SELECT CONVERT(0x<hex>) INTO OUTFILE` bisa menulis .ps1/.vbs/.bat ke htdocs & Startup folder = injeksi malware penuh dari DB saja.
