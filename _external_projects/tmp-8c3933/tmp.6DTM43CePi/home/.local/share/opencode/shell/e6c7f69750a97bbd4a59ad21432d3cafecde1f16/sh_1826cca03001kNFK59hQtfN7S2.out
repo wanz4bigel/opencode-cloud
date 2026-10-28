@@ -1,0 +1,3 @@
+action.yml patched
+['cloudflare_token', 'cloudflare_zone_id', 'cloudflare_proxied', 'cloudflare_record_name', 'limit_ip']
+['Pasang jq (dipakai script config)', 'Deteksi public IP', 'Update DNS Cloudflare (opsional)', 'Install v2ray', 'Generate TLS', 'Rakit config', 'Generate link vmess://', 'Run server']

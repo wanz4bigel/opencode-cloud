@@ -1,0 +1,17 @@
+
+function ageGate() {
+  return `<div class="gate">
+  <div class="gate__box">
+    <p class="gate__kicker">Situs dewasa</p>
+    <h2 class="gate__title">Khusus 18+</h2>
+    <p class="gate__text">Masuk kalau kamu sudah 18 tahun ke atas.</p>
+    <div class="gate__actions">
+      <a class="btn btn--go" href="/sudah-18?next=/">Saya sudah 18</a>
+      <a class="btn" href="https://google.com" rel="nofollow">Saya keluar</a>
+    </div>
+  </div>
+</div>`;
+}
+
+321:    res.appendHeader("set-cookie", "usia=1; Path=/; Max-Age=31536000; SameSite=Lax");
+327:  const gerbang = !cookies.usia && !TERBUKA.test(pathname) && !pathname.startsWith("/admin");

