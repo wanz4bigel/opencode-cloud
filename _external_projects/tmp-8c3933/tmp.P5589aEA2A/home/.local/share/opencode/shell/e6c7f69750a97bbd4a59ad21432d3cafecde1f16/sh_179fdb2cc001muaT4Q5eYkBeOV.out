@@ -1,0 +1,15 @@
+port 8080 http: 303
+--- pack ---
+total 1502084
+drwxr-xr-x 1 root root        220 Oct 26 20:51 .
+drwxr-xr-x 1 root root         60 Oct 26 20:51 ..
+-rw-r--r-- 1 root root        330 Oct 26 20:51 conversions.json
+-rw-r--r-- 1 root root 1538035200 Oct 26 20:51 dense.bin
+-rw-r--r-- 1 root root      93697 Oct 26 20:51 index.txt
+-rw-r--r-- 1 root root       3316 Oct 26 20:51 native_experts.txt
+drwxr-xr-x 1 root root        140 Oct 26 20:51 tokenizer
+--- models ---
+/marimo/llm/sc117-data/models
+/marimo/llm/sc117-data/models/mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf
+/marimo/llm/sc117-data/models/mmproj-Swift-Qwen3.8-Flash-Next-BF16.gguf.done
+launch pid: 2299

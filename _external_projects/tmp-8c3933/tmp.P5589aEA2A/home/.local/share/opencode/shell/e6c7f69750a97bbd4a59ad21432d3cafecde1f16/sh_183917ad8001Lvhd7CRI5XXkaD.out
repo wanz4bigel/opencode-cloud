@@ -1,0 +1,10 @@
+=== /api/health ===
+{"ok":true,"workers":[]}
+=== /api/me dengan berbagai gaya auth ===
+  Authorization                      -> HTTP 401 {"detail":"invalid api key"}
+  x-api-key                          -> HTTP 401 {"detail":"not authenticated"}
+  X-Key                              -> HTTP 401 {"detail":"not authenticated"}
+  Cookie                             -> HTTP 401 {"detail":"not authenticated"}
+=== /api/keys ( daftar key ) ===
+  HTTP 401
+{"detail":"not authenticated"}

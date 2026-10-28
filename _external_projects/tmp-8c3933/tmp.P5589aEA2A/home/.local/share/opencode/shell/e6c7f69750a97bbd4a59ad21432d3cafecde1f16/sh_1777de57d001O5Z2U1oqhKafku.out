@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+GET /models -> 200 {"models":[{"name":"qwen3.8-27b","model":"qwen3.8-27b","modified_at":"","size":"","digest":"","type":"model","description":"","tags":[""],"capabilities":["completion","multimodal"],"parameters":"","de
+
+POST /chat/completions -> 200
+reply: Saya siap membantu Anda dengan permintaan apa pun.
+usage: {'completion_tokens': 10, 'prompt_tokens': 21, 'total_tokens': 31, 'prompt_tokens_details': {'cached_tokens': 0}}
+

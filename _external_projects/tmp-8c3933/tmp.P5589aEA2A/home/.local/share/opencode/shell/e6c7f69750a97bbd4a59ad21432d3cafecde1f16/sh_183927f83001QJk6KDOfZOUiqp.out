@@ -1,0 +1,7 @@
+API key file not found.
+Dapatkan API key di Bot Telegram @fykxt_bot
+Masukkan API key: Failed to verify API key: HTTPSConnectionPool(host='me-crypto.mashu.lol', port=443): Max retries exceeded with url: /api/verify?key=2b29be2c-ba27-4244-9c60-a190137d94a6 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x76eb55d31550>: Failed to resolve 'me-crypto.mashu.lol' ([Errno -2] Name or service not known)"))
+API key tidak valid. Menutup aplikasi.
+API key file does not exist.
+--- exit 1 ---
+ls: cannot access 'api.key': No such file or directory

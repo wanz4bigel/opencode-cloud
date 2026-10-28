@@ -1,0 +1,13 @@
+== kongroro87-debug/me-cli-sunset (main) punya .env TERCOMMIT:
+   API_KEY="e57ef839-ab28-4c89-b5c6-b0e1d22e0886"
+   ENCRYPTED_FIELD_KEY=""
+   XDATA_KEY=""
+   AX_API_SIG_KEY=""
+   X_API_BASE_SECRET=""
+== Elysya28/dor (main) punya .env TERCOMMIT:
+   API_KEY="vT8tINqHaOxXbGE7eOWAhA=="
+   ENCRYPTED_FIELD_KEY="5dccbf08920a5527"
+   XDATA_KEY="5dccbf08920a5527b99e222789c34bb7"
+   AX_API_SIG_KEY="18b4d589826af50241177961590e6693"
+   X_API_BASE_SECRET="mU1Y4n1vBjf3M7tMnRkFU08mVyUJHed8B5En3EAniu1mXLixeuASmBmKnkyzVziOye7rG5nIekMdthensbQMcOJ6SLnrkGyfXALD7mrBC6vuWv6G01pmD3XlU5rT7Tzx"
+(kosong = nggak ada fork yang ke-commit .env)

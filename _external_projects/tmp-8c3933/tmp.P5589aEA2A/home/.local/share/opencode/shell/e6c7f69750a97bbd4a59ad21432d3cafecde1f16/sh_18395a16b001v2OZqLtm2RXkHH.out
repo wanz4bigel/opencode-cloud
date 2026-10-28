@@ -1,0 +1,19 @@
+====================================================================
+  .env CHECK - me-cli-sunset
+====================================================================
+  [OK]   BASE_API_URL         len=31  client/engsel.py, purchase/*
+  [OK]   BASE_CIAM_URL        len=32  client/ciam.py
+  [OK]   BASIC_AUTH           len=92  client/ciam.py (header Authorization)
+  [OK]   UA                   len=79  client/ciam.py, engsel.py, purchase/*
+  [OK]   AX_FP_KEY            len=32  client/encrypt.py -> generate ax.fp
+  [OK]   XDATA_KEY            len=32  service/crypto_helper.py (xdata AES)
+  [OK]   X_API_BASE_SECRET    len=128 service/crypto_helper.py (HMAC X-Signature)
+  [OK]   AX_API_SIG_KEY       len=32  service/crypto_helper.py (HMAC Ax-Signature)
+  [OK]   ENCRYPTED_FIELD_KEY  len=16  service/crypto_helper.py + encrypt.py (AES msisdn)
+  [OK]   API_KEY              len=24  client/encrypt.py (header x-api-key)
+--------------------------------------------------------------------
+
+=== jalanin app ===
+Nomor: Requesting OTP...
+response body {"error":"User not found","error_description":"For more on this error consult the server log at the debug level."}
+User not found

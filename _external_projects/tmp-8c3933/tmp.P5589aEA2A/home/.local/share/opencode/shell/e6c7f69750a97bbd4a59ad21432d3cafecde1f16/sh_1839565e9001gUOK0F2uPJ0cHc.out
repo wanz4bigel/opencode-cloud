@@ -1,0 +1,11 @@
+isi ENCRYPTED_FIELD_KEY    len= 16
+isi XDATA_KEY              len= 32
+isi AX_API_SIG_KEY         len= 32
+isi X_API_BASE_SECRET      len=128
+isi CIRCLE_MSISDN_KEY      len= 16
+
+ENCRYPTED_FIELD_KEY == AES_KEY_ASCII rentry : True
+AX_API_SIG_KEY      == AX_FP_KEY rentry     : True
+XDATA_KEY awalan    == AES_KEY_ASCII        : True
+BASIC_AUTH sama dgn rentry                  : True
+XDATA_KEY len 32 | X_API_BASE_SECRET len 128

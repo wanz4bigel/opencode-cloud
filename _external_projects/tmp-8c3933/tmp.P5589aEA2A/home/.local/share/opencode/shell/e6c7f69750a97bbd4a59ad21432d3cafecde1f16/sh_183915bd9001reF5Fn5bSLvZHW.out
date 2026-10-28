@@ -1,0 +1,48 @@
+https://alyx.chat/api/status
+  HTTP 404 type=application/json size=22
+{"detail":"Not Found"}
+
+https://alyx.chat/api/verify?key=2b29be2c-ba27-4244-9c60-a190137d94a6
+  HTTP 404 type=application/json size=22
+{"detail":"Not Found"}
+
+https://alyxchat.com/api/status
+  HTTP 404 type=text/html; charset=utf-8 size=2516
+
+  <!DOCTYPE html>
+<!--
+    
+
+            
+
+  
+  
+      
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+  
+
+https://alyxchat.com/api/verify?key=2b29be2c-ba27-4244-9c60-a190137d94a6
+  HTTP 404 type=text/html; charset=utf-8 size=2516
+
+  <!DOCTYPE html>
+<!--
+    
+
+            
+
+  
+  
+      
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+  
+

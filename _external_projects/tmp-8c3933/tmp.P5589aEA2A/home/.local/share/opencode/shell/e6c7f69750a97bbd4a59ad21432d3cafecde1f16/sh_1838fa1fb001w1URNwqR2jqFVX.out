@@ -1,0 +1,56 @@
+=== me-cli: API_KEY dipakai di mana ===
+13:API_KEY = os.getenv("API_KEY")
+
+
+    pt = pad(b"", AES.block_size)
+    ct = AES.new(key, AES.MODE_CBC, iv=iv).encrypt(pt)
+
+    return b64(ct, urlsafe_b64) + iv_hex
+
+def java_like_timestamp(now: datetime) -> str:
+    ms2 = f"{int(now.microsecond/10000):02d}"
+    tz = now.strftime("%z"); tz_colon = tz[:-2] + ":" + tz[-2:] if tz else "+00:00"
+    return now.strftime(f"%Y-%m-%dT%H:%M:%S.{ms2}") + tz_colon
+
+def ts_gmt7_without_colon(dt: datetime) -> str:
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone(timedelta(hours=7)))
+    else:
+        dt = dt.astimezone(timezone(timedelta(hours=7)))
+    millis = f"{int(dt.microsecond / 1000):03d}"
+    tz = dt.strftime("%z")
+    return dt.strftime(f"%Y-%m-%dT%H:%M:%S.{millis}") + tz
+
+def ax_api_signature(
+        api_key: str,
+        ts_for_sign: str,
+        contact: str,
+        code: str,
+        contact_type: str
+    ) -> str:
+    headers = {
+        "Content-Type": "application/json",
+        "x-api-key": api_key,
+    }
+    
+    request_body = {
+        "ts_for_sign": ts_for_sign,
+        "contact": contact,
+        "code": code,
+=== headers yang dikirim ke XL (sunset engsel.py) ===
+    headers = {
+        "host": BASE_API_URL.replace("https://", ""),
+        "content-type": "application/json; charset=utf-8",
+        "user-agent": UA,
+        "x-api-key": API_KEY,
+        "authorization": f"Bearer {id_token}",
+        "x-hv": "v3",
+        "x-signature-time": str(sig_time_sec),
+        "x-signature": x_sig,
+        "x-request-id": str(uuid.uuid4()),
+        "x-request-at": java_like_timestamp(now),
+        "x-version-app": "8.9.0",
+    }
+
+    url = f"{BASE_API_URL}/{path}"
+    resp = requests.post(url, headers=headers, data=json.dumps(body), timeout=30)

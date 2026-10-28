@@ -1,0 +1,18 @@
+def get_balance(api_key: str, id_token: str) -> dict:
+    path = "api/v8/packages/balance-and-credit"
+    
+    raw_payload = {
+        "is_enterprise": False,
+        "lang": "en"
+    }
+    
+    print("Fetching balance...")
+    res = send_api_request(api_key, path, raw_payload, id_token, "POST")
+    
+    if "data" in res:
+        if "balance" in res["data"]:
+            return res["data"]["balance"]
+    else:
+=== import API_KEY di engsel sunset ===
+12:    API_KEY,
+47:        "x-api-key": API_KEY,

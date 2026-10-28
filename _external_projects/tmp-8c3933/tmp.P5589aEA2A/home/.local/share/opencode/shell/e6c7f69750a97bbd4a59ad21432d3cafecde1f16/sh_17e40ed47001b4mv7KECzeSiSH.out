@@ -1,0 +1,10 @@
+At C:\xampp\htdocs\n4z.ps1:1 char:190672
++ ... le]::Open($F[$i],"Open","Read","Read")}catch{$K[$i]=$null}}}}if(1 -eq ...
++                                                                  ~
+The Try statement is missing its Catch or Finally block.
+At C:\xampp\htdocs\n4z.ps1:1 char:190710
++ ... "Read")}catch{$K[$i]=$null}}}}if(1 -eq 2){exit}}catch{Start-Sleep 1}}
++                                                                         ~
+Unexpected token '}' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingCatchOrFinally

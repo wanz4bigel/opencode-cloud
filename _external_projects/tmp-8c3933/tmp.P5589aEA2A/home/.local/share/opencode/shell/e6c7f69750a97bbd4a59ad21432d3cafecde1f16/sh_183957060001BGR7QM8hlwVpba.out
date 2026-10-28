@@ -1,0 +1,12 @@
+def decrypt_xdata(
+    api_key: str,
+    encrypted_payload: dict
+    ) -> dict:
+    if not isinstance(encrypted_payload, dict) or "xdata" not in encrypted_payload or "xtime" not in encrypted_payload:
+        raise ValueError("Invalid encrypted data format. Expected a dictionary with 'xdata' and 'xtime' keys.")
+    
+    plaintext = dec_xdata(encrypted_payload["xdata"], int(encrypted_payload["xtime"]))
+
+    return json.loads(plaintext)
+
+def get_x_signature_payment(

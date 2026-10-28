@@ -1,0 +1,8 @@
+token dicatet di .env sebagai ALYX_API_TOKEN (tidak dibaca kode)
+=== 8 key lama masih utuh? ===
+SEMUA KEY LAMA UTUH
+ALYX_API_TOKEN: 2b29be2c-ba27-4244-9c60-a190137d94a6
+=== app masih normal ===
+Nomor: Requesting OTP...
+response body {"error":"User not found","error_description":"For more on this error consult the server log at the debug level."}
+User not found

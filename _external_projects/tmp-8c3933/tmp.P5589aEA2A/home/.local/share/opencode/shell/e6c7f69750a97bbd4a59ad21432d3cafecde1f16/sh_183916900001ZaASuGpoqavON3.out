@@ -1,0 +1,26 @@
+=== alyx.chat/openapi.json ===
+HTTP 200 size=27950
+title: alyx broker | version: 0.1.0
+22 routes:
+   /api/health
+   /v1/messages
+   /api/signup
+   /api/login
+   /api/logout
+   /api/me
+   /api/keys
+   /api/keys/{key_id}
+   /api/conversations
+   /api/conversations/{cid}
+   /api/memories
+   /api/memories/{memory_id}
+   /api/uploads/{cid}/{filename}
+   /api/conversations/{cid}/pin
+   /api/generate
+   /api/extract
+   /api/transcribe
+   /api/voices
+   /api/speak
+   /
+   /login
+   /api/docs

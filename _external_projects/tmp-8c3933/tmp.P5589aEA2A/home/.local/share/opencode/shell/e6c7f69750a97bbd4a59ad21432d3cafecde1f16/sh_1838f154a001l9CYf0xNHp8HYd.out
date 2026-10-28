@@ -1,0 +1,10 @@
+key = 2b29be2c-ba27-4244-9c60-a190137d94a6
+panjang = 36 karakter | hex-dash = UUID format
+kalau dash dibuang -> 32 hex char
+
+AES butuh 16/24/32 byte ASCII. 36 TIDAK VALID.
+------------------------------------------------------------
+  XDATA_KEY            -> GAGAL: Incorrect AES key length (36 bytes)
+  ENCRYPTED_FIELD_KEY  -> GAGAL: Incorrect AES key length (36 bytes)
+  X_API_BASE_SECRET    -> HMAC OK (panjang bebas)
+  AX_API_SIG_KEY       -> HMAC OK (panjang bebas)
