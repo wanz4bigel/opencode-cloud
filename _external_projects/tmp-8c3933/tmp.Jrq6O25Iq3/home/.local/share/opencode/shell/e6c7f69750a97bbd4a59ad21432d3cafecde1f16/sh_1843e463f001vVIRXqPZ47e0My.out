@@ -1,0 +1,27 @@
+total 92
+drwxr-xr-x  19 runner runner 4096 Oct 28 17:20 .
+drwxr-xr-x+  5 root   root   4096 Oct 23 09:03 ..
+-rw-r--r--   1 runner runner  220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 runner runner  143 Oct 28 16:54 .bash_profile
+-rw-r--r--   1 runner runner 3828 Oct 28 16:53 .bashrc
+drwxr-xr-x   3 runner runner 4096 Oct 28 16:54 .bun
+drwxr-xr-x   5 runner runner 4096 Oct 28 17:18 .cache
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:34 .cargo
+drwxr-xr-x   2 runner runner 4096 Oct 12 21:34 .composer
+drwxr-xr-x   5 runner runner 4096 Oct 28 17:11 .config
+drwxr-xr-x   2 runner docker 4096 Oct 23 09:04 .docker
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:22 .dotnet
+lrwxrwxrwx   1 runner runner   17 Oct 12 21:29 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   6 runner runner 4096 Oct 28 17:18 .local
+drwxr-xr-x   3 runner runner 4096 Oct 28 16:57 .npm
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:32 .nvm
+drwxr-xr-x   3 runner runner 4096 Oct 28 16:53 .opencode
+-rw-r--r--   1 runner runner  807 Feb 13  2026 .profile
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:34 .rustup
+---
+ls: cannot access '/home/runner/v2ray-vmess-action': No such file or directory
+---
+_PipelineMapping
+_actions
+_temp
+opencode-cloud

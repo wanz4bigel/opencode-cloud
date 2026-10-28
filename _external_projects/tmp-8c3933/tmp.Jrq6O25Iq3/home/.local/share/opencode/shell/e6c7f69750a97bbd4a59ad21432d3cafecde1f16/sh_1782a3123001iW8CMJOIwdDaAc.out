@@ -1,0 +1,108 @@
+284:def list_sessions(
+285-    *, url: str, token: str | None
+286-) -> dict[str, dict[str, str | None]]:
+287-    request_url = _endpoint_url(url, "/api/sessions")
+288-    headers = {}
+289-    if token is not None:
+290-        headers["Authorization"] = f"Bearer {token}"
+291-    response = open_response(
+292-        method="GET",
+293-        url=request_url,
+294-        headers=headers,
+295-        body=None,
+296-    )
+297-    try:
+298-        try:
+299-            payload = json.load(response)
+300-        except (
+301-            OSError,
+302-            UnicodeError,
+303-            json.JSONDecodeError,
+304-            http.client.HTTPException,
+305-        ) as error:
+306-            raise PairError(
+307-                f"Unexpected response from {display_url(request_url)}."
+308-            ) from error
+309-    finally:
+310-        response.close()
+311-
+312-    message = f"Unexpected response from {display_url(request_url)}."
+313-    if not isinstance(payload, dict):
+314-        raise PairError(message)
+315-
+316-    sessions: dict[str, dict[str, str | None]] = {}
+317-    for session_id, session in payload.items():
+318-        if not isinstance(session_id, str) or not isinstance(session, dict):
+319-            raise PairError(message)
+320-        if "filename" not in session or "path" not in session:
+321-            raise PairError(message)
+322-        if "session_id" not in session:
+323-            raise StableSessionUnsupportedError
+324-        stable_session_id = session["session_id"]
+325-        filename = session["filename"]
+326-        path = session["path"]
+327-        if (
+328-            not isinstance(stable_session_id, str)
+329-            or (filename is not None and not isinstance(filename, str))
+330-            or (path is not None and not isinstance(path, str))
+331-        ):
+332-            raise PairError(message)
+333-        sessions[session_id] = {
+334-            "session_id": stable_session_id,
+335-            "filename": filename,
+336-            "path": path,
+337-        }
+338-    return sessions
+339-
+340-
+341-def resolve_session(*, url: str, token: str | None) -> str:
+342-    sessions = list_sessions(url=url, token=token)
+343-    safe_url = display_url(url)
+344-    if len(sessions) == 1:
+=== resolve_session ===
+341:def resolve_session(*, url: str, token: str | None) -> str:
+342-    sessions = list_sessions(url=url, token=token)
+343-    safe_url = display_url(url)
+344-    if len(sessions) == 1:
+345-        stable_session_id = next(iter(sessions.values()))["session_id"]
+346-        assert stable_session_id is not None
+347-        return stable_session_id
+348-    if not sessions:
+349-        message = f"No running session on {safe_url}."
+350-        raise NoSessionError(message, url=safe_url)
+351-
+352-    candidates = sorted(
+353-        session["session_id"]
+354-        for session in sessions.values()
+355-        if session["session_id"] is not None
+356-    )
+357-    message = f"Server {safe_url} has {len(candidates)} running sessions."
+358-    raise AmbiguousSessionError(
+359-        message, url=safe_url, candidates=tuple(candidates)
+360-    )
+361-
+362-
+363-def registry_urls() -> list[str]:
+364-    import psutil
+365-
+366-    urls: list[str] = []
+367-    for path in sorted(_servers_dir().glob("*.json")):
+368-        try:
+369-            with path.open(encoding="utf-8") as file:
+370-                entry = json.load(file)
+371-        except (OSError, UnicodeError, json.JSONDecodeError):
+372-            continue
+373-        if not isinstance(entry, dict):
+374-            continue
+375-        pid = entry.get("pid")
+376-        host = entry.get("host")
+377-        port = entry.get("port")
+378-        base_url = entry.get("base_url")
+379-        if (
+380-            type(pid) is not int
+381-            or not psutil.pid_exists(pid)
+382-            or not isinstance(host, str)
+383-            or type(port) is not int
+384-            or not 1 <= port <= 65535
+385-            or not isinstance(base_url, str)
+386-        ):
