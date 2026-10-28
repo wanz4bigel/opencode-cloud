@@ -1,0 +1,31 @@
+== TREE ==
+.github/workflows/keepalive.yml               69 baris
+.github/workflows/test.yml                    83 baris
+.github/workflows/vmess-server.yml           197 baris
+.gitignore                                    21 baris
+LICENSE                                       21 baris
+README.md                                    323 baris
+action.yml                                   217 baris
+scripts/dns-cloudflare.sh                    125 baris
+scripts/gen-cert.sh                           57 baris
+scripts/gen-config.sh                        154 baris
+scripts/gen-link.sh                          197 baris
+scripts/get-ip.sh                              6 baris
+scripts/healthcheck.sh                        54 baris
+scripts/install-v2ray.sh                     119 baris
+scripts/lib.sh                               247 baris
+scripts/mock-cloudflare.py                    85 baris
+scripts/run-server.sh                        147 baris
+scripts/test-dns.sh                           97 baris
+scripts/test-local.sh                        140 baris
+scripts/test-transports.sh                   121 baris
+
+== UKURAN ==
+152K	.
+
+== COMMIT ==
+8842f7a feat(dns): auto-update A record Cloudflare ke IP runner + self-test mock + wiring workflow/action
+38b2cdf test: klien memakai port/path dari isi link vmess:// (bukan state)
+f095de2 feat(link): format vmess:// minimal ala v2rayN (LINK_STYLE=minimal) + REMARKS + verifikasi isi link di self-test
+436cfd9 feat: mode full (multi-transport ws/grpc/httpupgrade), core xray/v2ray, kartu akun + self-test transport
+558fce9 feat: VMess V2Ray server on GitHub Actions (WebSocket + TLS, watchdog, handoff, keepalive)

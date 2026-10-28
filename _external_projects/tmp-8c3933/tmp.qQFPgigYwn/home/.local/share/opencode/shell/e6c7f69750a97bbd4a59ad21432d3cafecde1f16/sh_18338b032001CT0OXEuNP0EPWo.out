@@ -1,0 +1,8 @@
+repo=wanz4bigel/opencode-cloud
+owner=wanz4bigel
+workflow=OpenCode Cloud Pro v2 (Terbaru + Custom Provider + Anti-Block UI + 24/7)
+ref=refs/heads/main
+actor=github-actions[bot]
+trigger=github-actions[bot]
+pwd=/home/runner
+workspace=/home/runner/work/opencode-cloud/opencode-cloud

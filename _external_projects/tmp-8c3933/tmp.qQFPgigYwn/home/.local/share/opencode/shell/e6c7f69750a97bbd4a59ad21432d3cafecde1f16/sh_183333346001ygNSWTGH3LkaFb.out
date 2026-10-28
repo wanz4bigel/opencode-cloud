@@ -1,0 +1,24 @@
+      )
+    );
+  }
+
+  if (pathname.startsWith("/v/")) {
+    const video = videoBySlug(pathname.slice(3));
+    if (!video) return kirim(page(notFoundPage("Video itu tidak ada di katalog."), 404));
+    if (!gerbang) catatPenonton(req.socket.remoteAddress || "x", video);
+    return kirim(page(watchPage({ video, related: relatedVideos(video, 12), host, gate: gerbang })));
+  }
+
+  if (pathname === "/rss.xml") return raw(rss(host), MIME[".xml"]);
+  if (pathname === "/sitemap.xml") return raw(sitemap(host), MIME[".xml"]);
+  if (pathname === "/robots.txt")
+    return raw(`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${host}/sitemap.xml\n`, MIME[".txt"]);
+
+href="/rss.xml"
+href="/?urutan=populer"
+href="/k/colmek-kamera-hp"
+href="/k/colmek-dildo"
+href="/k/colmek-live"
+href="/k/colmek-abg"
+href="/k/colmek-hijab"
+href="/k/colmek-janda"

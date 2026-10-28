@@ -1,0 +1,3 @@
+334:  if (pathname.startsWith("/t/")) return servePoster(res, pathname, false);
+335:  if (pathname.startsWith("/p/")) return servePoster(res, pathname, true);
+381:  if (pathname.startsWith("/tag/")) {

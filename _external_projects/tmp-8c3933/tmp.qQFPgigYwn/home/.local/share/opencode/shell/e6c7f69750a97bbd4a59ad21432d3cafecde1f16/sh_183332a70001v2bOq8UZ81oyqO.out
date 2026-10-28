@@ -1,0 +1,8 @@
+36:  watchPage
+403:    return kirim(page(watchPage({ video, related: relatedVideos(video, 12), host, gate: gerbang })));
+href="/static/favicon.svg"
+href="/rss.xml"
+href="/static/style.css"
+href="/"
+href="/"
+href="/?urutan=populer"

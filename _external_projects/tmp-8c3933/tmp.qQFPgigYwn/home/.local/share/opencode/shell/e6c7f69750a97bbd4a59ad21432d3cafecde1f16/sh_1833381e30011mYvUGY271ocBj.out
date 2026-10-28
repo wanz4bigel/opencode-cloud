@@ -1,0 +1,56 @@
+PUBLIC_URL=https://bokepkita.example node server.js  # buat RSS/sitemap/OG
+```
+
+Database SQLite dibuat otomatis di `data/bokep-kita.db`. Kalau masih kosong, ia diisi
+12 kategori **khusus colmek** — **1.666 video sungguhan** (275 jam) dari Eporner.
+Video contoh hanya dipakai kalau katalog sungguhan belum ada sama sekali.
+
+```bash
+npm run isi     # ambil semua video colmek dari API Eporner → data/katalog.json (~25 detik)
+npm run reset   # kosongkan lalu isi ulang katalog (tambahan manual ikut terhapus)
+npm run dev     # node --watch
+npm run probe   # cek semua URL katalog masih menjawab atau tidak
+npm run smoke   # cek semua rute + jaminan isi (butuh server yang sedang jalan)
+npm run asli    # samakan judul/durasi/gambar dengan video aslinya
+npm run info -- <url>   # intip metadata yang bakal diambil dari sebuah URL
+```
+
+## Katalog: isi sungguhan
+
+Katalog default diisi **video sungguhan** lewat `npm run isi`, yang menanyakan ke
+**API publik Eporner** (`/api/v2/video/search/`) pakai 41 kueri yang semuanya
+mengandung `colmek` — `colmek_abg`, `colmek_hijab`, `colmek_janda`, `colmek_dildo`, dan
+seterusnya, masing-masing 5 halaman × 100 video. Hasilnya digabung jadi satu kolam
+(1.666 video unik), baru dibagi ke 12 kategori berdasarkan kata di judulnya. Yang diambil
+host-nya apa adanya: judul, durasi, tag, jumlah view, dan gambar aslinya. Tidak ada judul
+yang dikarang-karang.
+
+Karena situs ini **khusus colmek**, hasilnya disaring dua lapis:
+
+1. judulnya wajib menyebut colmek/masturbasi/dildo (`sinyalColmek`),
+2. judul yang mengarah ke adegan ngentot/sepong/selingkuh/gilir dibuang (`bukanColmek`),
+3. judul yang mengarah ke anak di bawah umur (`smp`, `sd`, `bocah`) tidak pernah lolos.
+
+Tag Eporner tidak dipakai sebagai bukti karena sering nyampur (`ngentot abg indo, colimek, ...`).
+
+Alasannya Eporner: dari semua host dewasa yang dicoba dari server ini, cuma dia yang
+(1) tidak bersembunyi di balik Cloudflare, (2) membolehkan iframe, dan (3) punya API
+publik tanpa kunci. XHamster/XNXX/Pornhub/SpankBang menolak (`403`) — makanya host itu
+tetap harus diisi manual.
+
+```bash
+npm run isi                 # ambil semua yang tersedia → 1.666 video (~25 detik)
+npm run isi -- --per 40     # batasi tiap kategori maksimal 40
+npm run isi -- --kategori colmek-hijab --per 6
+npm run isi -- --short 120  # buang klip di bawah 2 menit
+npm run reset               # seed baca katalog.json otomatis
+```
+
+Judul kembar dari unggahan ulang dibuang (`bersihkan()` + kunci judul ternormalisasi),
+jadi 1.666 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+adanya — tidak diisi video contoh.
+
+Video contoh (file uji publik) cuma muncul kalau `data/katalog.json` belum ada. Selama
+masih ada, situs bilang jujur: badge **Contoh**, baris penjelasan di beranda, dan catatan
+di halaman nonton. Setelah `npm run isi`, ketiganya hilang sendiri.
+
