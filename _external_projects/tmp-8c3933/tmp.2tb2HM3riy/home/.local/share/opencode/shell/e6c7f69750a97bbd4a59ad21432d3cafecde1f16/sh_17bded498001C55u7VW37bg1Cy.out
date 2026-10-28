@@ -1,0 +1,12 @@
+  File "/tmp/marimo_108/__marimo__cell___scratch___.py", line 6, in <module>
+    print(cid, "| code:", repr((ctx.cells[cid].code or "")[:120]))
+                                ~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/marimo/_code_mode/_context.py", line 593, in __getitem__
+    return self._cell_view(self._doc.get_cell(self._resolve(key)))
+                                              ~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/marimo/_code_mode/_context.py", line 575, in _resolve
+    raise KeyError(
+    ...<4 lines>...
+    )
+KeyError: "Cell NotebookCell(id='Hbol', name='_', status='stale', code='import marimo as mo...') not found. Available cell IDs: [Hbol]. IDs are stable across reorders — re-read ctx.cells if the notebook structure changed."
+sel: ['Hbol']
