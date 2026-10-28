@@ -1,0 +1,5 @@
+hold12 dipatch
+hold_ws dipatch
+stop: 23743 bash /marimo/llm/brain-guard.sh 
+stop: 23749 python3 /marimo/llm/hold12.py 
+guard baru pid: 24191

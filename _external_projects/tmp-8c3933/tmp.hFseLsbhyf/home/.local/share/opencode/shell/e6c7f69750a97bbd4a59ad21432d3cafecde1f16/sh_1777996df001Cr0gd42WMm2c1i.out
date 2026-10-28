@@ -1,0 +1,27 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+=== brain.log (tunnel) ===
+2026-10-26T09:08:50 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:09:06 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:09:22 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:09:38 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:09:54 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:10:10 ngrok gagal dapat URL, ulangi 10s
+
+=== ngrok process ===
+
+
+=== argumen FastMTP di proses 19541 ===
+--cache-type-k
+f16
+--
+--spec-type
+draft-mtp
+--spec-draft-n-max
+4
+--
+--spec-draft-p-split
+0.3
+
+=== request nyata ===
+draft: 152 diterima: 96 acc: 63.2% | TG: 106.37 t/s
+

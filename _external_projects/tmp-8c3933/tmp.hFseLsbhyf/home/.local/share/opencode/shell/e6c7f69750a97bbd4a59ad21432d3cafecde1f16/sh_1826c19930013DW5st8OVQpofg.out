@@ -1,0 +1,28 @@
+== 1) record lama beda IP -> PATCH ==
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;36m[vmess][0m Zone: domainmu.com | record: v2.domainmu.com -> 203.0.113.10 (proxied=false)
+[1;36m[vmess][0m A record diupdate: 1.1.1.1 -> 203.0.113.10
+[1;33m[vmess] WARN[0m DNS belum menunjuk ke 203.0.113.10 (sekarang: '76.223.54.146'). Cek TTL/zone.
+   state: {"ip":"203.0.113.10","proxied":false,"created":0}
+== 2) IP sama -> tidak diubah ==
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;36m[vmess][0m Zone: domainmu.com | record: v2.domainmu.com -> 203.0.113.10 (proxied=false)
+[1;36m[vmess][0m A record sudah benar (203.0.113.10), tidak diubah.
+[1;33m[vmess] WARN[0m DNS belum menunjuk ke 203.0.113.10 (sekarang: '76.223.54.146'). Cek TTL/zone.
+== 3) record belum ada -> POST (buat) ==
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;36m[vmess][0m Zone: domainmu.com | record: v2.domainmu.com -> 203.0.113.10 (proxied=false)
+[1;36m[vmess][0m A record dibuat: v2.domainmu.com -> 203.0.113.10
+[1;33m[vmess] WARN[0m DNS belum menunjuk ke 203.0.113.10 (sekarang: '76.223.54.146'). Cek TTL/zone.
+   state: {"ip":"203.0.113.10","proxied":false,"created":1}
+== 4) proxied=true (orange cloud) ==
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;36m[vmess][0m Zone: domainmu.com | record: v2.domainmu.com -> 203.0.113.10 (proxied=true)
+[1;36m[vmess][0m A record diupdate: 1.1.1.1 -> 203.0.113.10
+   state: {"ip":"203.0.113.10","proxied":true,"created":0}
+== 5) CF_ZONE_ID manual (tanpa lookup zone) ==
+[1;33m[vmess] WARN[0m Port 443 -> v2ray akan dijalankan via sudo (setcap tidak tersedia/gagal).
+[1;36m[vmess][0m Zone: zone123 | record: v2.domainmu.com -> 203.0.113.10 (proxied=false)
+[1;36m[vmess][0m A record sudah benar (203.0.113.10), tidak diubah.
+[1;33m[vmess] WARN[0m DNS belum menunjuk ke 203.0.113.10 (sekarang: '76.223.54.146'). Cek TTL/zone.
+   state: {"ip":"203.0.113.10","proxied":true,"created":0}
