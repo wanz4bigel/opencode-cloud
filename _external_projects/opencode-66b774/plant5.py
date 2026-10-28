@@ -1,0 +1,16 @@
+CELL = 'import json\nimport pathlib\n\nimport marimo as mo\n\nrefresh = mo.ui.refresh(default_interval="2s")\n\ntry:\n    s = json.loads(pathlib.Path("/marimo/llm/status.json").read_text())\nexcept Exception:\n    s = {}\n\npct = float(s.get("pct") or 0)\nfilled = int(round(pct / 100 * 30))\nbar = "█" * filled + "░" * (30 - filled)\neta = int(s.get("eta_s") or 0)\neta_txt = f"{eta // 60}m{eta % 60:02d}s" if eta else "—"\nlive = s.get("public") == 200\nkey = pathlib.Path("/marimo/llm/api_key.txt").read_text().strip() if pathlib.Path("/marimo/llm/api_key.txt").exists() else ""\n\nmo.vstack([\n    mo.md(f"""\n# IQ3_S (SC117 abliterated) — {\'LIVE\' if live else \'sedang dibangun\'}\n\n| | |\n|---|---|\n| **Base URL** | `https://ai.wanz4bigel.dpdns.org/v1` |\n| **API key** | `{key}` |\n| **Model** | `swift-1.5-iq3_s` · 262.144 konteks · KV int8 |\n| **Fase** | **{s.get(\'phase_label\', \'—\')}** · {s.get(\'elapsed_s\', 0)} detik |\n| **Unduhan** | `{bar}` {pct:.1f}% · {s.get(\'model_gb\', 0)} / {s.get(\'total_gb\', 0)} GB · {int(s.get(\'speed_mbps\') or 0)} MB/s · ETA {eta_txt} |\n| **RAM / VRAM** | {s.get(\'ram_gb\', 0)} GB / {s.get(\'vram_gb\', 0)} GB |\n| **Server lokal / publik** | {s.get(\'server\', 0)} / {s.get(\'public\', 0)} |\n| **Diperbarui** | {s.get(\'t\', \'—\')} |\n\nModel ada di `/home/marimo/models/sc117` (disk, bukan `/dev/shm`), jadi RAM lega.\n\nKalau sandbox mati: **Relaunch** di molab → `bash /marimo/llm/pipeline.sh`.\nDashboard ini akan menampilkan progres unduhan secara langsung.\n"""),\n    refresh,\n])\n'
+
+import subprocess, time
+p = subprocess.Popen(["python3", "/marimo/llm/status_loop.py"],
+                     stdout=open("/marimo/llm/status.log", "ab"),
+                     stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                     start_new_session=True)
+print("status loop pid:", p.pid)
+time.sleep(5)
+print(open("/marimo/llm/status.json").read())
+
+import marimo._code_mode as cm
+async with cm.get_context(skip_staleness_check=True) as c:
+    c.edit_cell("Hbol", code=CELL)
+    c.run_cell("Hbol")
+print("dashboard live terpasang")
