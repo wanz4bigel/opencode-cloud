@@ -1,0 +1,62 @@
+   "path": "/storage/emulated/0/Download",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232854,
+   "path": "/storage/emulated/0/DCIM",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232858,
+   "path": "/storage/emulated/0/Documents",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232866,
+   "path": "/storage/emulated/0/Audiobooks",
+   "size": 4096
+  },
+  {
+   "dir": true,
+   "mtime": 1793013232958,
+   "path": "/storage/emulated/0/Recordings",
+   "size": 4096
+  }
+ ],
+ "ok": true,
+ "path": "/storage/emulated/0",
+ "pattern": "*",
+ "rid": "610450ee9955",
+ "scanned": 25,
+ "t": "fs_search",
+ "truncated": false,
+ "v": 1
+}
+
+== req_app_action ==
+{
+ "error": "unknown_action",
+ "ok": false,
+ "rid": "b9f8d3352a8e",
+ "t": "app_action",
+ "v": 1
+}
+
+== req_clipboard_set ==
+{
+ "len": 0,
+ "ok": true,
+ "rid": "2f134c682283",
+ "t": "clipboard_set",
+ "v": 1
+}
+
+== req_clipboard ==
+    [error] timed out
+
+== req_device_info ==
+===
+ls: cannot access '/home/runner/xhunter-work/out/captures/': No such file or directory

@@ -1,0 +1,16 @@
+Hbol   | _            | stale    | import marimo as mo
+MJUe   | chat         | stale    | import json
+vblA   | model_info   | stale    | import json as _json
+bkHC   | _            | stale    | # ⏳ Penjaga 12 jam + klien WebSocket — status dari /marimo/llm/
+lEQa   | self_url     | stale    | """Simpan URL publik sandbox dari header request browser (proxy mo
+PKri   | resurrect    | stale    | """Idempoten: kalau layanan mati (sandbox baru / kernel baru), ban
+Xref   | _            | stale    | mo.status.toast(
+
+=== Hbol ===
+import marimo as mo
+
+mo.status.toast(
+    "🚀 Stack hidup lagi — 106 t/s di domain yang sama!",
+    "Q6_K_P + FastMTP depth 4 · KV f16 · p-split 0,3 · ctx 204.800. "
+    "Sandbox baru, hasil lama: model, server, ngrok, penjaga 12 jam semua sudah nyala.",
+)
