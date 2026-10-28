@@ -1,0 +1,58 @@
+            # QRIS decoy + Rpx
+            decoy = DecoyInstance.get_decoy("qris")
+            
+            decoy_package_detail = get_package(
+                api_key,
+                tokens,
+                decoy["option_code"],
+            )
+            
+            if not decoy_package_detail:
+                print("Failed to load decoy package details.")
+                pause()
+                return False
+
+            payment_items.append(
+                PaymentItem(
+                    item_code=decoy_package_detail["package_option"]["package_option_code"],
+                    product_type="",
+                    item_price=decoy_package_detail["package_option"]["price"],
+                    item_name=decoy_package_detail["package_option"]["name"],
+                    tax=0,
+                    token_confirmation=decoy_package_detail["token_confirmation"],
+                )
+            )
+            
+            print("-"*55)
+            print(f"Harga Paket Utama: Rp {price}")
+            print(f"Harga Paket Decoy: Rp {decoy_package_detail['package_option']['price']}")
+            print("Silahkan sesuaikan amount (trial & error, 0 = malformed)")
+            print("-"*55)
+
+            show_qris_payment(
+                api_key,
+                tokens,
+                payment_items,
+                "SHARE_PACKAGE",
+                True,
+                token_confirmation_idx=1
+            )
+            
+            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+            return True
+        elif choice == '7':
+            # QRIS decoy + Rp0
+            decoy = DecoyInstance.get_decoy("qris0")
+            
+            decoy_package_detail = get_package(
+                api_key,
+                tokens,
+                decoy["option_code"],
+            )
+            
+            if not decoy_package_detail:
+                print("Failed to load decoy package details.")
+                pause()
+                return False
+
+            payment_items.append(

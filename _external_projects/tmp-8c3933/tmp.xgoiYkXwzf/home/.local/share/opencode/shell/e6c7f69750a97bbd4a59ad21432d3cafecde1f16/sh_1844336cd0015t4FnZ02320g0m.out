@@ -1,0 +1,10 @@
+== 1. Siapkan origin (plain ws) ==
+  [1;32mPASS[0m config origin tanpa TLS (security none)
+  [1;32mPASS[0m origin listen di port 19080
+== 2. Link menunjuk edge ==
+  {"v":"2","ps":"panel","add":"d37bawnvqx75hf.cloudfront.net","port":443,"id":"de9028b7-533a-458e-b08d-6f25245d438b","net":"ws","host":"d37bawnvqx75hf.cloudfront.net","path":"/a9d0bavy-jew3","tls":"tls"}
+  [1;32mPASS[0m add = domain CDN
+  [1;32mPASS[0m port link = 443 (edge)
+  [1;32mPASS[0m tls link = tls
+  [1;32mPASS[0m host link = domain CDN
+scripts/test-edge.sh: line 55: WS_PATH: unbound variable

@@ -1,0 +1,4 @@
+gen-config ok
+gen-link ok
+run-server ok
+SHELLCHECK_OK

@@ -1,0 +1,22 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+proses ngrok: 
+
+ngrok.log: lvl=info
+msg="no configuration paths supplied"
+lvl=info
+msg="using configuration at default config path"
+lvl=info
+msg="open config file"
+
+brain.log: 2026-10-26T09:10:10 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:10:26 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:10:42 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:10:58 ngrok gagal dapat URL, ulangi 10s
+2026-10-26T09:11:14 ngrok gagal dapat URL, ulangi 10s
+
+current_url: -
+
+=== tes publik ===
+/health -> <HTTPError 404: 'Not Found'>
+/v1/models -> <HTTPError 404: 'Not Found'>
+

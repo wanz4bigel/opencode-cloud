@@ -1,0 +1,20 @@
+✓ /rss.xml → 200 (14684 byte)
+✓ /sitemap.xml → 200 (312394 byte)
+✓ /robots.txt → 200 (121 byte)
+✓ /admin → 200 (36934 byte)
+✓ /admin?token=gus → 200 (36934 byte)
+✓ /admin?token=salah → 401 (3834 byte)
+✓ /entah-apa-ini → 404 (3445 byte)
+✓ beranda menampilkan kartu video
+✓ beranda memanggil thumbnail /t/
+✓ beranda bersih dari catatan contoh (semua isi asli)
+✓ kartu punya rantai cadangan gambar
+✓ 1 kartu, semuanya punya gambar bercadangan
+✓ halaman nonton memuat pemutar
+✓ halaman nonton punya antrean lanjutan
+✓ gerbang 18+ tampil tanpa kuki
+✓ gerbang menutupi konten buat pengunjung baru
+✓ panel bisa ambil metadata host otomatis
+✓ halaman /host daftar 29 sumber
+
+Semua rute & isi sehat.

@@ -1,0 +1,20 @@
+README ok
+43:## Struktur
+69:## Pakai cepat
+80:## Pemetaan kartu → config
+102:## Format link `vmess://`
+117:## v2ray vs xray
+128:## Input `workflow_dispatch`
+143:## Variables / Secrets repo
+168:## Pakai domain sendiri (Cloudflare)
+174:### 1. Siapkan Cloudflare
+183:### 2. Isi repo
+204:### 3. Pilih: DNS only vs proxied
+238:### 4. Verifikasi manual
+248:## Mode edge / CDN (CloudFront, Cloudflare proxied)
+269:### CloudFront
+317:## Pakai sebagai action di repo lain
+334:## Uji lokal
+364:## Yang perlu kamu tahu
+380:## Troubleshooting
+399:## Lisensi

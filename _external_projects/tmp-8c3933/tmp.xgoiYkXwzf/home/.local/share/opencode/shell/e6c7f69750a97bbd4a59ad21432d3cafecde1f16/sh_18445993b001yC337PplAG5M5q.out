@@ -1,0 +1,5 @@
+test.yml ok
+[None, 'Pasang dependency', 'Jalankan scripts/test-local.sh', 'Jalankan scripts/test-edge.sh (mode CDN)', 'Upload log kalau gagal']
+--- simulasi step Terapkan mode (TLS off) ---
+mode=simple core=v2ray tls=off port=8080 edge=443/tls
+PORTS_PLAIN=8080
