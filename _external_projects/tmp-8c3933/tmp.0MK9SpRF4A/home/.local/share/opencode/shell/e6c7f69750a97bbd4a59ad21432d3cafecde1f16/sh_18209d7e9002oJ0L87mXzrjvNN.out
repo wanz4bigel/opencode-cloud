@@ -1,0 +1,29 @@
+6:  addVideo,
+18:import { adminPage } from "./src/admin.js";
+55:async function readBody(req) {
+58:  for await (const chunk of req) {
+105:async function serveStatic(req, res, pathname) {
+110:    file = await readFile(path.join(publicDir, rel));
+117:async function handleAdmin(req, res, url, cookies) {
+120:  const form = req.method === "POST" ? await readBody(req) : null;
+121:  const token = url.searchParams.get("token") || cookies.admin || (form && form.get("token")) || "";
+124:    if (token) return page(adminPage({ token: null, note: "Kata kunci salah.", host }), 401);
+125:    return page(adminPage({ token: null, host }));
+130:  if (cookies.admin !== ADMIN_TOKEN) {
+131:    res.appendHeader("set-cookie", `admin=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Strict`);
+136:    if (pathname === "/admin/tambah") {
+137:      const result = addVideo({
+145:    } else if (pathname === "/admin/impor") {
+151:        const result = addVideo({ title, url: value || title, categoryId, tags: "" });
+156:    } else if (pathname.startsWith("/admin/hapus/")) {
+163:    res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+170:  return page(adminPage({ token, note, host }));
+173:async function route(req, res, url, cookies) {
+178:  const gated = !cookies.usia && !pathname.startsWith("/admin");
+293:    return raw(`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${host}/sitemap.xml\n`, "text/plain; charset=utf-8");
+296:  if (pathname.startsWith("/admin")) return handleAdmin(req, res, url, cookies);
+301:const server = http.createServer(async (req, res) => {
+312:    const result = await route(req, res, url, readCookies(req));
+== arsip thumb:
+thumb arsip: 200 application/json 15161b
+{"alternate_locations":{"servers":[{"server":"dn710604.ca.archive.org","dir":"/0/items/BigBuckBunny_124"}],"workable":[{"server":"dn710604.ca.archive.org","dir":"/0/items/BigBuckBunny_124"}]},"created":1791674146,"d1":"dn801201.us.archive.org","dir":"/0/items/BigBuckBunny_124","files":[{"name":"BigB

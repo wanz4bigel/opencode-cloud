@@ -1,0 +1,17 @@
+file:///home/runner/bokep-id/src/info.js:102
+const YT_ID = /^(?:www\.youtube\.com\/(?:watch\?v=|embed/|shorts/|live/)|youtu\.be\/)([\w-]{6,})/;
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid regular expression: /^(?:www\.youtube\.com\/(?:watch\?v=|embed/: Unterminated group
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:276:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:381:17)
+
+Node.js v24.21.0

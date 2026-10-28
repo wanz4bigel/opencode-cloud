@@ -1,0 +1,35 @@
+176:export function homePage({ rows, pages, current, query }) {
+177-  const sortLabel = query.urutan === "populer" ? "Paling banyak ditonton" : "Barang baru malam ini";
+178-  const body = `
+179-  <section class="strip">
+180-    <h1 class="strip__title">${sortLabel}</h1>
+181-    <p class="strip__note">${rows.length} video di halaman ini — semuanya ditempel dari host, tidak ada satu file pun yang diunggah ke sini.</p>
+182-    <div class="switch" role="group" aria-label="Urutan">
+183-      <a class="${query.urutan !== "populer" ? "is-on" : ""}" href="/${qs(query, { urutan: null, halaman: null })}">Terbaru</a>
+184-      <a class="${query.urutan === "populer" ? "is-on" : ""}" href="/${qs(query, { urutan: "populer", halaman: null })}">Populer</a>
+185-    </div>
+186-  </section>
+187-  ${grid(rows)}
+188-  ${rail(popularVideos(8).filter((v) => !rows.slice(0, 6).some((r) => r.id === v.id)))}
+189-  ${pager({ pages, current, path: "/", query })}`;
+190-  return layout({
+191-    title: "BokepKita — video colmek Indonesia, tanpa upload",
+192-    path: "/",
+193-    query,
+194-    body
+195-  });
+196-}
+197-
+198-export function listPage({ heading, note, rows, pages, current, path, query }) {
+199-  const body = `
+200-  <section class="strip">
+201-    <h1 class="strip__title">${esc(heading)}</h1>
+202-    <p class="strip__note">${esc(note)}</p>
+203-  </section>
+204-  ${rows.length ? grid(rows) : `<p class="empty">Belum ada video di sini. <a href="/admin">Tempel satu URL</a> dan video ini langsung tampil.</p>`}
+205-  ${pager({ pages, current, path, query })}`;
+206-  return layout({ title: `${heading} — BokepKita`, path, query, body });
+=== ogImage di watchPage:
+148:export function layout({ title, description, path, query, body, ogImage }) {
+162:${ogImage ? `<meta property="og:image" content="${esc(ogImage)}">` : ""}
+341:    ogImage: `${host}/p/${video.slug}.svg`

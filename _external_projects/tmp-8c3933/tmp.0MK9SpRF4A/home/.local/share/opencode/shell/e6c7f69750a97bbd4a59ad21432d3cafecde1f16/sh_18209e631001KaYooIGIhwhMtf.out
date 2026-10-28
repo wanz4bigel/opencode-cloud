@@ -1,0 +1,70 @@
+    <div class="switch"><a class="is-on" href="/admin?token=${encodeURIComponent(token)}">Daftar video</a>
+      <a href="/rss.xml">Umpan RSS</a><a href="/">Lihat situs</a></div>
+  </section>
+  ${note ? flash(note, kind) : ""}
+  <div class="admin-grid">
+    <section class="panel">
+      <h2 class="section-title section-title--sm">Tambah satu video</h2>
+      <form class="form" method="post" action="/admin/tambah?token=${encodeURIComponent(token)}">
+        <label>Judul
+          <input name="judul" required placeholder="Colmek ABG Kosan Kebon Jeruk" maxlength="120">
+        </label>
+        <label>URL video di host
+          <input name="url" required inputmode="url" placeholder="https://www.bitchute.com/video/xxxx/">
+        </label>
+        <label>Kategori
+          <select name="kategori">
+            <option value="">— pilih —</option>
+            ${cats.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join("")}
+          </select>
+        </label>
+        <div class="form__row">
+          <label>Tag <input name="tags" placeholder="abg, kos, lokal"></label>
+          <label>Durasi detik <input name="durasi" type="number" min="0" max="7200" placeholder="600"></label>
+        </div>
+        <button class="btn btn--go" type="submit">Simpan ke katalog</button>
+        <p class="field-note">Host dikenal otomatis: ${HOST_COUNT} sumber — daftarnya di <a href="/host">/host</a>. Host di luar itu tetap masuk sebagai Eksternal.</p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title section-title--sm">Tempel banyak sekaligus</h2>
+      <form class="form" method="post" action="/admin/impor?token=${encodeURIComponent(token)}">
+        <label>Satu baris per video: <code>judul | url</code>
+          <textarea name="daftar" rows="9" spellcheck="false"
+            placeholder="Colmek Janda Dapur | https://www.bitchute.com/video/abc/&#10;Colmek ABG Hijab | https://youtu.be/xxxx"></textarea>
+        </label>
+        <label>Kategori untuk semua baris
+          <select name="kategori">
+            <option value="">— tebak sendiri —</option>
+            ${cats.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join("")}
+          </select>
+        </label>
+        <button class="btn btn--go" type="submit">Impor daftar</button>
+      </form>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2 class="section-title section-title--sm">60 video terakhir</h2>
+    <table class="table">
+      <thead><tr><th>Judul</th><th>Host</th><th>Kategori</th><th>Diputar</th><th></th></tr></thead>
+      <tbody>${rows
+        .map(
+          (v) => `<tr>
+        <td><a href="/v/${v.slug}" target="_blank" rel="noopener">${esc(v.title)}</a>
+            <small>${v.slug} · ${durationText(v.duration)} · ${String(v.added_at).slice(0, 10)}</small></td>
+        <td>${esc(labelOf(v.provider))}</td>
+        <td>${esc(v.category || "—")}</td>
+        <td>${fmtViews(v.views)}</td>
+        <td><form method="post" action="/admin/hapus/${v.id}?token=${encodeURIComponent(token)}">
+            <button class="btn btn--danger" type="submit">Hapus</button></form></td>
+      </tr>`
+        )
+        .join("")}</tbody>
+    </table>
+    <p class="field-note">${countVideos()} video tersimpan. Menghapus video hanya menghapus tautannya, file aslinya tetap di host.</p>
+  </section>`;
+
+  return layout({ title: "Kelola koleksi — BokepKita", path: "/admin", query: { token }, body });
+}

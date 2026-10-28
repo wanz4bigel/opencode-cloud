@@ -1,0 +1,60 @@
+// Database: SQLite bawaan Node (node:sqlite). Tidak ada tabel file video,
+// karena video tidak pernah di-upload — yang disimpan hanya alamat embed.
+import { DatabaseSync } from "node:sqlite";
+import { mkdirSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { resolve } from "./hosts.js";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const dataDir = process.env.DATA_DIR || path.join(here, "..", "data");
+mkdirSync(dataDir, { recursive: true });
+
+export const db = new DatabaseSync(path.join(dataDir, "bokep-kita.db"));
+db.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS categories (
+    id    INTEGER PRIMARY KEY,
+    name  TEXT NOT NULL,
+    slug  TEXT NOT NULL UNIQUE,
+    ord   INTEGER NOT NULL DEFAULT 0
+  );
+
+  CREATE TABLE IF NOT EXISTS videos (
+    id          INTEGER PRIMARY KEY,
+    title       TEXT NOT NULL,
+    slug        TEXT NOT NULL UNIQUE,
+    provider    TEXT NOT NULL,
+    url         TEXT NOT NULL,
+    embed       TEXT NOT NULL,
+    kind        TEXT NOT NULL CHECK (kind IN ('iframe', 'video')),
+    duration    INTEGER NOT NULL DEFAULT 0,
+    category_id INTEGER REFERENCES categories(id) ON DELETE SET NULL,
+    tags        TEXT NOT NULL DEFAULT '',
+    views       INTEGER NOT NULL DEFAULT 0,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_videos_added ON videos (added_at DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_views ON videos (views DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_cat   ON videos (category_id);
+`);
+
+export function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
+
+function uniqueSlug(base) {
+  let slug = base || "video";
+  let n = 2;
+  while (db.prepare("SELECT 1 FROM videos WHERE slug = ?").get(slug)) {
+    slug = `${base}-${n++}`;
+  }
+  return slug;
+}

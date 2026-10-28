@@ -1,0 +1,33 @@
+== youtube oembed:
+{"title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)","author_name":"Rick Astley","author_url":"https://www.youtube.com/@RickAstleyYT","type":"video","height":113,"width":200,"version":"1.0","provider_name":"YouTube","provider_url":"https://www.youtube.com/","thumbnail_heig
+== vimeo oembed:
+404 Not Found
+[404]
+
+== vimeo player api tanpa token:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+
+
+
+    <meta name="robots" content="noindex, nofollow" />
+
+    <style type="text/css">
+      body {
+        background: #141531;
+        font-family: helvetica, arial, san-serif;
+        font-size: 18px;
+        font-weight: normal;
+        color: #fff;
+  
+== dailymotion oembed:
+<!DOCTYPE html>
+<html xml:lang="en-US" lang="en-US" dir="ltr" class="theme-enabled" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# dailymotionapp: http://ogp.me/ns/fb/dailymotionapp#">
+  <script type="t
+== dailymotion graphql sederhana:
+[404]

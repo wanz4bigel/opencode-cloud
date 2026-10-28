@@ -1,0 +1,6 @@
+183:    private static JSONObject dispatch(String t, JSONObject req, String rid) throws Exception {
+562:    private static JSONObject screenshot(String rid, JSONObject req) throws Exception {
+837:    private static JSONObject appAction(String rid, JSONObject req) throws Exception {
+935:    private static JSONObject foregroundApp(String rid) throws Exception {
+980:    private static JSONObject fsSearch(String rid, JSONObject req) throws Exception {
+1118:    private static JSONObject clipboardSet(String rid, JSONObject req) throws Exception {

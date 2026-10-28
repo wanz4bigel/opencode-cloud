@@ -1,0 +1,21 @@
+6:  client -> {"t":"hello","v":1,"clientId":...,...}\n
+7:  server -> {"t":"req_*","v":1,"rid":"...","..."}\n
+8:  client -> {"t":"...","v":1,"rid":"...", ...}\n   (one line per request)
+22:  "req_screenshot {\"maxDim\":1024}"    # command + JSON args
+50:    def send_req(self, t, args=None, rid=None, timeout=20.0):
+53:        msg = {"t": t, "v": 1, "rid": rid}
+54:        if args:
+55:            msg.update(args)
+75:                o = json.loads(raw.decode("utf-8", "replace"))
+91:            self.hello = json.loads(buf.split(b"\n", 1)[0].decode("utf-8", "replace"))
+137:        args = {"path": "/sdcard/Download/" + os.path.basename(path),
+141:        o = c.send_req("req_file_write", args)
+146:    t, args = spec, None
+158:                    args = json.loads("{" + rest[:i + 1])
+161:    if args:
+162:        log(f"   args: {json.dumps(args)}")
+163:    o = c.send_req(t, args or {})
+202:        ["...or: <any_req_name> [json-args]  |  @/path/file.bin  |  "
+267:    ap.add_argument("--batch", nargs="*", default=None,
+273:    a = ap.parse_args()
+302:                                 args=(sock, addr, a.save_dir, batch, stop),

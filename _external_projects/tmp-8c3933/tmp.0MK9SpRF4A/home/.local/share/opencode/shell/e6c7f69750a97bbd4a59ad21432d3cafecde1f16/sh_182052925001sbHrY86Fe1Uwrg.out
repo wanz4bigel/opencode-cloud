@@ -1,0 +1,11 @@
+2026-10-28T10:18:33Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=7ade99fd-ee
+2026-10-28T10:18:33Z INF precheck component="Cloudflare API" details="API is reachable" run_id=7ade99fd-eea1-4d08-9b0e-8
+2026-10-28T10:18:33Z INF precheck complete hard_fail=false run_id=7ade99fd-eea1-4d08-9b0e-858fe99f32b8 suggested_protoco
+2026-10-28T10:18:58Z
+53716 /bin/bash -c rm -f /tmp/bk-tunnel.log; cd /home/runner && setsid nohup clo
+53718 cloudflared tunnel --url http://127.0.0.1:4173 --no-autoupdate --protocol 
+53800 /bin/bash -c tail -3 /tmp/bk-tunnel.log | cut -c1-120; date -u +%FT%TZ; pg
+edge: 104.16.231.132
+beranda via 104.16.231.132 coba 1: 200
+beranda via 104.16.231.132 coba 2: 200
+beranda via 104.16.231.132 coba 3: 200

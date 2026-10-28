@@ -1,0 +1,10 @@
+absolute() dihapus: True
+  293ms meta halaman     PAKE | Rick Astley - Never Gonna Give You Up (O | - | gambar-ok 
+   22ms YouTube          PAKE | Me at the zoo | - | gambar-ok 
+  147ms Vimeo            skip | - | - | tanpa-gambar | Video Vimeo-nya tidak ketemu.
+  532ms Internet Archive PAKE | Big Buck Bunny | - | gambar-ok 
+  301ms dailymotion.com  skip | - | - | tanpa-gambar | dailymotion.com tidak kasih metadata ke 
+    0ms file langsung    skip | - | - | tanpa-gambar | File mentah tidak punya metadata — judul
+  932ms pornhub.com      skip | - | - | tanpa-gambar | pornhub.com tidak kasih metadata ke serv
+ 1085ms meta halaman     PAKE | Bitchute | - | tanpa-gambar 
+  150ms youtube.com      skip | - | - | tanpa-gambar | youtube.com tidak kasih metadata ke serv

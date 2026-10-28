@@ -1,0 +1,151 @@
+}
+
+export function addVideo({ title, url, categoryId = null, tags = "", duration = 0 }) {
+  const target = resolve(url);
+  if (!target) return { error: "Alamat video tidak dikenali. Tempel URL lengkap, misalnya https://..." };
+  if (!title || !title.trim()) return { error: "Judul belum diisi. Tulis judul yang jelas, tanpa nama file." };
+
+  const seconds = Number(duration) || guessDuration(title);
+  const info = db
+    .prepare(
+      `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, added_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+    )
+    .run(
+      title.trim(),
+      uniqueSlug(slugify(title)),
+      target.provider,
+      target.direct,
+      target.embed,
+      target.kind,
+      seconds,
+      categoryId,
+      normalizeTags(tags),
+      `-${Math.floor(Math.random() * 20) * 6} minutes`
+    );
+  return { ok: true, id: Number(info.lastInsertRowid), provider: target.provider };
+}
+
+function guessDuration(title) {
+  const m = String(title).match(/(\d{1,2})\s*(menit|minute|min|m\b)/i);
+  return m ? Number(m[1]) * 60 : 60 + Math.floor(Math.random() * 540);
+}
+
+export function normalizeTags(tags) {
+  return String(tags)
+    .split(/[,\s]+/)
+    .map((t) => t.trim().replace(/^#/, "").toLowerCase())
+    .filter(Boolean)
+    .slice(0, 8)
+    .join(",");
+}
+
+export function categories() {
+  return db.prepare("SELECT * FROM categories ORDER BY ord, name").all();
+}
+
+export function categoryIdBySlug(slug) {
+  const row = db.prepare("SELECT id FROM categories WHERE slug = ?").get(String(slug));
+  return row ? row.id : null;
+}
+
+export function categoriesWithCounts() {
+  return db
+    .prepare(
+      `SELECT c.name, c.slug, COUNT(v.id) AS total
+       FROM categories c LEFT JOIN videos v ON v.category_id = c.id
+       GROUP BY c.id ORDER BY total DESC, c.name`
+    )
+    .all();
+}
+
+export function countVideos() {
+  return db.prepare("SELECT COUNT(*) AS n FROM videos").get().n;
+}
+
+/** Daftar video untuk beranda, kategori, tag, dan hasil pencarian. */
+export function listVideos({ sort = "terbaru", categoryId = null, tag = null, query = null, page = 1, per = 24 } = {}) {
+  const where = [];
+  const params = [];
+  if (categoryId) {
+    where.push("v.category_id = ?");
+    params.push(categoryId);
+  }
+  if (tag) {
+    where.push("(',' || v.tags || ',') LIKE ?");
+    params.push(`%,${tag},%`);
+  }
+  if (query) {
+    where.push("(v.title LIKE ? OR v.tags LIKE ?)");
+    params.push(`%${query}%`, `%${query}%`);
+  }
+  const clause = where.length ? `WHERE ${where.join(" AND ")}` : "";
+  const order =
+    sort === "populer" ? "v.views DESC, v.added_at DESC" : "v.added_at DESC, v.views DESC";
+  const total = db.prepare(`SELECT COUNT(*) AS n FROM videos v ${clause}`).get(...params).n;
+  const pages = Math.max(1, Math.ceil(total / per));
+  const current = Math.min(Math.max(1, page), pages);
+  const rows = db
+    .prepare(`SELECT v.*, c.name AS category, c.slug AS category_slug
+              FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+              ${clause} ORDER BY ${order} LIMIT ? OFFSET ?`)
+    .all(...params, per, (current - 1) * per);
+  return { rows, total, pages, current };
+}
+
+export function videoBySlug(slug) {
+  return (
+    db
+      .prepare(
+        `SELECT v.*, c.name AS category, c.slug AS category_slug
+         FROM videos v LEFT JOIN categories c ON c.id = v.category_id WHERE v.slug = ?`
+      )
+      .get(String(slug)) || null
+  );
+}
+
+export function relatedVideos(video, limit = 10) {
+  const rows = db
+    .prepare(
+      `SELECT v.*, c.name AS category, c.slug AS category_slug
+       FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+       WHERE v.id != ? AND (v.category_id = ? OR v.tags LIKE ?)
+       ORDER BY v.views DESC LIMIT ?`
+    )
+    .all(video.id, video.category_id, `%${(video.tags.split(",")[0] || "colmek")}%`, limit);
+  if (rows.length >= limit) return rows;
+
+  // Kategori sepi: isi sisanya dengan video populer supaya daftar berikutnya penuh.
+  const have = new Set([video.id, ...rows.map((r) => r.id)]);
+  const spare = popularVideos(limit + have.size).filter((v) => !have.has(v.id));
+  return [...rows, ...spare].slice(0, limit);
+}
+
+export function popularVideos(limit = 6) {
+  return db
+    .prepare(
+      `SELECT v.*, c.name AS category, c.slug AS category_slug
+       FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+       ORDER BY v.views DESC LIMIT ?`
+    )
+    .all(limit);
+}
+
+export function videoById(id) {
+  return db.prepare("SELECT * FROM videos WHERE id = ?").get(Number(id)) || null;
+}
+
+export function deleteVideo(id) {
+  return db.prepare("DELETE FROM videos WHERE id = ?").run(Number(id)).changes > 0;
+}
+
+export function bumpViews(id) {
+  db.prepare("UPDATE videos SET views = views + 1 WHERE id = ?").run(Number(id));
+}
+
+export function stats() {
+  const v = db.prepare("SELECT COUNT(*) AS videos, COALESCE(SUM(views),0) AS views FROM videos").get();
+  return { videos: v.videos, views: v.views, categories: categoriesWithCounts().length, host: "embed" };
+}
+
+const CATEGORY_SEED = [

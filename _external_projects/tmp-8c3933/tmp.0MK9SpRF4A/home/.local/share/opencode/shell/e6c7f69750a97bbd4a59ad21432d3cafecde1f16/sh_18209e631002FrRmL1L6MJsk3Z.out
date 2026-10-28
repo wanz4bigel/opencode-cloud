@@ -1,0 +1,101 @@
+async function handleAdmin(req, res, url, cookies) {
+  const { pathname } = url;
+  const host = hostOf(req);
+  const form = req.method === "POST" ? await readBody(req) : null;
+  const token = url.searchParams.get("token") || cookies.admin || (form && form.get("token")) || "";
+
+  if (token !== ADMIN_TOKEN) {
+    if (token) return page(adminPage({ token: null, note: "Kata kunci salah.", host }), 401);
+    return page(adminPage({ token: null, host }));
+  }
+
+  // Kata kunci diingat di cookie, jadi berpindah halaman panel tidak perlu
+  // menyeret ?token= di setiap tautan.
+  if (cookies.admin !== ADMIN_TOKEN) {
+    res.appendHeader("set-cookie", `admin=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Strict`);
+  }
+
+  if (req.method === "POST") {
+    let note;
+    if (pathname === "/admin/tambah") {
+      const result = addVideo({
+        title: form.get("judul") || "",
+        url: form.get("url") || "",
+        categoryId: form.get("kategori") ? Number(form.get("kategori")) : null,
+        tags: form.get("tags") || "",
+        duration: form.get("durasi") || 0
+      });
+      note = result.error ? result.error : `Video disimpan. Host terdeteksi: ${labelOf(result.provider)}.`;
+    } else if (pathname === "/admin/impor") {
+      const categoryId = form.get("kategori") ? Number(form.get("kategori")) : null;
+      let added = 0;
+      const failed = [];
+      for (const line of (form.get("daftar") || "").split(/\r?\n/).map((l) => l.trim()).filter(Boolean)) {
+        const [title, value] = line.split("|").map((s) => s.trim());
+        const result = addVideo({ title, url: value || title, categoryId, tags: "" });
+        if (result.ok) added += 1;
+        else failed.push(title || line);
+      }
+      note = `${added} video ditambahkan${failed.length ? ` — gagal: ${failed.join(", ")}` : ""}.`;
+    } else if (pathname.startsWith("/admin/hapus/")) {
+      const id = Number(pathname.split("/")[3]);
+      note = deleteVideo(id) ? "Tautan video dihapus dari katalog." : "Video itu sudah tidak ada.";
+    } else {
+      note = "Aksi tidak dikenali.";
+    }
+    res.appendHeader("set-cookie", `bkpesan=${encodeURIComponent(note)}; Path=/; Max-Age=120; SameSite=Lax`);
+    res.writeHead(303, { location: `/admin?token=${encodeURIComponent(token)}` });
+    res.end();
+    return done();
+  }
+
+  const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+  res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+  return page(adminPage({ token, note, host }));
+}
+
+=== views card/strip:
+</header>${gate ? "" : nav({ path, query })}`;
+}
+
+export function card(video, { featured = false } = {}) {
+  const href = `/v/${video.slug}`;
+  const tone = posterPalette(video.slug);
+  return `<article class="card${featured ? " card--featured" : ""}">
+  <a class="card__media" href="${href}" tabindex="-1" aria-hidden="true" style="--th:${tone.mid};--th2:${tone.deep}">
+    <img src="/t/${video.slug}.svg" alt="" width="960" height="540" loading="lazy" decoding="async">
+    <span class="card__dur">${durationText(video.duration)}</span>
+    <span class="card__play" aria-hidden="true"></span>
+  </a>
+  <h3 class="card__title"><a href="${href}">${esc(video.title)}</a></h3>
+  <p class="card__meta">
+    ${video.category ? `<a href="/k/${video.category_slug}">${esc(video.category)}</a>` : "<span>Tanpa kategori</span>"}
+    <span>·</span><span>${fmtViews(video.views)} nonton</span>
+    <span>·</span><span>${esc(labelOf(video.provider))}</span>
+  </p>
+</article>`;
+}
+
+function grid(videos) {
+  if (!videos.length) return "";
+  <p class="pager__note">Halaman ${current} dari ${pages}</p>`;
+}
+
+function rail(videos) {
+  return `<section class="rail-wrap">
+  <h2 class="section-title">Sering dibuka orang</h2>
+  <div class="rail">${videos
+    .map(
+      (v) => `<a class="rail__item" href="/v/${v.slug}" style="--th:${posterPalette(v.slug).mid};--th2:${posterPalette(v.slug).deep}">
+      <img src="/t/${v.slug}.svg" alt="" width="480" height="270" loading="lazy" decoding="async">
+      <span class="rail__dur">${durationText(v.duration)}</span>
+      <span class="rail__title">${esc(v.title)}</span>
+    </a>`
+    )
+    .join("")}</div></section>`;
+}
+
+function footer() {
+  const cats = categoriesWithCounts();
+  const s = stats();
+  return `<footer class="foot">

@@ -1,0 +1,49 @@
+4:import { durationText, escapeXml, posterPalette } from "./poster.js";
+63:  const tone = posterPalette(video.slug);
+108:      (v) => `<a class="rail__item" href="/v/${v.slug}" style="--th:${posterPalette(v.slug).mid};--th2:${posterPalette(v.slug).deep}">
+159:<meta name="robots" content="index, follow, max-image-preview:none">
+162:${ogImage ? `<meta property="og:image" content="${esc(ogImage)}">` : ""}
+163:<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+269:    ? `<video class="player__media" controls playsinline preload="metadata" poster="/t/${video.slug}.svg" src="${esc(video.embed)}"></video>`
+319:      <a class="side__media" href="/v/${v.slug}" style="--th:${posterPalette(v.slug).mid};--th2:${posterPalette(v.slug).deep}">
+=== admin:
+// Panel kelola: isinya cuma tempel URL. Tidak ada form upload file, karena
+// video memang tidak pernah masuk ke server kita.
+import { categories, countVideos, listVideos, stats } from "./db.js";
+import { hostCatalog, labelOf } from "./hosts.js";
+import { durationText } from "./poster.js";
+import { esc, fmtViews, layout } from "./views.js";
+
+function flash(message, kind = "ok") {
+  return `<p class="flash flash--${kind}" role="status">${esc(message)}</p>`;
+}
+
+const HOST_COUNT = hostCatalog().length;
+
+export function adminPage({ token, note, kind, host }) {
+  if (!token) {
+    return layout({
+      title: "Kelola koleksi — BokepKita",
+      path: "/admin",
+      query: {},
+      body: `<section class="strip"><h1 class="strip__title">Masuk panel kelola</h1>
+        <p class="strip__note">Panel ini cuma buat nempel URL video baru.</p></section>
+        <form class="login" method="get" action="/admin">
+          <label for="token">Kata kunci</label>
+          <input id="token" type="password" name="token" autocomplete="current-password" required>
+          <button class="btn btn--go" type="submit">Masuk</button>
+        </form>
+        <p class="watch__note">Kata kunci dibikin lewat variabel <code>ADMIN_TOKEN</code> saat server jalan.
+        Kata kunci bawaannya <code>gus</code>.</p>`
+    });
+  }
+
+  const cats = categories();
+  const s = stats();
+  const { rows } = listVideos({ per: 60 });
+
+  const body = `
+  <section class="strip">
+    <h1 class="strip__title">Kelola koleksi</h1>
+    <p class="strip__note">${s.videos} video di katalog · semua dari embed, nol file di server.</p>
+    <div class="switch"><a class="is-on" href="/admin?token=${encodeURIComponent(token)}">Daftar video</a>

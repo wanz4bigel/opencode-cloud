@@ -1,0 +1,14 @@
+== apakah host adult bisa diakses dari server ini (buat ngambil thumbnail asli):
+https://www.bitchute.com/                                  200 text/html 7357b
+https://i.imgci.com/abc123.jpg                             404 text/html; charset=iso-8859-1 236b
+https://www.xhamster.com/                                  301 text/html; charset=UTF-8 0b
+https://thmb.tknx.net/media/videos/tmb/001/2/3/1.jpg       000  0b
+https://www.pornhub.com/                                   200 text/html; charset=UTF-8 993327b
+https://www.pornhub.com/thumbnails/001/234/video169.jpg    404 text/html; charset=UTF-8 744776b
+https://domimg.net/                                        000  0b
+http://mzstatic.com/                                       301 text/html 304b
+https://nsimg.net/                                         000  0b
+https://img.ytimg.com/                                     000  0b
+https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg           200 image/jpeg 21011b
+https://t3.cdn1th.com/                                     000  0b
+https://video-x.com/                                       000  0b
