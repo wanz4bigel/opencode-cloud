@@ -1,0 +1,10 @@
+29:18 kategori — **69 video sungguhan** dari Eporner (kalau `data/katalog.json` ada) sisanya
+30:video contoh.
+42:## Katalog: isi sungguhan & yang masih contoh
+56:npm run isi                 # 18 kategori × 4 video → data/katalog.json (~11 detik)
+57:npm run isi -- --per 8      # perbanyak per kategori
+63:Bagian yang **tidak** bisa dijamin jujur: video contoh lama (file uji publik) masih ada
+67:- beranda menampilkan baris penjelasan selama masih ada video contoh,
+68:- halaman nonton video contoh menulis hal yang sama.
+77:   video contoh, `-- --batas 20` membatasi jumlah).
+80:Setelah tidak ada video contoh tersisa, badge dan baris penjelasan hilang sendiri.

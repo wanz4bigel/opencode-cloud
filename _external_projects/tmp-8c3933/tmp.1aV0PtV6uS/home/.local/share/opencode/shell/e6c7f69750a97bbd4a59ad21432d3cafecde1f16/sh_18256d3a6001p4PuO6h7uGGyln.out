@@ -1,0 +1,9 @@
+install patched
+24:    REPO_REL="XTLS/Xray-core"
+25:    ASSET="Xray-linux-${ARCH}.zip"
+28:    REPO_REL="v2fly/v2ray-core"
+29:    ASSET="v2ray-linux-${ARCH}.zip"
+87:CONFIG_FLAG="-config"
+88:if [ "$CORE" = "xray" ]; then USE_RUN=1; CONFIG_FLAG="-c"; fi
+91:log "Mode CLI : $([ "$USE_RUN" = "1" ] && echo "run $CONFIG_FLAG" || echo "$CONFIG_FLAG")"
+100:  printf 'V2RAY_CONFIG_FLAG=%s\n' "$CONFIG_FLAG"

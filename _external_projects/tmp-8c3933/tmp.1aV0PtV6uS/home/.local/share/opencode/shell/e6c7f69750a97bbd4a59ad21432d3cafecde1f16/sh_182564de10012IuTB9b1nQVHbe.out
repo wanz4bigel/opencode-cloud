@@ -1,0 +1,21 @@
+76:.topnav { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+77:.topnav a {
+78-  padding: 9px 12px; border-radius: 8px; color: var(--muted);
+79-  font-size: 14px; font-weight: 600;
+80-}
+81:.topnav a:hover { color: var(--teks); background: var(--arang-3); text-decoration: none; }
+82:.topnav a.is-current { color: #1d1915; background: var(--amber); }
+83-
+84-/* ===== tombol & gembok ===== */
+85-.btn {
+86-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+--
+318:  .topnav { margin-left: 0; order: 2; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+319:  .topnav::-webkit-scrollbar { display: none; }
+320:  .topnav a { flex: 0 0 auto; }
+321-  .wrap { padding: 0 14px 40px; }
+322-  .strip { padding-top: 22px; }
+323-  .grid { columns: 2; column-gap: 12px; }
+324-  .grid > .card { margin-bottom: 16px; }
+310:@media (max-width: 900px) {
+315:@media (max-width: 620px) {

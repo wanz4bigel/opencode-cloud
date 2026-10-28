@@ -1,0 +1,43 @@
+Xray 26.10.21 (Xray, Penetrates Everything.) 1b1647c (go1.27.3 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:51:11.998735 [Info] infra/conf/serial: Reading config: &{Name:/tmp/opencode/full/config.json Format:json}
+2026/10/28 11:51:12.000294 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:12.000492 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.001021 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:12.001033 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.001037 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:12.001041 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.001045 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:12.001048 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.001052 [Warning] common/errors: The feature gRPC transport (with unnecessary costs, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP stream-up H2 as soon as possible.
+2026/10/28 11:51:12.001207 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.001217 [Warning] common/errors: The feature HTTPUpgrade transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:12.001221 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:12.006826 [Warning] core: Xray 26.10.21 started
+2026/10/28 11:51:15.025503 http: TLS handshake error from 127.0.0.1:50640: EOF
+2026/10/28 11:51:15.026130 http: TLS handshake error from 127.0.0.1:51620: EOF
+2026/10/28 11:51:18.985998 http: TLS handshake error from 127.0.0.1:45666: EOF
+2026/10/28 11:51:18.986575 http: TLS handshake error from 127.0.0.1:56800: EOF
+2026/10/28 11:51:20.097134 http: TLS handshake error from 127.0.0.1:45692: EOF
+2026/10/28 11:51:20.097767 http: TLS handshake error from 127.0.0.1:56812: EOF
+2026/10/28 11:51:23.027205 http: TLS handshake error from 127.0.0.1:45710: remote error: tls: bad certificate
+2026/10/28 11:51:23.029902 http: TLS handshake error from 127.0.0.1:45726: remote error: tls: bad certificate
+2026/10/28 11:51:23.233230 http: TLS handshake error from 127.0.0.1:45740: remote error: tls: bad certificate
+2026/10/28 11:51:23.636740 http: TLS handshake error from 127.0.0.1:45748: remote error: tls: bad certificate
+2026/10/28 11:51:24.240465 http: TLS handshake error from 127.0.0.1:45758: remote error: tls: bad certificate
+2026/10/28 11:51:25.168039 http: TLS handshake error from 127.0.0.1:45764: EOF
+2026/10/28 11:51:25.168675 http: TLS handshake error from 127.0.0.1:56820: EOF
+2026/10/28 11:51:29.066327 http: TLS handshake error from 127.0.0.1:42996: remote error: tls: bad certificate
+2026/10/28 11:51:29.068841 http: TLS handshake error from 127.0.0.1:43010: remote error: tls: bad certificate
+2026/10/28 11:51:29.272047 http: TLS handshake error from 127.0.0.1:43026: remote error: tls: bad certificate
+2026/10/28 11:51:29.675321 http: TLS handshake error from 127.0.0.1:43036: remote error: tls: bad certificate
+2026/10/28 11:51:30.238061 http: TLS handshake error from 127.0.0.1:50332: EOF
+2026/10/28 11:51:30.238671 http: TLS handshake error from 127.0.0.1:43044: EOF
+2026/10/28 11:51:30.278646 http: TLS handshake error from 127.0.0.1:43046: remote error: tls: bad certificate
+2026/10/28 11:51:35.101402 from 127.0.0.1:60042 accepted tcp:www.google.com:443 [in-ws-19080 >> direct] email: github-actions
+2026/10/28 11:51:35.307330 http: TLS handshake error from 127.0.0.1:50346: EOF
+2026/10/28 11:51:35.307920 http: TLS handshake error from 127.0.0.1:43062: EOF
+2026/10/28 11:51:40.375990 http: TLS handshake error from 127.0.0.1:57656: EOF
+2026/10/28 11:51:40.376582 http: TLS handshake error from 127.0.0.1:37700: EOF
+2026/10/28 11:51:45.451291 http: TLS handshake error from 127.0.0.1:57684: EOF
+2026/10/28 11:51:45.452008 http: TLS handshake error from 127.0.0.1:37716: EOF

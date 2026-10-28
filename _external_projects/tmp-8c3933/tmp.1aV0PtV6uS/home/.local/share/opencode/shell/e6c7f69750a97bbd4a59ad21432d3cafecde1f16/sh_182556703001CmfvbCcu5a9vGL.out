@@ -1,0 +1,26 @@
+    console.log(`× ${jalan} → ${res.status}${error ? " + teks error" : ""}`);
+    continue;
+  }
+  console.log(`✓ ${jalan} → ${res.status} (${isi.length} byte)`);
+}
+
+// Beberapa jaminan isi: halamannya hidup bukan cuma statusnya.
+const cek = [];
+const beranda = await (await fetch(`${BASE}/`, { headers: { cookie: KUKI } })).text();
+cek.push([beranda.includes('class="card"'), "beranda menampilkan kartu video"]);
+cek.push([/\/t\/[\w-]+\.svg/.test(beranda), "beranda memanggil thumbnail /t/"]);
+// Kalau semua isi sungguhan, justru TIDAK boleh ada catatan "masih contoh".
+cek.push(
+  demo === 0
+    ? !/class="notice"|>Contoh</.test(beranda)
+    : /class="notice"/.test(beranda),
+  demo === 0 ? "beranda bersih dari catatan contoh (semua isi asli)" : "beranda punya catatan contoh yang jujur"
+);
+cek.push([/data-rantai="/.test(beranda), "kartu punya rantai cadangan gambar"]);
+const jumlahKartu = (beranda.match(/class="card__media"/g) || []).length;
+const jumlahGambar = (beranda.match(/data-rantai="/g) || []).length;
+cek.push([jumlahKartu > 0 && jumlahGambar >= jumlahKartu, `${jumlahKartu} kartu, semuanya punya gambar bercadangan`]);
+
+const nonton = await (await fetch(`${BASE}/v/${rows[0].slug}`, { headers: { cookie: KUKI } })).text();
+cek.push([/class="player"/.test(nonton), "halaman nonton memuat pemutar"]);
+cek.push([/Lanjut ke berikutnya/.test(nonton), "halaman nonton punya antrean lanjutan"]);

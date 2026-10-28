@@ -1,0 +1,10 @@
+[I 261026 12:57:08 pypi_package_manager:529] Updating script metadata for /marimo/notebook.py
+[I 261026 12:57:08 pypi_package_manager:672] Listing packages with 'uv pip list'
+edited code of cell 'vblA' (model_info) and ran
+edited code of cell 'Hbol' (_) and ran
+re-ran cell 'Xref' (_)
+re-ran cell 'bkHC' (_)
+Hbol idle errors: none
+vblA idle errors: none
+bkHC idle errors: none
+Xref idle errors: none

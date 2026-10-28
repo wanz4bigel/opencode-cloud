@@ -1,0 +1,55 @@
+[1;36m[vmess][0m config.json -> /tmp/opencode/full/config.json (ws:19443/tls, ws:19444/tls, ws:19080, ws:19081, grpc:19053/tls, httpupgrade:19052/tls)
+[1;36m[vmess][0m Verifikasi config: OK
+== link/kartu ==
+————————————————————————————————————
+[1;36m[vmess][0m LINK UTAMA : vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1LXdzLXRsc0AxOTQ0MyIsImFkZCI6IjIwLjU3LjIyMy4xNjUiLCJwb3J0IjoiMTk0NDMiLCJpZCI6IjcwMjljZmZjLWQzNmItNGExMS1hMzU0LWFlOTVjM2Q1ODExMSIsImFpZCI6IjAiLCJzYyI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwicGF0aCI6Ii92bWVzcyIsInRscyI6InRscyIsImFscG4iOiJoMixodHRwLzEuMSIsImVtYWlsIjoiZ2l0aHViLWFjdGlvbnMifQ==
+
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-223165
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.57.223.165
+Port TLS       : 19443,19444
+Port none TLS  : 19080,19081
+Port any       : 19052,19053
+id             : 7029cffc-d36b-4a11-a354-ae95c3d58111
+alterId        : 0
+Security       : auto
+network        : ws,grpc,upgrade
+path ws        : /vmess
+serviceName    : vmess
+path upgrade   : /upvmess
+Limit IP       : -
+Expired On     : 2026-10-28 19:19:22 WIB
+————————————————————————————————————
+
+== start server ==
+[1;36m[vmess][0m Sehat: port [19443,19444 19080 19081 19053 19052] open, WS handshake https://127.0.0.1:19443/vmess -> HTTP 400
+health exit=0
+== daftar inbound ==
+in-ws-19443-tls  port=19443
+in-ws-19444-tls  port=19444
+in-ws-19080  port=19080
+in-ws-19081  port=19081
+in-grpc-19053-tls  port=19053
+in-httpupgrade-19052-tls  port=19052
+== uji tiap transport ==
+/tmp/opencode/full-test.sh: line 60: V2RAY_BIN: unbound variable
+  FAIL ws-tls-19443 (HTTP 000)
+tail: cannot open '/tmp/opencode/full/c-ws-tls-19443.log' for reading: No such file or directory
+/tmp/opencode/full-test.sh: line 60: V2RAY_BIN: unbound variable
+  FAIL ws-tls-19444 (HTTP 000)
+tail: cannot open '/tmp/opencode/full/c-ws-tls-19444.log' for reading: No such file or directory
+/tmp/opencode/full-test.sh: line 60: V2RAY_BIN: unbound variable
+  FAIL ws-plain-19080 (HTTP 000)
+tail: cannot open '/tmp/opencode/full/c-ws-plain-19080.log' for reading: No such file or directory
+/tmp/opencode/full-test.sh: line 60: V2RAY_BIN: unbound variable
+  FAIL grpc-tls-19053 (HTTP 000)
+tail: cannot open '/tmp/opencode/full/c-grpc-tls-19053.log' for reading: No such file or directory
+/tmp/opencode/full-test.sh: line 60: V2RAY_BIN: unbound variable
+  FAIL upg-tls-19052 (HTTP 000)
+tail: cannot open '/tmp/opencode/full/c-upg-tls-19052.log' for reading: No such file or directory
+
+==== PASS=0 FAIL=5 ====

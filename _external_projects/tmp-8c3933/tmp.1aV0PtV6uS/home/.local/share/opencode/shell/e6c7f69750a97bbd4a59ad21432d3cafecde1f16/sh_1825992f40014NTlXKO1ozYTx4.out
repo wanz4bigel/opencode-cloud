@@ -1,0 +1,11 @@
+['  [ "$tls" = tls ] && stream="$stream,\\"tlsSettings\\":{\\"insecure\\":true,\\"serverName\\":\\"v2ray.local\\"}"']
+  FAIL grpc-tls-19053 (HTTP 000)
+2026/10/28 11:51:35.143069 [Warning] common/errors: The feature gRPC transport (with unnecessary costs, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP stream-up H2 as soon as possible.
+2026/10/28 11:51:35.143317 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:39.141529 from 127.0.0.1:48614 accepted //www.google.com:443
+  FAIL upg-tls-19052 (HTTP 000)
+2026/10/28 11:51:41.170424 [Warning] common/errors: The feature HTTPUpgrade transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:51:41.170626 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:51:45.169969 from 127.0.0.1:49756 accepted //www.google.com:443
+
+==== PASS=1 FAIL=4 ====

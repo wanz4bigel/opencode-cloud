@@ -1,0 +1,30 @@
+/home/runner/p2s:
+total 96
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:34 .
+drwxr-xr-x 22 runner runner 4096 Oct 28 09:56 ..
+-rw-r--r--  1 runner runner   33 Oct 28 10:13 cp_spray.log
+-rw-r--r--  1 runner runner 4338 Oct 28 10:25 cp_spray.py
+-rw-r--r--  1 runner runner  434 Oct 28 08:15 ma_bf.log
+-rw-r--r--  1 runner runner 3595 Oct 28 08:26 nuc_bg.log
+-rw-r--r--  1 runner runner   54 Oct 28 07:53 nuc_bg.txt
+-rw-r--r--  1 runner runner 2310 Oct 28 08:33 nuc_bg2.log
+-rw-r--r--  1 runner runner  164 Oct 28 09:56 nuc_ci.log
+-rw-r--r--  1 runner runner   42 Oct 28 09:56 nuc_ci.txt
+-rw-r--r--  1 runner runner    0 Oct 28 08:15 nuc_ma.log
+-rw-r--r--  1 runner runner   50 Oct 28 08:15 nuc_ma.txt
+-rw-r--r--  1 runner runner   31 Oct 28 07:51 nuc_t1.txt
+-rw-r--r--  1 runner runner 4585 Oct 28 10:25 spmb_strike.py
+drwxr-xr-x  2 runner runner 4096 Oct 28 10:36 spn
+-rw-r--r--  1 runner runner  602 Oct 28 10:36 spn1.log
+-rw-r--r--  1 runner runner  447 Oct 28 10:33 spn_list1.txt
+-rw-r--r--  1 runner runner 3048 Oct 28 10:33 spn_probe.py
+-rw-r--r--  1 runner runner  188 Oct 28 07:47 su_cands.txt
+-rw-r--r--  1 runner runner    1 Oct 28 07:37 su_ips.txt
+-rw-r--r--  1 runner runner   24 Oct 28 10:25 warden.log
+-rwxr-xr-x  1 runner runner  880 Oct 28 10:25 warden.sh
+-rw-r--r--  1 runner runner  911 Oct 28 08:02 xr_bf.log
+
+/home/runner/work:
+total 24
+drwxr-xr-x  6 runner runner 4096 Oct 28 04:41 .
+drwxr-xr-x 22 runner runner 4096 Oct 28 09:56 ..

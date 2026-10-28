@@ -1,0 +1,14 @@
+run-server patched
+  exit 0
+}
+trap cleanup INT TERM
+
+start_v2ray() {
+  local args=()
+  [ "${V2RAY_USE_RUN_SUBCMD:-0}" = "1" ] && args+=(run)
+  args+=("${V2RAY_CONFIG_FLAG:--config}" "$CONFIG_FILE")
+  log "Start: $(basename "$V2RAY_BIN") ${args[*]} (port $PORT, ws $WS_PATH)"
+  "${SUDO[@]}" "$V2RAY_BIN" "${args[@]}" >>"$LOG_FILE" 2>&1 &
+  PID=$!
+  disown 2>/dev/null || true
+  sleep 3

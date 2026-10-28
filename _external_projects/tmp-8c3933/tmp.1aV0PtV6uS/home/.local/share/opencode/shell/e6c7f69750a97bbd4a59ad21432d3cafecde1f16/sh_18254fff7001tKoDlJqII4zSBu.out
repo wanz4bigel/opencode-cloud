@@ -1,0 +1,12 @@
+✓ /entah-apa-ini → 404 (3431 byte)
+✓ beranda menampilkan kartu video
+✓ beranda memanggil thumbnail /t/
+file:///home/runner/bokep-id/scripts/smoke.js:98
+for (const [ok, pesan] of cek) {
+                     ^
+
+TypeError: .for is not iterable
+    at file:///home/runner/bokep-id/scripts/smoke.js:98:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.22.1
