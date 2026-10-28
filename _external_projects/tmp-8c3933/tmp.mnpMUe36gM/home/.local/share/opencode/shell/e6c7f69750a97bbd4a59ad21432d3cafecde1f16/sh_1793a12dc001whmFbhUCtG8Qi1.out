@@ -1,0 +1,21 @@
+== robots ==
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<hr>
+<address>Apache Server at sahabatssh.com Port 443</address>
+</body></html>
+== sitemap ==
+404 261
+== headers check (security) ==
+set-cookie: PHPSESSID=2vo6nfvlik8ss6e44489q4i3a5; path=/
+== HTTP (port 80) ==
+301 -> https://sahabatssh.com/
+== wayback availability ==
+<html><head><meta charset="UTF-8"><title>Internet Archive: Temporarily Offline</title><style>p{font-size:24px;}img{margin-bottom:2rem;}</style></head>
+<body style="padding:30px 0;">
+<div style="float:left;width:260px;text-align:center;">
+<img xsrc="logo_ia.jpg" src="data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAKsAAACmCAAAAACAHSAbAAAOuklEQVR42t2d2bmsqhKAIQcyIRQyIQ+SIAOeiYAIyIAYePHrW1WgOCC6etp9bi2n3SL8lMUMbvbYynSQ6JXUccI7s6NktZJcKqVje4SejkYJIZWemn9GC2HpWku3CsYbeN64hP/MsBslVSx3g1oRKSmlgj/pjqxHWM0FBLJizdFIZkJQQocNawAvc9CS2eaft4J5ut78POUgmfKp/BP2aIQI5a5es3oIxXlrhWFWaztmfVjOdMY769iygJ4KtTyBD2tGoT

@@ -1,0 +1,18 @@
+[05:39:15] mulai setup
+[05:39:23] strata install rc=0
+[05:39:24] cloudflared rc=0
+[05:41:23] shards rc=0
+[05:41:31] aux rc=0
+[05:41:31] SELESAI
+--- ukuran ---
+79G	/dev/shm/sc117
+1.7G	/marimo/llm/sc117-aux
+--- file ---
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf 55063448064
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf.lock 0
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00001-of-00002.gguf.metadata 125
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf 28800138432
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf.lock 0
+Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_S-00002-of-00002.gguf.metadata 125
+--- proses ---
+1

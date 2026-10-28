@@ -1,0 +1,9 @@
+alive|t=2026-10-27T15:30:15|host=DESKTOP-J4SUDA6|user=USER|pid=12260|beac=3|exfil=True
+200 /
+200 /dashboard/
+200 /sh5.php
+200 /up/exfil.zip
+200 /mz.bat
+200 /mal_payload.ps1
+200 /upcore.vbs
+<title>HACKED by wanz Abigail</title>

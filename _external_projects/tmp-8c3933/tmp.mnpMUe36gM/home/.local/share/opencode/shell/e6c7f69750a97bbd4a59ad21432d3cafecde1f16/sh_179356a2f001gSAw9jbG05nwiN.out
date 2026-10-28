@@ -1,0 +1,270 @@
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.<init>(Window.java:518)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:428)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:393)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at jadx.gui.ui.MainWindow.<init>(MainWindow.java:251)
+	at jadx.gui.JadxGUI.lambda$main$0(JadxGUI.java:41)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:323)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:723)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:702)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ERROR - Exception was thrown
+java.awt.HeadlessException: 
+No X11 DISPLAY variable was set,
+or no headful library support was found,
+but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:158)
+	at java.desktop/java.awt.Window.init(Window.java:471)
+	at java.desktop/java.awt.Window.<init>(Window.java:423)
+	at java.desktop/java.awt.Window.<init>(Window.java:563)
+	at java.desktop/java.awt.Dialog.<init>(Dialog.java:654)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:590)
+	at java.desktop/javax.swing.JDialog.<init>(JDialog.java:555)
+	at jadx.gui.ui.ExceptionDialog.<init>(ExceptionDialog.java:58)
+	at jadx.gui.ui.ExceptionDialog.showExceptionDialog(ExceptionDialog.java:54)
+	at jadx.gui.ui.ExceptionDialog.lambda$registerUncaughtExceptionHandler$0(ExceptionDialog.java:49)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:576)
+	at java.base/java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:571)
+	at java.desktop/java.awt.EventDispatchThread.processException(EventDispatchThread.java:218)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:210)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)

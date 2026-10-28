@@ -1,0 +1,20 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-223165
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.57.223.165
+Port TLS       : 19443
+Port none TLS  : 19080
+Port any       : 19053
+id             : 92f60bdc-b489-489c-ae94-5d5be04e07c4
+alterId        : 0
+Security       : auto
+network        : ws,grpc
+path ws        : /vmess
+serviceName    : vmess
+Cert SHA256    : 082d0593421f7745f2ae13036911fb2ed9a7ef5302a8fcbfe25a0c3b4548c267
+Limit IP       : -
+Expired On     : 2026-10-28 19:25:07 WIB
+————————————————————————————————————
