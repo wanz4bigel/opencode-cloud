@@ -1,0 +1,8 @@
+localhost : 200
+panjang: 2537
+ERR_NGROK_\d+ -> ['ERR_NGROK_725']
+<title>(.*?)</title> -> []
+ngrok[^<]{0,80} -> ['ngrok account has reached its network bandwidth limit for the month. Log into https:/', 'ngrok is the fastest way to put anything on the internet with a single command.">\n   ', 'ngrok">\n    ', 'ngrok.com/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">\n    ', 'ngrok.com/billing to view your options. (ERR_NGROK_725)']
+TEKS:  This ngrok account has reached its network bandwidth limit for the month. Log into https://dashboard.ngrok.com/billing to view your options. (ERR_NGROK_725) 
+--- ngrok api ---
+{"tunnels":[{"name":"command_line","ID":"45999f96771a79598fee27acc74ef163","uri":"/api/tunnels/command_line","public_url":"https://animate-cardstock-detector.ngrok-free.dev","proto":"https","config":{"addr":"http://localhost:8081","inspect":true},"metrics":{"conns":{"count":364,"gauge":0,"rate1":0.0035137184376880567,"rate5":0.038185675947238144,"rate15":0.043478815115318974,"p50":2972021864,"p90"

@@ -1,0 +1,17 @@
+panjang html: 16959
+title: ['Strata']
+ada kata kunci key: ['api-key', 'localStorage']
+   <!doctype html>
+   <html lang="en" data-theme="light">
+   <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Strata</title>
+   <link rel="icon" href="web/favicon.svg" type="image/svg+xml">
+   <link rel="stylesheet" href="web/tokens.css">
+   <link rel="stylesheet" href="web/components.css">
+   <link rel="stylesheet" href="web/app.css">
+   <script>
+     // the theme before the first paint: the saved choice, else the system's
+     try {
+       const t = localStorage.getItem("strata.theme") ||

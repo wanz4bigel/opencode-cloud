@@ -1,0 +1,60 @@
+   \]
+
+   Jadi jarum menit berada di sudut \(90^\circ\) dari angka 12.
+
+2. **Jarum jam**  
+   Setiap jam, jarum jam bergerak \(30^\circ\).  
+   Pada pukul 3 tepat, jarum jam berada di:
+
+   \[
+   3 \times 30^\circ = 90^\circ
+   \]
+
+   Namun, pada menit ke-15, jarum jam sudah bergerak lagi.  
+   Dalam 15 menit, jarum jam bergerak:
+
+   \[
+   \frac{15}{60} \times 30^\circ = 7.5^\circ
+   \]
+
+   Jadi posisi jarum jam adalah:
+
+   \[
+   90^\circ + 7.5^\circ = 97.5^\circ
+   \]
+
+3. **Selisih sudut**
+
+   \[
+   97.5^\circ - 90^\circ = 7.5^\circ
+   \]
+
+
+===== fakta | 1.1s | decode 180 tok/s =====
+JAWABAN: Transistor ditemukan oleh **John Bardeen, Walter Brattain, dan William Shockley** pada tahun **1947**.
+
+===== kode | 1.4s | decode 245 tok/s =====
+JAWABAN: ```python
+def merge_intervals(intervals):
+    if not intervals:
+        return []
+
+    sorted_intervals = sorted(intervals, key=lambda x: (x[0], x[1]))
+    merged = [sorted_intervals[0]]
+
+    for start, end in sorted_intervals[1:]:
+        last_start, last_end = merged[-1]
+
+        if start <= last_end:
+            merged[-1] = (last_start, max(last_end, end))
+        else:
+            merged.append((start, end))
+
+    return merged
+```
+
+===== UJI KODE =====
+LULUS [(1, 3), (2, 6), (8, 10), (15, 18)] -> [(1, 6), (8, 10), (15, 18)] (harap: [(1, 6), (8, 10), (15, 18)] )
+GAGAL [(1, 3), (4, 5)] -> [(1, 3), (4, 5)] (harap: [(1, 5)] )
+LULUS [] -> [] (harap: [] )
+LULUS [(5, 7), (1, 2)] -> [(1, 2), (5, 7)] (harap: [(1, 2), (5, 7)] )

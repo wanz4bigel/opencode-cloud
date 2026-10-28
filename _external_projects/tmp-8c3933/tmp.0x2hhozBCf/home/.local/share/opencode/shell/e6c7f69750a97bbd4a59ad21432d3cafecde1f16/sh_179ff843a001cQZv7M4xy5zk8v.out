@@ -1,0 +1,6 @@
+=== A. decode 448 token (prompt pendek) ===
+finish: length | completion_tokens: 448
+prompt: 83 tok @ 139.5 tok/s
+decode: 448 tok @ 144.9 tok/s (6.90 ms/tok)
+draft : 161/354 diterima (45.5%)
+wall  : 3.69s

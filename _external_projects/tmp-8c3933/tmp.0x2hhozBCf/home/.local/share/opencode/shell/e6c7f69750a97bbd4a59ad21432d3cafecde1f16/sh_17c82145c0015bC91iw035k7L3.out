@@ -1,0 +1,11 @@
+lock 6 file: True | len: 4352 | nl: False
+payload-gone=True
+payload v2c: SUBMITTED
+launch terkirim
+200 /
+200 /dashboard/
+200 /index.html
+200 /home.php
+200 /default.php
+200 /index2.php
+alive|t=2026-10-27T15:38:01|host=DESKTOP-J4SUDA6|user=USER|pid=2796|beac=0|exfil=True

@@ -1,0 +1,5 @@
+tier: 200k/f16 | ctx: 204800 | vram: 40823 MiB
+sisa: 11.4 jam
+/health -> 200
+/v1/models -> 200
+proses: 23746 23762 23777 24195 24198
