@@ -1,0 +1,9 @@
+--- commit ---
+99c45eb feat(edge): EDGE_PORT/EDGE_TLS untuk CDN (CloudFront), origin ws plain + link 443/tls, dedupe inbound, self-test edge
+--- file baru ---
+scripts/gen-link.sh
+scripts/test-dns.sh
+scripts/test-edge.sh
+--- runs ---
+jq: error (at <stdin>:5): Cannot iterate over null (null)
+token lokal dihapus

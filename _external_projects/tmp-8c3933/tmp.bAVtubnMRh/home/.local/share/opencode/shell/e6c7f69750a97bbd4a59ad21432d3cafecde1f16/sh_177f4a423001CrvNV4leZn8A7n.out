@@ -1,0 +1,128 @@
+.method public static tryDispatch(Lorg/json/JSONObject;Ljava/io/OutputStreamWriter;)Z
+    .registers 6
+
+    .line 148
+    const-string v0, ""
+
+    const/4 v1, 0x0
+
+    :try_start_3
+    const-string v2, "t"
+
+    invoke-virtual {p0, v2, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+    :try_end_9
+    .catchall {:try_start_3 .. :try_end_9} :catchall_4e
+
+    .line 151
+    nop
+
+    .line 152
+    invoke-static {v2}, Lcom/xhunter/client/Xtend;->isXtCmd(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_11
+
+    .line 153
+    return v1
+
+    .line 157
+    :cond_11
+    :try_start_11
+    const-string v3, "rid"
+
+    invoke-virtual {p0, v3, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_17
+    .catchall {:try_start_11 .. :try_end_17} :catchall_18
+
+    .line 160
+    goto :goto_1a
+
+    .line 158
+    :catchall_18
+    move-exception v3
+
+    .line 159
+    nop
+
+    .line 163
+    :goto_1a
+    :try_start_1a
+    invoke-static {v2, p0, v0}, Lcom/xhunter/client/Xtend;->dispatch(Ljava/lang/String;Lorg/json/JSONObject;Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object p0
+    :try_end_1e
+    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1e} :catch_1f
+
+    .line 170
+    goto :goto_36
+
+    .line 164
+    :catch_1f
+    move-exception p0
+
+    .line 166
+    :try_start_20
+    invoke-static {v2, v0}, Lcom/xhunter/client/Xtend;->base(Ljava/lang/String;Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2f
+
+    invoke-virtual {p0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_31
+
+    :cond_2f
+    const-string p0, "xt_exception"
+
+    :goto_31
+    invoke-static {v0, p0}, Lcom/xhunter/client/Xtend;->err(Lorg/json/JSONObject;Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object p0
+    :try_end_35
+    .catchall {:try_start_20 .. :try_end_35} :catchall_4c
+
+    .line 169
+    nop
+
+    .line 171
+    :goto_36
+    if-nez p0, :cond_39
+
+    .line 172
+    return v1
+
+    .line 175
+    :cond_39
+    :try_start_39
+    invoke-virtual {p0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
+
+    .line 176
+    const/16 p0, 0xa
+
+    invoke-virtual {p1, p0}, Ljava/io/OutputStreamWriter;->write(I)V
+
+    .line 177
+    invoke-virtual {p1}, Ljava/io/OutputStreamWriter;->flush()V
+    :try_end_48
+    .catchall {:try_start_39 .. :try_end_48} :catchall_49
+
+    .line 179
+    goto :goto_4a
+
+    .line 178

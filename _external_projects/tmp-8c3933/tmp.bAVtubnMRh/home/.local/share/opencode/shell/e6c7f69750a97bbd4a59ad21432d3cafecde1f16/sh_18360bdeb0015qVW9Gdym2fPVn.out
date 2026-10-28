@@ -1,0 +1,12 @@
+43:// Rute yang tidak pernah ditutup gerbang 18+: aset, tombol konfirmasi, umpan.
+327:  const gerbang = !cookies.usia && !TERBUKA.test(pathname) && !pathname.startsWith("/admin");
+343:    return kirim(page(homePage({ ...data, query, gate: gerbang, host: hostOf(req) })));
+351:    return kirim(page(searchPage({ query, ...data, gate: gerbang, host: hostOf(req) })));
+374:          gate: gerbang,
+392:          gate: gerbang,
+402:    if (!gerbang) catatPenonton(req.socket.remoteAddress || "x", video);
+403:    return kirim(page(watchPage({ video, related: relatedVideos(video, 12), host, gate: gerbang })));
+  const gerbang = !cookies.usia && !TERBUKA.test(pathname) && !pathname.startsWith("/admin");
+
+  if (pathname.startsWith("/static/")) {
+    const ok = await serveStatic(req, res, pathname);

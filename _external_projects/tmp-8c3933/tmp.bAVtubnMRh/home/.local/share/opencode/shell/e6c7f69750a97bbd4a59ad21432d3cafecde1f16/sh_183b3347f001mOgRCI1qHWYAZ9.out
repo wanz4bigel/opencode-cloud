@@ -1,0 +1,11 @@
+### no.3 decoy=qris amount=1000
+Harga Paket Decoy : Rp 1000  (TikTok 2GB)
+Total amount is 1000.
+Error: {'code': '213', 'code_detail': '213-01-01-101-400', 'status': 'FAILED', 'message': 'Product is not available', 'title': "There's An Issue In myXL While Loading The Page from config", 'description': 'myXL is under maintenance. Please try again in a few moments later'}
+Failed to create QRIS transaction.
+### no.186 decoy=qris amount=1000
+Harga Paket Decoy : Rp 1000  (TikTok 2GB)
+Total amount is 1000.
+Error: {'code': '213', 'code_detail': '213-01-01-101-400', 'status': 'FAILED', 'message': 'Product is not available', 'title': "There's An Issue In myXL While Loading The Page from config", 'description': 'myXL is under maintenance. Please try again in a few moments later'}
+Failed to create QRIS transaction.
+### no.3 decoy=qris0 amount=1000

@@ -1,0 +1,4 @@
+[206841:206841:1027/203333.840071:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[206841:206841:1027/203333.920022:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.NetworkManager.GetDevices: object_path= /org/freedesktop/NetworkManager: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.NetworkManager was not provided by any .service files
+945582 bytes written to file /tmp/opencode/shot-full.png
+-rw-r--r-- 1 runner runner 945582 Oct 27 20:33 /tmp/opencode/shot-full.png
