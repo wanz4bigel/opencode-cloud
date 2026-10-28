@@ -1,0 +1,17 @@
+export function viewDir(yaw, pitch) {
+  const cp = Math.cos(pitch);
+  return { x: Math.sin(yaw) * cp, y: Math.sin(pitch), z: -Math.cos(yaw) * cp };
+}
+192:  raycast(maxDist = 5) {
+193-    const eye = this.eye;
+194-    const dir = viewDir(this.yaw, this.pitch);
+195-    let x = Math.floor(eye.x), y = Math.floor(eye.y), z = Math.floor(eye.z);
+196-    const stepX = dir.x > 0 ? 1 : -1, stepY = dir.y > 0 ? 1 : -1, stepZ = dir.z > 0 ? 1 : -1;
+197-    const invX = dir.x === 0 ? Infinity : Math.abs(1 / dir.x);
+198-    const invY = dir.y === 0 ? Infinity : Math.abs(1 / dir.y);
+199-    const invZ = dir.z === 0 ? Infinity : Math.abs(1 / dir.z);
+200-    let tMaxX = dir.x === 0 ? Infinity : ((dir.x > 0 ? x + 1 - eye.x : eye.x - x) * invX);
+201-    let tMaxY = dir.y === 0 ? Infinity : ((dir.y > 0 ? y + 1 - eye.y : eye.y - y) * invY);
+202-    let tMaxZ = dir.z === 0 ? Infinity : ((dir.z > 0 ? z + 1 - eye.z : eye.z - z) * invZ);
+203-    let nx = 0, ny = 0, nz = 0, t = 0;
+204-

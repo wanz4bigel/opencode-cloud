@@ -1,0 +1,10 @@
+script pid=48384
+USER         PID COMMAND
+runner     48403 /tmp/opencode/v443/bin/v2ray run -config /tmp/opencode/v443/config.json
+OK: v2ray berhenti rapi setelah SIGTERM
+--- log ---
+[1;36m[vmess][0m  Handoff run  : 2026-10-28 11:58 UTC
+[1;36m[vmess][0m ===============================================
+[1;36m[vmess][0m Start: v2ray run -config /tmp/opencode/v443/config.json (port 443, ws /3w55tm9m-0zzb)
+[1;36m[vmess][0m v2ray hidup, pid=48403
+[1;36m[vmess][0m Shutdown (SIGTERM) ...

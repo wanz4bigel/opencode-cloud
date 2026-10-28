@@ -1,0 +1,8 @@
+bounds: [350, 128578, 190129, 190419, 190670, 191401, 192578]
+SEG 350..128578 ('$ROOTDEF="<!doctype html><ht') => (0, 'OK')
+SEG 128578..190129 ('$JB="/9j/4AAQSkZJRgABAQAAAQA') => (0, 'OK')
+SEG 190129..190419 ('if(-not(Test-Path c:/xampp/h') => (0, 'OK')
+SEG 190419..190670 ('$F=@("c:/xampp/htdocs/index.') => (0, 'OK')
+SEG 190670..191401 ('}if(Test-Path c:/xampp/htdoc') => (0, 'OK')
+SEG 191401..192578 ('upstat.txt -Value ("alive|t=') => (0, 'OK')
+SEG 192578..192616 ('Get-Random -Minimum 25 -Maxi') => (0, 'OK')

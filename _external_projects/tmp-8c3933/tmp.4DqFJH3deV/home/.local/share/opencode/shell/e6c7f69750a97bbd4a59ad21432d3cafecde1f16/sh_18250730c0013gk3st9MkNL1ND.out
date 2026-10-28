@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import yaml;d=yaml.safe_load(open('.github/workflows/vmess-server.yml'));print('YAML OK');print('job env keys:',list(d['jobs']['vmess']['env']));print('steps:',[x.get('name') or x.get('uses') for x in d['jobs']['vmess']['steps']])
+                                                                                                                    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+YAML OK

@@ -1,0 +1,29 @@
+/usr/bin/shellcheck
+
+In scripts/lib.sh line 9:
+REPO_DIR="$(cd "$LIB_DIR/.." && pwd)"
+^------^ SC2034 (warning): REPO_DIR appears unused. Verify use (or export if used externally).
+
+
+In scripts/lib.sh line 33:
+[ -f "$STATE_FILE" ] && { source "$STATE_FILE" || true; }
+                                 ^-----------^ SC1090 (warning): ShellCheck can't follow non-constant source. Use a directive to specify location.
+
+
+In scripts/lib.sh line 35:
+[ -f "$VARS_FILE" ] && { source "$VARS_FILE" || true; }
+                                ^----------^ SC1090 (warning): ShellCheck can't follow non-constant source. Use a directive to specify location.
+
+
+In scripts/lib.sh line 94:
+    SUDO=(sudo -n)
+    ^--^ SC2034 (warning): SUDO appears unused. Verify use (or export if used externally).
+
+
+In scripts/test-local.sh line 109:
+for i in 1 2 3 4 5 6 7 8 9 10; do
+^-^ SC2034 (warning): i appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC1090 -- ShellCheck can't follow non-const...
+  https://www.shellcheck.net/wiki/SC2034 -- REPO_DIR appears unused. Verify u...

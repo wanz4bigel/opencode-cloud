@@ -1,0 +1,13 @@
+[1;32m  PASS[0m install-v2ray.sh
+[1;32m  PASS[0m gen-cert.sh
+[1;32m  PASS[0m gen-config.sh
+[1;32m  PASS[0m config pakai network ws
+[1;32m  PASS[0m gen-link.sh
+[1;32m  PASS[0m link vmess:// terbentuk
+[1;32m  PASS[0m proses v2ray hidup
+[1;32m  PASS[0m healthcheck port+ws
+[1;32m  PASS[0m config klien valid
+[1;32m  PASS[0m request lewat tunnel (HTTP 204)
+[1;32m  PASS[0m UUID asing ditolak (HTTP 000)
+[1;32m  PASS[0m server berhenti rapi
+  PASS=12  FAIL=0

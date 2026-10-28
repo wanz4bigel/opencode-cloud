@@ -1,0 +1,15 @@
+[1;36m[vmess][0m Unduh v2ray-linux-64.zip (v5.53.0) ...
+[1;36m[vmess][0m cap_net_bind_service dipasang -> port 443 tanpa root (/tmp/opencode/v443/bin/v2ray cap_net_bind_service=ep)
+[1;36m[vmess][0m Terpasang: V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+[1;36m[vmess][0m Mode CLI : v5 (v2ray run -config)
+[1;36m[vmess][0m config.json -> /tmp/opencode/v443/config.json
+[1;36m[vmess][0m Verifikasi config: OK
+[1;36m[vmess][0m PORT/PATH : 443/3w55tm9m-0zzb
+[1;36m[vmess][0m UUID      : 1a963c45-bcbd-4190-9269-a921c0b555c8
+[1;36m[vmess][0m LINK      : vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1IiwiYWRkIjoiMjAuNTcuMjIzLjE2NSIsInBvcnQiOiI0NDMiLCJpZCI6IjFhOTYzYzQ1LWJjYmQtNDE5MC05MjY5LWE5MjFjMGI1NTVjOCIsImFpZCI6IjAiLCJzYyI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwicGF0aCI6Ii8zdzU1dG05bS0wenpiIiwidGxzIjoidGxzIiwiYWxwbiI6ImgyLGh0dHAvMS4xIiwiZW1haWwiOiJnaXRodWItYWN0aW9ucyJ9
+--- run ---
+[1;36m[vmess][0m Sehat: port 443 open, WS handshake https://127.0.0.1:443/3w55tm9m-0zzb -> HTTP 400
+health exit=0
+USER         PID COMMAND
+runner     46544 /tmp/opencode/v443/bin/v2ray run -config /tmp/opencode/v443/config.json
+--- stop (SIGTERM) ---

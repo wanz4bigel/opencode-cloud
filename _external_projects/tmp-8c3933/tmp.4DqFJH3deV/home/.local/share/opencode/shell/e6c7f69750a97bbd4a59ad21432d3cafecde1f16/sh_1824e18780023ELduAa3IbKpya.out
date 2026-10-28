@@ -1,0 +1,16 @@
+[1;36m[vmess][0m TLS_MODE=off -> inbound pakai plain WebSocket (tanpa TLS).
+[1;33m[vmess] WARN[0m TLS off: traffic WS terbaca jelas (plain).
+[1;36m[vmess][0m config.json -> /tmp/opencode/tlsoff/config.json
+[1;36m[vmess][0m Verifikasi config: OK
+{
+  "network": "ws",
+  "security": "none"
+}
+--- custom cert ---
+[1;36m[vmess][0m Sertifikat custom OK: Nov 27 11:38:40 2026 GMT
+[1;36m[vmess][0m config.json -> /tmp/opencode/tlscustom/config.json
+[
+  "h2",
+  "http/1.1"
+]
+v2ray.example.com

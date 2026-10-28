@@ -1,0 +1,15 @@
+eval => {
+ "state": "playing",
+ "pos": [
+  29.2,
+  41.2,
+  73.3
+ ],
+ "flying": true,
+ "surfaceY": 25,
+ "blockBelow": [],
+ "pitch": -0.28
+}
+tangkapan layar -> /tmp/p1.png (740x360 mobile)
+--- konsol halaman ---
+[log:warning] The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio http://localhost:8090/js/core/audio.js

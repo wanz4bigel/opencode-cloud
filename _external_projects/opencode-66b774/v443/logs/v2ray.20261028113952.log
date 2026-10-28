@@ -1,0 +1,6 @@
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:39:52 [Warning] V2Ray 5.53.0 started
+2026/10/28 11:39:55 http: TLS handshake error from 127.0.0.1:54428: EOF
+2026/10/28 11:39:58 http: TLS handshake error from 127.0.0.1:59432: EOF
+2026/10/28 11:39:59 http: TLS handshake error from 127.0.0.1:59440: EOF

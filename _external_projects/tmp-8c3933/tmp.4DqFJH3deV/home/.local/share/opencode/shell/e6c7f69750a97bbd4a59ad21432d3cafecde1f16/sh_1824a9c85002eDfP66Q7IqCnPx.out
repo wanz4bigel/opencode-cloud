@@ -1,0 +1,3 @@
+src/views.js:69:export function layout({ title, description = "Koleksi video colmek Indonesia, semuanya embed dari host — tidak ada upload.", path = "/", query = {}, body, ogImage, gate = false }) {
+src/views.js:82:<meta property="og:image" content="${esc(ogImage || "")}">
+src/views.js:377:    ogImage: video.poster || `${host}/p/${video.slug}.svg`,

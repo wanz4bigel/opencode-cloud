@@ -1,0 +1,13 @@
+70-  return `<!doctype html>
+71-<html lang="id">
+72-<head>
+73-<meta charset="utf-8">
+74-<meta name="viewport" content="width=device-width, initial-scale=1">
+75-<title>${esc(title)}</title>
+76-<meta name="description" content="${esc(description)}">
+77-<meta name="robots" content="index, follow, max-image-preview:none">
+78-<meta name="rating" content="adult">
+79-<meta property="og:site_name" content="BokepKita">
+80-<meta property="og:type" content="website">
+81-<meta property="og:title" content="${esc(title)}">
+82:<meta property="og:image" content="${esc(ogImage || "")}">

@@ -1,0 +1,9 @@
+cigombong_p2s.py OK
+--- jobs ---
+26529 /bin/bash
+44585 /bin/bash
+--- cdx ---
+cdx sch.id @50000 -> [200] 17727160B
+cdx sch.id @75000 -> [000] 0B
+cdx sch.id @100000 -> [000] 0B
+7

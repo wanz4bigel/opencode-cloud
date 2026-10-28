@@ -1,0 +1,91 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 18500,
+      "protocol": "vmess",
+      "tag": "in-vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "e7ebe503-04dd-4f02-9556-544ec8ae91b9",
+            "alterId": 0,
+            "email": "github-actions",
+            "level": 1
+          }
+        ],
+        "decoding": "alternatives"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/zrt5z8tk-zkay",
+          "headers": {}
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {
+        "domainStrategy": "AS_IS"
+      }
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "policy": {
+    "levels": {
+      "1": {
+        "handshake": 4,
+        "connIdle": 120,
+        "connHold": 300
+      }
+    },
+    "system": {
+      "inbound": 1,
+      "outbound": 1
+    }
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "127.0.0.0/8",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "protocol": [
+          "bittorrent"
+        ]
+      }
+    ]
+  }
+}

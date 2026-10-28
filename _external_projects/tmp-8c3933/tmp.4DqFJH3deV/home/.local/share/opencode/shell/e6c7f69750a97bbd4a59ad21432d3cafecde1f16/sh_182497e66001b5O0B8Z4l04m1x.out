@@ -1,0 +1,6 @@
+83:let targetCache = null;
+356:  targetCache = target;
+595:  if (state === 'playing' && targetCache) {
+596:    selection = { x: targetCache.x, y: targetCache.y, z: targetCache.z, progress: mining ? Math.min(1, mining.progress) : 0 };
+1018:  target: () => targetCache,
+=== updateTarget ===

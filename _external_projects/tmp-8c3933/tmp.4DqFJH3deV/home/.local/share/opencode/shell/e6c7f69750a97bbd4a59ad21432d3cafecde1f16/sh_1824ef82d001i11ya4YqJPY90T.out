@@ -1,0 +1,10 @@
+OK
+31:  [ -n "${PID:-}" ] && "${SUDO[@]}" kill "$PID" 2>/dev/null || true
+34:    "${SUDO[@]}" kill -0 "$PID" 2>/dev/null || break
+37:  [ -n "${PID:-}" ] && "${SUDO[@]}" kill -9 "$PID" 2>/dev/null || true
+48:  "${SUDO[@]}" "$V2RAY_BIN" "${args[@]}" >>"$LOG_FILE" 2>&1 &
+52:  if ! "${SUDO[@]}" kill -0 "$PID" 2>/dev/null; then
+99:  if ! "${SUDO[@]}" kill -0 "$PID" 2>/dev/null; then
+121:      "${SUDO[@]}" kill -9 "$PID" 2>/dev/null || true
+138:"${SUDO[@]}" kill "$PID" 2>/dev/null || true
+139:"${SUDO[@]}" wait "$PID" 2>/dev/null || true

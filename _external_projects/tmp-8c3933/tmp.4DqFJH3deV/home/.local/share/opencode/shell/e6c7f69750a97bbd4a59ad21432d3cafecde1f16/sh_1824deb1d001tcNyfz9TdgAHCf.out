@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# ============================================================================
+#  lib.sh - helper & default values yang dipakai semua script di repo ini.
+#  Cara pakai:  source "<dir script>/lib.sh"   (jangan dieksekusi langsung)
+# ============================================================================
+set -euo pipefail
+# shellcheck disable=SC2034  # LIB_DIR & SUDO dipakai

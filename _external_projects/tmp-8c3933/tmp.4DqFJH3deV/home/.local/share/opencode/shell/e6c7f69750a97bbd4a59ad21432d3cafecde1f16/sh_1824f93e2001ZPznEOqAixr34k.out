@@ -1,0 +1,8 @@
+server script pid=47021
+USER         PID COMMAND
+runner     47043 /tmp/opencode/v443/bin/v2ray run -config /tmp/opencode/v443/config.json
+FAIL: v2ray masih hidup
+[1;33m[vmess] WARN[0m Dispatch belum berhasil, dicoba lagi 3s lagi.
+[1;36m[vmess][0m Fase handoff (percobaan 3/5): trigger run baru supaya endpoint tidak lama mati.
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+[1;33m[vmess] WARN[0m Dispatch belum berhasil, dicoba lagi 3s lagi.

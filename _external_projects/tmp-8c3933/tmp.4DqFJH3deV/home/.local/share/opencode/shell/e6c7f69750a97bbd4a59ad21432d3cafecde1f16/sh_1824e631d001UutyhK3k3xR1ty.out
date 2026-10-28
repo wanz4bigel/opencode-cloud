@@ -1,0 +1,9 @@
+  cdx_com.txt: +0 host
+  cdx_desa.id.txt: +385 host
+  cdx_pon.id.txt: +0 host
+  cdx_sch.id.txt: +238 host
+  cdx_sch.id_25000.txt: +3010 host
+  cdx_sch.id_50000.txt: +0 host
+  cdx_web.id.txt: +2028 host
+
+total host unik: 5661 -> /home/runner/p2s/lists/hosts_cdx.txt

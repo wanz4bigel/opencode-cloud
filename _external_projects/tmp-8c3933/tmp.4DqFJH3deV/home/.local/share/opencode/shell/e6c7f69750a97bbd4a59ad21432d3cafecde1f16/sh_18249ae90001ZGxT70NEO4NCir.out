@@ -1,0 +1,74 @@
+322:function updateMining(dt) {
+438:function frame(now) {
+476:    updateMining(dt);
+=== frame ===
+function frame(now) {
+  requestAnimationFrame(frame);
+  const rawDt = (now - lastFrame) / 1000;
+  lastFrame = now;
+  const dt = Math.min(0.05, Math.max(0.0005, rawDt));
+  elapsed += dt;
+  fpsAvg = fpsAvg * 0.85 + (1 / rawDt) * 0.15;
+
+  if (!renderer || !world) return;
+
+  const playing = state === 'playing';
+  const input = mergeInput();
+
+  // Kamera orbit di layar judul.
+  if (state === 'title' || state === 'loading') {
+    orbitCam.yaw += dt * 0.06;
+    const t = state === 'title' ? elapsed : 0;
+    const cx = spawnPoint.x + Math.cos(orbitCam.yaw) * orbitCam.radius;
+    const cz = spawnPoint.z + Math.sin(orbitCam.yaw) * orbitCam.radius;
+    player.pos.x = cx;
+    player.pos.z = cz;
+    player.pos.y = spawnPoint.y + orbitCam.height;
+    player.yaw = orbitCam.yaw - Math.PI / 2;
+    player.pitch = orbitCam.pitch;
+  }
+
+  if (playing) {
+    const look = mergeLook();
+    player.yaw += look.yaw;
+    player.pitch = clamp(player.pitch + look.pitch, -1.5533, 1.5533);
+    player.sneaking = input.sneak;
+    player.sprinting = input.sprint && input.forward > 0.3;
+    player.update(dt, input);
+    if (touch) touch.update(dt);
+
+    const queuedPlace = touch ? touch.consumePlace() : 0;
+    for (let i = 0; i < Math.min(queuedPlace, 3); i++) placeBlock();
+
+    updateMining(dt);
+
+    if (keyboard && keyboard.state.placing) {
+      keyboard.placeCooldown = (keyboard.placeCooldown || 0) - dt;
+      if (keyboard.placeCooldown <= 0) {
+        keyboard.placeCooldown = 0.22;
+        placeBlock();
+      }
+    }
+
+    if (player.dead) {
+      player.dead = false;
+      state = 'dead';
+      ui.showScreen('death');
+      setState('dead');
+      Audio.hurt();
+    }
+
+    if (player.fallDamage > 0) {
+      ui.hurtFlash();
+      player.fallDamage = 0;
+    }
+
+    saveTimer += dt;
+    if (saveTimer > 30) {
+      saveTimer = 0;
+      saveGame(false);
+    }
+  }
+
+  // Dunia: generate + mesh dengan anggaran waktu.
+  const focus = state === 'playing' || state === 'paused' || state === 'inventory' || state === 'dead'

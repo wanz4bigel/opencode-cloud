@@ -1,0 +1,14 @@
+patched
+
+In scripts/lib.sh line 8:
+LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+^-----^ SC2034 (warning): LIB_DIR appears unused. Verify use (or export if used externally).
+
+
+In scripts/lib.sh line 96:
+    SUDO=(sudo -n)
+    ^--^ SC2034 (warning): SUDO appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- LIB_DIR appears unused. Verify us...
+SYNTAX OK

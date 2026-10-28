@@ -1,0 +1,7 @@
+'/marimo/llm/sc117-aux/mmproj-Qwen3.8-Flash-Next-BF16.gguf' -> '/dev/shm/sc117/IQ3_S/mmproj-Qwen3.8-Flash-Next-BF16.gguf'
+dense.bin
+dense.txt
+draft_vocab.bin
+experts.bin
+launch pid: 989
+API key: sk-strata-d71951f458683d6a913c18fb1e31e4b3
