@@ -1,0 +1,13 @@
+5703:.method public static tryDispatch(Lorg/json/JSONObject;Ljava/io/OutputStreamWriter;)Z
+26:    if-nez v3, :cond_11
+29:    return v1
+55:    invoke-static {v2, p0, v0}, Lcom/xhunter/client/Xtend;->dispatch(Ljava/lang/String;Lorg/json/JSONObject;Ljava/lang/String;)Lorg/json/JSONObject;
+78:    if-eqz v2, :cond_2f
+101:    if-nez p0, :cond_39
+104:    return v1
+113:    invoke-virtual {p1, p0}, Ljava/io/OutputStreamWriter;->write(Ljava/lang/String;)V
+118:    invoke-virtual {p1, p0}, Ljava/io/OutputStreamWriter;->write(I)V
+121:    invoke-virtual {p1}, Ljava/io/OutputStreamWriter;->flush()V
+136:    return p0
+143:    return v1
+150:    return v1

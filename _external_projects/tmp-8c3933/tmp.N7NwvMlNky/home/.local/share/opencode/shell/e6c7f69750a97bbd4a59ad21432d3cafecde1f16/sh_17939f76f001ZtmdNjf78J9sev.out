@@ -1,0 +1,6 @@
+uid=1001(runner) gid=1001(runner) groups=1001(runner),4(adm),100(users),113(docker),999(systemd-journal)
+/usr/bin/sudo
+go: go version go1.26.9 linux/amd64
+/home/runner/go
+/home/runner/go/pkg/mod
+

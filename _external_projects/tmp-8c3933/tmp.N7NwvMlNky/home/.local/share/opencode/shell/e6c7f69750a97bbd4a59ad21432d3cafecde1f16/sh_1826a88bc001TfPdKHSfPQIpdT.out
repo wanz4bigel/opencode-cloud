@@ -1,0 +1,16 @@
+22:node server.js            # http://localhost:3000
+23:PORT=4173 node server.js  # ganti port kalau 3000 kepakai app lain
+29:12 kategori **khusus colmek** — **300 video sungguhan** dari Eporner. Video contoh
+33:npm run isi     # ambil video sungguhan dari API Eporner → data/katalog.json (~11 detik)
+44:Katalog default diisi **video sungguhan** lewat `npm run isi`, yang menanyakan ke
+45:**API publik Eporner** (`/api/v2/video/search/`) pakai 12 kelompok kueri yang semuanya
+64:npm run isi                 # 12 kategori × 24 video → data/katalog.json (~20 detik)
+65:npm run isi -- --per 25     # 12 × 25 (dipakai katalog sekarang: 300 video)
+66:npm run isi -- --kategori colmek-hijab --per 6
+67:npm run isi -- --short 120  # buang klip di bawah 2 menit
+72:jadi 300 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+77:di halaman nonton. Setelah `npm run isi`, ketiganya hilang sendiri.
+84:2. **`npm run isi`** buat narik video baru dari API Eporner, atau **`npm run asli`**
+108:curl -s "http://localhost:3000/admin" -X POST \
+127:scripts/isi.js     isi katalog dari API publik Eporner (12 kategori colmek, judul asli)
+137:- Katalog default diisi video **Eporner** lewat `npm run isi`: judul, durasi, tag, view,

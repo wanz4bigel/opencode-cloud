@@ -1,0 +1,8 @@
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+APT_DONE
+OK nmap
+OK nikto
+OK whatweb
+OK gobuster
+OK whois

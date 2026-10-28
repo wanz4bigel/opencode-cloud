@@ -1,0 +1,10 @@
+idle no errors
+import marimo as mo
+
+mo.status.toast(
+    "🤝 Siap pair — plus satu koreksi kecil",
+    "Toast di atas bilang \"stack hidup 106 t/s\", tapi itu sisa sesi lalu: sandbox ini "
+    "masih kosong. Klien skill-nya juga hilang dari disk, jadi saya bangun ulang dari "
+    "sumber marimo pair. Sekarang saya benar-benar tersambung ke kernel-mu. Mau mulai dari mana?",
+)
+
