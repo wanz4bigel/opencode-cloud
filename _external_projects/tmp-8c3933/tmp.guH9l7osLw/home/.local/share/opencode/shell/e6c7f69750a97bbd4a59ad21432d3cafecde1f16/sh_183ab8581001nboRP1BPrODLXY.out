@@ -1,0 +1,3 @@
+app/client/engsel.py:250:def intercept_page(
+app/client/engsel.py:256:    path = "misc/api/v8/utility/intercept-page"
+app/client/engsel.py:264:    print("Fetching intercept page...")

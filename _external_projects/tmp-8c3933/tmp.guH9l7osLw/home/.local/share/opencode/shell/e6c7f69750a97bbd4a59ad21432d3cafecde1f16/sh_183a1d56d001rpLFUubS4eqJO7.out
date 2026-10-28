@@ -1,0 +1,6 @@
+Family: Special For You | total opsi: 202
+==> NO. 186: Internet 1GB | Rp 2000
+Intercept status: SUCCESS - 8116163
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}

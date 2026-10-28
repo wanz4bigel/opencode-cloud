@@ -1,0 +1,16 @@
+beacon-left=0
+== syntax test payload v2 ==
+At line:1 char:153
++ ... d][System.Management.Automation.Language.Parser]::ParseInput(\,[ref]\ ...
++                                                                  ~
+Missing ')' in method call.
+At line:1 char:153
++ ... ][System.Management.Automation.Language.Parser]::ParseInput(\,[ref]\, ...
++                                                                 ~
+Unexpected token '\' in expression or statement.
+At line:1 char:154
++ ... [System.Management.Automation.Language.Parser]::ParseInput(\,[ref]\,[ ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:168
++ ... ment.Automation.Language.Parser]::ParseInput(\,[ref]\,[ref]\

@@ -1,0 +1,41 @@
+                    token_confirmation=decoy_package_detail["token_confirmation"],
+                )
+            )
+
+            overwrite_amount = price + decoy_package_detail["package_option"]["price"]
+            res = settlement_balance(
+                api_key,
+                tokens,
+                payment_items,
+                "🤫",
+                False,
+                overwrite_amount=overwrite_amount,
+                token_confirmation_idx=1
+            )
+            
+            if res and res.get("status", "") != "SUCCESS":
+                error_msg = res.get("message", "Unknown error")
+                if "Bizz-err.Amount.Total" in error_msg:
+                    error_msg_arr = error_msg.split("=")
+                    valid_amount = int(error_msg_arr[1].strip())
+                    
+                    print(f"Adjusted total amount to: {valid_amount}")
+                    res = settlement_balance(
+                        api_key,
+                        tokens,
+                        payment_items,
+                        "🤫",
+                        False,
+                        overwrite_amount=valid_amount,
+                        token_confirmation_idx=-1
+                    )
+                    if res and res.get("status", "") == "SUCCESS":
+                        print("Purchase successful!")
+            else:
+                print("Purchase successful!")
+            pause()
+            return True
+        elif choice == '6':
+            # QRIS decoy + Rpx
+            decoy = DecoyInstance.get_decoy("qris")
+            

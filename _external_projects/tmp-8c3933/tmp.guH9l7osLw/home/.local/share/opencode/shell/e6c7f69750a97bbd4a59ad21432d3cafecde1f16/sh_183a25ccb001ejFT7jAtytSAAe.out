@@ -1,0 +1,6 @@
+Intercept status: SUCCESS - 8116163
+Getting payment methods...
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
+EOFError: EOF when reading a line

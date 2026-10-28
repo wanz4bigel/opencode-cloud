@@ -1,0 +1,12 @@
+### no.3 Bundling Poco F9 + XL PASS LITE (choice 4)
+==> NO. 3: Bundling Poco F9 | Rp 1300000
+Success with is_enterprise=False, migration_type=NONE. Family name: XL PASS LITE
+Intercept status: SUCCESS - 2000003558
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
+### no.3 Bundling Poco F9 + XL PASS LITE (choice 5)
+==> NO. 3: Bundling Poco F9 | Rp 1300000
+Success with is_enterprise=False, migration_type=NONE. Family name: XL PASS LITE
+Intercept status: SUCCESS - 2000003558
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
