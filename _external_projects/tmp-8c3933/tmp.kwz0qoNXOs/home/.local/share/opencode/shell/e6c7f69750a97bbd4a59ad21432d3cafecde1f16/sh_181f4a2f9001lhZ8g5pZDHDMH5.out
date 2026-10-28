@@ -1,0 +1,11 @@
+     80 OPEN   b''
+    443 OPEN   b''
+   8080 closed/filtered (TimeoutError)
+   8443 closed/filtered (TimeoutError)
+   2082 OPEN   b''
+   2083 OPEN   b''
+   2087 closed/filtered (TimeoutError)
+   2095 OPEN   b''
+     21 OPEN   b'220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------\r\n220-You'
+   3306 closed/filtered (TimeoutError)
+     22 closed/filtered (TimeoutError)

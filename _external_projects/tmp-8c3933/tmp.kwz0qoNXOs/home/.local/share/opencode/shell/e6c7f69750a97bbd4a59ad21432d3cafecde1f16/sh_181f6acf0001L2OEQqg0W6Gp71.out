@@ -1,0 +1,5 @@
+== plain 21 verbose ==
+* closing connection #0
+== ftpes ==
+* Protocol "ftpes" not supported
+* closing connection #-1

@@ -1,0 +1,3 @@
+62:  const tone = posterPalette(video.slug);
+107:      (v) => `<a class="rail__item" href="/v/${v.slug}">
+284:      <a class="side__media" href="/v/${v.slug}">

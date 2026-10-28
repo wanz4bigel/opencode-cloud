@@ -1,0 +1,10 @@
+== files disclosed ==
+/home/smak5943/public_html/web/public/index.php
+/home/smak5943/public_html/web/vendor/fruitcake/laravel-cors/src/HandleCors.php
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illuminate/Foundation/Ht
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illuminate/Http/Middlewa
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illuminate/Pipeline/Pipe
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illuminate/Routing/Abstr
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illuminate/Routing/Route
+== count unique paths ==
+7

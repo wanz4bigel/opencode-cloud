@@ -1,0 +1,11 @@
+[405 573037B]
+     10 MethodNotAllowedHttpException
+      5 ignition
+      4 Ignition
+      2 laravel_version
+      2 405
+      1 framework_version
+framework_version":"8.83.23"
+/home/smak5943/public_html/web/public/index.php
+/home/smak5943/public_html/web/vendor/fruitcake/laravel-cors/src/H
+/home/smak5943/public_html/web/vendor/laravel/framework/src/Illumi

@@ -1,0 +1,7 @@
+333:.catalog { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+334-.catalog a {
+335-  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+336-  padding: 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--arang-2);
+337-}
+338-.catalog a:hover { border-color: var(--amber); background: var(--surface); }
+339-.catalog span { font: 20px/1 var(--display); color: var(--muted); }

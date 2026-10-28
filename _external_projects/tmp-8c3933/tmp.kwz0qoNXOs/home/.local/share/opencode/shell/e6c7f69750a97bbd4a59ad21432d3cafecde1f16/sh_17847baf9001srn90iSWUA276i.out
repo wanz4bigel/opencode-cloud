@@ -1,0 +1,23 @@
+ 250:                 except (ConnectionClosed, WebSocketException) as e:
+ 251:                     STATE["last_error"] = f"ping gagal: {type(e).__name__}"
+ 252:                     return
+ 253:             write_status()
+ 254: 
+ 255: 
+ 256: def main():
+ 257:     if not (BASE and TOKEN):
+ 258:         log("MARIMO_URL / MARIMO_TOKEN kosong - keluar")
+ 259:         return 2
+ 260: 
+ 261:     lock_fh = open(LOCK, "w")
+ 262:     try:
+ 263:         fcntl.flock(lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+ 264:     except OSError:
+ 265:         log("sudah ada hold_ws lain (lock) - keluar")
+ 266:         return 0
+ 267: 
+
+--- hold12 status ---
+{'state': 'running', 'beats': 1, 'interval_s': 300, 'cap_s': 43200, 'elapsed_s': 1939.4, 'elapsed_h': 0.539, 'remaining_s': 41260.6, 'remaining_h': 11.461, 'last_beat': '2026-10-26T12:53:31', 'last_local': 'down', 'last_public': '-', 'last_exec': 'no-conf', 'session': '', 'pid': 23749}
+hold12 log: 2026-10-26T12:53:31 mulai: interval=300s cap=12j margin=600s url=https://sb-9cfc3ac6bd089b81.sb.molab.run
+2026-10-26T12:53:31 beat=1 uptime=0.54j local=down molab=- exec=no-conf

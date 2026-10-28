@@ -1,0 +1,15 @@
+47:.brand__mark, .brand__text, .strip__title, .section-title, .watch__title,
+73:.brand__mark {
+340:.catalog span { font: 20px/1 var(--display); color: var(--muted); }
+342:.hostlist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+358:.foot__link { color: var(--amber); }
+
+/* Semua judul keras ditulis dengan huruf sempit tebal; rata-rata di sini supaya
+   setiap fallback sistem tetap punya bobot yang sama. */
+.brand__mark, .brand__text, .strip__title, .section-title, .watch__title,
+.catalog span, .foot h4, .gate__title, .card--featured .card__title {
+
+  font-weight: 700;
+  font-stretch: condensed;
+}
+kurung seimbang: True

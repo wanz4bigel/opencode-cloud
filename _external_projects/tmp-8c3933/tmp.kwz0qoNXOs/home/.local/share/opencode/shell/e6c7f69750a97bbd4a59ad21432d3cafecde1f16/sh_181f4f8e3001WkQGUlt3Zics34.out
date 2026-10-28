@@ -1,0 +1,12 @@
+48:.catalog span, .foot h4, .gate__title, .card--featured .card__title {
+51:.hostlist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+358:.catalog span { font: 20px/1 var(--display); color: var(--muted); }
+
+/* Semua judul keras ditulis dengan huruf sempit tebal; rata-rata di sini supaya
+   setiap fallback sistem tetap punya bobot yang sama. */
+.brand__mark, .brand__text, .strip__title, .section-title, .watch__title,
+.catalog span, .foot h4, .gate__title, .card--featured .card__title {
+
+/* daftar sumber yang didukung */
+.hostlist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.hostlist__item {
