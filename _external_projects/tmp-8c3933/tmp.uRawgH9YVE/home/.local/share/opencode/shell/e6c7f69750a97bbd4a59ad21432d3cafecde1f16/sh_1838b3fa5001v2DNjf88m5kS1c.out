@@ -1,0 +1,26 @@
+=== guard di engsel.py (me-cli) ===
+    API_KEY,
+)
+
+BASE_API_URL = os.getenv("BASE_API_URL")
+if not BASE_API_URL:
+    raise ValueError("BASE_API_URL environment variable not set")
+UA = os.getenv("UA")
+
+def send_api_request(
+    api_key: str,
+    path: str,
+    payload_dict: dict,
+    id_token: str,
+=== daftar guard 'not set' di kedua repo ===
+grep: me-cli/app/client/__pycache__/ciam.cpython-314.pyc: binary file matches
+grep: me-cli/app/client/__pycache__/engsel.cpython-314.pyc: binary file matches
+grep: me-cli-sunset/app/client/__pycache__/ciam.cpython-314.pyc: binary file matches
+grep: me-cli-sunset/app/client/__pycache__/engsel.cpython-314.pyc: binary file matches
+grep: me-cli-sunset/app/menus/__pycache__/famplan.cpython-314.pyc: binary file matches
+  me-cli/app/client/engsel.py:17:    raise ValueError("BASE_API_URL environment variable not set")
+  me-cli/app/client/ciam.py:20:    raise ValueError("BASE_CIAM_URL environment variable not set")
+  me-cli/app/menus/famplan.py:198:                    print("Selected slot is empty. Cannot set quota limit.")
+  me-cli-sunset/app/client/engsel.py:17:    raise ValueError("BASE_API_URL environment variable not set")
+  me-cli-sunset/app/client/ciam.py:20:    raise ValueError("BASE_CIAM_URL environment variable not set")
+  me-cli-sunset/app/menus/famplan.py:198:                    print("Selected slot is empty. Cannot set quota limit.")

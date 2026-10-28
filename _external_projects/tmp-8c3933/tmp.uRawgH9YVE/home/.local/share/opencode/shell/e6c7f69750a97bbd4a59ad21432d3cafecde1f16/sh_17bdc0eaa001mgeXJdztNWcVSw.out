@@ -1,0 +1,4 @@
+=== konfigurasi dari Cloudflare ===
+"{\"ingress\":[{\"hostname\":\"Ai.wanz4bigel.dpdns.org\", \"service\":\"http://localhost:8081\"}, {\"service\":\"http_status:404\"}], \"warp-routing\":{\"enabled\":false}}" version=1
+=== tes lokal ===
+HTTP 502

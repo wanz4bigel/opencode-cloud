@@ -1,0 +1,35 @@
+README.md
+app
+bnr.png
+decoy_data
+hot_data
+main.py
+requirements.txt
+setup.sh
+=== requirements ===
+Brotli==1.1.0
+certifi==2025.8.3
+charset-normalizer==3.4.3
+idna==3.10
+pycryptodome==3.23.0
+requests==2.32.5
+urllib3==2.5.0
+qrcode==8.2
+ascii_magic==2.3.0
+python-dotenv==1.1.1=== crypto_helper keys ===
+6:XDATA_KEY=os.getenv("XDATA_KEY")
+7:AX_API_SIG_KEY=os.getenv("AX_API_SIG_KEY")
+8:X_API_BASE_SECRET=os.getenv("X_API_BASE_SECRET")
+9:ENCRYPTED_FIELD_KEY=os.getenv("ENCRYPTED_FIELD_KEY")
+11:def derive_iv(xtime_ms: int) -> bytes:
+15:def encrypt_xdata(plaintext: str, xtime_ms: int) -> str:
+22:def decrypt_xdata(xdata: str, xtime_ms: int) -> str:
+30:def make_x_signature(
+43:def make_x_signature_payment(
+59:def make_ax_api_signature(
+72:def make_x_signature_bounty(
+87:def make_x_signature_loyalty(
+100:def decrypt_circle_msisdn(encrypted_msisdn_b64: str) -> str:
+118:def encrypt_circle_msisdn(msisdn: str) -> str:
+128:def make_x_signature_bounty_allotment(
+142:def make_x_signature_basic(

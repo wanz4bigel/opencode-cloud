@@ -1,0 +1,30 @@
+# Backup .env me-cli (dibuat 2026-10-28T17:24:24+00:00)
+## /home/runner/me-cli/.env
+BASE_API_URL="https://api.myxl.xlaxiata.co.id"
+BASE_CIAM_URL="https://gede.ciam.xlaxiata.co.id"
+BASIC_AUTH="OWZjOTdlZDEtNmEzMC00OGQ1LTk1MTYtNjBjNTNjZTNhMTM1OllEV21GNExKajlYSUt3UW56eTJlMmxiMHRKUWIyOW8z"
+AX_DEVICE_ID="92fb44c0804233eb4d9e29f838223a14"
+AX_FP_KEY="18b4d589826af50241177961590e6693"
+UA="myXL / 8.9.0(1202); com.android.vending; (samsung; SM-N935F; SDK 33; Android 13"
+API_KEY="vT8tINqHaOxXbGE7eOWAhA=="
+AES_KEY_ASCII="5dccbf08920a5527"
+
+## /home/runner/me-cli-sunset/.env
+# ---- dari rentry.co/me-cli (v8.9.0) ----
+BASE_API_URL="https://api.myxl.xlaxiata.co.id"
+BASE_CIAM_URL="https://gede.ciam.xlaxiata.co.id"
+BASIC_AUTH="OWZjOTdlZDEtNmEzMC00OGQ1LTk1MTYtNjBjNTNjZTNhMTM1OllEV21GNExKajlYSUt3UW56eTJlMmxiMHRKUWIyOW8z"
+AX_FP_KEY="18b4d589826af50241177961590e6693"
+UA="myXL / 8.9.0(1202); com.android.vending; (samsung; SM-N935F; SDK 33; Android 13"
+API_KEY="vT8tINqHaOxXbGE7eOWAhA=="
+AES_KEY_ASCII="5dccbf08920a5527"
+
+# ---- wajib diisi: ambil dari channel t.me/alyxcli ----
+XDATA_KEY=""
+X_API_BASE_SECRET=""
+AX_API_SIG_KEY=""
+ENCRYPTED_FIELD_KEY=""
+
+# ---- opsional / sudah tidak dipakai kode ----
+AX_DEVICE_ID="92fb44c0804233eb4d9e29f838223a14"
+CIRCLE_MSISDN_KEY=""

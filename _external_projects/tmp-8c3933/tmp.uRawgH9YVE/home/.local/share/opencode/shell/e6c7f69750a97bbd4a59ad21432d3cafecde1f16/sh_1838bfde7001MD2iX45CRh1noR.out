@@ -1,0 +1,17 @@
+--------------------------------------------------------------------
+  diabaikan kode (nggak dibaca): AX_DEVICE_ID, AES_KEY_ASCII, CIRCLE_MSISDN_KEY, AX_FP
+====================================================================
+
+4 key belum siap. Ambil dari channel t.me/alyxcli, isi di .env, lalu:
+  python check_env.py
+
+=== jalanin me-cli-sunset ===
+  File "/home/runner/me-cli-sunset/main.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "/home/runner/me-cli-sunset/main.py", line 211, in main
+    selected_user_number = show_account_menu()
+  File "/home/runner/me-cli-sunset/app/menus/account.py", line 68, in show_account_menu
+    number, refresh_token = login_prompt(AuthInstance.api_key)
+    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object

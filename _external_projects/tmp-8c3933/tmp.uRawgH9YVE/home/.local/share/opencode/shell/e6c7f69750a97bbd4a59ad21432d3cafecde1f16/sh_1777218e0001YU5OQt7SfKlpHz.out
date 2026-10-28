@@ -1,0 +1,33 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+libcheckpoint.so
+libcublas.so.13
+libcublasLt.so.13
+libcudadevrt.a
+libcudart.so.13
+libcudart_static.a
+libcufft.so.12
+libcufftw.so.12
+libcufile.so.0
+libcufile_rdma.so.1
+libcupti.so.13
+libcurand.so.10
+libcusolver.so.12
+libcusolverMg.so.12
+libcusparse.so.12
+libnvJitLink.so.13
+libnvblas.so.13
+libnvperf_host.so
+libnvperf_target.so
+libnvrtc-builtins.alt.so.13.0
+libnvrtc-builtins.so.13.0
+libnvrtc.alt.so.13
+libnvrtc.so.13
+libnvtx3interop.so.1
+libnvvm.so.4
+libpcsamplingutil.so
+
+=== symlink .so ===
+lrwxrwxrwx 1 root root 15 Oct 26 09:02 libcublas.so -> libcublas.so.13
+lrwxrwxrwx 1 root root 17 Oct 26 09:02 libcublasLt.so -> libcublasLt.so.13
+lrwxrwxrwx 1 root root 15 Oct 26 09:02 libcudart.so -> libcudart.so.13
+

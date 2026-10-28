@@ -1,0 +1,43 @@
+import os
+import hashlib
+import requests
+import base64
+import json
+import time
+
+from random import randint
+from datetime import datetime, timezone, timedelta
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from dataclasses import dataclass
+
+from app.service.crypto_helper import (
+    encrypt_xdata,
+    make_x_signature,
+    make_x_signature_payment,
+    make_ax_api_signature,
+    make_x_signature_bounty,
+    make_x_signature_loyalty,
+    make_x_signature_bounty_allotment,
+)
+
+from app.service.crypto_helper import decrypt_xdata as dec_xdata
+from app.service.crypto_helper import encrypt_circle_msisdn as encrypt_msisdn
+from app.service.crypto_helper import decrypt_circle_msisdn as decrypt_msisdn
+
+API_KEY = os.getenv("API_KEY")
+AES_KEY_ASCII = os.getenv("AES_KEY_ASCII")
+=== sunset .env.template ===
+BASE_API_URL=""
+BASE_CIAM_URL=""
+BASIC_AUTH=""
+AX_FP_KEY=""
+UA=""
+API_KEY=""
+ENCRYPTED_FIELD_KEY=""
+
+XDATA_KEY=""
+AX_API_SIG_KEY=""
+X_API_BASE_SECRET=""
+CIRCLE_MSISDN_KEY=""=== verify in sunset util.py ===

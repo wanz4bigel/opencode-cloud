@@ -1,0 +1,20 @@
+13:export const db = new DatabaseSync(path.join(dataDir, "bokep-kita.db"));
+53:export function slugify(text) {
+71:export function addVideo({ title, url, categoryId = null, tags = "", duration = 0, poster = "", demo = false }) {
+104:export function normalizeTags(tags) {
+114:export function applyHostInfo(id, { title, duration, poster } = {}) {
+135:export function listFetchable({ hanyaContoh = false, batas = 200 } = {}) {
+147:export function demoCount() {
+151:export function categories() {
+155:export function categoryIdBySlug(slug) {
+160:export function categoriesWithCounts() {
+170:export function countVideos() {
+175:export function listVideos({ sort = "terbaru", categoryId = null, tag = null, query = null, page = 1, per = 24 } = {}) {
+203:export function videoBySlug(slug) {
+214:export function relatedVideos(video, limit = 10) {
+231:export function popularVideos(limit = 6) {
+241:export function videoById(id) {
+245:export function deleteVideo(id) {
+249:export function bumpViews(id) {
+253:export function stats() {
+452:export function adaKatalogAsli() {

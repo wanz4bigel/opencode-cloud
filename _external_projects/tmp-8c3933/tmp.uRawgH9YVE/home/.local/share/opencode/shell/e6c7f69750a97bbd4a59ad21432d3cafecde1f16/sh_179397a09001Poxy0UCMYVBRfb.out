@@ -1,0 +1,5 @@
+FOUND: curl
+FOUND: wget
+FOUND: dig
+FOUND: nslookup
+FOUND: host

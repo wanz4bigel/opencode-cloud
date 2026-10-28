@@ -1,0 +1,24 @@
+=== fungsi crypto dipanggil di mana ===
+  app/client/encrypt.py:16:    encrypt_xdata,
+  app/client/encrypt.py:17:    make_x_signature,
+  app/client/encrypt.py:18:    make_x_signature_payment,
+  app/client/encrypt.py:19:    make_ax_api_signature,
+  app/client/encrypt.py:20:    make_x_signature_bounty,
+  app/client/encrypt.py:21:    make_x_signature_loyalty,
+  app/client/encrypt.py:22:    make_x_signature_bounty_allotment,
+  app/client/encrypt.py:25:from app.service.crypto_helper import decrypt_xdata as dec_xdata
+  app/client/encrypt.py:124:    return make_ax_api_signature(ts_for_sign, contact, code, contact_type)
+  app/client/encrypt.py:136:    xdata = encrypt_xdata(plain_body, xtime)
+  app/client/encrypt.py:139:    x_sig = make_x_signature(
+  app/client/encrypt.py:146:def decrypt_xdata(
+  app/client/encrypt.py:168:    return make_x_signature_payment(
+  app/client/encrypt.py:185:    return make_x_signature_bounty(
+  app/client/encrypt.py:200:    return make_x_signature_bounty_allotment(
+  app/client/encrypt.py:219:    return make_x_signature_loyalty(
+  app/client/engsel.py:11:    decrypt_xdata,
+  app/client/engsel.py:64:        decrypted_body = decrypt_xdata(api_key, json.loads(resp.text))
+
+=== artefak runtime sekarang ===
+.env .env.template .git .gitignore README.md app ax.fp bnr.png bookmark.json check_env.py decoy_data hot_data main.py refresh-tokens.json requirements.txt setup.sh 
+=== git status ===
+?? check_env.py

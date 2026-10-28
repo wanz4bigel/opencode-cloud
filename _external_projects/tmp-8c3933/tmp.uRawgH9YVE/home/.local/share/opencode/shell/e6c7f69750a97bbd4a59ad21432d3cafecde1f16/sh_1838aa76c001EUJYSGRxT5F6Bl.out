@@ -1,0 +1,6 @@
+=== file terkait key sebelum hapus ===
+-rw-r--r-- 1 runner runner 694 Oct 28 17:22 me-cli-sunset/.env
+-rw-r--r-- 1 runner runner 128 Oct 28 17:20 me-cli-sunset/ax.fp
+-rw-r--r-- 1 runner runner 448 Oct 28 17:18 me-cli/.env
+-rw-r--r-- 1 runner runner 128 Oct 28 17:18 me-cli/ax.fp
+--- backup -> /tmp/opencode/me-cli-env-backup.txt (1262 byte)

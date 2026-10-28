@@ -33,10 +33,10 @@ mo.vstack([
 | **Server lokal / publik** | {s.get('server', 0)} / {s.get('public', 0)} |
 | **Diperbarui** | {s.get('t', '—')} |
 
-Model ada di `/home/marimo/models/sc117` (disk, bukan `/dev/shm`), jadi RAM lega.
+Model ada di `/home/marimo/models/sc117` (disk), jadi RAM tidak dipakai untuk 79 GB.
 
 Kalau sandbox mati: **Relaunch** di molab → `bash /marimo/llm/pipeline.sh`.
-Dashboard ini akan menampilkan progres unduhan secara langsung.
+Dashboard ini menyegarkan sendiri tiap 2 detik.
 """),
     refresh,
 ])

@@ -1,0 +1,15 @@
+=== sunset: bagian login ===
+Login ke MyXL
+-------------------------------------------------------
+Masukan nomor XL (Contoh 6281234567890):
+Nomor: Requesting OTP...
+response body {"error":"User not found","error_description":"For more on this error consult the server log at the debug level."}
+User not found
+Error requesting OTP: Subscriber ID not found in response
+Traceback (most recent call last):
+
+=== me-cli original ===
+Dapatkan API key di Bot Telegram @fykxt_bot
+Masukkan API key: Failed to verify API key: HTTPSConnectionPool(host='me-crypto.mashu.lol', port=443): Max retries exceeded with url: /api/verify?key=vT8tINqHaOxXbGE7eOWAhA== (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7ca7b8d51550>: Failed to resolve 'me-crypto.mashu.lol' ([Errno -2] Name or service not known)"))
+API key tidak valid. Menutup aplikasi.
+API key file does not exist.

@@ -1,0 +1,21 @@
+== DNS A/AAAA ==
+43.129.35.134
+== NS ==
+lilith.ns.cloudflare.com.
+leonard.ns.cloudflare.com.
+== MX ==
+1 sahabatssh.com.
+== TXT ==
+"brevo-code:70a198a7bfaa9684b9914e217f92d886"
+"google-site-verification=2Rg24bApHwAyPDrzMfctyrhg3ZAojeEXqupwE27dQ8w"
+"v=spf1 +a +mx +ip4:209.74.67.105 +ip4:209.74.67.106 include:spf.web-hosting.com ~all"
+"v=spf1 +a +mx +ip4:43.129.35.134 -all"
+"v=spf1 ip4:185.201.17.63 include:_spf.google.com -all"
+== CAA ==
+== redirect chain ==
+HTTP/2 302 
+location: page/home
+content-type: text/html; charset=UTF-8
+date: Mon, 26 Oct 2026 17:19:49 GMT
+server: Apache
+

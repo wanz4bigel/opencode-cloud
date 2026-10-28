@@ -1,0 +1,18 @@
+== soufasms/xl (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing
+== arezaa3354/t (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing
+== BlueHat358/me-cli (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing
+== reskiwelberg/me-cli (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing
+== MuhammadDavidd/dorxl (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing
+== RamzzzMD/dorr (main)
+BASE_CRYPTO_URL = "https://me-crypto.mashu.lol/api/890"
+# BASE_CRYPTO_URL = "http://127.0.0.1:5000/api/890"  # For local testing

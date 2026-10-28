@@ -1,0 +1,42 @@
+=== api_key / auth flow ===
+6:from app.util import ensure_api_key
+12:    api_key = ""
+46:            self.api_key = ensure_api_key()
+81:            tokens = get_new_token(self.api_key, refresh_token, "")
+82:            profile_data = get_profile(self.api_key, tokens["access_token"], tokens["id_token"])
+111:                tokens = get_new_token(self.api_key, first_rt["refresh_token"], first_rt.get("subscriber_id", ""))
+126:        tokens = get_new_token(self.api_key, rt_entry["refresh_token"], rt_entry.get("subscriber_id", ""))
+132:        profile_data = get_profile(self.api_key, tokens["access_token"], tokens["id_token"])
+158:            tokens = get_new_token(self.api_key, self.active_user["tokens"]["refresh_token"], self.active_user["subscriber_id"])
+179:                tokens = get_new_token(self.api_key, first_rt["refresh_token"], first_rt.get("subscriber_id", ""))
+=== main.py startup ===
+from dotenv import load_dotenv
+
+from app.service.git import check_for_updates
+load_dotenv()
+
+import sys, json
+from datetime import datetime
+from app.menus.util import clear_screen, pause
+from app.client.engsel import (
+    get_balance,
+=== env usage ===
+app/client/ciam.py -> ("BASE_CIAM_URL")
+app/client/ciam.py -> ("BASIC_AUTH")
+app/client/ciam.py -> ("UA")
+app/client/encrypt.py -> ("AES_KEY_ASCII")
+app/client/encrypt.py -> ("API_KEY")
+app/client/encrypt.py -> ("AX_FP_KEY")
+app/client/encrypt.py -> ("ENCRYPTED_FIELD_KEY")
+app/client/engsel.py -> ("BASE_API_URL")
+app/client/engsel.py -> ("UA")
+app/client/purchase/common.py -> ("AX_FP")
+app/client/purchase/common.py -> ("BASE_API_URL")
+app/client/purchase/common.py -> ("UA")
+app/client/purchase/redeem.py -> ("AX_FP")
+app/client/purchase/redeem.py -> ("BASE_API_URL")
+app/client/purchase/redeem.py -> ("UA")
+app/service/crypto_helper.py -> ("AX_API_SIG_KEY")
+app/service/crypto_helper.py -> ("ENCRYPTED_FIELD_KEY")
+app/service/crypto_helper.py -> ("XDATA_KEY")
+app/service/crypto_helper.py -> ("X_API_BASE_SECRET")

@@ -1,0 +1,18 @@
+== me-cli/.env
+  OK  BASE_API_URL    len= 31 chk=79b38a1d
+  BEDA BASE_CIAM_URL   len= 32 chk=3d9c60e0  <- remote chk=3d9d60e0 len=32
+  OK  BASIC_AUTH      len= 92 chk=49083f2e
+  OK  AX_DEVICE_ID    len= 32 chk=c8aee0d5
+  OK  AX_FP_KEY       len= 32 chk=18a4c03f
+  OK  UA              len= 79 chk=5a9d80da
+  OK  API_KEY         len= 24 chk=d5b9b139
+  OK  AES_KEY_ASCII   len= 16 chk=b5cd7007
+== me-cli-sunset/.env
+  OK  BASE_API_URL    len= 31 chk=79b38a1d
+  BEDA BASE_CIAM_URL   len= 32 chk=3d9c60e0  <- remote chk=3d9d60e0 len=32
+  BEDA BASIC_AUTH      len= 92 chk=c57468e9  <- remote chk=49083f2e len=92
+  OK  AX_DEVICE_ID    len= 32 chk=c8aee0d5
+  OK  AX_FP_KEY       len= 32 chk=18a4c03f
+  OK  UA              len= 79 chk=5a9d80da
+  OK  API_KEY         len= 24 chk=d5b9b139
+  OK  AES_KEY_ASCII   len= 16 chk=b5cd7007

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/runner/me-cli/main.py", line 9, in <module>
+    from app.client.engsel import (
+    ...<2 lines>...
+    )
+  File "/home/runner/me-cli/app/client/engsel.py", line 17, in <module>
+    raise ValueError("BASE_API_URL environment variable not set")
+ValueError: BASE_API_URL environment variable not set
+=== exit 1 ===

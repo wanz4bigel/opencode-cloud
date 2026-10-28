@@ -1,0 +1,22 @@
+29:API_KEY = os.getenv("API_KEY")
+30:AES_KEY_ASCII = os.getenv("AES_KEY_ASCII")
+32:ENCRYPTED_FIELD_KEY=os.getenv("ENCRYPTED_FIELD_KEY")
+94:    key = ENCRYPTED_FIELD_KEY.encode("ascii")
+=== sunset util.py ensure_api_key ===
+def ensure_api_key() -> str:
+    return "Noir1"
+=== sunset .gitignore ===
+.vscode
+env
+.env
+tokens*
+__pycache__/
+.vscode/
+*.ipynb
+play*
+pg*
+refresh-tokens*
+ax.fp
+bookmark.json
+active.number=== CIRCLE_MSISDN_KEY used? ===
+TIDAK DIPAKAI DI KODE

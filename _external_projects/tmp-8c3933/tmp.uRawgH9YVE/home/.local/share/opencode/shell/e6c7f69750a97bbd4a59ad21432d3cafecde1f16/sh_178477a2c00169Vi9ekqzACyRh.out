@@ -1,0 +1,12 @@
+=== hold_ws log ===
+2026-10-26T12:53:31 MARIMO_URL / MARIMO_TOKEN kosong - keluar
+2026-10-26T12:54:01 MARIMO_URL / MARIMO_TOKEN kosong - keluar
+2026-10-26T12:54:31 MARIMO_URL / MARIMO_TOKEN kosong - keluar
+2026-10-26T12:55:02 MARIMO_URL / MARIMO_TOKEN kosong - keluar
+
+=== publik ===
+/health -> 200 b'{"status":"ok"}'
+/v1/models -> 200 b'{"models":[{"name":"qwen3.8-27b","model":"qwen3.8-27b","modified_at":"","size":"","digest"'
+
+=== FastMTP ===
+draft: 108 diterima: 69 | TG: 99.2 t/s

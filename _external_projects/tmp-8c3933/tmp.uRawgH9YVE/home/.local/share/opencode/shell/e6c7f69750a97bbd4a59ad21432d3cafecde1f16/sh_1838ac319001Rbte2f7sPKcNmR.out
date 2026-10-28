@@ -1,0 +1,13 @@
+=== isi refresh-tokens.json ===
+[]
+=== isi bookmark.json ===
+[]
+2 refresh-tokens.json
+2 bookmark.json
+4 total
+=== setelah dibersihkan ===
+.env.template .git .gitignore README.md app bnr.png check_env.py decoy_data hot_data main.py requirements.txt setup.sh 
+.env.template .git .gitignore README.md app bnr.png main.py requirements.txt setup.sh 
+=== git status kedua repo ===
+?? check_env.py
+(kosong = keduanya bersih, tanpa file sisa)

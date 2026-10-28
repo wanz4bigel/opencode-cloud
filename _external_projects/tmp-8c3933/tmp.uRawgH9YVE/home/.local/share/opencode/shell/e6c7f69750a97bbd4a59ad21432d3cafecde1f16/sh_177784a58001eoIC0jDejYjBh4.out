@@ -1,0 +1,19 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+proses: 19510 python3 /marimo/llm/brain.py
+19513 python3 /marimo/llm/hold12.py
+19516 python3 /marimo/llm/hold_ws.py
+19541 /marimo/llm/llama-src/build/bin/llama-server --model /marimo/llm
+
+guard.log: [guard 09:08:49] start brain.py
+[guard 09:08:49] start hold12.py
+[guard 09:08:49] start hold_ws.py
+
+health: b'{"status":"ok"}'
+
+tier: 200k/f16 | ctx: 204800 | kv: f16 | gpu: 40781.0
+url publik: None
+
+server.log ekor: 0.45.398.896 I slot print_timing: id  0 | task 1 |       total time =      58.74 ms /     2 tokens
+0.45.398.901 I slot print_timing: id  0 | task 1 |    graphs reused =          1
+0.45.398.949 I slot      release: id  0 | task 1 | stop processing: n_tokens = 1, truncated = 0
+

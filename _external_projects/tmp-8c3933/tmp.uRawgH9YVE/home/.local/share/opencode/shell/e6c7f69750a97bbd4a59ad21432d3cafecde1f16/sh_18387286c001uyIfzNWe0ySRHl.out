@@ -1,0 +1,15 @@
+Nomor: Requesting OTP...
+response body {"error":"User not found","error_description":"For more on this error consult the server log at the debug level."}
+User not found
+Error requesting OTP: Subscriber ID not found in response
+Traceback (most recent call last):
+  File "/home/runner/me-cli-sunset/main.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "/home/runner/me-cli-sunset/main.py", line 211, in main
+    selected_user_number = show_account_menu()
+  File "/home/runner/me-cli-sunset/app/menus/account.py", line 68, in show_account_menu
+    number, refresh_token = login_prompt(AuthInstance.api_key)
+    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+=== done ===

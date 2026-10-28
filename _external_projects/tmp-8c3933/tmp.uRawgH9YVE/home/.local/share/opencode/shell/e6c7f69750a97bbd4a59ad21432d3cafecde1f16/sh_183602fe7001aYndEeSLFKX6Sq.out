@@ -1,0 +1,4 @@
+https://read-annie-frontpage-coordination.trycloudflare.com
+> node -e "import('./src/db.js').then(m=>{m.reseed();console.log('database diisi ulang: '+m.countVideos()+' video')})"
+
+database diisi ulang: 1778 video

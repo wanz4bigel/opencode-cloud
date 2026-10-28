@@ -1,0 +1,25 @@
+=== sisa file di repo ===
+.env.template .git .gitignore README.md app bnr.png main.py requirements.txt setup.sh 
+.env.template .git .gitignore README.md app bnr.png bookmark.json check_env.py decoy_data hot_data main.py refresh-tokens.json requirements.txt setup.sh 
+=== git status (key udah hilang?) ===
+(me-cli clean = key nggak pernah committed)
+=== cek .env masih ada? ===
+ls: cannot access 'me-cli/.env': No such file or directory
+ls: cannot access 'me-cli-sunset/.env': No such file or directory
+=== deps tetep utuh ===
+requests 2.32.5 | pycryptodome OK | qrcode/ascii_magic/dotenv/brotli OK
+=== check_env sekarang ===
+  [MISS]  BASIC_AUTH           kosong                   client/ciam.py (header Authorization)
+  [MISS]  UA                   kosong                   client/ciam.py, engsel.py, purchase/*
+  [MISS]  AX_FP_KEY            kosong                   client/encrypt.py -> generate ax.fp
+  [MISS]  XDATA_KEY            kosong                   service/crypto_helper.py (xdata AES)
+  [MISS]  X_API_BASE_SECRET    kosong                   service/crypto_helper.py (HMAC X-Signature)
+  [MISS]  AX_API_SIG_KEY       kosong                   service/crypto_helper.py (HMAC Ax-Signature)
+  [MISS]  ENCRYPTED_FIELD_KEY  kosong                   service/crypto_helper.py + encrypt.py (AES msisdn)
+  [MISS]  API_KEY              kosong                   client/encrypt.py (header x-api-key)
+--------------------------------------------------------------------
+  diabaikan kode (nggak dibaca): AX_DEVICE_ID, AES_KEY_ASCII, CIRCLE_MSISDN_KEY, AX_FP
+====================================================================
+
+10 key belum siap. Ambil dari channel t.me/alyxcli, isi di .env, lalu:
+  python check_env.py

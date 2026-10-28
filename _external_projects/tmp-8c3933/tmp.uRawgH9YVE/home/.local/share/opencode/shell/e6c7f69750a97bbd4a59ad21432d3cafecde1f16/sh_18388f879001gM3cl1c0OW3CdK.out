@@ -1,0 +1,27 @@
+====================================================================
+  .env CHECK - me-cli-sunset
+====================================================================
+  [OK]   BASE_API_URL         len=31  client/engsel.py, purchase/*
+  [OK]   BASE_CIAM_URL        len=32  client/ciam.py
+  [OK]   BASIC_AUTH           len=92  client/ciam.py (header Authorization)
+  [OK]   UA                   len=79  client/ciam.py, engsel.py, purchase/*
+  [OK]   AX_FP_KEY            len=32  client/encrypt.py -> generate ax.fp
+  [OK]   API_KEY              len=24  client/encrypt.py (header x-api-key)
+  [MISS]  XDATA_KEY            kosong                   service/crypto_helper.py (xdata AES)
+  [MISS]  X_API_BASE_SECRET    kosong                   service/crypto_helper.py (HMAC X-Signature)
+  [MISS]  AX_API_SIG_KEY       kosong                   service/crypto_helper.py (HMAC Ax-Signature)
+  [MISS]  ENCRYPTED_FIELD_KEY  kosong                   service/crypto_helper.py + encrypt.py (AES msisdn)
+--------------------------------------------------------------------
+  diabaikan kode (nggak dibaca): AX_DEVICE_ID, AES_KEY_ASCII, CIRCLE_MSISDN_KEY, AX_FP
+====================================================================
+
+4 key belum siap. Ambil dari channel t.me/alyxcli, isi di .env, lalu:
+  python check_env.py
+
+=== app masih nyala? ===
+  File "/home/runner/me-cli-sunset/main.py", line 211, in main
+    selected_user_number = show_account_menu()
+  File "/home/runner/me-cli-sunset/app/menus/account.py", line 68, in show_account_menu
+    number, refresh_token = login_prompt(AuthInstance.api_key)
+    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object

@@ -1,0 +1,17 @@
+
+-------------------------------------------------------
+Login ke MyXL
+-------------------------------------------------------
+Masukan nomor XL (Contoh 6281234567890):
+Nomor: Nomor tidak valid. Pastikan nomor diawali dengan '628' dan memiliki panjang yang benar.
+Traceback (most recent call last):
+  File "/home/runner/me-cli-sunset/main.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "/home/runner/me-cli-sunset/main.py", line 211, in main
+    selected_user_number = show_account_menu()
+  File "/home/runner/me-cli-sunset/app/menus/account.py", line 68, in show_account_menu
+    number, refresh_token = login_prompt(AuthInstance.api_key)
+    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+=== done ===
