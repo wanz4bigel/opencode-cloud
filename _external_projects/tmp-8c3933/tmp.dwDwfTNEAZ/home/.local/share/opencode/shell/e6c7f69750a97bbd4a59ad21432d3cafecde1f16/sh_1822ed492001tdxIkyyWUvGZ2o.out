@@ -1,0 +1,10 @@
+128:  let hotbarSlots = [];
+129:  let invSlots = [];
+153:  function setHearts(hp, max) {
+169:  let toastTimer = null;
+194:  let paletteItems = [];
+195:  function buildPalette(onPick) {
+212:  function setPaletteSelection(id) {
+247:  let paletteItems = [];
+248:  function buildPalette(onPick) {
+264:  function setPaletteSelection(id) {

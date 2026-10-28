@@ -1,0 +1,33 @@
+== verifikasi config client ==
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+Configuration OK.
+== start server ==
+-- server log --
+[1;36m[vmess][0m Start: v2ray run -config /tmp/opencode/vmtest/config.json (port 18443, ws /kndl4uxh-fzxy)
+[1;36m[vmess][0m v2ray hidup, pid=8078
+[1;36m[vmess][0m Fase handoff: trigger run baru supaya endpoint tidak lama-lama mati.
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+== healthcheck ==
+[1;36m[vmess][0m Sehat: port 18443 open, WS handshake https://127.0.0.1:18443/kndl4uxh-fzxy -> HTTP 400
+exit=0
+== start client ==
+== lewat proxy (harusnya keluar IP publik) ==
+20.57.223.165
+== ip tanpa proxy ==
+20.57.223.165
+-- client log --
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:02:58 [Warning] V2Ray 5.53.0 started
+2026/10/28 11:03:03 [Warning] [1129177661] app/dispatcher: default route for tcp:api.ipify.org:443
+2026/10/28 11:03:03 127.0.0.1:49886 accepted //api.ipify.org:443
+== server tail ==
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+[1;36m[vmess][0m Fase handoff: trigger run baru supaya endpoint tidak lama-lama mati.
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+[1;36m[vmess][0m Shutdown (SIGTERM) ...
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).
+DONE

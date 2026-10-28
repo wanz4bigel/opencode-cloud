@@ -1,0 +1,23 @@
+5:[rute] GET /admin ReferenceError: kind is not defined
+6-    at handleAdmin (file:///home/runner/bokep-id/server.js:291:40)
+7-    at route (file:///home/runner/bokep-id/server.js:410:25)
+8-    at Server.<anonymous> (file:///home/runner/bokep-id/server.js:424:25)
+9-    at Server.emit (node:events:514:28)
+--
+12:[rute] GET /admin ReferenceError: kind is not defined
+13-    at handleAdmin (file:///home/runner/bokep-id/server.js:291:40)
+14-    at route (file:///home/runner/bokep-id/server.js:410:25)
+15-    at Server.<anonymous> (file:///home/runner/bokep-id/server.js:424:25)
+16-    at Server.emit (node:events:514:28)
+--
+    res.end();
+    return done;
+  }
+
+  const note = cookies.bkpesan ? decodeURIComponent(cookies.bkpesan) : "";
+  res.appendHeader("set-cookie", "bkpesan=; Path=/; Max-Age=0; SameSite=Lax");
+  return page(adminPage({ token, note, kind, host }));
+}
+
+function page(html, status = 200) {
+  return { html, status };

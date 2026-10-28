@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+AssertionError: penanda smoke tidak ketemu
+✓ gerbang 18+ tampil tanpa kuki
+✓ gerbang menutupi konten buat pengunjung baru
+✓ panel bisa ambil metadata host otomatis
+✓ halaman /host daftar 27 sumber
+
+1 hal perlu dibereskan.

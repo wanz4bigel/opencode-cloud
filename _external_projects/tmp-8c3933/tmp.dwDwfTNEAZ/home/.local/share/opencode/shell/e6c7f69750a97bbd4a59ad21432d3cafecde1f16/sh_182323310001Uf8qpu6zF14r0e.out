@@ -1,0 +1,24 @@
+== 1. Install v2ray ==
+[1;32m  PASS[0m install-v2ray.sh
+== 2. Sertifikat TLS ==
+[1;32m  PASS[0m gen-cert.sh
+== 3. config.json ==
+[1;32m  PASS[0m gen-config.sh
+[1;32m  PASS[0m config pakai network ws
+== 4. Link vmess:// ==
+[1;32m  PASS[0m gen-link.sh
+[1;32m  PASS[0m link vmess:// terbentuk
+== 5. Jalankan server ==
+[1;32m  PASS[0m proses v2ray hidup
+[1;32m  PASS[0m healthcheck port+ws
+== 6. Klien VMess via ws+tls ==
+[1;32m  PASS[0m config klien valid
+[1;32m  PASS[0m request lewat tunnel (HTTP 204)
+== 7. UUID salah harus ditolak ==
+[1;32m  PASS[0m UUID asing ditolak (HTTP 000)
+== 8. Bersih-bersih ==
+[1;32m  PASS[0m server berhenti rapi
+===============================
+  PASS=12  FAIL=0
+  log  : /tmp/opencode/vmselftest
+===============================

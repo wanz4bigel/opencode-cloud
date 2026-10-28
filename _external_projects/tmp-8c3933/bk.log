@@ -1,1 +1,4 @@
-BokepKita jalan di http://localhost:4173 — kata kunci panel: gus
+BokepKita jalan di http://localhost:3000
+  katalog: 57 video · 18 kategori · 57 masih contoh
+  panel:   http://localhost:3000/admin (kata kunci: gus)
+  sumber:  27 host dikenali · SQLite di data/bokep-kita.db

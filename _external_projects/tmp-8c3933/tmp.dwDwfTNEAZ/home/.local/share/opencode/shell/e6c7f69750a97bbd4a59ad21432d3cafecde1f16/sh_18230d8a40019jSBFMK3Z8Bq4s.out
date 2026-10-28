@@ -1,0 +1,32 @@
+== 1. Install v2ray ==
+[1;36m[vmess][0m v2ray v5.53.0 sudah terpasang di /tmp/opencode/vmselftest/bin/v2ray, lewati download.
+[1;36m[vmess][0m Terpasang: V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+[1;36m[vmess][0m Mode CLI : v5 (v2ray run -config)
+[1;32m  PASS[0m install-v2ray.sh
+== 2. Sertifikat TLS ==
+[1;36m[vmess][0m Self-signed cert dibuat (10 tahun). SAN: DNS:localhost,DNS:v2ray.local,IP:127.0.0.1,IP:::1
+[1;36m[vmess][0m Client wajib menyalakan 'Allow Insecure / Allow invalid certificate'.
+[1;32m  PASS[0m gen-cert.sh
+== 3. config.json ==
+[1;36m[vmess][0m config.json -> /tmp/opencode/vmselftest/config.json
+[1;36m[vmess][0m Verifikasi config: OK
+[1;32m  PASS[0m gen-config.sh
+[1;32m  PASS[0m config pakai network ws
+== 4. Link vmess:// ==
+<kosong>
+[1;31m  FAIL[0m link vmess:// terbentuk
+== 5. Jalankan server ==
+[1;32m  PASS[0m proses v2ray hidup
+[1;32m  PASS[0m healthcheck port+ws
+== 6. Klien VMess via ws+tls ==
+[1;32m  PASS[0m config klien valid
+[1;32m  PASS[0m request lewat tunnel (HTTP 204)
+== 7. UUID salah harus ditolak ==
+[1;31m  FAIL[0m UUID asing ditolak (HTTP 000000)
+== 8. Bersih-bersih ==
+[1;31m  FAIL[0m server masih hidup
+
+===============================
+  PASS=8  FAIL=3
+  log  : /tmp/opencode/vmselftest
+===============================

@@ -1,0 +1,14 @@
+== 1. Install v2ray ==
+[1;36m[vmess][0m Unduh v2ray-linux-64.zip (v5.53.0) ...
+[1;36m[vmess][0m Terpasang: V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+[1;36m[vmess][0m Mode CLI : v5 (v2ray run -config)
+[1;32m  PASS[0m install-v2ray.sh
+== 2. Sertifikat TLS ==
+[1;36m[vmess][0m Self-signed cert dibuat (10 tahun). SAN: DNS:localhost,DNS:v2ray.local,IP:127.0.0.1,IP:::1
+[1;36m[vmess][0m Client wajib menyalakan 'Allow Insecure / Allow invalid certificate'.
+[1;32m  PASS[0m gen-cert.sh
+== 3. config.json ==
+[1;36m[vmess][0m config.json -> /tmp/opencode/vmselftest/config.json
+[1;36m[vmess][0m Verifikasi config: OK
+[1;32m  PASS[0m gen-config.sh
+scripts/test-local.sh: line 34: CONFIG_FILE: unbound variable

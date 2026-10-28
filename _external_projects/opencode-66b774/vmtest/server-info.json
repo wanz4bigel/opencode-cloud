@@ -1,0 +1,14 @@
+{
+  "address": "20.57.223.165",
+  "port": 18443,
+  "uuid": "91239f26-c5e1-426d-b878-cb26abc134c7",
+  "alterId": 0,
+  "network": "ws",
+  "path": "/kndl4uxh-fzxy",
+  "security": "tls",
+  "sni": "",
+  "runner": "GitHub Actions 1000000009",
+  "hostname": "runnervmnwato.kgi2acrbs53u5ejg2oej4r2bra.dx.internal.cloudapp.net",
+  "startedAt": "2026-10-28T11:02:29Z",
+  "link": "vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1IiwiYWRkIjoiMjAuNTcuMjIzLjE2NSIsInBvcnQiOiIxODQ0MyIsImlkIjoiOTEyMzlmMjYtYzVlMS00MjZkLWI4NzgtY2IyNmFiYzEzNGM3IiwiYWlkIjoiMCIsInNjIjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJwYXRoIjoiL2tuZGw0dXhoLWZ6eHkiLCJ0bHMiOiJ0bHMiLCJhbHBuIjoiaDIsaHR0cC8xLjEiLCJlbWFpbCI6ImdpdGh1Yi1hY3Rpb25zIn0="
+}

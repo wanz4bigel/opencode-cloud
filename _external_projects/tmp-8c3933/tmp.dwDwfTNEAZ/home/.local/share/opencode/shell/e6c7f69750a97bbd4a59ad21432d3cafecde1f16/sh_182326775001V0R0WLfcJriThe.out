@@ -1,0 +1,8 @@
+× tidak ada kartu tanpa gambar
+
+- Situs ini cuma menempel. Video dan hak siarnya milik host masing-masing.
+- Kartu video memakai **foto asli dari host** kalau host memang memberikannya ( tersimpan
+  di kolom `poster`). Sisanya digambar sendiri dari slug (`src/poster.js`, enam palet ×
+  lima susunan bentuk yang dipilih hash FNV). Tidak ada satu request pun ke host yang
+  membocorkan penonton — kecuali untuk video yang host-nya memang memberi gambar
+  asli (YouTube/Vimeo/archive.org/Dailymotion), yang kartunya memakai foto itu.

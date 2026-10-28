@@ -1,0 +1,14 @@
+{
+  "address": "20.57.223.165",
+  "port": 18445,
+  "uuid": "d05772d0-d6f1-44e6-9309-6c1e541065e3",
+  "alterId": 0,
+  "network": "ws",
+  "path": "/clrefb4i-wa5e",
+  "security": "tls",
+  "sni": "",
+  "runner": "GitHub Actions 1000000009",
+  "hostname": "runnervmnwato.kgi2acrbs53u5ejg2oej4r2bra.dx.internal.cloudapp.net",
+  "startedAt": "2026-10-28T11:08:11Z",
+  "link": "vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1IiwiYWRkIjoiMjAuNTcuMjIzLjE2NSIsInBvcnQiOiIxODQ0NSIsImlkIjoiZDA1NzcyZDAtZDZmMS00NGU2LTkzMDktNmMxZTU0MTA2NWUzIiwiYWlkIjoiMCIsInNjIjoiYXV0byIsIm5ldCI6IndzIiwidHlwZSI6Im5vbmUiLCJwYXRoIjoiL2NscmVmYjRpLXdhNWUiLCJ0bHMiOiJ0bHMiLCJhbHBuIjoiaDIsaHR0cC8xLjEiLCJlbWFpbCI6ImdpdGh1Yi1hY3Rpb25zIn0="
+}

@@ -1,0 +1,21 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+ngrok lokal: 20142 /marimo/llm/ngrok http 127.0.0.1:8081 --log=stdout --log-format=logfmt --url https:/
+
+--- percobaan 1 ---
+tunnel session started
+ERR_NGROK_334
+ERR_NGROK_334
+ERR_NGROK_334
+
+--- percobaan 2 ---
+tunnel session started
+ERR_NGROK_334
+ERR_NGROK_334
+ERR_NGROK_334
+
+--- percobaan 3 ---
+tunnel session started
+ERR_NGROK_334
+ERR_NGROK_334
+ERR_NGROK_334
+

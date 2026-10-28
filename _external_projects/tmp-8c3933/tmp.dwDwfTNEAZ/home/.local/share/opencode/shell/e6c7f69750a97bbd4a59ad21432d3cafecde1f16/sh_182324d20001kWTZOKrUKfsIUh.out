@@ -1,0 +1,5 @@
+README diperbarui
+37:npm run info -- <url>   # intip metadata yang bakal diambil dari sebuah URL
+59:3. **`npm run info -- <url>`** kalau mau intip dulu apa yang dikasih host sebelum disimpan.
+72:Daftar host yang dikenal otomatis ada di halaman **`/host`**: 27 sumber — Bitchute,
+108:- Kartu video memakai **foto asli dari host** kalau host memang memberikannya ( tersimpan
