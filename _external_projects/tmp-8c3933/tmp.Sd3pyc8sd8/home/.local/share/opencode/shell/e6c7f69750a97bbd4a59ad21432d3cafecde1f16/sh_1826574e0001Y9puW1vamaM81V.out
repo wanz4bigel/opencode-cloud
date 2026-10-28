@@ -1,0 +1,18 @@
+<stdin>:24: SyntaxWarning: "\|" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\|"? A raw string is also an option.
+README updated
+
+In scripts/test-local.sh line 58:
+check $? "uuid & path di link sama dengan config server"
+      ^-- SC2319 (warning): This $? refers to a condition, not a command. Assign to a variable to avoid it being overwritten.
+
+
+In scripts/test-local.sh line 95:
+L_PORT="$(printf '%s' "$DEC" | jq -r .port)"
+^----^ SC2034 (warning): L_PORT appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- L_PORT appears unused. Verify use...
+  https://www.shellcheck.net/wiki/SC2319 -- This $? refers to a condition, no...
+YAML OK
+f095de2 feat(link): format vmess:// minimal ala v2rayN (LINK_STYLE=minimal) + REMARKS + verifikasi isi link di self-test
+436cfd9 feat: mode full (multi-transport ws/grpc/httpupgrade), core xray/v2ray, kartu akun + self-test transport

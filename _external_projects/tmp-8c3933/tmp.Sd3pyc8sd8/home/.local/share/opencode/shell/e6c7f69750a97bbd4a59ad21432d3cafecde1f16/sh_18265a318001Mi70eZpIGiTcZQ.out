@@ -1,0 +1,6 @@
+SHELLCHECK_OK
+[1;32m  PASS[0m gen-link.sh
+[1;32m  PASS[0m link vmess:// terbentuk
+== 4b. Isi link (decode base64) ==
+[1;32m  PASS[0m uuid & path di link sama dengan config server
+  PASS=14  FAIL=0

@@ -1,0 +1,20 @@
+{
+  "address": "20.57.223.165",
+  "uuid": "4d68a78f-a05d-4c7c-abbd-4476392fcce1",
+  "alterId": 0,
+  "core": "v2ray",
+  "endpoints": {
+    "ws_tls": [
+      18461
+    ],
+    "ws_plain": [],
+    "grpc": null,
+    "httpupgrade": null
+  },
+  "path": "/nbekit49-qf2f",
+  "security": "tls",
+  "sni": "",
+  "runner": "gh-actions",
+  "startedAt": "2026-10-28T12:03:25Z",
+  "link": "vmess://eyJ2IjoiMiIsInBzIjoiY29vbG1heHgiLCJhZGQiOiIyMC41Ny4yMjMuMTY1IiwicG9ydCI6MTg0NjEsImlkIjoiNGQ2OGE3OGYtYTA1ZC00YzdjLWFiYmQtNDQ3NjM5MmZjY2UxIiwibmV0Ijoid3MiLCJob3N0IjoiMjAuNTcuMjIzLjE2NSIsInBhdGgiOiIvbmJla2l0NDktcWYyZiIsInRscyI6InRscyJ9"
+}

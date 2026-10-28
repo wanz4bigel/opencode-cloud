@@ -1,0 +1,11 @@
+62:function uniqueSlug(base) {
+63-  let slug = base || "video";
+64-  let n = 2;
+65-  while (db.prepare("SELECT 1 FROM videos WHERE slug = ?").get(slug)) {
+66-    slug = `${base}-${n++}`;
+67-  }
+68-  return slug;
+69-}
+70-
+71-export function addVideo({ title, url, categoryId = null, tags = "", duration = 0, poster = "", demo = false }) {
+72-  const target = resolve(url);
