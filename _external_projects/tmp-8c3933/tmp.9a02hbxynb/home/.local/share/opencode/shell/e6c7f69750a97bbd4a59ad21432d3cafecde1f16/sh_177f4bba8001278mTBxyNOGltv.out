@@ -1,0 +1,41 @@
+    .line 178
+    :catchall_49
+    move-exception p0
+
+    .line 180
+    :goto_4a
+    const/4 p0, 0x1
+
+    return p0
+
+    .line 167
+    :catchall_4c
+    move-exception p0
+
+    .line 168
+    return v1
+
+    .line 149
+    :catchall_4e
+    move-exception p0
+
+    .line 150
+    return v1
+.end method
+
+.method private static unquote(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    .line 548
+    if-nez p0, :cond_5
+
+    .line 549
+    const-string p0, ""
+
+    return-object p0
+
+    .line 551
+    :cond_5
+    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object p0

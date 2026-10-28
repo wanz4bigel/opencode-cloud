@@ -1,0 +1,39 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+0.0")
+-- Found Thrust: /marimo/llm/llama-src/build/_deps/cccl-src/lib/cmake/thrust/thrust-config.cmake (found version "3.2.0.0")
+-- Replacing 120-real in CMAKE_CUDA_ARCHITECTURES_NATIVE with 120a-real
+-- Using CMAKE_CUDA_ARCHITECTURES=120a CMAKE_CUDA_ARCHITECTURES_NATIVE=120a-real
+-- Could NOT find NCCL (missing: NCCL_LIBRARY NCCL_INCLUDE_DIR) 
+-- Warning: NCCL not found, performance for multiple CUDA GPUs will be suboptimal
+-- CUDA host compiler is GNU 14.2.0
+-- Including CUDA backend
+-- ggml version: 0.20.0
+-- ggml commit:  4df29be4f
+-- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_CRYPTO_LIBRARY OPENSSL_INCLUDE_DIR) 
+CMake Warning at vendor/cpp-httplib/CMakeLists.txt:152 (message):
+  OpenSSL not found, HTTPS support disabled
+
+
+-- Generating embedded license file for target: llama-app
+-- Configuring done (19.7s)
+CMake Error in ggml/src/ggml-cuda/CMakeLists.txt:
+  Imported target "CUDA::cudart" includes non-existent path
+
+    "/usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cccl"
+
+  in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
+
+  * The path was deleted, renamed, or moved to another location.
+
+  * An install or uninstall procedure did not complete successfully.
+
+  * The installation package was faulty and references files it does not
+  provide.
+
+
+
+-- Generating done (0.3s)
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+[b3] CONFIGURE GAGAL
+
+
