@@ -1,0 +1,25 @@
+=== default data dir ===
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/catalog.py:250:        self._mcp_data_dir = self.strata.data_dir
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/catalog.py:251:        self.strata.data_dir = self.data_dir          # one answer to "where is the data folder" for every caller, the app's included
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/cmd.py:227:        s.data_dir = a.data_dir
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/runner.py:1227:        data_dir = Path(s.data_dir) if s.data_dir else cat.data_dir()
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/screens.py:864:        self.ctx.settings.data_dir = None if (not value or value == default) else value
+=== pack_name / model name ===
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/adopt.py:62:         log: Path, backend: str | None, vram_gb: float = 0.0, notes: list | None = None, pack_name: str | None = None) -> tuple[dict | None, list[str]]:
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/adopt.py:63:    """(config, problems): the config to write, or None with plain-words problems (what is missing). `pack_name`: the pack folder under
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/adopt.py:73:    pack = Path(data_dir) / "packs" / (pack_name or model.lower())
+/home/marimo/.local/share/strata/terminal/0.1.51/strata_cli/launch/runner.py:1238:                                   vram_gb=float(cat.computer().main_vram_gb or 0), notes=self.notices, pack_name=tag.lower())
+=== expert-profile ada? ===
+-rw-r--r-- 1 root root 425196 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/draft_vocab.bin
+-rw-r--r-- 1 root root 235852 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/draft_vocab_cyrillic.bin
+-rw-r--r-- 1 root root 162100 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/draft_vocab_en.bin
+-rw-r--r-- 1 root root 184844 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/draft_vocab_fr.bin
+-rw-r--r-- 1 root root  98328 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/expert-profile-coder.bin
+-rw-r--r-- 1 root root 196632 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/expert-profile-sycl.bin
+-rw-r--r-- 1 root root 196632 Jan  1  1970 /home/marimo/.local/share/strata/terminal/0.1.51/data/expert-profile.bin
+=== unduhan ===
+[90mHint: A new version of huggingface_hub (2.3.0) is available! You are using version 1.24.0.
+To update, run: hf update[0m
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]6.5G	/dev/shm/sc117
+none            504G  6.7G  497G   2% /dev/shm
