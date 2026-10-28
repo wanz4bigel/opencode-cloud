@@ -1,0 +1,31 @@
+app/client/store/search.py:3:def get_family_list(
+app/client/store/search.py-4-    api_key: str,
+app/client/store/search.py-5-    tokens: dict,
+app/client/store/search.py-6-    subs_type: str = "PREPAID",
+app/client/store/search.py-7-    is_enterprise: bool = False,
+app/client/store/search.py-8-):
+app/client/store/search.py-9-    path = "api/v8/xl-stores/options/search/family-list"
+app/client/store/search.py-10-    payload = {
+app/client/store/search.py-11-        "is_enterprise": is_enterprise,
+app/client/store/search.py-12-        "subs_type": subs_type,
+app/client/store/search.py-13-        "lang": "en"
+app/client/store/search.py-14-    }
+app/client/store/search.py-15-    
+app/client/store/search.py-16-    res = send_api_request(api_key, path, payload, tokens["id_token"], "POST")
+app/client/store/search.py-17-    if res["status"] != "SUCCESS":
+app/client/store/search.py-18-        print("Failed to fetch family list.")
+app/client/store/search.py-19-        print(f"Error: {res}")
+app/client/store/search.py-20-        return None
+app/client/store/search.py-21-    
+app/client/store/search.py-22-    return res
+app/client/store/search.py-23-
+app/client/store/search.py-24-def get_store_packages(
+app/client/store/search.py-25-    api_key: str,
+app/client/store/search.py-26-    tokens: dict,
+app/client/store/search.py-27-    subs_type: str = "PREPAID",
+app/client/store/search.py-28-    is_enterprise: bool = False,
+app/client/store/search.py-29-):
+app/client/store/search.py-30-    path = "api/v9/xl-stores/options/search"
+app/client/store/search.py-31-    payload = {
+app/client/store/search.py-32-        "is_enterprise": is_enterprise,
+app/client/store/search.py-33-        "filters": [

@@ -1,0 +1,31 @@
+8:def show_family_list_menu(
+9-    subs_type: str = "PREPAID",
+10-    is_enterprise: bool = False,
+11-):
+12-    in_family_list_menu = True
+13-    while in_family_list_menu:
+14-        api_key = AuthInstance.api_key
+15-        tokens = AuthInstance.get_active_tokens()
+16-        
+17-        print("Fetching family list...")
+18-        family_list_res = get_family_list(api_key, tokens, subs_type, is_enterprise)
+19-        if not family_list_res:
+20-            print("No family list found.")
+21-            in_family_list_menu = False
+22-            continue
+23-        
+24-        family_list = family_list_res.get("data", {}).get("results", [])
+25-        
+26-        clear_screen()
+27-        
+28-        print("=" * WIDTH)
+29-        print("Family List:")
+30-        print("=" * WIDTH)
+31-        
+32-        for i, family in enumerate(family_list):
+33-            family_name = family.get("label", "N/A")
+34-            family_code = family.get("id", "N/A")
+35-            
+36-            print(f"{i + 1}. {family_name}")
+37-            print(f"   Family code: {family_code}")
+38-            print("-" * WIDTH)

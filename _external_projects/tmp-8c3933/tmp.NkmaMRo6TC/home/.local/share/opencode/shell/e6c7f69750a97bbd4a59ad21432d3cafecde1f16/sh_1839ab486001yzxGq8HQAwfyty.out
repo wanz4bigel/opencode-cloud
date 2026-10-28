@@ -1,0 +1,31 @@
+    path = "api/v9/xl-stores/options/search"
+    payload = {
+        "is_enterprise": is_enterprise,
+        "filters": [
+            {
+                "unit": "THOUSAND",
+                "id": "FIL_SEL_P",
+                "type": "PRICE",
+                "items": []
+            },
+            {
+                "unit": "GB",
+                "id": "FIL_SEL_MQ",
+                "type": "DATA_TYPE",
+                "items": []
+            },
+                {
+                "unit": "PACKAGE_NAME",
+                "id": "FIL_PKG_N",
+                "type": "PACKAGE_NAME",
+                "items": [{
+                    "id": "",
+                    "label": ""
+                }]
+            },
+            {
+                "unit": "DAY",
+                "id": "FIL_SEL_V",
+                "type": "VALIDITY",
+                "items": []
+            }

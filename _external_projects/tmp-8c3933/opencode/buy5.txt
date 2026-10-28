@@ -1,0 +1,156 @@
+[H[2J[3JRefreshing token...
+Fetching profile...
+Refreshing token...
+Fetching profile...
+Fetching package family...
+Trying is_enterprise=False, migration_type=NONE.
+Success with is_enterprise=False, migration_type=NONE. Family name: Special For You
+Family: Special For You | total opsi: 202
+==> NO. 5: Bundling Vivo V80 | Rp 1300000
+=======================================================
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Detail Paket
+-------------------------------------------------------
+Fetching package...
+-------------------------------------------------------
+Nama: Special For You - Special For You - Bundling Vivo V80
+Harga: Rp 1300000
+Payment For: BUY_PACKAGE
+Masa Aktif: 
+Point: 13000
+Plan Type: XCL
+-------------------------------------------------------
+Family Code: 6fda76ee-e789-4897-89fb-9114da47b805
+Parent Code (for addon/dummy): N/A
+-------------------------------------------------------
+Benefits:
+-------------------------------------------------------
+ Name: Main Quota
+  Item id: 77863494_MAIN
+  Quota: 5.00 GB
+-------------------------------------------------------
+ Name: Call
+  Item id: 77863524
+  Unlimited: Yes
+-------------------------------------------------------
+ Name: Call
+  Item id: 77863504
+  Total: 60.0 menit
+-------------------------------------------------------
+Fetching addons...
+Addons:
+{
+  "parent_code": "",
+  "addons": [],
+  "upsell": [],
+  "bonuses": [],
+  "paid_bonuses": [],
+  "force_to_hide_bonus": false
+}
+-------------------------------------------------------
+SnK MyXL:
+FlexMini Package Terms & Conditions:
+1. This package is valid for XL Prepaid
+customers.
+2. The package validity period starts when the customer purchases the
+FlexMini package and ends at 23:59 on the last day of the validity period.
+3.
+The Main Quota is valid nationwide
+4. Customers can purchase the same package
+more than once.
+5. If a customer reactivates the FlexMini package while having
+active packages from different Families and with different validity periods, the
+validity periods of the packages will remain separate.
+6. If a customer
+reactivates the FlexMini package while having an active package from the same
+Family and with the same validity period, the following conditions apply:
+a. If
+the second package variant (quota & price) is equal to or greater than the
+active package:
+• The applicable validity period will follow the most recently
+activated package.
+• The remaining main quota from the previous package will
+still be usable (accumulated) until the end of the latest package’s validity
+period.
+• Any remaining area quota (if any) from the previous package will be
+forfeited (no accumulation applies) or replaced by the area quota of the new
+package.
+b. If the second package variant (quota & price) is smaller than the
+active package:
+• The applicable validity period will follow the most recently
+activated package.
+• The remaining main quota and area quota (if any) from the
+previous package will be replaced by the newly activated package.
+7. Call to all
+operators can be used to call XL / AXIS / Smartfren / other operators
+8. Call to
+XL / AXIS / Smartfren could not be used to call any operators outside mentioned
+operators
+9. Call benefit usage priority:
+•  Call to all operators will be used
+first.
+•  Once call benefit to all operators have been used call benefit to XL /
+AXIS / Smartfren will be consumed
+10. The FlexMini package is a personalized
+package, allowing customers to receive different benefits than other customers.
+11. The product prices listed include VAT in accordance with statutory
+regulations.A7
+12. The product type and price of each XL product are at XL's
+sole discretion. XL reserves the right to change the product type and price
+without prior notice to customers.
+13. By selecting an XL product, customers are
+deemed to have read, understood, and agreed to all terms and conditions listed.
+XL is not responsible for any losses resulting from inaccessibility or
+misunderstanding of these terms and conditions.
+-------------------------------------------------------
+Options:
+1. Beli dengan Pulsa
+2. Beli dengan E-Wallet
+3. Bayar dengan QRIS
+4. Pulsa + Decoy
+5. Pulsa + Decoy V2
+6. QRIS + Decoy (+1K)
+7. QRIS + Decoy V2
+8. Pulsa N kali
+0. Tambah ke Bookmark
+00. Kembali ke daftar paket
+Pilihan: Subscriber ID changed from None to 238736013. Resetting decoy data.
+Refreshing decoy data for: default-balance
+Fetching package family...
+Trying is_enterprise=True, migration_type=NONE.
+Success with is_enterprise=True, migration_type=NONE. Family name: XL PASS
+Fetching package...
+Decoy data for default-balance refreshed successfully.
+Fetching package...
+Fetching intercept page...
+Intercept status: SUCCESS - 8216981
+Getting payment methods...
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '171', 'code_detail': '171%!(EXTRA string=01, string=01)', 'status': 'FAILED', 'message': 'MAIN_PACKAGE_NOT_SHOW', 'title': '', 'description': ''}
+
+Press enter to continue...

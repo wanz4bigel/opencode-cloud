@@ -1,0 +1,247 @@
+[H[2J[3JRefreshing token...
+Fetching profile...
+Refreshing token...
+Fetching profile...
+Fetching package family...
+Trying is_enterprise=False, migration_type=NONE.
+Success with is_enterprise=False, migration_type=NONE. Family name: Special For You
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Family Name: Special For You
+Family Code: 6fda76ee-e789-4897-89fb-9114da47b805
+Family Type: PACKAGE
+Variant Count: 1
+-------------------------------------------------------
+Paket Tersedia
+-------------------------------------------------------
+ Variant 1: Special For You
+ Code: 64f25a7d-11d3-4de6-a527-cf69b880ad8d
+   1. Bundling Vivo V80 - Rp 1300000
+   2. Bundling Huawei Nova 16 - Rp 1300000
+   3. Bundling Poco F9 - Rp 1300000
+   4. Bundling Poco F9 - Rp 1300000
+   5. Bundling Vivo V80 - Rp 1300000
+   6. Bundling Huawei Nova 16 - Rp 1300000
+   7. Bundling Oppo F9 - Rp 1300000
+   8. Bundling iPhone 18 - Rp 1300000
+   9. FlexMini 12GB - Rp 12000
+   10. Bundling Vivo - Rp 1300000
+   11. Bundling Vivo - Rp 1300000
+   12. Bundling Vivo 5G - Rp 1300000
+   13. Bundling Redmi Note 17 - Rp 1300000
+   14. Bundling Redmi Note 17 - Rp 1300000
+   15. Bundling Samsung S26FE, 12 Bulan - Rp 1300000
+   16. Bundling Samsung S26FE, 12 Bulan - Rp 1300000
+   17. 100GB + 17GB 5G - Rp 125000
+   18. Paket Perdana 1GB - Rp 250000
+   19. 65GB + 8GB 5G - Rp 100000
+   20. FlexMini 4GB - Rp 15000
+   21. FlexMini 8GB - Rp 15000
+   22. FlexMini 4GB - Rp 16000
+   23. FlexMini 5GB - Rp 16000
+   24. 6.5GB - Rp 13005
+   25. 2.5GB - Rp 10300
+   26. 3.75GB - Rp 10800
+   27. 2.75GB - Rp 8800
+   28. 4GB - Rp 6000
+   29. 6.80GB - Rp 8000
+   30. FlexMini 8GB - Rp 9000
+   31. 100GB + 17GB 5G - Rp 125000
+   32. 65GB + 8GB 5G - Rp 100000
+   33. 100GB - Rp 200000
+   34. 65GB - Rp 180000
+   35. Kuota internet 1GB - Rp 33333
+   36. 150GB - Rp 150000
+   37. 600GB - Rp 300000
+   38. 300GB - Rp 200000
+   39. 100GB - Rp 125000
+   40. 65GB - Rp 100000
+   41. 150GB - Rp 100000
+   42. 75GB - Rp 75000
+   43. 75GB - Rp 50000
+   44. FlexMini 3GB - Rp 20000
+   45. FlexMini 100GB - Rp 50000
+   46. FlexMini 5GB - Rp 20000
+   47. 150GB - Rp 150000
+   48. 600GB - Rp 300000
+   49. 300GB - Rp 200000
+   50. 100GB - Rp 125000
+   51. 65GB - Rp 100000
+   52. Paket Perdana 3GB - Rp 250000
+   53. Paket Perdana 3GB - Rp 250000
+   54. FlexMini 15GB - Rp 15000
+   55. FlexMini 6GB - Rp 12000
+   56. FlexMini 15GB - Rp 10000
+   57. FlexMini 4GB - Rp 6700
+   58. FlexMini 20GB - Rp 20000
+   59. FlexMini 8GB - Rp 15000
+   60. FlexMini 5GB - Rp 13000
+   61. FlexMini 200GB - Rp 100000
+   62. FlexMini 75GB - Rp 75000
+   63. FlexMini 30GB - Rp 50000
+   64. FlexMini 17GB - Rp 40000
+   65. FlexMini 10GB - Rp 30000
+   66. FlexMini 7GB - Rp 25000
+   67. FlexMini 6GB - Rp 25000
+   68. FlexMini 8GB - Rp 30000
+   69. FlexMini 16GB - Rp 40000
+   70. FlexMini 25GB - Rp 50000
+   71. FlexMini 4GB - Rp 13000
+   72. FlexMini 15GB - Rp 15000
+   73. FlexMini 5GB - Rp 9000
+   74. FlexMax 80GB - Rp 125000
+   75. FlexMax 52GB - Rp 100000
+   76. FlexMax 43GB - Rp 90000
+   77. FlexMax 34GB - Rp 80000
+   78. FlexMax 26GB - Rp 70000
+   79. FlexMax 20GB - Rp 60000
+   80. FlexMax 14GB - Rp 50000
+   81. FlexMax 8GB - Rp 40000
+   82. FlexMax 7GB - Rp 37000
+   83. FlexMax 10GB - Rp 45000
+   84. FlexMax 15GB - Rp 50000
+   85. FlexMax 22GB - Rp 60000
+   86. FlexMax 28GB - Rp 70000
+   87. FlexMax 36GB - Rp 80000
+   88. FlexMax 46GB - Rp 90000
+   89. 150GB - Rp 150000
+   90. 400GB + 400GB 5G - Rp 200000
+   91. 600GB + 600GB 5G - Rp 300000
+   92. Paket Perdana 3GB - Rp 250000
+   93. Paket Perdana 3GB - Rp 250000
+   94. Paket Perdana 3GB - Rp 250000
+   95. Paket Perdana 3GB - Rp 250000
+   96. Paket Perdana 3GB - Rp 250000
+   97. FlexMax 150GB - Rp 150000
+   98. FlexMax 100GB - Rp 125000
+   99. FlexMax 65GB - Rp 100000
+   100. FlexMax 50GB - Rp 90000
+   101. FlexMax 37GB - Rp 75000
+   102. FlexMax 25GB - Rp 60000
+   103. FlexMax 20GB - Rp 50000
+   104. FlexMax 15GB - Rp 45000
+   105. FlexMax 10GB - Rp 35000
+   106. FlexMax 75GB - Rp 75000
+   107. FlexMax 33GB - Rp 50000
+   108. FlexMax 17GB - Rp 35000
+   109. FlexMax 10GB - Rp 25000
+   110. Bonus myXL 5GB, 2hr - Rp 25000
+   111. Paket ON 8GB - Rp 29000
+   112. Paket Perdana 6GB - Rp 25000
+   113. Paket Merdeka Kuota Utama 8GB - Rp 35000
+   114. Deals 11.11  - Rp 11111
+   115. Bonus Instagram 3GB - Rp 55000000
+   116. BONUS #TraktiranXL 28th Anniversary - Rp 0
+   117. XTRA Combo 140GB - Rp 35000
+   118. XTRA Combo 120GB - Rp 35000
+   119. XTRA Combo 100GB - Rp 35000
+   120. Youtube 10GB - Rp 25000
+   121. Main Quota 1GB - Rp 500
+   122. YouTube 17GB - Rp 20000
+   123. HotRod 500MB - Rp 28000
+   124. Paket AnyNet Nelp ke Semua Oprtr 300Mnt - Rp 100000
+   125. XTRA Combo 5GB+5GB - Rp 55000
+   126. XTRA Combo 15GB+15GB - Rp 120000
+   127. XTRA Combo 10GB+10GB - Rp 75000
+   128. XTRA Combo 70GB+70GB - Rp 369000
+   129. XTRA Combo 50GB+50GB - Rp 309000
+   130. Kapan Aja JUMBO Nelp 1500Mnt - Rp 68000
+   131. XTRA Combo 35GB+35GB - Rp 180000
+   132. XTRA Combo 15GB+15GB - Rp 110000
+   133. XTRA Combo 60GB+60GB - Rp 339000
+   134. Night Quota 2GB - Rp 5500
+   135. Internet 1GB - Rp 5500
+   136. HotRod 500MB - Rp 5700
+   137. XTRA Combo 5GB+5GB - Rp 56000
+   138. XTRA Combo 35GB+35GB - Rp 200000
+   139. XTRA Combo 3GB+3GB - Rp 35000
+   140. XTRA Combo 20GB+20GB - Rp 160000
+   141. XTRA Combo 35GB+35GB - Rp 220000
+   142. XTRA Combo 5GB+5GB - Rp 59000
+   143. XTRA Combo 20GB+20GB - Rp 150000
+   144. XTRA Combo 15GB+15GB - Rp 100000
+   145. XTRA Combo 20GB+20GB - Rp 140000
+   146. Main Quota - Rp 5000
+   147. XTRA Kuota Tik Tok 2GB - Rp 5500
+   148. XTRA Kuota Instagram 2GB - Rp 5500
+   149. XTRA Kuota Facebook 2GB - Rp 5500
+   150. XTRA Kuota Netflix 2GB - Rp 5500
+   151. XTRA Kuota Vidio 2GB - Rp 5500
+   152. Xtra Kuota Youtube 2GB - Rp 5500
+   153. XTRA Combo 10GB+10GB - Rp 89000
+   154. HotRod 1.5GB - Rp 11000
+   155. XTRA Combo 15GB+15GB - Rp 129000
+   156. XTRA Combo 40GB - Rp 179000
+   157. XTRA Combo 20GB+20GB - Rp 179000
+   158. Nelpon Kapan Aja 500Mnt - Rp 35650
+   159. XTRA Combo 35GB+35GB - Rp 239000
+   160. Nelpon Kapan Aja 200Mnt - Rp 14250
+   161. Xtra Combo 70GB - Rp 239000
+   162. Facebook 3GB - Rp 9000
+   163. YouTube - Rp 12000
+   164. 4GB - Rp 35000
+   165. Instagram 3GB - Rp 9000
+   166. XTRA Combo VIP 10GB - Rp 31000
+   167. Youtube 3GB - Rp 9000
+   168. XTRA Combo 20GB - Rp 23000
+   169. XTRA Combo 30GB - Rp 33000
+   170. VIP 56GB - Rp 89000
+   171. 60GB - Rp 89900
+   172. 4GB - Rp 27900
+   173. 172GB - Rp 244900
+   174. 92GB - Rp 134000
+   175. 2.5GB - Rp 8800
+   176. Xtra Kuota Instagram 3GB - Rp 5500
+   177. Special Limited Deals - Rp 6666
+   178. Special Limited Deals - Rp 6666
+   179. Happy Hour XTRA Kuota Free Fire 2GB, (00-04) - Rp 2500
+   180. Happy Hour XTRA Kuota Mobile Legends 2GB, (00-04) - Rp 2500
+   181. Happy Hour XTRA Kuota Facebook 2GB, (14-18) - Rp 5500
+   182. Happy Hour XTRA Kuota Instagram 2GB, (14-18) - Rp 5500
+   183. Happy Hour XTRA Kuota YouTube 2GB, (14-18) - Rp 5500
+   184. Internet 1GB - Rp 3000
+   185. Internet 1GB - Rp 2500
+   186. Internet 1GB - Rp 2000
+   187. Internet 4GB - Rp 2500
+   188. BONUS XL Spesial 11.11 - Rp 3000
+   189. Internet 3GB - Rp 2500
+   190. Internet 2GB - Rp 2000
+   191. Xtra Combo Plus Proteksi 72GB - Rp 242500
+   192. Xtra Combo Plus Proteksi 52GB - Rp 181000
+   193. Xtra Combo Plus Proteksi 30GB - Rp 132000
+   194. Xtra Combo Plus Proteksi 20GB - Rp 89000
+   195. Xtra Combo Plus Proteksi 20GB - Rp 89000
+   196. Xtra Combo Plus Proteksi 5GB - Rp 38500
+   197. Xtra Combo Plus Proteksi 3GB - Rp 27500
+   198. Xtra Combo Plus Proteksi 10GB - Rp 59900
+   199. Xtra Combo Plus Proteksi 5GB - Rp 38500
+   200. Xtra Combo Plus Proteksi 3GB - Rp 27500
+   201. Xtra Combo Plus Proteksi 10GB - Rp 59900
+   202. Internet 1GB + Indomaret Voucher 10K - Rp 1700
+-------------------------------------------------------
+00. Kembali ke menu utama
+-------------------------------------------------------
+Pilih paket (nomor): 

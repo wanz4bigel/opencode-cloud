@@ -1,0 +1,32 @@
+•  Call to all operators will be used
+first.
+•  Once call benefit to all operators have been used call benefit to XL /
+AXIS / Smartfren will be consumed
+10. The FlexMini package is a personalized
+package, allowing customers to receive different benefits than other customers.
+11. The product prices listed include VAT in accordance with statutory
+regulations.A7
+12. The product type and price of each XL product are at XL's
+sole discretion. XL reserves the right to change the product type and price
+without prior notice to customers.
+13. By selecting an XL product, customers are
+deemed to have read, understood, and agreed to all terms and conditions listed.
+XL is not responsible for any losses resulting from inaccessibility or
+misunderstanding of these terms and conditions.
+-------------------------------------------------------
+Options:
+1. Beli dengan Pulsa
+2. Beli dengan E-Wallet
+3. Bayar dengan QRIS
+4. Pulsa + Decoy
+5. Pulsa + Decoy V2
+6. QRIS + Decoy (+1K)
+7. QRIS + Decoy V2
+8. Pulsa N kali
+0. Tambah ke Bookmark
+00. Kembali ke daftar paket
+Pilihan: Traceback (most recent call last):
+  File "<stdin>", line 17, in <module>
+  File "/home/runner/me-cli-sunset/app/menus/package.py", line 171, in show_package_details
+    choice = input("Pilihan: ")
+EOFError: EOF when reading a line

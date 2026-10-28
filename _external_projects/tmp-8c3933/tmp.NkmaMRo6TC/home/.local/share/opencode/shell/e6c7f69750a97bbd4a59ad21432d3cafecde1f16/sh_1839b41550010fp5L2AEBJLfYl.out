@@ -1,0 +1,4 @@
+  app/client/store/redeemables.py:3:def get_redeemables(
+  app/client/store/search.py:3:def get_family_list(
+  app/client/store/search.py:24:def get_store_packages(
+  app/client/store/segments.py:3:def get_segments(

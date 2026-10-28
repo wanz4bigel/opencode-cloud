@@ -1,0 +1,8 @@
+
+jadx - dex to java decompiler, version: 1.5.1
+
+usage: jadx [command] [options] <input files> (.apk, .dex, .jar, .class, .smali, .zip, .aar, .arsc, .aab, .xapk, .jadx.kts)
+commands (use '<command> --help' for command options):
+  plugins	  - manage jadx plugins
+
+options:

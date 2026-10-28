@@ -1,0 +1,9 @@
+ 102:             return "no-conf"
+ 105:                 _, s = http_json(base + "/api/sessions", c, auth, timeout=20)
+
+--- hold_ws token/auth ---
+  96: TOKEN = C.get("MARIMO_TOKEN", "")
+  98:     "Authorization": f"Bearer {TOKEN}",
+ 167:         "access_token": TOKEN,
+ 257:     if not (BASE and TOKEN):
+ 258:         log("MARIMO_URL / MARIMO_TOKEN kosong - keluar")

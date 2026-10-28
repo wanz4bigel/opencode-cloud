@@ -1,0 +1,28 @@
+19:def show_package_details(api_key, tokens, package_option_code, is_enterprise, option_order = -1):
+20-    active_user = AuthInstance.active_user
+21-    subscription_type = active_user.get("subscription_type", "")
+22-    
+23-    clear_screen()
+24-    print("-------------------------------------------------------")
+25-    print("Detail Paket")
+26-    print("-------------------------------------------------------")
+27-    package = get_package(api_key, tokens, package_option_code)
+28-    # print(f"[SPD-202]:\n{json.dumps(package, indent=1)}")
+29-    if not package:
+30-        print("Failed to load package details.")
+31-        pause()
+171:        choice = input("Pilihan: ")
+199:            input("Silahkan cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+209:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+219:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+378:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+421:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+425:            use_decoy_for_n_times = input("Use decoy package? (y/n): ").strip().lower() == 'y'
+426:            n_times_str = input("Enter number of times to purchase (e.g., 3): ").strip()
+428:            delay_seconds_str = input("Enter delay between purchases in seconds (e.g., 25): ").strip()
+458:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+461:            destination_msisdn = input("Masukkan nomor tujuan bonus (mulai dengan 62): ").strip()
+482:            input("Silahkan lakukan pembayaran & cek hasil pembelian di aplikasi MyXL. Tekan Enter untuk kembali.")
+568:        pkg_choice = input("Pilih paket (nomor): ")
+702:        choice = input("Choice: ")
+728:            confirm = input(f"Are you sure you want to unsubscribe from package  {del_number}. {del_pkg['name']}? (y/n): ")

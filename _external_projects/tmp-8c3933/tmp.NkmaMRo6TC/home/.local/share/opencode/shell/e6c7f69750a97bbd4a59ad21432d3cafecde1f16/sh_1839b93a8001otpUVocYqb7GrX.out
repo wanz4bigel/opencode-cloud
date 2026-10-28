@@ -1,0 +1,31 @@
+        print("3. Bayar dengan QRIS")
+        print("4. Pulsa + Decoy")
+        print("5. Pulsa + Decoy V2")
+        print("6. QRIS + Decoy (+1K)")
+        print("7. QRIS + Decoy V2")
+        print("8. Pulsa N kali")
+        # print("9. Debug Share Package")
+
+        # Sometimes payment_for is empty, so we set default to BUY_PACKAGE
+        if payment_for == "":
+            payment_for = "BUY_PACKAGE"
+        
+        if payment_for == "REDEEM_VOUCHER":
+            print("B. Ambil sebagai bonus (jika tersedia)")
+            print("BA. Kirim bonus (jika tersedia)")
+            print("L. Beli dengan Poin (jika tersedia)")
+        
+        if option_order != -1:
+            print("0. Tambah ke Bookmark")
+        print("00. Kembali ke daftar paket")
+
+        choice = input("Pilihan: ")
+        if choice == "00":
+            return False
+        elif choice == "0" and option_order != -1:
+            # Add to bookmark
+            success = BookmarkInstance.add_bookmark(
+                family_code=package.get("package_family", {}).get("package_family_code",""),
+                family_name=package.get("package_family", {}).get("name",""),
+                is_enterprise=is_enterprise,
+                variant_name=variant_name,

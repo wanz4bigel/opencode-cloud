@@ -1,0 +1,160 @@
+[H[2J[3JRefreshing token...
+Fetching profile...
+Checking for updates...
+Fetching balance...
+Fetching tiering info...
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+=======================================================
+          Nomor: 6281933591612 | Type: PREPAID         
+         Pulsa: Rp 0 | Aktif sampai: 2026-10-25        
+                 Points: 764 | Tier: 1                 
+=======================================================
+Menu:
+1. Login/Ganti akun
+2. Lihat Paket Saya
+3. Beli Paket 🔥 HOT 🔥
+4. Beli Paket 🔥 HOT-2 🔥
+5. Beli Paket Berdasarkan Option Code
+6. Beli Paket Berdasarkan Family Code
+7. Beli Semua Paket di Family Code (loop)
+8. Riwayat Transaksi
+9. Family Plan/Akrab Organizer
+10. Circle
+11. Store Segments
+12. Store Family List
+13. Store Packages
+14. Redemables
+R. Register
+N. Notifikasi
+V. Validate msisdn
+00. Bookmark Paket
+99. Tutup aplikasi
+-------------------------------------------------------
+Pilih menu: [H[2J[3JClearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Riwayat Transaksi
+-------------------------------------------------------
+Fetching transaction history...
+Tidak ada riwayat transaksi.
+0. Refresh
+00. Kembali ke Menu Utama
+Pilih opsi: [H[2J[3JOpsi tidak valid. Silakan coba lagi.
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Riwayat Transaksi
+-------------------------------------------------------
+Fetching transaction history...
+Tidak ada riwayat transaksi.
+0. Refresh
+00. Kembali ke Menu Utama
+Pilih opsi: [H[2J[3JOpsi tidak valid. Silakan coba lagi.
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Riwayat Transaksi
+-------------------------------------------------------
+Fetching transaction history...
+Tidak ada riwayat transaksi.
+0. Refresh
+00. Kembali ke Menu Utama
+Pilih opsi: Traceback (most recent call last):
+  File "/home/runner/me-cli-sunset/main.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "/home/runner/me-cli-sunset/main.py", line 152, in main
+    show_transaction_history(AuthInstance.api_key, active_user["tokens"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/me-cli-sunset/app/menus/payment.py", line 44, in show_transaction_history
+    choice = input("Pilih opsi: ")
+EOFError: EOF when reading a line

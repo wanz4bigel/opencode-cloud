@@ -1,0 +1,6 @@
+~3K tok | prompt_n=2313 | prefill 2831.4 tok/s | decode 147.8 tok/s | wall 1.09s
+      isi: 
+~8K tok | prompt_n=6054 | prefill 4436.1 tok/s | decode 170.4 tok/s | wall 1.61s
+      isi: 
+~16K tok | prompt_n=12074 | prefill 5085.5 tok/s | decode 166.5 tok/s | wall 2.63s
+      isi: 
