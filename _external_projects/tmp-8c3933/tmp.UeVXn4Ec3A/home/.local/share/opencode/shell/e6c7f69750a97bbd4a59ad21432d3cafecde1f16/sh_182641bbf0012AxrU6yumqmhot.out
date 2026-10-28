@@ -1,0 +1,13 @@
+minimal:
+{"v":"2","ps":"coolmaxx","add":"20.57.223.165","port":443,"id":"7576cf38-c85a-467f-b265-8b84293bb84a","net":"ws","host":"20.57.223.165","path":"/m7yj7lf9-x28u","tls":"tls"}
+
+full:
+{"v":"2","ps":"coolmaxx-ws-tls@443","add":"20.57.223.165","port":"443","id":"7576cf38-c85a-467f-b265-8b84293bb84a","aid":"0","sc":"auto","net":"ws","type":"none","path":"/m7yj7lf9-x28u","tls":"tls","alpn":"h2,http/1.1","email":"github-actions"}
+
+kartu:
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : coolmaxx
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation

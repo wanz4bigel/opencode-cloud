@@ -1,0 +1,7 @@
+29:18 kategori — **137 video sungguhan** dari Eporner (kalau `data/katalog.json` ada).
+45:**API publik Eporner** (`/api/v2/video/search/`) pakai 18 pasang kueri — `jilbab_indonesian`,
+56:npm run isi                 # 18 kategori × 4 video → data/katalog.json (~11 detik)
+57:npm run isi -- --per 8      # 18 × 8 (dipakai katalog sekarang: 137 video, 17 jam)
+64:jadi 137 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+92:Daftar host yang dikenal otomatis ada di halaman **`/host`**: 27 sumber — Bitchute,
+119:scripts/isi.js     isi katalog dari API publik Eporner (18 kategori, judul & gambar asli)

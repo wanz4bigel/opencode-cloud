@@ -1,0 +1,13 @@
+  PASS=12  FAIL=0
+--- full xray ---
+[1;32m  PASS[0m ws+tls :19443          HTTP 204
+[1;32m  PASS[0m ws+tls :19444          HTTP 204
+[1;32m  PASS[0m ws plain :19080        HTTP 204
+[1;32m  PASS[0m grpc :19053            HTTP 204
+[1;32m  PASS[0m upgrade :19052         HTTP 204
+==== PASS=5 FAIL=0 ====
+--- full v2ray (upgrade dilewati) ---
+[1;32m  PASS[0m ws+tls :19443          HTTP 204
+[1;32m  PASS[0m ws plain :19080        HTTP 204
+[1;32m  PASS[0m grpc :19053            HTTP 204
+==== PASS=3 FAIL=0 ====

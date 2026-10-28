@@ -1,0 +1,4 @@
+isi/db/hosts dipatch
+300 video sungguhan disimpan ke data/katalog.json (300 unik).
+Lanjut: npm run reset — berkas katalog.json dibaca otomatis oleh seed.
+database diisi ulang: 300 video

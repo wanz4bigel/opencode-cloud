@@ -1,0 +1,29 @@
+gen-link patched
+mk_link() { # port net tls path label
+  local port="$1" net="$2" tls="$3" path="$4" label="$5"
+  local ps="${REMARKS:-$NAME}" json link
+  if [ "$LINK_STYLE" = "full" ]; then
+    json="$(jq -nc \
+      --arg add "$HOSTNAME_ADDR" --arg port "$port" --arg id "$VMESS_UUID" \
+      --arg aid "$VMESS_ALTID" --arg net "$net" --arg path "$path" \
+      --arg host "${DOMAIN:-}" --arg sni "$SERVED_NAME" --arg alpn "$ALPN" \
+      --arg tls "$tls" --arg ps "$ps-$label" --arg email "$VMESS_EMAIL" '{
+        v: "2", ps: $ps, add: $add, port: $port, id: $id, aid: $aid, sc: "auto",
+        net: $net, type: "none", host: $host, path: $path, tls: $tls,
+        sni: $sni, alpn: $alpn, email: $email
+      } | with_entries(select(.value != ""))')"
+  else
+    # format minimal ala v2rayN: v2, ps, add, port(number), id, net, host, path, tls
+    json="$(jq -nc \
+      --arg ps "$ps" --arg add "$HOSTNAME_ADDR" --argjson port "$port" \
+      --arg id "$VMESS_UUID" --arg net "$net" \
+      --arg host "${DOMAIN:-$PUBLIC_IP}" --arg path "$path" --arg tls "$tls" '{
+        v: "2", ps: $ps, add: $add, port: $port, id: $id, net: $net,
+        host: $host, path: $path, tls: $tls
+      } | with_entries(select(.value != "" and .value != null))')"
+  fi
+  link="vmess://$(printf '%s' "$json" | base64 -w0 2>/dev/null || printf '%s' "$json" | base64 | tr -d '\n')"
+  LINKS+=("$label|$port|$net|$link")
+}
+
+LINKS=()

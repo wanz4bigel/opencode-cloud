@@ -1,0 +1,24 @@
+436cfd9 feat: mode full (multi-transport ws/grpc/httpupgrade), core xray/v2ray, kartu akun + self-test transport
+558fce9 feat: VMess V2Ray server on GitHub Actions (WebSocket + TLS, watchdog, handoff, keepalive)
+
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-223165
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.57.223.165
+Port TLS       : 19443,19444
+Port none TLS  : 19080
+Port any       : 19052,19053
+id             : bf1f2526-7535-43ce-9545-826c8982b106
+alterId        : 0
+Security       : auto
+network        : ws,grpc,upgrade
+path ws        : /vmess
+serviceName    : vmess
+path upgrade   : /upvmess
+Cert SHA256    : 59c90512371f9bede56bba0933fa13f37610ce56a9a6bdc901f68941c5a743c0
+Limit IP       : -
+Expired On     : 2026-10-28 19:07:42 WIB
+————————————————————————————————————

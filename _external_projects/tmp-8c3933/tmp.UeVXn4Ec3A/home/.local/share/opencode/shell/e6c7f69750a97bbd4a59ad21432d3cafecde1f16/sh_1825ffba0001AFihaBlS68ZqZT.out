@@ -1,0 +1,10 @@
+youtube bitchute xhamster xnxx xvideos pornhub txxx eporner youporn spankbang beeg javhd missav anybunny dailymotion vimeo archive ok vk facebook streamtape upcloud mixdrop dood filemoon sbstream 
+93:    key: "youporn",
+94-    label: "YouPorn",
+95-    hosts: ["youporn.com"],
+96-    example: "https://www.youporn.com/watch/1234567/judul-video/",
+97-    embed: (host, path) => idOf(/\/watch\/(\d{5,})/, path),
+98-    to: (x) => `https://www.youporn.com/embed/${x}`
+99-  },
+100-  {
+101-    key: "spankbang",

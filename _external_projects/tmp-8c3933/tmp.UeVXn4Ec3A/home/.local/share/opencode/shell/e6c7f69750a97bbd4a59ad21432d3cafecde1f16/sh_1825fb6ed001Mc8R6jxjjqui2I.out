@@ -1,0 +1,7 @@
+filter: sinyal wajib ada di judul
+
+300 video sungguhan disimpan ke data/katalog.json (300 unik).
+Lanjut: npm run reset — berkas katalog.json dibaca otomatis oleh seed.
+total: 300 · kategori: 12
+judul tanpa kata colmek: 0 · judul mencurigakan: 9
+per kategori: 25,25,25,25,25,25,25,25,25,25,25,25

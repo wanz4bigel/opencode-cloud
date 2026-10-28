@@ -1,0 +1,9 @@
+README diperbarui
+22:node server.js            # http://localhost:3000
+23:PORT=4173 node server.js  # ganti port kalau 3000 kepakai app lain
+29:12 kategori **khusus colmek** — **300 video sungguhan** dari Eporner. Video contoh
+50:Karena situs ini **khusus colmek**, hasilnya disaring dua lapis:
+65:npm run isi -- --per 25     # 12 × 25 (dipakai katalog sekarang: 300 video)
+72:jadi 300 video itu semuanya unik. Kategori yang kuotanya belum penuh dibiarkan apa
+100:Daftar host yang dikenal otomatis ada di halaman **`/host`**: 29 sumber — Bitchute,
+108:curl -s "http://localhost:3000/admin" -X POST \

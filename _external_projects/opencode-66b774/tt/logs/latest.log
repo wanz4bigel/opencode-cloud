@@ -1,0 +1,33 @@
+Xray 26.10.21 (Xray, Penetrates Everything.) 1b1647c (go1.27.3 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:55:15.982680 [Info] infra/conf/serial: Reading config: &{Name:/tmp/opencode/tt/config.json Format:json}
+2026/10/28 11:55:15.984354 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:55:15.984481 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:55:15.984971 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:55:15.984983 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:55:15.984987 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:55:15.984991 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:55:15.984994 [Warning] common/errors: The feature gRPC transport (with unnecessary costs, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP stream-up H2 as soon as possible.
+2026/10/28 11:55:15.984998 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:55:15.985001 [Warning] common/errors: The feature HTTPUpgrade transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:55:15.985083 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:55:15.990568 [Warning] core: Xray 26.10.21 started
+2026/10/28 11:55:19.008742 http: TLS handshake error from 127.0.0.1:51758: EOF
+2026/10/28 11:55:19.009317 http: TLS handshake error from 127.0.0.1:34446: EOF
+2026/10/28 11:55:22.969871 http: TLS handshake error from 127.0.0.1:51780: EOF
+2026/10/28 11:55:22.970444 http: TLS handshake error from 127.0.0.1:34452: EOF
+2026/10/28 11:55:24.076865 http: TLS handshake error from 127.0.0.1:51800: EOF
+2026/10/28 11:55:24.077418 http: TLS handshake error from 127.0.0.1:34460: EOF
+2026/10/28 11:55:27.014516 from 127.0.0.1:51820 accepted tcp:www.google.com:443 [in-ws-19443-tls >> direct] email: github-actions
+2026/10/28 11:55:29.145296 http: TLS handshake error from 127.0.0.1:43638: EOF
+2026/10/28 11:55:29.145917 http: TLS handshake error from 127.0.0.1:57188: EOF
+2026/10/28 11:55:32.065384 from 127.0.0.1:57192 accepted tcp:www.google.com:443 [in-ws-19444-tls >> direct] email: github-actions
+2026/10/28 11:55:34.214424 http: TLS handshake error from 127.0.0.1:43658: EOF
+2026/10/28 11:55:34.214999 http: TLS handshake error from 127.0.0.1:57206: EOF
+2026/10/28 11:55:37.117307 from 127.0.0.1:34302 accepted tcp:www.google.com:443 [in-ws-19080 >> direct] email: github-actions
+2026/10/28 11:55:39.284212 http: TLS handshake error from 127.0.0.1:58490: EOF
+2026/10/28 11:55:39.284826 http: TLS handshake error from 127.0.0.1:37310: EOF
+2026/10/28 11:55:42.166542 from 127.0.0.1:54320 accepted tcp:www.google.com:443 [in-grpc-19053-tls >> direct] email: github-actions
+2026/10/28 11:55:44.355251 http: TLS handshake error from 127.0.0.1:58500: EOF
+2026/10/28 11:55:44.355939 http: TLS handshake error from 127.0.0.1:37316: EOF
+2026/10/28 11:55:47.218847 from 127.0.0.1:50840 accepted tcp:www.google.com:443 [in-httpupgrade-19052-tls >> direct] email: github-actions

@@ -1,0 +1,50 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 19203,
+      "protocol": "http"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "127.0.0.1",
+            "port": 19053,
+            "users": [
+              {
+                "id": "298eb1c2-923f-4473-92c8-76dc632b8bc1",
+                "alterId": 0,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "v2ray.local",
+          "certificates": [
+            {
+              "usage": "verify",
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----\nMIIEJzCCAw+gAwIBAgIUccrm4YSKhaSpXm0lQTd3SN6QwpkwDQYJKoZIhvcNAQEL\nBQAwcjELMAkGA1UEBhMCSUQxEjAQBgNVBAgMCUluZG9uZXNpYTEQMA4GA1UEBwwH\nSmFrYXJ0YTEXMBUGA1UECgwOR2l0SHViLUFjdGlvbnMxDjAMBgNVBAsMBVZNZXNz\nMRQwEgYDVQQDDAt2MnJheS5sb2NhbDAeFw0yNjEwMjgxMTU2MTdaFw0zNjEwMjUx\nMTU2MTdaMHIxCzAJBgNVBAYTAklEMRIwEAYDVQQIDAlJbmRvbmVzaWExEDAOBgNV\nBAcMB0pha2FydGExFzAVBgNVBAoMDkdpdEh1Yi1BY3Rpb25zMQ4wDAYDVQQLDAVW\nTWVzczEUMBIGA1UEAwwLdjJyYXkubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IB\nDwAwggEKAoIBAQCg1H4wzjR6waC20MfXFnlgubMyCaPnSyvtvBCxZmNWECXt91Km\nHVhFJ/GL9ROPeTra+wcLTKTgu2CKY+Hr5qW+87w2Nks6M6X6A6JjVZGRVj0la/Xd\nFMGZ7VZWN5bD/FbxojQ9TDnzQaAqA+QS/vRXgcv5crk5HAvuW+0t49M4bl+8GU+D\nE/mdDd1olQXEP7LELBSq0ayr4r3j3V70P2bQgSwIUp/zdfo2Xsqp3MRYtgH+x3F6\n++rIkS3KBMn5o2OKGtp0xKbRxGN3aq5vqKnjygEQLJS6KH5OggVnry2/y4+c5LOx\nQwGcXSnAMUrXoRtGK3QCNweJaNdhMGS38jVrAgMBAAGjgbQwgbEwHQYDVR0OBBYE\nFD1KMWtcxkxR2JbQ5T+oQFP6Ig6hMB8GA1UdIwQYMBaAFD1KMWtcxkxR2JbQ5T+o\nQFP6Ig6hMDkGA1UdEQQyMDCCCWxvY2FsaG9zdIILdjJyYXkubG9jYWyHBH8AAAGH\nEAAAAAAAAAAAAAAAAAAAAAEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC\nBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAAVlHJ23\n5cCKAHOTsTVoJLNPHETnanJaP/JcaY6TwcAOMTlAnwrBwtT8J3LK6GTCIhjZJUnv\nAOkGtas6iYi4j9ryT52EiyBFRZA5v//I13MvAFk62Rm4eygYn7GigFN/eMhGEElh\nsdUwT0gvKQqyHTUxy4fZSpDNmfIxlDSDnlWLpKTGueD+r9CAgQ4qFl1BfTUQKL+m\nzuQohiphU+AE9dR7kllJvzTPRVTrerdHIv1WRo/uQvhagO5DFVaQMN09MWbsqTCs\nMHGlCC8b0kI64JUtiIEPglRIhzLDKQdVbM/q8gr9peQyfW49bm0Y3Uie9RJP0xYH\nFzziT6ev4AQGxEg=\n-----END CERTIFICATE-----"
+              ]
+            }
+          ]
+        },
+        "grpcSettings": {
+          "serviceName": "vmess"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+SHELLCHECK OK
+YAML OK .github/workflows/keepalive.yml
+YAML OK .github/workflows/test.yml
+YAML OK .github/workflows/vmess-server.yml
+YAML OK action.yml
