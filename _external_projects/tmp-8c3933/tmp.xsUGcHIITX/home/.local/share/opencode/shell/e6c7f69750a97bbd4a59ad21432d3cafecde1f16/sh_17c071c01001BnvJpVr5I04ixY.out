@@ -1,0 +1,18 @@
+===== matematika | 239 tok/s =====
+Harga setelah diskon:  
+Rp 480.000 × 75% = Rp 360.000  
+
+PPN 11%:  
+Rp 360.000 × 11% = Rp 39.600  
+
+Total bayar:  
+Rp 360.000 + Rp 39.600 = **Rp 399.600**
+
+===== logika | 189 tok/s =====
+tidak, karena anggota koperasi yang memiliki sepeda motor belum tentu termasuk karyawan.
+
+===== UJI KODE (kasus benar) =====
+LULUS [(1, 3), (3, 5)] -> [(1, 5)]
+LULUS [(1, 3), (2, 6), (8, 10)] -> [(1, 6), (8, 10)]
+LULUS [] -> []
+LULUS [(4, 4), (4, 9)] -> [(4, 9)]

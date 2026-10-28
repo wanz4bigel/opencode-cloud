@@ -1,0 +1,27 @@
+=== fetch ===
+Fetching 5 files:  20%|██        | 1/5 [00:00<00:00,  6.39it/s]
+Fetching 5 files:  40%|████      | 2/5 [00:07<00:13,  4.46s/it]
+Fetching 5 files:  60%|██████    | 3/5 [00:49<00:42, 21.38s/it]
+Fetching 5 files: 100%|██████████| 5/5 [00:49<00:00,  9.83s/it]
+[32m✓ Downloaded[0m
+  path: /marimo/llm/pinned
+[fetch] selesai rc=0 12:48:37
+Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K.gguf: OK
+mmproj-Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-BF16.gguf: OK
+Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf: OK
+HauhauCS-FastMTP-llama.cpp.patch: OK
+26G	/marimo/llm/pinned
+
+=== build ===
+[build] 12:48:55 configure percobaan 2
+
+
+-- Generating embedded license file for target: llama-app
+-- Configuring done (1.4s)
+-- Generating done (0.3s)
+-- Build files have been written to: /marimo/llm/llama-src/build
+[build] 12:48:57 compile
+
+=== token handling hold12/hold_ws ===
+  hold12.py: token = c.get("MARIMO_TOKEN", "")
+  hold_ws.py: TOKEN = C.get("MARIMO_TOKEN", "")

@@ -1,0 +1,9 @@
+BokepKita jalan di http://localhost:3000
+  katalog: 1778 video · 12 kategori · 0 masih contoh
+  panel:   http://localhost:3000/admin (kata kunci: gus)
+  sumber:  29 host dikenali · SQLite di data/bokep-kita.db
+
+> bokep-kita@1.1.0 info
+> node scripts/info.js
+
+Pakai: node scripts/info.js <url-video>

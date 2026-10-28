@@ -1,0 +1,8 @@
+--- models ---
+{"object": "list", "data": [{"id": "swift-1.5-iq3_s", "object": "model", "status": {"value": "loaded"}, "meta": {"n_ctx": 262144}, "architecture": {"input_modalities": ["text", "image"], "output_modalities": ["text"]}}]}
+HTTP 200 | 0.271142s
+
+--- chat (non-stream) ---
+content: '391'
+usage: {'prompt_tokens': 67, 'completion_tokens': 61, 'total_tokens': 128, 'prompt_tokens_details': {'cached_tokens': 0}}
+timings: {'predicted_per_second': 221.2, 'draft_n': 51, 'draft_n_accepted': 41}

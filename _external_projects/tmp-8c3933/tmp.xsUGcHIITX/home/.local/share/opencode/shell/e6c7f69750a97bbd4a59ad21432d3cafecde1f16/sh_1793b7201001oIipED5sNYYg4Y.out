@@ -1,0 +1,14 @@
+21/tcp   open  ftp      Pure-FTPd
+22/tcp   open  ssh      OpenSSH 8.9p1 Ubuntu 3ubuntu0.16 (Ubuntu Linux; protocol 2.0)
+25/tcp   open  smtp     Postfix smtpd
+80/tcp   open  http     Apache httpd
+110/tcp  open  pop3     Dovecot pop3d
+143/tcp  open  imap     Dovecot imapd
+443/tcp  open  ssl/http Apache httpd
+465/tcp  open  ssl/smtp Postfix smtpd
+587/tcp  open  smtp     Postfix smtpd
+888/tcp  open  http     Apache httpd
+993/tcp  open  ssl/imap Dovecot imapd
+995/tcp  open  ssl/pop3 Dovecot pop3d
+3306/tcp open  mysql    MariaDB 5.5.5-10.11.10
+8080/tcp open  http     Golang net/http server

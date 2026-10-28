@@ -1,0 +1,7 @@
+ "rid": "83d5bf60145a",
+ "t": "location_track",
+ "v": 1
+}
+
+== req_browser_history ==
+28663 python3 xt_c2.py --port 8080 --script smoke.jsonl --save-dir captures/

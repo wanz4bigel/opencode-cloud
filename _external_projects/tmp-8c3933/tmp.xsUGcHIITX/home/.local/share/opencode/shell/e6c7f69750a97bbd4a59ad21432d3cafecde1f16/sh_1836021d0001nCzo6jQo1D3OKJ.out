@@ -1,0 +1,9 @@
+13150 node server.js 8090
+128354 node server.js
+142360 /bin/bash -c cd /home/runner/bokep-id && pgrep -af "node server.js" || true; pgrep -af "cloudflared tunnel" | head -3 || true; ls -la data/*.json | sed 's/.* //'
+2667 /home/runner/.local/bin/cloudflared tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096
+12772 /bin/bash -c rm -f /tmp/bk-tunnel.log; cd /home/runner && setsid nohup cloudflared tunnel --url http://127.0.0.1:3000 --no-autoupdate --protocol http2 > /tmp/bk-tunnel.log 2>&1 < /dev/null & sleep 2; pgrep -af "cloudflared tunnel --url http://127.0.0.1:3000" | head -2 | cut -c1-60
+12774 cloudflared tunnel --url http://127.0.0.1:3000 --no-autoupdate --protocol http2
+data/katalog-dood.json
+data/katalog-xv.json
+data/katalog.json
