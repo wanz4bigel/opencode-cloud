@@ -1,0 +1,61 @@
+200
+[
+  {
+    "name": ".codex-plugin",
+    "path": ".codex-plugin",
+    "sha": "85e572186a3816a7e25534de8d46d073437803af",
+    "size": 0,
+    "url": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.codex-plugin?ref=main",
+    "html_url": "https://github.com/petergyang/no-ai-slop/tree/main/.codex-plugin",
+    "git_url": "https://api.github.com/repos/petergyang/no-ai-slop/git/trees/85e572186a3816a7e25534de8d46d073437803af",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.codex-plugin?ref=main",
+      "git": "https://api.github.com/repos/petergyang/no-ai-slop/git/trees/85e572186a3816a7e25534de8d46d073437803af",
+      "html": "https://github.com/petergyang/no-ai-slop/tree/main/.codex-plugin"
+    }
+  },
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "56e70a78ebc7963dffca10bb1307c78e0288a55e",
+    "size": 0,
+    "url": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.github?ref=main",
+    "html_url": "https://github.com/petergyang/no-ai-slop/tree/main/.github",
+    "git_url": "https://api.github.com/repos/petergyang/no-ai-slop/git/trees/56e70a78ebc7963dffca10bb1307c78e0288a55e",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.github?ref=main",
+      "git": "https://api.github.com/repos/petergyang/no-ai-slop/git/trees/56e70a78ebc7963dffca10bb1307c78e0288a55e",
+      "html": "https://github.com/petergyang/no-ai-slop/tree/main/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "849ddff3b7ec917b5f4563e9a6d3ea63ea512a70",
+    "size": 6,
+    "url": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.gitignore?ref=main",
+    "html_url": "https://github.com/petergyang/no-ai-slop/blob/main/.gitignore",
+    "git_url": "https://api.github.com/repos/petergyang/no-ai-slop/git/blobs/849ddff3b7ec917b5f4563e9a6d3ea63ea512a70",
+    "download_url": "https://raw.githubusercontent.com/petergyang/no-ai-slop/main/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/petergyang/no-ai-slop/contents/.gitignore?ref=main",
+      "git": "https://api.github.com/repos/petergyang/no-ai-slop/git/blobs/849ddff3b7ec917b5f4563e9a6d3ea63ea512a70",
+      "html": "https://github.com/petergyang/no-ai-slop/blob/main/.gitignore"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "644ebee1944d0e7d03c66a25977ff0a8a8e1c7ae",
+    "size": 1067,
+    "url": "https://api.github.com/repos/petergyang/no-ai-slop/contents/LICENSE?ref=main",
+    "html_url": "https://github.com/petergyang/no-ai-slop/blob/main/LICENSE",
+    "git_url": "https://api.github.com/repos/petergyang/no-ai-slop/git/blobs/644ebee1944d0e7d03c66a25977ff0a8a8e1c7ae",
+    "download_url": "https://raw.githubusercontent.com/petergyang/no-ai-slop/main/LICENSE",
+    "type": "file",
+    "_links": {

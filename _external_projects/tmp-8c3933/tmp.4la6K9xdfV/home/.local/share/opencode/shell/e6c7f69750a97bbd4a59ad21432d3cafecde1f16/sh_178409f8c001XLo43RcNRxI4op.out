@@ -1,0 +1,6 @@
+fetch.sh pid=16656
+build.sh pid=16657
+
+=== ngrok ===
+ngrok version 3.39.13
+ngrok.yml ok: /home/marimo/.config/ngrok/ngrok.yml

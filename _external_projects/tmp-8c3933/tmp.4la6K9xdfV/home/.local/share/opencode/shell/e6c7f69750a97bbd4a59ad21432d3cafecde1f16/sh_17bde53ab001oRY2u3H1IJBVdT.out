@@ -1,0 +1,4 @@
+line 7
+    print("=== ram/shm/sisa ==="); print(sh('free -g | head -2'); )
+                                                                ^
+SyntaxError: invalid syntax
