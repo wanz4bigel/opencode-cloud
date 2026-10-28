@@ -1,0 +1,19 @@
+via tunnel: HTTP 200, 33734B
+ZAZA via tunnel: 27 segmen (full)
+segmen menit ke-3: HTTP 200, 559864B
+[eval]:1
+const fs=require('fs');const h=fs.readFileSync('/tmp/pg.html','utf8');const s=h.split('<script>')[2].split('</'+'script>')[0];new Function(s);console.log('JS syntax: OK')
+                                                                                                    ^
+
+TypeError: Cannot read properties of undefined (reading 'split')
+    at [eval]:1:101
+    at runScriptInThisContext (node:internal/vm:219:10)
+    at node:internal/process/execution:451:12
+    at [eval]-wrapper:6:24
+    at runScriptInContext (node:internal/process/execution:449:60)
+    at evalFunction (node:internal/process/execution:283:30)
+    at evalTypeScript (node:internal/process/execution:295:3)
+    at node:internal/main/eval_string:71:3
+
+Node.js v24.21.0
+node gak ada, skip syntax check

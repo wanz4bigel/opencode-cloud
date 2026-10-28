@@ -1,0 +1,3 @@
+payload v2: 4166 bytes | nl: False
+/bin/bash: -c: line 38: syntax error near unexpected token `"/tmp/opencode/ss/d26.ps1","w"'
+/bin/bash: -c: line 38: `open("/tmp/opencode/ss/d26.ps1","w").write(snip)" && python3 psrun.py d26.ps1 | tr '\n' ' ' | grep -o 'v1-dead payload-gone=[A-Za-z]*''

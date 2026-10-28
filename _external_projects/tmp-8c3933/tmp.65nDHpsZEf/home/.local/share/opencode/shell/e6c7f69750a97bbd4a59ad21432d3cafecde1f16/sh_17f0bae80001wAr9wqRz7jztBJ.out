@@ -1,0 +1,6 @@
+---
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 27 16:52 .
+drwxr-xr-x 7 runner runner 4096 Oct 27 18:12 ..
+-rw-r--r-- 1 runner runner 1147 Oct 27 06:27 opencode.json
+-rw------- 1 runner runner   64 Oct 26 05:38 service.json

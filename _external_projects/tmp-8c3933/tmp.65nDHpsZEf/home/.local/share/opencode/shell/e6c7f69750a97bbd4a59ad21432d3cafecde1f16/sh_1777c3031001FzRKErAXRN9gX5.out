@@ -1,0 +1,200 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+=== vblA ===
+import json as _json
+import urllib.request as _urllib
+from pathlib import Path
+
+
+def _read(path, fallback="-"):
+    try:
+        text = Path(path).read_text().strip()
+    except OSError:
+        return fallback
+    return text or fallback
+
+
+def _tail(path, fallback):
+    try:
+        lines = [ln for ln in Path(path).read_text().splitlines() if ln.strip()]
+    except OSError:
+        return fallback
+    return lines[-1] if lines else fallback
+
+
+def _brain_status():
+    try:
+        with _urllib.urlopen("http://127.0.0.1:8082/status", timeout=3) as resp:
+            return _json.load(resp)
+    except Exception:
+        return {}
+
+
+BRAIN = _brain_status()
+PUBLIC_URL = BRAIN.get("public_url") or _read("/marimo/llm/current_url.txt", "tunnel belum aktif")
+PUBLIC_URL_ALT = BRAIN.get("public_url_alt") or _read("/marimo/llm/current_url_alt.txt", "belum aktif")
+_up = float(Path("/proc/uptime").read_text().split()[0])
+UPTIME = f"{int(_up // 3600)}j {int((_up % 3600) // 60):02d}m"
+REMAINING = f"{max(0.0, 12 * 3600 - _up) / 3600:.2f} jam"
+KEEPALIVE = _tail("/marimo/llm/keepalive.log", "belum jalan")
+GUARD = _tail("/marimo/llm/guard.log", "belum jalan")
+
+_tier = BRAIN.get("tier") or {}
+_probe = BRAIN.get("probe") or {}
+_gpu = BRAIN.get("gpu") or {}
+TIER = f"{_tier.get('name', '?')} · ctx {_tier.get('ctx', '?'):,} · KV {_tier.get('kv', '?')}" if _tier else "brain tidak aktif"
+PROBE = (
+    f"{_probe.get('latency_ms', '-')} ms · pp {_probe.get('pp_tps', '-')} t/s"
+    if _probe.get("ok")
+    else "belum / gagal"
+)
+ADR = "adopsi server lama (tanpa downtime)" if BRAIN.get("adopted") else "dimiliki brain ini"
+
+MD = """## 🦙 Qwen3.8-27B Uncensored — Q6_K_P (live, MTP + vision)
+
+| | |
+|---|---|
+| **🔗 Link permanen (ngrok)** | __URL__ |
+| **Backup (Pinggy, URL berganti)** | __ALT__ |
+| **Lokal (OpenAI-compatible)** | `http://127.0.0.1:8081/v1` |
+| **API key** | `sk-molab-b1b5c624c794fccfeb46b8647caa8afd` |
+| **Runtime** | llama.cpp `4df29be` + patch FastMTP · CUDA 13.3 · sm_120a · Q6_K_P 25,9 GB |
+| **Speculative** | **embedded MTP + FastMTP-32K sidecar** depth **4**, p-split 0,3, p-min 0 |
+| **Vision** | ✅ `mmproj-BF16` |
+| **Uptime sandbox** | __UPTIME__ (sisa **__REMAINING__** dari plafon 12 jam) |
+
+### 🧠 Supervisor `brain.py`
+
+| | |
+|---|---|
+| **Tier aktif** | `__TIER__` |
+| **Health / probe** | `__HEALTH__` · __PROBE__ |
+| **Server** | pid `__PID__` — __ADR__ |
+| **Restart (10 mnt)** | `__RESTARTS__` · backoff `__BACKOFF__` s |
+| **VRAM** | `__VRAM__` MiB · __UTIL__% · __TEMP__ °C · __POWER__ W |
+| **RAM tersedia** | `__RAM__` MiB |
+| **Drain 12 jam** | `__DRAIN__` |
+| **Keep-alive kernel** | `__KEEPALIVE__` |
+| **Guard (penjaga brain)** | `__GUARD__` |
+
+Yang dijaga otomatis: satu instance saja (anti-OOM), probe generasi tiap 2 menit,
+pindai log `CUDA/OOM/assert`, auto-downshift 200k → 100k → 50k → KV q4 bila VRAM
+sesak, tunnel ganda, dan **adopsi server sehat** kalau brain sendiri di-restart.
+
+```bash
+./ctl.sh status     # ringkasan ini dari terminal
+./ctl.sh doctor     # cek hal yang bisa membunuh sandbox
+./ctl.sh test       # probe generasi 8 token
+./ctl.sh bench      # benchmark berurutan (GPU sendirian, lock PAUSE)
+```
+
+**Sampling thinking:** `temp=1.0`, `top_p=0.95`, `top_k=20`, `min_p=0`,
+`presence_penalty=0`, `repeat_penalty=1.0`, `reasoning_effort=xhigh`.
+**Mode instruct:** `temp=0.7`, `top_p=0.80`, `presence_penalty=1.5`, `enable_thinking=false`.
+
+```bash
+curl __URL__/v1/chat/completions \\
+  -H "Authorization: Bearer sk-molab-b1b5c624c794fccfeb46b8647caa8afd" \\
+  -H "Content-Type: application/json" \\
+  -H "ngrok-skip-browser-warning: 1" \\
+  -d '{"model":"qwen3.8-27b","messages":[{"role":"user","content":"Halo"}],
+       "chat_template_kwargs":{"enable_thinking":true,"reasoning_effort":"xhigh"}}'
+```
+
+### 📊 Benchmark (median 3 run, ctx 204.800, KV q8_0)
+
+| Konfigurasi | Reasoning TG | Dokumen panjang TG | Acceptance |
+|---|---|---|---|
+| tanpa spekulasi | 41,1 | 41,0 | — |
+| **embedded MTP depth 3 (dipakai)** | **92,2** | **62,1** | 39–72% |
+| FastMTP sidecar depth 3 | 87,3 | 53,5 | 22–57% |
+| FastMTP sidecar depth 4 | 83,8 | 50,1 | 18–43% |
+
+**Live terukur sesi ini:** **105,6 t/s** (acceptance 58%, depth 4, KV f16, p-split 0,3);
+64,2 t/s untuk prompt reasoning berat. Naik dari 98,3 / 60,9 (depth 3, KV q8).
+ 93,4–94,1 t/s (acceptance 66–67%, FastMTP depth 3);
+71–75 t/s wall-clock bila prompt eval ikut dihitung.
+
+**Temuan:** sidecar FastMTP (klaim vendor +11–18%) **kalah** di mesin ini karena
+draft-vocab `d2t` 32K menurunkan acceptance. Embedded MTP dipakai; sidecar tidak
+di-load (hemat ±0,9 GB VRAM).
+
+**Kenapa sesi lama mati di menit 41–55:** dua `llama-server` hidup bersamaan
+(produksi + benchmark) → container OOM-kill → molab melaporkan `sandbox terminated`.
+Sekarang lock `flock` + scan `/proc` mencegah instance kedua, dan benchmark lewat
+`speedtest.sh` memakai lock `PAUSE`.
+
+### ⏳ Aturan molab
+
+- Notebook hidup **maksimal 12 jam**.
+- Notebook **idle > 90 menit** dimatikan → keep-alive kernel 75 detik + browser
+  headless dari GitHub Action (klien WebSocket sungguhan).
+- Model 26 GB **tidak persist** antar sesi; `bootstrap.sh` mengunduh ulang
+  (±3 menit di sesi ini) dan build ulang (±6 menit).
+"""
+
+mo.md(
+    MD.replace("__URL__", PUBLIC_URL)
+    .replace("__ALT__", PUBLIC_URL_ALT)
+    .replace("__UPTIME__", UPTIME)
+    .replace("__REMAINING__", REMAINING)
+    .replace("__TIER__", TIER)
+    .replace("__HEALTH__", str(BRAIN.get("health", "?")))
+    .replace("__PROBE__", PROBE)
+    .replace("__PID__", str(BRAIN.get("pid", "?")))
+    .replace("__ADR__", ADR)
+    .replace("__RESTARTS__", str(BRAIN.get("restarts_10min", "?")))
+    .replace("__BACKOFF__", str(BRAIN.get("backoff_s", "?")))
+    .replace("__VRAM__", f"{_gpu.get('used_mib', 0):.0f}/{_gpu.get('total_mib', 0):.0f}")
+    .replace("__UTIL__", str(_gpu.get("util", "?")))
+    .replace("__TEMP__", str(_gpu.get("temp_c", "?")))
+    .replace("__POWER__", str(_gpu.get("power_w", "?")))
+    .replace("__RAM__", str(BRAIN.get("ram_avail_mib", "?")))
+    .replace("__DRAIN__", str(BRAIN.get("draining", "?")))
+    .replace("__KEEPALIVE__", "`" + KEEPALIVE + "`")
+    .replace("__GUARD__", "`" + GUARD + "`")
+)
+
+=== bkHC (60 baris pertama) ===
+# ⏳ Penjaga 12 jam + klien WebSocket — status dari /marimo/llm/
+import json as _json
+from pathlib import Path as _Path
+
+_HOLD = _Path("/marimo/llm/hold_status.json")
+_WS = _Path("/marimo/llm/hold_ws_status.json")
+
+if not _HOLD.exists():
+    _view = mo.md("⏳ Penjaga 12 jam belum jalan — jalankan `python3 /marimo/llm/hold12.py`.")
+else:
+    _s = _json.loads(_HOLD.read_text())
+    _frac = min(1.0, _s["elapsed_s"] / _s["cap_s"])
+    _fill = int(round(_frac * 30))
+    _bar = "█" * _fill + "░" * (30 - _fill)
+    _ok = _s["last_local"] == "200" and _s["last_public"] == "200" and _s["last_exec"] == "200"
+
+    if _WS.exists():
+        _w = _json.loads(_WS.read_text())
+        _ws_ok = bool(_w.get("connected"))
+        _ws_txt = (
+            f"{'🟢' if _ws_ok else '🔴'} `{_w.get('session') or '—'}`"
+            f"{' · kiosk' if _w.get('kiosk') else ''}"
+            f" · {_w.get('messages', 0)} pesan · {_w.get('pings', 0)} ping"
+            f" · reconnect {_w.get('reconnects', 0)}"
+            f" · sejak {str(_w.get('since') or '—')[11:]}"
+        )
+    else:
+        _ws_ok = False
+        _ws_txt = "belum jalan"
+
+    _view = mo.md(
+        f"### ⏳ Penjaga 12 jam · {'🟢 sehat' if _ok else '🟡 perlu dicek'}\n\n"
+        f"`{_bar}` **{_frac * 100:.0f}%**\n\n"
+        f"| | |\n|---|---|\n"
+        f"| Uptime | {_s['elapsed_h']:.2f} jam / 12 jam |\n"
+        f"| Sisa | **{_s['remaining_h']:.2f} jam** |\n"
+        f"| Beat HTTP | {_s['beats']} · tiap {_s['interval_s'] // 60} menit (ambang idle molab 90 menit) |\n"
+        f"| Terakhir | {_s['last_beat']} · local={_s['last_local']} molab={_s['last_public']} exec={_s['last_exec']} |\n"
+        f"| Klien WS | {_ws_txt} |\n"
+        f"| Status | {_s['state']} · pid {_s.get('pid', '?')} |\n"
+    )
+_view
+

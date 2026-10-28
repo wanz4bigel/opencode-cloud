@@ -1,0 +1,9 @@
+210:const CATEGORY_SEED = [
+226:const W = "https://media.w3.org/2010/05/";
+227:const T = "https://test-videos.co.uk/vids/";
+228:const YT = (id) => `https://www.youtube.com/watch?v=${id}`;
+229:const MP4 = [
+239:const YT_IDS = ["dQw4w9WgXcQ", "9bZkp7q19f0", "kJQP7kiw5Fk", "jNQXAC9IVRw", "60ItHLz5WEA", "hT_nvWreIhg", "CevxZvSJLk8"];
+242:const SEED = [
+273:export function reseed() {
+275:  CATEGORY_SEED.forEach(([name, slug], i) => {

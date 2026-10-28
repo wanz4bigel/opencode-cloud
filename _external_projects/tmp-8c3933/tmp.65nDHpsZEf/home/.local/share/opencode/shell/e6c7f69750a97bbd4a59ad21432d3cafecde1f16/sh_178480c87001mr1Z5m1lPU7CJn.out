@@ -1,0 +1,7 @@
+proses: 23746 python3 /marimo/llm/brain.py
+23762 /marimo/llm/ngrok http 127.0.0.1:8081 --log=st
+23777 /marimo/llm/llama-src/build/bin/llama-server -
+24195 python3 /marimo/llm/hold12.py
+24198 python3 /marimo/llm/hold_ws.py
+hold_status.json -> {'state': 'running', 'beats': 1, 'last_exec': '200', 'session': 's_p9tffs', 'connected': None, 'messages': None, 'last_error': None}
+hold_ws_status.json -> {'state': 'connected', 'beats': None, 'last_exec': None, 'session': 's_p9tffs', 'connected': True, 'messages': 20, 'last_error': None}

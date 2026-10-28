@@ -1,0 +1,8 @@
+[06:18:23] terputus: InvalidStatus: server rejected WebSocket connection: HTTP 403
+[06:18:25] terputus: InvalidStatus: server rejected WebSocket connection: HTTP 403
+[06:18:27] terputus: InvalidStatus: server rejected WebSocket connection: HTTP 403
+--- health ---
+{"agent":false,"pending":0}
+--- models ---
+{"error":{"message":"sandbox agent offline","type":"relay_error"}}
+HTTP 503
