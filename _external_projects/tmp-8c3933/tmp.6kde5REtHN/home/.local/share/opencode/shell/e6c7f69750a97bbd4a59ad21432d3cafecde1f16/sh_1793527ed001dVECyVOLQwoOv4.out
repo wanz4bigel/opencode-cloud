@@ -1,0 +1,28 @@
+jadx:
+LICENSE
+README.md
+bin
+lib
+
+jadx/bin:
+jadx
+jadx-gui
+jadx-gui.bat
+jadx.bat
+
+jadx/lib:
+jadx-1.5.1-all.jar
+Archive:  jadx.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+    11357  2024-11-11 22:51   LICENSE
+        0  2024-11-11 22:51   bin/
+     2547  2024-11-11 22:51   bin/jadx-gui.bat
+     2182  2024-11-11 22:51   bin/jadx.bat
+     5751  2024-11-11 22:51   bin/jadx
+     6085  2024-11-11 22:51   bin/jadx-gui
+        0  2024-11-11 22:51   lib/
+126980139  2024-11-11 22:51   lib/jadx-1.5.1-all.jar
+    14265  2024-11-11 22:51   README.md
+---------                     -------
+127022326                     9 files

@@ -1,0 +1,16 @@
+moov payload 786091 first boxes:
+0 786091 moov
+node:internal/buffer:92
+  throw new ERR_OUT_OF_RANGE(type || 'offset',
+        ^
+
+RangeError [ERR_OUT_OF_RANGE]: The value of "offset" is out of range. It must be >= 0 and <= 786087. Received 786091
+    at boundsError (node:internal/buffer:92:9)
+    at readUInt32BE (node:internal/buffer:315:5)
+    at Buffer.<anonymous> (node:internal/buffer:1020:50)
+    at [eval]:8:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  code: 'ERR_OUT_OF_RANGE'
+}
+
+Node.js v24.22.1

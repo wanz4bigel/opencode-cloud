@@ -1,0 +1,18 @@
+len 21262
+.player-container .plyr,.plyr__video-wrapper,video{width:100%;height:100%}
+video{object-fit:contain;background:#000;display:block}
+@media (max-width:480px){ .plyr__watermark svg{ height:24px } }
+  <video id="player" class="plyr" playsinline controls preload="none"
+    <source src="https://mp4-09.overfetch.video/s/fhDzSPHADEVLz3FEI6niyA/1793225651/i/yT4LBShMvd-Ccbvm22glv" playsinline webkit-playsinline/>
+  </video>
+<script src="/player.js"></script>
+const VIDEO_ID = VPLAYER.id;
+const video = document.getElementById('player');
+const STORAGE_KEY = "plyr_progress_" + VIDEO_ID;
+const player = new Plyr(video, {
+  const k = 'vreload_' + VIDEO_ID, last = +sessionStorage.getItem(k) || 0;
+video.addEventListener('error', recoverStream, true); // capture: tangkap error <source> juga
+    '<div class="v-sheet__card" role="dialog" aria-modal="true" aria-label="Video details">' +
+        '<div class="v-row"><div class="k">Video ID</div><div class="val" data-f="id"></div></div>' +
+  const AD_SRC = "https://bj.famulusgirshes.com/rdLA6UINF8WXVa01g/121025";
+        s.src = AD_SRC;

@@ -1,0 +1,80 @@
+device-settingsZå
+wifi
+	bluetooth
+brightness level
+volume level
+battery level
+do not disturb
+
+ringtone
+ring volume
+app battery usage
+battery saver
+
+location
+
+data saver
+
+hot spot
+data roaming
+active edge
+nfc
+accessibility
+system update
+free up space
+storage usage
+emergency information
+
+wallpapers
+add fingerprint
+display size
+	font size
+
+data usage
+
+night mode
+alarm volume
+call volume
+media volume
+
+accounts
+application	
+battery
+	date time
+device info
+
+dictionary	
+display
+notification
+notification volume	
+privacy
+
+security
+sound	
+storage
+vpn
+digital wellbeing
+audio
+
+language
+night light	
+roaming
+	assistant
+continued conversation
+
+routines
+bell schedule
+app shortcut
+
+about me
+
+add device
+assistant account
+assistant face match
+assistant language
+assistant voice match
+music
+personalization
+	reminders
+
+dark theme"$OOV_CLASS_DEVICE_SETTING

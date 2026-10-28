@@ -1,0 +1,80 @@
+412: * `npm run isi-xv` (data/katalog-xv.json dari XVideos). Di sini kalau ada:
+413- * judul, durasi, tag, dan gambar semuanya dari host aslinya, bukan karangan.
+414- * Judul yang sama dari dua sumber cuma diambil sekali.
+415- */
+416:const BERKAS_KATALOG = ["katalog.json", "katalog-xv.json"];
+417-
+418:function bacaKatalogAsli() {
+419-  const keluar = {};
+420-  const sudah = new Set();
+421:  for (const nama of BERKAS_KATALOG) {
+422-    try {
+423-      const isi = JSON.parse(readFileSync(path.join(dataDir, nama), "utf8"));
+424-      for (const [slug, daftar] of Object.entries(isi.hasil || {})) {
+425-        const bersih = [];
+426-        for (const v of Array.isArray(daftar) ? daftar : []) {
+427-          if (!v || !v.url || !v.title || !resolve(v.url)) continue;
+428-          const kunci = String(v.title).toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 60);
+429-          if (kunci && sudah.has(kunci)) continue;
+430-          if (kunci) sudah.add(kunci);
+431-          bersih.push(v);
+432-        }
+433-        if (bersih.length) keluar[slug] = (keluar[slug] || []).concat(bersih);
+434-      }
+435-    } catch {
+436-      /* berkas belum ada — lewati */
+437-    }
+438-  }
+439-  return keluar;
+440-}
+441-
+442-/** Lebar/tinggi gambar seperti dikasih API; 0 kalau host tidak menyebut. */
+443-function rasioPoster(v) {
+444-  const r = Number(v.rasio) || 0;
+445-  if (r > 0 && r < 10) return r;
+446-  const l = Number(v.lebar) || 0;
+447-  const t = Number(v.tinggi) || 0;
+448-  return l > 0 && t > 0 ? l / t : 0;
+449-}
+450-
+451-export function adaKatalogAsli() {
+452:  return Object.keys(bacaKatalogAsli()).length > 0;
+453-}
+454-
+455-export function reseed() {
+456-  db.exec("DELETE FROM videos; DELETE FROM categories;");
+457-  CATEGORY_SEED.forEach(([name, slug], i) => {
+458-    db.prepare("INSERT INTO categories (name, slug, ord) VALUES (?, ?, ?)").run(name, slug, i);
+459-  });
+460-
+461-  // demo=0: video sungguhan (judul & gambar dari host) — badge "Contoh" tidak pasang.
+462-  const masuk = db.prepare(
+463-    `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, poster, poster_ratio, views, demo, added_at)
+464-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+465-  );
+466-
+467:  const asli = bacaKatalogAsli();
+468-  const adaAsli = Object.keys(asli).length > 0;
+469-  let menitLalu = 9;
+470-  for (const [, slug] of CATEGORY_SEED) {
+471-    const categoryId = categoryIdBySlug(slug);
+472-    const baseTag = slug.split("-").slice(-1)[0];
+473-
+474-    for (const v of asli[slug] || []) {
+475-      const target = resolve(v.url);
+476-      if (!target) continue;
+477-      masuk.run(
+478-        String(v.title).slice(0, 140),
+479-        uniqueSlug(slugify(v.title)),
+480-        target.provider,
+481-        target.direct,
+482-        target.embed,
+483-        target.kind,
+484-        Math.round(Number(v.detik) || 0),
+485-        categoryId,
+486-        normalizeTags(`${baseTag},${v.tag || ""}`),
+487-        String(v.poster || "").slice(0, 500),
+488-        rasioPoster(v),
+489-        Math.round(Number(v.views) || 0),
+490-        0,
+491-        `-${menitLalu} minutes`

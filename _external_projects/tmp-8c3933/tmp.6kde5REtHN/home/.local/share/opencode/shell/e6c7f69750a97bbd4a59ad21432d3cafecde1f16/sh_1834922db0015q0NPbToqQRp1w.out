@@ -1,0 +1,6 @@
+4:import { durationText, escapeXml, posterPalette } from "./poster.js";
+129:    <span class="card__dur">${durationText(video.duration)}</span>
+156:      <span class="rail__dur">${durationText(v.duration)}</span>
+327:          <span class="side__dur">${durationText(v.duration)}</span>
+347:        <p><span>Durasi</span><b>${durationText(video.duration)}</b></p>
+380:    description: `${video.title} · durasi ${durationText(video.duration)} · diputar dari ${labelOf(video.provider)}.`,

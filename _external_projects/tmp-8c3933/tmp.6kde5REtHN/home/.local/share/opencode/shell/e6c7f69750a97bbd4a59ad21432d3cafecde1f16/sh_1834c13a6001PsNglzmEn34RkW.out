@@ -1,0 +1,21 @@
+child 8 108 mvhd
+ ver 0
+ ts0 1000 dur0 1090270
+ ts1 65536 dur1 72057594037927940
+child 116 315147 trak
+child 315263 470730 trak
+child 785993 98 udta
+node:internal/buffer:92
+  throw new ERR_OUT_OF_RANGE(type || 'offset',
+        ^
+
+RangeError [ERR_OUT_OF_RANGE]: The value of "offset" is out of range. It must be >= 0 and <= 786087. Received 786091
+    at boundsError (node:internal/buffer:92:9)
+    at readUInt32BE (node:internal/buffer:315:5)
+    at Buffer.<anonymous> (node:internal/buffer:1020:50)
+    at [eval]:7:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  code: 'ERR_OUT_OF_RANGE'
+}
+
+Node.js v24.22.1
