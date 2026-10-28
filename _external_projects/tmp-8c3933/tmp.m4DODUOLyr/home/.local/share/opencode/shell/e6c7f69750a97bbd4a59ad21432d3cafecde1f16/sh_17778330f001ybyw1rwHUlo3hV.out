@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-e2c6d6e705c852d5.sb.molab.run'. Ensure this is trusted.
+version: version: 0.1.0-dev (build 10454, commit 4df29be4f)
+built with GNU 14.2.0 for Linux x86_64
+draft-mtp: 2 flag cocok
+lib: libllama-server-impl.so => /marimo/llm/llama-src/build/bin/libllama-server-impl.so (0x00007f6f45e3d000)
+	libllama-common.so.0 => /marimo/llm/llama-src/build/bin/libllama-common.so.0 (0x00007f6f4553a000)
+	libmtmd.so.0 => /marimo/llm/llama-src/build/bin/libmtmd.so.0 (0x00007f6f4539d000)
+	libllama.so.0 => /marimo/llm/llama-src/build/bin/libllama.so.0 (0x00007f6f45018000)
+guard pid: 19507
+
