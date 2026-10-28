@@ -1,0 +1,13 @@
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
+const kode=process.argv[2];
+const get=async(u,extra={})=>fetch(u,{headers:{"user-agent":UA,referer:"https://jwplyr.com/",...extra},redirect:"follow",signal:AbortSignal.timeout(30000)});
+const html=await(await get(`https://jwplyr.com/e/${kode}`)).text();
+const src=(html.match(/var SRC = '([^']+)'/)||[])[1];
+console.log('e len',html.length,'src',src&&src.slice(0,40));
+const iframe=new URL(src,'https://jwplyr.com').href;
+const ih=await(await get(iframe)).text();
+const stream=((ih.match(/https:\/\/jwplyr\.com\/stream\.php[^"']+/)||[])[0]||'').replace(/&amp;/g,'&');
+console.log('iframe len',ih.length,'stream',stream.slice(0,80));
+const sh=await(await get(stream,{referer:iframe})).text();
+console.log('stream len',sh.length,'source idx',sh.indexOf('<source'));
+console.log(sh.slice(Math.max(0,sh.indexOf('<source')-300),sh.indexOf('<source')+500).replace(/\s+/g,' '));

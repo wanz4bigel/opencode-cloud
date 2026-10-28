@@ -1,0 +1,27 @@
+=== kv / vram dari log ===
+[strata] 2026-10-26 20:53:59 engine started: /home/marimo/.local/share/strata/components/engine/0.1.50-linux-x86_64-cuda-cuda13/strata --serve --pack /marimo/llm/sc117-data/packs/swift-iq3_s
+strata generate: profile /home/marimo/.local/share/strata/terminal/0.1.51/data/expert-profile.bin: 24576 ranked pairs, built for 24576 slots
+strata generate: --batch 4: the slot sessions take 2.24 GiB of VRAM on CUDA0 that the expert cache would otherwise hold
+strata mtp: draft layer loaded, 839 MiB of VRAM (experts 675, dense 111), files read in 0.38 s (2094 MiB/s)
+strata generate: expert arena read through the file cache (buffered (not Windows))
+strata generate: expert cache auto: 84.66 GiB free, 700 MiB reserved (+218 MiB for the draft head) -> 24576 slots
+strata generate: expert cache 24576 slots, 46.84 GiB of VRAM; policy is
+strata generate: pre-filled 24576 of 24576 slots from the profile in 1.1 s (43776 MB/s); slot 0 verified
+strata serve: the prompt path borrows 1949 CUDA0 cache slots (3.72 GiB)
+strata verify: window up to 6 tokens, 74.6 MiB of device buffers (100% VRAM resident: zero-doorbell graph)
+strata verify: batch windows of up to 4 sequences (layers [0, 48))
+strata serve: 38198 MiB of VRAM free with everything loaded
+strata verify: capturing the 6-token window (38198 MiB of VRAM free)
+strata verify: captured the 6-token window (upload no error, sync no error)
+strata verify: capturing the 4-token window (38194 MiB of VRAM free)
+strata verify: captured the 4-token window (upload no error, sync no error)
+strata verify: capturing the 1-token window (38190 MiB of VRAM free)
+strata verify: captured the 1-token window (upload no error, sync no error)
+strata serve: conversation cache: parked 53 tokens in 182.9 ms; parked=1 bytes=236986092 evictions=0 snapshot_bytes=236986092 reused_kv_bytes=0
+strata verify: capturing the 5-token window (38180 MiB of VRAM free)
+=== vram sekarang ===
+59174 MiB, 97887 MiB
+1, 59066 MiB
+1, 59066 MiB
+=== settings tersimpan ===
+

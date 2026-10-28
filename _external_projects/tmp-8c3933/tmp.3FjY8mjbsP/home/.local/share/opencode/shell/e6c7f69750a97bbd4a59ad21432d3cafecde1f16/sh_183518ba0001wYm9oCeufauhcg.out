@@ -1,0 +1,5 @@
+ambil-durasi.mjs patched
+retry-durasi.mjs patched
+durasi.mjs patched
+ambil-durasi.mjs:45:  // moov sering ditaruh di ekor file. Cari tanda "moov" lalu baca kotaknya.
+retry-durasi.mjs:50:  // moov sering ditaruh di ekor file. Cari tanda "moov" lalu baca kotaknya.

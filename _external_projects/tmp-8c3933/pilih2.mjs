@@ -23,13 +23,19 @@ const rapikan = (s) =>
     .replace(/https?:\/\/\S+/gi, " ")
     .replace(/\b(?:t\.me|telegram|twitter|x\.com)\S*/gi, " ")
     .replace(/@[\w.]+/g, " ")
+    .replace(/_+/g, " ")
+    // Merek/tempat yang suka ditempel di judul, termasuk kalau dipisah tanda hubung.
+    .replace(/\s*[-–|]\s*(?:vidxlr|jwplyr|doodstream|lulustream|liveomek|vidclr|vidslr)\S*/gi, " ")
+    .replace(/\b(?:vidxlr|jwplyr|doodstream|lulustream|liveomek|vidclr|vidslr)\.[a-z]{2,}\S*/gi, " ")
+    .replace(/\b(?:vidxlr|jwplyr|doodstream|lulustream|liveomek|vidclr|vidslr)\b/gi, " ")
     .replace(/\.(?:mp4|mkv|webm|avi)\b/gi, " ")
-    .replace(/\s*[-–|]\s*(?:vidxlr|jwplyr|doodstream|lulustream|vidclr|vidslr)\S*/gi, " ")
     .replace(/\b(?:CEK|JOIN|TELE|TELEGRAM)\b.*$/i, " ")
     .replace(/\b\d{3,4}p\b/gi, " ")
-    .replace(/\s*#+\s*/g, " ")
+    .replace(/[_\-.]+/g, " ")
     .replace(/[|[\]]+/g, " ")
+    .replace(/\s*#+\s*/g, " ")
     .replace(/\s+/g, " ")
+    .replace(/^[\s\-–|#.]+|[\s\-–|#.]+$/g, "")
     .trim();
 
 const kunci = (s) => normal(s).toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 55);

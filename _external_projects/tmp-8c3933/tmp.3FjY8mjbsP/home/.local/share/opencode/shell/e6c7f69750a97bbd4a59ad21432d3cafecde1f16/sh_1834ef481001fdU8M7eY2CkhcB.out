@@ -1,0 +1,12 @@
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
+const kode = process.argv[2];
+const get = async (u, extra={}) => fetch(u,{headers:{"user-agent":UA,referer:"https://jwplyr.com/",...extra},redirect:"follow",signal:AbortSignal.timeout(30000)});
+const html = await (await get(`https://jwplyr.com/e/${kode}`)).text();
+const src = (html.match(/var SRC = '([^']+)'/) || [])[1];
+const iframe = new URL(src,"https://jwplyr.com").href;
+const iframeHtml = await (await get(iframe)).text();
+const stream = (iframeHtml.match(/https:\/\/jwplyr\.com\/stream\.php[^"']+/)||[])[1] ? (iframeHtml.match(/https:\/\/jwplyr\.com\/stream\.php[^"']+/)||[])[0].replace(/&amp;/g,"&") : "";
+const streamHtml = await (await get(stream,{referer:iframe})).text();
+const mp4 = (streamHtml.match(/<source src="([^"]+)"/)||[])[1];
+const head = await get(mp4,{referer:"https://jwplyr.com/"});
+const total = Number(head.headers.get("content-length")||0); await head.body?.cancel?.();

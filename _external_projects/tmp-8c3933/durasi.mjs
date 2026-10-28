@@ -61,7 +61,7 @@ let detik = 0;
 const r1 = await get(mp4, { referer: "https://jwplyr.com/", range: "bytes=0-2097151" });
 detik = durasiMp4(Buffer.from(await r1.arrayBuffer()));
 if (!detik && total > 0) {
-  const mulai = Math.max(0, total - 3 * 1024 * 1024);
+  const mulai = Math.max(0, total - 10 * 1024 * 1024);
   const r2 = await get(mp4, { referer: "https://jwplyr.com/", range: `bytes=${mulai}-${total - 1}` });
   detik = durasiMp4(Buffer.from(await r2.arrayBuffer()));
 }

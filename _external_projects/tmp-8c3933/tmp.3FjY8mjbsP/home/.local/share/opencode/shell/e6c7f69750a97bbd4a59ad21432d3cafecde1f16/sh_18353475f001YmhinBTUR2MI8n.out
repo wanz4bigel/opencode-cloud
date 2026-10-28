@@ -1,0 +1,25 @@
+260:const CATEGORY_SEED = [
+261-  ["Colmek ABG", "colmek-abg"],
+262-  ["Colmek Janda", "colmek-janda"],
+263-  ["Colmek Mahasiswi", "colmek-mahasiswi"],
+264-  ["Colmek Amoy", "colmek-amoy"],
+265-  ["Colmek Toge", "colmek-toge"],
+266-  ["Colmek Toket", "colmek-toket"],
+267-  ["Colmek Hijab", "colmek-hijab"],
+268-  ["Colmek Mandi", "colmek-mandi"],
+269-  ["Colmek Dildo", "colmek-dildo"],
+270-  ["Colmek Kamera HP", "colmek-kamera-hp"],
+271-  ["Colmek Live", "colmek-live"],
+272-  ["Colmek Viral", "colmek-viral"]
+273-];
+274-
+275-// Sumber video contoh: tiap alamat di bawah sudah dites menjawab HTTP 200/206 dari
+276-// server ini (npm run probe). Durasi ikut file aslinya, jadi badge durasi di kartu
+277-// tidak bohong. Ganti dengan URL asli kapan pun lewat /admin.
+278-const W = "https://media.w3.org/2010/05/";
+279-const T = "https://test-videos.co.uk/vids/";
+280-const YT = (id) => `https://www.youtube.com/watch?v=${id}`;
+--
+457:  CATEGORY_SEED.forEach(([name, slug], i) => {
+458-    db.prepare("INSERT INTO categories (name, slug, ord) VALUES (?, ?, ?)").run(name, slug, i);
+459-  });

@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+[TypeError: Failed to parse URL from ] {
+  [cause]: TypeError: Invalid URL
+      at new URL (node:internal/url:895:25)
+      at new Request (node:internal/deps/undici/undici:12164:25)
+      at fetch (node:internal/deps/undici/undici:13088:25)
+      at fetch (node:internal/deps/undici/undici:17998:10)
+      at fetch (node:internal/bootstrap/web/exposed-window-or-worker:83:12)
+      at get (file:///tmp/debug-mp4.mjs:3:36)
+      at file:///tmp/debug-mp4.mjs:9:33
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+    code: 'ERR_INVALID_URL',
+    input: ''
+  }
+}
+
+Node.js v24.22.1

@@ -1,0 +1,60 @@
+        _models, families, _ctx, _src = cat.tables()
+        fam = families.get(s.family or "", {})
+        tag = cat.tag_of(s.family, s.model)
+        data_dir = Path(s.data_dir) if s.data_dir else cat.data_dir()
+        model_dir = Path(s.model_path) if s.model_path else data_dir / "models" / (fam.get("tag", "") + s.model)
+        if model_dir.is_file():
+            model_dir = model_dir.parent
+        try:
+            backend = engine_component.detect_backend()[0]
+        except Exception:                                    # noqa: BLE001
+            backend = None
+        cfg, problems = adopt.plan(family=s.family, model=s.model, model_dir=model_dir, data_dir=data_dir, src=cat.src,
+                                   context=s.context or 32768, kv=s.kv, model_name=f"{fam.get('name', s.family)}-{s.model.lower()}", family_def=fam,
+                                   log=cat.root / f"strata-{tag}.log", backend=backend,
+                                   vram_gb=float(cat.computer().main_vram_gb or 0), notes=self.notices, pack_name=tag.lower())
+        if cfg is None:
+            raise LaunchError("The installer cannot set up this graphics card yet, and the files Strata would need to write the settings itself are not all there: "
+                              + "; ".join(problems) + ".",
+                              "Use model files that were prepared on this computer already (folder + pack), or install on a computer with an NVIDIA or AMD card.", 5)
+        path = cat.root / f"strata-{tag}.json"
+        adopt.write(path, cfg)
+        self.notices.append("The downloader built into this Terminal sets up NVIDIA and AMD cards only (Intel Arc cards have a separate installer), so Strata wrote the "
+                            f"run settings itself from the prepared model files already on this computer ({path.name}). Nothing was downloaded.")
+        self.emit("model", f"Used your prepared model files and wrote the run settings ({path.name}); this card is not one the built-in downloader sets up.", 100, level="warn")
+        return path
+
+    @staticmethod
+    def deepseek_set_in(mod, model_path, prefer: str | None = None):
+        """(set name, its catalog entry, the folder) when `model_path` (a folder, the folder above the set's own folder, or one shard) holds shards
+        of an official DeepSeek-V4.1-Flash set - recognised by the pinned shard names (the first release's names too), never by the generic GGUF
+        fingerprint table, which does not know DeepSeek (its shard 8 is a table, not a layer: "could not be read", #3914) - else None."""
+        fam = getattr(mod, "MULTI_FILE_FAMILIES", {}).get("deepseek41")
+        if fam is None or not model_path:
+            return None
+        p = Path(model_path)
+        legacy = getattr(mod, "DSV41_LEGACY_NAMES", {})
+        order = ([prefer] if prefer in fam["models"] else []) + [m for m in fam["models"] if m != prefer]
+=== data_dir default ===
+494:    def data_dir_choice(self) -> tuple[Path, str]:
+495-        """(the data folder, where it came from): the person's own setting, the desktop app's folder, a Documents/Strata that holds models,
+496-        else the default beside the install. The same rule for every command."""
+497-        from strata_control import discovery
+498-        return discovery.data_dir(Path(self._mcp_data_dir()))
+499-
+500:    def data_dir(self) -> Path:
+501-        return self.data_dir_choice()[0]
+502-
+503:    def data_dir_for(self, family: str | None, model: str | None) -> Path:
+504-        """Where this model's files are: the folder its installed run config names, else the data folder."""
+505-        if family and model:
+506-            path = self.installed_config(self.tag_of(family, model))
+507-            if path is not None:
+508-                try:
+509-                    from strata_control import discovery
+510-                    found = discovery.footprint(json.loads(path.read_text(encoding="utf-8-sig")), path).data_dir
+511-                    if found is not None:
+512-                        return found
+513-                except (OSError, ValueError):
+514-                    pass
+515-        return self.data_dir()

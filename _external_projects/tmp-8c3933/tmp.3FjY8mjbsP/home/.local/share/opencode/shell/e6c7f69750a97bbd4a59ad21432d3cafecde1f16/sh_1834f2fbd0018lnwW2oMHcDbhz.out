@@ -1,0 +1,12 @@
+['const stream = ((iframeHtml.match(/https:\\/\\/jwplyr\\.com\\/stream\\.php[^"\']+/)||[])[0]||"").replace(/&amp;/g,"&");', 'const streamHtml = await (await get(stream,{referer:iframe})).text();']
+mp4 https://mp4-06.overfetch.video/s/lzxl3LGld-vWjk9yqZlQRQ/1793225967/i/CnbKvrUDE-bZj4Ik9Wx total 1832104
+awal len 1832104 mvhd@ 32 moov@ 24 ftyp@ 4
+  box 0 20 ftyp
+  box 20 24302 moov
+  box 24322 1807724 mdat
+  box 1832046 58 free
+ekor len 1832104 mvhd@ 32 moov@ 24 ftyp@ 4
+  box 0 20 ftyp
+  box 20 24302 moov
+  box 24322 1807724 mdat
+  box 1832046 58 free
