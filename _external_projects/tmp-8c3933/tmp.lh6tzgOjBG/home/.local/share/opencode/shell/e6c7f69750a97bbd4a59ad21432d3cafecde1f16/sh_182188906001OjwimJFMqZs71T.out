@@ -1,0 +1,12 @@
+?url=..%2f..%2f..%2fetc%2fpasswd               [403 31013B] Access Denied
+
+?url=....//....//etc/passwd                    [403 31013B] Access Denied
+
+?url=/etc/passwd                               [403 31013B] Access Denied
+
+?url=auth%2flogin                              [302 0B] 
+?url=index                                     [200 14636B] 
+?url=../../index.php                           [403 31013B] Access Denied
+
+== identitas app ==
+SKL

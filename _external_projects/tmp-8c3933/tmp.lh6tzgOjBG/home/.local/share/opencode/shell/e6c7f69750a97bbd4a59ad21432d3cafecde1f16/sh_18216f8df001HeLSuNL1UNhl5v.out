@@ -1,0 +1,5 @@
+== admin:
+/bin/bash: line 1: cd: /home/runner/bokep-id: No such file or directory
+admin: 000
+grep: /tmp/bk-tunnel.log: No such file or directory
+2785 /bin/bash -c cd /home/runner/bokep-id && (ss -tlnp 2>/dev/null | 

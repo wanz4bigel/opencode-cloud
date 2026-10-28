@@ -1,0 +1,11 @@
+/admin/                  [302] Location: index.php?url=auth/login
+/admin                   [302] Location: index.php?url=auth/login
+/admin/login.php         [302] Location: index.php?url=auth/login
+/index.php?url=admin     [302] Location: index.php?url=auth/login
+== follow /admin/ ==
+final [200 3040B] url=https://spmb.sman1cigombong.sch.id/admin/index.php?url=auth
+<title>Login Aplikasi SKL
+name="password"
+name="username"
+name="viewport"
+<form action="index.php?url=auth/login" method="POST"

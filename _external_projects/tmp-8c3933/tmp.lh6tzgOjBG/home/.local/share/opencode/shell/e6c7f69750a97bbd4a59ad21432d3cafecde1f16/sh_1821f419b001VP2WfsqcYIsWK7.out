@@ -1,0 +1,7 @@
+FORMS: ['<form action="index.php?url=auth/login" method="POST" data-csrf-injected="1">']
+INPUTS: ['<input type="hidden" name="_csrf" value="a5fe701072184e4f00e1124d190acd059d5035738b484716bfe823bf176e45c5">', '<input name="username" class="form-control" required>', '<input name="password" type="password" class="form-control" required>']
+ACTION: ['index.php?url=auth/login']
+IDENT: ['Infokelas']
+LABELS: ['ð\x9f\x91¤ Username', 'ð\x9f\x94\x92 Password']
+BTN: ['ð\x9f\x94\x93 Login']
+HINTS: ['Username', 'username']

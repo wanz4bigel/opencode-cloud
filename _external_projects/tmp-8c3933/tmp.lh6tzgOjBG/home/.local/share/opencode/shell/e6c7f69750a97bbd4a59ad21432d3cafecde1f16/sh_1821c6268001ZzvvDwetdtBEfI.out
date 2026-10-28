@@ -1,0 +1,40 @@
+
+===== kelas (https://kelas.sman1cigombong.sch.id) =====
+  fields: [] token: False
+  identity: []
+  admin   /admin            [000]       0B ->  
+  admin   /admin123         [000]       0B ->  
+  admin   /admin1234        [000]       0B ->  
+  admin   /sman1cigombong   [000]       0B ->  
+  admin   /cigombong123     [000]       0B ->  
+  admin   /password         [000]       0B ->  
+  admin   /123456           [000]       0B ->  
+  admin   /infokelas123     [000]       0B ->  
+  guru    /admin            [000]       0B ->  
+  guru    /admin123         [000]       0B ->  
+  guru    /admin1234        [000]       0B ->  
+  guru    /sman1cigombong   [000]       0B ->  
+  guru    /cigombong123     [000]       0B ->  
+  guru    /password         [000]       0B ->  
+  guru    /123456           [000]       0B ->  
+  guru    /infokelas123     [000]       0B ->  
+  spmb    /admin            [000]       0B ->  
+  spmb    /admin123         [000]       0B ->  
+  spmb    /admin1234        [000]       0B ->  
+  spmb    /sman1cigombong   [000]       0B ->  
+  spmb    /cigombong123     [000]       0B ->  
+  spmb    /password         [000]       0B ->  
+  spmb    /123456           [000]       0B ->  
+  spmb    /infokelas123     [000]       0B ->  
+
+===== sim (https://sim.sman1cigombong.sch.id) =====
+  fields: [] token: False
+  identity: []
+  admin   /admin            [000]       0B ->  
+  admin   /admin123         [000]       0B ->  
+  admin   /admin1234        [000]       0B ->  
+  admin   /sman1cigombong   [000]       0B ->  
+  admin   /cigombong123     [000]       0B ->  
+  admin   /password         [000]       0B ->  
+  admin   /sim123           [000]       0B ->  
+  admin   /123456           [000]       0B ->  

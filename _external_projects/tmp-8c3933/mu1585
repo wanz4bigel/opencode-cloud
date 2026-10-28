@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    
+    <link
+        rel="icon"
+        href="https://sim.sman1cigombong.sch.id/storage/site/favicon/dZjtIaDEIjfBgoVEL5SucEN3Jb2aCpOgHGbVJtSW.png">
+
+    
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="csrf-token"
+        content="XwLI0JcOddIPx68Iht9ocuj1GvFbLJuzPAd41gp8">
+
+    <title>
+        Login | Web Application
+    </title>
+
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    
+    <link
+        rel="stylesheet"
+        href="https://sim.sman1cigombong.sch.id/assets/auth/css/login.css">
+
+</head>
+
+
+<body>
+
+    <div class="login-wrapper">
+
+        
+        <section class="login-brand-section">
+
+            <div class="brand-decoration decoration-one"></div>
+            <div class="brand-decoration decoration-two"></div>
+            <div class="brand-decoration decoration-three"></div>
+
+
+            <div class="brand-content">
+
+                <a
+                    href="https://sim.sman1cigombong.sch.id"
+                    class="brand-logo">
+
+                    <div class="brand-icon">
+
+                        <i class="bi bi-globe2"></i>
+
+                    </div>
+
+                    <span>
+                        Web Application
+                    </span>
+
+                </a>
+
+
+                <div class="brand-description">
+
+                    <span class="brand-badge">
+
+                        <i class="bi bi-stars"></i>
+
+                        Information Management System
+
+                    </span>
+
+
+                    <h1>
+
+                        Kelola Informasi
+                        <span>
+                            Lebih Mudah
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Platform pengelolaan informasi yang
+                        cepat, aman, terstruktur, dan mudah
+                        digunakan.
+
+                    </p>
+
+
+                    <div class="brand-features">
+
+                        <div class="feature-item">
+
+                            <span class="feature-icon">
+
+                                <i class="bi bi-shield-check"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Aman
+                                </strong>
+
+                                <small>
+                                    Autentikasi dan hak akses pengguna
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-item">
+
+                            <span class="feature-icon">
+
+                                <i class="bi bi-lightning-charge"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Cepat
+                                </strong>
+
+                                <small>
+                                    Dibangun dengan Laravel
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature-item">
+
+                            <span class="feature-icon">
+
+                                <i class="bi bi-grid"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Terintegrasi
+                                </strong>
+
+                                <small>
+                                    Satu sistem pengelolaan informasi
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="brand-footer">
+
+                    &copy; 2026
+                    Web Application
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        
+        <section class="login-form-section">
+
+            <div class="login-container">
+
+
+                
+                <div class="mobile-brand">
+
+                    <div class="brand-icon">
+
+                        <i class="bi bi-globe2"></i>
+
+                    </div>
+
+                    <strong>
+                        Web Application
+                    </strong>
+
+                </div>
+
+
+
+                
+                <div class="login-header">
+
+                    <span class="login-small-title">
+
+                        SELAMAT DATANG
+
+                    </span>
+
+                    <h2>
+                        Masuk ke Sistem
+                    </h2>
+
+                    <p>
+
+                        Silakan masukkan email dan password
+                        untuk melanjutkan.
+
+                    </p>
+
+                </div>
+
+
+
+                
+                
+
+
+                
+                
+
+
+                
+                <form
+                    method="POST"
+                    action="https://sim.sman1cigombong.sch.id/login"
+                    id="loginForm"
+                    autocomplete="on">
+
+                    <input type="hidden" name="_token" value="XwLI0JcOddIPx68Iht9ocuj1GvFbLJuzPAd41gp8" autocomplete="off">
+
+                    
+                    <div class="form-group-custom">
+
+                        <label
+                            for="email"
+                            class="form-label">
+
+                            Email
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+
+                                <i class="bi bi-envelope"></i>
+
+                            </span>
+
+
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                value=""
+                                class="form-control-custom "
+                                placeholder="Masukkan email Anda"
+                                autocomplete="email"
+                                autofocus
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
+                    <div class="form-group-custom">
+
+                        <label
+                            for="password"
+                            class="form-label">
+
+                            Password
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+
+                                <i class="bi bi-lock"></i>
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="form-control-custom"
+                                placeholder="Masukkan password"
+                                autocomplete="current-password"
+                                required>
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                tabindex="-1">
+
+                                <i
+                                    class="bi bi-eye"
+                                    id="passwordIcon"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
+                    <div class="remember-wrapper">
+
+                        <div class="form-check">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="remember"
+                                value="1"
+                                id="remember"
+                                >
+
+
+                            <label
+                                class="form-check-label"
+                                for="remember">
+
+                                Ingat saya
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton">
+
+                        <span
+                            id="loginButtonText">
+
+                            Masuk
+
+                        </span>
+
+
+                        <span
+                            id="loginButtonLoading"
+                            class="d-none">
+
+                            <span
+                                class="spinner-border spinner-border-sm"
+                                aria-hidden="true"></span>
+
+                            Memproses...
+
+                        </span>
+
+
+                        <i
+                            class="bi bi-arrow-right"
+                            id="loginButtonIcon"></i>
+
+                    </button>
+
+                </form>
+
+
+
+                
+                <div class="back-home">
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Kembali ke website
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="security-information">
+
+                    <i class="bi bi-shield-lock"></i>
+
+                    <span>
+                        Akses sistem dilindungi autentikasi.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script
+        src="https://sim.sman1cigombong.sch.id/assets/auth/js/login.js"></script>
+
+</body>
+
+</html>

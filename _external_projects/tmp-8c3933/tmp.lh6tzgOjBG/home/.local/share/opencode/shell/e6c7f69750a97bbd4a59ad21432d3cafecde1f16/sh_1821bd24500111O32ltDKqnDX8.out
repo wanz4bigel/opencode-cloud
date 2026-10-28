@@ -1,0 +1,11 @@
+  sim.sman1cigombong.sch.id     /                  [200]   46733B LiteSpeed                             Web Application | Portal Infor   
+  sim.sman1cigombong.sch.id     /login             [200]   10716B LiteSpeed                             Login | Web Application          LOGINFORM
+  sim.sman1cigombong.sch.id     /index.php?url=auth [200]   47083B LiteSpeed                             Web Application | Portal Infor   
+  kelas.sman1cigombong.sch.id   /                  [200]    5183B LiteSpeed                             Login Infokelas - SMAN 1 Cigom   LOGINFORM
+  kelas.sman1cigombong.sch.id   /admin             [200]    5183B LiteSpeed                             Login Infokelas - SMAN 1 Cigom   LOGINFORM
+  kelas.sman1cigombong.sch.id   /admin/            [200]    5183B LiteSpeed                             Login Infokelas - SMAN 1 Cigom   LOGINFORM
+  kelas.sman1cigombong.sch.id   /index.php?url=auth [200]    5183B LiteSpeed                             Login Infokelas - SMAN 1 Cigom   LOGINFORM
+  learning.sman1cigombong.sch.id/                  [200]    8074B LiteSpeed                             Login - SMAN 1 Cigombong         LOGINFORM
+  learning.sman1cigombong.sch.id/login             [200]    8074B LiteSpeed                             Login - SMAN 1 Cigombong         LOGINFORM
+  learning.sman1cigombong.sch.id/index.php?url=auth [200]    8084B LiteSpeed                             Login - SMAN 1 Cigombong         LOGINFORM
+  learning.sman1cigombong.sch.id/dashboard         [200]    8074B LiteSpeed                             Login - SMAN 1 Cigombong         LOGINFORM

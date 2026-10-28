@@ -1,0 +1,15 @@
+/home/runner/actions-runner:
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:36 .
+drwxr-xr-x 16 runner runner 4096 Oct 28 10:38 ..
+drwxr-xr-x  4 runner runner 4096 Oct 28 10:36 cached
+
+/home/runner/work:
+total 24
+drwxr-xr-x  6 runner runner 4096 Oct 28 10:37 .
+drwxr-xr-x 16 runner runner 4096 Oct 28 10:38 ..
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 _PipelineMapping
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 _actions
+drwxr-xr-x  4 runner runner 4096 Oct 28 10:38 _temp
+drwxr-xr-x  3 runner runner 4096 Oct 28 10:37 opencode-cloud
+== cari jejak proyek:

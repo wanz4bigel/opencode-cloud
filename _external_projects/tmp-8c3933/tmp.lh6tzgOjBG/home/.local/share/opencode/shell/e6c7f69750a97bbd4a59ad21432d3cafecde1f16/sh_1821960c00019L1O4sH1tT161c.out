@@ -1,0 +1,6 @@
+[200]
+final [200 3040B]
+<title>Login Aplikasi SKL
+FORM: ['<form action="index.php?url=auth/login" method="POST">']
+INPUT: ['<input name="username" class="form-control" required>', '<input name="password" type="password" class="form-control"  required>']
+SET-COOKIE: ['set-cookie: PHPSESSID=1fpdpv1vclog8imjfsi2t6u4aq; path=/; secure']

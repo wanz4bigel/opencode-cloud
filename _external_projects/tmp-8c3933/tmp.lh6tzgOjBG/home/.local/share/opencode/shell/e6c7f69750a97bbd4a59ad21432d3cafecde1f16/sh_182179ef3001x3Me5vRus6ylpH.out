@@ -1,0 +1,5 @@
+  [302]       0B /admin/                                                                                                redir=https://spmb.sman1cigombong.sch.id/adm
+  [302]       0B /admin                                                                                                 redir=https://spmb.sman1cigombong.sch.id/ind
+  [302]       0B /admin/index.php                                                                                       redir=https://spmb.sman1cigombong.sch.id/adm
+  [302]       0B /admin/login.php                                                                                       redir=https://spmb.sman1cigombong.sch.id/adm
+  [302]       0B /index.php?url=admin                                                                                   redir=https://spmb.sman1cigombong.sch.id/ind

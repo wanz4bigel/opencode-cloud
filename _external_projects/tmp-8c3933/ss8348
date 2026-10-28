@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="csrf-token"
+        content="t6DrQ7ualtEtmDNw3qDb59fvaexit2pwnHtyFtAX">
+
+
+    
+
+    <title>
+        Web Application | Portal Informasi    </title>
+
+
+    
+
+    <meta
+        name="description"
+        content="Portal informasi resmi yang menyediakan informasi terbaru, pengumuman, layanan, dan publikasi.">
+
+
+    
+
+    
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://sim.sman1cigombong.sch.id/storage/site/favicon/dZjtIaDEIjfBgoVEL5SucEN3Jb2aCpOgHGbVJtSW.png">
+
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        href="https://sim.sman1cigombong.sch.id/storage/site/favicon/dZjtIaDEIjfBgoVEL5SucEN3Jb2aCpOgHGbVJtSW.png">
+
+    
+
+    
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:title"
+        content="Web Application | Portal Informasi">
+
+    <meta
+        property="og:description"
+        content="Portal informasi resmi yang menyediakan informasi terbaru, pengumuman, layanan, dan publikasi.">
+
+    <meta
+        property="og:url"
+        content="https://sim.sman1cigombong.sch.id/index.php">
+
+    <meta
+        property="og:site_name"
+        content="SIM SMANCIGO">
+
+
+    
+
+    
+    <meta
+        property="og:image"
+        content="https://sim.sman1cigombong.sch.id/storage/site/favicon/dZjtIaDEIjfBgoVEL5SucEN3Jb2aCpOgHGbVJtSW.png">
+
+    <meta
+        property="og:image:alt"
+        content="SIM SMANCIGO">
+
+    
+
+    
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Web Application | Portal Informasi">
+
+    <meta
+        name="twitter:description"
+        content="Portal informasi resmi yang menyediakan informasi terbaru, pengumuman, layanan, dan publikasi.">
+
+    
+    <meta
+        name="twitter:image"
+        content="https://sim.sman1cigombong.sch.id/storage/site/favicon/dZjtIaDEIjfBgoVEL5SucEN3Jb2aCpOgHGbVJtSW.png">
+
+    
+
+    
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    
+
+    <link
+        rel="stylesheet"
+        href="https://sim.sman1cigombong.sch.id/assets/frontend/css/app.css">
+
+
+    
+</head>
+
+<body>
+
+
+    <header
+    id="smartHeader"
+    class="smart-header">
+
+
+    
+
+    <div class="topbar">
+
+        <div class="container">
+
+            <div
+                class="d-flex justify-content-between align-items-center">
+
+                <div>
+
+                    <i
+                        class="bi bi-info-circle me-1"></i>
+
+                    SIM SMANCIGO
+
+                </div>
+
+
+                <div>
+
+                    Rabu, 28 Oktober 2026
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    
+
+   <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+
+        <div class="container">
+
+
+            
+
+            <a
+                href="https://sim.sman1cigombong.sch.id/index.php"
+                class="navbar-brand">
+
+                
+                <span class="brand-logo-wrapper">
+
+                    <img
+                        src="https://sim.sman1cigombong.sch.id/storage/site/logo/wN5PtaVN1zgKdOUZrpiDopHqpO6VSsIti53I1V3j.png"
+                        alt="SIM SMANCIGO"
+                        class="brand-logo-image">
+
+                </span>
+
+                
+
+                <span>
+
+                    <strong>
+
+                        SIM SMANCIGO
+
+                    </strong>
+
+
+                    <small>
+
+                        Sistem Informasi Manajemen
+
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation">
+
+                <span
+                    class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavigation">
+
+                <ul
+                    class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+
+                    <li class="nav-item">
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php"
+                            class="nav-link
+                            active">
+
+                            Beranda
+
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project"
+                            class="nav-link
+        ">
+
+                            Project
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/informasi"
+                            class="nav-link
+                            ">
+
+                            Informasi
+
+                        </a>
+
+                    </li>
+
+
+<!--
+                    <li class="nav-item">
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php#pengumuman"
+                            class="nav-link">
+
+                            Pengumuman
+
+                        </a>
+
+                    </li>
+
+-->
+
+                    <li
+                        class="nav-item ms-lg-3 mt-3 mt-lg-0">
+
+                        
+                        
+                        
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+    <main>
+
+        
+
+
+
+
+
+
+
+
+
+<section class="home-hero">
+
+    
+    <div
+        id="homeHeroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="6000"
+        data-bs-pause="hover">
+
+
+        
+
+        
+        <div class="carousel-indicators">
+
+            
+            <button
+                type="button"
+                data-bs-target="#homeHeroCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1">
+            </button>
+
+            
+            <button
+                type="button"
+                data-bs-target="#homeHeroCarousel"
+                data-bs-slide-to="1"
+                class=""
+                aria-current="false"
+                aria-label="Slide 2">
+            </button>
+
+            
+            <button
+                type="button"
+                data-bs-target="#homeHeroCarousel"
+                data-bs-slide-to="2"
+                class=""
+                aria-current="false"
+                aria-label="Slide 3">
+            </button>
+
+            
+        </div>
+
+        
+
+        
+
+        <div class="carousel-inner">
+
+            
+            <div
+                class="carousel-item active">
+
+                <div class="hero-slide">
+
+
+                    
+
+                    <img
+                        src="https://sim.sman1cigombong.sch.id/storage/slider/mEbHq164OdnNowirfPtMe7kyXrMIz8tq83uDXZAT.png"
+                        alt="Sistem Informasi Manajemen Sekolah Digital"
+                        class="hero-background">
+
+
+                    
+
+                    <div class="hero-overlay"></div>
+
+
+                    
+
+                    <div class="container hero-container">
+
+                        <div class="hero-text-wrapper">
+
+
+                            
+
+                            <div class="hero-caption-badge">
+
+                                <i class="bi bi-stars"></i>
+
+                                <span>
+                                    INFORMASI SEKOLAH
+                                </span>
+
+                            </div>
+
+
+                            
+
+                            <h1>
+
+                                Sistem Informasi Manajemen Sekolah Digital
+
+                            </h1>
+
+
+                            
+
+                            
+                            <p>
+
+                                Platform terintegrasi yang mendukung pengelolaan data akademik, administrasi, informasi sekolah, dan layanan digital secara efektif, cepat, serta akurat untuk meningkatkan kualitas...
+
+                            </p>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div
+                class="carousel-item ">
+
+                <div class="hero-slide">
+
+
+                    
+
+                    <img
+                        src="https://sim.sman1cigombong.sch.id/storage/slider/1XEOEFMl8H62umhN6bIgowCmnsQv2UHbjJgLpRhO.png"
+                        alt="Transformasi Digital Melalui Sistem Informasi Manajemen Terintegrasi"
+                        class="hero-background">
+
+
+                    
+
+                    <div class="hero-overlay"></div>
+
+
+                    
+
+                    <div class="container hero-container">
+
+                        <div class="hero-text-wrapper">
+
+
+                            
+
+                            <div class="hero-caption-badge">
+
+                                <i class="bi bi-stars"></i>
+
+                                <span>
+                                    INFORMASI SEKOLAH
+                                </span>
+
+                            </div>
+
+
+                            
+
+                            <h1>
+
+                                Transformasi Digital Melalui Sistem Informasi Manajemen Terintegrasi
+
+                            </h1>
+
+
+                            
+
+                            
+                            <p>
+
+                                Menghubungkan seluruh elemen sekolah dalam satu ekosistem digital melalui pengelolaan data cerdas, otomatisasi layanan, dan akses informasi real-time untuk mendukung keputusan yang...
+
+                            </p>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div
+                class="carousel-item ">
+
+                <div class="hero-slide">
+
+
+                    
+
+                    <img
+                        src="https://sim.sman1cigombong.sch.id/storage/slider/zxOlEcQqrv5PBAjScimrl6hJnPpDW0ZxizuxbJzD.png"
+                        alt="Sistem Informasi Manajemen Sekolah"
+                        class="hero-background">
+
+
+                    
+
+                    <div class="hero-overlay"></div>
+
+
+                    
+
+                    <div class="container hero-container">
+
+                        <div class="hero-text-wrapper">
+
+
+                            
+
+                            <div class="hero-caption-badge">
+
+                                <i class="bi bi-stars"></i>
+
+                                <span>
+                                    INFORMASI SEKOLAH
+                                </span>
+
+                            </div>
+
+
+                            
+
+                            <h1>
+
+                                Sistem Informasi Manajemen Sekolah
+
+                            </h1>
+
+
+                            
+
+                            
+                            <p>
+
+                                Mengelola informasi, meningkatkan pelayanan, dan membangun ekosistem pendidikan digital melalui teknologi yang inovatif, aman, dan terintegrasi.
+
+                            </p>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+        </div>
+
+
+        
+
+        
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#homeHeroCarousel"
+            data-bs-slide="prev"
+            aria-label="Slide sebelumnya">
+
+            <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true">
+            </span>
+
+        </button>
+
+
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#homeHeroCarousel"
+            data-bs-slide="next"
+            aria-label="Slide berikutnya">
+
+            <span
+                class="carousel-control-next-icon"
+                aria-hidden="true">
+            </span>
+
+        </button>
+
+        
+    </div>
+
+
+    
+</section>
+
+
+
+
+<section class="home-project-section">
+
+    <div class="container">
+
+
+        <div class="home-section-heading home-section-heading-left">
+
+
+            <div>
+
+                <br>
+
+                <h2>
+                    Aplikasi & Sistem Informasi
+                </h2>
+
+
+                <p>
+                    Kumpulan project aplikasi yang telah dikembangkan
+                    menggunakan teknologi modern.
+                </p>
+
+
+            </div>
+
+
+
+            <a
+                href="https://sim.sman1cigombong.sch.id/index.php/project"
+                class="section-link">
+
+
+                Semua Project
+
+
+                <i class="bi bi-arrow-right"></i>
+
+
+            </a>
+
+
+        </div>
+
+
+
+
+
+        
+
+        <div class="row g-4">
+
+
+
+            
+
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+
+                    
+
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-kelas-pembinaan-siswa"
+                        class="home-news-image">
+
+
+                        
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/project/xuYdaBTdz3v3PzZ4n2kwoxVBgjmDRCaXajLGj3B3.png"
+                            alt="Sistem Informasi Manajemen Kelas &amp; Pembinaan Siswa"
+                            loading="lazy">
+
+
+                        
+
+
+                    </a>
+
+
+
+
+
+
+                    <div class="home-news-body">
+
+
+
+                        <div class="home-news-meta">
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-folder"></i>
+
+                                Sistem Informasi
+
+                            </span>
+
+                            
+
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                2026
+
+                            </span>
+
+                            
+
+
+                        </div>
+
+
+
+
+
+
+                        <h3>
+
+
+                            <a href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-kelas-pembinaan-siswa">
+
+                                Sistem Informasi Manajemen Kelas &amp; Pembinaan Siswa
+
+                            </a>
+
+
+                        </h3>
+
+
+
+<p class="project-description">
+    Aplikasi berbasis web untuk membantu sekolah mengelola aktivitas kelas, pembinaan siswa, absensi, poin perilaku, komunikasi wali kelas, agenda, pengumuman, hingga administrasi kelas dalam satu sistem terintegrasi.
+</p>
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-kelas-pembinaan-siswa"
+                            class="home-read-more">
+
+
+                            Detail Project
+
+
+                            <i class="bi bi-arrow-right"></i>
+
+
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+            </div>
+
+
+
+            
+
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+
+                    
+
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-guru"
+                        class="home-news-image">
+
+
+                        
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/project/zE70iSZiQQWLG6wkudtM0Y7Qdy008Z4CwlOerx2p.png"
+                            alt="Sistem Informasi Guru"
+                            loading="lazy">
+
+
+                        
+
+
+                    </a>
+
+
+
+
+
+
+                    <div class="home-news-body">
+
+
+
+                        <div class="home-news-meta">
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-folder"></i>
+
+                                Sistem Informasi
+
+                            </span>
+
+                            
+
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                2026
+
+                            </span>
+
+                            
+
+
+                        </div>
+
+
+
+
+
+
+                        <h3>
+
+
+                            <a href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-guru">
+
+                                Sistem Informasi Guru
+
+                            </a>
+
+
+                        </h3>
+
+
+
+<p class="project-description">
+    Sistem Informasi Guru adalah aplikasi berbasis web yang dirancang untuk membantu sekolah dalam mengelola data guru, administrasi pembelajaran, dokumentasi profesional, serta proses pembinaan guru secara terintegrasi dalam satu platform digital yang mudah digunakan, aman, dan efisien.
+</p>
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-guru"
+                            class="home-read-more">
+
+
+                            Detail Project
+
+
+                            <i class="bi bi-arrow-right"></i>
+
+
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+            </div>
+
+
+
+            
+
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+
+                    
+
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-spmb-digital"
+                        class="home-news-image">
+
+
+                        
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/project/oDrJvSqXz23Yk3gHd7av0Vxoga5B7mhq47oOevjn.png"
+                            alt="Sistem Informasi SPMB Digital"
+                            loading="lazy">
+
+
+                        
+
+
+                    </a>
+
+
+
+
+
+
+                    <div class="home-news-body">
+
+
+
+                        <div class="home-news-meta">
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-folder"></i>
+
+                                Website
+
+                            </span>
+
+                            
+
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                2026
+
+                            </span>
+
+                            
+
+
+                        </div>
+
+
+
+
+
+
+                        <h3>
+
+
+                            <a href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-spmb-digital">
+
+                                Sistem Informasi SPMB Digital
+
+                            </a>
+
+
+                        </h3>
+
+
+
+<p class="project-description">
+    SPMB Digital adalah aplikasi berbasis web yang membantu sekolah dalam mengelola proses penerimaan murid baru secara lebih mudah, cepat, transparan, dan terintegrasi. Sistem ini menyediakan layanan informasi sekolah, pengumuman penerimaan, penyampaian informasi calon peserta didik, serta pengelolaan data melalui dashboard administrator.
+</p>
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-spmb-digital"
+                            class="home-read-more">
+
+
+                            Detail Project
+
+
+                            <i class="bi bi-arrow-right"></i>
+
+
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+            </div>
+
+
+
+            
+
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+
+                    
+
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-surat-keterangan-lulus-berbasis-web"
+                        class="home-news-image">
+
+
+                        
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/project/P2VwCJMKaZ6BubGk7xKHQiJSPgubac1uSPI2YjTD.png"
+                            alt="Sistem Informasi Surat Keterangan Lulus Berbasis Web"
+                            loading="lazy">
+
+
+                        
+
+
+                    </a>
+
+
+
+
+
+
+                    <div class="home-news-body">
+
+
+
+                        <div class="home-news-meta">
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-folder"></i>
+
+                                Website
+
+                            </span>
+
+                            
+
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                2026
+
+                            </span>
+
+                            
+
+
+                        </div>
+
+
+
+
+
+
+                        <h3>
+
+
+                            <a href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-surat-keterangan-lulus-berbasis-web">
+
+                                Sistem Informasi Surat Keterangan Lulus Berbasis Web
+
+                            </a>
+
+
+                        </h3>
+
+
+
+<p class="project-description">
+    Info SKL Digital adalah aplikasi berbasis web yang memudahkan sekolah dalam mengelola, menyimpan, dan mendistribusikan Surat Keterangan Lulus (SKL) siswa secara digital. Sistem ini membantu proses administrasi kelulusan menjadi lebih cepat, aman, dan mudah diakses oleh siswa.
+</p>
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-surat-keterangan-lulus-berbasis-web"
+                            class="home-read-more">
+
+
+                            Detail Project
+
+
+                            <i class="bi bi-arrow-right"></i>
+
+
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+            </div>
+
+
+
+            
+
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+
+                    
+
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-makan-bergizi-gratis-berbasis-web"
+                        class="home-news-image">
+
+
+                        
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/project/kqFwCL23JFIfrbjQpm7JbLidau195F39IDgcBUaI.png"
+                            alt="Sistem Informasi Manajemen Makan Bergizi Gratis Berbasis Web"
+                            loading="lazy">
+
+
+                        
+
+
+                    </a>
+
+
+
+
+
+
+                    <div class="home-news-body">
+
+
+
+                        <div class="home-news-meta">
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-folder"></i>
+
+                                Sistem Informasi
+
+                            </span>
+
+                            
+
+
+
+                            
+                            <span>
+
+                                <i class="bi bi-calendar3"></i>
+
+                                2026
+
+                            </span>
+
+                            
+
+
+                        </div>
+
+
+
+
+
+
+                        <h3>
+
+
+                            <a href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-makan-bergizi-gratis-berbasis-web">
+
+                                Sistem Informasi Manajemen Makan Bergizi Gratis Berbasis Web
+
+                            </a>
+
+
+                        </h3>
+
+
+
+<p class="project-description">
+    MBG Digital adalah aplikasi berbasis web yang dirancang untuk membantu sekolah dalam mengelola program Makan Bergizi Gratis (MBG) secara digital. Sistem ini memudahkan pendataan siswa, pengelolaan petugas, monitoring proses distribusi makanan, serta pencatatan pelaksanaan program secara terstruktur dan efisien
+</p>
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/project/sistem-informasi-manajemen-makan-bergizi-gratis-berbasis-web"
+                            class="home-read-more">
+
+
+                            Detail Project
+
+
+                            <i class="bi bi-arrow-right"></i>
+
+
+                        </a>
+
+
+
+                    </div>
+
+
+
+                </article>
+
+
+
+            </div>
+
+
+
+            
+
+
+        </div>
+
+
+
+        
+
+
+    </div>
+
+
+</section>
+
+
+<!--
+<section
+    class="home-services"
+    id="layanan">
+
+    <div class="container">
+
+
+        <div class="home-section-heading text-center">
+
+            <span>
+                LAYANAN
+            </span>
+
+            <h2>
+                Akses Informasi Lebih Mudah
+            </h2>
+
+            <p>
+
+                Berbagai layanan utama tersedia
+                untuk membantu pengunjung memperoleh
+                informasi dengan cepat.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            
+
+            <div class="col-sm-6 col-lg-3">
+
+                <a
+                    href="https://sim.sman1cigombong.sch.id/index.php/informasi"
+                    class="service-card">
+
+                    <div class="service-icon">
+
+                        <i
+                            class="bi bi-newspaper"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Informasi
+                    </h3>
+
+
+                    <p>
+
+                        Temukan berita dan informasi
+                        terbaru yang telah dipublikasikan.
+
+                    </p>
+
+
+                    <span>
+
+                        Lihat Informasi
+
+                        <i
+                            class="bi bi-arrow-right"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            
+
+            <div class="col-sm-6 col-lg-3">
+
+                <a
+                    href="#kategori"
+                    class="service-card">
+
+                    <div class="service-icon">
+
+                        <i
+                            class="bi bi-grid"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Kategori
+                    </h3>
+
+
+                    <p>
+
+                        Jelajahi informasi berdasarkan
+                        kategori yang tersedia.
+
+                    </p>
+
+
+                    <span>
+
+                        Lihat Kategori
+
+                        <i
+                            class="bi bi-arrow-down"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            
+
+            <div class="col-sm-6 col-lg-3">
+
+                <a
+                    href="#pengumuman"
+                    class="service-card">
+
+                    <div class="service-icon">
+
+                        <i
+                            class="bi bi-megaphone"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Pengumuman
+                    </h3>
+
+
+                    <p>
+
+                        Dapatkan pengumuman penting
+                        dan dokumen publik terbaru.
+
+                    </p>
+
+
+                    <span>
+
+                        Lihat Pengumuman
+
+                        <i
+                            class="bi bi-arrow-down"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            
+
+            <div class="col-sm-6 col-lg-3">
+
+                
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/login"
+                            class="service-card">
+
+                            
+
+                            <div class="service-icon">
+
+                                <i
+                                    class="bi bi-person-check"></i>
+
+                            </div>
+
+
+                            <h3>
+                                Akses Sistem
+                            </h3>
+
+
+                            <p>
+
+                                Masuk ke sistem sesuai
+                                hak akses akun Anda.
+
+                            </p>
+
+
+                            <span>
+
+                                Buka Sistem
+
+                                <i
+                                    class="bi bi-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+-->
+
+
+
+<section
+    class="home-information"
+    id="informasi">
+
+    <div class="container">
+
+
+        <div
+            class="home-section-heading
+                   home-section-heading-left">
+
+            <div>
+
+                <span>
+                    INFORMASI TERBARU
+                </span>
+
+
+                <h2>
+
+                    Informasi & Publikasi
+
+                </h2>
+
+
+                <p>
+
+                    Ikuti informasi terbaru
+                    yang telah diverifikasi
+                    dan dipublikasikan.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://sim.sman1cigombong.sch.id/index.php/informasi"
+                class="section-link">
+
+                Semua Informasi
+
+                <i
+                    class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        
+
+        <div class="row g-4">
+
+
+            
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+                    
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/informasi/pembelajaran-digital"
+                        class="home-news-image">
+
+
+                        
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/informasi/gambar/2gVd6rc20Pnw6QnyS2UmVd9LOvU4HHfZwH4SJIVY.png"
+                            alt="Pembelajaran Digital"
+                            loading="lazy">
+
+                        
+
+                        <span
+                            class="home-news-category">
+
+                            Sekolah
+
+                        </span>
+
+
+                        
+                        <span
+                            class="home-news-pdf">
+
+                            <i
+                                class="bi bi-file-earmark-pdf"></i>
+
+                        </span>
+
+                        
+                    </a>
+
+
+
+                    <div class="home-news-body">
+
+
+                        <div class="home-news-meta">
+
+                            <span>
+
+                                <i
+                                    class="bi bi-calendar3"></i>
+
+                                06 Sep 2026
+
+                            </span>
+
+
+                            <span>
+
+                                <i
+                                    class="bi bi-person"></i>
+
+                                Administrator
+
+                            </span>
+
+                        </div>
+
+
+
+                        <h3>
+
+                            <a
+                                href="https://sim.sman1cigombong.sch.id/index.php/informasi/pembelajaran-digital">
+
+                                Pembelajaran Digital
+
+                            </a>
+
+                        </h3>
+
+
+
+                        <p>
+
+                            Google&amp;nbsp;Classroom&amp;nbsp;untuk&amp;nbsp;Pembelajaran&amp;nbsp;Digital
+
+                        </p>
+
+
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/informasi/pembelajaran-digital"
+                            class="home-read-more">
+
+                            Baca Selengkapnya
+
+                            <i
+                                class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            
+
+            <div class="col-md-6 col-lg-4">
+
+
+                <article class="home-news-card">
+
+
+                    
+
+                    <a
+                        href="https://sim.sman1cigombong.sch.id/index.php/informasi/membangun-server-mandiri-di-sekolah-langkah-menuju-transformasi-digital-yang-lebih-aman-dan-efisien"
+                        class="home-news-image">
+
+
+                        
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/informasi/gambar/8SOOkiwXCpcXy6bmKfN8wlrmNaDVyjcMKCl495i8.png"
+                            alt="Membangun Server Mandiri di Sekolah: Langkah Menuju Transformasi Digital yang Lebih Aman dan Efisien"
+                            loading="lazy">
+
+                        
+
+                        <span
+                            class="home-news-category">
+
+                            Sekolah
+
+                        </span>
+
+
+                        
+                    </a>
+
+
+
+                    <div class="home-news-body">
+
+
+                        <div class="home-news-meta">
+
+                            <span>
+
+                                <i
+                                    class="bi bi-calendar3"></i>
+
+                                21 Agt 2026
+
+                            </span>
+
+
+                            <span>
+
+                                <i
+                                    class="bi bi-person"></i>
+
+                                Administrator
+
+                            </span>
+
+                        </div>
+
+
+
+                        <h3>
+
+                            <a
+                                href="https://sim.sman1cigombong.sch.id/index.php/informasi/membangun-server-mandiri-di-sekolah-langkah-menuju-transformasi-digital-yang-lebih-aman-dan-efisien">
+
+                                Membangun Server Mandiri di Sekolah: Langkah Menuju Transformasi Digital yang Le...
+
+                            </a>
+
+                        </h3>
+
+
+
+                        <p>
+
+                            Perkembangan&amp;nbsp;teknologi&amp;nbsp;informasi&amp;nbsp;dalam&amp;nbsp;dunia&amp;nbsp;pendidikan&amp;nbsp;menuntut&amp;nbsp;sekolah&amp;nbsp;untuk&amp;n...
+
+                        </p>
+
+
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/informasi/membangun-server-mandiri-di-sekolah-langkah-menuju-transformasi-digital-yang-lebih-aman-dan-efisien"
+                            class="home-read-more">
+
+                            Baca Selengkapnya
+
+                            <i
+                                class="bi bi-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            
+        </div>
+
+
+        
+    </div>
+
+</section>
+
+
+
+
+
+
+<section
+    class="home-category-section"
+    id="kategori">
+
+    <div class="container">
+
+
+        <div class="home-section-heading text-center">
+
+            <span>
+                KATEGORI INFORMASI
+            </span>
+
+            <h2>
+                Jelajahi Berdasarkan Topik
+            </h2>
+
+            <p>
+
+                Pilih kategori untuk menemukan
+                informasi yang Anda butuhkan.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+            
+            <a
+                href="https://sim.sman1cigombong.sch.id/index.php/informasi/kategori/sekolah"
+                class="home-category-card">
+
+                <div class="category-icon">
+
+                    <i
+                        class="bi bi-folder2-open"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+
+                        Sekolah
+
+                    </h4>
+
+
+                    <span>
+
+                        2
+
+                        Informasi
+
+                    </span>
+
+                </div>
+
+
+                <i
+                    class="bi bi-chevron-right category-arrow"></i>
+
+            </a>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!--
+<section
+    class="home-announcement-section"
+    id="pengumuman">
+
+    <div class="container">
+
+
+        <div
+            class="home-section-heading
+                   home-section-heading-left">
+
+            <div>
+
+                <span>
+                    PENGUMUMAN
+                </span>
+
+
+                <h2>
+                    Pengumuman Terbaru
+                </h2>
+
+
+                <p>
+
+                    Informasi resmi dan
+                    pengumuman penting terbaru.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        
+
+        <div class="row g-4">
+
+
+            
+
+            <div class="col-md-6">
+
+
+                <article class="announcement-card">
+
+
+                    <div class="announcement-icon">
+
+                        <i
+                            class="bi bi-megaphone"></i>
+
+                    </div>
+
+
+                    <div class="announcement-body">
+
+
+                        <div class="announcement-meta">
+
+                            <span>
+
+                                <i
+                                    class="bi bi-calendar3"></i>
+
+                                11 Agt 2026
+
+                            </span>
+
+
+                            <span>
+
+                                <i
+                                    class="bi bi-person"></i>
+
+                                Administrator
+
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+
+                            Pengumuman Website
+
+                        </h3>
+
+
+                        <p>
+
+                            Selamat datang di halaman pengumuman resmi website.
+
+                        </p>
+
+
+                        
+                    </div>
+
+                </article>
+
+            </div>
+
+            
+        </div>
+
+
+        
+    </div>
+
+</section>
+
+-->
+
+
+
+<section class="home-statistics">
+
+    <div class="container">
+
+
+        <div class="statistics-panel">
+
+
+            <div class="statistics-copy">
+
+                <span class="statistics-badge">
+
+                    <i
+                        class="bi bi-bar-chart-fill"></i>
+
+                    STATISTIK WEBSITE
+
+                </span>
+
+
+                <h2>
+
+                    Informasi dalam satu
+                    platform terintegrasi
+
+                </h2>
+
+
+                <p>
+
+                    Statistik berikut diperbarui
+                    otomatis berdasarkan data
+                    yang tersedia pada website.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="statistics-grid">
+
+
+                <div class="statistic-item">
+
+                    <div class="statistic-icon">
+
+                        <i
+                            class="bi bi-people"></i>
+
+                    </div>
+
+
+                    <strong>
+
+                        821
+
+                    </strong>
+
+
+                    <span>
+                        Total Kunjungan
+                    </span>
+
+                </div>
+
+
+
+                <div class="statistic-item">
+
+                    <div class="statistic-icon">
+
+                        <i
+                            class="bi bi-calendar-check"></i>
+
+                    </div>
+
+
+                    <strong>
+
+                        26
+
+                    </strong>
+
+
+                    <span>
+                        Pengunjung Hari Ini
+                    </span>
+
+                </div>
+
+
+
+                <div class="statistic-item">
+
+                    <div class="statistic-icon">
+
+                        <i
+                            class="bi bi-newspaper"></i>
+
+                    </div>
+
+
+                    <strong>
+
+                        2
+
+                    </strong>
+
+
+                    <span>
+                        Informasi Published
+                    </span>
+
+                </div>
+
+
+
+                <div class="statistic-item">
+
+                    <div class="statistic-icon">
+
+                        <i
+                            class="bi bi-folder"></i>
+
+                    </div>
+
+
+                    <strong>
+
+                        1
+
+                    </strong>
+
+
+                    <span>
+                        Kategori
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<section class="home-cta">
+
+    <div class="container">
+
+        <div class="home-cta-box">
+
+
+            <div>
+
+                <span>
+                    PORTAL INFORMASI
+                </span>
+
+
+                <h2>
+
+                    Temukan Informasi
+                    yang Anda Butuhkan
+
+                </h2>
+
+
+                <p>
+
+                    Gunakan fitur pencarian
+                    untuk menemukan publikasi
+                    dengan cepat.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://sim.sman1cigombong.sch.id/index.php/informasi"
+                class="btn home-cta-button">
+
+                Cari Informasi
+
+                <i
+                    class="bi bi-search"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row gy-5">
+
+
+            <div class="col-lg-5">
+
+                <div class="footer-brand">
+
+
+                    
+                    <span class="footer-logo-wrapper">
+
+                        <img
+                            src="https://sim.sman1cigombong.sch.id/storage/site/logo/wN5PtaVN1zgKdOUZrpiDopHqpO6VSsIti53I1V3j.png"
+                            alt="SIM SMANCIGO"
+                            class="footer-logo-image">
+
+                    </span>
+
+                    
+
+
+                    <div>
+
+                        <strong>
+
+                            SIM SMANCIGO
+
+                        </strong>
+
+
+                        <small>
+
+                            Sistem Informasi Manajemen
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-description">
+
+                    Portal Sistem Informasi SMAN 1 Cigombong
+
+                </p>
+
+            </div>
+
+
+
+            <div class="col-6 col-lg-3">
+
+                <h6>
+                    Navigasi
+                </h6>
+
+
+                <ul class="footer-links">
+
+                    <li>
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php">
+
+                            Beranda
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            href="https://sim.sman1cigombong.sch.id/index.php/informasi">
+
+                            Informasi
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="col-6 col-lg-4">
+
+                <h6>
+                    Akses Sistem
+                </h6>
+
+                
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+
+                &copy;
+                2026
+                SIM SMANCIGO
+
+            </span>
+
+
+            <span>
+
+                All Rights Reserved.
+
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script
+        src="https://sim.sman1cigombong.sch.id/assets/frontend/js/header.js"></script>
+
+    
+
+</body>
+
+</html>
