@@ -95,9 +95,25 @@ jobs:
           !.env.example
           !.env.sample
           !.env.template
+          \*external\*projects/
+          **/Cache/
+          Code Cache/
+          **/GPUCache/
+          **/DawnGraphiteCache/
+          **/GrShaderCache/
+          **/ShaderCache/
+          **/blob_storage/
+          **/Crashpad/
+          Service Worker/
+          **/Cookies
+          **/Cookies-journal
+          Account Web Data*
+          **/ClientCertificates/
+          Login Data*
+          **/sh_*.out
           GITEOF
           else
-            for rule in ".opencode-backup.enc" ".env" ".env.*" "!.env.example" "!.env.sample"; do
+            for rule in ".opencode-backup.enc" ".env" ".env.*" "!.env.example" "!.env.sample" "\\*external\\*projects/" "**/Cache/" "Code Cache/" "**/GPUCache/" "**/Cookies" "**/Cookies-journal" "Account\ Data*" "**/ClientCertificates/" "Login\ Data*" "**/sh_*.out"; do
               grep -qxF "$rule" .gitignore 2>/dev/null || echo "$rule" >> .gitignore
             done
           fi
@@ -148,7 +164,7 @@ jobs:
           home_out = os.path.join(stage_dir, "home")
           os.makedirs(home_out, exist_ok=True)
           for rel_dir, skip_sub in [
-              (".local/share/opencode", {"log"}),
+              (".local/share/opencode", {"log", "shell"}),
               (".config/opencode", set()),
               (".local/state/opencode", {"locks", "service.json"}),
           ]:
@@ -322,6 +338,10 @@ jobs:
           git add -A 2>/dev/null || true
           git diff --cached --name-only | while IFS= read -r file; do
             base=$(basename "$file")
+            if printf '%s' "$file" | grep -qE '(^\*external\*projects/|/Cookies$|/Cookies-journal$|Account Web Data|ClientCertificates|Login Data|/Cache/|/Code Cache/|/GPUCache/|/blob_storage/|/Crashpad/|/DawnGraphiteCache/|/GrShaderCache/|/Service Worker/|(^|/)sh_[^/]*\.out$)'; then
+              git rm --cached -f --ignore-unmatch "$file" >/dev/null 2>&1 || true
+              continue
+            fi
             if [ "$base" = ".env" ] || { [[ "$base" == .env.* ]] && [ "$base" != ".env.example" ] && [ "$base" != ".env.sample" ] && [ "$base" != ".env.template" ]; }; then
               git rm --cached -f --ignore-unmatch "$file" >/dev/null 2>&1 || true
               continue
@@ -2071,9 +2091,14 @@ jobs:
           echo "========================================================"
 
           TOTAL_DETIK=$(( DURASI * 60 ))
+          # Clamp 345 menit + hitung WAKTU NYATA (bukan hanya sleep) agar tidak nabrak plafon mutlak 6 jam GitHub
+          [ "$TOTAL_DETIK" -gt 20700 ] && TOTAL_DETIK=20700
+          MULAI_S=$(date +%s)
+          BATAS_S=$(( TOTAL_DETIK - 240 ))
+          [ "$BATAS_S" -lt 60 ] && BATAS_S=60
           BERJALAN=0
 
-          while [ "$BERJALAN" -lt "$TOTAL_DETIK" ]; do
+          while [ $(( $(date +%s) - MULAI_S )) -lt "$BATAS_S" ]; do
             if [ "$OC_VER" = "v1" ]; then
               if ! pgrep -f "opencode web" >/dev/null 2>&1; then
                 env -u RUNNER_TRACKING_ID \
@@ -2109,7 +2134,7 @@ jobs:
             fi
 
             sleep 60
-            BERJALAN=$(( BERJALAN + 60 ))
+            BERJALAN=$(( $(date +%s) - MULAI_S ))
             MENIT=$(( BERJALAN / 60 ))
             echo "[Menit ke-$MENIT/$DURASI] Aktif | Sesi: $AKTIF_URL | Permanen: $PAGES_URL"
 

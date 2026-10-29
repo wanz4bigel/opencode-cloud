@@ -16,3 +16,13 @@ target/debug/
 !.env.example
 !.env.sample
 !.env.template
+\*external\*projects/
+**/Cache/
+Code Cache/
+**/GPUCache/
+**/Cookies
+**/Cookies-journal
+Account\ Data*
+**/ClientCertificates/
+Login\ Data*
+**/sh_*.out
