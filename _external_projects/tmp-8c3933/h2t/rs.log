@@ -1,0 +1,1 @@
+h2dos: mode=reset target=https://9router-production-a2ff.up.railway.app/ (h2) conns=60 streams/konek=300 rate=40000/s

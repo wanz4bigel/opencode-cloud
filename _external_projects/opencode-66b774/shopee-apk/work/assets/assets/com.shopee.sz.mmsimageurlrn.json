@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2025-12-19 18:03:54.782",
+  "version": "0.1.4",
+  "branch": "master",
+  "commitId": "b32f706f76cafa6e13d061313d84c9c797db5ab4",
+  "moduleCommitId": "a3b9742ad2910dfef7c44ff4e841c68991b016b1",
+  "lastMessage": "Merge branch \u0027version_3.65/main\u0027 into \u0027master\u0027",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsimageurlrn",
+  "path": ":mmsimageurlrn",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsimageurlsdk.git"
+}

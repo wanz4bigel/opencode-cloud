@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-03-24 16:42:02.870",
+  "version": "1.12.0",
+  "branch": "master",
+  "commitId": "d91b9340f93c7f6c53d660cf4d027b3fe11de8c6",
+  "moduleCommitId": "d91b9340f93c7f6c53d660cf4d027b3fe11de8c6",
+  "lastMessage": "SZThreadPool support inject provider",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "szthreadkit",
+  "path": ":szthreadkit",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/ssz-client/android/toc/common.git"
+}

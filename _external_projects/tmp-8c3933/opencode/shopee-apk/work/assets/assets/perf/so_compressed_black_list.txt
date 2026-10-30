@@ -1,0 +1,12 @@
+libun7zip.so
+libc++_shared.so
+libmmkv.so
+libfb.so
+libfbjni.so
+libglog.so
+libglog_init.so
+libyoga.so
+libjsinspector.so
+libfolly_json.so
+libreactnativejni.so
+libhermes.so

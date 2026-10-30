@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "customRelease",
+  "time": "2022-12-22 12:13:53.894",
+  "version": "1.2.13",
+  "branch": "refs/tags/1.2.13",
+  "commitId": "7db1f454f177d8a569d2c5900e6064020a85be9e",
+  "moduleCommitId": "7db1f454f177d8a569d2c5900e6064020a85be9e",
+  "lastMessage": "fix: webrtc::jni::InitGlobalJniVariables should be executed only once in global scope",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.sz",
+  "artifactId": "sszrtc-no-so",
+  "path": ":sszrtc",
+  "remoteUrl": "https://git.garena.com/shopee/ssz-client/android/common/SSZRTC.git"
+}

@@ -1,0 +1,7 @@
+2026/10/30-07:27:39.707 554a Reusing MANIFEST /tmp/opencode/sbtest/profile-google/Default/Local Storage/leveldb/MANIFEST-000001
+2026/10/30-07:27:39.707 554a Recovering log #3
+2026/10/30-07:27:39.708 554a Level-0 table #3: started
+2026/10/30-07:27:39.711 554a Level-0 table #3: 55529 bytes OK
+2026/10/30-07:27:39.711 554a Recovering log #4
+2026/10/30-07:27:39.711 554a Reusing old log /tmp/opencode/sbtest/profile-google/Default/Local Storage/leveldb/000004.log 
+2026/10/30-07:27:39.713 554a Delete type=0 #3

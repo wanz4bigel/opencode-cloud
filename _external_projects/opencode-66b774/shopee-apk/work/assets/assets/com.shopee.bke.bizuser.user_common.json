@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-06-17 18:16:31.358",
+  "version": "3.8.3.5",
+  "branch": "dev/v3.8.3",
+  "commitId": "76585be5cf09a151d2374c2c3460dc3f2dc53a91",
+  "moduleCommitId": "096f7af4480216fdf19d134b216a6f2ae28f2bb4",
+  "lastMessage": "Merge branch \u0027task/SPDBK-133078\u0027 into \u0027dev/v3.8.3\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.bke.bizuser",
+  "artifactId": "user_common",
+  "path": ":user_common",
+  "remoteUrl": "ssh://git@gitlab.npt.seabank.io:10022/idbank/banking-app/android/digitalbankbizuser.git"
+}

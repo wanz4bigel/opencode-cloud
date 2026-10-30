@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "rl",
+  "time": "2024-12-02 18:01:16.871",
+  "version": "0.2.0",
+  "branch": "v3.40/test_app_3.40",
+  "commitId": "e67f5271061c64d71443c60d71e4d3d4ff667bbf",
+  "moduleCommitId": "9bf5664116e17c86ac56277e3ed79e4f93b12f69",
+  "lastMessage": "Merge branch \u0027chaojie/3.39_blind_watermark\u0027 into \u0027v3.40/test_app_3.40\u0027",
+  "extraInfo": "v3.40/test_app_3.40",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsblindwatermark",
+  "path": ":mmsblindwatermark",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsimageprocessingsdk.git"
+}

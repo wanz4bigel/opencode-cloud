@@ -1,0 +1,131 @@
+{
+  "sdkVersion": "12.5.1",
+  "android": {
+    "feature": [
+      {
+        "name": "enableAlcV12",
+        "percentage": 0
+      }
+    ],
+    "featureAndModel": [
+      {
+        "name": "alcV12",
+        "percentage": 0,
+        "priority": 10,
+        "model": [
+          {
+            "name": "color_12_1_0_android.model",
+            "md5": "2b15a06aa4a35b7e27641df347278f7f"
+          },
+          {
+            "name": "qc_12_1_0_android.license",
+            "md5": "9ddd5bf99a04991ff959a8207ca13e9a"
+          },
+          {
+            "name": "ditto_12_1_0_android.model",
+            "md5": "38aafaf5edd21f5a3eb35cfb70e6415f"
+          },
+          {
+            "name": "ditto_12_1_0_android.license",
+            "md5": "50cbae81bee6857aeb1482f6dda59ee3"
+          },
+          {
+            "name": "wkongB_12_1_0_android.model",
+            "md5": "dbfc80b0da010f9e3cf45bad2453e846"
+          },
+          {
+            "name": "aurora_12_1_0_android.model",
+            "md5": "9b494857360331c0041e0427337ac386"
+          },
+          {
+            "name": "wkongA_12_1_0_android.license",
+            "md5": "9891b56bb617133759010c93235462ac"
+          },
+          {
+            "name": "color_12_1_0_android.license",
+            "md5": "18cc63c9cf615a0e0f738981789cecca"
+          },
+          {
+            "name": "kirby_12_1_0_android.license",
+            "md5": "3d9fd16991ef38fc2dc37a748f1bda4e"
+          },
+          {
+            "name": "qc_12_1_0_android.model",
+            "md5": "882959a4ca387e9079f7b4724477856d"
+          },
+          {
+            "name": "aurora_12_1_0_android.license",
+            "md5": "a74065ed42b42be5907bb3bdff5ab7c6"
+          },
+          {
+            "name": "wkongA_12_1_0_android.model",
+            "md5": "ca524b470e585de231be49c4340936ed"
+          },
+          {
+            "name": "wkongB_12_1_0_android.license",
+            "md5": "8d7b2b2300c959bf56c94b3b7de6356d"
+          },
+          {
+            "name": "mouth_0_0_2_android.license",
+            "md5": "3f7a0738574ce62b180014dbc7e656a6"
+          },
+          {
+            "name": "mouth_0_0_2_android.model",
+            "md5": "42ec05c2598664a6478c999dbebdb5e5"
+          },
+          {
+            "name": "kirby_12_1_0_android.model",
+            "md5": "162c5462f0d089159a99892970b9e786"
+          }
+        ]
+      },
+      {
+        "name": "alcV11",
+        "percentage": 100,
+        "priority": 1,
+        "model": [
+          {
+            "name": "color_1_0_0_android.model",
+            "md5": "116fe37710f12bf54f0fe2a4bed56dc0"
+          },
+          {
+            "name": "color_1_0_0_android.license",
+            "md5": "ab2123b3bff57179ca4880e5653d0439"
+          },
+          {
+            "name": "wkong_0_2_3_android.license",
+            "md5": "ef9b8e9b23c16e816917992d10e10bee"
+          },
+          {
+            "name": "wkong_0_2_3_android.model",
+            "md5": "3f7d4113b4371818c0a6bcf127d948c1"
+          },
+          {
+            "name": "mouth_0_0_2_android.license",
+            "md5": "3f7a0738574ce62b180014dbc7e656a6"
+          },
+          {
+            "name": "mouth_0_0_2_android.model",
+            "md5": "42ec05c2598664a6478c999dbebdb5e5"
+          },
+          {
+            "name": "metapod_0_3_3_android.model",
+            "md5": "5d6a6b465fb59f0a7a1b4da3df87cb28"
+          },
+          {
+            "name": "metapod_0_3_3_android.license",
+            "md5": "cc563bf1b09a78f32f35d597cf016310"
+          },
+          {
+            "name": "qc_3_0_1_android.model",
+            "md5": "7a5264bbaa47c3891633b7310c4a0536"
+          },
+          {
+            "name": "qc_3_0_1_android.license",
+            "md5": "c976eb023e8196153fd7065b5671dc87"
+          }
+        ]
+      }
+    ]
+  }
+}

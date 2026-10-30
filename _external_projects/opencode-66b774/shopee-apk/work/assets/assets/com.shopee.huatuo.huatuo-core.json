@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2025-10-31 16:36:02.572",
+  "version": "0.0.2-master-f674e1a-beta",
+  "branch": "master",
+  "commitId": "f674e1a63da844ae8846f2a180fd1a864828401d",
+  "moduleCommitId": "55d10b9b0d2635c531e218c6f7a8e75577a8863c",
+  "lastMessage": "Merge branch \u0027weiningliu/sunset_mmkv_opt\u0027 into \u0027master\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.huatuo",
+  "artifactId": "huatuo-core",
+  "path": ":core",
+  "remoteUrl": "gitlab@git.garena.com:shopee/android/AndroidAPM/huatuo.git"
+}

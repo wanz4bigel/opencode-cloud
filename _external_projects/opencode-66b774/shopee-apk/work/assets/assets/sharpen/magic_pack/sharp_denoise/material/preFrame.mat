@@ -1,0 +1,20 @@
+{
+    "Material":
+    {
+        "ShaderProgram":"shader/preFrame.shader",
+        "MaterialBlock":
+        {
+            "PropsMap":
+            [
+                {
+                    "__0": "inputTexture",
+                    "__1": 
+                    {
+                        "__Type":"RenderTexture", 
+                        "__Value":"texture/camera1.rtex"
+                    }
+                }
+            ]  
+        }
+    }
+}

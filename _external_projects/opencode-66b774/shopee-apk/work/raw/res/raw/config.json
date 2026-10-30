@@ -1,0 +1,1032 @@
+{
+  "aggressiveCache2": {
+    "default": false,
+    "TW": true,
+    "VN": true,
+    "MY": true,
+    "TH": true,
+    "PH": true,
+    "SG": true,
+    "ID": true
+  },
+  "allowBeetalkLogin": {
+    "default": false,
+    "MM": true,
+    "IR": true
+  },
+  "allowMyIncome": {
+    "default": true,
+    "TW": true,
+    "VN": false,
+    "MY": true,
+    "TH": true,
+    "PH": true,
+    "SG": true,
+    "ID": true
+  },
+  "allowShippingDays": {
+    "default": true,
+    "TW": true,
+    "VN": false,
+    "MY": true,
+    "TH": true,
+    "PH": true,
+    "SG": true,
+    "ID": true
+  },
+  "avatarConfig": {
+    "default": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "TW": {
+      "fullImageWidth": 800,
+      "fullImageHeight": 800,
+      "fullImageQuality": 90,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "VN": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "TH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "SG": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "PH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "MY": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "ID": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 70,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 70
+    }
+  },
+  "barcodeScanner": {
+    "default": true,
+    "TW": false,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": false,
+    "ID": true
+  },
+  "buyerRatingEnabled": {
+    "default": false,
+    "MY": true,
+    "SG": true,
+    "TH": true
+  },
+  "changePaymentMethod": {
+    "default": false,
+    "TW": true,
+    "VN": false,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": false
+  },
+  "chatImageConfig": {
+    "default": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "TW": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "VN": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "TH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "SG": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "PH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "MY": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "ID": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 70,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 70
+    },
+    "FR": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "CO": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "CL": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "PL": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "AR": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "IN": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "MX": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    },
+    "ES": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 400,
+      "thumbImageWidth": 400,
+      "thumbImageQuality": 80
+    }
+  },
+  "codArrangePickUpDelayInSeconds": {
+    "default": 0,
+    "TW": 0,
+    "VN": 0,
+    "MY": 0,
+    "TH": 0,
+    "PH": 0,
+    "SG": 0,
+    "ID": 0
+  },
+  "currentVersion": {
+    "default": 30,
+    "TW": 30,
+    "IR": 30,
+    "VN": 30,
+    "MM": 30,
+    "TH": 30,
+    "SG": 30,
+    "PH": 30,
+    "MY": 30,
+    "ID": 30
+  },
+  "enableYoutubePlayer": {
+    "default": true
+  },
+  "extendShipping": {
+    "default": true,
+    "TW": true,
+    "VN": false,
+    "ID_LITE": true,
+    "MY": true,
+    "TH": true,
+    "PH": true,
+    "SG": true,
+    "ID": true
+  },
+  "fbBackgroundSharingOn": {
+    "default": false,
+    "TW": true,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": true
+  },
+  "hashTagWarning": {
+    "default": 15,
+    "TW": 15,
+    "VN": 15,
+    "TH": 15,
+    "SG": 15,
+    "PH": 15,
+    "MY": 15,
+    "ID": 15
+  },
+  "hideFeedback": {
+    "default": false,
+    "TW": false,
+    "VN": false,
+    "TH": false,
+    "SG": false,
+    "PH": false,
+    "MY": false,
+    "ID": false
+  },
+  "hide_language_selection": {
+    "default": false,
+    "IR": true
+  },
+  "hide_timeline": {
+    "default": false,
+    "HK": true
+  },
+  "imageEditingOn": {
+    "default": true,
+    "TW": true,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": true
+  },
+  "is_lite_build": {
+    "default": false,
+    "HK": true,
+    "IR": true,
+    "MM": true
+  },
+  "lastestVersionPromptCheckDays": {
+    "default": 3,
+    "TW": 5,
+    "VN": 3,
+    "TH": 3,
+    "SG": 5,
+    "PH": 3,
+    "MY": 3,
+    "ID": 3
+  },
+  "maxHashTag": {
+    "default": 18,
+    "TW": 18,
+    "VN": 18,
+    "TH": 18,
+    "SG": 18,
+    "PH": 18,
+    "MY": 18,
+    "ID": 18
+  },
+  "maxShippingDays": {
+    "default": 15,
+    "TW": 15,
+    "VN": 15,
+    "TH": 15,
+    "SG": 30,
+    "PH": 30,
+    "MY": 30,
+    "ID": 15
+  },
+  "maxVariations": {
+    "default": 15,
+    "TW": 15,
+    "VN": 15,
+    "TH": 15,
+    "SG": 15,
+    "PH": 15,
+    "MY": 15,
+    "ID": 15
+  },
+  "minVersion": {
+    "default": 13,
+    "TW": 31,
+    "VN": 31,
+    "TH": 31,
+    "SG": 31,
+    "PH": 31,
+    "MY": 31,
+    "ID": 31
+  },
+  "min_non_lite_version": {
+    "default": 28,
+    "HK": 100,
+    "IR": 100,
+    "MM": 100
+  },
+  "offlinePaymentDefaultOn": {
+    "default": true,
+    "TW": true,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": true
+  },
+  "orderReceive": {
+    "default": true,
+    "TW": true,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": true
+  },
+  "postAddItemListenToServer": {
+    "default": false,
+    "TW": false,
+    "VN": false,
+    "TH": false,
+    "SG": false,
+    "PH": false,
+    "MY": false,
+    "ID": false
+  },
+  "prefillPrice": {
+    "default": false,
+    "TW": false,
+    "IR": true,
+    "VN": true,
+    "TH": false,
+    "SG": false,
+    "PH": false,
+    "MY": false,
+    "ID": true
+  },
+  "priceMax": {
+    "default": "-1",
+    "TW": "499999",
+    "VN": "30000000",
+    "MY": "-1",
+    "TH": "-1",
+    "PH": "1000000",
+    "SG": "-1",
+    "ID": "-1"
+  },
+  "priceMin": {
+    "default": "0.1",
+    "TW": "1",
+    "VN": "1000",
+    "MY": "0.1",
+    "TH": "5",
+    "PH": "5",
+    "SG": "0.1",
+    "ID": "100"
+  },
+  "productDesMinlen": {
+    "default": 5,
+    "TW": 3,
+    "VN": 30,
+    "MY": 10,
+    "TH": 25,
+    "PH": 20,
+    "SG": 10,
+    "ID": 20
+  },
+  "productImageConfig": {
+    "default": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "TW": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "VN": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "TH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "SG": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "PH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "MY": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 80
+    },
+    "ID": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 70,
+      "thumbImageHeight": 320,
+      "thumbImageWidth": 320,
+      "thumbImageQuality": 70
+    }
+  },
+  "requestReturn": {
+    "default": true,
+    "TW": true,
+    "VN": true,
+    "TH": true,
+    "SG": true,
+    "PH": true,
+    "MY": true,
+    "ID": true
+  },
+  "requestTimeout": {
+    "default": 10000,
+    "TW": 10000,
+    "VN": 15000,
+    "TH": 10000,
+    "SG": 5000,
+    "PH": 10000,
+    "MY": 15000,
+    "ID": 15000
+  },
+  "shopBannerConfig": {
+    "default": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "TW": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "VN": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "MY": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "TH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "PH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "SG": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 80
+    },
+    "ID": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 70,
+      "thumbImageHeight": 150,
+      "thumbImageWidth": 300,
+      "thumbImageQuality": 70
+    }
+  },
+  "shopCoverConfig": {
+    "default": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "TW": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "VN": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "TH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "SG": {
+      "fullImageWidth": 1024,
+      "fullImageHeight": 1024,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "PH": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "MY": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    },
+    "ID": {
+      "fullImageWidth": 640,
+      "fullImageHeight": 640,
+      "fullImageQuality": 80,
+      "thumbImageHeight": 200,
+      "thumbImageWidth": 200,
+      "thumbImageQuality": 80
+    }
+  },
+  "showFullAddress": {
+    "default": false,
+    "TW": false,
+    "VN": false,
+    "MY": false,
+    "TH": false,
+    "PH": false,
+    "SG": true,
+    "ID": false
+  },
+  "showShareFbPage": {
+    "default": false,
+    "TW": true,
+    "VN": true,
+    "MY": true,
+    "TH": true,
+    "PH": true,
+    "SG": true,
+    "ID": true
+  },
+  "themEndTime": {
+    "default": 0,
+    "TW": 1457020800,
+    "IR": 1451577600,
+    "VN": 1457020800,
+    "MY": 1457020800,
+    "TH": 1457020800,
+    "PH": 1451577600,
+    "SG": 1457020800,
+    "ID": 1457020800
+  },
+  "themStartTime": {
+    "default": 0,
+    "TW": 1451836800,
+    "IR": 1450368000,
+    "VN": 1451836800,
+    "MY": 1451836800,
+    "TH": 1451836800,
+    "PH": 1450368000,
+    "SG": 1451836800,
+    "ID": 1451836800
+  },
+  "themeImageOne": {
+    "default": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "TW": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "VN": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "TH": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "SG": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "PH": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "MY": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png",
+    "ID": "http://content.garena.com/shopee_dev/conf_a/FCEE66791DE3BEC6.png"
+  },
+  "themeImageTwo": {
+    "default": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "TW": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "VN": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "TH": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "SG": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "PH": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "MY": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png",
+    "ID": "http://content.garena.com/shopee_dev/conf_a/1603841A141F0AC5.png"
+  },
+  "upgradeInfo": {
+    "default": "You are using an old version of Shopee. Please update to the latest version now.",
+    "TW": "You are using an old version of Shopee. Please update to the latest version now.",
+    "IR": "You are using an old version of Shopee. Please update to the latest version now.",
+    "VN": "You are using an old version of Shopee. Please update to the latest version now.",
+    "MM": "You are using an old version of Shopee. Please update to the latest version now.",
+    "TH": "You are using an old version of Shopee. Please update to the latest version now.",
+    "SG": "You are using an old version of Shopee. Please update to the latest version now.",
+    "PH": "You are using an old version of Shopee. Please update to the latest version now.",
+    "MY": "You are using an old version of Shopee. Please update to the latest version now.",
+    "ID": "You are using an old version of Shopee. Please update to the latest version now."
+  },
+  "upgradeTitle": {
+    "default": "Shopee Update",
+    "TW": "Shopee Update",
+    "IR": "Shopee Update",
+    "VN": "Shopee Update",
+    "MM": "Shopee Update",
+    "TH": "Shopee Update",
+    "SG": "Shopee Update",
+    "PH": "Shopee Update",
+    "MY": "Shopee Update",
+    "ID": "Shopee Update"
+  },
+  "webview_jsbridge_whitelist": {
+    "default": [],
+    "SG": [
+      "*.airpay.co.id",
+      "*.airpay.com.my",
+      "*.airpay.com.ph",
+      "*.airpay.in.th",
+      "*.airpay.sg",
+      "*.airpay.vn",
+      "*.garena.com",
+      "*.garena.ph",
+      "*.garena.tw",
+      "*.garena.vn",
+      "*.scredit.com.my",
+      "*.scredit.in.th",
+      "*.scredit.ph",
+      "*.scredit.tw",
+      "*.seabank.co.id",
+      "*.seabank.ph",
+      "seabankph.onelink.me",
+      "seabanktestph.onelink.me",
+      "*.shopee.cl",
+      "*.shopee.cn",
+      "*.shopee.co.id",
+      "*.shopee.co.th",
+      "*.shopee.com",
+      "*.shopee.com.br",
+      "*.shopee.com.co",
+      "*.shopee.com.mx",
+      "*.shopee.com.my",
+      "*.shopee.com.th",
+      "*.shopee.ph",
+      "*.shopee.sg",
+      "*.shopee.tw",
+      "*.shopee.vn",
+      "*.shopeecredit.in.th",
+      "*.shopeefood.vn",
+      "*.shopeekredit.co.id",
+      "*.shopeemobile.com",
+      "*.shopeepay.co.th",
+      "*.shopeepay.th",
+      "*.shopeepay.vn",
+      "*.xiapibuy.com",
+      "shopee.cl",
+      "shopee.cn",
+      "shopee.co.id",
+      "shopee.co.th",
+      "shopee.com",
+      "shopee.com.br",
+      "shopee.com.co",
+      "shopee.com.mx",
+      "shopee.com.my",
+      "shopee.com.ph",
+      "shopee.my",
+      "shopee.ph",
+      "shopee.sg",
+      "shopee.tw",
+      "shopee.vn",
+      "shopeebrasil.com.br",
+      "shopeepay.co.id",
+      "shopeepay.co.th",
+      "shopeepay.vn",
+      "shopeexpress.co.id",
+      "shopeexpress.com",
+      "shopeexpress.com.my"
+    ],
+    "CL": [
+      "*.airpay.co.id",
+      "*.airpay.com.my",
+      "*.airpay.com.ph",
+      "*.airpay.in.th",
+      "*.airpay.sg",
+      "*.airpay.vn",
+      "*.garena.com",
+      "*.garena.ph",
+      "*.garena.tw",
+      "*.garena.vn",
+      "*.scredit.com.my",
+      "*.scredit.in.th",
+      "*.scredit.ph",
+      "*.scredit.tw",
+      "*.seabank.co.id",
+      "*.seabank.ph",
+      "seabankph.onelink.me",
+      "seabanktestph.onelink.me",
+      "*.shopee.cl",
+      "*.shopee.cn",
+      "*.shopee.co.id",
+      "*.shopee.co.th",
+      "*.shopee.com",
+      "*.shopee.com.br",
+      "*.shopee.com.co",
+      "*.shopee.com.mx",
+      "*.shopee.com.my",
+      "*.shopee.com.th",
+      "*.shopee.ph",
+      "*.shopee.sg",
+      "*.shopee.tw",
+      "*.shopee.vn",
+      "*.shopeecredit.in.th",
+      "*.shopeefood.vn",
+      "*.shopeekredit.co.id",
+      "*.shopeemobile.com",
+      "*.shopeepay.co.th",
+      "*.shopeepay.th",
+      "*.shopeepay.vn",
+      "*.xiapibuy.com",
+      "shopee.cl",
+      "shopee.cn",
+      "shopee.co.id",
+      "shopee.co.th",
+      "shopee.com",
+      "shopee.com.br",
+      "shopee.com.co",
+      "shopee.com.mx",
+      "shopee.com.my",
+      "shopee.com.ph",
+      "shopee.my",
+      "shopee.ph",
+      "shopee.sg",
+      "shopee.tw",
+      "shopee.vn",
+      "shopeebrasil.com.br",
+      "shopeepay.co.id",
+      "shopeepay.co.th",
+      "shopeepay.vn",
+      "shopeexpress.co.id",
+      "shopeexpress.com",
+      "shopeexpress.com.my"
+    ],
+    "CO": [
+      "*.airpay.co.id",
+      "*.airpay.com.my",
+      "*.airpay.com.ph",
+      "*.airpay.in.th",
+      "*.airpay.sg",
+      "*.airpay.vn",
+      "*.garena.com",
+      "*.garena.ph",
+      "*.garena.tw",
+      "*.garena.vn",
+      "*.scredit.com.my",
+      "*.scredit.in.th",
+      "*.scredit.ph",
+      "*.scredit.tw",
+      "*.seabank.co.id",
+      "*.seabank.ph",
+      "seabankph.onelink.me",
+      "seabanktestph.onelink.me",
+      "*.shopee.cl",
+      "*.shopee.cn",
+      "*.shopee.co.id",
+      "*.shopee.co.th",
+      "*.shopee.com",
+      "*.shopee.com.br",
+      "*.shopee.com.co",
+      "*.shopee.com.mx",
+      "*.shopee.com.my",
+      "*.shopee.com.th",
+      "*.shopee.ph",
+      "*.shopee.sg",
+      "*.shopee.tw",
+      "*.shopee.vn",
+      "*.shopeecredit.in.th",
+      "*.shopeefood.vn",
+      "*.shopeekredit.co.id",
+      "*.shopeemobile.com",
+      "*.shopeepay.co.th",
+      "*.shopeepay.th",
+      "*.shopeepay.vn",
+      "*.xiapibuy.com",
+      "shopee.cl",
+      "shopee.cn",
+      "shopee.co.id",
+      "shopee.co.th",
+      "shopee.com",
+      "shopee.com.br",
+      "shopee.com.co",
+      "shopee.com.mx",
+      "shopee.com.my",
+      "shopee.com.ph",
+      "shopee.my",
+      "shopee.ph",
+      "shopee.sg",
+      "shopee.tw",
+      "shopee.vn",
+      "shopeebrasil.com.br",
+      "shopeepay.co.id",
+      "shopeepay.co.th",
+      "shopeepay.vn",
+      "shopeexpress.co.id",
+      "shopeexpress.com",
+      "shopeexpress.com.my"
+    ]
+  },
+  "user_tracking_duration": {
+    "default": [
+      {
+        "tracking": {
+          "positionId": "a1.b1",
+          "targetType": "page_info",
+          "trackerId": 29,
+          "pageId": "homepage"
+        },
+        "isPage": true
+      },
+      {
+        "tracking": {
+          "positionId": "a1.b1.c23",
+          "targetType": "section_info",
+          "trackerId": 32,
+          "pageId": "homepage"
+        },
+        "bigPartIndex": 1,
+        "subComponents": ["top_product_1"]
+      },
+      {
+        "tracking": {
+          "positionId": "a1.b1.c24",
+          "targetType": "section_info",
+          "trackerId": 33,
+          "pageId": "homepage"
+        },
+        "bigPartIndex": 1,
+        "subComponents": ["featured_collections_1"]
+      },
+      {
+        "tracking": {
+          "positionId": "a1.b1.c5",
+          "targetType": "section_info",
+          "trackerId": 31,
+          "pageId": "homepage"
+        },
+        "bigPartIndex": 2,
+        "subComponents": [
+          "daily_discover_title",
+          "daily_discover_header_1",
+          "daily_discovery_1"
+        ]
+      },
+      {
+        "tracking": {
+          "positionId": "a1.b1.c5",
+          "targetType": "section_info",
+          "trackerId": 31,
+          "pageId": "homepage"
+        },
+        "bigPartIndex": 0,
+        "subComponents": ["___rn_container"]
+      }
+    ]
+  }
+}

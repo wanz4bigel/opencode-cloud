@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "alpha",
+  "time": "2026-05-13 19:14:45.356",
+  "version": "3.1.1.4-SNAPSHOT",
+  "branch": "feature/v3.46.1_0618/SPDBK-129908",
+  "commitId": "3f45315afe5daec2c793c82daaf2234673e9e0f4",
+  "moduleCommitId": "3abb2517dd4decd9ab7b9b361bf189c810a5c342",
+  "lastMessage": "feat:SPDBK-129908:support rn retake ktp scene",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.bke.bizauth",
+  "artifactId": "auth_common",
+  "path": ":auth_common",
+  "remoteUrl": "ssh://git@gitlab.npt.seabank.io:10022/idbank/banking-app/android/digitalbankbizauth.git"
+}

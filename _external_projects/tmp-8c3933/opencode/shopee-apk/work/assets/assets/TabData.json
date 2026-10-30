@@ -1,0 +1,275 @@
+{
+  "error": 0,
+  "error_msg": "",
+  "data": {
+    "bottom_tab_bar": {
+      "layout_id": 1,
+      "tabs": [
+        {
+          "tab_name": "home",
+          "redirection_url": "",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Rekomendasi"
+              },
+              {
+                "lang": "en",
+                "value": "Discover"
+              }
+            ],
+            "secondary": [
+              {
+                "lang": "id",
+                "value": "Beranda"
+              },
+              {
+                "lang": "en",
+                "value": "Home"
+              }
+            ]
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "a19a450a8a26cd696842e597b73b6d89",
+              "unselected_image_hash": "4e7e57979a170342c961372bb7e8d07b",
+              "animation_hash": "a9478170941df5b55bb3e647826a9910",
+              "selected_font_colour": "#ee4d2d",
+              "transition_animation_hash": "a9478170941df5b55bb3e647826a9910"
+            },
+            "secondary": {
+              "selected_image_hash": "042ba1f1a50c08d256c5e3408ca078ef",
+              "unselected_image_hash": "4e7e57979a170342c961372bb7e8d07b",
+              "animation_hash": "29801b6590d87aad58958b8618f20493",
+              "selected_font_colour": null,
+              "transition_animation_hash": "29801b6590d87aad58958b8618f20493"
+            },
+            "campaign": null
+          },
+          "allow_unauthenticated_user": true,
+          "new_badge_toggle": false,
+          "animated": false,
+          "messages": null,
+          "extra_data": null
+        },
+        {
+          "tab_name": "ShopeePay",
+          "redirection_url": "rn/@shopee-rn/shopeepay/USER_APP_HOME",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Pay"
+              },
+              {
+                "lang": "en",
+                "value": "Pay"
+              }
+            ],
+            "secondary": null
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "bfb597e61431e24ac370bc94268279d2",
+              "unselected_image_hash": "7766c6693df1e9918a70b945e7083349",
+              "animation_hash": null,
+              "selected_font_colour": "#ee4d2d",
+              "transition_animation_hash": null
+            },
+            "secondary": null,
+            "campaign": null
+          },
+          "allow_unauthenticated_user": false,
+          "new_badge_toggle": true,
+          "animated": false,
+          "messages": null,
+          "extra_data": null
+        },
+        {
+          "tab_name": "Live",
+          "redirection_url": "rn/@shopee-rn/livestreaming/HOME",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Live"
+              },
+              {
+                "lang": "en",
+                "value": "Live"
+              }
+            ],
+            "secondary": null
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "655d8f964aa50af4a52ec7b2d0fed405",
+              "unselected_image_hash": "56b8b8dd26f976f6a9a783fb6cd1237e",
+              "animation_hash": null,
+              "selected_font_colour": "#ee4d2d",
+              "transition_animation_hash": null
+            },
+            "secondary": null,
+            "campaign": null
+          },
+          "allow_unauthenticated_user": true,
+          "new_badge_toggle": false,
+          "animated": false,
+          "messages": [
+            {
+              "id": 44258915,
+              "start_time": 1698130855,
+              "end_time": 1698217255,
+              "tab_redirect": {
+                "user_id": null,
+                "live_tab_id": null,
+                "plan_id": null,
+                "user_tag": null
+              },
+              "bubble_redirect": null,
+              "icon": null,
+              "priority": 0,
+              "display_text": null,
+              "external_data": {
+                "video": null,
+                "live": {
+                  "type": 9,
+                  "type_str": "ANIMATION_PROMOTION",
+                  "uid": 13456094,
+                  "session_id": 44258915,
+                  "cover_pic": "id-11134104-7r98x-ln77dx5658ev0f",
+                  "play_url": "https://play-hw-src.livestream.shopee.co.id/live/id-live-2492990827169792-44258915_spehqld.flv?auditkey=1.0~I7MyWvknfpqfgSONZJeCw5QsJwFUaoefjR3K_RIrT0l90SWFHPb-zwbxDRSv_3rp6xOTq3aDNEYkhH9Ewtu3m9nnMQo226o99OHDmI-bHOA~15cad3524532abc21c2e9b3d32d7f6f015439ef1c5445701097af49f1b443ecd\u0026cdnID=HUAWEI\u0026expire_ts=1698132655",
+                  "shop_id": 1024394315,
+                  "item_id": 21085544922,
+                  "item_pic": "id-11134207-7r98s-ln5xns999yeu24",
+                  "ext": null,
+                  "host_id": 1024595934,
+                  "room_id": 2492990827169792,
+                  "algo": "QUE:STREAM-PROMOTION,QUES:STREAM-PROMOTION,QLVS:1,RCL:recaller_animation,RCLG:default,REQID:a3152bb00870e66880a1f87b9cf3e300%3A01000020a710bbd6%3A0000007edfffa9e2,SLT:livestream_animation_slt,PID:11,TFS:livestream_animation_slt_ID,PRNKG:default,PRNK:DAGlivestream-AniTextPrerankCTR:{SCORE:0.0021756843},RNKG:default,RRKG:default,RRK:livestream_animation:formula_boost=1.7389787|condition_boost=1.7389787,SEC:livestream_animation_sec,SECKEY:livestream_animation_sec,BNDOPT:livestream_animation,BND:livestream_animation,SCENE:livestream_animation,UAF:0,POS:1@25|34|-1|0|0,BNDG:default"
+                }
+              },
+              "tab_type": "Live",
+              "text_id": "Live_1_4425891511",
+              "source": 1
+            }
+          ],
+          "extra_data": {
+            "new_arrival_reddot": {
+              "badge_style": 1
+            }
+          }
+        },
+        {
+          "tab_name": "video",
+          "redirection_url": "rn/@shopee-rn/lucky-video/HOME",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Video"
+              },
+              {
+                "lang": "en",
+                "value": "Video"
+              }
+            ],
+            "secondary": null
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "fe31311d8efd8fef307be35fc96bfd09",
+              "unselected_image_hash": "273bb6dc7c944380e3dff94e714d1ffa",
+              "animation_hash": "c9e44ce41539ac8c9f882a9a545f3a89",
+              "selected_font_colour": "#ffffff",
+              "transition_animation_hash": null
+            },
+            "secondary": null,
+            "campaign": null
+          },
+          "allow_unauthenticated_user": true,
+          "new_badge_toggle": false,
+          "animated": false,
+          "messages": null,
+          "extra_data": {
+            "video_reddot": {
+              "should_show": true,
+              "caused_by": null,
+              "reddot_identifier": "reddot_by_followings_update",
+              "creator_avatar": null,
+              "context": null,
+              "avatar_text": null,
+              "avatar_id": null
+            }
+          }
+        },
+        {
+          "tab_name": "notification",
+          "redirection_url": "",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Notifikasi"
+              },
+              {
+                "lang": "en",
+                "value": "Notification"
+              }
+            ],
+            "secondary": null
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "55f42b647944ceab43ca46a8ca4cf61d",
+              "unselected_image_hash": "a7c1d90d102775b28038949e89de479c",
+              "animation_hash": null,
+              "selected_font_colour": "#ee4d2d",
+              "transition_animation_hash": null
+            },
+            "secondary": null,
+            "campaign": null
+          },
+          "allow_unauthenticated_user": false,
+          "new_badge_toggle": false,
+          "animated": false,
+          "messages": null,
+          "extra_data": null
+        },
+        {
+          "tab_name": "me",
+          "redirection_url": "rn/ME_PAGE",
+          "display_names": {
+            "main": [
+              {
+                "lang": "id",
+                "value": "Saya"
+              },
+              {
+                "lang": "en",
+                "value": "Me"
+              }
+            ],
+            "secondary": null
+          },
+          "assets": {
+            "main": {
+              "selected_image_hash": "9871af38cedf69c545707cbd139ffa12",
+              "unselected_image_hash": "fc73690a8425dfae38ece1c32bfc6a74",
+              "animation_hash": null,
+              "selected_font_colour": "#ee4d2d",
+              "transition_animation_hash": null
+            },
+            "secondary": null,
+            "campaign": null
+          },
+          "allow_unauthenticated_user": true,
+          "new_badge_toggle": true,
+          "animated": false,
+          "messages": null,
+          "extra_data": null
+        }
+      ]
+    }
+  }
+}

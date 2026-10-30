@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2024-03-05 11:18:14.484",
+  "version": "0.119.3",
+  "branch": "v3.21",
+  "commitId": "41abe586ad800b4c68da387008def8a8e378a310",
+  "moduleCommitId": "2e4a3458accc78ef146128540607fb015e3bf41b",
+  "lastMessage": "Merge branch \u0027cxy/3.21/fix-mms-invalid-taskid\u0027 into \u0027v3.21\u0027",
+  "extraInfo": "v3.21",
+  "groupId": "com.shopee.sz",
+  "artifactId": "szrenderkit",
+  "path": ":szrenderkit",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/coreplayersdk/MMCLiveStreamer.git"
+}

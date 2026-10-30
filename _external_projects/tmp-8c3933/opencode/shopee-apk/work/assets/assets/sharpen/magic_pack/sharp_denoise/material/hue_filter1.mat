@@ -1,0 +1,100 @@
+{
+    "Material":
+    {
+        "ShaderProgram":"shader/hue_filter1.shader",
+        "MaterialBlock":
+        {
+            "PropsMap":
+            [
+                {
+                    "__0": "inputTexture",
+                    "__1": 
+                    {
+                        "__Type":"Texture", 
+                        "__Value":"texture/camera0.rtex"
+                    }
+                },
+                {
+                    "__0": "prevTexture",
+                    "__1": 
+                    {
+                        "__Type":"Texture", 
+                        "__Value":"texture/cameraPreFrame.rtex"
+                    }
+                },                
+                {
+                    "__0": "filterSharpness",
+                    "__1": 
+                    {
+                        "__Type":"float", 
+                        "__Value":0.18
+                    }
+                },
+                {
+                    "__0": "filterBrightness",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                },
+                {
+                    "__0": "widthRatio",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                },
+                {
+                    "__0": "heightRatio",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                },
+                {
+                    "__0": "denoiseLevel",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                },
+                {
+                    "__0": "version",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                },
+                {
+                    "__0": "faceRect0",
+                    "__1":
+                    {
+                        "__Type":"vec4",
+                        "__Value":[0.0,0.0,0.0,0.0]
+                    }
+                },
+                {
+                    "__0": "faceRect1",
+                    "__1":
+                    {
+                        "__Type":"vec4",
+                        "__Value":[0.0,0.0,0.0,0.0]
+                    }
+                },
+                {
+                    "__0": "faceCount",
+                    "__1":
+                    {
+                        "__Type":"float",
+                        "__Value":0.0
+                    }
+                }
+            ]
+        }
+    }
+}

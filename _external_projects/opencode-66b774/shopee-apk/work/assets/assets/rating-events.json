@@ -1,0 +1,58 @@
+{
+  "impression_of_review_create_photo_hint": {
+      "page_id": "",
+      "page_type": "review_create_photo",
+      "operation": "impression",
+      "page_section": "",
+      "target_type": "hint"
+  },
+  "impression_of_review_create_photo_review_sample_small_window": {
+    "page_id": "",
+    "page_type": "review_create_photo",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "review_sample_small_window"
+  },
+  "click_of_review_create_photo_close_review_sample": {
+    "page_id": "",
+    "page_type": "review_create_photo",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "close_review_sample"
+  },
+  "impression_of_review_create_video_hint": {
+    "page_id": "",
+    "page_type": "review_create_video",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "hint"
+  },
+  "impression_of_review_create_video_review_sample_small_window": {
+    "page_id": "",
+    "page_type": "review_create_video",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "review_sample_small_window"
+  },
+  "click_of_review_create_video_close_review_sample": {
+    "page_id": "",
+    "page_type": "review_create_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "close_review_sample"
+  },
+  "click_of_review_create_video_review_sample_small_window": {
+    "page_id": "",
+    "page_type": "review_create_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "review_sample_small_window"
+  },
+  "click_of_review_create_photo_review_sample_small_window": {
+    "page_id": "",
+    "page_type": "review_create_photo",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "review_sample_small_window"
+  }
+}

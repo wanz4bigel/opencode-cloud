@@ -1,0 +1,65 @@
+{
+  "shopee_assistant_floating_bubble_impression": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "floating_bubble"
+  },
+  "shopee_assistant_floating_bubble_click": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "floating_bubble"
+  },
+  "shopee_assistant_floating_bubble_close_click": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "close_button"
+  },
+  "shopee_assistant_action_get_floating_access": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble",
+    "operation": "action_get_floating_access",
+    "page_section": "",
+    "target_type": ""
+  },
+  "shopee_assistant_action_get_floating_end": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble",
+    "operation": "action_conversation_end",
+    "page_section": "",
+    "target_type": ""
+  },
+  "shopee_assistant_floating_bubble_exit_confirmation_view": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble_exit_confirmation",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "shopee_assistant_floating_bubble_exit_confirmation_confirm_click": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble_exit_confirmation",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "confirm"
+  },
+  "shopee_assistant_floating_bubble_exit_confirmation_cancel_click": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble_exit_confirmation",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "cancel"
+  },
+  "shopee_assistant_floating_bubble_exit_confirmation_exit_click": {
+    "page_id": "",
+    "page_type": "shopee_assistant_floating_bubble_exit_confirmation",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "exit"
+  }
+}

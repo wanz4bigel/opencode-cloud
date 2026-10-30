@@ -1,0 +1,9 @@
+403 POST /api/v4/account/basic/check_account_exist :: {"is_customized":false,"is_login":false,"action_type":2,"error":90309999,"tracking_id":"7417091246b-867e-479b-93a6-87de23575be9","redirect_to_error_page":true} 
+200 POST /api/v4/otp/init_email_otp :: {"error":10002}
+200 POST /api/v4/otp/init_email_otp :: {"error":10002}
+200 POST /api/v4/otp/init_email_otp :: {"error":10002}
+404 GET /api/v4/otp/init_email_otp :: {"error":"error_not_found"}
+200 POST /api/v4/otp/send_email_otp :: {"error":10002}
+200 POST /api/v4/otp/send_email_otp :: {"error":10002}
+200 POST /api/v4/otp/send_email_otp :: {"error":10002}
+404 GET /api/v4/session/get_login_status :: {"error":"error_not_found"}

@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-09-11 10:27:41.246",
+  "version": "1.101.0",
+  "branch": "23aa471acbbb3315c7019caac1530104d046d5c6",
+  "commitId": "23aa471acbbb3315c7019caac1530104d046d5c6",
+  "moduleCommitId": "23aa471acbbb3315c7019caac1530104d046d5c6",
+  "lastMessage": "",
+  "extraInfo": "dev",
+  "groupId": "com.shopee.sz",
+  "artifactId": "videocache",
+  "path": ":videocache",
+  "remoteUrl": ""
+}

@@ -1,0 +1,1 @@
+h2dos: mode=contflood target=https://9router-production-a2ff.up.railway.app/ (h2) conns=30 streams/konek=100 rate=0/s

@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-09-09 14:16:31.244",
+  "version": "0.13.2",
+  "branch": "6d8ece57b5ec12ed200de8d3d342f5d7f463fe41",
+  "commitId": "6d8ece57b5ec12ed200de8d3d342f5d7f463fe41",
+  "moduleCommitId": "810fdb53bcf9f4cde9c5c017b9de03bdf05ef75f",
+  "lastMessage": "Merge branch \u0027feat/0.13.2_without_arp2_fix_period_stat\u0027 into \u0027release/0.13.2_without_arp2\u0027",
+  "extraInfo": "",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmcafx-aar-distribution",
+  "path": ":mmcafx",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/mmc-afx.git"
+}

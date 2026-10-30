@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2025-03-25 14:10:58.077",
+  "version": "1.4.5.4-master_shopee-b0c6d9b-beta",
+  "branch": "master_shopee",
+  "commitId": "b0c6d9bd078f98f2f9fdbb777cd7557bb0e38713",
+  "moduleCommitId": "41deaf92892b6bb5e9e8cb7a7b2401f1104f7851",
+  "lastMessage": "[SPAPP-43857] update relinker version to 1.4.5.4",
+  "extraInfo": "pods",
+  "groupId": "com.getkeepsafe.relinker",
+  "artifactId": "relinker",
+  "path": ":relinker",
+  "remoteUrl": "gitlab@git.garena.com:weining.liu/relinker.git"
+}

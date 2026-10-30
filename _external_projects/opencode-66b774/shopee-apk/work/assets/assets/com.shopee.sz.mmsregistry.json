@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-03-25 18:47:35.496",
+  "version": "0.22.1",
+  "branch": "v3.71/test_app_3.71",
+  "commitId": "84c17241ceaf26490c69a97238ee0afc4bef4a29",
+  "moduleCommitId": "768d1c55883089e191acb5f0157fcfb46993bc98",
+  "lastMessage": "Merge branch \u0027chengxiang/3.71_threadpool_opti\u0027 into \u0027v3.71/test_app_3.71\u0027",
+  "extraInfo": "v3.71/test_app_3.71",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsregistry",
+  "path": ":mmsregistry",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsendpointsdk.git"
+}

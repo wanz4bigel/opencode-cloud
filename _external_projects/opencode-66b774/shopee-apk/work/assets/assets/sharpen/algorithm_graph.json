@@ -1,0 +1,69 @@
+{
+    "GraphInfos": {
+        "AlgorithmAbilitys": [
+            "facial_landmark"
+        ],
+        "AlgorithmGraph": [
+            {
+                "AlgorithmNode": [
+                    {
+                        "Algorithm": {
+                            "Enable": true,
+                            "Name": "",
+                            "SourceType": "Camera0",
+                            "UUID": "",
+                            "__Type": "AlgSource"
+                        },
+                        "ChildrenIDs": [
+                            5
+                        ],
+                        "ID": 2,
+                        "Name": "",
+                        "UUID": ""
+                    },
+                    {
+                        "Algorithm": {
+                            "Enable": true,
+                            "Height": 0,
+                            "Name": "",
+                            "UUID": "",
+                            "UseOrigin": true,
+                            "Width": 0,
+                            "__Type": "AlgBlitter"
+                        },
+                        "ChildrenIDs": [
+                            10
+                        ],
+                        "ID": 5,
+                        "Name": "",
+                        "ParentIDs": [
+                            2
+                        ],
+                        "UUID": ""
+                    },
+                    {
+                        "Algorithm": {
+                            "Enable": true,
+                            "EnableAttribute": false,
+                            "EnablePnp": false,
+                            "Name": "",
+                            "PointMode": "FACE_POINT_MODE_280",
+                            "UUID": "",
+                            "__Type": "AlgFace"
+                        },
+                        "ID": 10,
+                        "Name": "",
+                        "ParentIDs": [
+                            5
+                        ],
+                        "UUID": ""
+                    }
+                ],
+                "Name": "",
+                "UUID": ""
+            }
+        ],
+        "Name": "",
+        "UUID": ""
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "base_url": "http://shopee.localhost:8899/",
+  "timezone": "Asia/Jakarta",
+  "headless": true,
+  "keepalive_minutes": 3,
+  "war": {
+    "times": ["23:59"],
+    "pages": ["http://shopee.localhost:8899/"],
+    "pre_navigate_seconds": 90,
+    "screenshot_after_seconds": 20
+  },
+  "notify": { "telegram": { "enabled": false, "bot_token": "", "chat_id": "" } },
+  "api": {
+    "cookie": "sessid=abc123; ANTIFORGESTOKEN=tok-test",
+    "time_source": "/",
+    "shop_ids": [],
+    "voucher_ids": []
+  }
+}

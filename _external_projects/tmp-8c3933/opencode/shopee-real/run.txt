@@ -1,0 +1,48 @@
+HTTP: 200 | URL akhir: https://shopee.co.id/
+Title: 
+Userscript ter-inject: YA
+STATUS: {
+  "master": true,
+  "dryRun": false,
+  "captcha": false,
+  "offsetMs": -198,
+  "budgetLeft": 900,
+  "warNext": 1793379599910,
+  "warRunning": false,
+  "running": {
+    "war": false,
+    "missions": false,
+    "coins": false,
+    "vouchers": false,
+    "shops": false
+  },
+  "guard": {
+    "master": true,
+    "pausedMs": -1793344632097,
+    "captcha": false,
+    "lock": true,
+    "idleMsAgo": null,
+    "budgetOk": true,
+    "visibility": "visible",
+    "startedAt": 1793344619443
+  },
+  "stats": {
+    "coins": 0,
+    "spins": 0,
+    "visits": 0,
+    "claims": 0,
+    "vouchers": 0
+  }
+}
+TEKS HALAMAN: lompat ke konten utama Butuh bantuan? Halaman Tidak Tersedia Maaf, telah terjadi kesalahan. Silakan log in dan coba lagi atau kembali ke Halaman Utama. Log InKembali ke Halaman Utama ID: 67174a6b909-94be-4a30-bd3c-6ab5670aa955 Pilih bahasa Anda Bahasa Indonesia English ShopeeAutoBot v1.2.0 — × status war misi log setelan Bot aktif (master) ON Dry-run (jangan klik) OFF Jalan saat tab dipakai OFF St
+COOKIES: ['IDE', 'REC7iLP4Q', 'REC_T_ID', 'SPC_F', 'SPC_R_T_ID', 'SPC_R_T_IV', 'SPC_SEC_SI', 'SPC_SI', 'SPC_T_ID', 'SPC_T_IV', '_QPWSDCXHZQA', '_fbp', '_ga', '_ga_SW6D8G0HXK', '_gcl_au']
+MISI title: Shopee Indonesia | Situs Belanja Online Terlengkap & Terpercaya | url: https://shopee.co.id/m/rewards
+MISI teks: lompat ke konten utama Seller Centre Mulai Berjualan Download Ikuti kami di Notifikasi Bantuan Bahasa Indonesia Daftar Log In iPhone 15 Inter Wifi Only Jeans Cewek Jaket Gym Wanita Kipas Angin Portable Turbo Tumbler Stainless Sandal Cross Original Official Store Totebag Wanita Jam Tangan Smartwatch 
+MISI tombol Klaim/Check: ['lompat ke konten utama', 'Bahasa Indonesia', 'Kembali ke Halaman Utama', 'Bahasa Indonesia', 'English', '—', '×', 'status', 'war', 'misi', 'log', 'setelan', 'ON', 'OFF', 'OFF', 'War sekarang', 'Misi', 'Koin', 'Voucher', 'Sync waktu', 'ON', 'ON', 'OFF', 'ON', 'ON']
+
+--- LOG BOT (ShopeeAutoBot saja) ---
+[log] [ShopeeAutoBot:INFO] 🤖 ShopeeAutoBot v1.2.0 siap. Host: shopee.co.id (runner Python)
+[log] [ShopeeAutoBot:INFO] Sinkron waktu server: drift -198ms (RTT 596ms)
+[log] [ShopeeAutoBot:INFO] 🤖 ShopeeAutoBot v1.2.0 siap. Host: shopee.co.id (runner Python)
+[log] [ShopeeAutoBot:INFO] Sinkron waktu server: drift -975ms (RTT 248ms)
+(log lengkap: /tmp/opencode/shopee-real/probe-console.log )

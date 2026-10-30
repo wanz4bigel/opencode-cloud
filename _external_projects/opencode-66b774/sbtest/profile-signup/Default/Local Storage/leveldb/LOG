@@ -1,0 +1,4 @@
+2026/10/30-07:22:39.448 4ff9 Creating DB /tmp/opencode/sbtest/profile-signup/Default/Local Storage/leveldb since it was missing.
+2026/10/30-07:22:39.451 4ff9 Reusing MANIFEST /tmp/opencode/sbtest/profile-signup/Default/Local Storage/leveldb/MANIFEST-000001
+2026/10/30-07:22:52.848 4fff Level-0 table #5: started
+2026/10/30-07:22:52.850 4fff Level-0 table #5: 55594 bytes OK

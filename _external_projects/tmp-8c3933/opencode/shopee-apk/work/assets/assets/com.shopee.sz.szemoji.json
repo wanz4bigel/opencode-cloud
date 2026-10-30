@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2025-10-29 10:54:42.663",
+  "version": "0.7.2",
+  "branch": "master",
+  "commitId": "1269db4d770e686eb5da834c2bfa4f4ef7b4d907",
+  "moduleCommitId": "1269db4d770e686eb5da834c2bfa4f4ef7b4d907",
+  "lastMessage": "[3.62]支持 emoji 的手动加载模式",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "szemoji",
+  "path": ":szemoji",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/ssz-client/android/toc/common.git"
+}

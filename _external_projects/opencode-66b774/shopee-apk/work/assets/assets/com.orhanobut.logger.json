@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2022-08-25 13:03:15.475",
+  "version": "2.3.4-SV",
+  "branch": "master",
+  "commitId": "1a2a9e291c6ef699c944334264f788ed420f548f",
+  "moduleCommitId": "1a2a9e291c6ef699c944334264f788ed420f548f",
+  "lastMessage": "Updated pods settings",
+  "extraInfo": "",
+  "groupId": "com.orhanobut",
+  "artifactId": "logger",
+  "path": ":logger",
+  "remoteUrl": "gitlab@git.garena.com:kailong.lin/logger.git"
+}

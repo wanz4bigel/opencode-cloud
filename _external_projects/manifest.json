@@ -8,5 +8,10 @@
     "slug": "tmp-8c3933",
     "worktree": "/tmp",
     "project_id": "470c8549ef01a2a9d3c85b22965766cefc874134"
+  },
+  {
+    "slug": "shopee-real-1d0e23",
+    "worktree": "/tmp/opencode/shopee-real",
+    "project_id": "9eb89d6f04786287a4efdf7c136e2b948927bdf0"
   }
 ]

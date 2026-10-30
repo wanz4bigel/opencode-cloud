@@ -1,0 +1,13 @@
+{
+    "RelativeRenderTexture":
+    {
+        "RelativeX":1.0,
+        "RelativeY":1.0,
+        "MinFilter":"eLINEAR",
+        "MagFilter":"eLINEAR",
+        "WrapS":"eCLAMP",
+        "WrapT":"eCLAMP",
+        "Format":"eRGBA",
+        "Attachment":"eCOLOR"
+    }
+}
