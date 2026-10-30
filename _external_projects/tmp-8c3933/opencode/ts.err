@@ -1,0 +1,2 @@
+page.evaluate: Error: Turnstile tidak selesai dalam 2 menit
+    at eval (eval at evaluate (:370:30), <anonymous>:3:49)

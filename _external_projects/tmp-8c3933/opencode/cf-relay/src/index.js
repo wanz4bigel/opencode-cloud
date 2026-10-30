@@ -1,336 +1,271 @@
-/**
- * Strata relay — Worker + Durable Object.
- *
- *   internet --443--> Cloudflare edge --> Worker --> DO (WebSocket) --> agent sandbox --> 127.0.0.1:8081
- *
- * Prinsip: kalau agent sedang reconnect, request ditahan sebentar (bukan
- * langsung 503), dan tiap request punya watchdog supaya tidak nyangkut.
- */
+// Strata relay: Cloudflare Worker + Durable Object (hibernatable WebSocket).
+// Agent (sandbox) connects to /_agent?k=AGENT_TOKEN and proxies to 127.0.0.1:8081.
+// Protocol (verified live):
+//   DO -> agent : {"type":"req","id","method","path","headers"[, "body":b64]}
+//                 {"type":"chunk","id","data":b64}
+//                 {"type":"end","id"}
+//   agent -> DO : {"type":"res","id","status","headers"}
+//                 {"type":"chunk","id","data":b64}
+//                 {"type":"end","id"}
 
-const MAX_FRAME = 32 * 1024;
+const MAX_BODY = 64 * 1024 * 1024;
+const CHUNK = 16 * 1024;
 const MAX_PENDING = 16;
-const HEAD_TIMEOUT_MS = 20_000;
-const IDLE_TIMEOUT_MS = 120_000;
-const AGENT_WAIT_MS = 10_000;
+const HEADER_WAIT_MS = 45_000;
+const IDLE_MS = 180_000;
 
-const HOP = new Set([
-  "connection", "keep-alive", "transfer-encoding", "upgrade",
-  "proxy-connection", "te", "trailer", "host", "content-length",
-]);
+const CORS = {
+  "access-control-allow-origin": "*",
+  "access-control-allow-headers": "authorization, content-type",
+  "access-control-allow-methods": "GET, POST, OPTIONS",
+  "access-control-max-age": "86400",
+};
 
-function toB64(bytes) {
+function json(body, status = 200, extra = {}) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { "content-type": "application/json", ...CORS, ...extra },
+  });
+}
+
+function b64(bytes) {
   let s = "";
-  for (let i = 0; i < bytes.length; i += 8192) {
-    s += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+  const view = new Uint8Array(bytes);
+  for (let i = 0; i < view.length; i += 8192) {
+    s += String.fromCharCode.apply(null, view.subarray(i, i + 8192));
   }
   return btoa(s);
 }
 
-function fromB64(str) {
+function unb64(str) {
   const bin = atob(str);
   const out = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
   return out;
 }
 
-const CORS = {
-  "access-control-allow-origin": "*",
-  "access-control-allow-headers": "authorization, content-type, x-api-key, anthropic-version, anthropic-beta",
-  "access-control-allow-methods": "GET, POST, OPTIONS",
-  "access-control-max-age": "86400",
-};
-
-function json(obj, status, extra = {}) {
-  return Response.json(obj, { status, headers: { ...CORS, ...extra } });
-}
-
-// Ganti nilai ini setiap deploy besar: memaksa instance Durable Object baru,
-// karena instance lama tetap menjalankan kode lama selama agent tersambung.
-const DO_NAME = "main-2026-10-28a";
-
-export default {
-  async fetch(request, env) {
-    const id = env.RELAY.idFromName(DO_NAME);
-    return env.RELAY.get(id).fetch(request);
-  },
-};
-
 export class Relay {
   constructor(state, env) {
     this.state = state;
     this.env = env;
-    this.ws = null;
     this.pending = new Map();
-    this.waiters = [];
-    this.connectedAt = 0;
+    this.waiting = 0;
     this.dropped = 0;
+    this.startedAt = Date.now();
   }
 
-  // ---------------------------------------------------------------- agent side
-
-  resolveWaiters() {
-    const list = this.waiters;
-    this.waiters = [];
-    for (const fn of list) fn(true);
+  agentSocket() {
+    const socks = this.state.getWebSockets("agent");
+    return socks.length ? socks[socks.length - 1] : null;
   }
-
-  waitForAgent(ms) {
-    if (this.ws) return Promise.resolve(true);
-    return new Promise((resolve) => {
-      let done = false;
-      const finish = (ok) => {
-        if (done) return;
-        done = true;
-        resolve(ok);
-      };
-      this.waiters.push(finish);
-      setTimeout(() => {
-        const i = this.waiters.indexOf(finish);
-        if (i >= 0) this.waiters.splice(i, 1);
-        finish(!!this.ws);
-      }, ms);
-    });
-  }
-
-  acceptAgent(request) {
-    const pair = new WebSocketPair();
-    const [client, server] = Object.values(pair);
-    server.accept();
-
-    if (this.ws) {
-      try { this.ws.close(1012, "replaced"); } catch (_) {}
-    }
-    this.ws = server;
-    this.connectedAt = Date.now();
-
-    server.addEventListener("message", (ev) => this.onAgentMessage(ev.data));
-    server.addEventListener("close", () => {
-      if (this.ws === server) {
-        this.ws = null;
-        this.failAll("agent terputus");
-      }
-    });
-    server.addEventListener("error", () => {
-      if (this.ws === server) {
-        this.ws = null;
-        this.failAll("agent error");
-      }
-    });
-
-    this.resolveWaiters();
-    return new Response(null, { status: 101, webSocket: client });
-  }
-
-  send(obj) {
-    if (!this.ws) return false;
-    try { this.ws.send(JSON.stringify(obj)); return true; } catch (_) { return false; }
-  }
-
-  failAll(reason) {
-    for (const [id, entry] of this.pending) {
-      this.pending.delete(id);
-      entry.clear();
-      if (!entry.headDone) entry.finishHead(502, { "content-type": "application/json" });
-      try { entry.controller.error(new Error(reason)); } catch (_) {}
-    }
-  }
-
-  onAgentMessage(raw) {
-    let msg;
-    try { msg = JSON.parse(raw); } catch (_) { return; }
-    const entry = this.pending.get(msg.id);
-    if (!entry) return;
-    entry.touch();
-
-    switch (msg.type) {
-      case "res": {
-        const headers = {};
-        for (const [k, v] of Object.entries(msg.headers || {})) {
-          if (!HOP.has(k.toLowerCase())) headers[k.toLowerCase()] = v;
-        }
-        entry.finishHead(msg.status || 502, headers);
-        break;
-      }
-      case "chunk":
-        if (!entry.headDone) entry.finishHead(200, {});
-        try { entry.controller.enqueue(fromB64(msg.data)); } catch (_) {}
-        break;
-      case "done":
-        if (!entry.headDone) entry.finishHead(502, { "content-type": "application/json" });
-        this.finish(msg.id, entry);
-        break;
-      case "error":
-        if (!entry.headDone) {
-          entry.finishHead(502, { "content-type": "application/json" });
-          try {
-            entry.controller.enqueue(new TextEncoder().encode(
-              JSON.stringify({ error: { message: msg.message, type: "agent_error" } })));
-          } catch (_) {}
-        }
-        this.finish(msg.id, entry);
-        break;
-    }
-  }
-
-  finish(id, entry) {
-    this.pending.delete(id);
-    entry.clear();
-    try { entry.controller.close(); } catch (_) {}
-  }
-
-  // ------------------------------------------------------------- client side
 
   async fetch(request) {
     const url = new URL(request.url);
 
     if (url.pathname === "/_agent") {
-      const token = request.headers.get("x-agent-token") || url.searchParams.get("k");
-      if (token !== this.env.AGENT_TOKEN) return new Response("forbidden", { status: 403 });
-      if (request.headers.get("Upgrade") !== "websocket") {
+      if (request.headers.get("upgrade") !== "websocket") {
         return new Response("expected websocket", { status: 400 });
       }
-      return this.acceptAgent(request);
-    }
-
-    if (url.pathname === "/_reset" && request.method === "POST") {
       if (url.searchParams.get("k") !== this.env.AGENT_TOKEN) {
         return new Response("forbidden", { status: 403 });
       }
-      this.failAll("reset manual");
-      try { this.ws?.close(1012, "reset"); } catch (_) {}
-      this.ws = null;
-      return json({ ok: true, dropped: this.dropped }, 200);
+      const pair = new WebSocketPair();
+      this.state.acceptWebSocket(pair[1], ["agent"]);
+      // koneksi baru: batalkan sisa request lama
+      for (const [id, p] of this.pending) {
+        try { p.fail(502, "agent reconnected"); } catch (_) {}
+        this.pending.delete(id);
+      }
+      return new Response(null, { status: 101, webSocket: pair[0] });
     }
 
-    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+    if (url.pathname === "/_reset") {
+      if (url.searchParams.get("k") !== this.env.AGENT_TOKEN) {
+        return new Response("forbidden", { status: 403 });
+      }
+      for (const ws of this.state.getWebSockets("agent")) {
+        try { ws.close(1012, "reset"); } catch (_) {}
+      }
+      return json({ ok: true, closed: true });
+    }
 
     if (url.pathname === "/_health") {
+      const ws = this.agentSocket();
       return json({
-        agent: !!this.ws,
-        connected_s: this.connectedAt ? Math.round((Date.now() - this.connectedAt) / 1000) : 0,
+        agent: !!ws,
+        connected_s: ws ? Math.round((Date.now() - this.startedAt) / 1000) : 0,
         pending: this.pending.size,
-        waiting: this.waiters.length,
+        waiting: this.waiting,
         dropped: this.dropped,
-      }, 200);
-    }
-
-    if (url.pathname.startsWith("/v1/")) {
-      const key = (request.headers.get("authorization") || "").replace(/^Bearer\s+/i, "")
-        || request.headers.get("x-api-key") || "";
-      if (key !== this.env.STRATA_API_KEY) {
-        return json({ error: { message: "invalid api key", type: "auth_error" } }, 401);
-      }
-    }
-
-    if (!(await this.waitForAgent(AGENT_WAIT_MS))) {
-      this.dropped++;
-      return json({
-        error: { message: "agent sandbox belum tersambung, coba lagi", type: "relay_error" },
-        retry_after_ms: 2000,
-      }, 503, { "retry-after": "2" });
-    }
-
-    if (this.pending.size >= MAX_PENDING) {
-      return json({
-        error: { message: "terlalu banyak request berjalan", type: "relay_busy" },
-        retry_after_ms: 1000,
-      }, 429, { "retry-after": "1" });
+      });
     }
 
     return this.proxy(request, url);
   }
 
   async proxy(request, url) {
-    const id = crypto.randomUUID();
-    let finishHead;
-    let idleTimer = null;
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: CORS });
+    }
 
-    const entry = {
-      headDone: false,
-      controller: null,
-      status: 502,
-      headers: {},
-      finishHead: (status, headers) => {
-        if (entry.headDone) return;
-        entry.headDone = true;
-        entry.status = status;
-        entry.headers = { ...headers };
-        finishHead(entry);
-      },
-      clear: () => {
-        if (idleTimer) clearTimeout(idleTimer);
-        idleTimer = null;
-      },
-      touch: () => {
-        if (idleTimer) clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => entry.abort("idle"), IDLE_TIMEOUT_MS);
-      },
-      abort: (why) => {
-        const e = this.pending.get(id);
-        if (!e) return;
-        this.pending.delete(id);
-        e.clear();
-        this.send({ type: "cancel", id });
-        if (!e.headDone) {
-          e.headDone = true;
-          e.status = 504;
-          e.headers = { "content-type": "application/json" };
-          finishHead(e);
-          try {
-            e.controller.enqueue(new TextEncoder().encode(
-              JSON.stringify({ error: { message: `timeout (${why})`, type: "relay_timeout" } })));
-          } catch (_) {}
+    const key = this.env.STRATA_API_KEY;
+    const auth = request.headers.get("authorization") || "";
+    if (key && auth !== `Bearer ${key}`) {
+      return json({ error: { message: "API key salah", type: "invalid_api_key" } }, 401);
+    }
+
+    if (this.pending.size >= MAX_PENDING) {
+      return json({ error: { message: "terlalu banyak permintaan", type: "rate_limit" } }, 429);
+    }
+
+    // tunggu agent sampai 10 detik
+    let ws = this.agentSocket();
+    if (!ws) {
+      const until = Date.now() + 10_000;
+      this.waiting++;
+      try {
+        while (Date.now() < until) {
+          await new Promise((r) => setTimeout(r, 250));
+          ws = this.agentSocket();
+          if (ws) break;
         }
-        try { e.controller.close(); } catch (_) {}
-      },
-    };
+      } finally {
+        this.waiting--;
+      }
+    }
+    if (!ws) {
+      this.dropped++;
+      return json({
+        error: { message: "agent sandbox belum tersambung, coba lagi", type: "relay_error" },
+        retry_after_ms: 2000,
+      }, 503);
+    }
 
-    const headPromise = new Promise((resolve) => { finishHead = resolve; });
+    let body = new Uint8Array(0);
+    if (request.method !== "GET" && request.method !== "HEAD") {
+      const buf = await request.arrayBuffer();
+      if (buf.byteLength > MAX_BODY) {
+        return json({ error: { message: "body terlalu besar", type: "too_large" } }, 413);
+      }
+      body = new Uint8Array(buf);
+    }
+
+    const id = crypto.randomUUID();
+    const headers = {};
+    for (const [k, v] of request.headers) {
+      if (k === "host" || k === "cf-connecting-ip" || k === "cf-ray" || k === "cf-visitor" ||
+          k === "x-forwarded-proto" || k === "content-length") continue;
+      headers[k] = v;
+    }
+
+    const reqFrame = { type: "req", id, method: request.method, path: url.pathname + url.search, headers };
+    const frames = [JSON.stringify(reqFrame)];
+    for (let i = 0; i < body.length; i += CHUNK) {
+      frames.push(JSON.stringify({ type: "chunk", id, data: b64(body.subarray(i, i + CHUNK)) }));
+    }
+    frames.push(JSON.stringify({ type: "end", id }));
+
+    let resolveHead;
+    const head = new Promise((res, rej) => {
+      resolveHead = { res, rej };
+    });
+
+    let streamCtl;
     const stream = new ReadableStream({
-      start: (c) => { entry.controller = c; },
+      start(ctl) { streamCtl = ctl; },
       cancel: () => {
-        const e = this.pending.get(id);
-        if (!e) return;
+        const p = this.pending.get(id);
+        if (p && ws) {
+          try { ws.send(JSON.stringify({ type: "cancel", id })); } catch (_) {}
+        }
         this.pending.delete(id);
-        e.clear();
-        this.send({ type: "cancel", id });
       },
     });
 
-    this.pending.set(id, entry);
-    entry.touch();
+    const idle = setTimeout(() => {
+      const p = this.pending.get(id);
+      if (p) { p.fail(504, "timeout"); this.pending.delete(id); }
+    }, IDLE_MS);
 
-    const headers = {};
-    for (const [k, v] of request.headers) {
-      if (!HOP.has(k.toLowerCase())) headers[k] = v;
-    }
-    this.send({ type: "req", id, method: request.method, path: url.pathname + url.search, headers });
+    this.pending.set(id, {
+      write: (u8) => { try { streamCtl.enqueue(u8); } catch (_) {} },
+      head: (status, hdrs) => resolveHead.res({ status, hdrs }),
+      end: () => { clearTimeout(idle); try { streamCtl.close(); } catch (_) {} },
+      fail: (status, message) => {
+        clearTimeout(idle);
+        resolveHead.rej(new Error(message));
+        try { streamCtl.error(new Error(message)); } catch (_) {}
+      },
+    });
 
-    if (request.body) {
-      const reader = request.body.getReader();
-      try {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          for (let i = 0; i < value.length; i += MAX_FRAME) {
-            this.send({ type: "chunk", id, data: toB64(value.subarray(i, i + MAX_FRAME)) });
-          }
-        }
-      } catch (_) { /* klien putus saat upload */ }
-    }
-    this.send({ type: "end", id });
-
-    const timer = new Promise((r) => setTimeout(() => r("timeout"), HEAD_TIMEOUT_MS));
-    const winner = await Promise.race([headPromise, timer]);
-    if (winner === "timeout") {
-      const e = this.pending.get(id);
-      if (e) e.abort("head");
-      return json({ error: { message: "agent tidak menjawab", type: "relay_timeout" } }, 504);
+    try {
+      for (const f of frames) ws.send(f);
+    } catch (e) {
+      this.pending.delete(id);
+      clearTimeout(idle);
+      return json({ error: { message: "agent terputus", type: "relay_error" } }, 503);
     }
 
-    const status = entry.status || 200;
-    const outHeaders = new Headers({ ...(entry.headers || {}), ...CORS });
+    let head2;
+    try {
+      head2 = await head;
+    } catch (e) {
+      clearTimeout(idle);
+      return json({ error: { message: String(e.message || e), type: "relay_error" } }, 502);
+    }
+
+    const outHeaders = new Headers(head2.hdrs || {});
+    outHeaders.set("access-control-allow-origin", "*");
+    outHeaders.set("cache-control", "no-cache");
     if (!outHeaders.has("content-type")) outHeaders.set("content-type", "application/json");
-    return new Response(request.method === "HEAD" ? null : stream, { status, headers: outHeaders });
+
+    return new Response(request.method === "HEAD" ? null : stream, {
+      status: head2.status,
+      headers: outHeaders,
+    });
+  }
+
+  async webSocketMessage(ws, raw) {
+    let msg;
+    try {
+      msg = JSON.parse(typeof raw === "string" ? raw : new TextDecoder().decode(raw));
+    } catch (_) {
+      return;
+    }
+    const id = msg.id;
+    const p = this.pending.get(id);
+    if (!p) return;
+    if (msg.type === "res") {
+      p.head(msg.status || 200, msg.headers || {});
+    } else if (msg.type === "chunk") {
+      try { p.write(unb64(msg.data)); } catch (_) {}
+    } else if (msg.type === "end") {
+      p.end();
+      this.pending.delete(id);
+    }
+  }
+
+  async webSocketClose(ws, code, reason) {
+    for (const [id, p] of this.pending) {
+      try { p.fail(502, "agent terputus"); } catch (_) {}
+      this.pending.delete(id);
+    }
+    try { ws.close(code, reason); } catch (_) {}
+  }
+
+  async webSocketError(ws, error) {
+    await this.webSocketClose(ws, 1011, "ws error");
   }
 }
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === "/_health" || url.pathname === "/_agent" || url.pathname === "/_reset") {
+      const stub = env.RELAY.get(env.RELAY.idFromName(env.DO_NAME || "main"));
+      return stub.fetch(request);
+    }
+    const stub = env.RELAY.get(env.RELAY.idFromName(env.DO_NAME || "main"));
+    return stub.fetch(request);
+  },
+};

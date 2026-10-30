@@ -1,0 +1,107 @@
+func stripPad(b []byte) []byte {
+	if len(b) > 0 && b[0]&(flEndStream|flPadded) == 0 {
+		return b
+	}
+	return b
+}
+
+func dataPayload(typ byte, flags byte, p []byte) []byte {
+	if flags&flPadded != 0 && len(p) > 1 {
+		pad := int(p[0])
+		if pad < len(p)-1 {
+			p = p[1 : len(p)-1-pad]
+		}
+	}
+	return p
+}
+
+// readLoop membaca frame lawan: menjaga socket tetap mengalir, mencatat SETTINGS/GOAWAY.
+func readLoop(c net.Conn, st *stats, m *connMeta, ctl chan []byte) error {
+	hdr := make([]byte, 9)
+	for {
+		if _, err := io.ReadFull(c, hdr); err != nil {
+			return err
+		}
+		n := int(hdr[0])<<16 | int(hdr[1])<<8 | int(hdr[2])
+		typ, flags := hdr[3], hdr[4]
+		stream := uint32(hdr[5])<<24 | uint32(hdr[6])<<16 | uint32(hdr[7])<<8 | uint32(hdr[8])
+		if n > 1<<22 {
+			return errors.New("frame terlalu besar")
+		}
+		var p []byte
+		if n > 0 {
+			if typ == frHeaders || typ == frPush || typ == frContinuation {
+				if flags&flEndHeaders != 0 {
+					st.resp.Add(1)
+				}
+				if n <= 8192 {
+					// respons kecil: baca lalu buang (hemat memori)
+					if _, err := io.ReadFull(c, poolGet(n)[:n]); err != nil {
+						return err
+					}
+					poolPut(hdr)
+					continue
+				}
+			}
+			if _, err := io.ReadFull(c, make([]byte, n)); err != nil {
+				return err
+			}
+			st.bytes.Add(int64(n))
+		}
+		switch typ {
+		case frSettings:
+			if flags&flAck == 0 {
+				p = make([]byte, n)
+				if n > 0 {
+					if _, err := c.Read(p); err != nil {
+						return err
+					}
+				}
+				for i := 0; i+5 < len(p); i += 6 {
+					id := uint16(p[i])<<8 | uint16(p[i+1])
+					v := uint32(p[i+2])<<24 | uint32(p[i+3])<<16 | uint32(p[i+4])<<8 | uint32(p[i+5])
+					if id == settingMaxConns && v > 0 {
+						ms := int64(v)
+						if ms > 1<<20 {
+							ms = 1 << 20
+						}
+						m.maxStreams.Store(ms)
+					}
+				}
+				if ackFrames.Load() {
+					select {
+					case ctl <- nil:
+					default:
+					}
+				}
+			}
+		case frPing:
+			if flags&flAck == 0 && ackFrames.Load() {
+				select {
+				case ctl <- nil:
+				default:
+				}
+			}
+		case frGoaway:
+			if !m.goaway.Swap(true) {
+				code := uint32(0)
+				if n >= 8 {
+					b := make([]byte, n)
+					if _, err := io.ReadFull(c, b); err == nil {
+						code = uint32(b[4])<<24 | uint32(b[5])<<16 | uint32(b[6])<<8 | uint32(b[7])
+					}
+				}
+				_ = stripPad(nil)
+				st.errCat("goaway", fmt.Errorf("GOAWAY kode %d %s", code, goawayNames[code]))
+				return errGoaway
+			}
+			return errGoaway
+		case frReset:
+			m.inflight.Add(-1)
+		default:
+			_ = dataPayload(typ, flags, p)
+		}
+	}
+}
+
+var errGoaway = errors.New("goaway")

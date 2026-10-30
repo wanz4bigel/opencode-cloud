@@ -1,0 +1,10 @@
+function isObj(v){ return v && typeof v === 'object' && !Array.isArray(v); }
+function deepMerge(base, over){
+  if (!isObj(over)) return base;
+  if (!isObj(base)) { console.log("PRIMITIF-BASE branch hit, returning", over); return over; }
+  const out = {};
+  for (const k of Object.keys(base)) out[k] = deepMerge(base[k], over[k]);
+  for (const k of Object.keys(over)) if (!(k in base)) out[k] = over[k];
+  return out;
+}
+console.log(JSON.stringify(deepMerge({b:1,c:2},{b:9})));

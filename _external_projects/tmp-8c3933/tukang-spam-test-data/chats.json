@@ -1,0 +1,33 @@
+{
+  "4242": {
+    "chaos": false,
+    "autoReact": false,
+    "autoSticker": false,
+    "silent": false,
+    "preset": "normal",
+    "title": "Owner",
+    "type": "private",
+    "seenAt": 1793363597125
+  },
+  "-100": {
+    "chaos": false,
+    "autoReact": false,
+    "autoSticker": false,
+    "silent": false,
+    "preset": "brutal",
+    "title": "Grup Ribut",
+    "type": "supergroup",
+    "seenAt": 1793363597125
+  },
+  "-777": {
+    "chaos": false,
+    "autoReact": false,
+    "autoSticker": false,
+    "silent": false,
+    "preset": "normal",
+    "title": "Grup Tetangga",
+    "type": "supergroup",
+    "seenAt": 1793363595197,
+    "status": "member"
+  }
+}

@@ -1,0 +1,13 @@
+
+> telegram-spam-bot@1.0.0 start
+> node src/index.js
+
+🤖 @Alokhitambot siap nge-spam. (1 admin)
+   👤 Mode tamu: kodenya udah siap, tapi Guest Mode belum di-enable di BotFather → @mention di grup asing belum bakal nyampe
+   Tekan Ctrl+C buat berhenti.
+[cmd] /start dari 7171052892 (Wanz osaka) di chat 7171052892
+[cmd] /grup dari 7171052892 (Wanz osaka) di chat 7171052892
+[cmd] /spam dari 7171052892 (Wanz osaka) di chat 7171052892
+[spam] sesi #1 kelar — 10/10 terkirim, 0 gagal, 14.2s
+[cmd] /chaos dari 7171052892 (Wanz osaka) di chat 7171052892
+[spam] sesi #2 kelar — 3/3 terkirim, 0 gagal, 3.6s

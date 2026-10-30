@@ -1,0 +1,178 @@
+// prof Browser adalah satu sidik jari klien (SETTINGS + urutan header + UA).
+type prof struct {
+	name, ua  string
+	ids       []uint32
+	extra     []byte
+	order     string // a=accept-language e=accept u=user-agent c=accept-encoding m=sec-fetch-mode s=sec-ch-ua p=priority
+	alpn      []string
+	curves    []tls.CurveID
+	litPseudo bool // :method/:scheme sebagai literal bernama-indeks (gaya Firefox/Safari)
+}
+
+const (
+	iAccept = 19
+	iALang  = 17
+	iUA     = 58
+	iEnc    = 16
+)
+
+// browserProfiles: sidik jari yang ditiru. Nilai SETTINGS di bawah adalah nilai
+// nyata yang diumumkan klien tersebut (dipublikkan lewat h2spec/PEAKHOUR).
+func browserProfiles() []*prof {
+	return []*prof{
+		{
+			name:   "chrome/131",
+			ua:     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+			ids:    []uint32{0x1, 4096, 0x2, 0, 0x4, 6291456, 0x6, 65536},
+			extra:  []byte{0, 8, 0, 0, 0, 1, 0, 15, 16, 0},
+			order:  "aeeaacecccp",
+			alpn:   []string{"h3", "h2", "http/1.1"},
+			curves: []tls.CurveID{tls.X25519, tls.CurveP256},
+		},
+		{
+			name:   "edge/131",
+			ua:     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+			ids:    []uint32{0x1, 4096, 0x2, 0, 0x4, 6291456, 0x6, 65536},
+			extra:  []byte{0, 8, 0, 0, 0, 1, 0, 15, 16, 0},
+			order:  "aeeaacecccp",
+			alpn:   []string{"h3", "h2", "http/1.1"},
+			curves: []tls.CurveID{tls.X25519, tls.CurveP256},
+		},
+		{
+			name:      "firefox/132",
+			ua:        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0",
+			ids:       []uint32{0x1, 4096, 0x4, 268435456},
+			extra:     []byte{0, 7, 0, 0, 4, 1},
+			order:     "aeuccec",
+			alpn:      []string{"h2", "http/1.1"},
+			curves:    []tls.CurveID{tls.X25519, tls.CurveP256, tls.CurveP384},
+			litPseudo: true,
+		},
+		{
+			name:      "safari/17.2",
+			ua:        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15",
+			ids:       []uint32{0x2, 0, 0x3, 100, 0x4, 2097152, 0x5, 16384},
+			order:     "aeaaucccc",
+			alpn:      []string{"h2", "http/1.1"},
+			curves:    []tls.CurveID{tls.X25519, tls.CurveP256, tls.CurveP384, tls.CurveP521},
+			litPseudo: true,
+		},
+	}
+}
+
+// pickProfile memilih sidik jari browser; -browser memaksa satu merek.
+func pickProfile(r *rand.Rand) *prof {
+	ps := browserProfiles()
+	if cfg.browser != "" && cfg.browser != "auto" {
+		for _, p := range ps {
+			if strings.HasPrefix(p.name, cfg.browser) {
+				return p
+			}
+		}
+	}
+	return ps[r.IntN(len(ps))]
+}
+
+// settings merakit payload SETTINGS sesuai profil.
+func (p *prof) settings() []byte {
+	b := settingsPayload(p.ids...)
+	if len(p.extra) > 0 {
+		b = append(b, p.extra...)
+	}
+	return b
+}
+
+// browserBld membangun blok HEADERS bergaya browser untuk SATU koneksi:
+// header yang sama di-INSERT sekali ke dynamic table, lalu direferensikan
+// 1 byte pada request berikutnya - persis seperti browser sungguhan.
+type browserBld struct {
+	pre, post []byte
+	bodies    []string
+	rnd       *rand.Rand
+}
+
+func newBrowserBld(p *prof, c *Config, paths []string, r *rand.Rand) *browserBld {
+	e := newHpackEnc(1024)
+	if p.litPseudo { // Firefox/Safari: nama dari tabel statis, nilai literal
+		e.litName(2, "GET")
+		if c.scheme == "https" {
+			e.litName(7, "https")
+		} else {
+			e.litName(7, "http")
+		}
+	} else { // Chrome/Edge: indexed penuh
+		e.idx(2)
+		if c.scheme == "https" {
+			e.idx(7)
+		} else {
+			e.idx(6)
+		}
+	}
+	e.litName(1, c.authority)
+	for _, ch := range []byte(p.order) {
+		switch ch {
+		case 'a':
+			e.ins(iALang, "en-US,en;q=0.9")
+		case 'e':
+			e.ins(iAccept, "*/*")
+		case 'u':
+			e.ins(iUA, p.ua)
+		case 'c':
+			e.ins(iEnc, "gzip, deflate, br, zstd")
+		case 'm':
+			e.insRaw(0, "sec-fetch-mode", "navigate")
+		case 's':
+			e.insRaw(0, "sec-ch-ua", `"Not?A_Brand";v="8", "Chromium";v="131"`)
+		case 'p':
+			e.insRaw(0, "priority", "u=1, i")
+		}
+	}
+	return &browserBld{pre: append([]byte(nil), e.b...), rnd: r, bodies: paths}
+}
+
+// next menyusun permintaan berikutnya. :path selalu literal baru (browser pun
+// begitu saat pindah URL), sisanya sudah ter-mampat di dynamic table.
+func (bb *browserBld) next(r *rand.Rand, path string) []byte {
+	p := path
+	if len(bb.bodies) > 0 {
+		p = bb.bodies[bb.rnd.IntN(len(bb.bodies))]
+	}
+	if cfg.bust {
+		if strings.Contains(p, "?") {
+			p += fmt.Sprintf("&n=%d", r.Uint64())
+		} else {
+			p += fmt.Sprintf("?n=%d", r.Uint64())
+		}
+	}
+	out := make([]byte, 0, len(bb.pre)+len(bb.post)+len(p)+4)
+	out = append(out, bb.pre...)
+	out = append(out, 0x10|5) // :path literal, nama dari tabel statis
+	out = hpackHuff(out, p)
+	return append(out, bb.post...)
+}
+
+// botBld menyamar jadi browser (pola header + dynamic table + Huffman).
+type botBld struct{ inner *browserBld }
+
+func (b *botBld) next(r *rand.Rand, path string) []byte { return b.inner.next(r, path) }
+
+// fezBld memakai blok header normal, muatan anomali ditempel terpisah.
+type fezBld struct{ base reqBuilder }
+
+func (b *fezBld) next(r *rand.Rand, path string) []byte { return b.base.next(r, path) }
+
+// bypassBld menyusun blok HEADERS sesuai teknik bypass yang dipilih.
+type bypassBld struct{ tech string }
+
+func (b *bypassBld) next(r *rand.Rand, path string) []byte {
+	blk, err := bypassBlock(b.tech, &cfg, r)
+	if err != nil {
+		return nil
+	}
+	return blk
+}
+
+// plainBld membungkus builder standar supaya sama-sama reqBuilder.
+type plainBld struct{ b *builder }
+
+func (p *plainBld) next(r *rand.Rand, path string) []byte { return p.b.next(r, path) }
