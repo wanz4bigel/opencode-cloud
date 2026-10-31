@@ -1,0 +1,1 @@
+aliyun oss logging --method get $bucket --region $region

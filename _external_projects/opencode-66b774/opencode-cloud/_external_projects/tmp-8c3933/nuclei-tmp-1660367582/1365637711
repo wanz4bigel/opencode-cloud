@@ -1,0 +1,1 @@
+gcloud storage buckets describe gs://$bucketName --format="json(public_access_prevention)" | jq -r '. // "null"'

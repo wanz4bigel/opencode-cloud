@@ -1,0 +1,1 @@
+az policy assignment list --output json --query '[*].{"name":displayName,"policyDefinitionId":policyDefinitionId}'

@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2025-08-08 15:34:50.525",
+  "version": "0.1.6",
+  "branch": "v3.57/test_app_3.57",
+  "commitId": "bde61f1ef5dd463829121ea518dc593795309193",
+  "moduleCommitId": "e1f6be62593a26214e6caf4808cfb619cd26caa0",
+  "lastMessage": "Merge branch \u0027zemingliu/watermark\u0027 into \u0027v3.57/test_app_3.57\u0027",
+  "extraInfo": "v3.57/test_app_3.57",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsimageprocessor",
+  "path": ":mmsimageprocessor",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsimageprocessingsdk.git"
+}

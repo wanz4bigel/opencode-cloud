@@ -1,0 +1,1 @@
+gcloud container node-pools describe $nodePoolName --cluster $clusterName --location $location --project $projectId --format="value(config.workloadMetadataConfig)"

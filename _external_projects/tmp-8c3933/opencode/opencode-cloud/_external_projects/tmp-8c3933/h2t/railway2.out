@@ -1,0 +1,56 @@
+==================================================
+### bot 300 koneksi think 50ms ke /login (flash crowd rute berat)  (08:50:53)
+sebelum: HTTP 200 ttfb=0.020795s size=9936
+2026/10/30 08:51:43 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:44 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:45 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:46 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:47 protocol error: received DATA on a HEAD request
+55s        328247     5984    328242     1.9         300        - DOWN HTTP 429  -
+2026/10/30 08:51:48 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:49 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:50 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:51 protocol error: received DATA on a HEAD request
+2026/10/30 08:51:52 protocol error: received DATA on a HEAD request
+
+Selesai dalam 60.0s | req=358294 avgRPS=5971 resp=358276 keluar=115.6MB masuk=40.1MB koneksi=300 puncakRPS=6002
+error: -
+sesudah: HTTP 429 ttfb=0.015401s size=12
+==================================================
+### flood 12x120 stream ke /login (rps maksimal di rute berat)  (08:54:40)
+sebelum: HTTP 429 ttfb=0.013904s size=12
+2026/10/30 08:55:00 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:01 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:02 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:03 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:04 protocol error: received DATA on a HEAD request
+25s       1374528    54283   1374528     6.1          12        - DOWN HTTP 429  -
+2026/10/30 08:55:05 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:06 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:07 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:08 protocol error: received DATA on a HEAD request
+2026/10/30 08:55:09 protocol error: received DATA on a HEAD request
+
+Selesai dalam 30.0s | req=1647616 avgRPS=54919 resp=1647616 keluar=186.2MB masuk=19.8MB koneksi=12 puncakRPS=55617
+error: -
+sesudah: HTTP 429 ttfb=0.022268s size=12
+==================================================
+### bomb 200 koneksi refs 16384 ke /login  (08:57:57)
+sebelum: HTTP 200 ttfb=0.017999s size=9936
+       HTTP/2 Bomb (CVE-2026-49975): referensi HPACK 1-byte + jendela 0 byte
+WAKTU         REQ      RPS      RESP   KIRIM     KONEKSI      RAM          UJI  ERROR
+5s          70455    14087         0    15.5           0        -    OK 3001ms  write=2103, goaway=1845
+10s        118541     9619         0    10.9           0        -    OK  160ms  write=3533, goaway=3124
+15s        163247     8941         5    13.8           0        -    OK   12ms  write=4850, goaway=4380
+20s        208730     9096        10    19.3           0        -    OK   89ms  write=6181, goaway=5690
+25s        261643    10583        17    19.2           0        -    OK  156ms  write=7750, goaway=7186
+30s        308605     9393        39    23.6           0        -    OK   37ms  write=9106, goaway=8566
+35s        339946     6268        52    14.7           2        -    OK 1051ms  write=10024, goaway=9476
+40s        377730     7556        67    15.2           0        -    OK   13ms  write=11149, goaway=10576
+45s        430286    10512        70    27.2           2        -    OK   11ms  write=12671, goaway=12086, dial=11
+
+Selesai dalam 45.0s | req=430319 avgRPS=9562 resp=70 keluar=797.0MB masuk=0.0MB koneksi=13002 puncakRPS=14087
+error: write=12673, goaway=12088, dial=162
+sesudah: HTTP 200 ttfb=0.019599s size=9936
+==================================================
+SELESAI 08:58:44

@@ -1,0 +1,1 @@
+aws iam list-access-keys --user-name $user | jq -r '.AccessKeyMetadata[] | select((.CreateDate[:-6] | strptime("%Y-%m-%dT%H:%M:%S") | mktime) < (now - (90 * 86400))) | .AccessKeyId'

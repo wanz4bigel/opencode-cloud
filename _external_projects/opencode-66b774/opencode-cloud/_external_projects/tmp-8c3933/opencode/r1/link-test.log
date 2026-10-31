@@ -1,0 +1,20 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : coolmaxx
+CITY           : Dulles Town Center
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.127.247.156
+Port TLS       : 18470
+Port none TLS  : 
+Port any       : -
+id             : 5e7c97bf-2f91-494a-9b65-7d04c3879a56
+alterId        : 0
+Security       : auto
+network        : ws
+path ws        : /5hlgkvg7-knp8
+Cert SHA256    : 6cd62995e350b4a69cf131b15c6c434474fa3ceaedc8b77a9e914c08d5e7df04
+Limit IP       : -
+Expired On     : 2026-10-29 03:57:00 WIB
+————————————————————————————————————
+[1;36m[vmess][0m LINK UTAMA : vmess://eyJ2IjoiMiIsInBzIjoiY29vbG1heHgiLCJhZGQiOiIyMC4xMjcuMjQ3LjE1NiIsInBvcnQiOjE4NDcwLCJpZCI6IjVlN2M5N2JmLTJmOTEtNDk0YS05YjY1LTdkMDRjMzg3OWE1NiIsIm5ldCI6IndzIiwiaG9zdCI6IjIwLjEyNy4yNDcuMTU2IiwicGF0aCI6Ii81aGxna3ZnNy1rbnA4IiwidGxzIjoidGxzIn0=

@@ -1,0 +1,1 @@
+gcloud projects get-iam-policy $projectId --format="json(auditConfigs)" | jq -r '.auditConfigs[]?.auditLogConfigs[]?.logType // "null"'

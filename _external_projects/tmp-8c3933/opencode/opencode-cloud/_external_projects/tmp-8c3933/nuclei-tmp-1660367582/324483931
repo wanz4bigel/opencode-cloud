@@ -1,0 +1,1 @@
+aws iam list-mfa-devices --user-name $user --query 'MFADevices'

@@ -1,0 +1,2 @@
+nama: 336 hash: 333 contoh: [('7', 'shopee__settings'), ('12', 'react-router-dom')] [('26', '90175dbe2365fab9'), ('36', '0d51841200849178')]
+stat: {'ok': 0, 'bad': 333}

@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-09-14 19:17:28.990",
+  "version": "0.24.0",
+  "branch": "70c1b52b50dc6dcbd5435c2a7cd31c534414ed37",
+  "commitId": "70c1b52b50dc6dcbd5435c2a7cd31c534414ed37",
+  "moduleCommitId": "df4c5b2d21cdfefd4d6898b987803c151ac05647",
+  "lastMessage": "Merge branch \u0027version-3.83/3.83\u0027 into \u0027main\u0027",
+  "extraInfo": "",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mediatransportsdk",
+  "path": ":mediatransportsdk",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/mediatransportsdk.git"
+}

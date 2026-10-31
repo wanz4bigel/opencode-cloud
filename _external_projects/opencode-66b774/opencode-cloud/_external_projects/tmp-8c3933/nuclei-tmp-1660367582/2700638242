@@ -1,0 +1,1 @@
+az postgres flexible-server parameter show --server-name "$name" --resource-group "$resourceGroup" --name log_checkpoints --query 'value'

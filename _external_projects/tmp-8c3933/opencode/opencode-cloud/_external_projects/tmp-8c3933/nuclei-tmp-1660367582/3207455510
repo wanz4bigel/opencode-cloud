@@ -1,0 +1,1 @@
+gcloud compute instances describe $instanceName --zone $zone --project $projectId --format="json(metadata.items)"

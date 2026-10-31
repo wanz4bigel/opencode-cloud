@@ -1,0 +1,1 @@
+aws efs describe-file-systems --region $region --file-system-id $filesystemid --query 'FileSystems[*].Encrypted' --output json

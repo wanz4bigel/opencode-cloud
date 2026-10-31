@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2026-09-16 10:21:04.912",
+  "version": "0.0.971-v3.83-ce0e54a-beta",
+  "branch": "v3.83",
+  "commitId": "ce0e54a0ca553df1795e5b6062805e07f609644c",
+  "moduleCommitId": "4f49483507568a90a9238ef1bb13b7412b0f4bdd",
+  "lastMessage": "Merge branch \u0027feature/rnversion_from_v3.83\u0027 into \u0027v3.83\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.luban",
+  "artifactId": "luban-ccms",
+  "path": ":ccms",
+  "remoteUrl": "gitlab@git.garena.com:shopee/android/AndroidAPM/luban.git"
+}

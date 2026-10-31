@@ -1,0 +1,6 @@
+2026/10/30 06:48:30 [emerg] 16003#16003: bind() to 0.0.0.0:8443 failed (98: Address already in use)
+2026/10/30 06:48:30 [emerg] 16003#16003: bind() to 0.0.0.0:8443 failed (98: Address already in use)
+2026/10/30 06:48:30 [emerg] 16003#16003: bind() to 0.0.0.0:8443 failed (98: Address already in use)
+2026/10/30 06:48:30 [emerg] 16003#16003: bind() to 0.0.0.0:8443 failed (98: Address already in use)
+2026/10/30 06:48:30 [emerg] 16003#16003: bind() to 0.0.0.0:8443 failed (98: Address already in use)
+2026/10/30 06:48:30 [emerg] 16003#16003: still could not bind()

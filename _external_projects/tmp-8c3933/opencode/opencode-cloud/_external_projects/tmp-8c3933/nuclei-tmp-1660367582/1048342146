@@ -1,0 +1,1 @@
+aws cloudtrail list-trails --region $region --query 'Trails[*].Name' --output json

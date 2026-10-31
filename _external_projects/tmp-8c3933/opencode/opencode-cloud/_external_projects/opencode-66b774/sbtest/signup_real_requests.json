@@ -1,0 +1,55 @@
+{
+ "intercepted": [
+  {
+   "t": "fetch",
+   "url": "/api/v4/account/get_tos_urls",
+   "method": "GET",
+   "body": null,
+   "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "X-Shopee-Language": "id",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-CSRFToken": "J78NLuX0CvTUl4fRBsMYS8h383kh4D8p",
+    "X-API-SOURCE": "pc",
+    "x-sz-sdk-version": "1.12.45"
+   }
+  },
+  {
+   "t": "fetch",
+   "url": "https://shopee.co.id/api/v4/web/subcart",
+   "method": "POST",
+   "body": "{\"data\":\"VQAPRigAUMjB75gDOVRU78z+G65CJ8WeLCBvxAkBR1ahQhPu8HK/tdABqemCEavV95COwtPobPLDSSneEeKYkCYpeIX+4qhlgjh8UFRiQiqr7uH5Y3VVA5BeuVoVmXmubDg58fEPJUOvFdkCkKab03DqkfL3hd+Q05P2GfTscQAjPVqngdBTRqJDXxhmq4BuEVExYZEG41j0o/ggMiCG+8FAQQ3xYCe8/JGouOe6eYb4URZlWgpZ9hNjscf5WtCWOTqkxq8frvwN6LYoSvNS85ObYr9+E9PKJmoRtMu6k38tPtVuNVSR0iwV/z8/pOXlYsvnjRxDgMC+kDp18XnFFLB0yC6AM7q3VrMG4d939gA66xY8Wz19OQdnkE+IgMS/0UV9fRT+M84TwBLNGN1NF4+muDWCE/zzs+VNf2hCKZhUeAySenPkFOvBffgsDERW/qQBRvbKxubejUYIfiZZ+Q9bx4XUV+46f2XBShZqdkt66P6ta7ekoswctrIaSv8qqILkB3T866flPhZ/eHHSGTC5AkmFKT6JCtI85krqufvwZCU0067V7kQ9q56hnVBmMbs8x5n2mUCF51x7ldG7nrdn1f5By3BkD6MzSf2Vt8G60QM65URpbx4rDdjZODk6nFdod33Cni5mTwi2oGj4qm4tr9blFM21+aW66bAiOGANG/x6LH/qZvrfoQmXJOHu7Pm4b90vz4odhUz/X6cDVX8dMpFpdFcAyDufIbwI26NvKdEQOkGbObc1cPHMxhF7HrQl2GTm6ACkNXmzxOllSfmFm1fVYOq95ttxdJ02HQ63/xTAkv4UbZmNao+lgAtYyfGmjgm2vCDtmqPwOtJ/Axdua01zLYlQti390mKB1Ny1ez/yOBNE3jVoXRnWiy5SqxHYeowbCD3wthpKcLlMjtl5iRr9vityQ1wKmEryO8RlCeXzoVgGUld6bAwKlnQyQGOgKxZtfevXiWLrlVGW6ZuTZ0eceWk9yMdvNaKSnDqC9eJTegeoSzhC4ySy5uIlwBGzDikFRsIg95g03Fzj3t0W1Yecu0DxGAzxrqhVYal2/hf7ipcVeksNUBUyAef3ZXUyoGdsRzOYdpfNKlW/PkTeePw/lS8R5fldrbHvYvvEFj/357Zi+qOD6JSp5BDXHyUCJidTL4AMwYluBWAV5JZM1HF/q0zrk9RtZdM",
+   "headers": {
+    "Content-Type": "application/json"
+   }
+  }
+ ],
+ "network": [
+  [
+   "GET",
+   "https://shopee.co.id/api/v4/account/basic/get_account_info",
+   ""
+  ],
+  [
+   "GET",
+   "https://shopee.co.id/api/v4/account/subaccount",
+   ""
+  ],
+  [
+   "GET",
+   "https://shopee.co.id/api/v4/account/basic/get_payment_info",
+   ""
+  ],
+  [
+   "POST",
+   "https://shopee.co.id/api/v2/authentication/get_active_login_page",
+   "{}"
+  ],
+  [
+   "GET",
+   "https://shopee.co.id/api/v4/account/get_tos_urls",
+   ""
+  ]
+ ]
+}

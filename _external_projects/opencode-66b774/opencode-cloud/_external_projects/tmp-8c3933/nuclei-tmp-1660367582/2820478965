@@ -1,0 +1,1 @@
+aws ec2 describe-flow-logs --region $region --filter "Name=resource-id,Values=$vpc"

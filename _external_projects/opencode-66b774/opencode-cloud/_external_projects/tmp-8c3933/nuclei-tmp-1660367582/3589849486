@@ -1,0 +1,1 @@
+az role definition list --name "$roleName" --query '[*].{"assignableScopes":assignableScopes,"actions":permissions[].actions[]}' --output json

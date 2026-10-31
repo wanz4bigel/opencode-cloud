@@ -1,0 +1,3 @@
+<?xml version="1.0"?><methodCall><methodName>wp.getUsersBlogs</methodName><params>
+<param><value><string>redaksi-cianjur</string></value></param><param><value><string>rahasia</string></value></param>
+</params></methodCall>

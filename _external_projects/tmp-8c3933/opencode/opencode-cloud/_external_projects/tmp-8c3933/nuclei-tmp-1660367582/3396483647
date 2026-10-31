@@ -1,0 +1,1 @@
+gcloud run services describe $serviceName --region=$serviceLocation --format="json(metadata.labels)"

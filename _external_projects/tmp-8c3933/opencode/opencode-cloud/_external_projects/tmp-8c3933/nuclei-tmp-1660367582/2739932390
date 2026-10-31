@@ -1,0 +1,1 @@
+az vm encryption show --ids "$ids" --query 'osDisk'

@@ -1,0 +1,1 @@
+az role assignment list --include-classic-administrators true --assignee "$userPrincipalName" --query '[].{roleDefinitionName:roleDefinitionName}' --output json

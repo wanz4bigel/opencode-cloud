@@ -1,0 +1,1 @@
+gcloud logging buckets describe $bucket --project=$projectId --location=global --format="json(retentionDays)"

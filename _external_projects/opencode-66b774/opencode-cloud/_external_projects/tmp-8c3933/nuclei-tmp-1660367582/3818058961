@@ -1,0 +1,1 @@
+az keyvault show --name $vaultName --query 'properties.networkAcls.bypass' --output json

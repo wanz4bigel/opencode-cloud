@@ -1,0 +1,8 @@
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:02:52 [Warning] V2Ray 5.53.0 started
+2026/10/28 11:02:55 http: TLS handshake error from 127.0.0.1:52308: EOF
+2026/10/28 11:02:58 http: TLS handshake error from 127.0.0.1:57386: EOF
+2026/10/28 11:03:00 http: TLS handshake error from 127.0.0.1:57404: EOF
+2026/10/28 11:03:03 [Warning] [3466194993] app/dispatcher: default route for tcp:api.ipify.org:443
+2026/10/28 11:03:03 127.0.0.1:57428 accepted tcp:api.ipify.org:443 [direct] email: github-actions

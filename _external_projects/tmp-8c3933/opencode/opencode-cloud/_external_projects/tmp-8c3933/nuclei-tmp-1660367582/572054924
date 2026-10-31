@@ -1,0 +1,1 @@
+az apim api show --api-id "$apiid" --service-name $servicename --resource-group $resourcegroup --query 'protocols'

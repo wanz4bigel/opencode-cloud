@@ -1,0 +1,1 @@
+{"code":"rest_invalid_param","message":"Parameter tidak sah: status","data":{"status":400,"params":{"status":"status[0] bukan salah satu dari active dan inactive."},"details":{"status":{"code":"rest_not_in_enum","message":"status[0] bukan salah satu dari active dan inactive.","data":null}}}}

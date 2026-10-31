@@ -1,0 +1,1 @@
+kubectl get pods -n ingress-nginx -l app.kubernetes.io/component=controller -o json

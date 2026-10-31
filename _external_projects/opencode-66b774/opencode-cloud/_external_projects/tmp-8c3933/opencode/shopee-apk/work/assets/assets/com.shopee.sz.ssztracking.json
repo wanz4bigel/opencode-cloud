@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-02-11 10:13:08.568",
+  "version": "1.13.0",
+  "branch": "master",
+  "commitId": "be4501f2b3630e5a771fbafa1fc030a3f1222723",
+  "moduleCommitId": "be4501f2b3630e5a771fbafa1fc030a3f1222723",
+  "lastMessage": "[3.59] RN upgrade for rnmodule and ssztracking",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "ssztracking",
+  "path": ":ssztracking",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/ssz-client/android/toc/common.git"
+}

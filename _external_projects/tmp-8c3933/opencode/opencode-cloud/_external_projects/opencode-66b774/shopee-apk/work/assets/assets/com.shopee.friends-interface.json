@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2024-03-06 15:56:46.757",
+  "version": "0.33.12",
+  "branch": "master",
+  "commitId": "4364ab21af510147027158b1ffd631eb5cddc8b3",
+  "moduleCommitId": "cbc6626c738559067ae0cd0ee8a562dbb9dae6a0",
+  "lastMessage": "Merge branch \u0027cuongnv/internal/arp-sdk-migration\u0027 into \u0027master\u0027",
+  "extraInfo": "master",
+  "groupId": "com.shopee",
+  "artifactId": "friends-interface",
+  "path": ":friends-interface",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/android/shopee-friends-sdk.git"
+}

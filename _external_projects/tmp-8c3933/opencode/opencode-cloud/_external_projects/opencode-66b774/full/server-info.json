@@ -1,0 +1,30 @@
+{
+  "address": "20.57.223.165",
+  "uuid": "44c4ced0-f21c-4961-9659-06ccbe35c53c",
+  "alterId": 0,
+  "core": "xray",
+  "endpoints": {
+    "ws_tls": [
+      19443,
+      19444
+    ],
+    "ws_plain": [
+      19080,
+      19081
+    ],
+    "grpc": {
+      "port": 19053,
+      "serviceName": "vmess"
+    },
+    "httpupgrade": {
+      "port": 19052,
+      "path": "/upvmess"
+    }
+  },
+  "path": "/vmess",
+  "security": "tls",
+  "sni": "",
+  "runner": "gh-actions",
+  "startedAt": "2026-10-28T11:51:11Z",
+  "link": "vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1LXdzLXRsc0AxOTQ0MyIsImFkZCI6IjIwLjU3LjIyMy4xNjUiLCJwb3J0IjoiMTk0NDMiLCJpZCI6IjQ0YzRjZWQwLWYyMWMtNDk2MS05NjU5LTA2Y2NiZTM1YzUzYyIsImFpZCI6IjAiLCJzYyI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwicGF0aCI6Ii92bWVzcyIsInRscyI6InRscyIsImFscG4iOiJoMixodHRwLzEuMSIsImVtYWlsIjoiZ2l0aHViLWFjdGlvbnMifQ=="
+}

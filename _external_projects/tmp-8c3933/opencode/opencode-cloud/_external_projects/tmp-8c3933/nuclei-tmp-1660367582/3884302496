@@ -1,0 +1,1 @@
+aws cloudtrail get-trail-status --name $trail --region $region --query 'IsLogging' --output json

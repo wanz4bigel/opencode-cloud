@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-03-25 10:38:37.469",
+  "version": "0.14.0",
+  "branch": "v3.71/test_app_3.71",
+  "commitId": "a2c2bca14859efa2d41a7700e8282ff581b450ef",
+  "moduleCommitId": "0f60e4ef93f8b578082267caff60acf7f3c2e683",
+  "lastMessage": "Merge branch \u0027wille/3.71/feature/UDP_detection\u0027 into \u0027v3.71/test_app_3.71\u0027",
+  "extraInfo": "v3.71/test_app_3.71",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsdetect",
+  "path": ":mmsdetect",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsendpointsdk.git"
+}

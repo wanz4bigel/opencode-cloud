@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Dashboard Admin - 1FORCR KUOTA</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/style.css?v=20260716-1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/admin-modern.css?v=20261012-1">
+    <script src="js/route-guard.js?v=20260610-1" data-required-role="ADMIN" data-redirect="login.html"></script>
+</head>
+<body class="dashboard admin-dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-brand">
+                    <img src="assets/images/1forcr-logo.svg?v=20260626-9" alt="Logo 1FORCR" class="sidebar-brand-logo">
+                    <span>1FORCR KUOTA</span>
+                </h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#dashboard" data-view-target="overviewView"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#monitoring" data-view-target="monitoringView"><i class="fas fa-heartbeat"></i> Monitoring</a></li>
+                    <li><a href="#notifikasi" data-view-target="pushNotificationsView"><i class="fas fa-bell"></i> Notifikasi</a></li>
+                    <li><a href="#produk" data-view-target="productsView"><i class="fas fa-boxes"></i> Produk</a></li>
+                    <li><a href="#logo-brand" data-view-target="brandLogosView"><i class="fas fa-icons"></i> Logo Produk/Menu</a></li>
+                    <li><a href="#transaksi" data-view-target="transactionsView"><i class="fas fa-exchange-alt"></i> Transaksi</a></li>
+                    <li><a href="#pembayaran" data-view-target="paymentsView"><i class="fas fa-receipt"></i> Pembayaran</a></li>
+                    <li><a href="#gateway-internal" data-view-target="internalGatewayView"><i class="fas fa-key"></i> Gateway Internal</a></li>
+                    <li><a href="#api-reseller" data-view-target="resellerApiView"><i class="fas fa-plug"></i> API Reseller</a></li>
+                    <li><a href="#pengguna" data-view-target="usersView"><i class="fas fa-users"></i> Pengguna</a></li>
+                    <li><a href="#setting" data-view-target="settingsView"><i class="fas fa-cog"></i> Website</a></li>
+                    <li><a href="#operasional" data-view-target="operationsSettingsView"><i class="fas fa-sliders-h"></i> Operasional</a></li>
+                    <li><a href="#development" data-view-target="developmentSettingsView"><i class="fas fa-code"></i> Development</a></li>
+                    <li><a href="#payment-gateway" data-view-target="paymentGatewayView"><i class="fas fa-credit-card"></i> Payment</a></li>
+                    <li><a href="#vpn" data-view-target="vpnView"><i class="fas fa-shield-alt"></i> VPN</a></li>
+                    <li><a href="#backup" data-view-target="backupSettingsView"><i class="fas fa-database"></i> Backup</a></li>
+                    <li class="mobile-only-nav"><a href="#" data-logout-btn><i class="fas fa-sign-out-alt"></i> Keluar</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 id="pageTitle">Dashboard Admin</h1>
+                </div>
+                <div class="header-right">
+                    <span class="user-info">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </span>
+                </div>
+            </header>
+
+            <div class="dashboard-view active" id="overviewView" data-page-title="Dashboard Admin">
+            <section class="admin-overview-filter">
+                <div>
+                    <span>Filter Periode</span>
+                    <strong id="overviewPeriodLabel">Semua waktu</strong>
+                </div>
+                <div class="overview-filter-controls">
+                    <select id="overviewPeriodType" aria-label="Filter periode dashboard">
+                        <option value="all">Semua waktu</option>
+                        <option value="day">Tanggal tertentu</option>
+                        <option value="month">Bulan</option>
+                        <option value="year">Tahun</option>
+                        <option value="range">Rentang tanggal</option>
+                    </select>
+                    <input type="date" id="overviewDateInput" aria-label="Tanggal dashboard" hidden>
+                    <input type="month" id="overviewMonthInput" aria-label="Bulan dashboard" hidden>
+                    <input type="number" id="overviewYearInput" min="2000" max="2100" step="1" aria-label="Tahun dashboard" hidden>
+                    <input type="date" id="overviewDateFromInput" aria-label="Tanggal mulai dashboard" hidden>
+                    <input type="date" id="overviewDateToInput" aria-label="Tanggal akhir dashboard" hidden>
+                    <button class="btn-secondary" id="overviewApplyPeriodBtn" type="button">
+                        <i class="fas fa-filter"></i> Terapkan
+                    </button>
+                </div>
+            </section>
+            <p class="checkout-status" id="overviewStatus"></p>
+            <!-- Kartu Statistik -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3 id="userCountStat">0</h3>
+                        <p>Pengguna</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <div>
+                        <h3 id="transactionCountStat">0</h3>
+                        <p>Transaksi</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div>
+                        <h3 id="revenueStat">Rp 0</h3>
+                        <p>Pendapatan</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-boxes"></i>
+                    <div>
+                        <h3 id="productCountStat">0</h3>
+                        <p>Produk</p>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-overview-grid">
+                <article class="admin-overview-panel admin-finance-panel">
+                    <div class="admin-overview-head">
+                        <div>
+                            <span>Keuangan</span>
+                            <h2>Ringkasan Pendapatan</h2>
+                        </div>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="finance-breakdown">
+                        <div>
+                            <span>Pendapatan sukses</span>
+                            <strong id="overviewRevenueTotal">Rp 0</strong>
+                        </div>
+                        <div>
+                            <span>Estimasi modal Digiflazz</span>
+                            <strong id="overviewModalTotal">Rp 0</strong>
+                        </div>
+                        <div>
+                            <span>Estimasi margin kotor</span>
+                            <strong id="overviewGrossMargin">Rp 0</strong>
+                        </div>
+                        <div>
+                            <span>Estimasi fee QRIS</span>
+                            <strong id="overviewQrisFee">Rp 0</strong>
+                        </div>
+                    </div>
+                    <p id="overviewPricingNote">Estimasi margin dihitung dari modal produk saat ini dan transaksi sukses.</p>
+                </article>
+
+                <article class="admin-overview-panel">
+                    <div class="admin-overview-head">
+                        <div>
+                            <span>Performa</span>
+                            <h2>Transaksi</h2>
+                        </div>
+                        <i class="fas fa-gauge-high"></i>
+                    </div>
+                    <div class="circle-metrics">
+                        <div class="circle-stat" id="overviewSuccessCircle" style="--value: 0">
+                            <div><strong id="overviewSuccessRate">0%</strong><span>Sukses</span></div>
+                        </div>
+                        <div class="circle-detail">
+                            <div><span>Sukses</span><strong id="overviewSuccessTransactions">0</strong></div>
+                            <div><span>Gagal</span><strong id="overviewFailedTransactions">0</strong></div>
+                            <div><span>Proses</span><strong id="overviewProcessTransactions">0</strong></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="admin-overview-panel">
+                    <div class="admin-overview-head">
+                        <div>
+                            <span>Produk</span>
+                            <h2>Gangguan Produk</h2>
+                        </div>
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="circle-metrics">
+                        <div class="circle-stat danger" id="overviewDisruptionCircle" style="--value: 0">
+                            <div><strong id="overviewDisruptionRate">0%</strong><span>Gangguan</span></div>
+                        </div>
+                        <div class="circle-detail">
+                            <div><span>Produk aktif</span><strong id="overviewActiveProducts">0</strong></div>
+                            <div><span>Produk gangguan</span><strong id="overviewDisruptedProducts">0</strong></div>
+                            <div><span>Total produk</span><strong id="overviewTotalProducts">0</strong></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="admin-overview-panel">
+                    <div class="admin-overview-head">
+                        <div>
+                            <span>Margin</span>
+                            <h2>Profitabilitas</h2>
+                        </div>
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="circle-metrics">
+                        <div class="circle-stat profit" id="overviewMarginCircle" style="--value: 0">
+                            <div><strong id="overviewMarginRate">0%</strong><span>Margin</span></div>
+                        </div>
+                        <div class="circle-detail">
+                            <div><span>Margin rule</span><strong id="overviewRuleMargin">Rp 0</strong></div>
+                            <div><span>Pembulatan</span><strong id="overviewRounding">Rp 0</strong></div>
+                            <div><span>Produk terhitung</span><strong id="overviewPricedTransactions">0 trx</strong></div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            </div>
+
+            <div class="dashboard-view" id="monitoringView" data-page-title="Monitoring">
+                <section class="admin-monitoring">
+                    <div class="admin-section-header monitoring-header">
+                        <div>
+                            <h2>Monitoring Operasional</h2>
+                            <p id="monitoringStatus">Memuat status sistem...</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshMonitoringBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="monitoring-grid">
+                        <article class="monitor-card" id="monitorServerCard">
+                            <span class="monitor-icon"><i class="fas fa-server"></i></span>
+                            <div>
+                                <small>Server</small>
+                                <strong id="monitorServerStatus">-</strong>
+                                <p id="monitorServerDetail">-</p>
+                            </div>
+                        </article>
+                        <article class="monitor-card" id="monitorDatabaseCard">
+                            <span class="monitor-icon"><i class="fas fa-database"></i></span>
+                            <div>
+                                <small>Database</small>
+                                <strong id="monitorDatabaseStatus">-</strong>
+                                <p id="monitorDatabaseDetail">-</p>
+                            </div>
+                        </article>
+                        <article class="monitor-card" id="monitorDigiflazzCard">
+                            <span class="monitor-icon"><i class="fas fa-wallet"></i></span>
+                            <div>
+                                <small>Saldo Digiflazz</small>
+                                <strong id="monitorDigiflazzBalance">-</strong>
+                                <p id="monitorDigiflazzDetail">-</p>
+                            </div>
+                        </article>
+                        <article class="monitor-card" id="monitorBackupCard">
+                            <span class="monitor-icon"><i class="fas fa-shield-alt"></i></span>
+                            <div>
+                                <small>Backup</small>
+                                <strong id="monitorBackupStatus">-</strong>
+                                <p id="monitorBackupDetail">-</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="monitoring-metrics">
+                        <div><span>Pending Payment</span><strong id="monitorPendingPayments">0</strong></div>
+                        <div><span>Pending Lama</span><strong id="monitorStalePayments">0</strong></div>
+                        <div><span>Transaksi Gagal 24j</span><strong id="monitorFailedTransactions">0</strong></div>
+                        <div><span>Produk Gangguan</span><strong id="monitorDisruptedProducts">0</strong></div>
+                        <div><span>Webhook Terakhir</span><strong id="monitorLastWebhook">-</strong></div>
+                        <div><span>Autosync Produk</span><strong id="monitorProductSync">-</strong></div>
+                    </div>
+
+                    <div class="monitoring-panels">
+                        <section class="monitor-panel">
+                            <h3>Alert Penting</h3>
+                            <div class="monitor-alert-list" id="monitorAlertList">
+                                <div class="monitor-empty">Memuat alert...</div>
+                            </div>
+                        </section>
+                        <section class="monitor-panel">
+                            <h3>Aktivitas Terakhir</h3>
+                            <div class="monitor-event-list" id="monitorEventList">
+                                <div class="monitor-empty">Memuat aktivitas...</div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="pushNotificationsView" data-page-title="Notifikasi">
+                <section class="admin-products admin-push-workspace">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Push Notification</h2>
+                            <p id="adminPushStatus">Memuat status Firebase...</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshAdminPushBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="admin-push-metrics">
+                        <div>
+                            <span>Status FCM</span>
+                            <strong id="adminPushConfigured">Memuat...</strong>
+                        </div>
+                        <div>
+                            <span>User Terdaftar</span>
+                            <strong id="adminPushRegisteredUsers">0 / 0</strong>
+                        </div>
+                        <div>
+                            <span>Perangkat User</span>
+                            <strong id="adminPushUserDevices">0</strong>
+                        </div>
+                        <div>
+                            <span>Perangkat Admin</span>
+                            <strong id="adminPushAdminDevices">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="admin-push-device" id="pushNotificationCard" hidden>
+                        <div>
+                            <span>Perangkat admin ini</span>
+                            <strong id="pushNotificationStatus">Memeriksa status...</strong>
+                        </div>
+                        <button class="btn-secondary" id="enablePushNotificationBtn" type="button">
+                            <i class="fas fa-bell"></i> Aktifkan Notifikasi
+                        </button>
+                    </div>
+
+                    <div class="admin-push-actions">
+                        <section class="admin-push-compose" aria-labelledby="adminPushComposeTitle">
+                            <div class="admin-push-section-heading">
+                                <div>
+                                    <span>Broadcast</span>
+                                    <h3 id="adminPushComposeTitle">Kirim ke Semua User</h3>
+                                </div>
+                                <button class="btn-secondary" id="sendAdminPushTestBtn" type="button">
+                                    <i class="fas fa-bell"></i> Tes ke Admin
+                                </button>
+                            </div>
+                            <form id="adminPushBroadcastForm">
+                                <div class="form-group">
+                                    <label for="adminPushTitleInput">Judul</label>
+                                    <input type="text" id="adminPushTitleInput" maxlength="80" placeholder="Contoh: Promo Hari Ini" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminPushBodyInput">Pesan</label>
+                                    <textarea id="adminPushBodyInput" rows="4" maxlength="240" placeholder="Tulis informasi yang akan diterima semua user..." required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminPushPathInput">Buka halaman</label>
+                                    <select id="adminPushPathInput">
+                                        <option value="user.html">Dashboard</option>
+                                        <option value="user.html#beli">Beli Produk</option>
+                                        <option value="user.html#riwayat">Riwayat</option>
+                                        <option value="user.html#topup">Topup</option>
+                                        <option value="user.html#akun">Akun</option>
+                                    </select>
+                                </div>
+                                <button class="btn-primary" id="sendAdminPushBroadcastBtn" type="submit">
+                                    <i class="fas fa-paper-plane"></i> Kirim Broadcast
+                                </button>
+                            </form>
+                            <p class="checkout-status" id="adminPushSendInfo">Broadcast hanya dikirim ke perangkat user yang aktif.</p>
+                        </section>
+
+                        <section class="admin-push-history" aria-labelledby="adminPushHistoryTitle">
+                            <div class="admin-push-section-heading">
+                                <div>
+                                    <span>Aktivitas</span>
+                                    <h3 id="adminPushHistoryTitle">Broadcast Terakhir</h3>
+                                </div>
+                            </div>
+                            <div class="admin-push-history-list" id="adminPushHistoryList">
+                                <div class="monitor-empty">Memuat riwayat broadcast...</div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="bannerSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Banner Dashboard</h2>
+                            <p>Banner bergambar yang bergeser otomatis di dashboard user. User juga bisa menggesernya sendiri.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshBannersBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <form class="announcement-form" id="bannerForm">
+                        <div class="form-group">
+                            <label for="bannerLabelInput">Nama banner</label>
+                            <input type="text" id="bannerLabelInput" maxlength="120" placeholder="Contoh: Promo Pikachu" required>
+                            <small>Dipakai sebagai keterangan gambar, tidak ditampilkan di atas banner.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="bannerImageInput">URL gambar</label>
+                            <input type="url" id="bannerImageInput" maxlength="600" placeholder="https://cdn.contoh.com/banner-promo.jpg" required>
+                            <div class="media-upload" data-media-folder="banner" data-media-target="bannerImageInput">
+                                <input type="file" class="media-upload-file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+                                <div class="media-upload-actions">
+                                    <button type="button" class="btn-secondary media-upload-btn">
+                                        <i class="fas fa-cloud-arrow-up"></i> Upload gambar
+                                    </button>
+                                    <button type="button" class="btn-secondary media-gallery-btn">
+                                        <i class="fas fa-images"></i> Galeri
+                                    </button>
+                                </div>
+                                <p class="checkout-status media-upload-status"></p>
+                                <div class="media-gallery" hidden></div>
+                            </div>
+                            <small><strong>Ukuran yang pas: 1200 x 400 piksel (rasio 3:1).</strong> Boleh lebih besar asal rasionya sama, misalnya 1800 x 600. Gambar yang rasionya beda akan terpotong di sisi atas bawah. Pakai JPG atau WebP di bawah 300 KB agar ringan. Tombol Upload gambar akan mengirim file ke Cloudflare R2 dan mengisi URL ini otomatis.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="bannerLinkInput">URL tautan (opsional)</label>
+                            <input type="url" id="bannerLinkInput" maxlength="600" placeholder="https://1forcrkuota.com/promo">
+                            <small>Kalau diisi, banner bisa diklik user untuk membuka tautan ini.</small>
+                        </div>
+                        <div class="banner-preview" id="bannerPreviewWrap" hidden>
+                            <img id="bannerPreviewImage" alt="Pratinjau banner">
+                            <p class="checkout-status" id="bannerPreviewInfo"></p>
+                        </div>
+                        <button class="btn-primary" id="submitBannerBtn" type="submit">
+                            <i class="fas fa-image"></i> Tambah Banner
+                        </button>
+                    </form>
+                    <p class="checkout-status" id="bannerStatus"></p>
+
+                    <div class="banner-admin-list" id="bannerList">
+                        <div class="monitor-empty">Memuat banner...</div>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="announcementSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Pengumuman Dashboard</h2>
+                            <p>Tampil di dashboard user. User bisa menutupnya, tapi pengumuman tetap ada sampai kamu hapus atau nonaktifkan.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshAnnouncementsBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <form class="announcement-form" id="announcementForm">
+                        <div class="form-group">
+                            <label for="announcementTitleInput">Judul</label>
+                            <input type="text" id="announcementTitleInput" maxlength="120" placeholder="Contoh: Promo akhir pekan" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementBodyInput">Isi</label>
+                            <textarea id="announcementBodyInput" rows="3" maxlength="400" placeholder="Tulis informasi untuk user..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementImageInput">URL gambar (opsional)</label>
+                            <input type="url" id="announcementImageInput" maxlength="600" placeholder="https://cdn.contoh.com/banner.jpg">
+                            <div class="media-upload" data-media-folder="pengumuman" data-media-target="announcementImageInput">
+                                <input type="file" class="media-upload-file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+                                <div class="media-upload-actions">
+                                    <button type="button" class="btn-secondary media-upload-btn">
+                                        <i class="fas fa-cloud-arrow-up"></i> Upload gambar
+                                    </button>
+                                    <button type="button" class="btn-secondary media-gallery-btn">
+                                        <i class="fas fa-images"></i> Galeri
+                                    </button>
+                                </div>
+                                <p class="checkout-status media-upload-status"></p>
+                                <div class="media-gallery" hidden></div>
+                            </div>
+                            <small>Pilih file dari perangkatmu lalu gambarnya diupload ke Cloudflare R2 dan URL-nya terisi otomatis. Bisa juga tempel tautan gambar dari CDN lain.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementLinkInput">URL tautan (opsional)</label>
+                            <input type="url" id="announcementLinkInput" maxlength="600" placeholder="https://1forcrkuota.com/promo">
+                            <small>Kalau diisi, pengumuman bisa diklik user untuk membuka tautan ini.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementExpiryInput">Berakhir pada (opsional)</label>
+                            <input type="datetime-local" id="announcementExpiryInput">
+                            <small>Kosongkan agar pengumuman tampil terus sampai kamu hapus atau nonaktifkan.</small>
+                        </div>
+                        <button class="btn-primary" id="submitAnnouncementBtn" type="submit">
+                            <i class="fas fa-bullhorn"></i> Tayangkan Pengumuman
+                        </button>
+                    </form>
+                    <p class="checkout-status" id="announcementStatus"></p>
+
+                    <div class="admin-push-history-list" id="announcementList">
+                        <div class="monitor-empty">Memuat pengumuman...</div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="productsView" data-page-title="Produk">
+            <!-- Sinkron Produk -->
+            <section class="admin-products" id="productsSection">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Produk Digiflazz</h2>
+                        <p id="productSyncInfo">Produk user diambil dari database lokal.</p>
+                    </div>
+                    <button class="btn-primary admin-sync-btn" id="syncProductsBtn" type="button">
+                        <i class="fas fa-sync-alt"></i> Sync Produk
+                    </button>
+                </div>
+                <div class="product-sync-stats">
+                    <div>
+                        <span>Total</span>
+                        <strong id="adminProductTotal">0</strong>
+                    </div>
+                    <div>
+                        <span>Aktif</span>
+                        <strong id="adminProductActive">0</strong>
+                    </div>
+                    <div>
+                        <span>Nonaktif</span>
+                        <strong id="adminProductInactive">0</strong>
+                    </div>
+                    <div>
+                        <span>Gangguan</span>
+                        <strong id="adminProductFailed">0</strong>
+                    </div>
+                    <div>
+                        <span>Terakhir Sync</span>
+                        <strong id="adminProductLastSync">-</strong>
+                    </div>
+                </div>
+                <div class="admin-pricing-config admin-product-autosync-config">
+                    <div class="form-group setting-toggle-group">
+                        <label class="setting-toggle-label">
+                            <input type="checkbox" id="productAutoSyncEnabledInput">
+                            <span>Aktifkan autosync produk Digiflazz</span>
+                        </label>
+                        <small>Produk otomatis disinkron dari Digiflazz setiap hari sesuai jam di bawah.</small>
+                    </div>
+                    <div class="admin-cutoff-grid">
+                        <div class="form-group">
+                            <label for="productAutoSyncTimeInput">Jam autosync</label>
+                            <input type="time" id="productAutoSyncTimeInput" value="00:00">
+                        </div>
+                        <div class="form-group">
+                            <label for="productAutoSyncTimezoneInput">Zona waktu</label>
+                            <input type="text" id="productAutoSyncTimezoneInput" value="Asia/Jakarta" placeholder="Asia/Jakarta">
+                        </div>
+                    </div>
+                    <button class="btn-primary" id="saveProductAutoSyncBtn" type="button">
+                        <i class="fas fa-save"></i> Simpan Autosync
+                    </button>
+                    <p id="productAutoSyncInfo">Autosync produk default berjalan setiap jam 00:00.</p>
+                </div>
+                <div class="product-browser">
+                    <div class="browser-column">
+                        <div class="browser-title">
+                            <span>Kategori</span>
+                            <small id="adminCategoryCount">0</small>
+                        </div>
+                        <div class="filter-chip-list" id="adminCategoryList"></div>
+                    </div>
+                    <div class="browser-column">
+                        <div class="browser-title">
+                            <span>Brand</span>
+                            <small id="adminBrandCount">0</small>
+                        </div>
+                        <div class="filter-chip-list" id="adminBrandList"></div>
+                    </div>
+                    <div class="browser-column">
+                        <div class="browser-title">
+                            <span>Type</span>
+                            <small id="adminTypeCount">0</small>
+                        </div>
+                        <div class="filter-chip-list" id="adminTypeList"></div>
+                    </div>
+                </div>
+                <div class="product-filters">
+                    <div class="admin-filter-field admin-filter-search">
+                        <label for="adminSkuSearch">Cari produk</label>
+                        <div class="product-search">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="adminSkuSearch" placeholder="Cari kode produk / SKU">
+                        </div>
+                    </div>
+                    <div class="admin-filter-actions">
+                        <button class="btn-secondary" id="adminFailedProductsToggle" type="button">
+                            <i class="fas fa-triangle-exclamation"></i> Produk Gangguan
+                        </button>
+                    </div>
+                    <div class="admin-filter-field">
+                        <label for="adminCategoryFilter">Kategori</label>
+                        <select id="adminCategoryFilter" class="native-filter-select" aria-label="Filter kategori produk admin">
+                            <option value="">Semua kategori</option>
+                        </select>
+                        <div class="fancy-filter-select" id="adminCategoryFilterCustom"></div>
+                    </div>
+                    <div class="admin-filter-field">
+                        <label for="adminBrandFilter">Brand</label>
+                        <select id="adminBrandFilter" class="native-filter-select" aria-label="Filter brand produk admin">
+                            <option value="">Semua brand</option>
+                        </select>
+                        <div class="fancy-filter-select" id="adminBrandFilterCustom"></div>
+                    </div>
+                    <div class="admin-filter-field">
+                        <label for="adminTypeFilter">Type</label>
+                        <select id="adminTypeFilter" class="native-filter-select" aria-label="Filter type produk admin">
+                            <option value="">Semua type</option>
+                        </select>
+                        <div class="fancy-filter-select" id="adminTypeFilterCustom"></div>
+                    </div>
+                </div>
+                <p class="product-status loading" id="adminProductStatus">Memuat produk...</p>
+                <div class="admin-table-scroll admin-product-table-scroll">
+                    <table class="transactions-table admin-product-table">
+                        <thead>
+                            <tr>
+                                <th>Produk</th>
+                                <th>Kategori</th>
+                                <th>Brand</th>
+                                <th>Type</th>
+                                <th>Harga Asli</th>
+                                <th>Harga Final</th>
+                                <th>Status</th>
+                                <th>Gagal</th>
+                                <th>Layanan Cepat</th>
+                                <th>Promo</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-product-list">
+                            <!-- diisi JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-pagination" id="adminProductPagination">
+                    <button class="btn-secondary" id="productPrevPage" type="button">Sebelumnya</button>
+                    <span id="productPageInfo">Halaman 1 / 1</span>
+                    <button class="btn-secondary" id="productNextPage" type="button">Berikutnya</button>
+                </div>
+
+                <section class="topup-panel" id="adminPromoEditor" hidden>
+                    <h3>Setting Promo Produk</h3>
+                    <div class="form-group">
+                        <label>Produk terpilih</label>
+                        <strong id="adminPromoProductName">-</strong>
+                    </div>
+                    <div class="form-group">
+                        <label>Harga asli produk (database)</label>
+                        <strong id="adminPromoBasePriceText">Rp 0</strong>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPromoDescriptionInput">Deskripsi promo</label>
+                        <input type="text" id="adminPromoDescriptionInput" placeholder="Contoh: Promo terbatas, bayar sekarang lebih hemat">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPromoOriginalPriceInput">Harga awal (Rp)</label>
+                        <input type="number" id="adminPromoOriginalPriceInput" min="1" step="1" placeholder="Contoh: 12000">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPromoFinalPriceInput">Harga promo (Rp)</label>
+                        <input type="number" id="adminPromoFinalPriceInput" min="1" step="1" placeholder="Contoh: 10000">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPromoDurationHoursInput">Masa aktif promo (jam)</label>
+                        <input type="number" id="adminPromoDurationHoursInput" min="1" step="1" placeholder="Contoh: 6">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPromoExpiresAtInput">Atau aktif sampai tanggal</label>
+                        <input type="datetime-local" id="adminPromoExpiresAtInput">
+                        <small>Isi salah satu: jam atau tanggal selesai. Jika keduanya diisi, tanggal selesai diprioritaskan.</small>
+                    </div>
+                    <div class="checkout-actions">
+                        <button class="btn-primary" id="saveAdminPromoBtn" type="button">
+                            <i class="fas fa-bullhorn"></i> Simpan Promo
+                        </button>
+                        <button class="btn-secondary" id="disableAdminPromoBtn" type="button">
+                            Nonaktifkan Promo
+                        </button>
+                        <button class="btn-secondary" id="cancelAdminPromoBtn" type="button">
+                            Batal
+                        </button>
+                    </div>
+                    <p class="checkout-status" id="adminPromoInfo">Pilih produk lalu klik tombol PROMO untuk mengatur promo user.</p>
+                </section>
+            </section>
+
+            <section class="admin-products seller-gap-panel" id="sellerGapSection">
+                <div class="admin-section-header">
+                    <div>
+                        <h2>Perbandingan Harga Seller</h2>
+                        <p>Produk yang dijual beberapa seller Digiflazz. Harga ke user mengikuti seller aktif termahal, jadi seller yang jauh lebih mahal dari yang lain ikut menaikkan harga. Isi batas selisih dari seller termurah untuk menandai seller yang terlalu mahal, lalu nonaktifkan.</p>
+                    </div>
+                </div>
+
+                <div class="admin-pricing-config seller-gap-controls">
+                    <div class="form-group">
+                        <label for="sellerGapMinSellers">Jumlah seller minimal</label>
+                        <select id="sellerGapMinSellers">
+                            <option value="2">2 seller atau lebih</option>
+                            <option value="3">3 seller atau lebih</option>
+                            <option value="4">4 seller atau lebih</option>
+                            <option value="5">5 seller atau lebih</option>
+                            <option value="6">6 seller atau lebih</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerGapDiffInput">Batas selisih dari seller termurah</label>
+                        <div class="seller-gap-diff">
+                            <input type="number" id="sellerGapDiffInput" min="0" step="1" placeholder="Contoh: 500">
+                            <select id="sellerGapDiffMode" aria-label="Satuan batas selisih">
+                                <option value="amount">Rupiah</option>
+                                <option value="percent">Persen</option>
+                            </select>
+                        </div>
+                        <small>Kosongkan kalau hanya ingin melihat jumlah seller.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="sellerGapSearch">Cari produk</label>
+                        <input type="search" id="sellerGapSearch" placeholder="Nama, brand, kategori, atau SKU">
+                    </div>
+                    <label class="setting-toggle-label seller-gap-toggle">
+                        <input type="checkbox" id="sellerGapOnlyFlagged">
+                        <span>Hanya produk yang melewati batas selisih</span>
+                    </label>
+                    <div class="seller-gap-actions">
+                        <button class="btn-primary" id="sellerGapLoadBtn" type="button">
+                            <i class="fas fa-filter"></i> Tampilkan
+                        </button>
+                        <button class="btn-secondary" id="sellerGapBulkDisableBtn" type="button" hidden>
+                            <i class="fas fa-ban"></i> Nonaktifkan yang ditandai
+                        </button>
+                    </div>
+                </div>
+
+                <p class="product-status" id="sellerGapStatus">Pilih jumlah seller, isi batas selisih kalau perlu, lalu tekan Tampilkan.</p>
+                <div class="seller-gap-list" id="sellerGapList"></div>
+                <div class="admin-pagination" id="sellerGapPagination" hidden>
+                    <button class="btn-secondary" id="sellerGapPrevPage" type="button">Sebelumnya</button>
+                    <span id="sellerGapPageInfo">Halaman 1 / 1</span>
+                    <button class="btn-secondary" id="sellerGapNextPage" type="button">Berikutnya</button>
+                </div>
+            </section>
+            </div>
+
+            <div class="dashboard-view" id="brandLogosView" data-page-title="Logo Produk/Menu">
+                <section class="admin-products" id="logoStorageSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Penyimpanan Logo</h2>
+                            <p>Logo brand dan menu disimpan di Cloudflare R2 supaya tidak ikut hilang saat server diganti atau folder aplikasi dibersihkan. Logo yang kamu upload setelah R2 aktif langsung masuk ke sana.</p>
+                        </div>
+                        <button class="btn-primary" id="migrateLogosToR2Btn" type="button">
+                            <i class="fas fa-cloud-arrow-up"></i> Pindahkan ke R2
+                        </button>
+                    </div>
+                    <p class="checkout-status" id="logoStorageStatus">Memeriksa penyimpanan logo...</p>
+                </section>
+
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Logo Brand Produk</h2>
+                            <p>Upload logo SVG untuk setiap brand yang ada di database produk.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshBrandLogosBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+                    <div class="brand-logo-toolbar">
+                        <div class="product-search">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="brandLogoSearch" placeholder="Cari brand">
+                        </div>
+                        <p id="brandLogoInfo">Logo akan dipakai otomatis di kartu produk user dan landing page.</p>
+                    </div>
+                    <div class="brand-logo-grid" id="brandLogoList">
+                        <!-- diisi JS -->
+                    </div>
+                </section>
+
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Logo &amp; Status Menu Dashboard</h2>
+                            <p>Upload icon kategori di menu beli user seperti Data, E-Money, Games, PLN, dan Pulsa. Kategori yang dinonaktifkan hilang total dari halaman user dan produknya tidak bisa dibeli.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshCategoryLogosBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+                    <div class="brand-logo-toolbar">
+                        <div class="product-search">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="categoryLogoSearch" placeholder="Cari kategori menu">
+                        </div>
+                        <p id="categoryLogoInfo">Logo kategori dipakai di kartu menu dashboard user. Tombol Nonaktifkan menyembunyikan seluruh kategori tanpa mengubah status tiap produk.</p>
+                    </div>
+                    <div class="brand-logo-grid" id="categoryLogoList">
+                        <!-- diisi JS -->
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="transactionsView" data-page-title="Transaksi">
+            <!-- Riwayat Pembelian User -->
+            <section class="recent-transactions">
+                <h2>Riwayat Pembelian User</h2>
+                <div class="admin-transaction-tools">
+                    <div class="admin-transaction-filters">
+                        <div class="admin-filter-field">
+                            <label for="txDateFrom">Dari</label>
+                            <input type="date" id="txDateFrom">
+                        </div>
+                        <div class="admin-filter-field">
+                            <label for="txDateTo">Sampai</label>
+                            <input type="date" id="txDateTo">
+                        </div>
+                        <div class="admin-filter-field">
+                            <label for="txStatus">Status</label>
+                            <select id="txStatus" class="native-filter-select">
+                                <option value="">Semua</option>
+                                <option value="SUCCESS">Sukses</option>
+                                <option value="PROCESS">Proses</option>
+                                <option value="FAILED">Gagal</option>
+                            </select>
+                            <div class="fancy-filter-select" id="txStatusCustom"></div>
+                        </div>
+                        <div class="admin-filter-field admin-filter-search">
+                            <label for="txSearch">Pencarian</label>
+                            <input type="search" id="txSearch" placeholder="Cari user / produk / ref ID">
+                        </div>
+                        <div class="admin-filter-actions">
+                            <button class="btn-secondary" id="txFilterReset" type="button">Reset</button>
+                        </div>
+                    </div>
+                    <p class="admin-transaction-count">Menampilkan <strong id="txShownCount">0</strong> transaksi</p>
+                </div>
+                <div class="admin-table-scroll admin-transaction-table-scroll">
+                    <table class="transactions-table admin-transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal & Jam</th>
+                                <th>User</th>
+                                <th>Produk</th>
+                                <th>Tujuan</th>
+                                <th>Jumlah</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-transaction-list">
+                            <!-- diisi JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-pagination" id="adminTxPagination">
+                    <button class="btn-secondary" id="txPrevPage" type="button">Sebelumnya</button>
+                    <span id="txPageInfo">Halaman 1 / 1</span>
+                    <button class="btn-secondary" id="txNextPage" type="button">Berikutnya</button>
+                </div>
+            </section>
+            </div>
+
+            <div class="dashboard-view" id="paymentsView" data-page-title="Histori Pembayaran">
+            <section class="recent-transactions">
+                <h2>Histori Pembayaran (Topup & Pembelian)</h2>
+                <div class="admin-transaction-tools">
+                    <div class="admin-transaction-filters">
+                        <div class="admin-filter-field">
+                            <label for="payTypeFilter">Jenis</label>
+                            <select id="payTypeFilter" class="native-filter-select">
+                                <option value="">Semua</option>
+                                <option value="PRODUCT_PURCHASE">Pembelian Produk</option>
+                                <option value="WALLET_TOPUP">Topup Saldo</option>
+                            </select>
+                            <div class="fancy-filter-select" id="payTypeFilterCustom"></div>
+                        </div>
+                        <div class="admin-filter-field">
+                            <label for="payStatusFilter">Status</label>
+                            <select id="payStatusFilter" class="native-filter-select">
+                                <option value="">Semua</option>
+                                <option value="SUCCESS">Sukses</option>
+                                <option value="PROCESS">Proses</option>
+                                <option value="FAILED">Gagal</option>
+                            </select>
+                            <div class="fancy-filter-select" id="payStatusFilterCustom"></div>
+                        </div>
+                        <div class="admin-filter-field admin-filter-search">
+                            <label for="paySearch">Pencarian</label>
+                            <input type="search" id="paySearch" placeholder="Cari user / order / ref / sku">
+                        </div>
+                        <div class="admin-filter-actions">
+                            <button class="btn-secondary" id="payFilterReset" type="button">Reset</button>
+                        </div>
+                    </div>
+                    <p class="admin-transaction-count">Menampilkan <strong id="payShownCount">0</strong> pembayaran</p>
+                </div>
+                <div class="admin-table-scroll admin-payment-table-scroll">
+                    <table class="transactions-table admin-payment-table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal & Jam</th>
+                                <th>User</th>
+                                <th>Jenis</th>
+                                <th>Metode</th>
+                                <th>Kode</th>
+                                <th>Nominal</th>
+                                <th>Status</th>
+                                <th>Detail</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-payment-list">
+                            <!-- diisi JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-pagination">
+                    <button class="btn-secondary" id="payPrevPage" type="button">Sebelumnya</button>
+                    <span id="payPageInfo">Halaman 1 / 1</span>
+                    <button class="btn-secondary" id="payNextPage" type="button">Berikutnya</button>
+                </div>
+            </section>
+            </div>
+
+            <div class="dashboard-view" id="usersView" data-page-title="Pengguna">
+            <!-- Daftar Pengguna Singkat -->
+            <section class="user-list">
+                <h2>Pengguna Terdaftar</h2>
+                <div class="admin-pricing-config admin-user-balance-tool">
+                    <div class="form-group">
+                        <label for="userBalanceEmailInput">Cari email / username akun</label>
+                        <input type="text" id="userBalanceEmailInput" placeholder="contoh@gmail.com / username">
+                    </div>
+                    <button class="btn-secondary" id="userBalanceSearchBtn" type="button">
+                        <i class="fas fa-search"></i> Cari Akun
+                    </button>
+                    <div class="admin-user-balance-result" id="userBalanceResultPanel" hidden>
+                        <div class="admin-user-account-summary">
+                            <span>Akun ditemukan</span>
+                            <strong id="userBalanceAccountText">-</strong>
+                            <small id="userBalanceCurrentText">Saldo saat ini: Rp 0</small>
+                        </div>
+                        <div class="admin-user-balance-fields">
+                            <div class="form-group">
+                                <label for="userBalanceAmountInput">Nominal saldo (Rp)</label>
+                                <input type="number" id="userBalanceAmountInput" min="1" step="1000" placeholder="Contoh: 10000">
+                            </div>
+                            <div class="form-group">
+                                <label for="userBalanceNoteInput">Catatan</label>
+                                <input type="text" id="userBalanceNoteInput" maxlength="240" placeholder="Contoh: Refund manual / bonus / koreksi saldo">
+                            </div>
+                        </div>
+                        <div class="admin-user-balance-actions">
+                            <button class="btn-primary" id="userBalanceAddBtn" type="button">
+                                <i class="fas fa-wallet"></i> Tambah Saldo
+                            </button>
+                            <button class="btn-secondary" id="userBalanceSetBtn" type="button">
+                                <i class="fas fa-pen-to-square"></i> Set Saldo
+                            </button>
+                        </div>
+                    </div>
+                    <p class="checkout-status" id="userBalanceStatus">Cari email atau username user terlebih dahulu sebelum mengubah saldo.</p>
+                </div>
+                <p class="admin-transaction-count" id="userShownCount">Menampilkan 0 pengguna</p>
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Saldo</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list">
+                        <!-- diisi JS -->
+                    </tbody>
+                </table>
+                <div class="admin-pagination" id="adminUserPagination">
+                    <button class="btn-secondary" id="userPrevPage" type="button">Sebelumnya</button>
+                    <span id="userPageInfo">Halaman 1 / 1</span>
+                    <button class="btn-secondary" id="userNextPage" type="button">Berikutnya</button>
+                </div>
+            </section>
+            </div>
+
+            <div class="dashboard-view" id="settingsView" data-page-title="Setting Website">
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Setting Website</h2>
+                            <p>Kelola harga website, minimal topup, kontak CS, dan tampilan promo user.</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-pricing-config">
+                        <div class="form-group">
+                            <label for="productFlatMarginInput">Margin flat modal &lt; Rp30.000</label>
+                            <input type="number" id="productFlatMarginInput" min="0" step="100" placeholder="Default: 1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="productMidMarginPercentInput">Margin modal Rp30.000 - Rp100.000 (%)</label>
+                            <input type="number" id="productMidMarginPercentInput" min="0" step="0.01" placeholder="Default: 2">
+                        </div>
+                        <div class="form-group">
+                            <label for="productHighMarginPercentInput">Margin modal &gt; Rp100.000 (%)</label>
+                            <input type="number" id="productHighMarginPercentInput" min="0" step="0.01" placeholder="Default: 1.5">
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="productQrisFeeEnabledInput">
+                                <span>Aktifkan fee QRIS pada harga produk</span>
+                            </label>
+                            <small>Fee dihitung setelah modal + margin.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="productQrisFeePercentInput">Fee QRIS Midtrans (%)</label>
+                            <input type="number" id="productQrisFeePercentInput" min="0" step="0.01" placeholder="Default: 0.7">
+                        </div>
+                        <div class="form-group">
+                            <label for="topupMinAmountInput">Minimal topup user (Rp)</label>
+                            <input type="number" id="topupMinAmountInput" min="1" step="1000" placeholder="Contoh: 10000">
+                        </div>
+                        <div class="form-group">
+                            <label for="csWhatsappNumberInput">Nomor WhatsApp CS</label>
+                            <input type="text" id="csWhatsappNumberInput" placeholder="Contoh: 6281234567890 atau +6281234567890">
+                        </div>
+                        <div class="form-group">
+                            <label for="digiflazzBalanceWarningThresholdInput">Batas peringatan saldo Digiflazz (Rp)</label>
+                            <input type="number" id="digiflazzBalanceWarningThresholdInput" min="0" step="1000" placeholder="Contoh: 50000">
+                            <small>Isi 0 untuk menonaktifkan peringatan saldo rendah.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="digiflazzBalanceWarningTelegramChatIdInput">Telegram Group Chat ID khusus peringatan saldo</label>
+                            <input type="text" id="digiflazzBalanceWarningTelegramChatIdInput" placeholder="Contoh: -1001234567890">
+                            <small>Kosongkan jika ingin memakai grup Telegram backup/notif utama.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="digiflazzProductLimitEnabledInput">
+                                <span>Sembunyikan produk yang modalnya melebihi saldo Digiflazz</span>
+                            </label>
+                            <small>Produk yang tidak mungkin diproses karena saldo kurang tidak akan tampil di halaman user, jadi tidak ada transaksi yang gagal gara-gara saldo habis.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="digiflazzProductLimitMarginInput">Jarak aman saldo Digiflazz (Rp)</label>
+                            <input type="number" id="digiflazzProductLimitMarginInput" min="0" step="10000" placeholder="Contoh: 100000">
+                            <small id="digiflazzProductLimitInfo">Saldo dikurangi jarak aman ini menjadi harga modal tertinggi yang boleh tampil.</small>
+                        </div>
+                        <div class="admin-balance-monitor">
+                            <div>
+                                <span>Saldo Digiflazz sekarang</span>
+                                <strong id="digiflazzCurrentBalanceText">Memuat...</strong>
+                                <small id="digiflazzBalanceStatusText">Cek saldo akan mengirim peringatan Telegram jika di bawah batas.</small>
+                            </div>
+                            <button class="btn-secondary" id="refreshDigiflazzBalanceBtn" type="button">
+                                <i class="fas fa-rotate"></i> Refresh Saldo
+                            </button>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="userPromoEnabledInput">
+                                <span>Tampilkan semua promo aktif di dashboard user</span>
+                            </label>
+                            <small>Promo produk ditambahkan lewat tombol Promo di menu Produk.</small>
+                        </div>
+                        <button class="btn-primary" id="saveProductFeeBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Setting Website
+                        </button>
+                        <p id="productFeeInfo">Harga user menampilkan harga akhir (harga Digiflazz + fee). Layanan cepat maksimal 4 produk.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="operationsSettingsView" data-page-title="Setting Operasional">
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Setting Operasional</h2>
+                            <p>Aktifkan atau nonaktifkan pembelian produk, topup saldo, pembayaran QRIS, dan cek username akun game.</p>
+                        </div>
+                    </div>
+                    <div class="admin-pricing-config">
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="productPurchaseEnabledInput">
+                                <span>Aktifkan pembelian produk</span>
+                            </label>
+                            <small>Jika nonaktif, user tidak bisa membuat order pembelian baru.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="walletTopupEnabledInput">
+                                <span>Aktifkan topup saldo</span>
+                            </label>
+                            <small>Jika nonaktif, user tidak bisa membuat order topup baru.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="qrisPaymentEnabledInput">
+                                <span>Aktifkan payment gateway</span>
+                            </label>
+                            <small>Jika nonaktif, user tidak bisa bayar langsung atau topup via QRIS.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="gameUsernameCheckEnabledInput">
+                                <span>Aktifkan cek username akun game</span>
+                            </label>
+                            <small>Jika nonaktif, tombol cek username di form ID game disembunyikan.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="dailyCutOffEnabledInput">
+                                <span>Aktifkan cut off harian produk</span>
+                            </label>
+                            <small>Jika aktif, pembelian produk otomatis ditutup pada jam cut off.</small>
+                        </div>
+                        <div class="admin-cutoff-grid">
+                            <div class="form-group">
+                                <label for="dailyCutOffStartInput">Mulai cut off</label>
+                                <input type="time" id="dailyCutOffStartInput" value="23:30">
+                            </div>
+                            <div class="form-group">
+                                <label for="dailyCutOffEndInput">Normal kembali</label>
+                                <input type="time" id="dailyCutOffEndInput" value="00:30">
+                            </div>
+                            <div class="form-group">
+                                <label for="dailyCutOffTimezoneInput">Zona waktu</label>
+                                <input type="text" id="dailyCutOffTimezoneInput" value="Asia/Jakarta" placeholder="Asia/Jakarta">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dailyCutOffMessageInput">Pesan cut off</label>
+                            <input type="text" id="dailyCutOffMessageInput" maxlength="240" placeholder="Contoh: Sedang maintenance harian. Transaksi kembali normal jam 00:30 WIB.">
+                        </div>
+                        <div class="form-group">
+                            <label for="operationsMessageInput">Pesan maintenance transaksi</label>
+                            <input type="text" id="operationsMessageInput" maxlength="240" placeholder="Contoh: Layanan transaksi sedang maintenance, coba lagi nanti.">
+                        </div>
+                        <button class="btn-primary" id="saveOperationsSettingsBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Setting Operasional
+                        </button>
+                        <p id="operationsSettingsInfo">Pengaturan operasional berlaku langsung untuk user.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="developmentSettingsView" data-page-title="Mode Development">
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Mode Development</h2>
+                            <p>Batasi akses login saat website masih dalam tahap development.</p>
+                        </div>
+                    </div>
+                    <div class="admin-pricing-config">
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="developmentModeEnabledInput">
+                                <span>Aktifkan mode development</span>
+                            </label>
+                            <small>Jika aktif, hanya admin dan email/username yang ada di whitelist yang bisa login.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="developmentAllowedIdentitiesInput">Email / username yang boleh akses</label>
+                            <textarea id="developmentAllowedIdentitiesInput" rows="5" placeholder="contoh@gmail.com&#10;tester_digiflazz"></textarea>
+                            <small>Isi satu email atau username per baris. Admin tetap bisa login walaupun tidak ada di daftar.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="developmentMessageInput">Pesan untuk user</label>
+                            <input type="text" id="developmentMessageInput" maxlength="240" placeholder="Website masih dalam development. Login hanya dibuka untuk akun tertentu.">
+                        </div>
+                        <button class="btn-primary" id="saveDevelopmentSettingsBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Mode Development
+                        </button>
+                        <p id="developmentSettingsInfo">Mode development nonaktif.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="paymentGatewayView" data-page-title="Setting Payment Gateway">
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Setting Payment Gateway</h2>
+                            <p>Pilih provider pembayaran dan atur Midtrans Snap sandbox/production.</p>
+                        </div>
+                    </div>
+                    <div class="admin-pricing-config">
+                        <div class="form-group">
+                            <label for="paymentGatewayProviderInput">Provider aktif</label>
+                            <select id="paymentGatewayProviderInput" class="native-filter-select">
+                                <option value="midtrans">Midtrans Snap</option>
+                            </select>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="midtransProductionInput">
+                                <span>Gunakan Midtrans Production</span>
+                            </label>
+                            <small>Matikan untuk sandbox testing. Aktifkan hanya setelah akun Midtrans production siap.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransClientKeyInput">Midtrans Client Key</label>
+                            <input type="text" id="midtransClientKeyInput" placeholder="SB-Mid-client-...">
+                            <small>Wajib untuk memuat Snap di halaman user.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransServerKeyInput">Midtrans Server Key</label>
+                            <input type="password" id="midtransServerKeyInput" placeholder="Kosongkan jika tidak diubah">
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransEnabledPaymentsInput">Enabled Payments</label>
+                            <input type="text" id="midtransEnabledPaymentsInput" placeholder="qris,gopay,shopeepay,bank_transfer">
+                            <small>Pisahkan dengan koma. Jika ingin hanya QRIS, isi: qris.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransSnapBaseUrlInput">Snap API Base URL</label>
+                            <input type="text" id="midtransSnapBaseUrlInput" placeholder="https://app.sandbox.midtrans.com/snap/v1">
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransApiBaseUrlInput">Status API Base URL</label>
+                            <input type="text" id="midtransApiBaseUrlInput" placeholder="https://api.sandbox.midtrans.com/v2">
+                        </div>
+                        <div class="form-group">
+                            <label for="midtransSnapJsUrlInput">Snap JS URL</label>
+                            <input type="text" id="midtransSnapJsUrlInput" placeholder="https://app.sandbox.midtrans.com/snap/snap.js">
+                        </div>
+                        <button class="btn-primary" id="savePaymentGatewayBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Payment Gateway
+                        </button>
+                        <p id="paymentGatewayInfo">Webhook Midtrans: https://domain-kamu.com/api/midtrans/webhook</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="internalGatewayView" data-page-title="Gateway Internal">
+                <section class="admin-products internal-gateway-panel">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Payment Gateway Internal</h2>
+                            <p>Kelola akses API untuk web atau bot Telegram lain yang ingin membuat pembayaran lewat Midtrans PPOB ini.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshInternalGatewayBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="internal-gateway-base">
+                        <div>
+                            <span>Base URL partner</span>
+                            <strong id="internalGatewayBaseUrl">https://domain-kamu.com/api/partner</strong>
+                        </div>
+                        <a class="btn-secondary" href="docs/INTERNAL_PAYMENT_GATEWAY.md" target="_blank" rel="noopener">
+                            <i class="fas fa-book"></i> Dokumentasi
+                        </a>
+                    </div>
+
+                    <div class="admin-pricing-config internal-gateway-form">
+                        <div class="form-group">
+                            <label for="partnerAppNameInput">Nama partner</label>
+                            <input type="text" id="partnerAppNameInput" maxlength="80" placeholder="Contoh: Bot Telegram Order">
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerCallbackUrlInput">Callback URL sukses/status</label>
+                            <input type="url" id="partnerCallbackUrlInput" placeholder="https://web-lain.com/api/payment/callback">
+                            <small>URL ini akan menerima notifikasi status payment dari PPOB.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerReturnUrlInput">Return URL user</label>
+                            <input type="url" id="partnerReturnUrlInput" placeholder="https://web-lain.com/payment/finish">
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerAllowedOriginsInput">Whitelist origin callback/return</label>
+                            <textarea id="partnerAllowedOriginsInput" rows="3" placeholder="https://web-lain.com&#10;https://bot-api.web-lain.com"></textarea>
+                            <small>Kosongkan untuk otomatis memakai origin callback dan return URL di atas.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerAllowedIpsInput">Whitelist IP server partner</label>
+                            <textarea id="partnerAllowedIpsInput" rows="3" placeholder="203.0.113.10&#10;198.51.100.20"></textarea>
+                            <small>Kosongkan jika belum memakai IP statis. Kalau diisi, hanya IP ini yang bisa request API.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="partnerRequestTtlInput">Masa berlaku signature</label>
+                            <input type="number" id="partnerRequestTtlInput" min="60" max="900" step="30" value="300">
+                            <small>Default 300 detik. Semakin kecil semakin ketat.</small>
+                        </div>
+                        <label class="setting-toggle-label internal-gateway-toggle">
+                            <input type="checkbox" id="partnerEnabledInput" checked>
+                            <span>Partner langsung aktif</span>
+                        </label>
+                        <button class="btn-primary" id="createPartnerAppBtn" type="button">
+                            <i class="fas fa-plus"></i> Buat Partner & Token
+                        </button>
+                        <p id="internalGatewayInfo">Secret hanya tampil sekali setelah partner dibuat atau di-rotate.</p>
+                    </div>
+
+                    <div class="internal-gateway-credential" id="partnerCredentialBox" hidden>
+                        <div>
+                            <span>API Key</span>
+                            <code id="partnerCredentialApiKey">-</code>
+                        </div>
+                        <div>
+                            <span>Secret</span>
+                            <code id="partnerCredentialSecret">-</code>
+                        </div>
+                        <p>Simpan credential ini di server web/bot partner. Jangan ditaruh di frontend.</p>
+                    </div>
+
+                    <section class="recent-transactions internal-gateway-section">
+                        <div class="admin-section-header">
+                            <div>
+                                <h2>Aplikasi Partner</h2>
+                                <p>Aktif/nonaktifkan akses, update whitelist, atau rotate secret jika diperlukan.</p>
+                            </div>
+                        </div>
+                        <div class="admin-table-scroll">
+                            <table class="transactions-table internal-gateway-table">
+                                <thead>
+                                    <tr>
+                                        <th>Partner</th>
+                                        <th>API Key</th>
+                                        <th>Status</th>
+                                        <th>Callback</th>
+                                        <th>Keamanan</th>
+                                        <th>Order</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="partnerAppsList">
+                                    <tr>
+                                        <td colspan="7">Belum ada partner.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="recent-transactions internal-gateway-section">
+                        <div class="admin-section-header">
+                            <div>
+                                <h2>Order Gateway Eksternal</h2>
+                                <p>Riwayat pembayaran dari web/bot lain dan status callback ke partner.</p>
+                            </div>
+                        </div>
+                        <div class="admin-table-scroll">
+                            <table class="transactions-table internal-gateway-orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Partner</th>
+                                        <th>Order</th>
+                                        <th>Jumlah</th>
+                                        <th>Status</th>
+                                        <th>Callback</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="externalGatewayOrdersList">
+                                    <tr>
+                                        <td colspan="7">Belum ada order gateway eksternal.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="resellerApiView" data-page-title="API Reseller">
+                <section class="admin-products internal-gateway-panel reseller-api-panel">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>API Reseller</h2>
+                            <p>Reseller menjual produk PPOB dan VPN dari website mereka sendiri. Setiap transaksi memotong saldo akun reseller: saldo PPOB untuk PPOB, saldo VPN untuk VPN.</p>
+                        </div>
+                        <button class="btn-secondary" id="refreshResellerApiBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="internal-gateway-base">
+                        <div>
+                            <span>Base URL API reseller</span>
+                            <strong id="resellerApiBaseUrl">https://domain-kamu.com/api/reseller/v1</strong>
+                        </div>
+                        <a class="btn-secondary" href="docs/RESELLER_API.md" target="_blank" rel="noopener">
+                            <i class="fas fa-book"></i> Dokumentasi
+                        </a>
+                    </div>
+
+                    <label class="setting-toggle-label reseller-api-global-toggle">
+                        <input type="checkbox" id="resellerApiEnabledInput" checked>
+                        <span>API reseller aktif. Matikan untuk menghentikan akses semua reseller sekaligus.</span>
+                    </label>
+
+                    <div class="admin-pricing-config internal-gateway-form reseller-api-form">
+                        <div class="form-group">
+                            <label for="resellerApiAccountInput">Akun reseller (email atau username)</label>
+                            <input type="text" id="resellerApiAccountInput" maxlength="120" placeholder="reseller@email.com">
+                            <small>Akun harus sudah terdaftar di website. Saldo akun ini yang dipotong.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiNameInput">Nama reseller atau website</label>
+                            <input type="text" id="resellerApiNameInput" maxlength="80" placeholder="Contoh: Toko Pulsa Andi">
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiIpsInput">Whitelist IP server reseller (wajib)</label>
+                            <textarea id="resellerApiIpsInput" rows="3" placeholder="203.0.113.10&#10;198.51.100.0/29"></textarea>
+                            <small>Satu IP per baris. Boleh IPv6 atau rentang IPv4 /16 sampai /32. Request dari IP lain ditolak.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiCallbackInput">Callback URL (opsional)</label>
+                            <input type="url" id="resellerApiCallbackInput" placeholder="https://web-reseller.com/api/ppob-callback">
+                            <small>Menerima status akhir transaksi PPOB. Wajib HTTPS.</small>
+                        </div>
+                        <div class="reseller-api-scopes">
+                            <span class="reseller-api-label">Akses</span>
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="resellerApiAllowPpobInput" checked>
+                                <span>PPOB, harga sama dengan website</span>
+                            </label>
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="resellerApiAllowVpnInput" checked>
+                                <span>VPN, harga reseller</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiExpiresInput">Kunci kedaluwarsa (opsional)</label>
+                            <input type="datetime-local" id="resellerApiExpiresInput">
+                            <small>Kosongkan kalau kunci tidak punya batas waktu.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiDailyPpobInput">Batas belanja PPOB per hari (Rp)</label>
+                            <input type="number" id="resellerApiDailyPpobInput" min="0" step="1000" value="0">
+                            <small>0 berarti tanpa batas. Dihitung per hari WIB.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiDailyVpnInput">Batas belanja VPN per hari (Rp)</label>
+                            <input type="number" id="resellerApiDailyVpnInput" min="0" step="1000" value="0">
+                            <small>0 berarti tanpa batas. Dihitung per hari WIB.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiRateInput">Maksimal request per menit</label>
+                            <input type="number" id="resellerApiRateInput" min="1" max="300" value="60">
+                        </div>
+                        <div class="form-group">
+                            <label for="resellerApiTtlInput">Masa berlaku signature (detik)</label>
+                            <input type="number" id="resellerApiTtlInput" min="60" max="900" step="30" value="300">
+                            <small>Default 300 detik. Semakin kecil semakin ketat.</small>
+                        </div>
+                        <label class="setting-toggle-label internal-gateway-toggle">
+                            <input type="checkbox" id="resellerApiClientEnabledInput" checked>
+                            <span>Kunci langsung aktif</span>
+                        </label>
+                        <div class="reseller-api-form-actions">
+                            <button class="btn-primary" id="saveResellerApiClientBtn" type="button">
+                                <i class="fas fa-plus"></i> Buat API Key
+                            </button>
+                            <button class="btn-secondary" id="cancelResellerApiEditBtn" type="button" hidden>
+                                Batal Edit
+                            </button>
+                        </div>
+                        <p id="resellerApiInfo">API key dan secret hanya tampil sekali setelah dibuat atau di-rotate.</p>
+                    </div>
+
+                    <div class="internal-gateway-credential" id="resellerApiCredentialBox" hidden>
+                        <div>
+                            <span>API Key</span>
+                            <code id="resellerApiCredentialKey">-</code>
+                            <button class="receipt-btn reseller-api-copy" type="button" data-copy-source="resellerApiCredentialKey">
+                                <i class="fas fa-copy"></i> Salin
+                            </button>
+                        </div>
+                        <div>
+                            <span>Secret</span>
+                            <code id="resellerApiCredentialSecret">-</code>
+                            <button class="receipt-btn reseller-api-copy" type="button" data-copy-source="resellerApiCredentialSecret">
+                                <i class="fas fa-copy"></i> Salin
+                            </button>
+                        </div>
+                        <p>Kirim ke reseller lewat jalur pribadi. Keduanya hanya boleh disimpan di server reseller, jangan di HTML atau JavaScript website.</p>
+                    </div>
+
+                    <section class="recent-transactions internal-gateway-section">
+                        <div class="admin-section-header">
+                            <div>
+                                <h2>Reseller Terdaftar</h2>
+                                <p>Edit whitelist dan batas, nonaktifkan, rotate kunci, atau kirim tes callback.</p>
+                            </div>
+                        </div>
+                        <div class="admin-table-scroll">
+                            <table class="transactions-table internal-gateway-table reseller-api-table">
+                                <thead>
+                                    <tr>
+                                        <th>Reseller</th>
+                                        <th>Status</th>
+                                        <th>Keamanan</th>
+                                        <th>Saldo &amp; Pemakaian Hari Ini</th>
+                                        <th>Terakhir Dipakai</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resellerApiClientsList">
+                                    <tr>
+                                        <td colspan="6">Belum ada reseller.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="recent-transactions internal-gateway-section">
+                        <div class="admin-section-header">
+                            <div>
+                                <h2>Transaksi API</h2>
+                                <p>Transaksi PPOB dan aksi VPN dari website reseller, beserta status callback-nya.</p>
+                            </div>
+                            <select id="resellerApiOrdersFilter" class="native-filter-select" aria-label="Filter reseller">
+                                <option value="">Semua reseller</option>
+                            </select>
+                        </div>
+                        <div class="admin-table-scroll">
+                            <table class="transactions-table internal-gateway-orders-table reseller-api-orders-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Reseller</th>
+                                        <th>refId / TRX</th>
+                                        <th>Jenis</th>
+                                        <th>Jumlah</th>
+                                        <th>Status</th>
+                                        <th>Callback</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resellerApiOrdersList">
+                                    <tr>
+                                        <td colspan="8">Belum ada transaksi API.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="vpnView" data-page-title="VPN">
+                <section class="admin-products" id="vpnStatsSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Ringkasan VPN</h2>
+                            <p>Angka server, akun, pengguna, dan pemasukan bulan ini.</p>
+                        </div>
+                        <button class="btn-secondary" id="vpnStatsRefreshBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+                    <div class="vpn-restore-stats" id="vpnAdminStats">
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Server aktif</span>
+                            <strong id="vpnStatServers">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Akun aktif</span>
+                            <strong id="vpnStatAccounts">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Pengguna VPN</span>
+                            <strong id="vpnStatProfiles">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Reseller</span>
+                            <strong id="vpnStatResellers">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Total saldo VPN</span>
+                            <strong id="vpnStatBalance">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Masuk bulan ini</span>
+                            <strong id="vpnStatIncome">-</strong>
+                            <span class="vpn-restore-stat-label" id="vpnStatOrders"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="vpnServerSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Server VPN</h2>
+                            <p>Harga di sini satuannya rupiah per hari, dikali jumlah hari saat pembelian.</p>
+                            <p class="vpn-admin-sub" id="vpnServerSyncInfo"></p>
+                        </div>
+                        <div class="vpn-admin-header-actions">
+                            <button class="btn-secondary" id="vpnServerSyncBtn" type="button">
+                                <i class="fas fa-rotate"></i> Sync Sekarang
+                            </button>
+                            <button class="btn-primary" id="vpnServerNewBtn" type="button">
+                                <i class="fas fa-plus"></i> Tambah Server
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="admin-pricing-config vpn-server-form" id="vpnServerForm" hidden>
+                        <h3 id="vpnServerFormTitle">Tambah Server</h3>
+                        <div class="vpn-admin-grid">
+                            <div class="form-group">
+                                <label for="vpnServerNameInput">Nama server</label>
+                                <input type="text" id="vpnServerNameInput" placeholder="Contoh: INDO 1 NUSA">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerDomainInput">Domain panel</label>
+                                <input type="text" id="vpnServerDomainInput" placeholder="Contoh: indo1.domainku.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerAuthInput">Token panel</label>
+                                <input type="text" id="vpnServerAuthInput" placeholder="Kosongkan kalau tidak diubah" autocomplete="off">
+                                <small class="vpn-admin-hint">Isi tanda hubung (-) untuk mengosongkan token.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerQuotaInput">Kuota (GB)</label>
+                                <input type="number" id="vpnServerQuotaInput" min="0" step="1" value="0">
+                                <small class="vpn-admin-hint">Nol berarti tanpa batas, ditampilkan begitu ke user — bukan "0 GB".</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerPriceUser1Input">Harga user 1 IP / hari</label>
+                                <input type="number" id="vpnServerPriceUser1Input" min="0" step="1" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerPriceUser2Input">Harga user 2 IP / hari</label>
+                                <input type="number" id="vpnServerPriceUser2Input" min="0" step="1" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerPriceReseller1Input">Harga reseller 1 IP / hari</label>
+                                <input type="number" id="vpnServerPriceReseller1Input" min="0" step="1" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerPriceReseller2Input">Harga reseller 2 IP / hari</label>
+                                <input type="number" id="vpnServerPriceReseller2Input" min="0" step="1" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerPriceInput">Harga lama per hari (cadangan)</label>
+                                <input type="number" id="vpnServerPriceInput" min="0" step="1" value="0">
+                                <small class="vpn-admin-hint">Dipakai hanya kalau harga per paket di atas masih nol.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerLimitInput">Batas jumlah akun</label>
+                                <input type="number" id="vpnServerLimitInput" min="0" step="1" value="0">
+                                <small class="vpn-admin-hint">Nol berarti tanpa batas.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnServerTotalInput">Akun terpakai</label>
+                                <input type="number" id="vpnServerTotalInput" min="0" step="1" value="0">
+                                <small class="vpn-admin-hint">Disamakan otomatis dengan jumlah akun di VPS setiap menit, selama token panel terisi.</small>
+                            </div>
+                        </div>
+                        <div class="vpn-admin-toggles">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnServerUdpInput">
+                                <span>Khusus UDP ZiVPN</span>
+                            </label>
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnServerResellerInput">
+                                <span>Khusus reseller</span>
+                            </label>
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnServerActiveInput" checked>
+                                <span>Aktif</span>
+                            </label>
+                        </div>
+                        <div class="vpn-admin-form-actions">
+                            <button class="btn-primary" id="vpnServerSaveBtn" type="button">
+                                <i class="fas fa-save"></i> Simpan
+                            </button>
+                            <button class="btn-secondary" id="vpnServerCancelBtn" type="button">Batal</button>
+                        </div>
+                        <p class="vpn-admin-status" id="vpnServerFormStatus"></p>
+                    </div>
+
+                    <p class="vpn-admin-status" id="vpnServerListStatus"></p>
+                    <div class="vpn-admin-list" id="vpnServerList">
+                        <p class="vpn-admin-empty">Memuat server...</p>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="vpnProfileSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Pengguna VPN &amp; Saldo</h2>
+                            <p>Cari dengan email, username PPOB, atau username VPN.</p>
+                        </div>
+                    </div>
+                    <div class="vpn-admin-search">
+                        <input type="search" id="vpnProfileSearchInput" placeholder="Cari pengguna..." autocomplete="off">
+                        <select id="vpnProfileRoleFilter">
+                            <option value="">Semua peran</option>
+                            <option value="USER">User</option>
+                            <option value="RESELLER">Reseller</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+                        <button class="btn-secondary" id="vpnProfileSearchBtn" type="button">
+                            <i class="fas fa-magnifying-glass"></i> Cari
+                        </button>
+                    </div>
+                    <div class="vpn-admin-list" id="vpnProfileList">
+                        <p class="vpn-admin-empty">Tekan cari untuk menampilkan pengguna.</p>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="vpnGatewaySection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Gateway Pembayaran VPN</h2>
+                            <p>GoPay dan ShopeePay lewat AutoGoPay, masing-masing dengan API key sendiri. Pembayaran PPOB tidak lewat sini; PPOB memakai Midtrans.</p>
+                        </div>
+                    </div>
+
+                    <div class="admin-pricing-config">
+                        <div class="form-group">
+                            <label for="vpnGatewayPrimarySelect">Dipakai lebih dulu</label>
+                            <select id="vpnGatewayPrimarySelect">
+                                <option value="gopay">GoPay</option>
+                                <option value="shopeepay">ShopeePay</option>
+                            </select>
+                            <small class="vpn-admin-hint">Kalau yang ini gagal membuat QRIS, saluran lain yang menyala dipakai sebagai cadangan.</small>
+                        </div>
+                    </div>
+
+                    <div class="vpn-admin-list" id="vpnGatewayChannelList">
+                        <p class="vpn-admin-empty">Memuat saluran...</p>
+                    </div>
+
+                    <div class="vpn-admin-form-actions">
+                        <button class="btn-primary" id="vpnGatewaySaveBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Gateway
+                        </button>
+                    </div>
+                    <p class="vpn-admin-status" id="vpnGatewayStatus"></p>
+                </section>
+
+                <section class="admin-products" id="vpnConfigSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Pembuat File Config</h2>
+                            <p>Template HTTP Custom, HTTP Injector, dan Dark Tunnel. Config 1FTunnel dibuat dari template HTTP Custom yang sama. Pembuatan filenya dikerjakan layanan Generator API di luar.</p>
+                        </div>
+                        <button class="btn-secondary" id="vpnConfigTestBtn" type="button">
+                            <i class="fas fa-plug"></i> Uji Koneksi
+                        </button>
+                    </div>
+
+                    <div class="admin-pricing-config">
+                        <div class="vpn-admin-grid">
+                            <div class="form-group">
+                                <label for="vpnConfigBaseUrlInput">Alamat Generator API</label>
+                                <input type="text" id="vpnConfigBaseUrlInput" placeholder="Contoh: generator.domainku.com">
+                                <small class="vpn-admin-hint">Wajib HTTPS. Bagian /api/config ditambahkan otomatis.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="vpnConfigApiKeyInput">API key</label>
+                                <input type="text" id="vpnConfigApiKeyInput" placeholder="Kosongkan kalau tidak diubah" autocomplete="off">
+                                <small class="vpn-admin-hint">Isi tanda hubung (-) untuk mengosongkan. Saat ini: <span id="vpnConfigApiKeyMasked">belum diisi</span>.</small>
+                            </div>
+                        </div>
+                        <div class="vpn-admin-toggles">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnConfigEnabledInput">
+                                <span>Nyalakan pembuat config untuk user</span>
+                            </label>
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnConfigOneFtunnelInput">
+                                <span>Sediakan config 1FTunnel dari template HTTP Custom</span>
+                            </label>
+                        </div>
+                        <div class="vpn-admin-form-actions">
+                            <button class="btn-primary" id="vpnConfigSaveBtn" type="button">
+                                <i class="fas fa-save"></i> Simpan Pengaturan
+                            </button>
+                        </div>
+                        <p class="vpn-admin-status" id="vpnConfigSettingsStatus"></p>
+                    </div>
+
+                    <div class="admin-pricing-config">
+                        <div class="form-group">
+                            <label for="vpnConfigTemplateInput">Unggah template (.hc, .ehi, .dark)</label>
+                            <input type="file" id="vpnConfigTemplateInput" accept=".hc,.ehi,.dark" multiple>
+                            <small class="vpn-admin-hint">Bisa pilih banyak file sekaligus (Ctrl+klik atau Shift+klik), lalu diunggah otomatis satu per satu. Maksimal 1 MB per file. Nama file yang sama akan menimpa template lama.</small>
+                            <p class="vpn-admin-status" id="vpnConfigTemplateSelectedText"></p>
+                        </div>
+                        <div class="vpn-admin-form-actions">
+                            <button class="btn-primary" id="vpnConfigUploadBtn" type="button">
+                                <i class="fas fa-upload"></i> Unggah Template
+                            </button>
+                        </div>
+                        <p class="vpn-admin-status" id="vpnConfigUploadStatus"></p>
+                    </div>
+
+                    <div class="vpn-admin-bulk-bar" id="vpnConfigBulkBar" hidden>
+                        <label class="vpn-admin-check">
+                            <input type="checkbox" id="vpnConfigSelectAll">
+                            <span>Pilih semua</span>
+                        </label>
+                        <span class="vpn-admin-bulk-count" id="vpnConfigSelectedCount">0 dipilih</span>
+                        <div class="vpn-admin-form-actions">
+                            <button class="btn-secondary vpn-admin-danger" id="vpnConfigDeleteSelectedBtn" type="button" disabled>
+                                <i class="fas fa-trash"></i> Hapus Terpilih
+                            </button>
+                            <button class="btn-secondary vpn-admin-danger" id="vpnConfigDeleteAllBtn" type="button">
+                                <i class="fas fa-trash-alt"></i> Hapus Semua
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="vpn-admin-list" id="vpnConfigTemplateList">
+                        <p class="vpn-admin-empty">Memuat template...</p>
+                    </div>
+                </section>
+
+                <section class="admin-products" id="vpnRestoreSection">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Restore Database VPN</h2>
+                            <p>Pindahkan user, server, dan akun dari file database webpanel VPN (.db) ke PPOB.</p>
+                        </div>
+                        <button class="btn-secondary" id="vpnRestoreRefreshBtn" type="button">
+                            <i class="fas fa-rotate"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="vpn-restore-stats" id="vpnRestoreStats">
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">User VPN</span>
+                            <strong id="vpnRestoreStatProfiles">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Server</span>
+                            <strong id="vpnRestoreStatServers">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Akun VPN</span>
+                            <strong id="vpnRestoreStatAccounts">-</strong>
+                        </div>
+                        <div class="vpn-restore-stat">
+                            <span class="vpn-restore-stat-label">Aturan limit IP</span>
+                            <strong id="vpnRestoreStatRules">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="admin-pricing-config admin-backup-actions">
+                        <div class="form-group">
+                            <label for="vpnRestoreFileInput">File database webpanel VPN (.db)</label>
+                            <input type="file" id="vpnRestoreFileInput" accept=".db,.sqlite,.sqlite3,application/octet-stream">
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="vpnRestoreSyncBalanceInput">
+                                <span>Sinkron saldo user yang sudah pernah diimpor</span>
+                            </label>
+                            <small class="admin-testimonial-hint">Untuk user yang sudah pindah, saldo ditambah atau dikurangi sebesar selisih antara saldo di file ini dan saldo yang dulu dipindahkan. Transaksi di website baru tidak tertimpa. Pakai backup terbaru dari panel lama, sebaiknya setelah panel lama ditutup. Backup yang lebih lama dari backup terakhir yang dipakai akan ditolak.</small>
+                        </div>
+                        <div class="vpn-restore-buttons">
+                            <button class="btn-secondary" id="vpnRestorePreviewBtn" type="button">
+                                <i class="fas fa-magnifying-glass"></i> Cek Dulu
+                            </button>
+                            <button class="btn-primary" id="vpnRestoreApplyBtn" type="button" disabled>
+                                <i class="fas fa-upload"></i> Jalankan Restore
+                            </button>
+                        </div>
+                        <p id="vpnRestoreInfo">Tekan "Cek Dulu" untuk melihat apa yang akan terjadi tanpa mengubah database. Tombol restore terbuka setelah pemeriksaan selesai.</p>
+                    </div>
+
+                    <div class="vpn-restore-result" id="vpnRestoreResult" hidden>
+                        <h3 id="vpnRestoreResultTitle">Hasil pemeriksaan</h3>
+                        <div class="vpn-restore-summary" id="vpnRestoreSummary"></div>
+                        <div class="vpn-restore-sync" id="vpnRestoreSync" hidden></div>
+                        <details class="vpn-restore-details">
+                            <summary>Laporan lengkap</summary>
+                            <pre id="vpnRestoreLog"></pre>
+                        </details>
+                    </div>
+
+                    <div class="vpn-restore-note">
+                        <p><strong>Yang perlu diketahui sebelum menjalankan:</strong></p>
+                        <ul>
+                            <li>User yang emailnya sudah terdaftar di PPOB tidak diduplikasi. Akun VPN-nya ditempelkan ke akun PPOB yang sudah ada, dan saldo PPOB miliknya tidak diubah.</li>
+                            <li>Saldo VPN disimpan terpisah dari saldo PPOB.</li>
+                            <li>Aman dijalankan ulang. Baris yang sudah pernah masuk akan dilewati, jadi restore yang terhenti di tengah cukup dijalankan lagi.</li>
+                            <li>Saldo user yang sudah pernah diimpor tidak ikut berubah, kecuali "Sinkron saldo" dicentang. Jangan menambah saldo mereka secara manual kalau akan memakai sinkron saldo, karena selisihnya akan ditambahkan lagi.</li>
+                            <li>Server yang sudah ada tidak ditimpa, supaya harga yang sudah diubah dari halaman admin tidak kembali ke isi file backup.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-view" id="backupSettingsView" data-page-title="Backup & Restore">
+                <section class="admin-products">
+                    <div class="admin-section-header">
+                        <div>
+                            <h2>Backup & Restore Database</h2>
+                            <p>Kelola Telegram backup, auto backup, backup manual, restore, dan download file .dump.</p>
+                        </div>
+                    </div>
+                    <div class="admin-pricing-config">
+                        <div class="form-group">
+                            <label for="backupTelegramBotTokenInput">Telegram Bot Token</label>
+                            <input type="text" id="backupTelegramBotTokenInput" placeholder="Contoh: 123456:ABCDEF...">
+                        </div>
+                        <div class="form-group">
+                            <label for="backupTelegramChatIdInput">Chat ID Grup Backup Database</label>
+                            <input type="text" id="backupTelegramChatIdInput" placeholder="Contoh: -1001234567890">
+                            <small class="admin-testimonial-hint">Khusus file backup database. Isi file ini lengkap, jadi pakai grup pribadi yang anggotanya hanya admin.</small>
+                        </div>
+                        <div class="form-group setting-toggle-group">
+                            <label class="setting-toggle-label">
+                                <input type="checkbox" id="backupAutoEnabledInput">
+                                <span>Aktifkan auto backup database tiap 3 jam</span>
+                            </label>
+                        </div>
+                        <button class="btn-primary" id="saveBackupSettingsBtn" type="button">
+                            <i class="fas fa-save"></i> Simpan Setting Backup
+                        </button>
+                    </div>
+                    <div class="admin-pricing-config admin-backup-actions">
+                        <button class="btn-primary" id="triggerBackupNowBtn" type="button">
+                            <i class="fas fa-database"></i> Backup Sekarang
+                        </button>
+                        <p id="backupInfo">Backup otomatis berjalan setiap 3 jam, file backup dikirim ke grup backup database.</p>
+                    </div>
+
+                    <div class="admin-pricing-config" id="testimonialSettings">
+                        <div class="form-group">
+                            <label for="adminNotificationTelegramChatIdInput">Chat ID Grup Notifikasi Admin</label>
+                            <input type="text" id="adminNotificationTelegramChatIdInput" placeholder="Contoh: -1001234567890">
+                            <small class="admin-testimonial-hint">Rincian lengkap untuk admin: transaksi PPOB beserta email, SN, dan saldo Digiflazz, event topup, refund, dan peringatan saldo Digiflazz. Kosongkan untuk tetap memakai grup backup database.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="testimonialTelegramChatIdInput">Chat ID Grup Testimoni</label>
+                            <input type="text" id="testimonialTelegramChatIdInput" placeholder="Contoh: -1001234567890">
+                            <small class="admin-testimonial-hint">Untuk dilihat banyak user. Transaksi PPOB, pembelian dan perpanjangan VPN, serta topup yang berhasil dikirim ke sini dengan email dan nomor tujuan disensor. Harus <strong>berbeda</strong> dari grup backup dan grup notifikasi admin. Kosongkan untuk mematikan.</small>
+                        </div>
+                        <small class="admin-testimonial-hint">Ketiga grup memakai bot yang sama, jadi masukkan bot di atas ke setiap grup.</small>
+                        <div class="admin-testimonial-actions">
+                            <button class="btn-primary" id="saveTestimonialSettingsBtn" type="button">
+                                <i class="fas fa-save"></i> Simpan Grup Notifikasi
+                            </button>
+                            <button class="btn-secondary" id="sendTestimonialTestBtn" type="button">
+                                <i class="fas fa-paper-plane"></i> Kirim Pesan Contoh
+                            </button>
+                        </div>
+                        <p id="testimonialInfo"></p>
+                    </div>
+
+                    <div class="admin-pricing-config admin-backup-actions">
+                        <div class="form-group">
+                            <label for="restoreDumpFileInput">Upload File Restore (.dump)</label>
+                            <input type="file" id="restoreDumpFileInput" accept=".dump,application/octet-stream">
+                        </div>
+                        <button class="btn-primary" id="triggerRestoreNowBtn" type="button">
+                            <i class="fas fa-upload"></i> Upload & Restore
+                        </button>
+                        <p id="restoreInfo">Restore akan mengganti data database aktif sesuai isi file backup.</p>
+                    </div>
+
+                    <section class="recent-transactions">
+                        <div class="admin-section-header">
+                            <div>
+                                <h2>File Backup Database</h2>
+                                <p>Download file backup .dump untuk disimpan atau dipakai restore manual.</p>
+                            </div>
+                            <button class="btn-secondary" id="refreshBackupFilesBtn" type="button">
+                                <i class="fas fa-rotate"></i> Refresh
+                            </button>
+                        </div>
+                        <div class="admin-table-scroll admin-backup-table-scroll">
+                            <table class="transactions-table admin-backup-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nama File</th>
+                                        <th>Ukuran</th>
+                                        <th>Terakhir Diubah</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="backup-file-list">
+                                    <tr>
+                                        <td colspan="4">Memuat daftar backup...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/security.js"></script>
+    <script src="js/admin.js?v=20261012-1"></script>
+</body>
+</html>

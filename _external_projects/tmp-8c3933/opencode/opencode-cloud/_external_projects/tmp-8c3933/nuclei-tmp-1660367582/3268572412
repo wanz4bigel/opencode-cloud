@@ -1,0 +1,1 @@
+gcloud compute backend-services describe $backendServiceName --project $projectId --format="json(logConfig.enable)"

@@ -1,0 +1,1 @@
+gcloud compute disks list --project $projectId --format="json(name,zone.basename())"

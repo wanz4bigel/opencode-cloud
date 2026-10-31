@@ -1,0 +1,1 @@
+aws cloudfront get-distribution --id $distribution --query 'Distribution.DistributionConfig.Origins.Items[*].CustomOriginConfig.OriginSslProtocols.Items | []' --region $region --output json

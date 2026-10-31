@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2025-10-23 18:17:45.557",
+  "version": "0.0.3-master-f5862c6-beta",
+  "branch": "master",
+  "commitId": "f5862c64ce50ec4fa17135b1828aaf0a6a680baa",
+  "moduleCommitId": "f5862c64ce50ec4fa17135b1828aaf0a6a680baa",
+  "lastMessage": "[SPAPP-51845] Opt Crash Protector Init Cost",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.stability",
+  "artifactId": "protector-static",
+  "path": ":crashprotector",
+  "remoteUrl": "gitlab@git.garena.com:lucas.chen/crashprotector.git"
+}

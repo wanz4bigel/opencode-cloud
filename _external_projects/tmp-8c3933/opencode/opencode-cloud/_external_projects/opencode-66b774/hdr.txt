@@ -1,0 +1,20 @@
+HTTP/2 200 
+server: nginx
+date: Fri, 30 Oct 2026 20:13:56 GMT
+content-type: application/json; charset=utf-8
+access-control-allow-credentials: true
+content-security-policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self' https://web.telegram.org; img-src 'self' data: blob: https:; font-src 'self' https://cdnjs.cloudflare.com data:; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://accounts.google.com; script-src 'self' https://cdnjs.cloudflare.com https://accounts.google.com https://challenges.cloudflare.com https://telegram.org https://app.midtrans.com https://app.sandbox.midtrans.com https://*.midtrans.com; frame-src https://accounts.google.com https://challenges.cloudflare.com https://app.midtrans.com https://app.sandbox.midtrans.com https://*.midtrans.com; child-src https://accounts.google.com https://challenges.cloudflare.com https://app.midtrans.com https://app.sandbox.midtrans.com https://*.midtrans.com; connect-src 'self' https://accounts.google.com https://oauth2.googleapis.com https://cdnjs.cloudflare.com https://challenges.cloudflare.com https://app.midtrans.com https://app.sandbox.midtrans.com https://api.midtrans.com https://api.sandbox.midtrans.com https://*.midtrans.com; form-action 'self'; upgrade-insecure-requests
+cross-origin-opener-policy: same-origin
+etag: W/"8d-K99gcs9XXRDJFG5onSZK2Tm97tM"
+permissions-policy: camera=(), microphone=(), geolocation=(), payment=()
+ratelimit-limit: 300
+ratelimit-remaining: 299
+ratelimit-reset: 1793391297
+referrer-policy: strict-origin-when-cross-origin
+set-cookie: ppob_csrf=kZNjufTud0kqtaT42JM_bazzH1fcB4OW-egN2NWVw8k.mqbqu9NQ6JDcD0rZmIhF3lgvy7MJT5p8DQa59bwioOc; Max-Age=604800; Path=/; Expires=Fri, 06 Nov 2026 20:13:56 GMT; Secure; SameSite=Lax
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Origin, Accept-Encoding
+x-content-type-options: nosniff
+x-brd-status-code: 200
+access-control-allow-origin: *
+

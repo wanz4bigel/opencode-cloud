@@ -1,0 +1,11 @@
+{
+    "aurora_version": "12.0.0",
+    "ditto_version": "12.0.0",
+    "kitby_version": "12.0.0",
+    "color_version": "1.0.0",
+    "qc_version": "12.0.0",
+    "metapod_version": "0.2.5",
+    "ifdBox_version": "2.0.0",
+    "ifdLandmark_version" : "2.0.0",
+    "parameters": []
+}

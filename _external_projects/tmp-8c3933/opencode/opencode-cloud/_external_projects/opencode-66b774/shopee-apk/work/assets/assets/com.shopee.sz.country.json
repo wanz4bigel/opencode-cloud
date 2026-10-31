@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2024-06-30 21:58:46.066",
+  "version": "1.8.3",
+  "branch": "master",
+  "commitId": "32d11268e0c05a92166fdafbf6ff892938a8ffc5",
+  "moduleCommitId": "32d11268e0c05a92166fdafbf6ff892938a8ffc5",
+  "lastMessage": "[3.30][Bugfix] fix 从SDKRegistry拿不到域名 导致在非ID地区网络请求时候用了id的域名. 使用package兜底来获取域名",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "country",
+  "path": ":country",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/ssz-client/android/toc/common.git"
+}

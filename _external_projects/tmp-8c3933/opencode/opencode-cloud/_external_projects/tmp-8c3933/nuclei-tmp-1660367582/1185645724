@@ -1,0 +1,1 @@
+gcloud compute instance-groups managed describe $instanceGroupName --zone $zone --format="json(autoHealingPolicies[].healthCheck)" | jq '. // "null"'

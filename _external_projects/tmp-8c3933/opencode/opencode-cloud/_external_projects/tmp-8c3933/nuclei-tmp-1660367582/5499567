@@ -1,0 +1,1 @@
+gcloud dns managed-zones list --project $projectId --format="json(name)"

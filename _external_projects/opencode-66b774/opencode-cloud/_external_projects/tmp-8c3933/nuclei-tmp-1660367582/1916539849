@@ -1,0 +1,1 @@
+aws rds describe-db-instances --region $region --query 'DBInstances[*].DBInstanceIdentifier' --output json

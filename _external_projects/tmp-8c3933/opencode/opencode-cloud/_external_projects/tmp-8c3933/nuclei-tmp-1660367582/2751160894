@@ -1,0 +1,1 @@
+gcloud pubsub subscriptions describe $pubsubTopic --format="json(deadLetterPolicy.deadLetterTopic)"

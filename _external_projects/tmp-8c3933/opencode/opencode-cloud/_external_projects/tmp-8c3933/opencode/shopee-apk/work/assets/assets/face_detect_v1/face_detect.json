@@ -1,0 +1,24 @@
+{
+    "name": "face_detect_0",
+    "type": "face_detect",
+    "params_map": {
+        "int_params": {
+            "face_detect_max_net_size": 160
+        },
+        "float_params": {
+            "face_detect_min_score": 0.47
+        },
+        "string_params": {
+            "face_detect_model_date": "20220225",
+            "face_detect_model_name": "facedetect_v1.snn.en2",
+            "face_detect_output_names_0": "676",
+            "face_detect_output_names_1": "691",
+            "face_detect_output_names_2": "706",
+            "face_detect_output_names_3": "721",
+            "face_detect_output_names_4": "678",
+            "face_detect_output_names_5": "693",
+            "face_detect_output_names_6": "708",
+            "face_detect_output_names_7": "723"
+        }
+    }
+}

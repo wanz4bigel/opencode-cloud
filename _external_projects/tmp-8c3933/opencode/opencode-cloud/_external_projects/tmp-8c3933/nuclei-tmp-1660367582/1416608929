@@ -1,0 +1,1 @@
+bq show --format=prettyjson $projectId:$datasetId.$tableName | jq '.encryptionConfiguration.encryptionType'

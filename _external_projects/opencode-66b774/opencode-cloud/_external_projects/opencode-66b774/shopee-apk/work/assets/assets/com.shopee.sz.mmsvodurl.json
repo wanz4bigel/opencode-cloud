@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2024-12-13 19:17:49.416",
+  "version": "0.2.0",
+  "branch": "v3.41/test_app_3.41",
+  "commitId": "279bf528f0e20f2ddee84d980f9e3067d12b7288",
+  "moduleCommitId": "a5cd276c3d5aa46996097448689ce5d6a81692f4",
+  "lastMessage": "Merge branch \u0027dss/3.40-independent\u0027 into \u0027v3.41/test_app_3.41\u0027",
+  "extraInfo": "v3.41/test_app_3.41",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsvodurl",
+  "path": ":mmsvodurl",
+  "remoteUrl": "https://git.garena.com/shopee/mms/mms-client-sdk/android/mmsendpointsdk.git"
+}

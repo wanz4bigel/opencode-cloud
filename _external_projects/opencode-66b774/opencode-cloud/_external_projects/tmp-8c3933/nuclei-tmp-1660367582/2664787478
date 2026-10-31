@@ -1,0 +1,1 @@
+aws s3api get-object-lock-configuration --bucket $bucket --query 'ObjectLockConfiguration.ObjectLockEnabled' --output json

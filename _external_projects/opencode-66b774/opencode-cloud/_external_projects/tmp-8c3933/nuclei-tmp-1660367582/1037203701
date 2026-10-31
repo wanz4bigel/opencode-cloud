@@ -1,0 +1,1 @@
+az keyvault key list --vault-name $vaultName --query '[?(attributes.enabled==`true`)].kid' --output json

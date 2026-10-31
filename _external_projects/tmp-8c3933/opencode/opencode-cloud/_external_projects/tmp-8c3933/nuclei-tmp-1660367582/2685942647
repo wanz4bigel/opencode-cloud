@@ -1,0 +1,1 @@
+aws elasticache describe-cache-clusters --region $region --cache-cluster-id $cacheclusterid --query 'CacheClusters[*].NotificationConfiguration.TopicArn' --output json

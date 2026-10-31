@@ -1,0 +1,129 @@
+dex siap discan: 16
+
+========================================================================
+### email_signup (1 cuplikan)
+   eligibleQuickCheckout ellipsize email email,name,id,gender,birthday email= emailContacts emailLogin emailOtpToken emailSignup emailToken emailVerified email_contacts email_notification_setting email_otp email_otp_reset_password email_otp_token email_signup_force_bind_phone email_subject email_verified emailotptoken emails emailusername emit emitEvent emitNext empty country code list empty file list emptyCursor emptyList emptyM
+
+========================================================================
+### email_otp (5 cuplikan)
+   tion elevationOverlayColor elevationOverlayEnabled eligibleQuickCheckout ellipsize email email,name,id,gender,birthday email= emailContacts emailLogin emailOtpToken emailSignup emailToken emailVerified email_contacts email_notification_setting email_otp email_otp_reset_password email_otp_token email_signup_force_bind_phone email_subject email_verified emailotptoken emails emailusername emit emitEvent emitNext empty country cod
+   tionOverlayColor elevationOverlayEnabled eligibleQuickCheckout ellipsize email email,name,id,gender,birthday email= emailContacts emailLogin emailOtpToken emailSignup emailToken emailVerified email_contacts email_notification_setting email_otp email_otp_reset_password email_otp_token email_signup_force_bind_phone email_subject email_verified emailotptoken emails emailusername emit emitEvent emitNext empty country code list emp
+   nOverlayEnabled eligibleQuickCheckout ellipsize email email,name,id,gender,birthday email= emailContacts emailLogin emailOtpToken emailSignup emailToken emailVerified email_contacts email_notification_setting email_otp email_otp_reset_password email_otp_token email_signup_force_bind_phone email_subject email_verified emailotptoken emails emailusername emit emitEvent emitNext empty country code list empty file list emptyCursor 
+   gin_avatar login_button login_confirmation_toast login_entry login_event login_existing_account login_method login_methods login_new_account_popup login_option login_otp login_with_another_account login_with_apple login_with_biometric login_with_email_otp login_with_email_username login_with_fb login_with_google login_with_line login_with_other_methods login_with_passkey login_with_password login_with_phone login_with_qrcode l
+
+========================================================================
+### email_verified (3 cuplikan)
+   ,name,id,gender,birthday email= emailContacts emailLogin emailOtpToken emailSignup emailToken emailVerified email_contacts email_notification_setting email_otp email_otp_reset_password email_otp_token email_signup_force_bind_phone email_subject email_verified emailotptoken emails emailusername emit emitEvent emitNext empty country code list empty file list emptyCursor emptyList emptyMap emptyProtobufList emptySet emui_version_
+   e8f3d5 effectiveValue elapsedRealtime elapsedRealtimeNanos elastic elements !elements[oneLineIndex].toString() elevation elevationOverlayColor elevationOverlayEnabled eligible_order email email_body email_extdata email_setting email_subject email_verified emergency: emergency_log emit emitEvent emojiCompatEnabled empty "empty all file from %s success? %s empty context emptyChatHistoryContactsButton emptyChatHistoryMainLabel em
+   elevationOverlayEnabled 8eligible_for_accelerated_refund_after_return_pickup_done Aeligible_for_accelerated_refund_after_return_pickup_done_due_time ellipsize email email,name,id,gender,birthday emailItem emailVerified email_extdata email_otp_token email_verified emit emitEvent emitEventParams emitLayoutEvent emitMoveEvent #emitSZUploadSDKImageProgressV2Event emitScrollBeginDragEvent emitScrollEndDragEvent emitScrollEvent emit
+
+========================================================================
+### send_vcode (1 cuplikan)
+   ction #api/v4/notification/remove_activity /api/v4/notification/set_live_activity_dismissed api/v4/order/app/checkout_detail -api/v4/order/app/get_checkout_list_by_id_list -api/v4/otp/check_whatsapp_registration_status api/v4/otp/get_settings_v2 api/v4/otp/send_vcode api/v4/otp/verify_vcode api/v4/pages/bottom_tab_bar api/v4/pages/dismiss_reminder api/v4/pages/follow api/v4/pages/get_me_page_v2 api/v4/pages/get_me_page_v2, api
+
+========================================================================
+### verify_vcode (1 cuplikan)
+   ion/remove_activity /api/v4/notification/set_live_activity_dismissed api/v4/order/app/checkout_detail -api/v4/order/app/get_checkout_list_by_id_list -api/v4/otp/check_whatsapp_registration_status api/v4/otp/get_settings_v2 api/v4/otp/send_vcode api/v4/otp/verify_vcode api/v4/pages/bottom_tab_bar api/v4/pages/dismiss_reminder api/v4/pages/follow api/v4/pages/get_me_page_v2 api/v4/pages/get_me_page_v2, api/v4/pages/set_phone_rem
+
+========================================================================
+### vcode_type (0 cuplikan)
+
+========================================================================
+### phone_number (6 cuplikan)
+   tion_multiple_face %bke_tips_facial_verification_not_move &bke_tips_facial_verification_onb_owner "bke_tips_facial_verification_owner bke_title bke_titleColor bke_titleSize bke_titleVisibility #bke_title_activity_customer_service %bke_title_activity_enter_phone_number &bke_title_activity_facial_verification bke_title_activity_set_pwd bke_title_activity_verify_code bke_title_activity_verify_nikdob !bke_title_activity_verify_pin
+   Layout btnLayout btn_begin btn_call_now btn_close btn_continue_nikdob_verify btn_copy btn_cut btn_dialog_cancel btn_dialog_confirm btn_got_it btn_login btn_login_qp btn_next btn_option_bottom btn_option_top btn_paste btn_set_password btn_set_phone_number btn_set_pwd btn_start_facial_verification btn_unable_use btn_uninstall btn_verify_nikdob #bufferSize > 0 required but it was build buildCompactResp !buildNotVerifyCaClient Exc
+   ninstall_malware tv_dialog_activate_touch_id_desc $tv_dialog_activate_touch_id_negative $tv_dialog_activate_touch_id_positive !tv_dialog_activate_touch_id_title tv_dob_date tv_dob_date_hint tv_dot tv_enter_password_desc tv_enter_password_title tv_enter_phone_number_desc tv_enter_phone_number_title tv_explain_malware tv_facial_env tv_facial_face tv_facial_face_not_move tv_facial_no_other_faces tv_facial_owner tv_forgot tv_forgo
+   activate_touch_id_desc $tv_dialog_activate_touch_id_negative $tv_dialog_activate_touch_id_positive !tv_dialog_activate_touch_id_title tv_dob_date tv_dob_date_hint tv_dot tv_enter_password_desc tv_enter_password_title tv_enter_phone_number_desc tv_enter_phone_number_title tv_explain_malware tv_facial_env tv_facial_face tv_facial_face_not_move tv_facial_no_other_faces tv_facial_owner tv_forgot tv_forgot_pin tv_forgot_qp tv_get_s
+
+========================================================================
+### bind_phone (6 cuplikan)
+   /api/cschannel/virtualcall/v1/config +/api/cschannel/virtualcall/v1/session/unend !/api/v2/content/tab_reddot_status "/api/v4/account/check_whatsapp_url /api/v4/account/get_login_nonce $/api/v4/account/get_whatsapp_channel -/api/v4/account/management/check_unbind_phone 6/api/v4/account/management/check_unbind_phone_by_vcode 0/api/v4/account/management/unbind_phone_by_vcode /api/v4/cart/add_to_cart /api/v4/cart/checkout /api/v4
+   annel/virtualcall/v1/session/unend !/api/v2/content/tab_reddot_status "/api/v4/account/check_whatsapp_url /api/v4/account/get_login_nonce $/api/v4/account/get_whatsapp_channel -/api/v4/account/management/check_unbind_phone 6/api/v4/account/management/check_unbind_phone_by_vcode 0/api/v4/account/management/unbind_phone_by_vcode /api/v4/cart/add_to_cart /api/v4/cart/checkout /api/v4/cart/get_item_count /api/v4/cart/get_shop_orde
+   t/tab_reddot_status "/api/v4/account/check_whatsapp_url /api/v4/account/get_login_nonce $/api/v4/account/get_whatsapp_channel -/api/v4/account/management/check_unbind_phone 6/api/v4/account/management/check_unbind_phone_by_vcode 0/api/v4/account/management/unbind_phone_by_vcode /api/v4/cart/add_to_cart /api/v4/cart/checkout /api/v4/cart/get_item_count /api/v4/cart/get_shop_order &/api/v4/chat/batch_get_item_trans_data /api/v4/
+   5dcfdacec8a7263f92b853d33e06ebd353ed4450 @3d73c28f6f8f5da93930ede2326e553d11ac752ab6128a9692cc6ca0139de615 @3e826d17ccc750785d270c5094748c110e72166e8977ea375d9712f641467ebf @3fb87bce2c695127726f96d67c03f2520baadc3512860b0fbf8d5dd386db549b 3p_signup_force_bind_phone 4.0.0 @40ebffd7719bf6b732697ee4893e26a2f2c6befa49142fb94d671bc328a2f4d5 @415ba53fa989d22d0f378d325ecf753faeda5446c8abbe3f6c4aaa628f31abc3 @466b9ef029a9faedcd3815767
+
+========================================================================
+### registration_status (4 cuplikan)
+   ation/mark_action_list_as_read !api/v4/notification/remove_action #api/v4/notification/remove_activity /api/v4/notification/set_live_activity_dismissed api/v4/order/app/checkout_detail -api/v4/order/app/get_checkout_list_by_id_list -api/v4/otp/check_whatsapp_registration_status api/v4/otp/get_settings_v2 api/v4/otp/send_vcode api/v4/otp/verify_vcode api/v4/pages/bottom_tab_bar api/v4/pages/dismiss_reminder api/v4/pages/follow 
+   icatorStyle vvNotifyCenter vvPageNotifyCenter vv_cache_key_complete waInstallmentStatus waRegistrationStatus waRegistrationStatusTimestamp wa_installation_result wa_installed_status wa_installment_status wa_registration_status wa_registration_status_timestamp wac_verification wait wait captcha result... waitDuration waitFor wait_init wait_token waitingNumber waitingRoomEnteredAt waiting_room_entered_at wallet wallet.airpay. wa
+   vvPageNotifyCenter vv_cache_key_complete waInstallmentStatus waRegistrationStatus waRegistrationStatusTimestamp wa_installation_result wa_installed_status wa_installment_status wa_registration_status wa_registration_status_timestamp wac_verification wait wait captcha result... waitDuration waitFor wait_init wait_token waitingNumber waitingRoomEnteredAt waiting_room_entered_at wallet wallet.airpay. wallet.airpay.co.id wallet.ai
+   ache week weight welcome_package_setting what whatsApp whatsAppCountdownTime whatsapp whatsapp://send?phone= whatsappChannel whatsappComponent whatsappPrefillMessage whatsappToken whatsappUrlChannelPhone whatsapp_call whatsapp_channel whatsapp_registration_status !whatsapp_registration_update_time whatsapp_token when where white whiteList whitelist whitelistPages whitelistRNPages wholesaleEnabled wholesaleMaxTier wholesaleTier
+
+========================================================================
+### get_login_nonce (1 cuplikan)
+   /Android/data/%s/ /Camera/ /TRANSFER_PAGE /acquiring/ /addresses /apba/ $/api/cschannel/virtualcall/v1/config +/api/cschannel/virtualcall/v1/session/unend !/api/v2/content/tab_reddot_status "/api/v4/account/check_whatsapp_url /api/v4/account/get_login_nonce $/api/v4/account/get_whatsapp_channel -/api/v4/account/management/check_unbind_phone 6/api/v4/account/management/check_unbind_phone_by_vcode 0/api/v4/account/management/unb
+
+========================================================================
+### social_binding (0 cuplikan)
+
+========================================================================
+### guest_account (0 cuplikan)
+
+========================================================================
+TOTAL path api/sapi unik: 1448
+yang terkait akun/registrasi: 63
+   api/common/RegisterRequest
+   api/common/RegisterRequestParams
+   api/common/RegisterResponseData
+   api/common/RegisteredKey
+   api/common/TokenBinding
+   api/cschannel/virtualcall/v1/session
+   api/cschannel/virtualcall/v1/session/create
+   api/cschannel/virtualcall/v1/session/unend
+   api/cschannel/virtualcall/v1/session/user_event
+   api/cschannel/virtualcall/v1/session/user_join
+   api/identity/SavePasswordRequest
+   api/identity/SavePasswordResult
+   api/identity/SignInPassword
+   api/internal/RegisterListenerMethod
+   api/internal/RegistrationMethods
+   api/internal/UnregisterListenerMethod
+   api/sdk/v1/shopeepay/login
+   api/sdk/v1/shopeepay/token/login
+   api/sdk/v2/register
+   api/sdk/v2/shopeepay/binding/info
+   api/sdk/v4/shopeepay/binding/info
+   api/sessionReplayUtil/ISessionReplayManager
+   api/sessionReplayUtil/SessionReplayApi
+   api/sessionReplayUtil/TreeBuilder
+   api/sessionReplayUtil/TreeNode
+   api/sessionReplayUtil/a
+   api/sessionReplayUtil/data/ReplayCollectData
+   api/sessionReplayUtil/data/ReplayReportData
+   api/v1/fitting/task/bind
+   api/v1/fitting/task/create
+   api/v1/full_screen/session
+   api/v1/play_param/session
+   api/v1/popular_play_list/session
+   api/v1/poster/background/task/create
+   api/v1/session
+   api/v1/tryOn/task/create
+   api/v2/biz/post/create
+   api/v2/fitting/task/create
+   api/v2/forget/post/login/pwd
+   api/v2/login/bke/linkage
+   api/v3/login/facial/verification
+   api/v4/account/basic/bind_line_user
+   api/v4/account/contact/add_email_contact_list
+   api/v4/account/contact/delete_email_contact_list
+   api/v4/account/get_login_nonce
+   api/v4/account/get_user_login_methods
+   api/v4/account/management/change_password
+   api/v4/account/management/check_change_password
+   api/v4/account/management/check_unbind_phone
+   api/v4/account/management/check_unbind_phone_by_vcode
+   api/v4/account/management/reset_password_commit
+   api/v4/account/management/reset_password_init
+   api/v4/account/management/unbind_phone_by_vcode
+   api/v4/chat/get_faq_session
+   api/v4/chat/get_live_streaming_session
+   api/v4/homepage/get_need_force_login
+   api/v4/notification/get_email_toggle_list
+   api/v4/notification/set_email_toggle
+   api/v4/otp/check_whatsapp_registration_status
+   api/v4/otp/get_settings_v2
+   api/v4/otp/send_vcode
+   api/v4/otp/verify_vcode
+   api/v4/social/get_user_latest_activity
+
+simpan: /tmp/opencode/shopee-apk/apk_all_api_paths.txt

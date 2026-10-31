@@ -1,0 +1,1 @@
+"use strict";(("u">typeof self?self:this).webpackChunkshopee_pc=("u">typeof self?self:this).webpackChunkshopee_pc||[]).push([[9235],{7689:(e,s,p)=>{p.r(s),p.d(s,{md5:()=>a.a,sha256:()=>t.a});var h=p(48017),a=p.n(h),f=p(3138),t=p.n(f)}}]);

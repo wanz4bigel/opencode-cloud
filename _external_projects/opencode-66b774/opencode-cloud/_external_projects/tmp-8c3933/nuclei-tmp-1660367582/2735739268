@@ -1,0 +1,1 @@
+kubectl get deployments --all-namespaces --output=json

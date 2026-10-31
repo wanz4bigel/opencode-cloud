@@ -1,0 +1,1 @@
+gcloud compute routers nats list --router=$router.name --region=$router.region --format="json(name,subnetworks)"

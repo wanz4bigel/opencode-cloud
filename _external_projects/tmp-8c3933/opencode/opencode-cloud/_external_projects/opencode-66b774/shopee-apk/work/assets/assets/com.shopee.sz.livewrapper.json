@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-09-18 18:52:10.779",
+  "version": "0.6.55",
+  "branch": "master",
+  "commitId": "6c39b9dd85546cd0657d6fad730dc1d7dd6b7efe",
+  "moduleCommitId": "afb2b81d64412768b8468bf1b4fa112408349cc8",
+  "lastMessage": "",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "livewrapper",
+  "path": ":livewrapper",
+  "remoteUrl": ""
+}

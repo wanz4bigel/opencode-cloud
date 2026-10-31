@@ -1,0 +1,1 @@
+gcloud certificate-manager certificates describe $sslCertificate --project $projectId

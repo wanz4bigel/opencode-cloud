@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2025-10-31 16:36:02.557",
+  "version": "0.0.2-master-f674e1a-beta",
+  "branch": "master",
+  "commitId": "f674e1a63da844ae8846f2a180fd1a864828401d",
+  "moduleCommitId": "c01a4dcac14949d4c0990d7298918f17f00c30b7",
+  "lastMessage": "Merge branch \u0027weiningliu/sunset_mmkv_opt\u0027 into \u0027master\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.huatuo",
+  "artifactId": "huatuo-kef",
+  "path": ":kef",
+  "remoteUrl": "gitlab@git.garena.com:shopee/android/AndroidAPM/huatuo.git"
+}

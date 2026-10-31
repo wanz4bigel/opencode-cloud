@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banua Bali — rute, biaya, dan jam macet untuk jalan darat</title>
+<meta name="description" content="Panduan jalan darat keliling Bali: tiga rute hari per hari, pola musim 12 bulan, kalkulator biaya, aturan pura, daftar warung, dan checklist sebelum berangkat.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E3B34'/%3E%3Cpath d='M16 5c3 5 7 7 7 12a7 7 0 0 1-14 0c0-5 4-7 7-12z' fill='%23C89C4C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="lewati" href="#isi">Lewati ke isi</a>
+
+<div class="poleng" aria-hidden="true"></div>
+
+<header class="bilah">
+  <a class="merek" href="#atas">
+    <svg class="merek-tanda" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M20 3c4.5 6.5 10 9.5 10 16.5A10 10 0 0 1 10 19.5C10 12.5 15.5 9.5 20 3z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M20 12v19M13 22c2.5 2.5 4.5 3 7 3s4.5-.5 7-3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <span class="merek-teks">Banua Bali<i>rencana jalan darat</i></span>
+  </a>
+  <nav class="navigasi" aria-label="Bagian halaman">
+    <a href="#rute">Rute</a>
+    <a href="#musim">Musim</a>
+    <a href="#biaya">Biaya</a>
+    <a href="#peta">Peta</a>
+    <a href="#etika">Etika pura</a>
+    <a href="#makan">Makan</a>
+    <a href="#nyetir">Nyetir</a>
+    <a href="#tanya">Tanya</a>
+    <a class="navigasi-ajar" href="#biaya">Hitung biaya</a>
+  </nav>
+</header>
+
+<noscript>
+  <p class="tanpa-js">Grafik musim, kalkulator biaya, peta, checklist, dan validasi form butuh JavaScript. Rute,
+  aturan pura, daftar warung, dan pertanyaan yang sering masuk tetap terbaca tanpa JavaScript.</p>
+</noscript>
+
+<main id="isi">
+
+  <!-- ============ HERO: gerbang terbelah ============ -->
+  <section class="hero" id="atas">
+    <div class="hero-kiri">
+      <p class="hero-kicker">Enam hari jalan darat, bukan brosur</p>
+      <h1 class="hero-judul">Bali yang bisa dihitung: rute, harga, jam macet.</h1>
+      <p class="hero-dek">Semua angka di halaman ini berupa jarak, menit, dan tarif yang bisa dicek ulang di jalan. Tidak ada janji pemandangan. Kalau sebuah jalan rawan macet atau sebuah pura tutup saat odalan, tertulis di sini.</p>
+      <ul class="fakta">
+        <li>
+          <b>36 km · 1 jam 15 menit</b>
+          <span>Bandara Ngurah Rai ke Ubud lewat Dalung. Lewat Sunset Road jam 5 sore, hitung 2 jam 30.</span>
+        </li>
+        <li>
+          <b>Rp 700–900 ribu</b>
+          <span>Sewa mobil dengan sopir untuk 10 jam. Bensin, parkir, dan tiket masuk di luar angka itu.</span>
+        </li>
+        <li>
+          <b>Nyepi, biasanya Maret</b>
+          <span>Satu hari penuh tanpa aktivitas: bandara tutup total. Jangan pesan penerbangan masuk atau keluar pada hari itu.</span>
+        </li>
+      </ul>
+      <div class="tombol-deret">
+        <a class="tombol tombol-tegas" href="#rute">Susun rute saya</a>
+        <a class="tombol" href="#biaya">Hitung biaya</a>
+      </div>
+    </div>
+
+    <div class="hero-sambungan" aria-hidden="true">
+      <svg viewBox="0 0 40 900" preserveAspectRatio="none">
+        <path id="seam" d="M20 0 L20 120 L6 130 L6 150 L34 160 L34 180 L6 190 L6 215 L30 225 L30 250 L10 262 L10 290 L28 300 L28 330 L8 342 L8 372 L26 384 L26 420 L12 432 L12 470 L30 482 L30 520 L10 534 L10 574 L28 588 L28 630 L14 646 L14 690 L32 706 L32 750 L12 766 L12 812 L26 828 L26 870 L20 880 L20 900"
+          fill="none" stroke="var(--kuningan)" stroke-width="2.5"/>
+      </svg>
+    </div>
+
+    <figure class="poster">
+      <svg viewBox="0 0 620 920" role="img" aria-label="Poster bergaya lama: Gunung Agung di belakang gerbang pura terbelah, padi bertingkat, keranjang bunga, dan matahari merah.">
+        <defs>
+          <pattern id="bintik" width="11" height="11" patternUnits="userSpaceOnUse">
+            <circle cx="2.4" cy="2.4" r="1.2" fill="#14110D" opacity=".18"/>
+          </pattern>
+          <linearGradient id="langit" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F7F3E9"/>
+            <stop offset="100%" stop-color="#EDE3CC"/>
+          </linearGradient>
+        </defs>
+        <rect width="620" height="920" fill="url(#langit)"/>
+        <text class="poster-tulis" x="44" y="96">AGUNG</text>
+        <text class="poster-kecil" x="44" y="126">3.031 MDPL · KINTAMANI</text>
+        <circle class="poster-matahari" cx="436" cy="238" r="102" fill="#C1432E"/>
+        <g class="poster-burung" stroke="#14110D" stroke-width="3.4" fill="none" stroke-linecap="round">
+          <path d="M312 104 c10 -9 18 -9 26 0"/>
+          <path d="M352 88 c8 -7 15 -7 21 0"/>
+        </g>
+        <path d="M0 470 L112 366 L176 418 L246 300 L322 244 L396 302 L472 386 L544 340 L620 424 L620 470 Z" fill="#0E3B34"/>
+        <path d="M246 300 L322 244 L396 302 L362 336 L330 318 L296 340 L268 324 Z" fill="#F7F3E9" opacity=".2"/>
+        <path d="M0 470 L620 470 L620 626 L0 626 Z" fill="#3F7C55"/>
+        <g stroke="#C89C4C" stroke-width="2.4" fill="none" opacity=".85">
+          <path d="M0 502 C120 486 232 512 348 496 C452 482 548 506 620 494"/>
+          <path d="M0 540 C118 524 234 550 352 534 C456 520 552 544 620 532"/>
+          <path d="M0 578 C122 562 236 588 350 572 C458 558 554 582 620 570"/>
+        </g>
+        <path d="M0 626 L620 626 L620 920 L0 920 Z" fill="#EFE6D1"/>
+        <path d="M0 626 L620 626 L620 920 L0 920 Z" fill="url(#bintik)"/>
+        <path d="M0 626 L620 626" stroke="#14110D" stroke-width="3"/>
+        <path d="M64 920 L64 782 L88 782 L88 748 L66 748 L66 714 L92 714 L92 680 L74 680 L74 646 L98 646 L98 612 L82 612 L82 578 L106 578 L106 544 L92 544 L92 512 L116 512 L116 480 L104 480 L104 452 L122 452 L122 480 L142 480 L142 514 L158 514 L158 552 L172 552 L172 594 L186 594 L186 638 L198 638 L198 686 L208 686 L208 738 L216 738 L216 920 Z" fill="#14110D"/>
+        <path d="M556 920 L556 782 L532 782 L532 748 L554 748 L554 714 L528 714 L528 680 L546 680 L546 646 L522 646 L522 612 L538 612 L538 578 L514 578 L514 544 L528 544 L528 512 L504 512 L504 480 L516 480 L516 452 L498 452 L498 480 L478 480 L478 514 L462 514 L462 552 L448 552 L448 594 L434 594 L434 638 L422 638 L422 686 L412 686 L412 738 L404 738 L404 920 Z" fill="#14110D"/>
+        <g class="poster-poleng">
+          <rect x="64" y="756" width="152" height="24" fill="#F7F3E9"/>
+          <rect x="64" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="102" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="140" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="178" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="404" y="756" width="152" height="24" fill="#F7F3E9"/>
+          <rect x="404" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="442" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="480" y="756" width="19" height="24" fill="#14110D"/>
+          <rect x="518" y="756" width="19" height="24" fill="#14110D"/>
+        </g>
+        <g class="poster-palem" stroke="#14110D" stroke-width="7.5" fill="none" stroke-linecap="round">
+          <path d="M26 880 C44 830 38 772 22 730"/>
+          <path d="M22 730 C4 714 -4 692 -2 672"/>
+          <path d="M22 730 C10 704 16 676 32 660"/>
+          <path d="M22 730 C42 706 64 698 84 702"/>
+          <path d="M596 880 C578 832 582 776 596 736"/>
+          <path d="M596 736 C614 720 622 700 620 680"/>
+          <path d="M596 736 C608 710 602 682 586 666"/>
+          <path d="M596 736 C576 712 554 706 534 710"/>
+        </g>
+        <g class="poster-canang">
+          <path d="M270 802 L350 802 L350 812 L270 812 Z" fill="none" stroke="#14110D" stroke-width="3.4"/>
+          <path d="M274 812 L346 812 L337 846 L283 846 Z" fill="none" stroke="#14110D" stroke-width="3.4"/>
+          <circle cx="290" cy="794" r="9" fill="#C1432E"/>
+          <circle cx="310" cy="788" r="9" fill="#C89C4C"/>
+          <circle cx="330" cy="794" r="9" fill="#F7F3E9" stroke="#14110D" stroke-width="2"/>
+          <path d="M310 782 L310 744" stroke="#14110D" stroke-width="3"/>
+          <path d="M310 738 c8 -8 8 -16 0 -24 c-8 -8 -8 -16 0 -24" stroke="#14110D" stroke-width="2.4" fill="none" opacity=".7"/>
+        </g>
+        <rect x="0" y="852" width="620" height="68" fill="#14110D"/>
+        <text class="poster-kecil poster-strap" x="44" y="894">TIGA RUTE · 12 BULAN · SATU KANTONG</text>
+      </svg>
+      <figcaption>Poster dan peta di halaman ini sketsa tangan, bukan untuk navigasi.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ PAPAN DATA ============ -->
+  <section class="papan" aria-label="Angka penting">
+    <div class="papan-baris">
+      <div class="papan-sel"><b>Apr–Okt</b><span>musim kering. Mei, Juni, September paling murah dan paling jarang hujan</span></div>
+      <div class="papan-sel"><b>12°C di Kintamani</b><span>subuh sampai jam 7 di Munduk dan Kintamani. Jaket, bukan jas hujan</span></div>
+      <div class="papan-sel"><b>Rp 100–150 ribu</b><span>sewa motor matic 125 cc per hari. Deposit KTP atau Rp 300 ribu tunai</span></div>
+      <div class="papan-sel"><b>62 km · 1 jam 40</b><span>Ubud ke Munduk lewat Bedugul. Bus besar bikin antre di dua tikungan</span></div>
+      <div class="papan-sel"><b>0 tol, 1 jalur cepat</b><span>Tol Bali Mandara ke Nusa Dua dan Benoa: Rp 11 ribu untuk mobil, motor gratis</span></div>
+    </div>
+  </section>
+
+  <!-- ============ RUTE ============ -->
+  <section class="bagian" id="rute">
+    <div class="bagian-kepala">
+      <h2>Tiga rute yang sudah dibagi per hari</h2>
+      <p class="bagian-dek">Waktunya waktu mengemudi normal di hari kerja, bukan waktu terbaik buat foto. Total jarak dihitung dari titik inap di Ubud.</p>
+    </div>
+
+    <div class="tab" role="tablist" aria-label="Pilih rute">
+      <button class="tab-tombol" role="tab" id="tb-1" aria-controls="tp-1" aria-selected="true" type="button">4 hari · Selatan &amp; Tabanan</button>
+      <button class="tab-tombol" role="tab" id="tb-2" aria-controls="tp-2" aria-selected="false" tabindex="-1" type="button">5 hari · Utara &amp; Batur</button>
+      <button class="tab-tombol" role="tab" id="tb-3" aria-controls="tp-3" aria-selected="false" tabindex="-1" type="button">6 hari · Timur &amp; Gili</button>
+    </div>
+
+    <div class="rute" role="tabpanel" id="tp-1" aria-labelledby="tb-1">
+      <p class="rute-ringkas"><b>362 km total</b> jalan aspal mulus kecuali tiga kilometer terakhir ke Jatiluwih. Bisa naik motor. Inap di Ubud dua malam, Kuta atau Uluwatu dua malam.</p>
+      <ol class="hari">
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 1</div>
+          <div class="hari-isi">
+            <h3>Tiba, lalu turun ke selatan</h3>
+            <p>Bandara ke Ubud 36 km. Isi BBM di SPBU Sesetan atau Dalung sebelum masuk jalan desa, karena pom di utara sering kosong sore hari. Sore: jalan kaki 20 menit di jurang Sungai Campuhan.</p>
+            <p class="hari-tips"><b>Jalan:</b> hindari By Pass Ngurah Rai pukul 5 sampai 7 malam. Kalau tibanya malam, minta sopir hotel menunggu di terminal keberangkatan, bukan di lobi kedatangan.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 2</div>
+          <div class="hari-isi">
+            <h3>Ubud – Tegallalang – Tirta Empul – Kintamani, 88 km</h3>
+            <p>Berangkat 06.30. Tegallalang sebelum 08.00 masih sepi dan parkirnya kosong. Tirta Empul buka 07.30; setelah pukul 10.00 Anda berdesakan dengan bus. Siang naik ke Kintamani untuk melihat Danau Batur, angin di sini dingin sampai jam 10.</p>
+            <p class="hari-tips"><b>Jalan:</b> jalur Bedugul punya dua titik sempit, di jalur Batukaru dan di dekat Danau Tamblingan. Bus wisata parkir di bahu jalan, jadi datang pagi atau siapkan kesabaran dua jam.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 3</div>
+          <div class="hari-isi">
+            <h3>Jatiluwih – Tanah Lot – Ubud, 126 km</h3>
+            <p>Jatiluwih adalah terasering yang masuk daftar UNESCO dan masih punya petani asli. Dua belas kilometer terakhir dari Antosari sempit, dua motor tidak bisa berpapasan santai. Siang turun ke Tanah Lot; kalau air pasang, pura di batu tidak bisa didekati sama sekali.</p>
+            <p class="hari-tips"><b>Jalan:</b> parkiran Tanah Lot berhenti menerima kendaraan pukul 18.30, dan macetnya mulai jam 4.30 dari Kediri.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 4</div>
+          <div class="hari-isi">
+            <h3>Uluwatu dan kepulangan, 148 km</h3>
+            <p>Gerak 13.00 supaya 14.30 sudah di Uluwatu. Tari Kecak mulai 18.00 dan tiketnya dijual di loket yang sama dengan tiket masuk, habis sekitar pukul 17.15. Pulang ke bandara 45 menit kalau sebelum maghrib, 1 jam 40 lewat Jimbaran setelah pertunjukan bubar.</p>
+            <p class="hari-tips"><b>Jalan:</b> setelah Kecak bubar, sekitar 500 kendaraan keluar dari satu jalan desa. Kalau penerbangan Anda sebelum pukul 21.00, makan saja di Jimbaran dan menginap di sana.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="rute" role="tabpanel" id="tp-2" aria-labelledby="tb-2" hidden>
+      <p class="rute-ringkas"><b>441 km total</b>, naik 1.400 meter dari laut ke Munduk. Butuh rem belakang yang sehat dan mesin 150 cc ke atas kalau bawa penumpang. Inap di Munduk satu malam, Lovina satu malam.</p>
+      <ol class="hari">
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 1</div>
+          <div class="hari-isi">
+            <h3>Ubud – Kanto Lampo – Tukad Cepung, 54 km</h3>
+            <p>Hari pendek untuk adaptasi. Tiga air terjun di timur dan tenggara Ubud bisa didatangi sendiri tanpa sopir kalau Anda menginap di Ubud: Kanto Lampo 20 menit, Tukad Cepung 35 menit, Penglumbaran 25 menit.</p>
+            <p class="hari-tips"><b>Jalan:</b> jalan shortcut Tegallalang ke Kintamani tidak beraspal pada tiga kilometer terakhir. Jangan lewat situ naik motor matic setelah hujan.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 2</div>
+          <div class="hari-isi">
+            <h3>Bedugul – Munduk, 62 km, dua jam santai</h3>
+            <p>Pasar Bedugul buka 06.00 sampai 10.00 untuk sayur dan stroberi. Setelah jalur Batukaru, jalan menanjak dengan Danau Tamblingan di sisi kanan. Tiba 11.00, siang ke Banyumala Twin, sepuluh menit, atau turun ke Sekumpul lewat Sawan, empat puluh lima menit.</p>
+            <p class="hari-tips"><b>Jalan:</b> kabut biasanya turun pukul 15.30 sampai 17.00 di tikungan Munduk. Berhenti di warung, jangan memaksa turun.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 3</div>
+          <div class="hari-isi">
+            <h3>Munduk – Gitgit – Lovina, 66 km</h3>
+            <p>Turun ke pantai utara lewat Gitgit: 14 km jalan desa, lalu jalur utama Singaraja yang lurus dan panas. Turun lumba-lumba biasanya berangkat 06.00 dari Lovina, Rp 100 sampai 150 ribu per orang dengan perahu nelayan.</p>
+            <p class="hari-tips"><b>Jalan:</b> jalur utara banyak lubang tertutup pasir. Ambil garis jalan tengah, dan jangan merem mendadak di depan truk.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 4</div>
+          <div class="hari-isi">
+            <h3>Naik Batur jam 2 pagi, turun lewat Toya Devasya, 118 km</h3>
+            <p>Berangkat ke basecamp pukul 02.30 sampai 04.00. Ada tiga jalur: Pura Ulun Danu Batur paling ramai, Toya Devasya lebih sepi dan lewat sumber air panas, Quicksilver paling pendek. Operator memasang Rp 500 sampai 750 ribu per orang dengan pemandu dan sarapan. Kalau tidak mau mendaki, naik ke titik pandang Penelokan pukul 06.00.</p>
+            <p class="hari-tips"><b>Jalan:</b> jalan tanah ke basecamp Toya Devasya 25 menit dari aspal, dan hanya dua mobil bisa berpapasan di dua titik. Hanya sopir lokal yang biasa lewat sini pada malam hari.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 5</div>
+          <div class="hari-isi">
+            <h3>Kembali lewat Sidemen, 141 km</h3>
+            <p>Jalur timur pulang lewat Kintamani dan Sidemen lebih enak daripada balik lewat Bedugul: jalan lebih lebar, pemandangan lembah, dan hampir tidak ada bus. Berhenti di Tenganan untuk kain geringsing, lalu makan siang di warung sawah Sidemen.</p>
+            <p class="hari-tips"><b>Jalan:</b> dari Sidemen ke Ubud 55 menit lewat Selat; tiga kilometer terakhir menurun tajam dan licin kalau hujan sore.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="rute" role="tabpanel" id="tp-3" aria-labelledby="tb-3" hidden>
+      <p class="rute-ringkas"><b>398 km darat, tambah 2 jam perahu.</b> Inap di Amed dua malam, Gili satu malam, Kuta satu malam. Fast boat bisa batal kalau angin barat, jadi simpan sehari cadangan sebelum penerbangan.</p>
+      <ol class="hari">
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 1</div>
+          <div class="hari-isi">
+            <h3>Ubud – Sidemen – Rendang – Amed, 78 km</h3>
+            <p>Jalan timur lebih lengang, tapi dua kali menanjak lewat Cenglek dan Duda yang berkelok. Tiba di Amed pukul 14.00. Snorkel di Amed Timur pukul 16.00 masih kelihatan penyu.</p>
+            <p class="hari-tips"><b>Jalan:</b> pom bensin terakhir sebelum Amed ada di Rendang. Isi penuh di sana.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 2</div>
+          <div class="hari-isi">
+            <h3>Tulamben – Tirta Gangga – Lempuyang, 62 km</h3>
+            <p>Bangkai kapal Tulamben ada di tepi pantai, 40 menit snorkel sudah cukup. Lempuyang punya gerbang yang difoto orang; antre foto pukul 08.00 sampai 11.00 bisa dua jam, dan pura utamanya masih 1.700 anak tangga ke atas.</p>
+            <p class="hari-tips"><b>Jalan:</b> Tirta Gangga buka 07.00. Datang setelah 10.30 air kolamnya keruh karena orang bergantian berenang dengan ikan.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 3</div>
+          <div class="hari-isi">
+            <h3>Turun ke Padang Bai, 44 km</h3>
+            <p>Fast boat ke Gili Trawangan berangkat 09.00 dan 12.00, 1 jam 30 menit, Rp 250 sampai 400 ribu sekali jalan dengan jemput dari Amed atau Padang Bai. Kapal kayu biasa berangkat 10.30, Rp 60 ribu, 3 jam 30, dan berhenti di tiga Gili.</p>
+            <p class="hari-tips"><b>Jalan:</b> jalan masuk pelabuhan Padang Bai menanjak satu jalur, dan bus serta truk parkir di tanjakannya. Naik pelan, bunyikan klakson sebelum tikungan.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 4</div>
+          <div class="hari-isi">
+            <h3>Gili Trawangan, tanpa motor</h3>
+            <p>Sepeda Rp 40 sampai 75 ribu sehari, cidomo hanya untuk barang. Keliling pulau 2 jam 15 menit dengan sepeda santai. Snorkel penyu di sisi timur laut; air paling jernih pukul 10 pagi.</p>
+            <p class="hari-tips"><b>Aturan:</b> tidak ada kendaraan bermotor, dan sampah diangkut perahu, jadi bawa tas belanja sendiri. Air minum Rp 25 ribu per liter di warung.</p>
+          </div>
+        </li>
+        <li class="hari-item">
+          <div class="hari-waktu">Hari 5</div>
+          <div class="hari-isi">
+            <h3>Padang Bai – Sanur – Kuta, 78 km</h3>
+            <p>Pulang lewat Rendang dan Selat ke Sanur untuk makan siang; jalur ini lebih lengang daripada By Pass Ngurah Rai. Siang di Sanur, sore ke Kuta untuk oleh-oleh, malam di Jimbaran.</p>
+            <p class="hari-tips"><b>Jalan:</b> By Pass Ngurah Rai dari Sanur ke bandara punya satu titik macet tetap di depan terminal keberangkatan.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ MUSIM ============ -->
+  <section class="bagian bagian-tua" id="musim">
+    <div class="bagian-kepala">
+      <h2>Pilih bulan, lalu tahu apa yang akan Anda hadapi</h2>
+      <p class="bagian-dek">Pola umum Bali selatan dan tengah, bukan ramalan. Batang hijau menunjukkan curah hujan. Titik di atas batang terisi makin penuh kalau harga penginapan makin tinggi terhadap Juni.</p>
+    </div>
+    <div class="musim">
+      <div class="musim-grafik" id="musimGrafik" role="group" aria-label="Dua belas bulan"></div>
+      <div class="musim-panel" id="musimPanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ BIAYA ============ -->
+  <section class="bagian" id="biaya">
+    <div class="bagian-kepala">
+      <h2>Kalkulator biaya enam hari</h2>
+      <p class="bagian-dek">Angka kisaran Oktober 2026. Pilih gaya jalan Anda, rinciannya keluar per baris.</p>
+    </div>
+    <div class="biaya">
+      <form class="biaya-kontrol" id="formBiaya">
+        <div class="lapangan">
+          <label for="hari">Jumlah hari <output id="hariKeluar">6</output></label>
+          <input type="range" id="hari" min="2" max="14" step="1" value="6">
+          <p class="saran">Termasuk hari tiba dan hari pulang.</p>
+        </div>
+        <div class="lapangan">
+          <label for="orang">Jumlah orang <output id="orangKeluar">2</output></label>
+          <input type="range" id="orang" min="1" max="8" step="1" value="2">
+          <p class="saran">Dua orang per kamar. Jumlah ganjil menambah satu kamar.</p>
+        </div>
+        <div class="lapangan">
+          <label for="inap">Tempat tidur</label>
+          <select id="inap">
+            <option value="300000">Homestay kipas · Rp 300 ribu/malam</option>
+            <option value="550000" selected>Penginapan ber-AC · Rp 550 ribu/malam</option>
+            <option value="1400000">Villa kolam pribadi · Rp 1,4 juta/malam</option>
+          </select>
+        </div>
+        <div class="lapangan">
+          <label for="jalan">Kendaraan</label>
+          <select id="jalan">
+            <option value="motor">Motor matic, 2 unit · Rp 260 ribu/hari</option>
+            <option value="lepas" selected>Mobil lepas kunci · Rp 400 ribu/hari</option>
+            <option value="sopir">Mobil + sopir 10 jam · Rp 800 ribu/hari</option>
+          </select>
+          <p class="saran">Hari ke Batur atau ke Gili biasanya menambah Rp 250 ribu pada sopir.</p>
+        </div>
+        <fieldset class="lapangan lapangan-ganda">
+          <legend>Tambahan</legend>
+          <label class="kotak"><input type="checkbox" id="addTiket" checked><span>Tiket masuk, parkir, sarung (Rp 135 ribu per orang)</span></label>
+          <label class="kotak"><input type="checkbox" id="addBatur"><span>Trek sunrise Batur dengan pemandu (Rp 650 ribu per orang)</span></label>
+          <label class="kotak"><input type="checkbox" id="addGili"><span>Fast boat pulang-pergi ke Gili (Rp 650 ribu per orang)</span></label>
+          <label class="kotak"><input type="checkbox" id="addMakan" checked><span>Makan warung tiga kali sehari (Rp 130 ribu per orang per hari)</span></label>
+        </fieldset>
+      </form>
+      <div class="biaya-hasil">
+        <div class="biaya-total">
+          <span id="totalLabel">Total untuk 2 orang, 6 hari</span>
+          <b id="totalAngka">Rp 0</b>
+          <span id="totalOrang">Rp 0 per orang</span>
+        </div>
+        <table class="tabel-rinci">
+          <caption class="tb-sr">Rincian per baris</caption>
+          <thead><tr><th>Pos</th><th>Hitungan</th><th>Biaya</th></tr></thead>
+          <tbody id="rinci"></tbody>
+        </table>
+        <p class="biaya-catat" id="biayaCatat"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PETA ============ -->
+  <section class="bagian bagian-bottle" id="peta">
+    <div class="bagian-kepala">
+      <h2>Sentuh titik, baca jaraknya</h2>
+      <p class="bagian-dek">Sketsa bentuk Bali, bukan peta untuk navigasi. Semua waktu dihitung dari Ubud dengan kendaraan pribadi.</p>
+    </div>
+    <div class="peta">
+      <div class="peta-kanvas" id="petaKanvas">
+        <svg viewBox="0 0 1000 560" aria-hidden="true">
+          <path d="M24 296 L120 262 L240 240 L360 230 L470 220 L560 198 L650 184 L740 202 L840 222 L930 240 L986 258 L920 292 L840 318 L760 336 L692 348 L654 372 L634 410 L606 440 L572 452 L546 438 L536 406 L528 380 L470 366 L380 356 L280 344 L170 326 L74 310 Z" fill="#0E3B34" stroke="#C89C4C" stroke-width="4" stroke-linejoin="round"/>
+          <ellipse cx="866" cy="470" rx="72" ry="27" fill="#0E3B34" stroke="#C89C4C" stroke-width="2.5"/>
+          <ellipse cx="768" cy="418" rx="26" ry="14" fill="#0E3B34" stroke="#C89C4C" stroke-width="2.5"/>
+          <ellipse cx="150" cy="150" rx="22" ry="11" fill="#0E3B34" stroke="#C89C4C" stroke-width="2"/>
+          <ellipse cx="96" cy="118" rx="15" ry="9" fill="#0E3B34" stroke="#C89C4C" stroke-width="2"/>
+          <path d="M584 268 L622 200 L660 268 Z" fill="#C89C4C" opacity=".5"/>
+          <path d="M452 284 L484 232 L516 284 Z" fill="#C89C4C" opacity=".32"/>
+          <ellipse cx="500" cy="294" rx="24" ry="10" fill="#C89C4C" opacity=".25"/>
+          <text class="peta-laut" x="110" y="470">Laut Bali</text>
+          <text class="peta-laut" x="756" y="122">Selat Lombok</text>
+        </svg>
+      </div>
+      <div class="peta-sisi">
+        <h3 id="petaNama">Klik salah satu titik</h3>
+        <p id="petaJarak"></p>
+        <p id="petaCatat" class="peta-catat">Pilih titik untuk melihat jarak, waktu tempuh, dan apa yang sebenarnya ada di sana.</p>
+        <p class="peta-legenda">Titik emas menandai tempat, titik merah adalah yang sedang Anda pilih. Jarak pada daftar ini nyata, bentuk pulaunya tidak.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ETIKA ============ -->
+  <section class="bagian" id="etika">
+    <div class="bagian-kepala">
+      <h2>Enam hal yang bikin Anda tidak ditegur pecalang</h2>
+      <p class="bagian-dek">Aturan ini berlaku di halaman pura, bukan di jalan. Petugas yang menegur biasanya bicara bahasa Indonesia dengan suara pelan.</p>
+    </div>
+    <div class="akordion">
+      <details>
+        <summary>Sarung dan selendang, kapan wajib</summary>
+        <p>Setiap pura yang punya halaman dalam meminta sarung dan selendang kain. Biasanya dipinjamkan di loket, gratis atau Rp 10 ribu, dan dikembalikan saat keluar. Kalau rok Anda sudah menutup mata kaki, sarung tetap dipakai di atasnya untuk masuk bangunan suci. Celana pendek di atas lutut membuat Anda menunggu di halaman luar.</p>
+      </details>
+      <details>
+        <summary>Canang sari di tanah, jangan diinjak</summary>
+        <p>Bungkus bunga kecil itu ditaruh orang setiap pagi di trotoar, depan pintu, dan di tengah tangga. Langkah melewati, bukan di atas. Jangan menaruh gelas atau kaki meja di atas bunga, dan jangan memotret dari dekat ketika orang sedang berdoa.</p>
+      </details>
+      <details>
+        <summary>Kepala di atas, kaki di bawah</summary>
+        <p>Melewati orang yang sedang duduk berarti melewati tingkat kepalanya, jadi orang Bali menunduk saat lewat di depan. Duduk lebih tinggi dari pemuka agama atau dari bangunan kecil persembahan adalah hal yang paling sering membuat tamu ditegur. Jangan mengarahkan kaki ke banten atau ke orang yang berdoa.</p>
+      </details>
+      <details>
+        <summary>Tangan kiri dan cara menunjuk</summary>
+        <p>Terima uang, tiket, atau makanan dengan tangan kanan, atau dua tangan. Orang Bali menunjuk arah atau benda dengan ibu jari dan telunjuk terlipat di telapak, bukan telunjuk lurus ke depan, apalagi ke arah orang.</p>
+      </details>
+      <details>
+        <summary>Nyepi: empat larangan sehari penuh</summary>
+        <p>Pada Tahun Baru Saka, biasanya bulan Maret, ada Catur Brata Penyepian: tidak menyalakan api, tidak bekerja, tidak keluar rumah, tidak bersenang-senang. Bagi tamu, tiga hal yang benar-benar berubah: bandara tutup 24 jam, hotel memadamkan lampu taman dan melarang tamu ke pantai, dan jalan utama sepi kendaraan. Anda bebas di dalam kamar dan halaman hotel, tapi jangan keluar kampung.</p>
+      </details>
+      <details>
+        <summary>Odalan, pakaian, dan tubuh</summary>
+        <p>Setiap pura punya hari ulang tahun menurut kalender 210 hari. Saat odalan, halaman dalam penuh gamelan dan orang berdoa, dan tamu yang hanya ingin berfoto berhenti di halaman tengah. Pakaian sebaiknya tidak ketat dan tidak putih polos menyatu dengan pakaian ibadah. Menurut kebiasaan, tamu yang sedang menstruasi tidak masuk halaman dalam; pura besar menyiapkan jalan alternatif, dan tidak ada yang meminta Anda menjelaskan.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ MAKAN ============ -->
+  <section class="bagian bagian-tua" id="makan">
+    <div class="bagian-kepala">
+      <h2>Warung yang harganya masih masuk akal</h2>
+      <p class="bagian-dek">Pagi sampai siang adalah waktunya makanan paling enak dan paling murah di Bali. Malam hari harga naik dan pilihan mengecil.</p>
+    </div>
+    <ul class="daftar-makan">
+      <li class="makan">
+        <div class="makan-nama"><b>Nasi Ayam Kedewatan Ibu Mangku</b><span>Jalan Dewi Sita, Ubud · 07.00–15.00</span></div>
+        <div class="makan-harga"><b>Rp 35–55 ribu</b><span>ayam suwir, lawar, sate lilit; datang sebelum 10.00</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Babi Guling Ibu Oka</b><span>Jalan Tjokorda Gde Raka Sukawati, Ubud · 09.00–16.00</span></div>
+        <div class="makan-harga"><b>Rp 50–80 ribu</b><span>stok habis sore; tidak halal, tidak ada pilihan ayam</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Sate Sapi Beringkit</b><span>Kerambitan, Tabanan · 07.00–13.00</span></div>
+        <div class="makan-harga"><b>Rp 30–45 ribu</b><span>sate dibakar arang, kuah terpisah, tutup sebelum siang</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Nasi Jinggo</b><span>gerobak di Kuta, Denpasar, Kerambitan · 19.00–01.00</span></div>
+        <div class="makan-harga"><b>Rp 10–15 ribu</b><span>satu bungkus untuk satu orang; bawa uang receh</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Ayam Betutu Men Tempeh</b><span>Gilimanuk · 09.00–21.00</span></div>
+        <div class="makan-harga"><b>Rp 150–220 ribu</b><span>satu ekor utuh, pesan 4 sampai 6 jam sebelumnya; datang malam, antre 40 menit</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Bebek Bengil</b><span>Nyuh Kuning, Ubud · 07.30–21.00</span></div>
+        <div class="makan-harga"><b>Rp 120–175 ribu</b><span>mahal untuk ukuran Bali, tapi sawahnya asli dan porsinya besar</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Es Campur Bu Madé</b><span>Renon, Denpasar · 10.00–21.00</span></div>
+        <div class="makan-harga"><b>Rp 15–25 ribu</b><span>es batu diserut di tempat; kopinya bukan kopi luwak kandang</span></div>
+      </li>
+      <li class="makan">
+        <div class="makan-nama"><b>Warung halal Denpasar</b><span>sekitar Jalan Ahmad Yani dan Kampung Jawa</span></div>
+        <div class="makan-harga"><b>Rp 15–35 ribu</b><span>ayam bakar, sate, nasi campur tanpa babi; tanyakan minyaknya</span></div>
+      </li>
+    </ul>
+    <p class="makan-kat">Kopi luwak di toko sering berasal dari musang kandang. Tanyakan boleh masuk atau tidak kalau mau lihat kandangnya; banyak tempat memungut Rp 50 ribu untuk masuk yang tidak kembali menjadi kopi.</p>
+  </section>
+
+  <!-- ============ NYETIR ============ -->
+  <section class="bagian" id="nyetir">
+    <div class="bagian-kepala">
+      <h2>Yang terjadi di jalan</h2>
+      <p class="bagian-dek">Bali tidak punya jalan tol panjang dan tidak punya kereta. Semua bergerak di dua jalur yang sama.</p>
+    </div>
+    <div class="nyetir">
+      <div class="nyetir-prosa">
+        <h3>Motor atau mobil</h3>
+        <p>Motor cukup untuk dua orang berbadan kecil, tanpa banyak tas, dan siap berjalan 28 kilometer per jam di tanjakan Bedugul. Untuk ke Kintamani, Munduk, atau Amed dengan penumpang, mesin 150 cc ke atas. Mobil sewa lepas kunci butuh SIM A; kalau Anda tidak terbiasa jalan sempit dengan motor di belakang, ambil paket dengan sopir.</p>
+        <p>Saat menyewa motor, foto bodi dari delapan sisi di depan pemilik dan catat nomor rangka di kertas. Cek rem belakang dan tekanan ban sebelum keluar gang. Dua helm wajib untuk dua orang, dan polisi memeriksa di By Pass Ngurah Rai, Jalan Sading, dan hampir seluruh Gianyar.</p>
+        <h3>Bensin, air, dan surat kendaraan</h3>
+        <p>SPBU di kota buka sampai 22.00, tapi pom kecil di jalur Bedugul, Rendang, dan Les sering kosong sore hari. Air isi ulang Rp 4 sampai 6 ribu per liter di warung; bawa botol lipat lima liter. SIM luar daerah dan SIM internasional untuk WNA dicek di pos razia. Denda di tempat biasanya Rp 50 sampai 100 ribu, dan tanyakan kuitansi atau kantor polisi terdekat kalau bayar di pinggir jalan.</p>
+      </div>
+      <div class="nyetir-jam">
+        <h3>Jam yang harus dihindari</h3>
+        <table class="tabel-jam">
+          <caption class="tb-sr">Jam macet harian</caption>
+          <thead><tr><th>Waktu</th><th>Jalan</th><th>Kenaikan waktu</th></tr></thead>
+          <tbody>
+            <tr><td>06.30–09.00</td><td>By Pass Ngurah Rai, Jalan Dewi Sri, Tohpati</td><td>+45 sampai 70 menit</td></tr>
+            <tr><td>10.00–16.00</td><td>pusat Ubud, Tegallalang, Jalan Monkey Forest</td><td>+30 menit, parkir habis</td></tr>
+            <tr><td>15.00–19.00</td><td>Sunset Road Kerobokan, Umalas, Canggu, Kediri</td><td>+60 sampai 95 menit</td></tr>
+            <tr><td>17.00–19.00</td><td>Jalan Bypass Nusa Dua, pintu Tol Bali Mandara</td><td>+25 menit</td></tr>
+            <tr><td>Purnama &amp; Tilem</td><td>akses pura besar: Besakih, Lempuyang, Uluwatu</td><td>+40 menit, jalan ditutup sebagian</td></tr>
+          </tbody>
+        </table>
+        <h3>Aturan desa yang tidak ada di rambu</h3>
+        <ul class="nyetir-aturan">
+          <li>Kendaraan yang parkir di bahu jalan bisa digembok pecalang kalau menutup jalur gamelan saat upacara.</li>
+          <li>Ikuti rombongan upacara di depan daripada mendahului; klakson panjang di belakang gamelan dianggap kasar.</li>
+          <li>Banyak jalan desa di Canggu, Umalas, dan Sidemen hanya muat satu mobil. Yang lebih dulu masuk dapat jalan.</li>
+          <li>Bus besar tidak boleh lewat jalan shortcut Tegallalang setelah pukul 16.00.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHECKLIST ============ -->
+  <section class="bagian bagian-bottle" id="checklist">
+    <div class="bagian-kepala">
+      <h2>Checklist yang tersimpan di perangkat Anda</h2>
+      <p class="bagian-dek">Centang, lalu tutup halaman. Centangnya masih ada saat Anda membuka halaman ini lagi di perangkat yang sama.</p>
+    </div>
+    <p class="maju"><span id="majuAngka">0 dari 0</span> selesai</p>
+    <div class="maju-bilah" aria-hidden="true"><i id="majuIsi"></i></div>
+    <div class="cek" id="cekDaftar">
+      <fieldset class="cek-kel">
+        <legend>Dokumen dan uang</legend>
+        <label class="kotak"><input type="checkbox" data-cek="SIM C untuk motor, SIM A untuk mobil"><span>SIM C untuk motor, SIM A untuk mobil</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="SIM internasional untuk WNA"><span>SIM internasional untuk WNA</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="KTP dan e-tiket, foto cadangan di ponsel"><span>KTP dan e-tiket, foto cadangan di ponsel</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Asuransi yang menutup kecelakaan motor"><span>Asuransi yang menutup kecelakaan motor</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Uang tunai Rp 500 ribu untuk parkir dan tiket desa"><span>Uang tunai Rp 500 ribu untuk parkir dan tiket desa</span></label>
+      </fieldset>
+      <fieldset class="cek-kel">
+        <legend>Masuk pura dan badan</legend>
+        <label class="kotak"><input type="checkbox" data-cek="Sarung dan selendang sendiri"><span>Sarung dan selendang sendiri, jadi tidak antre pinjam</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Sandal yang mudah dilepas di halaman pura"><span>Sandal yang mudah dilepas di halaman pura</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Obat nyamuk DEET untuk jam 5 sore dan 6 pagi"><span>Obat nyamuk DEET untuk jam 5 sore dan 6 pagi</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Jaket untuk Kintamani dan Munduk subuh"><span>Jaket untuk Kintamani dan Munduk subuh</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Obat diare dan oralit"><span>Obat diare dan oralit</span></label>
+      </fieldset>
+      <fieldset class="cek-kel">
+        <legend>Hari berangkat</legend>
+        <label class="kotak"><input type="checkbox" data-cek="Cek tanggal Nyepi, Galungan, dan odalan"><span>Cek tanggal Nyepi, Galungan, dan odalan di desa tujuan</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Foto bodi motor saat serah terima"><span>Foto bodi motor saat serah terima</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Peta offline Kintamani dan Munduk"><span>Peta offline Kintamani dan Munduk</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="Kabari tempat inap jam estimasi tiba"><span>Kabari tempat inap jam estimasi tiba</span></label>
+        <label class="kotak"><input type="checkbox" data-cek="BBM penuh sebelum keluar Ubud ke utara"><span>BBM penuh sebelum keluar Ubud ke utara</span></label>
+      </fieldset>
+    </div>
+  </section>
+
+  <!-- ============ TANYA ============ -->
+  <section class="bagian" id="tanya">
+    <div class="bagian-kepala">
+      <h2>Pertanyaan yang masuk lewat WhatsApp</h2>
+    </div>
+    <div class="akordion">
+      <details>
+        <summary>Berapa hari idealnya?</summary>
+        <p>Lima hari untuk selatan dan tengah, tujuh hari kalau mau sampai Lovina dan Amed tanpa terasa terburu. Empat hari ke bawah biasanya habis di jalan, bukan di tempat yang Anda datangi.</p>
+      </details>
+      <details>
+        <summary>Bisa jalan sendiri naik motor dari Kuta ke Kintamani?</summary>
+        <p>Bisa, 48 kilometer, dengan tanjakan panjang dari Susut. Yang menyulitkan bukan tanjakannya, tapi bus besar di jalur Bedugul dan jalan licin di Penelokan setelah hujan. Ambil pagi sebelum 07.30, atau jangan naik sama sekali.</p>
+      </details>
+      <details>
+        <summary>Sopir harian bisa dipesan mendadak?</summary>
+        <p>Bisa. Di Juli dan Agustus daftarnya penuh sampai tiga hari ke depan. Sopir yang baik akan membawa Anda ke warung, bukan restoran mahal, dan menolak berhenti di toko perhiasan.</p>
+      </details>
+      <details>
+        <summary>Kalau hujan dua hari, ke mana?</summary>
+        <p>Naik ke utara tidak menolong karena hujan ikut naik. Pilihannya museum dan galeri di Ubud, kelas memasak, air panas Toya Devasya, atau tinggal di villa. Jangan memaksa snorkel: jarak pandang di bawah satu meter.</p>
+      </details>
+      <details>
+        <summary>Sinyal dan wifi di utara dan timur?</summary>
+        <p>Bagus sampai Munduk, Lovina, Amed, dan Sidemen. Yang hilang sinyalnya adalah lembah sungai tempat vila berdiri, dan beberapa desa di Les dan Munti. Kartu Telkomsel paling luas jangkauannya.</p>
+      </details>
+      <details>
+        <summary>Perlu ikut tur untuk Lempuyang dan Batur?</summary>
+        <p>Lempuyang tidak perlu tur, cukup sopir. Untuk Batur, ambil pemandu kalau Anda tidak kenal jalurnya; jalur Toya Devasya lebih sepi daripada jalur Pura Ulun Danu Batur yang ramai.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ FORM ============ -->
+  <section class="bagian bagian-bottle" id="pesan">
+    <div class="bagian-kepala">
+      <h2>Kirim rencana Anda</h2>
+      <p class="bagian-dek">Isi tujuh kolom ini, kami susun rute dan taksiran biayanya, lalu kirim balasan lewat WhatsApp. Tidak ada pembayaran di tahap ini.</p>
+    </div>
+    <form class="pesan" id="formPesan" novalidate action="mailto:jalan@banuabali.example" method="post" enctype="text/plain">
+      <div class="pesan-kolom">
+        <div class="lapangan">
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required aria-describedby="e-nama">
+          <p class="galat" id="e-nama"></p>
+        </div>
+        <div class="lapangan">
+          <label for="kontak">Nomor WhatsApp</label>
+          <input id="kontak" name="kontak" type="tel" inputmode="tel" autocomplete="tel" placeholder="0812…" required aria-describedby="e-kontak">
+          <p class="galat" id="e-kontak"></p>
+        </div>
+        <div class="lapangan">
+          <label for="tiba">Tanggal tiba</label>
+          <input id="tiba" name="tiba" type="date" required aria-describedby="e-tiba">
+          <p class="galat" id="e-tiba"></p>
+        </div>
+        <div class="lapangan">
+          <label for="jumlah">Jumlah orang</label>
+          <input id="jumlah" name="jumlah" type="number" min="1" max="20" value="2" required aria-describedby="e-jumlah">
+          <p class="galat" id="e-jumlah"></p>
+        </div>
+        <div class="lapangan">
+          <label for="gaya">Gaya jalan</label>
+          <select id="gaya" name="gaya">
+            <option>Motor, jalan sendiri</option>
+            <option>Mobil lepas kunci</option>
+            <option>Mobil dengan sopir</option>
+            <option>Campur: mobil di utara, motor di selatan</option>
+          </select>
+        </div>
+        <div class="lapangan">
+          <label for="rutePilih">Rute yang diminati</label>
+          <select id="rutePilih" name="rutePilih">
+            <option>4 hari · Selatan &amp; Tabanan</option>
+            <option>5 hari · Utara &amp; Batur</option>
+            <option>6 hari · Timur &amp; Gili</option>
+            <option>Belum tahu, minta usul</option>
+          </select>
+        </div>
+        <div class="lapangan lapangan-lebar">
+          <label for="catat">Yang perlu kami tahu <span class="opsional">boleh kosong</span></label>
+          <textarea id="catat" name="catat" rows="3" placeholder="Contoh: ada anak 5 tahun, tidak makan babi, mau snorkel, mabuk darat di tanjakan."></textarea>
+        </div>
+      </div>
+      <div class="pesan-sisi">
+        <button class="tombol tombol-tegas tombol-besar" type="submit">Susun rute dan taksiran biaya</button>
+        <div class="pesan-bukti" id="pesanBukti" aria-live="polite" hidden></div>
+        <p class="pesan-kecil">Kami menjawab pukul 08.00 sampai 21.00 WITA. Taksiran biaya memakai angka yang sama dengan kalkulator di halaman ini, sehingga bisa Anda bandingkan sendiri.</p>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="kaki">
+  <div class="kaki-atas">
+    <div class="kaki-merek">
+      <p class="kaki-judul">Banua Bali</p>
+      <p>Enam orang yang tinggal di Ubud, Tabanan, dan Amed. Kami mengantar dan menulis catatan jalan.</p>
+    </div>
+    <div class="kaki-kolom">
+      <h3>Hubungi</h3>
+      <p><a href="https://wa.me/6281234567890">WhatsApp 0812 3456 7890</a><br><a href="mailto:jalan@banuabali.example">jalan@banuabali.example</a><br>Jalan Chek Tjokorda Gde Agung, Ubud, Gianyar</p>
+    </div>
+    <div class="kaki-kolom">
+      <h3>Kalender yang mengubah rencana</h3>
+      <p>Nyepi pada Maret, Galungan dan Kuningan tiap 210 hari, Purnama dan Tilem tiap bulan, odalan per pura. Tanggalnya bergeser setiap tahun, jadi cek sebelum memesan tiket pesawat.</p>
+    </div>
+    <div class="kaki-kolom">
+      <h3>Catatan angka</h3>
+      <p>Semua harga adalah kisaran Oktober 2026 untuk Bali selatan dan tengah, dalam rupiah, tanpa tiket pesawat. Naik pada Juli dan Agustus, dan naik lagi saat libur sekolah.</p>
+    </div>
+  </div>
+  <div class="poleng poleng-bawah" aria-hidden="true"></div>
+  <p class="kaki-bawah">Ilustrasi, poster, dan peta di halaman ini digambar tangan dalam SVG. Tidak ada foto stok dan tidak ada template jadi.</p>
+</footer>
+
+
+</body>
+</html>

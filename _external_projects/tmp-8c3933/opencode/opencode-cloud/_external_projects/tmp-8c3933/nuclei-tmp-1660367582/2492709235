@@ -1,0 +1,1 @@
+gcloud logging metrics describe $metricName --project=$projectId --format="json(filter)"

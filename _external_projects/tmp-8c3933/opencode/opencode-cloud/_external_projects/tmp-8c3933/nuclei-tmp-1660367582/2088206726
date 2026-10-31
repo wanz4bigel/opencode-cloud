@@ -1,0 +1,1 @@
+az postgres server firewall-rule list --server "$name" --resource-group "$resourceGroup" --query '[*].{"ruleName":name,"startIpAddress":startIpAddress,"endIpAddress":endIpAddress}'

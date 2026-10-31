@@ -1,0 +1,176 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 19443,
+      "protocol": "vmess",
+      "tag": "in-ws-19443-tls",
+      "settings": {
+        "clients": [
+          {
+            "id": "298eb1c2-923f-4473-92c8-76dc632b8bc1",
+            "alterId": 0,
+            "email": "github-actions",
+            "level": 1
+          }
+        ]
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "metadataOnly": false
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "minVersion": "1.2",
+          "certificates": [
+            {
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----\nMIIEJzCCAw+gAwIBAgIUccrm4YSKhaSpXm0lQTd3SN6QwpkwDQYJKoZIhvcNAQEL\nBQAwcjELMAkGA1UEBhMCSUQxEjAQBgNVBAgMCUluZG9uZXNpYTEQMA4GA1UEBwwH\nSmFrYXJ0YTEXMBUGA1UECgwOR2l0SHViLUFjdGlvbnMxDjAMBgNVBAsMBVZNZXNz\nMRQwEgYDVQQDDAt2MnJheS5sb2NhbDAeFw0yNjEwMjgxMTU2MTdaFw0zNjEwMjUx\nMTU2MTdaMHIxCzAJBgNVBAYTAklEMRIwEAYDVQQIDAlJbmRvbmVzaWExEDAOBgNV\nBAcMB0pha2FydGExFzAVBgNVBAoMDkdpdEh1Yi1BY3Rpb25zMQ4wDAYDVQQLDAVW\nTWVzczEUMBIGA1UEAwwLdjJyYXkubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IB\nDwAwggEKAoIBAQCg1H4wzjR6waC20MfXFnlgubMyCaPnSyvtvBCxZmNWECXt91Km\nHVhFJ/GL9ROPeTra+wcLTKTgu2CKY+Hr5qW+87w2Nks6M6X6A6JjVZGRVj0la/Xd\nFMGZ7VZWN5bD/FbxojQ9TDnzQaAqA+QS/vRXgcv5crk5HAvuW+0t49M4bl+8GU+D\nE/mdDd1olQXEP7LELBSq0ayr4r3j3V70P2bQgSwIUp/zdfo2Xsqp3MRYtgH+x3F6\n++rIkS3KBMn5o2OKGtp0xKbRxGN3aq5vqKnjygEQLJS6KH5OggVnry2/y4+c5LOx\nQwGcXSnAMUrXoRtGK3QCNweJaNdhMGS38jVrAgMBAAGjgbQwgbEwHQYDVR0OBBYE\nFD1KMWtcxkxR2JbQ5T+oQFP6Ig6hMB8GA1UdIwQYMBaAFD1KMWtcxkxR2JbQ5T+o\nQFP6Ig6hMDkGA1UdEQQyMDCCCWxvY2FsaG9zdIILdjJyYXkubG9jYWyHBH8AAAGH\nEAAAAAAAAAAAAAAAAAAAAAEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC\nBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAAVlHJ23\n5cCKAHOTsTVoJLNPHETnanJaP/JcaY6TwcAOMTlAnwrBwtT8J3LK6GTCIhjZJUnv\nAOkGtas6iYi4j9ryT52EiyBFRZA5v//I13MvAFk62Rm4eygYn7GigFN/eMhGEElh\nsdUwT0gvKQqyHTUxy4fZSpDNmfIxlDSDnlWLpKTGueD+r9CAgQ4qFl1BfTUQKL+m\nzuQohiphU+AE9dR7kllJvzTPRVTrerdHIv1WRo/uQvhagO5DFVaQMN09MWbsqTCs\nMHGlCC8b0kI64JUtiIEPglRIhzLDKQdVbM/q8gr9peQyfW49bm0Y3Uie9RJP0xYH\nFzziT6ev4AQGxEg=\n-----END CERTIFICATE-----"
+              ],
+              "key": [
+                "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCg1H4wzjR6waC2\n0MfXFnlgubMyCaPnSyvtvBCxZmNWECXt91KmHVhFJ/GL9ROPeTra+wcLTKTgu2CK\nY+Hr5qW+87w2Nks6M6X6A6JjVZGRVj0la/XdFMGZ7VZWN5bD/FbxojQ9TDnzQaAq\nA+QS/vRXgcv5crk5HAvuW+0t49M4bl+8GU+DE/mdDd1olQXEP7LELBSq0ayr4r3j\n3V70P2bQgSwIUp/zdfo2Xsqp3MRYtgH+x3F6++rIkS3KBMn5o2OKGtp0xKbRxGN3\naq5vqKnjygEQLJS6KH5OggVnry2/y4+c5LOxQwGcXSnAMUrXoRtGK3QCNweJaNdh\nMGS38jVrAgMBAAECggEABp8I8CU+vg9xRUvnvLN4dskRl0Dg8xMPF9MzLe9RrdR6\nkBP4RQEWeVTK861r/m89KZCSul5C6w+iMPOQwWxpX9wOYEr9VaphR59u4Yw/Zg54\n9CzAKzea16WQqHo5MxAuwiiHFXKPowCm9LCpUWp9EIppWKrM9L/Y8ky6WulmVww/\nf6BncXCweHb1sDYQBG2xokmbZM+Q/Kil4aRw5xLbl6DhUKMt/XHazyy2Zki3cuOW\ngkE0kYlbkYtGInMdLR5f/XfLE00rOgqBHI5eYY4iptPLDayiToR8621wQaFHp54Q\nLDjctn0teerXOq2tGDPTCzXJoLjGjoxYG/4WarpajQKBgQDW2gV77xzHcBDUvKi1\ns8S1PHWbwguFxMFRAxTfOrqPU9mtq+g85AynJ9hAO52U1Yn1+m3eD8hWKOlnsxbE\nprnzfxGhC3gFWrwBislC3x1+8ipLOKVkeTGMWQZi/YHVUmD/ggKQyInZVgSJAO+7\ndjqOsAvOShxHLwNAJm13GwGTNQKBgQC/odelXdBItufI7GPq8y4QXaq33vn+12o0\nhPH3p1MKqGqQ5jGRuupF2x3cP1OLSAT3JgM2YiW1WSA374yfVSMAYeRn9fKV3pfR\nyyE2cCsgwdF6P/cmiuC9RQuNZsbky6Q2waTW7E0cBqtoXdwRXFxOm0NiuO38/8jq\ns+9cPlYaHwKBgQDOvAjs4P8rNL0tRr9735fW4G82Sfg2ZkWxwypRRjx/b6qUf0a/\nWJyIN0HRRMvzi6ntg2Q2ea9GoKU+gEfXP6rMDygSc2uwk0c2oKnaa8ABB9oEeWRE\nEo3Hw13u4IoOju8AzMPVNvHVq/w/LCSBmFjuNZ2WiR8+q5EQKCnKorTYRQKBgQCj\nXNfWXHRcGLjdm0/OkkKZpxALMaXS71bVsOQJqHXtZwd5wRNO1ZYzuQjqon2ZBetd\nueURLnhQ8cq6hJdPmSd+gvVQ/uUviBPKwCzvGI5bnX7zhaYvEENodnzTrWMu1r+G\nAmyA3+8YTkM/dIxPrHnwdQHsHhScEn34Py51Z5rFJwKBgQCFbs+yI6SkUe4pIT7u\nBNEmn6sgzqOUdS8gS3x6m3Kue3D/SnvkVAY04BIO3IlUxB7b08bfne6cGK7QJz7y\nJFevQdQPN8TzSSv9e7BxhIq4uLlsPIndU/9GzvGZh0Te48qU0oGoNg8ALhJZxJHj\nDT+hFlb1izLRFMdm/+CgHdUbtg==\n-----END PRIVATE KEY-----"
+              ]
+            }
+          ],
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        },
+        "wsSettings": {
+          "path": "/vmess"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 19080,
+      "protocol": "vmess",
+      "tag": "in-ws-19080",
+      "settings": {
+        "clients": [
+          {
+            "id": "298eb1c2-923f-4473-92c8-76dc632b8bc1",
+            "alterId": 0,
+            "email": "github-actions",
+            "level": 1
+          }
+        ]
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "metadataOnly": false
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "path": "/vmess"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 19053,
+      "protocol": "vmess",
+      "tag": "in-grpc-19053-tls",
+      "settings": {
+        "clients": [
+          {
+            "id": "298eb1c2-923f-4473-92c8-76dc632b8bc1",
+            "alterId": 0,
+            "email": "github-actions",
+            "level": 1
+          }
+        ]
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "metadataOnly": false
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "security": "tls",
+        "tlsSettings": {
+          "minVersion": "1.2",
+          "certificates": [
+            {
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----\nMIIEJzCCAw+gAwIBAgIUccrm4YSKhaSpXm0lQTd3SN6QwpkwDQYJKoZIhvcNAQEL\nBQAwcjELMAkGA1UEBhMCSUQxEjAQBgNVBAgMCUluZG9uZXNpYTEQMA4GA1UEBwwH\nSmFrYXJ0YTEXMBUGA1UECgwOR2l0SHViLUFjdGlvbnMxDjAMBgNVBAsMBVZNZXNz\nMRQwEgYDVQQDDAt2MnJheS5sb2NhbDAeFw0yNjEwMjgxMTU2MTdaFw0zNjEwMjUx\nMTU2MTdaMHIxCzAJBgNVBAYTAklEMRIwEAYDVQQIDAlJbmRvbmVzaWExEDAOBgNV\nBAcMB0pha2FydGExFzAVBgNVBAoMDkdpdEh1Yi1BY3Rpb25zMQ4wDAYDVQQLDAVW\nTWVzczEUMBIGA1UEAwwLdjJyYXkubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IB\nDwAwggEKAoIBAQCg1H4wzjR6waC20MfXFnlgubMyCaPnSyvtvBCxZmNWECXt91Km\nHVhFJ/GL9ROPeTra+wcLTKTgu2CKY+Hr5qW+87w2Nks6M6X6A6JjVZGRVj0la/Xd\nFMGZ7VZWN5bD/FbxojQ9TDnzQaAqA+QS/vRXgcv5crk5HAvuW+0t49M4bl+8GU+D\nE/mdDd1olQXEP7LELBSq0ayr4r3j3V70P2bQgSwIUp/zdfo2Xsqp3MRYtgH+x3F6\n++rIkS3KBMn5o2OKGtp0xKbRxGN3aq5vqKnjygEQLJS6KH5OggVnry2/y4+c5LOx\nQwGcXSnAMUrXoRtGK3QCNweJaNdhMGS38jVrAgMBAAGjgbQwgbEwHQYDVR0OBBYE\nFD1KMWtcxkxR2JbQ5T+oQFP6Ig6hMB8GA1UdIwQYMBaAFD1KMWtcxkxR2JbQ5T+o\nQFP6Ig6hMDkGA1UdEQQyMDCCCWxvY2FsaG9zdIILdjJyYXkubG9jYWyHBH8AAAGH\nEAAAAAAAAAAAAAAAAAAAAAEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC\nBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAAVlHJ23\n5cCKAHOTsTVoJLNPHETnanJaP/JcaY6TwcAOMTlAnwrBwtT8J3LK6GTCIhjZJUnv\nAOkGtas6iYi4j9ryT52EiyBFRZA5v//I13MvAFk62Rm4eygYn7GigFN/eMhGEElh\nsdUwT0gvKQqyHTUxy4fZSpDNmfIxlDSDnlWLpKTGueD+r9CAgQ4qFl1BfTUQKL+m\nzuQohiphU+AE9dR7kllJvzTPRVTrerdHIv1WRo/uQvhagO5DFVaQMN09MWbsqTCs\nMHGlCC8b0kI64JUtiIEPglRIhzLDKQdVbM/q8gr9peQyfW49bm0Y3Uie9RJP0xYH\nFzziT6ev4AQGxEg=\n-----END CERTIFICATE-----"
+              ],
+              "key": [
+                "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCg1H4wzjR6waC2\n0MfXFnlgubMyCaPnSyvtvBCxZmNWECXt91KmHVhFJ/GL9ROPeTra+wcLTKTgu2CK\nY+Hr5qW+87w2Nks6M6X6A6JjVZGRVj0la/XdFMGZ7VZWN5bD/FbxojQ9TDnzQaAq\nA+QS/vRXgcv5crk5HAvuW+0t49M4bl+8GU+DE/mdDd1olQXEP7LELBSq0ayr4r3j\n3V70P2bQgSwIUp/zdfo2Xsqp3MRYtgH+x3F6++rIkS3KBMn5o2OKGtp0xKbRxGN3\naq5vqKnjygEQLJS6KH5OggVnry2/y4+c5LOxQwGcXSnAMUrXoRtGK3QCNweJaNdh\nMGS38jVrAgMBAAECggEABp8I8CU+vg9xRUvnvLN4dskRl0Dg8xMPF9MzLe9RrdR6\nkBP4RQEWeVTK861r/m89KZCSul5C6w+iMPOQwWxpX9wOYEr9VaphR59u4Yw/Zg54\n9CzAKzea16WQqHo5MxAuwiiHFXKPowCm9LCpUWp9EIppWKrM9L/Y8ky6WulmVww/\nf6BncXCweHb1sDYQBG2xokmbZM+Q/Kil4aRw5xLbl6DhUKMt/XHazyy2Zki3cuOW\ngkE0kYlbkYtGInMdLR5f/XfLE00rOgqBHI5eYY4iptPLDayiToR8621wQaFHp54Q\nLDjctn0teerXOq2tGDPTCzXJoLjGjoxYG/4WarpajQKBgQDW2gV77xzHcBDUvKi1\ns8S1PHWbwguFxMFRAxTfOrqPU9mtq+g85AynJ9hAO52U1Yn1+m3eD8hWKOlnsxbE\nprnzfxGhC3gFWrwBislC3x1+8ipLOKVkeTGMWQZi/YHVUmD/ggKQyInZVgSJAO+7\ndjqOsAvOShxHLwNAJm13GwGTNQKBgQC/odelXdBItufI7GPq8y4QXaq33vn+12o0\nhPH3p1MKqGqQ5jGRuupF2x3cP1OLSAT3JgM2YiW1WSA374yfVSMAYeRn9fKV3pfR\nyyE2cCsgwdF6P/cmiuC9RQuNZsbky6Q2waTW7E0cBqtoXdwRXFxOm0NiuO38/8jq\ns+9cPlYaHwKBgQDOvAjs4P8rNL0tRr9735fW4G82Sfg2ZkWxwypRRjx/b6qUf0a/\nWJyIN0HRRMvzi6ntg2Q2ea9GoKU+gEfXP6rMDygSc2uwk0c2oKnaa8ABB9oEeWRE\nEo3Hw13u4IoOju8AzMPVNvHVq/w/LCSBmFjuNZ2WiR8+q5EQKCnKorTYRQKBgQCj\nXNfWXHRcGLjdm0/OkkKZpxALMaXS71bVsOQJqHXtZwd5wRNO1ZYzuQjqon2ZBetd\nueURLnhQ8cq6hJdPmSd+gvVQ/uUviBPKwCzvGI5bnX7zhaYvEENodnzTrWMu1r+G\nAmyA3+8YTkM/dIxPrHnwdQHsHhScEn34Py51Z5rFJwKBgQCFbs+yI6SkUe4pIT7u\nBNEmn6sgzqOUdS8gS3x6m3Kue3D/SnvkVAY04BIO3IlUxB7b08bfne6cGK7QJz7y\nJFevQdQPN8TzSSv9e7BxhIq4uLlsPIndU/9GzvGZh0Te48qU0oGoNg8ALhJZxJHj\nDT+hFlb1izLRFMdm/+CgHdUbtg==\n-----END PRIVATE KEY-----"
+              ]
+            }
+          ],
+          "alpn": [
+            "h2"
+          ]
+        },
+        "grpcSettings": {
+          "serviceName": "vmess",
+          "multiMode": false
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {
+        "domainStrategy": "AsIs"
+      }
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "127.0.0.0/8",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ]
+      }
+    ]
+  }
+}

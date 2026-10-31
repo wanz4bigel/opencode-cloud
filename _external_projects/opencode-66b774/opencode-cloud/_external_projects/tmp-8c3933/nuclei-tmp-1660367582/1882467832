@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --project $projectId --format=json | jq -r '.settings.databaseFlags[]? | select(.name=="cross db ownership chaining") | .value // "null"'

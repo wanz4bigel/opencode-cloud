@@ -1,0 +1,8 @@
+{ "log": {"loglevel":"warning"},
+  "inbounds":[
+    {"port":19443,"protocol":"vmess","settings":{"clients":[{"id":"0d0fb1ae-8b41-4bf2-b803-f0e11dbcc9bb","alterId":0}]},
+     "streamSettings":{"network":"grpc","security":"none","grpcSettings":{"serviceName":"vmess"}}},
+    {"port":19444,"protocol":"vmess","settings":{"clients":[{"id":"0d0fb1ae-8b41-4bf2-b803-f0e11dbcc9bb","alterId":0}]},
+     "streamSettings":{"network":"httpupgrade","security":"none","httpupgradeSettings":{"path":"/upvmess","host":"a.b"}}}
+  ],
+  "outbounds":[{"protocol":"freedom"}]}

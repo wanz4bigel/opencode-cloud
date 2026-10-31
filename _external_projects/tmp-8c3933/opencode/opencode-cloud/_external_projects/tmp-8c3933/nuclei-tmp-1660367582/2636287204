@@ -1,0 +1,1 @@
+az webapp config show --ids $id --query 'minTlsVersion' --output json

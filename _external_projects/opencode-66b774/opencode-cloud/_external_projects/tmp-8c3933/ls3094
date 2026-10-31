@@ -1,0 +1,33 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="/_autoindex/assets/css/autoindex.css" /><script src="/_autoindex/assets/js/tablesort.js"></script><script src="/_autoindex/assets/js/tablesort.number.js"></script><title>Index of /wp-content/uploads/2026/</title><style>@media (prefers-color-scheme:dark){body{background-color:#000!important}}</style></head><body><div class="content"><h1 style="color: #555;">Index of /wp-content/uploads/2026/</h1>
+<div id="table-filter"><input type="text" name="keyword" id="filter-keyword" placeholder="Filter Name"></div>
+<div id="table-list"><table id="table-content"><thead class="t-header"><tr><th class="colname" aria-sort="ascending"><a class="name" href="?ND"  onclick="return false"">Name</a></th><th class="colname" data-sort-method="number"><a href="?MA"  onclick="return false"">Last Modified</a></th><th class="colname" data-sort-method="number"><a href="?SA"  onclick="return false"">Size</a></th></tr></thead>
+<tr data-sort-method="none"><td><a href="/wp-content/uploads/"><img class="icon" src="/_autoindex/assets/icons/corner-left-up.svg" alt="Up">Parent Directory</a></td><td></td><td></td></tr>
+<tr><td data-sort="*01"><a href="/wp-content/uploads/2026/01/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">01</a></td><td data-sort="195236754">2026-02-25 23:25</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*02"><a href="/wp-content/uploads/2026/02/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">02</a></td><td data-sort="195493962">2026-02-28 22:52</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*03"><a href="/wp-content/uploads/2026/03/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">03</a></td><td data-sort="198174109">2026-03-31 23:21</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*04"><a href="/wp-content/uploads/2026/04/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">04</a></td><td data-sort="200756270">2026-04-30 20:37</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*05"><a href="/wp-content/uploads/2026/05/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">05</a></td><td data-sort="203395140">2026-05-31 09:39</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*06"><a href="/wp-content/uploads/2026/06/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">06</a></td><td data-sort="206030205">2026-06-30 21:36</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*07"><a href="/wp-content/uploads/2026/07/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">07</a></td><td data-sort="208702827">2026-07-31 20:00</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*08"><a href="/wp-content/uploads/2026/08/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">08</a></td><td data-sort="211391876">2026-08-31 22:57</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*09"><a href="/wp-content/uploads/2026/09/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">09</a></td><td data-sort="213980966">2026-09-30 22:09</td><td data-sort="-1">-</td></tr>
+<tr><td data-sort="*10"><a href="/wp-content/uploads/2026/10/"><img class="icon" src="/_autoindex/assets/icons/folder-fill.svg" alt="Directory">10</a></td><td data-sort="216372532">2026-10-28 14:28</td><td data-sort="-1">-</td></tr>
+</table></div>
+<address>Proudly Served by LiteSpeed Web Server at mediaaksara.id Port 443</address></div><script>
+	new Tablesort(document.getElementById("table-content"));
+	var keywordInput = document.getElementById('filter-keyword');
+	document.addEventListener('keyup', filterTable);
+
+	function filterTable(e) {
+		if (e.target.id != 'filter-keyword') return;
+
+		var cols = document.querySelectorAll('tbody td:first-child');
+		var keyword = keywordInput.value.toLowerCase();
+		for (i = 0; i < cols.length; i++) {
+			var text = cols[i].textContent.toLowerCase();
+			if (text != 'parent directory') {
+				cols[i].parentNode.style.display = text.indexOf(keyword) === -1 ? 'none' : 'table-row';
+			}
+		}
+	}
+</script></body></html>

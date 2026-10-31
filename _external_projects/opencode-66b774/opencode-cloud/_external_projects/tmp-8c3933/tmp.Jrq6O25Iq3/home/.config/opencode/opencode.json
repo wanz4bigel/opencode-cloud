@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "river": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "River",
+      "options": {
+        "baseURL": "https://api.river.ai/v1",
+        "apiKey": "rv_llaRJquR9fj_xXqKTM3YshivBAeAIv602K1aSfevt8U"
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V4.1-Flash-1017": {
+          "name": "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+        }
+      }
+    },
+    "qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen",
+      "options": {
+        "baseURL": "https://animate-cardstock-detector.ngrok-free.dev/v1",
+        "apiKey": "sk-molab-b1b5c624c794fccfeb46b8647caa8afd"
+      },
+      "models": {
+        "qwen3.8-27b": {
+          "name": "qwen3.8-27b"
+        }
+      }
+    },
+    "qwen flash": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen flash",
+      "options": {
+        "baseURL": "https://ai.wanz4bigel.dpdns.org/v1",
+        "apiKey": "sk-strata-d71951f458683d6a913c18fb1e31e4b3"
+      },
+      "models": {
+        "swift-1.5-iq3_s": {
+          "name": "swift-1.5-iq3_s"
+        }
+      }
+    }
+  }
+}

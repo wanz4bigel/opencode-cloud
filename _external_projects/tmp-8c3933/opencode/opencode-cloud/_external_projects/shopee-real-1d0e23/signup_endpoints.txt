@@ -1,0 +1,2 @@
+/api/v4/otp/send_vcode
+/api/v4/otp/verify_vcode

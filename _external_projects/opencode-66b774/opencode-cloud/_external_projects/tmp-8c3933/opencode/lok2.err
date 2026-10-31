@@ -1,0 +1,15 @@
+[turnstile] browser Playwright tidak ada, pakai /opt/google/chrome/chrome
+[turnstile] percobaan 1: halaman dimuat (https://sahabatssh.com/auth/register)
+[turnstile] ronde 1: belum ada token, klik (30,26)
+[turnstile] ronde 5: belum ada token, klik (44,20)
+[turnstile] ronde 9: belum ada token, klik (18,32)
+[turnstile] ronde 13: belum ada token, klik (36,30)
+[turnstile] ronde 17: belum ada token, klik (24,22)
+[turnstile] ronde 21: belum ada token, klik (30,26)
+[turnstile] ronde 25: belum ada token, klik (44,20)
+[turnstile] ronde 29: belum ada token, klik (18,32)
+[turnstile] ronde 33: belum ada token, klik (36,30)
+[turnstile] ronde 37: belum ada token, klik (24,22)
+[turnstile] ronde 41: belum ada token, klik (30,26)
+[turnstile] percobaan ini gagal, sesi browser ditutup
+[turnstile] ERROR tidak dapat token dalam 110 detik

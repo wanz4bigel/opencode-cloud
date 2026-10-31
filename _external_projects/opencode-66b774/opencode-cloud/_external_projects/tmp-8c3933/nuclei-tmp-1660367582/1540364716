@@ -1,0 +1,1 @@
+gcloud compute routers nats describe $natGateway --router=$router --project=$projectId --format="json(subnetworks)"

@@ -1,0 +1,1 @@
+aws ec2 describe-vpc-endpoints --region $region --filters Name=vpc-id,Values=$vpc --query 'VpcEndpoints[*].VpcEndpointId'

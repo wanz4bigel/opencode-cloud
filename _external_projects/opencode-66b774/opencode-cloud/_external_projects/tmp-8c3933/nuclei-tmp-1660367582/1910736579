@@ -1,0 +1,1 @@
+aws firehose list-delivery-streams --region $region --query 'DeliveryStreamNames' --output json

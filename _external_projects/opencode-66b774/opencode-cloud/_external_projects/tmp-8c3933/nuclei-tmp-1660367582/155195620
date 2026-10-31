@@ -1,0 +1,1 @@
+aws ec2 describe-network-acls --region $region --network-acl-ids $naclid --query 'NetworkAcls[*].Entries[?(RuleAction==`allow`) && (Egress==`true`)] | []'

@@ -1,0 +1,1 @@
+gcloud dns policies describe $dnsPolicy --project $projectId --format="json(enableLogging)" | jq -r '.enableLogging // "null"'

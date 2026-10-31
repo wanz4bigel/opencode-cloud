@@ -1,0 +1,37 @@
+{
+  "click_chat_contact_list": {
+    "page_id": "",
+    "page_type": "chat",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "contact_list"
+  },
+  "chat_contact_list_red_dot": {
+    "page_id": "",
+    "page_type": "chat",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "contact_red_dot"
+  },
+  "get_contact_permission_status": {
+    "page_id": "",
+    "page_type": "",
+    "operation": "action_app_start",
+    "page_section": "",
+    "target_type": "get_contact_permission_status"
+  },
+  "enter_privacy_setting_page": {
+    "page_id": "",
+    "page_type": "shopee_friends_setting",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "block_shopee_friends_pop": {
+    "page_id": "",
+    "page_type": "shopee_friends_setting",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "block_shopee_friends_pop"
+  }
+}

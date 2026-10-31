@@ -1,0 +1,20 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-247156
+CITY           : Dulles Town Center
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.127.247.156
+Port TLS       : 18471
+Port none TLS  : 
+Port any       : -
+id             : fbb0e9fa-928d-4425-a505-f78a57e69733
+alterId        : 0
+Security       : auto
+network        : ws
+path ws        : /xmldtk3o-evev
+Cert SHA256    : f71cb7665fa3356463479abc862b0c6fe034119ef42575d84473b3f2f0b11294
+Limit IP       : -
+Expired On     : 2026-10-29 03:59:17 WIB
+————————————————————————————————————
+[1;36m[vmess][0m LINK UTAMA : vmess://eyJ2IjoiMiIsInBzIjoiZ2gtYWN0aW9ucy0yNDcxNTYiLCJhZGQiOiIyMC4xMjcuMjQ3LjE1NiIsInBvcnQiOjE4NDcxLCJpZCI6ImZiYjBlOWZhLTkyOGQtNDQyNS1hNTA1LWY3OGE1N2U2OTczMyIsIm5ldCI6IndzIiwiaG9zdCI6IjIwLjEyNy4yNDcuMTU2IiwicGF0aCI6Ii94bWxkdGszby1ldmV2IiwidGxzIjoidGxzIn0=

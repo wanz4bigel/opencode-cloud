@@ -1,0 +1,62 @@
+HTTP/2 302 
+server: nginx
+date: Wed, 28 Oct 2026 10:37:21 GMT
+content-type: text/html; charset=utf-8
+content-length: 338
+location: https://web.archive.org/web/20261028103706/https://spmb.sman1cigombong.sch.id/phpinfo.php
+x-app-server: wwwb-app55-dc6
+x-ts: 302
+x-tr: 18093
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=1
+set-cookie: wb-save-SERVER=wwwb-app55; path=/
+x-location: save-sync
+x-rl: 0
+x-na: 0
+x-page-cache: MISS
+server-timing: MISS
+x-nid: Microsoft
+referrer-policy: no-referrer-when-downgrade
+permissions-policy: interest-cohort=()
+x-sd: 0
+
+HTTP/2 200 
+server: nginx
+date: Wed, 28 Oct 2026 10:37:22 GMT
+content-type: text/html; charset=UTF-8
+x-archive-orig-connection: Keep-Alive
+x-archive-orig-keep-alive: timeout=5, max=100
+x-archive-orig-x-powered-by: PHP/8.2.34
+x-archive-orig-set-cookie: PHPSESSID=vbf7k31kfnnshlqu4p0mq9gvmm; path=/; secure
+x-archive-orig-expires: Thu, 19 Nov 1981 08:52:00 GMT
+x-archive-orig-cache-control: no-store, no-cache, must-revalidate
+x-archive-orig-pragma: no-cache
+x-archive-orig-transfer-encoding: chunked
+x-archive-orig-vary: Accept-Encoding
+x-archive-orig-date: Wed, 28 Oct 2026 10:37:06 GMT
+x-archive-orig-server: LiteSpeed
+x-archive-orig-content-security-policy: upgrade-insecure-requests;
+x-archive-orig-alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+x-archive-guessed-content-type: text/html
+x-archive-guessed-charset: utf-8
+x-archive-orig-content-encoding: gzip
+memento-datetime: Wed, 28 Oct 2026 10:37:06 GMT
+link: <https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="original", <https://web.archive.org/web/timemap/link/https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="timemap"; type="application/link-format", <https://web.archive.org/web/https://spmb.sman1cigombong.sch.id/phpinfo.php>; rel="timegate"
+content-security-policy: default-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: archive.org web.archive.org web-static.archive.org wayback-api.archive.org athena.archive.org analytics.archive.org pragma.archivelab.org wwwb-events.archive.org
+x-archive-src: spn2-20261028101533-wwwb-spn38.us.archive.org-8002.warc.gz
+server-timing: captures_list;dur=0.375372, exclusion.robots;dur=0.036130, exclusion.robots.policy;dur=0.027420, esindex;dur=0.007106, cdx.remote;dur=22.500567, LoadShardBlock;dur=758.924423, PetaboxLoader3.datanode;dur=377.681091, PetaboxLoader3.resolve;dur=379.875447, load_resource;dur=23.290272
+x-app-server: wwwb-app219-dc8
+x-ts: 200
+x-tr: 832
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=0
+set-cookie: wb-p-SERVER=wwwb-app219; path=/
+x-location: All
+x-as: 8075
+x-rl: 0
+x-na: 0
+x-page-cache: MISS
+server-timing: MISS
+x-nid: Microsoft
+referrer-policy: no-referrer-when-downgrade
+permissions-policy: interest-cohort=()
+x-sd: 0
+

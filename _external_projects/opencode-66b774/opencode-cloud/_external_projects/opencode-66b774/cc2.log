@@ -1,0 +1,3 @@
+Xray 26.10.21 (Xray, Penetrates Everything.) 1b1647c (go1.27.3 linux/amd64)
+A unified platform for anti-censorship.
+Failed to start: main: failed to load config files: [/tmp/opencode/cc.json] > infra/conf/serial: failed to decode config: &{Name:/tmp/opencode/cc.json Format:json} > infra/conf/serial: failed to read config file > EOF

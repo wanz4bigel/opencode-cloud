@@ -1,0 +1,1 @@
+az vm show --ids "$ids" --query '{"IdentityConfig": identity}'

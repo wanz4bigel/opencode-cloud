@@ -1,0 +1,1 @@
+aliyun rds DescribeDBInstanceTDE --DBInstanceId $dbinstanceid --region $region

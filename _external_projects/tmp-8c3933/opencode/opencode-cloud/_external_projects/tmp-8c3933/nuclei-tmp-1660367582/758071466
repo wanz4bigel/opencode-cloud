@@ -1,0 +1,1 @@
+az postgres server configuration show --server-name "$name" --resource-group "$resourceGroup" --name log_disconnections --query 'value'

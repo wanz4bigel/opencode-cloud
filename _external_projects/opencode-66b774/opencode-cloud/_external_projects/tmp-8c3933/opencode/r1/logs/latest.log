@@ -1,0 +1,9 @@
+V2Ray 5.53.0 (V2Fly, a community-driven edition of V2Ray.) Custom (go1.26.1 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 20:47:00 [Warning] V2Ray 5.53.0 started
+2026/10/28 20:47:03 http: TLS handshake error from 127.0.0.1:46138: EOF
+2026/10/28 20:47:06 http: TLS handshake error from 127.0.0.1:57132: EOF
+2026/10/28 20:47:08 http: TLS handshake error from 127.0.0.1:57140: EOF
+2026/10/28 20:47:11 [Warning] [2231627739] app/dispatcher: default route for tcp:www.google.com:443
+2026/10/28 20:47:11 127.0.0.1:57156 accepted tcp:www.google.com:443 [direct] email: github-actions
+2026/10/28 20:47:13 http: TLS handshake error from 127.0.0.1:57162: EOF

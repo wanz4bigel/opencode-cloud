@@ -1,0 +1,1 @@
+gcloud workbench instances describe tm-vertex-ai-notebook-instance --location=us-central1-a --project=$projectId --format="yaml(gceSetup.shieldedInstanceConfig.enableVtpm)"

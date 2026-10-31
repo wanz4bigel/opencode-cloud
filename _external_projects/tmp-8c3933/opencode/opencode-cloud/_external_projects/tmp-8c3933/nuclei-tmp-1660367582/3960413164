@@ -1,0 +1,1 @@
+gcloud compute networks subnets list --network=$networkName --project=$projectId --format="json(name,region.basename())"

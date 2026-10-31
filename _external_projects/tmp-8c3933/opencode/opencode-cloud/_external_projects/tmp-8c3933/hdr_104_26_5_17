@@ -1,0 +1,13 @@
+HTTP/1.1 301 Moved Permanently
+Date: Wed, 28 Oct 2026 07:38:21 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Location: https://www.sukabumiupdate.com/
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3ySScsHH%2BoeNPQlUFul0EQ3uyl1jEbUEcosWgYQD4uUQVKdnhmehse2ChiCkWq%2FocdL3bEG0d5r0F%2F03XY%2Fehh0NXlUrxM75xfPvnOD9o49xX5Gc4Uyqu77InLntSi3PrcgZ5isRymkO"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Referrer-Policy: strict-origin-when-cross-origin
+Server: cloudflare
+CF-RAY: a51847cd090975c6-IAD
+alt-svc: h3=":443"; ma=86400
+

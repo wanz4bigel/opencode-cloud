@@ -1,0 +1,148 @@
+
+
+[0m█▀▄▀█ █▀▀ █▀▀▄ █──█ █▀▀ █▀▀█ 
+[0m█─▀─█ █▀▀ █──█ █──█ ▀▀█ █▄▄█ 
+[0m▀───▀ ▀▀▀ ▀▀▀─ ─▀▀▀ ▀▀▀ ▀──▀ [31mv3.1[0m 
+[33m--------------------------------------------
+[31m-> [0mTarget[33m : [32mhttp://127.0.0.1:9445/
+[31m-> [0mTime[33m : [32m10
+[31m-> [0mRate[33m : [32m5000
+[31m-> [0mThread[33m : [32m128
+[31m-> [0mProxyFile[33m : [32m-
+[33m--------------------------------------------
+[31m-> [0mGithub[33m : [32mhttps://github.com/TrashDono
+[33m--------------------------------------------
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 1 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 2 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 3 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 4 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 5 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 6 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 7 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 8 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 9 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 10 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 11 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 12 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 13 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 14 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 15 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 16 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 17 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 18 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 19 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 20 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 21 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 22 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 23 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 24 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 25 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 26 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 27 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 28 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 29 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 30 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 31 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 32 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 33 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 34 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 35 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 36 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 37 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 38 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 39 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 40 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 41 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 42 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:52[31m)[0m Attack Thread 43 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 44 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 45 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 46 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 47 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 48 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 49 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 50 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 51 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 52 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 53 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 54 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 55 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 56 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 57 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 58 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 59 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 60 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 61 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 62 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 63 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 64 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 65 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 66 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 67 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 68 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:53[31m)[0m Attack Thread 69 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 70 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 71 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 72 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 73 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 74 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 75 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 76 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 77 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 78 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 79 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 80 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 81 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 82 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 83 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 84 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 85 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:54[31m)[0m Attack Thread 86 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 87 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 88 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 89 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 90 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 91 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 92 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 93 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 94 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 95 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 96 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 97 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 98 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 99 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:55[31m)[0m Attack Thread 100 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 101 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 102 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 103 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 104 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 105 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 106 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 107 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 108 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 109 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 110 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 111 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 112 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 113 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 114 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 115 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 116 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:56[31m)[0m Attack Thread 117 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 118 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 119 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 120 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 121 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 122 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 123 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 124 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 125 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 126 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 127 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m Attack Thread 128 Started
+[31m[[33mMedusa[31m] [0m[31m([32m08:45:57[31m)[0m [33mMedusa Attacking..
+[31m[[33mMedusa[31m][0m [31m([32m08:46:00[31m)[0m [32m> [0mTitle: Not Found ([32m200[0m)
+[31m[[33mMedusa[31m][0m [31m([32m08:46:01[31m)[0m [32m> [0mTitle: Not Found ([32m200[0m)
+[31m[[33mMedusa[31m][0m [31m([32m08:46:03[31m)[0m [32m> [0mTitle: Not Found ([32m200[0m)
+[31m[[33mMedusa[31m][0m [31m([32m08:46:05[31m)[0m [32m> [0mTitle: Not Found ([32m200[0m)
+[31m[[33mMedusa[31m] [0m[31m([32m08:46:07[31m)[0m [33mThe Attack Is Over[0m

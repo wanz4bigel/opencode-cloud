@@ -1,0 +1,24 @@
+Xray 26.10.21 (Xray, Penetrates Everything.) 1b1647c (go1.27.3 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:52:06.136920 [Info] infra/conf/serial: Reading config: &{Name:/tmp/opencode/full/config.json Format:json}
+2026/10/28 11:52:06.137971 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:52:06.138419 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.138974 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:52:06.138983 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.139137 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:52:06.139142 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.139146 [Warning] common/errors: The feature WebSocket transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:52:06.139150 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.139153 [Warning] common/errors: The feature gRPC transport (with unnecessary costs, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP stream-up H2 as soon as possible.
+2026/10/28 11:52:06.139378 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.139385 [Warning] common/errors: The feature HTTPUpgrade transport (with ALPN http/1.1, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP H2 & H3 as soon as possible.
+2026/10/28 11:52:06.139389 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:52:06.150364 [Warning] core: Xray 26.10.21 started
+2026/10/28 11:52:09.160753 http: TLS handshake error from 127.0.0.1:39058: EOF
+2026/10/28 11:52:09.161411 http: TLS handshake error from 127.0.0.1:39446: EOF
+2026/10/28 11:52:14.233527 http: TLS handshake error from 127.0.0.1:39066: EOF
+2026/10/28 11:52:14.234141 http: TLS handshake error from 127.0.0.1:39462: EOF
+2026/10/28 11:52:19.304569 http: TLS handshake error from 127.0.0.1:53216: EOF
+2026/10/28 11:52:19.305220 http: TLS handshake error from 127.0.0.1:44272: EOF
+2026/10/28 11:52:24.376903 http: TLS handshake error from 127.0.0.1:53238: EOF
+2026/10/28 11:52:24.377666 http: TLS handshake error from 127.0.0.1:44284: EOF

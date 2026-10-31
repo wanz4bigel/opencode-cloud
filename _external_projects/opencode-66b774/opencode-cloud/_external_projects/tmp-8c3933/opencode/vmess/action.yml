@@ -1,0 +1,229 @@
+name: 'VMess V2Ray Server'
+description: 'Pasang & jalankan server VMess (WebSocket + TLS) di runner GitHub Actions, output link vmess://.'
+author: 'v2ray-vmess-action'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  mode:
+    description: 'simple = 1 port ws+tls | full = multi-transport (ws/grpc/upgrade)'
+    required: false
+    default: 'simple'
+  core:
+    description: 'v2ray (kompatibel) | xray (wajib untuk httpupgrade)'
+    required: false
+    default: 'v2ray'
+  ports_tls:
+    description: 'Daftar port ws+tls, mis. "443,8443" (mode full)'
+    required: false
+    default: ''
+  ports_plain:
+    description: 'Daftar port ws tanpa tls, mis. "80,8080"'
+    required: false
+    default: ''
+  port_grpc:
+    description: 'Port gRPC (kosong = mati)'
+    required: false
+    default: ''
+  port_upgrade:
+    description: 'Port HTTPUpgrade (kosong = mati, butuh core xray)'
+    required: false
+    default: ''
+  remarks:
+    description: 'Nama/remark di link (ps) dan kartu'
+    required: false
+    default: ''
+  link_style:
+    description: 'minimal (format v2rayN) | full (aid/sni/alpn/email)'
+    required: false
+    default: 'minimal'
+  grpc_service:
+    description: 'serviceName gRPC'
+    required: false
+    default: 'vmess'
+  edge_port:
+    description: 'Port publik di link (mis. 443 di CloudFront); kosong = port origin'
+    required: false
+    default: ''
+  edge_tls:
+    description: 'tls | none di link; kosong = ikut cert origin'
+    required: false
+    default: '' 
+  port:
+    description: 'Port inbound (443 / 8443 / 2053)'
+    required: false
+    default: '443'
+  ws_path:
+    description: 'Path WebSocket, kosong = acak'
+    required: false
+    default: ''
+  uuid:
+    description: 'UUID VMess, kosong = acak'
+    required: false
+    default: ''
+  alterId:
+    description: 'alterId (disarankan 0)'
+    required: false
+    default: '0'
+  domain:
+    description: 'Domain / Host header (opsional)'
+    required: false
+    default: ''
+  sni:
+    description: 'TLS serverName (default = domain)'
+    required: false
+    default: ''
+  cloudflare_token:
+    description: 'API token Cloudflare (Zone.DNS:Edit) untuk auto-update A record ke IP runner'
+    required: false
+    default: ''
+  cloudflare_zone_id:
+    description: 'Zone ID Cloudflare (kosong = dicari otomatis dari domain)'
+    required: false
+    default: ''
+  cloudflare_proxied:
+    description: 'true = orange cloud (proxied), false = DNS only'
+    required: false
+    default: 'false'
+  cloudflare_record_name:
+    description: 'Nama record A (default = domain, mis. v2.example.com)'
+    required: false
+    default: ''
+  tls_mode:
+    description: 'selfsigned | custom | off'
+    required: false
+    default: 'selfsigned'
+  tls_crt:
+    description: 'Isi file sertifikat PEM (untuk tls_mode=custom)'
+    required: false
+    default: ''
+  tls_key:
+    description: 'Isi private key PEM (untuk tls_mode=custom)'
+    required: false
+    default: ''
+  v2ray_version:
+    description: 'Versi v2fly/v2ray-core, kosong = latest'
+    required: false
+    default: ''
+  block_private:
+    description: 'Blokir akses ke IP privat / metadata cloud dari proxy'
+    required: false
+    default: '1'
+  lifetime_minutes:
+    description: 'Umur server sebelum handoff ke run baru (menit)'
+    required: false
+    default: '330'
+  limit_ip:
+    description: 'Tulisan Limit IP di kartu akun (info saja)'
+    required: false
+    default: ''
+  github_token:
+    description: 'secrets.GITHUB_TOKEN untuk auto-restart (handoff)'
+    required: false
+    default: ''
+
+outputs:
+  vmess_link:
+    description: 'Link vmess:// siap tempel'
+    value: ${{ steps.link.outputs.vmess_link }}
+  public_ip:
+    description: 'Public IP runner yang dipakai'
+    value: ${{ steps.link.outputs.public_ip }}
+
+runs:
+  using: composite
+  steps:
+    - name: Pasang jq (dipakai script config)
+      shell: bash
+      run: |
+        command -v jq >/dev/null 2>&1 || {
+          sudo apt-get update -qq >/dev/null 2>&1 || true
+          sudo apt-get install -y -qq jq >/dev/null 2>&1 || true
+        }
+        command -v jq >/dev/null 2>&1 || { echo "jq tidak tersedia"; exit 1; }
+
+    - name: Deteksi public IP
+      id: ip
+      shell: bash
+      run: echo "PUBLIC_IP=$(bash "$GITHUB_ACTION_PATH/scripts/get-ip.sh")" >>"$GITHUB_ENV"
+
+    - name: Update DNS Cloudflare (opsional)
+      shell: bash
+      continue-on-error: true
+      env:
+        DOMAIN: ${{ inputs.domain }}
+        CF_API_TOKEN: ${{ inputs.cloudflare_token }}
+        CF_ZONE_ID: ${{ inputs.cloudflare_zone_id }}
+        CF_PROXIED: ${{ inputs.cloudflare_proxied }}
+        CF_RECORD_NAME: ${{ inputs.cloudflare_record_name }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/dns-cloudflare.sh"
+
+    - name: Install v2ray
+      shell: bash
+      env:
+        V2RAY_VERSION: ${{ inputs.v2ray_version }}
+        CORE: ${{ inputs.core }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/install-v2ray.sh"
+
+    - name: Generate TLS
+      shell: bash
+      env:
+        PORT: ${{ inputs.port }}
+        DOMAIN: ${{ inputs.domain }}
+        SNI: ${{ inputs.sni }}
+        TLS_MODE: ${{ inputs.tls_mode }}
+        TLS_CRT: ${{ inputs.tls_crt }}
+        TLS_KEY: ${{ inputs.tls_key }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/gen-cert.sh"
+      shell: bash
+
+    - name: Rakit config
+      shell: bash
+      env:
+        PORT: ${{ inputs.port }}
+        WS_PATH: ${{ inputs.ws_path }}
+        VMESS_UUID: ${{ inputs.uuid }}
+        VMESS_ALTID: ${{ inputs.alterId }}
+        DOMAIN: ${{ inputs.domain }}
+        SNI: ${{ inputs.sni }}
+        BLOCK_PRIVATE: ${{ inputs.block_private }}
+        CORE: ${{ inputs.core }}
+        PORTS_TLS: ${{ inputs.ports_tls }}
+        PORTS_PLAIN: ${{ inputs.ports_plain }}
+        PORT_GRPC: ${{ inputs.port_grpc }}
+        PORT_UPGRADE: ${{ inputs.port_upgrade }}
+        GRPC_SERVICE: ${{ inputs.grpc_service }}
+        EDGE_PORT: ${{ inputs.edge_port }}
+        EDGE_TLS: ${{ inputs.edge_tls }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/gen-config.sh"
+
+    - name: Generate link vmess://
+      id: link
+      shell: bash
+      env:
+        PORT: ${{ inputs.port }}
+        WS_PATH: ${{ inputs.ws_path }}
+        VMESS_UUID: ${{ inputs.uuid }}
+        DOMAIN: ${{ inputs.domain }}
+        SNI: ${{ inputs.sni }}
+        TLS_MODE: ${{ inputs.tls_mode }}
+        CORE: ${{ inputs.core }}
+        PORTS_TLS: ${{ inputs.ports_tls }}
+        PORTS_PLAIN: ${{ inputs.ports_plain }}
+        PORT_GRPC: ${{ inputs.port_grpc }}
+        PORT_UPGRADE: ${{ inputs.port_upgrade }}
+        GRPC_SERVICE: ${{ inputs.grpc_service }}
+        LIMIT_IP: ${{ inputs.limit_ip }}
+        EDGE_PORT: ${{ inputs.edge_port }}
+        EDGE_TLS: ${{ inputs.edge_tls }}
+        REMARKS: ${{ inputs.remarks }}
+        LINK_STYLE: ${{ inputs.link_style }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/gen-link.sh"
+
+    - name: Run server
+      shell: bash
+      env:
+        LIFETIME_MINUTES: ${{ inputs.lifetime_minutes }}
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/run-server.sh"

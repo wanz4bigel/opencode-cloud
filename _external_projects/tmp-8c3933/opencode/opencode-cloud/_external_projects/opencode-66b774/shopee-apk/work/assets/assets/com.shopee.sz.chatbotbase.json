@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2025-03-07 14:30:35.228",
+  "version": "0.0.40",
+  "branch": "master",
+  "commitId": "124d29c2cc2e8189c130271dec9e54cd2f9936b1",
+  "moduleCommitId": "124d29c2cc2e8189c130271dec9e54cd2f9936b1",
+  "lastMessage": "[3.46][feature][SPLS-43957] Chatbot SIP: Treated as buyer when click \"Check Return/Refund status\"",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "chatbotbase",
+  "path": ":chatbotbase",
+  "remoteUrl": "https://git.garena.com/shopee/ssz-client/android/toc/features.git"
+}

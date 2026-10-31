@@ -1,0 +1,1 @@
+{"responseHeader":{"status":0,"QTime":21,"params":{"query":"title:&quot;indonesia&quot; AND mediatype:movies AND format:&quot;moviereel&quot;","qin":"title:&quot;indonesia&quot; AND mediatype:&quot;movies&quot; AND format:&quot;moviereel&quot;","fields":"identifier,title","wt":"json","rows":4,"start":0}},"response":{"numFound":0,"start":0,"docs":[]}}

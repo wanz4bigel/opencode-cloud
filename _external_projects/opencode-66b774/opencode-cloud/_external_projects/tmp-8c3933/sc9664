@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Informasi - Web SPMB</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Informasi tentang Sistem Penerimaan Murid Baru (SPMB) SMAN 1 Cigombong. Informasi pendaftaran, jadwal, pengumuman, dan layanan sekolah.">
+
+    <meta name="keywords"
+        content="SPMB, PPDB, SMAN 1 Cigombong, Sekolah, Pendaftaran Siswa Baru">
+
+    <meta name="author"
+        content="SMAN 1 Cigombong">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+        content="SPMB SMAN 1 Cigombong">
+
+    <meta property="og:description"
+        content="Website Informasi tentang Sistem Penerimaan Murid Baru SMAN 1 Cigombong">
+
+    <meta property="og:image"
+        content="https://spmb.sman1cigombong.sch.id/assets/img/preview.jpg">
+
+    <meta property="og:url"
+        content="https://spmb.sman1cigombong.sch.id">
+
+    <meta property="og:type"
+        content="website">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card"
+        content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="SPMB SMAN 1 Cigombong">
+
+    <meta name="twitter:description"
+        content="Website Informasi tentang Sistem Penerimaan Murid Baru SMAN 1 Cigombong">
+
+    <meta name="twitter:image"
+        content="https://spmb.sman1cigombong.sch.id/assets/img/preview.jpg">
+
+    <!-- FAVICON -->
+    <link rel="icon"
+        href="assets/img/logo.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top"
+        id="navbar">
+
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center gap-2"
+                href="index.php">
+
+                <img src="assets/img/logo.png"
+                    alt="Logo SMAN 1 Cigombong"
+                    width="45">
+
+                <span>
+                    SMAN 1 CIGOMBONG
+                </span>
+
+            </a>
+
+            <!-- TOGGLE -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- MENU -->
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <!-- HOME -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <!-- INFORMASI -->
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                            href="index.php?url=informasi">
+
+                            Informasi
+
+                        </a>
+
+                    </li>
+
+                    <!-- PENGUMUMAN -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=pengumuman">
+
+                            Pengumuman
+
+                        </a>
+
+                    </li>
+
+                    <!-- PENGADUAN 
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=pengaduan">
+
+                            Pengaduan
+
+                        </a>
+
+                    </li>
+-->
+                    <!-- KONTAK -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=kontak">
+
+                            Kontak
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+<!-- HEADER -->
+<section class="informasi-header">
+
+    <div class="container text-center">
+
+        <h1>Informasi Sekolah</h1>
+
+        <p>
+            Kumpulan informasi dan berita terbaru sekolah
+        </p>
+
+    </div>
+
+</section>
+
+<!-- INFORMASI -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/1792425202_shell.php"
+                                    class="card-img-top berita-img"
+                                    alt="Test3"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Test3
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Test content...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        10 Jul 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Admin
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/test3"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/1782368830_Untitled.png"
+                                    class="card-img-top berita-img"
+                                    alt="PENGUMUMAN LAPOR DIRI/DAFTAR ULANG SPMB TAHAP 1 JALUR PRESTASI DAN MUTASI TAHUN PELAJARAN 2026/2027"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    PENGUMUMAN LAPOR DIRI/DAFTAR ULANG SPMB TAHAP 1 JALUR PRESTASI DAN MUTASI TAHUN PELAJARAN 2026/2027
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    SMA Negeri 1 Cigombong mengumumkan kepada seluruh calon murid baru yang dinyatakan diterima melalui SPMB Tahap 1 Jalur P...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        25 Jun 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/pengumuman-lapor-diri/daftar-ulang-spmb-tahap-1-jalur-prestasi-dan-mutasi-tahun-pelajaran-2026/2027"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/img_6a26ba8dc81ca.png"
+                                    class="card-img-top berita-img"
+                                    alt="Perubahan Jadwal Pemetaan Calon Murid Baru (PCMB) Tahun 2026"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Perubahan Jadwal Pemetaan Calon Murid Baru (PCMB) Tahun 2026
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Cigombong, 8 Juni 2026 – Dinas Pendidikan Provinsi Jawa Barat telah mengumumkan perubahan jadwal pelaksanaan Pemetaan ...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        08 Jun 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/perubahan-jadwal-pemetaan-calon-murid-baru-pcmb-tahun-2026"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/img_6a228438bd025.jpg"
+                                    class="card-img-top berita-img"
+                                    alt="SURAT PERNYATAAN ORTU CMB JALUR AFIRMASI_KETM"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    SURAT PERNYATAAN ORTU CMB JALUR AFIRMASI_KETM
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Berikut Format Surat Pernyataan Orang Tua CMB jalur Afirmasi KETM...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        05 Jun 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/surat-pernyataan-ortu-cmb-jalur-afirmasi-ketm"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/1780321967_WhatsApp Image 2026-06-01 at 20.14.20.jpg"
+                                    class="card-img-top berita-img"
+                                    alt="Persiapkan Diri! Berikut Tahapan PCMB dan Persyaratan SPMB SMA Negeri 1 Cigombong Tahun Ajaran 2026/2027"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Persiapkan Diri! Berikut Tahapan PCMB dan Persyaratan SPMB SMA Negeri 1 Cigombong Tahun Ajaran 2026/2027
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Tahapan PCMB dan Persyaratan SPMB 2026/2027SMA Negeri 1 Cigombong menginformasikan kepada calon murid baru dan orang tua...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        01 Jun 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/persiapkan-diri!-berikut-tahapan-pcmb-dan-persyaratan-spmb-sma-negeri-1-cigombong-tahun-ajaran-2026/2027"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/img_6a14122e31823.png"
+                                    class="card-img-top berita-img"
+                                    alt="Sosisalisasi SPMB SMAN 1 Cigombong Tahun Ajaran 2026/2027"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Sosisalisasi SPMB SMAN 1 Cigombong Tahun Ajaran 2026/2027
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Materi tentang Sosialisasi SPMB SMA Negeri 1 Cigombong TA 2026/2027 telah tersedia. Unduh file PDF untuk mengetahui info...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        25 May 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/sosisalisasi-spmb-sman-1-cigombong-tahun-ajaran-2026-2027"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/img_6a14117803e83.png"
+                                    class="card-img-top berita-img"
+                                    alt="Sosialisasi Juklak SPMB Sekolah Maung (Manusia Unggul)"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Sosialisasi Juklak SPMB Sekolah Maung (Manusia Unggul)
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Materi tentang Sosialisasi Juklak SPMB Sekolah Maung (Manusia Unggul) telah tersedia. Unduh PDF untuk melihat informasi ...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        25 May 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/sosialisasi-juklak-spmb-sekolah-maung-(manusia-unggul)"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="https://img.youtube.com/vi/hWvsvLjyqRY/hqdefault.jpg"
+                                    class="card-img-top berita-img"
+                                    alt="SPMB JABAR 2026 | Calon peserta didik baru SMA/SMK/SLB se-Jawa Barat"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Jabar
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    SPMB JABAR 2026 | Calon peserta didik baru SMA/SMK/SLB se-Jawa Barat
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Calon peserta didik baru SMA/SMK/SLB se-Jawa Barat sini merapaattt! 📣​Biar enggak salah jadwal, catat timeline SPMB...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        19 May 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/spmb-jabar-2026-calon-peserta-didik-baru-sma-smk-slb-se-jawa-barat"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/1792569399_img_test.jpg.php"
+                                    class="card-img-top berita-img"
+                                    alt="Test11"
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Nasional
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Test11
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Content...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        18 May 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Admin
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/test11"
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+                    <div class="col-md-4">
+
+                        <div class="card berita-card border-0 shadow-sm h-100">
+
+                           <!-- GAMBAR -->
+                            <div class="berita-image-wrapper">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img
+                                    src="public/uploads/1778468891_IMG-20260511-WA0002.jpg"
+                                    class="card-img-top berita-img"
+                                    alt="Persiapan SPMB Tahun Ajaran 2026/2027 Mulai Dilaksanakan."
+                                    style="
+                                        height:220px;
+                                        object-fit:cover;
+                                    "
+                                >
+
+                                <!-- KATEGORI -->
+                                <span class="badge kategori-badge">
+
+                                    Sekolah
+                                </span>
+
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- JUDUL -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Persiapan SPMB Tahun Ajaran 2026/2027 Mulai Dilaksanakan.
+                                </h5>
+
+                                <!-- ISI -->
+                                <p class="text-muted berita-text flex-grow-1">
+
+                                    Dalam rangka menyambut Sistem Penerimaan Murid Baru (SPMB) Tahun Ajaran 2026/2027, pihak SMA Negeri 1 Cigombong mulai me...
+
+                                </p>
+
+                                <!-- FOOTER -->
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <!-- TANGGAL -->
+                                    <small class="text-muted">
+
+                                        <i class="bi bi-calendar-event"></i>
+
+                                        10 May 2026
+                                    </small>
+
+                                    <small class="text-muted d-block mt-1">
+
+                                        <i class="bi bi-person"></i>
+
+                                        Humas
+                                    </small>
+
+                                    <!-- DETAIL -->
+                                    <a href="index.php?url=informasi/persiapan-spmb-tahun-ajaran-2026/2027-mulai-dilaksanakan."
+                                        class="btn btn-primary btn-sm rounded-pill px-3">
+
+                                        Baca
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                
+            
+        </div>
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <div class="row align-items-center gy-5">
+
+            <!-- BRAND -->
+            <div class="col-lg-6 text-center">
+
+                <!-- LOGO -->
+                <img src="assets/img/logo.png"
+                    alt="Logo SMAN 1 Cigombong"
+                    class="footer-logo mb-3">
+
+                <h4 class="fw-bold mb-3">
+                    SMAN 1 Cigombong
+                </h4>
+
+                <p class="footer-text mb-0">
+                    Portal informasi sekolah modern untuk
+                    siswa, guru, dan masyarakat.
+                </p>
+
+            </div>
+
+            <!-- KONTAK -->
+            <div class="col-lg-6">
+
+                <h4 class="fw-bold mb-4 text-center text-lg-start">
+                    Kontak
+                </h4>
+
+                <!-- WEBSITE -->
+                <div class="footer-contact-item">
+
+                    <img src="assets/img/web.png"
+                        alt="Website"
+                        class="footer-contact-icon">
+
+                    <a href="https://spmb.sman1cigombong.sch.id/index.php?url=kontak"
+                        target="_blank">
+
+                        spmb.sman1cigombong.sch.id
+
+                    </a>
+
+                </div>
+
+                <!-- INSTAGRAM -->
+                <div class="footer-contact-item">
+
+                    <img src="assets/img/instagram.png"
+                        alt="Instagram"
+                        class="footer-contact-icon">
+
+                    <a href="https://instagram.com/smancigo_official"
+                        target="_blank">
+
+                        smancigo_official
+
+                    </a>
+
+                </div>
+
+                <!-- TIKTOK -->
+                <div class="footer-contact-item">
+
+                    <img src="assets/img/tiktok.png"
+                        alt="TikTok"
+                        class="footer-contact-icon">
+
+                     <a href="https://www.tiktok.com/@humas.smancigo?is_from_webapp=1&sender_device=pc"
+                        target="_blank">
+                        Humas.smancigo
+                        
+                        </a>
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="text-center footer-copy">
+
+            Created by <strong>Team IT SMANCIGO</strong>
+            &copy; 2026
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- CKEDITOR -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+<!-- CUSTOM JS -->
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

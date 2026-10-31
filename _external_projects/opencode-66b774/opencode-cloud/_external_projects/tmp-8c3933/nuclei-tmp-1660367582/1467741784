@@ -1,0 +1,1 @@
+bq ls --format=prettyjson --project_id $projectId --dataset_id $datasetId

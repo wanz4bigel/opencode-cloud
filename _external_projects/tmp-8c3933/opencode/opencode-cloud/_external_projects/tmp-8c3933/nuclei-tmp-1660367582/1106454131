@@ -1,0 +1,1 @@
+ossutil --version >/dev/null 2>&1 && echo "ossutil is installed." || echo "ossutil is not installed."

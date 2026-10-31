@@ -1,0 +1,17 @@
+HTTP 302 https://challenges.cloudflare.com/turnstile/v0/api.js
+HTTP 200 https://challenges.cloudflare.com/turnstile/v0/g/c787ce48cf6b/api.js
+HTTP 200 https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/p8po3
+HTTP 200 https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/1642656179:1793384057:
+HTTP 200 blob:https://challenges.cloudflare.com/37e6b658-f69c-437f-b0cc-16afdf95496c
+HTTP 401 https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a52d240c4d6ee8d8/1793
+HTTP 200 https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/ci/a52d240c4d6ee8d8/17933
+HTTP 200 blob:https://challenges.cloudflare.com/37e6b658-f69c-437f-b0cc-16afdf95496c
+HTTP 200 blob:https://challenges.cloudflare.com/37e6b658-f69c-437f-b0cc-16afdf95496c
+HTTP 200 https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/1642656179:1793384057:
+HTTP 200 blob:https://challenges.cloudflare.com/cbfcc1c2-e9e7-4f0d-81bd-f15d8470c60a
+info: {"turnstile":"object","widget":true,"iframe":[]}
+ronde 0: frame="" response=0 char
+ronde 1: frame="" response=0 char
+ronde 2: frame="" response=0 char
+ronde 3: frame="" response=0 char
+ronde 4: frame="" response=0 char

@@ -1,0 +1,1 @@
+az vm show --ids "$ids" --query 'storageProfile.{"osDiskType":osDisk.managedDisk.id,"dataDiskType":dataDisks[*].managedDisk.id}'

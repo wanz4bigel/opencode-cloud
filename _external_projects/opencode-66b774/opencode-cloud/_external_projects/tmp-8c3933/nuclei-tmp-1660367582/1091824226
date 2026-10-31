@@ -1,0 +1,1 @@
+aliyun ecs DescribeDisks --InstanceId $instanceid --region $region

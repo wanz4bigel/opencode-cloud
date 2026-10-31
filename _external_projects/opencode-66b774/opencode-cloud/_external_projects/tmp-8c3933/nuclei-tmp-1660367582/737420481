@@ -1,0 +1,1 @@
+aliyun rds DescribeParameters --DBInstanceId $dbinstanceid --region $region | jq -r '.RunningParameters.DBInstanceParameter[] | select(.ParameterName == "log_duration") | {ParameterName, ParameterValue}'

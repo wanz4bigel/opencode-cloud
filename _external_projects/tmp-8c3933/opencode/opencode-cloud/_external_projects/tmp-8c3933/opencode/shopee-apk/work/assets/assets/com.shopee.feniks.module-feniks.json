@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "beta",
+  "time": "2025-09-12 08:09:21.349",
+  "version": "0.0.1-release_359-cd1d788-beta",
+  "branch": "release/359",
+  "commitId": "cd1d78829673d7c5e146919e52080688e4b4b2fc",
+  "moduleCommitId": "b9fd39cb60559b2c6812cca4d29abfd1dc957b1f",
+  "lastMessage": "Merge branch \u0027hujian/android_15_16k_from_465454bd\u0027 into \u0027release/359\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.feniks",
+  "artifactId": "module-feniks",
+  "path": ":module-feniks",
+  "remoteUrl": "gitlab@git.garena.com:wentao.zang/feniks.git"
+}

@@ -1,0 +1,1 @@
+aws cloudfront get-distribution-config --id $distribution --query 'DistributionConfig.CacheBehaviors.Items[*].Compress' --region $region --output text

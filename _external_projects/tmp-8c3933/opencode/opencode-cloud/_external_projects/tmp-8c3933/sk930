@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: *?utm_medium=*
+Disallow: *?fbclid=*
+Disallow: *?q=*
+
+User-Agent: GPTBot
+Disallow: /
+
+Sitemap: https://www.sukabumiupdate.com/sitemap.xml

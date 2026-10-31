@@ -1,0 +1,1 @@
+gcloud compute images get-iam-policy $imageName --project $projectId --format="json(bindings[].members[])"

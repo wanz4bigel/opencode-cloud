@@ -1,0 +1,1 @@
+gcloud compute instances describe $instanceUrl --zone $zone --project $projectId --format="json(status)"

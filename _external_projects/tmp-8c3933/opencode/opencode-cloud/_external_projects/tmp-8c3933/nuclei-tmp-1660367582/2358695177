@@ -1,0 +1,1 @@
+gsutil iam get $bucketName --format=json | jq -r '.bindings[].members[]? // "null"'

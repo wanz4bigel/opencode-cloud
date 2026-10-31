@@ -1,0 +1,1 @@
+gcloud compute backend-services describe $backendServiceName --global --format="json(cdnPolicy.signedUrlKeyNames)"

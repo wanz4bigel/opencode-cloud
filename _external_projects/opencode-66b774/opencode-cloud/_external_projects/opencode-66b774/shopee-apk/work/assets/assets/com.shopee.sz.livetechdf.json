@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2026-09-16 18:56:46.452",
+  "version": "0.123.0",
+  "branch": "a9a4beb1a453f194654268a65ef91d4943b44c2a",
+  "commitId": "a9a4beb1a453f194654268a65ef91d4943b44c2a",
+  "moduleCommitId": "06e27312863abe42d6e6d9ada78459f127d2edbc",
+  "lastMessage": "Merge branch \u0027version/3.83/main\u0027 into \u0027master\u0027",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "livetechdf",
+  "path": ":livetechdf",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/coreplayersdk/mmcavplayer.git"
+}

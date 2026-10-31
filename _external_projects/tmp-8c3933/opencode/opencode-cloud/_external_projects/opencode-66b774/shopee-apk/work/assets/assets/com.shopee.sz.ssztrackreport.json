@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-09-17 14:26:14.912",
+  "version": "0.226.1",
+  "branch": "56cef1a0fc203b2c854b35f8fb10973195eb73f2",
+  "commitId": "56cef1a0fc203b2c854b35f8fb10973195eb73f2",
+  "moduleCommitId": "56cef1a0fc203b2c854b35f8fb10973195eb73f2",
+  "lastMessage": "Merge branch \u0027version-3.83/bugfix/android-stop-crash-fix-zhencz\u0027 into \u0027v3.83\u0027",
+  "extraInfo": "v3.83",
+  "groupId": "com.shopee.sz",
+  "artifactId": "ssztrackreport",
+  "path": ":ssztrackreport",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/coreplayersdk/MMCLiveStreamer.git"
+}

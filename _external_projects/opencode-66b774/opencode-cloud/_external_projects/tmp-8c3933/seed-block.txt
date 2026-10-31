@@ -1,0 +1,154 @@
+const CATEGORY_SEED = [
+  ["Colmek ABG", "colmek-abg"],
+  ["Colmek Janda", "colmek-janda"],
+  ["Colmek Mahasiswi", "colmek-mahasiswi"],
+  ["Colmek Amoy", "colmek-amoy"],
+  ["Colmek Toge", "colmek-toge"],
+  ["Colmek Toket", "colmek-toket"],
+  ["Colmek Hijab", "colmek-hijab"],
+  ["Colmek Mandi", "colmek-mandi"],
+  ["Colmek Selingkuh", "colmek-selingkuh"],
+  ["Colmek Kamera HP", "colmek-kamera-hp"],
+  ["Colmek Live", "colmek-live"],
+  ["Ibu-ibu Girang", "ibu-ibu-girang"],
+  ["Cewek Kantor", "cewek-kantor"],
+  ["Jepang Tanpa Sensor", "jepang-tanpa-sensor"],
+  ["Korea Beranotasi", "korea-beranotasi"],
+  ["Bule Beranotasi", "bule-beranotasi"],
+  ["Lokal Full Sensor", "lokal-full-sensor"],
+  ["Viral TikTok", "viral-tiktok"]
+];
+
+// Sumber video contoh: tiap alamat di bawah sudah dites menjawab HTTP 200/206 dari
+// server ini (npm run probe). Durasi ikut file aslinya, jadi badge durasi di kartu
+// tidak bohong. Ganti dengan URL asli kapan pun lewat /admin.
+const W = "https://media.w3.org/2010/05/";
+const T = "https://test-videos.co.uk/vids/";
+const YT = (id) => `https://www.youtube.com/watch?v=${id}`;
+const SRC = [
+  [`${W}sintel/trailer.mp4`, 52],
+  [`${W}bunny/movie.mp4`, 60],
+  [`${W}bunny/trailer.mp4`, 11],
+  [`${W}video/movie_300.mp4`, 30],
+  [`${T}bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4`, 10],
+  [`${T}jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4`, 10],
+  [`${T}sintel/mp4/h264/360/Sintel_360_10s_1MB.mp4`, 10],
+  [`${T}jellyfish/mp4/h264/720/Jellyfish_720_10s_2MB.mp4`, 10],
+  [`${T}bigbuckbunny/webm/vp8/360/Big_Buck_Bunny_360_10s_1MB.webm`, 10],
+  ["https://mdn.github.io/shared-assets/videos/flower.mp4", 10],
+  ["https://mdn.github.io/shared-assets/videos/flower.webm", 10],
+  ["https://cdn.jsdelivr.net/gh/mediaelement/mediaelement-files/big_buck_bunny.mp4", 596],
+  ["https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4", 596],
+  ["https://download.samplelib.com/mp4/sample-5s.mp4", 5],
+  ["https://download.samplelib.com/mp4/sample-10s.mp4", 10],
+  ["https://download.samplelib.com/mp4/sample-15s.mp4", 15],
+  [YT("dQw4w9WgXcQ"), 213],
+  [YT("9bZkp7q19f0"), 253],
+  [YT("kJQP7kiw5Fk"), 282],
+  [YT("jNQXAC9IVRw"), 19],
+  [YT("60ItHLz5WEA"), 212],
+  [YT("hT_nvWreIhg"), 302],
+  [YT("CevxZvSJLk8"), 269],
+  [YT("3JZ_D3ELwOQ"), 249],
+  [YT("YQHsXMglC9A"), 236],
+  [YT("09R8_2nJtjg"), 230],
+  ["https://vimeo.com/76979871", 405]
+];
+
+// Katalog contoh per kategori: [judul, tag]. Sumbernya diputar lewat SRC supaya
+// host dan durasi bervariasi antar kartu.
+const CATALOG = {
+  "colmek-abg": [
+    ["Colmek ABG SMK Selesai Dua Ronde", "smk,lokal,hot"],
+    ["Colmek ABG Kosan Kebon Jeruk", "kos,jakarta,sempit"],
+    ["Colmek ABG Habis Voli Sore", "voli,olahraga,keringat"],
+    ["Colmek ABG Nunggu Buka Puasa", "ramadhan,rumah,siang"]
+  ],
+  "colmek-janda": [
+    ["Janda Baru Kening Nonton Drakor Sambil Colmek", "drakor,kos,soju"],
+    ["Colmek Janda Sultan Karawaci", "tangsel,kamar,mewah"],
+    ["Janda Kembang Colmek di Dapur", "dapur,rumah,celemek"],
+    ["Colmek Janda Dua Anak Nunggu Suami Pulang", "rumah,full,sore"]
+  ],
+  "colmek-mahasiswi": [
+    ["Mahasiswi Kos Colmek Pakai Headphone", "kos,headphone,aman"],
+    ["Colmek Mahasiswi Yogya Habis Bimbingan", "yogya,skripsi,lembur"],
+    ["Mahasiswi Kedokteran Colmek Nunggu Shift", "kampus,shift,jaga"],
+    ["Colmek Mahasiswi Bawa Ransel ke Kos", "kampus,ransel,kamar"]
+  ],
+  "colmek-amoy": [
+    ["Amoy Bandung Colmek di Kasur Kos", "bandung,kos,kasur"],
+    ["Amoy Jakarta Colmek Full Suara", "jakarta,suara,full"],
+    ["Colmek Amoy Senja di Kamar Kos", "senja,kamar,gelap"]
+  ],
+  "colmek-toge": [
+    ["Toge Bandung Colmek Sesudah Subuh", "bandung,full,subuh"],
+    ["Toge Lokal Colmek Slow Motion", "lokal,slowmo,kamar"],
+    ["Colmek Toge Habis Mandi Bunga Tujuh", "mandi,ramuan,harum"]
+  ],
+  "colmek-toket": [
+    ["Toket Gede Colmek Depan Cermin", "cermin,slowmo,kamar"],
+    ["Toket Kecil Colmek Kelihatan Sekali", "kecil,full,kamar"],
+    ["Colmek Toket Habis Olahraga", "olahraga,keringat,leging"]
+  ],
+  "colmek-hijab": [
+    ["Jilbab Abu-Abu Colmek di Kamar Kos", "jilbab,kos,abu"],
+    ["Colmek Mahasiswi Berjilbab Habis Ngaji", "ngaji,mahasiswi,sore"],
+    ["Hijab Tokeh Colmek Sendirian", "tokeh,sempit,malam"]
+  ],
+  "colmek-mandi": [
+    ["Colmek di Bak Mandi Air Dingin", "airdingin,kamar,mandi"],
+    ["Colmek Mandi Shampoo Sampai Berbusa", "shampoo,busa,licin"],
+    ["Colmek Habis Mandi Sore", "sore,handuk,kamar"]
+  ],
+  "colmek-selingkuh": [
+    ["Colmek Selingkuhan Jam Kantor", "kantor,siang,gesa"],
+    ["Janda Selingkuh Colmek di Dalam Mobil", "mobil,janda,siang"],
+    ["Colmek Selingkuh Sambil Nahan Suara", "suara,kamar,gesa"]
+  ],
+  "colmek-kamera-hp": [
+    ["Colmek Kamera HP Getar", "kamera,hp,getar"],
+    ["Colmek Pakai HP Murah", "kamera,hp,murah"],
+    ["Colmek Selfie Depan Laptop", "selfie,laptop,kamar"]
+  ],
+  "colmek-live": [
+    ["Colmek Live Interaksi Penonton", "live,chat,interaksi"],
+    ["Live Colmek Sawer Jempol", "live,sawer,jempol"],
+    ["Colmek Live Malam Minggu", "live,weekend,kamar"]
+  ],
+  "ibu-ibu-girang": [
+    ["Tante Girang Colmek Dua Jari", "tante,girang,jari"],
+    ["Tante Toko Kelontong Colmek di Belakang Kasir", "toko,kelontong,siang"],
+    ["Ibu-ibu Arisan Colmek di Kamar", "arisan,ibu,kamar"]
+  ],
+  "cewek-kantor": [
+    ["Cewek Kantor Colmek di Toilet Mall", "kantor,mall,toilet"],
+    ["Colmek SPG Expo Nunggu Booth Buka", "spg,expo,booth"],
+    ["Colmek Cewek SPBU Lembur Malam", "spbu,lembur,malam"]
+  ],
+  "jepang-tanpa-sensor": [
+    ["Colmek Cewek Jepang Tanpa Sensor", "jepang,asia,tanpasensor"],
+    ["Colmek Guru Les Bahasa Jepang", "jepang,les,guru"],
+    ["Colmek Cewek Jepang di Ryokan", "jepang,ryokan,kamar"]
+  ],
+  "korea-beranotasi": [
+    ["Colmek Cewek Korea di Room Karaoke", "korea,karaoke,room"],
+    ["Colmek Mahasiswi Korea di Hongdae", "korea,hongdae,mahasiswi"],
+    ["Colmek Cewek Korea Spa Onnuri", "korea,spa,handuk"]
+  ],
+  "bule-beranotasi": [
+    ["Colmek Cewek Bule di Pantai Bali", "bule,bali,pantai"],
+    ["Colmek Bule di Fitness Studio", "bule,fitness,studio"],
+    ["Colmek Cewek Bule Vila Canggu", "bule,canggu,vila"]
+  ],
+  "lokal-full-sensor": [
+    ["Colmek Lokal Full Sensor Versi Panjang", "sensor,panjang,hd"],
+    ["Colmek ABG Parkir Motor Sore", "parkir,motor,sore"],
+    ["Colmek Cewek Kos Bandung", "kos,bandung,kamar"]
+  ],
+  "viral-tiktok": [
+    ["Colmek Versi Viral 30 Detik", "viral,tiktok,potongan"],
+    ["Colmek Cewek TikTok Diadu", "viral,tiktok,adu"],
+    ["Colmek Compile Malam Ini", "viral,compile,malam"]
+  ]
+};

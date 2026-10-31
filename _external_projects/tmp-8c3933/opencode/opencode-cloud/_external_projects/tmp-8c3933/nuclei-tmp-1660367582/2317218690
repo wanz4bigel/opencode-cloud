@@ -1,0 +1,1 @@
+gcloud alpha monitoring policies list --project=$projectId --format="json(name)"

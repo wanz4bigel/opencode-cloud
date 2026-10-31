@@ -1,0 +1,21 @@
+🤖 @spam_test_bot siap nge-spam. (1 admin)
+   👤 Mode tamu: siap (tulis "@namabot spam 10" di grup mana pun, bot gak perlu gabung)
+   Tekan Ctrl+C buat berhenti.
+
+<--- Last few GCs --->
+
+[93349:0x3d5b2000]  1288638 ms: Scavenge (interleaved) 4087.6 (4097.9) -> 4083.9 (4097.9) MB, pooled: 0 MB, 11.48 / 0.00 ms  (average mu = 0.388, current mu = 0.380) allocation failure; 
+[93349:0x3d5b2000]  1289832 ms: Mark-Compact (reduce) 4089.9 (4100.2) -> 4082.0 (4091.2) MB, pooled: 0 MB, 442.63 / 0.00 ms  (+ 504.0 ms in 93 steps since start of marking, biggest step 8.7 ms, walltime since start of marking 974 ms) (average mu = 0.393, 
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0x942e80  [node]
+ 2: 0x75f71e node::OOMErrorHandler(char const*, v8::OOMDetails const&) [node]
+ 3: 0xc9a1e0  [node]
+ 4: 0xc9a2cf  [node]
+ 5: 0xf3dba5  [node]
+ 6: 0xf3dbd2  [node]
+ 7: 0xf3deca  [node]
+ 8: 0xf4ebca  [node]
+ 9: 0xf52f70  [node]
+10: 0x19f0c41  [node]

@@ -1,0 +1,1 @@
+aws iam list-attached-role-policies --role-name $(echo $rolearn | cut -d'/' -f2) --query 'AttachedPolicies[*].PolicyArn' --output json

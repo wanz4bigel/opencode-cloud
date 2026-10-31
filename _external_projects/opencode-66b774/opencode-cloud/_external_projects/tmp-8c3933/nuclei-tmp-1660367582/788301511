@@ -1,0 +1,1 @@
+az storage container policy list --account-name "$accountName" --container-name "$containerName"

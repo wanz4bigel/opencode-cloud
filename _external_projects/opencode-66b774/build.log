@@ -1,0 +1,38 @@
+
+> angin-mail@1.0.0 build
+> npm run build -w @angin/web
+
+
+> @angin/web@1.0.0 build
+> tsc -b && vite build
+
+[36mvite v7.3.7 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 1658 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                                               [39m[1m[2m  0.68 kB[22m[1m[22m[2m │ gzip:   0.40 kB[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-400-normal-BCR-5knY.woff2   [39m[1m[2m  4.66 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-500-normal-DejhKr-t.woff2   [39m[1m[2m  4.76 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-700-normal-D_igsEI4.woff2   [39m[1m[2m  4.79 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-400-normal-Br6HGNtH.woff    [39m[1m[2m  6.21 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-700-normal-Dui0LR26.woff    [39m[1m[2m  6.30 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-cyrillic-500-normal-CQ32KwDP.woff    [39m[1m[2m  6.30 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-400-normal-CqsZQCXg.woff2  [39m[1m[2m  7.54 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-700-normal-DCLlok61.woff2  [39m[1m[2m  7.58 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-500-normal-CPN1Info.woff2  [39m[1m[2m  7.59 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-400-normal-DZsjfPjH.woff2      [39m[1m[2m 10.35 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-400-normal-CBFElp5P.woff   [39m[1m[2m 10.42 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-700-normal-DxXBCdt7.woff   [39m[1m[2m 10.50 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-ext-500-normal-CYMi9jUC.woff   [39m[1m[2m 10.52 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-700-normal-BEEYYU4J.woff2      [39m[1m[2m 10.60 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-500-normal-BWC8e-kx.woff2      [39m[1m[2m 10.64 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32marchivo-vietnamese-wght-normal-XAtsl5Q_.woff2     [39m[1m[2m 13.24 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-400-normal-DM4nBGIh.woff       [39m[1m[2m 14.08 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-500-normal-BsOs1ffX.woff       [39m[1m[2m 14.32 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mmartian-mono-latin-700-normal-CkDhVUqs.woff       [39m[1m[2m 14.33 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32marchivo-latin-ext-wght-normal-C4zznr8T.woff2      [39m[1m[2m 32.61 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32marchivo-latin-wght-normal-E0tuGl4L.woff2          [39m[1m[2m 34.93 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[35mindex-BDsLp8wu.css                                [39m[1m[2m 71.67 kB[22m[1m[22m[2m │ gzip:  21.71 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-DZcQ8yON.js                                 [39m[1m[2m427.70 kB[22m[1m[22m[2m │ gzip: 135.86 kB[22m
+[32m✓ built in 1.52s[39m

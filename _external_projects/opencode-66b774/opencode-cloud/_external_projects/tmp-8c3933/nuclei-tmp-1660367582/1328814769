@@ -1,0 +1,1 @@
+az network nsg rule list --nsg-name $nsg --resource-group $resourcegroup --query "[?direction=='Inbound' && access=='Allow' && (protocol=='TCP' && destinationPortRange=='139' || protocol=='UDP' && (destinationPortRange=='137' || destinationPortRange=='138'))]"

@@ -1,0 +1,12 @@
+
+> angin-mail@1.0.0 seed
+> npm run seed -w @angin/server
+
+
+> @angin/server@1.0.0 seed
+> node src/seed-cli.js
+
+◇ injected env (0) from ../.env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+[angin] default domain ready: angin.test
+[angin] demo inbox seeded: halo@angin.test
+[angin] seed complete

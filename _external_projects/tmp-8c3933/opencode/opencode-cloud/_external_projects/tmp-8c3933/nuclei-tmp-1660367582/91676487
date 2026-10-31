@@ -1,0 +1,1 @@
+gcloud certificate-manager certificates describe $certificateName --project $projectId --format="json(createTime,expireTime)" | jq '[(.expireTime | fromdateiso8601) - (.createTime | fromdateiso8601) < 34444800] | any'

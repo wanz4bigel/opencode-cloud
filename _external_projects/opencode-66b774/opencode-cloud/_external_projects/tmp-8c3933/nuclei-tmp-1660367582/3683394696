@@ -1,0 +1,1 @@
+az cognitiveservices account show --name "$name" --resource-group "$resourceGroup" --query '{"encryptionKey":properties.encryption.keyVaultProperties.keyName}'

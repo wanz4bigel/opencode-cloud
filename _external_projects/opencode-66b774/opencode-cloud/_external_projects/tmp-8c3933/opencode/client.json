@@ -1,0 +1,15 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [ { "listen": "127.0.0.1", "port": 18080, "protocol": "http" } ],
+  "outbounds": [ {
+    "protocol": "vmess",
+    "settings": { "vnext": [ { "address": "127.0.0.1", "port": 18443,
+      "users": [ { "id": "91239f26-c5e1-426d-b878-cb26abc134c7", "alterId": 0, "security": "auto", "level": 1 } ] } ] },
+    "streamSettings": {
+      "network": "ws",
+      "security": "tls",
+      "tlsSettings": { "insecure": true, "allowInsecure": true, "serverName": "v2ray.local" },
+      "wsSettings": { "path": "/kndl4uxh-fzxy", "headers": { "Host": "v2ray.local" } }
+    }
+  } ]
+}

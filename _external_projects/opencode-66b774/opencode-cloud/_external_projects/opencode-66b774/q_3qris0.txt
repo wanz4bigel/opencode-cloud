@@ -1,0 +1,24 @@
+Refreshing token...
+Fetching profile...
+Refreshing token...
+Fetching profile...
+==> NO. 3: Bundling Poco F9 | Rp 1300000
+Fetching package...
+Subscriber ID changed from None to 238736013. Resetting decoy data.
+Refreshing decoy data for: default-qris0
+Fetching package family...
+Trying is_enterprise=True, migration_type=NONE.
+Success with is_enterprise=True, migration_type=NONE. Family name: Kuota Aplikasi BIZ 2GB
+Gagal menemukan opsi paket yang sesuai.
+Error fetching decoy data: 'NoneType' object is not subscriptable
+Fetching package...
+{
+  "code": "111",
+  "code_detail": "111",
+  "status": "FAILED",
+  "message": "REQUEST_BODY_MALFORMED",
+  "title": "",
+  "description": ""
+}
+Error getting package: Unknown error
+Paket decoy gagal dimuat.

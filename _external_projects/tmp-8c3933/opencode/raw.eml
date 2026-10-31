@@ -1,0 +1,37 @@
+From: "Angin Test" <sender@example.com>
+To: <smoke@angin.test>
+Subject: Kode verifikasi 482913
+Date: Sat, 31 Oct 2026 12:00:00 +0000
+Message-ID: <smoke-test-1@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MIXED"
+
+--MIXED
+Content-Type: multipart/alternative; boundary="ALT"
+
+--ALT
+Content-Type: text/plain; charset="utf-8"
+
+Halo! Kode verifikasi Anda adalah 482913. Kode berlaku 10 menit.
+
+--ALT
+Content-Type: text/html; charset="utf-8"
+
+<div style="font-family:Arial,sans-serif;padding:24px;background:#f5f2e9">
+<h1 style="color:#12324a">Verifikasi akun</h1>
+<p>Gunakan kode berikut untuk masuk:</p>
+<p style="font-size:32px;letter-spacing:6px;font-weight:bold;color:#c2410c">482913</p>
+<img src="https://example.com/pixel.png" width="1" height="1" alt="">
+<p><a href="https://example.com/verify">Buka halaman verifikasi</a></p>
+</div>
+
+--ALT--
+
+--MIXED
+Content-Type: text/plain; charset="utf-8"; name="catatan.txt"
+Content-Disposition: attachment; filename="catatan.txt"
+Content-Transfer-Encoding: base64
+
+TGFtcGlyYW4gdWppIEFuZ2luLgo=
+
+--MIXED--

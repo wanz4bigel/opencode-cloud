@@ -1,0 +1,50 @@
+{
+  "sdkVersion": "9.3.1",
+  "android": {
+    "featureAndModel": [
+      {
+        "name": "icacv9_0_0",
+        "percentage": 100,
+        "priority": 1,
+        "model": [
+          {
+            "name": "qualityCheck_0_0_1_ID.mnn",
+            "md5": "61067bfd104d7a3b2af274d8c925caf0"
+          },
+          {
+            "name": "qualityCheck_0_0_2_PH.mnn",
+            "md5": "75c8ca98df26fa3d47c05f4245165a2f"
+          },
+          {
+            "name": "qualityCheck_0_0_1_BR.mnn",
+            "md5": "c01003e443e070d02eea0fcc28e97ec2"
+          },
+          {
+            "name": "qualityCheck_0_0_1_TH.mnn",
+            "md5": "eb25faeca3cec1f93ddb00a5faba9d73"
+          },
+          {
+            "name": "qualityCheck_0_0_2_VN.mnn",
+            "md5": "c244e7aaf5cf8ee9e27a3e26c59b285c"
+          },
+          {
+            "name": "fieldDetection_0_0_9.mnn",
+            "md5": "6e89fcf3c11fb6555ce1e12b9b3e8cb3"
+          },
+          {
+            "name": "fieldQC_0_0_2.mnn",
+            "md5": "af518146aed1d3d3b8fc3a8b098a3b8b"
+          },
+          {
+            "name": "cardDetector_0_6_3.mnn",
+            "md5": "b12ca26520e292630f66d56b43c2458c"
+          },
+          {
+            "name": "flashCheck_0_0_1.mnn",
+            "md5": "b2bac1259cf91ecfd2a73af887736c01"
+          }
+        ]
+      }
+    ]
+  }
+}

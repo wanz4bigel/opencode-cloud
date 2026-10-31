@@ -1,0 +1,20 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : coolmaxx
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.57.223.165
+Port TLS       : 18462
+Port none TLS  : 
+Port any       : -
+id             : bf4b1c77-b9e1-4963-95ee-4821f144b5ee
+alterId        : 0
+Security       : auto
+network        : ws
+path ws        : /fg134zs2-uz8z
+Cert SHA256    : 859454d7474c2e4b1151d40b392f83f0d6d57bbfa513a5ff5779622b7740e569
+Limit IP       : -
+Expired On     : 2026-10-28 19:14:24 WIB
+————————————————————————————————————
+[1;36m[vmess][0m LINK UTAMA : vmess://eyJ2IjoiMiIsInBzIjoiY29vbG1heHgiLCJhZGQiOiIyMC41Ny4yMjMuMTY1IiwicG9ydCI6MTg0NjIsImlkIjoiYmY0YjFjNzctYjllMS00OTYzLTk1ZWUtNDgyMWYxNDRiNWVlIiwibmV0Ijoid3MiLCJob3N0IjoiMjAuNTcuMjIzLjE2NSIsInBhdGgiOiIvZmcxMzR6czItdXo4eiIsInRscyI6InRscyJ9

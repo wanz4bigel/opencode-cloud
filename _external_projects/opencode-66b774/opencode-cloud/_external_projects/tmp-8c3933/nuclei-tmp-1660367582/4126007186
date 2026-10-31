@@ -1,0 +1,1 @@
+az servicebus namespace network-rule-set show --namespace-name "$name" --resource-group "$resourceGroup" --query '{publicNetworkAccess:publicNetworkAccess,ipRules:ipRules}'

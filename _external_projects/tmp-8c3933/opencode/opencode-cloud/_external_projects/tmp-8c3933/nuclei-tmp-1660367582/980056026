@@ -1,0 +1,1 @@
+gcloud compute ssl-policies describe $sslPolicy --format="json(minTlsVersion,profile,enabledFeatures)"

@@ -1,0 +1,1 @@
+aws acm list-certificates --region $region --certificate-statuses ISSUED --query 'CertificateSummaryList[*].CertificateArn' --output json

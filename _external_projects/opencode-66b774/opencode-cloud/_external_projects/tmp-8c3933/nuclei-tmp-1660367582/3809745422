@@ -1,0 +1,1 @@
+aws rds describe-db-clusters --region $region --db-cluster-identifier $cluster --query 'DBClusters[*].CopyTagsToSnapshot'

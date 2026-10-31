@@ -1,0 +1,1 @@
+aws sns get-topic-attributes --topic-arn $topicArn --query Attributes.Policy --output text

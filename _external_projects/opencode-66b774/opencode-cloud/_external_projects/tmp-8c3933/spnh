@@ -1,0 +1,22 @@
+HTTP/2 302 
+server: nginx
+date: Wed, 28 Oct 2026 10:33:13 GMT
+content-type: text/html; charset=utf-8
+content-length: 208
+location: https://web.archive.org/
+x-app-server: wwwb-app262-dc8
+x-ts: 302
+x-tr: 5
+server-timing: TR;dur=0,Tw;dur=0,Tc;dur=3
+set-cookie: wb-p-SERVER=wwwb-app262; path=/
+x-location: All
+x-as: 8075
+x-rl: 0
+x-na: 0
+x-page-cache: MISS
+server-timing: MISS
+x-nid: Microsoft
+referrer-policy: no-referrer-when-downgrade
+permissions-policy: interest-cohort=()
+x-sd: 0
+

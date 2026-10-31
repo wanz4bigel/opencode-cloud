@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "minorRelease",
+  "time": "2021-06-28 15:19:41.976",
+  "version": "2.4.0",
+  "branch": "master",
+  "commitId": "ea897307509ae2c569bb6d1ca71d4cd2cba86fb4",
+  "moduleCommitId": "814f60e99fa5382806e8759991e4b912ccf0bbe6",
+  "lastMessage": "Merge branch \u0027dev/2.x\u0027 into \u0027master\u0027",
+  "extraInfo": "pods",
+  "groupId": "com.shopee.foody",
+  "artifactId": "spear",
+  "path": ":spear",
+  "remoteUrl": "https://gitlab-ci-token:q2Hatr1F3qB9jgAXYepj@git.garena.com/shopee/foody/foody-android-lib.git"
+}

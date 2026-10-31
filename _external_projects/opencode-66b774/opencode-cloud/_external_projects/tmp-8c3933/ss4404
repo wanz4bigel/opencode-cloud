@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - SMAN 1 Cigombong</title>
+
+    <script type="module" src="http://[::1]:5173/@vite/client"></script><link rel="stylesheet" href="http://[::1]:5173/resources/css/app.css" /><script type="module" src="http://[::1]:5173/resources/js/app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f766e, #16a34a, #22c55e);
+            font-family: Arial, sans-serif;
+        }
+
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 16px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 490px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+            animation: fadeIn 0.6s ease;
+            overflow: hidden;
+        }
+
+        .login-card .card-body {
+            padding: 35px 40px 27px;
+        }
+
+        .school-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #dcebe1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .school-logo img {
+            width: 86%;
+            height: 86%;
+            object-fit: contain;
+        }
+
+        .school-name {
+            color: #13834e;
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin: 12px 0 8px;
+        }
+
+        .school-subtitle {
+            color: #66756c;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .vision-box {
+            background: #eaf6ed;
+            border-left: 4px solid #16a34a;
+            border-radius: 10px;
+            padding: 13px 15px;
+            margin: 0 0 24px;
+        }
+
+        .vision-heading {
+            color: #15803d;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 7px;
+        }
+
+        .vision-text {
+            color: #344b3c;
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Form login */
+        .login-card .form-label {
+            color: #263d30;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .login-card .form-control {
+            background-color: #eaf1ff;
+            border: 1px solid #d7e0ec;
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .login-card .form-control:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+        }
+
+        .login-card .btn-login,
+        .login-card button.btn-success {
+            width: 100%;
+            background: #198754;
+            border: none;
+            color: #ffffff;
+            padding: 11px;
+            border-radius: 9px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .login-card .btn-login:hover,
+        .login-card button.btn-success:hover {
+            background: #146c43;
+            color: #ffffff;
+        }
+
+        .login-card .text-danger {
+            font-size: 12px;
+        }
+
+        .login-footer {
+            text-align: center;
+            color: #64756a;
+            font-size: 12px;
+            line-height: 1.8;
+            margin-top: 25px;
+        }
+
+        .login-footer .footer-subtitle {
+            font-size: 11px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .login-card {
+                max-width: 420px;
+                border-radius: 20px;
+            }
+
+            .login-card .card-body {
+                padding: 28px 23px 23px;
+            }
+
+            .school-logo {
+                width: 82px;
+                height: 82px;
+            }
+
+            .school-name {
+                font-size: 21px;
+            }
+
+            .vision-text {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            <div class="card-body">
+
+                
+                <div class="text-center mb-3">
+
+                    <div class="school-logo">
+                        <img
+                            src="https://learning.sman1cigombong.sch.id/images/logo-sman1-cigombong.png"
+                            alt="Logo SMAN 1 Cigombong">
+                    </div>
+
+                    <h1 class="school-name">
+                        SMAN 1 CIGOMBONG
+                    </h1>
+
+                    <p class="school-subtitle">
+                        Sistem Pembelajaran Digital Sekolah
+                    </p>
+
+                </div>
+
+                
+                <div class="vision-box text-center">
+
+                    <div class="vision-heading">
+                        VISI SEKOLAH
+                    </div>
+
+                    <p class="vision-text">
+                        Terwujudnya Peserta didik SMAN 1 Cigombong
+                        yang Beriman dan Bertaqwa, Mandiri,
+                        Kolaboratif, Berprestasi serta Peduli Lingkungan
+                    </p>
+
+                </div>
+
+                
+                <form method="POST" action="https://learning.sman1cigombong.sch.id/login">
+
+        <input type="hidden" name="_token" value="rflbeexwH83D4H5Bx8JqBkij70ur38gSLWFNtJZf" autocomplete="off">
+
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                NISN / NIP
+
+            </label>
+
+
+            <input
+
+                type="text"
+
+                name="login_id"
+
+                class="form-control"
+
+                value=""
+                autocomplete="username"
+                inputmode="text"
+
+                required
+
+                autofocus>
+
+
+            
+
+        </div>
+
+
+
+
+
+        <div class="mb-3">
+
+
+            <label class="form-label">
+
+                Password
+
+            </label>
+
+
+            <input
+
+                type="password"
+
+                name="password"
+
+                class="form-control"
+
+                required>
+
+
+            
+
+
+        </div>
+
+
+
+
+
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+
+            <div>
+
+                <input
+
+                    type="checkbox"
+
+                    name="remember">
+
+
+                <span class="small">
+
+                    Ingat saya
+
+                </span>
+
+            </div>
+
+
+
+            <span class="small text-muted">Gunakan NISN/NIP dan password yang terdaftar.</span>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <button
+
+            class="btn btn-success w-100 rounded-3">
+
+
+            <i class="bi bi-box-arrow-in-right"></i>
+
+            Login
+
+
+        </button>
+
+
+
+
+
+    </form>
+
+                
+                <div class="login-footer">
+
+                    &copy; 2026 SMAN 1 Cigombong
+
+                    <div class="footer-subtitle">
+                        Sistem Pembelajaran Digital Sekolah
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

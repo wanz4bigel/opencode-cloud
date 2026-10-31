@@ -1,0 +1,1 @@
+gcloud functions describe $functionName --region=us-central1 --format="json(vpcConnector)"

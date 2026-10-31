@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Keep-Alive: timeout=5, max=100
+Vary: accept, content-type
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, max-age=0, no-store, private
+Content-Type: text/html; charset=UTF-8
+set-cookie: wordpress_test_cookie=WP%20Cookie%20check; path=/; secure; HttpOnly
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self';
+Referrer-Policy: strict-origin-when-cross-origin
+X-LiteSpeed-Cache-Control: no-cache
+Transfer-Encoding: chunked
+Date: Wed, 28 Oct 2026 08:14:07 GMT
+Server: LiteSpeed
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+

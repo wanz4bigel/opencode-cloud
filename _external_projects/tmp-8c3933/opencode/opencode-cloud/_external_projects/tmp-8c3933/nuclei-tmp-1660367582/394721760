@@ -1,0 +1,1 @@
+gcloud certificate-manager certificates list --project $projectId --format="json(name)"

@@ -1,0 +1,1 @@
+az webapp show --ids "$ids" --query 'clientCertEnabled' --output json

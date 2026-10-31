@@ -1,0 +1,7 @@
+Xray 26.10.21 (Xray, Penetrates Everything.) 1b1647c (go1.27.3 linux/amd64)
+A unified platform for anti-censorship.
+2026/10/28 11:58:05.023968 [Info] infra/conf/serial: Reading config: &{Name:/tmp/opencode/f2/client-transport.json Format:json}
+2026/10/28 11:58:05.024662 [Warning] common/errors: The feature gRPC transport (with unnecessary costs, etc.) is deprecated, not recommended for using and might be removed. Please migrate to XHTTP stream-up H2 as soon as possible.
+2026/10/28 11:58:05.024998 [Warning] common/errors: The feature VMess (with no Forward Secrecy, etc.) is deprecated, not recommended for using and might be removed. Please migrate to VLESS Encryption as soon as possible.
+2026/10/28 11:58:05.025422 [Warning] core: Xray 26.10.21 started
+2026/10/28 11:58:09.023398 from 127.0.0.1:56140 accepted //www.google.com:443

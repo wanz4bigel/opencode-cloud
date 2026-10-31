@@ -1,0 +1,4 @@
+https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/polyfill.d86e5ceef3caefa1.js
+https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/polyfill.6d66a9f4abfc0453.js
+https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/polyfill.7b130ff53107c239.js
+https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/polyfill.e91a033830f038f9.js

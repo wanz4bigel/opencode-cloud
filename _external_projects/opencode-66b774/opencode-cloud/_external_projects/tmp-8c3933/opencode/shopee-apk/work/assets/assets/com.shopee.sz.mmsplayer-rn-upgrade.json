@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "test",
+  "time": "2026-04-23 14:31:55.218",
+  "version": "0.0.2.1776925915210.47f8087.test",
+  "branch": "v3.68/exoplayer_down_support",
+  "commitId": "47f80873fa1a6f31971689352304261d6b25ab14",
+  "moduleCommitId": "b8f38fe792ba78218021d07e36fcb03734cdc61c",
+  "lastMessage": "update code for dependency",
+  "extraInfo": "v3.68/exoplayer_down_support",
+  "groupId": "com.shopee.sz",
+  "artifactId": "mmsplayer-rn-upgrade",
+  "path": ":mmsplayer-rn-upgrade",
+  "remoteUrl": "https://git.garena.com/shopee/ssz-client/android/toc/mmsplayer.git"
+}

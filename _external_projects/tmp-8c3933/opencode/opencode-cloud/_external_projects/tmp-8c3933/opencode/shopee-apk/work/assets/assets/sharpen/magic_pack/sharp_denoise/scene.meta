@@ -1,0 +1,147 @@
+{
+    "Version": "0.0.1",
+    "Scene": {
+        "Systems": ["CameraSystem", "QuadSystem", "SharpBrightSystem"],
+        "Entities":
+        [
+            {
+                "Name":"CameraPreFrame0",
+                "Components":
+                [
+                    {
+                        "__Type":"Transform",
+                        "Tanslate":[0.0, 0.0, 0.0],
+                        "Scale":[1.0, 1.0, 1.0],
+                        "Orientation":[0.0, 0.0, 0.0]
+                    },
+                    {
+                        "__Type":"BlitCamera",
+                        "Tag":0,
+                        "ColorBitFlag":"eColor",
+                        "SourceTarget": "",
+                        "Target":"texture/cameraPreFrame.rtex"
+                    }
+                ]
+            },            
+
+            {
+                "Name":"Camera0",
+                "Components":
+                [
+                    {
+                        "__Type":"Transform",
+                        "Tanslate":[0.0, 0.0, 0.0],
+                        "Scale":[1.0, 1.0, 1.0],
+                        "Orientation":[0.0, 0.0, 0.0]
+                    },
+                    {
+                        "__Type":"Camera",
+                        "Tag":1,
+                        "ProjectionType":"eOrthographic",
+                        "ColorBitFlag":"eColor",
+                        "ClearColor":[0.0, 0.0, 0.0, 1.0],
+                        "Target":"texture/camera0.rtex"
+                    }
+                ]
+            },
+			{
+				"Name":"DenoiseEffectEntity",
+				"Tag":1,
+				"Components":
+				[	
+					{
+						"__Type":"Transform",
+						"Tanslate":[0.0, 0.0, 0.0],
+						"Scale":[1.0, 1.0, 1.0],
+						"Orientation":[0.0, 0.0, 0.0]
+					},
+					{
+						"__Type":"QuadEffect",
+						"Rect":[0.0, 0.0, 720.0, 1280.0],
+						"Material":["material/hue_filter0.mat"],
+						"RenderState":["state/default.rsta"]
+					}
+				]
+			},
+            {
+                "Name":"CameraPreFrame1",
+                "Components":
+                [
+                    {
+                        "__Type":"Transform",
+                        "Tanslate":[0.0, 0.0, 0.0],
+                        "Scale":[1.0, 1.0, 1.0],
+                        "Orientation":[0.0, 0.0, 0.0]
+                    },
+                    {
+                        "__Type":"BlitCamera",
+                        "Tag":2,
+                        "ColorBitFlag":"eColor",
+                        "SourceTarget": "texture/camera0.rtex",
+                        "Target":"texture/cameraPreFrame.rtex"
+                    }
+                ]
+            },
+            {
+                "Name":"Camera1",
+                "Components":
+                [
+                    {
+                        "__Type":"Transform",
+                        "Tanslate":[0.0, 0.0, 0.0],
+                        "Scale":[1.0, 1.0, 1.0],
+                        "Orientation":[0.0, 0.0, 0.0]
+                    },
+                    {
+                        "__Type":"Camera",
+                        "Tag":3,
+                        "ProjectionType":"eOrthographic",
+                        "ColorBitFlag":"eColor",
+                        "ClearColor":[0.0, 0.0, 0.0, 1.0],
+                        "Target":"texture/camera1.rtex"
+                    }
+                ]
+            },
+            {
+                "Name": "SharpBrightEntity",
+                "Tag": 3,
+                "Components": [
+					{
+						"__Type":"Transform",
+						"Tanslate":[0.0, 0.0, 0.0],
+						"Scale":[1.0, 1.0, 1.0],
+						"Orientation":[0.0, 0.0, 0.0]
+					},
+                    {
+                        "__Type": "SharpBrightEffect",
+						"Rect":[0.0, 0.0, 720.0, 1280.0],
+						"Material":["material/hue_filter1.mat"],
+						"RenderState":["state/default.rsta"],
+                        "Sharp": 0.18,
+                        "Bright": 0.0,
+                        "DenoiseLevel": 0.0,
+                        "Version": 0.0
+                    }
+                ]
+            },
+            {
+                "Name": "OutputCamera",
+                "Components": [
+                    {
+                        "__Type": "Transform",
+                        "Tanslate":[0.0, 0.0, 0.0],
+                        "Scale":[1.0, 1.0, 1.0],
+                        "Orientation":[0.0, 0.0, 0.0]
+                    },
+                    {
+                        "__Type": "BlitCamera",
+                        "Tag": 4,
+                        "ColorBitFlag": "eColor",
+                        "SourceTarget": "texture/camera1.rtex",
+                        "Target": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

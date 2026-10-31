@@ -1,0 +1,111 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 18500,
+      "protocol": "vmess",
+      "tag": "in-vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "4e2075ff-a77b-4c2f-a6dd-78a9edff0d1a",
+            "alterId": 0,
+            "email": "github-actions",
+            "level": 1
+          }
+        ],
+        "decoding": "alternatives"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "minVersion": "1.2",
+          "ciphers": "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256",
+          "certificates": [
+            {
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----\nMIIDNzCCAh+gAwIBAgIUOEXAP4QKpItFjM2WBZBKXiwITF4wDQYJKoZIhvcNAQEL\nBQAwHDEaMBgGA1UEAwwRdjJyYXkuZXhhbXBsZS5jb20wHhcNMjYxMDI4MTEzODQw\nWhcNMjYxMTI3MTEzODQwWjAcMRowGAYDVQQDDBF2MnJheS5leGFtcGxlLmNvbTCC\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN28/kvrKmSJcoE7DTDG6rbr\nyWG75db34jWJuRJJkMojdABuL5eq0G+dtoyqnJ2MCRKl2Dlo2m7AKK+nF8vgHoda\nTp/Lzb5bBVgD4oIeGecaD3r0YN4ofKYBUdaoWj3zxDHkfLFM8Kvi/cWi/mQAjEqx\n1dm23nMVn86sSKfUdXQvP3PVymh1Q+nv1yXT9Ti30s1hFCMi/4lJeelUgP06++FJ\n9U4FaUq2qV5gX/gWNrjSknaajpygEOJ8kjjT96bMokU5Ddp17+RqTPDI1iirvA5l\n48wb21M8OuP3HA+2F3G2bMhJIpkabutUuDY+adCV/8xHmhQhkomudAy3sF0fVo0C\nAwEAAaNxMG8wHQYDVR0OBBYEFEYuh/anrcpGNn8u4hdSmllYCAb/MB8GA1UdIwQY\nMBaAFEYuh/anrcpGNn8u4hdSmllYCAb/MA8GA1UdEwEB/wQFMAMBAf8wHAYDVR0R\nBBUwE4IRdjJyYXkuZXhhbXBsZS5jb20wDQYJKoZIhvcNAQELBQADggEBADF+I//i\n+rerBfnjrtd2TnodzzS3OWq8aL74+3fbWKF2AZfcPr6a5IjJzoWEpOr+Z3r6BXA4\nEyGVtvC0NGp80b4CPrKgvEIhcb3myRhCH892B2J2rJ2aQ9RD42us/XYhGySYSRQ2\niHtVt3YzqGV5h+5ndsESXollWkveT6FS0qDV+HJsUPeLt3N3rjZ/cuPDmF8HGK0/\n/CPxajv4OroLRAj0O3sikGXtx4H8DQYfbaq3LXHAQmy6lf3XxqD+x58xYVPwMMlH\nd2FSCinpmwm1YZ5ZmWVd3REbr8lW6vc3o85CeegdQ40o7h+2BZWEOyjUxgFq9iQ4\nlLBW6rIq2BvmwrM=\n-----END CERTIFICATE-----"
+              ],
+              "key": [
+                "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDdvP5L6ypkiXKB\nOw0wxuq268lhu+XW9+I1ibkSSZDKI3QAbi+XqtBvnbaMqpydjAkSpdg5aNpuwCiv\npxfL4B6HWk6fy82+WwVYA+KCHhnnGg969GDeKHymAVHWqFo988Qx5HyxTPCr4v3F\nov5kAIxKsdXZtt5zFZ/OrEin1HV0Lz9z1cpodUPp79cl0/U4t9LNYRQjIv+JSXnp\nVID9OvvhSfVOBWlKtqleYF/4Fja40pJ2mo6coBDifJI40/emzKJFOQ3ade/kakzw\nyNYoq7wOZePMG9tTPDrj9xwPthdxtmzISSKZGm7rVLg2PmnQlf/MR5oUIZKJrnQM\nt7BdH1aNAgMBAAECggEAaJrRCHWfYSBqUUbPWTRt4+9l6GJg8kGsiH85PMRRttp0\nzgMtFoqxnAY16TRPgA9g9Fgioiqx6U9jokHcewR2wnm6362gmO2NntDuWV3j8F8d\n8G47CHLnItU6i16Oe+10n+jfXjEi1KPX/hV/lyOfC1nLvdKELJyF8FTcTbhv1GfY\njVdkzwONuIENe+xfoWqr40Fmw8DWrXQgaEGAQ7A0c4mZXs1vHfS/vDua9pvahMsk\nttac7CHOAtWbTi6IpCZEmhtqqNNlggOy9MFT87iX12n+kj885gCZVi3UeO5M3ckG\n5PBPL4NhEkBmu0Y2l8RPo3pzDoxBcYYOV/gx/8qhrQKBgQD75nJSQUUCchpEA4u0\n7E7whiIr66rZyneVa09U0cUdc8feGWF5n8nUDPeg3Z4B1ljgMQ/ieI9aYnYVktaa\nbfOr55go8BxRCZo7vyJO9Dqh5XmwQopaA4QaXEm8zmh9fP4EFfxEeITA8e0jVy1u\n6s2pDpLPhnSwUhjMntfz7OxWiwKBgQDhWOAxelgJQurMDWztkohSSR95pCJV95Di\ntXclSY4g+EjTR4/05+TDOdDiqC3S/Ym5Awx3kmB3iCsAZ72ACwaDlP+ORv9Fqjj+\nmd8XxOCws+ZDtwdILx/Gt1QfUS2f8zsU/ewFYqXjL6LgXWxUJoBuD1ce67YboDWh\nFhlZp7rCRwKBgQDsdda7ACoXsaSWU/3BSFKR1lgdgoxPBZBb4vAFXyT6EMV957Vo\nxmZfeAy8JU09zEiBq4yNuz5WSjcu6TgqnywuIqjjRQJP0APIMhOyqfCgKRmiK9RT\nyxkm5ZsScXAE3GBW1YyJedikhnVkx2EOzbthBx0pUb4YBfjhm/p8L9trIQKBgAQt\ngKKKMR2i1vWHfjB9WfekkWfQ6i4L0+zQDnBrh64GzFrWZc3VisEvzjaVhZv2xVnf\nu5hv50fwB1QPmEzKZ4mC9qXtnQfumvXlZmRravr7qtYwi3sEHKOzfGTEPYNMoBjI\niFqlNIwcsvlT4hFBUXo44JWbKxoiAzyES14FJQo7AoGBAPaHlpjlY2jmJT1dpI71\ntRlcUJHWIxJVXE5L3ystjQ0h/qYybMeolKS8tmcghemnDHyzpODSxpEtykMiSUoL\naiM1O240qK8APTkep5hm6FSchbhhnQOuuDTEcJ7su3eGghxIEKfv9LSnWelacghD\naMiMmk1GY2Hqvaqsr+2EOnpq\n-----END PRIVATE KEY-----"
+              ]
+            }
+          ],
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ]
+        },
+        "wsSettings": {
+          "path": "/516op4rn-h4f4",
+          "headers": {
+            "Host": "v2ray.example.com"
+          }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {
+        "domainStrategy": "AS_IS"
+      }
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      }
+    }
+  ],
+  "policy": {
+    "levels": {
+      "1": {
+        "handshake": 4,
+        "connIdle": 120,
+        "connHold": 300
+      }
+    },
+    "system": {
+      "inbound": 1,
+      "outbound": 1
+    }
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "127.0.0.0/8",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "block",
+        "protocol": [
+          "bittorrent"
+        ]
+      }
+    ]
+  }
+}

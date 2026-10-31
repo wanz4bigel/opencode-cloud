@@ -1,0 +1,37 @@
+export function reseed() {
+  db.exec("DELETE FROM videos; DELETE FROM categories;");
+  CATEGORY_SEED.forEach(([name, slug], i) => {
+    db.prepare("INSERT INTO categories (name, slug, ord) VALUES (?, ?, ?)").run(name, slug, i);
+  });
+
+  const insert = db.prepare(
+    `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, views, added_at)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+  );
+
+  let minutesAgo = 14;
+  let n = 0;
+  for (const [, slug] of CATEGORY_SEED) {
+    const categoryId = categoryIdBySlug(slug);
+    const baseTag = slug.split("-").slice(-1)[0];
+    (CATALOG[slug] || []).forEach(([title, tags]) => {
+      const [url, duration] = SRC[(n * 11 + slug.length * 3) % SRC.length];
+      const target = resolve(url);
+      insert.run(
+        title,
+        uniqueSlug(slugify(title)),
+        target.provider,
+        target.direct,
+        target.embed,
+        target.kind,
+        duration,
+        categoryId,
+        normalizeTags(`${baseTag},${tags}`),
+        Math.floor(Math.random() * 92000) + 400,
+        `-${minutesAgo} minutes`
+      );
+      minutesAgo += 22 + ((n * 37) % 210);
+      n += 1;
+    });
+  }
+}

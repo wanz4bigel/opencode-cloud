@@ -1,0 +1,1 @@
+az storage account show --name "$name" --query 'privateEndpointConnections' --output json

@@ -1,0 +1,1 @@
+aws acm describe-certificate --region $region --certificate-arn $certificatearn --query 'Certificate.[NotAfter, CertificateArn]' --output json | jq -r 'select((.[0] | fromdateiso8601 | mktime) - (now | mktime) < (45 * 86400)) | .[1]'

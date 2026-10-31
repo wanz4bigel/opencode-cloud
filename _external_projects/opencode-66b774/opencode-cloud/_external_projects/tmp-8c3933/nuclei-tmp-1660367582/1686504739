@@ -1,0 +1,1 @@
+gcloud pubsub subscriptions list --project $projectId --format="json(name)"

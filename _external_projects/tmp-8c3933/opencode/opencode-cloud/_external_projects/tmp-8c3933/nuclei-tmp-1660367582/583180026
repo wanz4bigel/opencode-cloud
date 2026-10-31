@@ -1,0 +1,1 @@
+aws eks describe-cluster --name $cluster --region $region --query 'cluster.resourcesVpcConfig' --output json

@@ -1,0 +1,1 @@
+aws rds describe-db-instances --region $region --db-instance-identifier $db --query 'DBInstances[*].{"StorageEncrypted":StorageEncrypted,"KmsKeyId":KmsKeyId}'

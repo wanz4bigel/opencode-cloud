@@ -1,0 +1,1 @@
+gcloud compute url-maps describe $urlMapName --format="json(defaultService)"

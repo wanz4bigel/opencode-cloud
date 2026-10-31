@@ -1,0 +1,1 @@
+aws eks describe-cluster --region $region --name $cluster --query 'cluster.encryptionConfig[*].provider.keyArn' --output json

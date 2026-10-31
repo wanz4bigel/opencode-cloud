@@ -1,0 +1,1 @@
+az network lb show --name "$name" --resource-group "$resourceGroup" --query 'backendAddressPools[*].backendIpConfigurations[*].id | []'

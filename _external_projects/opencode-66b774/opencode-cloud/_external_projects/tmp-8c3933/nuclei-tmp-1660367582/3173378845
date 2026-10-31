@@ -1,0 +1,1 @@
+aws cloudtrail get-event-selectors --region $region --trail-name $trail --query 'EventSelectors[*].DataResources[]'

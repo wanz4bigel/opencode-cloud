@@ -1,0 +1,1 @@
+gcloud compute forwarding-rules list --project=$projectId --filter="target~serviceAttachments" --format="json(name)"

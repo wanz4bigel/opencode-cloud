@@ -1,0 +1,1 @@
+gsutil ls -p $projectId | jq -R . | jq -s .

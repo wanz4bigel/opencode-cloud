@@ -1,0 +1,72 @@
+==================================================
+### bot 150 koneksi, jeda 100ms (flash crowd)  (08:37:04)
+sebelum: HTTP 307 ttfb=0.022236s
+5s           7460     1492      7444     0.5         150        -    OK   38ms  -
+10s         14965     1501     14957     0.5         150        -    OK   27ms  -
+15s         22493     1506     22484     0.5         150        -    OK   27ms  -
+20s         29967     1494     29955     0.5         150        -    OK   36ms  -
+25s         37382     1483     37379     0.5         150        -    OK   35ms  -
+30s         44867     1497     44861     0.5         150        -    OK   28ms  -
+35s         52392     1505     52388     0.5         150        -    OK   38ms  -
+40s         59848     1491     59842     0.5         150        -    OK   28ms  -
+45s         67298     1490     67295     0.5         150        -    OK   36ms  -
+50s         74777     1496     74775     0.5         150        -    OK   27ms  -
+55s         82292     1503     82282     0.5         150        -    OK   28ms  -
+
+Selesai dalam 60.0s | req=89739 avgRPS=1496 resp=89734 keluar=30.4MB masuk=0.5MB koneksi=150 puncakRPS=1505
+error: -
+sesudah: HTTP 307 ttfb=0.016590s
+==================================================
+### bomb (HTTP/2 Bomb, cookie crumb, window 0)  (08:40:51)
+sebelum: HTTP 307 ttfb=0.021838s
+5s           8000     1600      8000    13.3          80        -    OK   40ms  -
+10s          8000        0      8000     0.1          80        -    OK   31ms  -
+15s          8000        0      8000     0.1          80        -    OK   70ms  -
+20s          8000        0      8000     0.1          80        -    OK   37ms  -
+25s          8000        0      8000     0.1          80        -    OK   28ms  -
+30s          8000        0      8000     0.1          80        -    OK   30ms  -
+35s          8000        0      8000     0.1          80        -    OK   27ms  -
+40s          8000        0      8000     0.1          80        -    OK   36ms  -
+45s          8000        0      8000     0.1          80        -    OK   36ms  -
+50s          8000        0      8000     0.1          80        -    OK   31ms  -
+55s          8000        0      8000     0.1          80        -    OK   27ms  -
+
+Selesai dalam 60.0s | req=8000 avgRPS=133 resp=8000 keluar=72.1MB masuk=0.0MB koneksi=80 puncakRPS=1599
+error: -
+sesudah: HTTP 307 ttfb=0.018305s
+==================================================
+### contflood (CONTINUATION tanpa batas)  (08:44:38)
+sebelum: HTTP 307 ttfb=0.016630s
+h2dos: mode=contflood target=https://9router-production-a2ff.up.railway.app/dashboard/quota (h2) conns=40 streams/konek=100 rate=0/s
+       CONTINUATION Flood (CVE-2024-27316): CONTINUATION tanpa batas di satu stream
+WAKTU         REQ      RPS      RESP   KIRIM     KONEKSI      RAM          UJI  ERROR
+5s           1731      346         0   173.1           2        -    OK   41ms  goaway=1725, write=1714
+10s          2556      165         0    82.5           0        -    OK   35ms  goaway=2555, write=2533
+15s          3721      231         0   115.9           3        -    OK   30ms  goaway=3719, write=3689
+20s          4023       60         0    27.6           7        -    OK  900ms  write=3984, goaway=3977
+25s          4728      142         0    68.8           0        -    OK   34ms  write=4692, goaway=4665
+30s          6000      254         0   127.7           0        -    OK   29ms  write=5951, goaway=5939
+35s          7199      240         0   120.3           0        -    OK   25ms  goaway=7143, write=7136
+40s          8664      293         0   146.5           0        -    OK   39ms  goaway=8598, write=8590
+
+Selesai dalam 45.0s | req=9935 avgRPS=221 resp=0 keluar=4951.1MB masuk=0.0MB koneksi=9935 puncakRPS=346
+error: goaway=9875, write=9840, dial=1
+sesudah: HTTP 307 ttfb=0.152803s
+==================================================
+### flood (throughput maksimal)  (08:48:11)
+sebelum: HTTP 307 ttfb=0.016984s
+h2dos: mode=flood target=https://9router-production-a2ff.up.railway.app/dashboard/quota (h2) conns=12 streams/konek=120 rate=0/s
+       throughput maksimal: koneksi persisten + stream multiplexed
+WAKTU         REQ      RPS      RESP   KIRIM     KONEKSI      RAM          UJI  ERROR
+5s          12448     2490     11573     0.3          12        -    OK   62ms  -
+10s         25792     2669     24852     0.3          12        -    OK  231ms  -
+15s         39168     2675     38212     0.3          12        -    OK  324ms  -
+20s         51840     2534     50919     0.3          12        -    OK  262ms  -
+25s         63328     2298     62367     0.3          12        -    OK  315ms  -
+30s         75008     2336     73985     0.3          12        -    OK  252ms  -
+
+Selesai dalam 30.0s | req=75008 avgRPS=2500 resp=73985 keluar=9.0MB masuk=0.4MB koneksi=12 puncakRPS=2675
+error: -
+sesudah: HTTP 307 ttfb=0.015652s
+==================================================
+SELESAI 08:48:43

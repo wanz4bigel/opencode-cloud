@@ -1,0 +1,1 @@
+az monitor diagnostic-settings list --resource $resource --query 'value'

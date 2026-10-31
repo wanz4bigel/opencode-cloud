@@ -1,0 +1,1 @@
+az vm list --query '[?(tags==`{"app_tier_tag":"app_tier_tag_value"}`)].{"id":id}'

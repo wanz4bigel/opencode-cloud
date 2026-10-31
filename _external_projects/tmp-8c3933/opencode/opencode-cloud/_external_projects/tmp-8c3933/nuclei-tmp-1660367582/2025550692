@@ -1,0 +1,1 @@
+gcloud dataproc clusters describe $clusterName --region $region --project $projectId --format="json(config.encryptionConfig.gcePdKmsKeyName)"

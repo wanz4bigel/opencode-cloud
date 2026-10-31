@@ -1,0 +1,9 @@
+
+> @angin/server@1.0.0 dev
+> node --watch src/index.js
+
+◇ injected env (0) from ../.env // tip: ⌘ enable debugging { debug: true }
+[angin] web + api on http://localhost:3000
+[angin] data dir: /home/runner/tempmail/data
+[angin] inbound smtp on 0.0.0.0:2525
+[angin] recipients must use an active domain; MX target is mail.angin.test

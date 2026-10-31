@@ -1,0 +1,1 @@
+gcloud compute routers nats describe $natName --region=$region --router=$routerName --format="json(natIps)"

@@ -1,0 +1,1 @@
+aws sqs get-queue-attributes --region $region --queue-url $queueurl --attribute-names "Policy" --query 'Attributes.Policy' --output json

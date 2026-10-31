@@ -1,0 +1,1 @@
+gcloud dns policies list --project $projectId --format="json(name)" --filter="networks[].networkUrl:$networkName"

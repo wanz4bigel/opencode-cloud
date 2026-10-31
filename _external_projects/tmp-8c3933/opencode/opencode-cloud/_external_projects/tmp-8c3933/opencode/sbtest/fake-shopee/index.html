@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>Shopee (FAKE - local test)</title></head>
+<body>
+  <div id="app">
+    <h1>Shopee palsu buat uji runner</h1>
+    <div class="voucher-card"><button class="btn-claim">Klaim</button></div>
+    <div class="mission-card"><a href="http://shopee.localhost:8899/shop-1"><button>Kerjakan</button></a></div>
+    <div class="mission-card"><button id="checkin" class="btn-checkin">Check In</button></div>
+    <div class="mission-card"><button class="btn-claim">Klaim Duit</button></div>
+  </div>
+  <script>
+    // meniru toast Shopee supaya jalur deteksi sukses ikut teruji di Chromium
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("button");
+      if (!b) return;
+      var t = document.createElement("div");
+      t.className = "shopee-toast";
+      t.textContent = "Berhasil!";
+      document.body.appendChild(t);
+    });
+  </script>
+</body>
+</html>

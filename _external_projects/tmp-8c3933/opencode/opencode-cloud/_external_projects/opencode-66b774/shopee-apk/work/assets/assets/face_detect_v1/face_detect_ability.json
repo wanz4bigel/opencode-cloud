@@ -1,0 +1,22 @@
+{
+    "algorithm": "face_detect",
+    "nodes": [
+        {
+            "name": "input_0",
+            "type": "input",
+            "params_map": {}
+        },
+        {
+            "name": "face_detect_0",
+            "type": "face_detect"
+        }
+    ],
+    "links": [
+        {
+            "from_node": "input_0",
+            "from_index": 0,
+            "to_node": "face_detect_0",
+            "to_index": 0
+        }
+    ]
+}

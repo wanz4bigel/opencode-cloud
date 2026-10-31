@@ -1,0 +1,1 @@
+aws elbv2 describe-load-balancers --region $region --query 'LoadBalancers[*].LoadBalancerArn' --output json

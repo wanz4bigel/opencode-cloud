@@ -1,0 +1,387 @@
+{
+  "new_post_add_hashtag_guidance": {
+    "page_id": "",
+    "page_type": "new_post",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "add_hashtag_guidance"
+  },
+  "add_caption_page_impression": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "add_caption_back_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "back_button"
+  },
+  "add_caption_save_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "save_button"
+  },
+  "add_caption_feed_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "feed_button"
+  },
+  "add_caption_post_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "post_button"
+  },
+  "add_caption_post_video_state": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "post_button"
+  },
+  "add_caption_preview_area_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "video_preview"
+  },
+  "add_caption_preview_page_view": {
+    "page_id": "",
+    "page_type": "preview_page",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "add_caption_preview_back_click": {
+    "page_id": "",
+    "page_type": "preview_page",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "back_button"
+  },
+  "add_caption_back_popup_impression": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "back_popup"
+  },
+  "add_caption_back_popup_discard_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "back_popup",
+    "target_type": "discard"
+  },
+  "add_caption_back_popup_cancel_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "back_popup",
+    "target_type": "cancel"
+  },
+  "sync_ins_page_view": {
+    "page_id": "",
+    "page_type": "sync_ins_video",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "sync_ins_connect_button_click": {
+    "page_id": "",
+    "page_type": "sync_ins_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "connect_with_ins"
+  },
+  "profile_from_source": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "profile_set_up_save_click": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "save"
+  },
+  "profile_set_up_back_click": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "back"
+  },
+  "import_video_from_source": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "view",
+    "page_section": "",
+    "target_type": ""
+  },
+  "import_video_not_now_click": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "not_now"
+  },
+  "import_video_import_click": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "import"
+  },
+  "import_video_video_select_click": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "video_select"
+  },
+  "import_video_video_preview_click": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "video_preview"
+  },
+  "import_video_select_all_click": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "select_all"
+  },
+  "import_video_preview_page_click": {
+    "page_id": "",
+    "page_type": "preview_page",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "select"
+  },
+  "import_video_preview_page_back_click": {
+    "page_id": "",
+    "page_type": "preview_page",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "back_button"
+  },
+  "shop_video_edit_next_click": {
+    "page_id": "",
+    "page_type": "shopee_video_edit",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "next_button"
+  },
+  "add_caption_click_hashtag_button": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "hashtag_button"
+  },
+  "add_caption_click_friends_button": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "friends_button"
+  },
+  "impression_hashtag_panel": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "impression",
+    "page_section": "hashtag_panel",
+    "target_type": ""
+  },
+  "click_add_hashtag": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "hashtag_panel",
+    "target_type": "add_hashtag"
+  },
+  "click_options_hashtag": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "hashtag_panel",
+    "target_type": "hashtag_options"
+  },
+  "quit_profile_set_up": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "quit",
+    "page_section": "",
+    "target_type": ""
+  },
+  "quit_import_video": {
+    "page_id": "",
+    "page_type": "import_video",
+    "operation": "quit",
+    "page_section": "",
+    "target_type": ""
+  },
+  "quit_sync_ins": {
+    "page_id": "",
+    "page_type": "sync_ins_video",
+    "operation": "quit",
+    "page_section": "",
+    "target_type": ""
+  },
+  "add_caption_whatsapp_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "whatsapp_button"
+  },
+  "add_caption_instagram_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "instagram_button"
+  },
+  "add_caption_facebook_button_click": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "facebook_button"
+  },
+  "profile_impression_suggested_name": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "suggested_name"
+  },
+  "profile_click_suggested_name": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "suggested_name"
+  },
+  "quit_add_caption": {
+    "page_id": "",
+    "page_type": "add_caption",
+    "operation": "quit",
+    "page_section": "",
+    "target_type": ""
+  },
+  "quit_preview_page": {
+    "page_id": "",
+    "page_type": "preview_page",
+    "operation": "quit",
+    "page_section": "",
+    "target_type": ""
+  },
+  "preload_video": {
+    "page_id": "",
+    "page_type": "",
+    "operation": "preloading_video",
+    "page_section": "",
+    "target_type": ""
+  },
+  "invalid_url_notice": {
+    "page_id": "",
+    "page_type": "edit_profile_page",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "invalid_url_notice"
+  },
+  "caption_sensitive_impression": {
+    "page_id": "",
+    "page_type": "video_publish_page",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "sensitive_risk_alert_bullet"
+  },
+  "caption_sensitive_click": {
+    "page_id": "",
+    "page_type": "video_publish_page",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "sensitive_risk_alert_bullet"
+  },
+  "set_up_violation_impression": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "poguide_violation_pop"
+  },
+  "edit_violation_impression": {
+    "page_id": "",
+    "page_type": "edit_profile",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "poguide_violation_pop"
+  },
+  "set_up_violation_click_anyway": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "submit_anyway"
+  },
+  "edit_violation_click_anyway": {
+    "page_id": "",
+    "page_type": "edit_profile",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "submit_anyway"
+  },
+  "set_up_violation_click_edit": {
+    "page_id": "",
+    "page_type": "profile_set_up",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "profile_violation_edit"
+  },
+  "edit_violation_click_edit": {
+    "page_id": "",
+    "page_type": "edit_profile",
+    "operation": "click",
+    "page_section": "",
+    "target_type": "profile_violation_edit"
+  },
+  "impression_video": {
+    "page_id": "",
+    "page_type": "shopee_video",
+    "operation": "impression",
+    "page_section": "",
+    "target_type": "video"
+  },
+  "action_video_start": {
+    "page_id": "",
+    "page_type": "shopee_video",
+    "operation": "action_video_start",
+    "page_section": "",
+    "target_type": ""
+  },
+  "action_video_stop": {
+    "page_id": "",
+    "page_type": "shopee_video",
+    "operation": "action_video_stop",
+    "page_section": "",
+    "target_type": ""
+  }
+}

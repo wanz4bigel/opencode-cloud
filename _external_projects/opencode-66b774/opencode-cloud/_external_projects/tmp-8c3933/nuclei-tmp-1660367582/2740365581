@@ -1,0 +1,1 @@
+aws cloudformation describe-stacks --region $region --stack-name $stacksummary --query 'Stacks[*].EnableTerminationProtection' --output json

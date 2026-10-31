@@ -1,0 +1,1 @@
+aws cloudfront get-distribution-config --id $distribution --query 'DistributionConfig.Origins.Items[*].OriginShield.Enabled' --region $region --output text

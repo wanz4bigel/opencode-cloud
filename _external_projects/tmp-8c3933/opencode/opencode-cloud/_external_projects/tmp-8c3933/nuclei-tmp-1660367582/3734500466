@@ -1,0 +1,1 @@
+aws cloudfront get-distribution-config --id $distribution --query 'DistributionConfig.CacheBehaviors.Items[*].ViewerProtocolPolicy' --output json --region $region

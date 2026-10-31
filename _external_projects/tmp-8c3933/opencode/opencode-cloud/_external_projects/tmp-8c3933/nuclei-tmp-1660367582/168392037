@@ -1,0 +1,1 @@
+gcloud compute instance-groups list --project $projectId --only-managed --format="json(name)"

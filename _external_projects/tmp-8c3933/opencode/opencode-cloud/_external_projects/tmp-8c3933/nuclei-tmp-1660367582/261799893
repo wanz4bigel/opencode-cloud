@@ -1,0 +1,1 @@
+aliyun oss stat $bucket --region $region

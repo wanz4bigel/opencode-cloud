@@ -1,0 +1,1 @@
+aws cloudformation get-stack-policy --region $region --stack-name $stacksummary --output json

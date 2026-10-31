@@ -1,0 +1,7 @@
+[turnstile] connect wss://brd-customer-hl_3276ef8f-zone-cli_browser:***@brd.superproxy.io:9222
+[turnstile] terhubung ke browser Bright Data
+[turnstile] percobaan ini gagal, sesi browser ditutup
+[turnstile] ERROR page.goto: Protocol error (Page.navigate): Access denied: sahabatssh.com is classified as Proxy Avoidance and Anonymizers and blocked by Bright Data as it might breach Bright Data usage policy. For more details review the following: https://docs.brightdata.com/proxy-networks/residential/network-access#residential-proxy-network-policy (proxy_error). Learn more: https://docs.brightdata.com/products/scraping-browser/error-codes#proxy_error-messages
+Call log:
+  - navigating to "https://sahabatssh.com/auth/register", waiting until "domcontentloaded"
+

@@ -1,0 +1,1 @@
+az apim nv list --service-name $name --resource-group $resourceGroup --query '[].name'

@@ -1,0 +1,1 @@
+az cosmosdb show --ids $id --query 'enableAutomaticFailover' --output json

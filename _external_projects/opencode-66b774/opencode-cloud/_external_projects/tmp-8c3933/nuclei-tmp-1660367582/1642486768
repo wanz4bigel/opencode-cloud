@@ -1,0 +1,1 @@
+gcloud dns record-sets list --zone=$managedZone --format="json(type,rrdatas)"

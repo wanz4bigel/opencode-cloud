@@ -1,0 +1,107 @@
+[H[2J[3JRefreshing token...
+Fetching profile...
+Refreshing token...
+Fetching profile...
+Fetching package family...
+Trying is_enterprise=False, migration_type=NONE.
+Success with is_enterprise=False, migration_type=NONE. Family name: Special For You
+Family: Special For You | total opsi: 202
+==> NO. 186: Internet 1GB | Rp 2000
+=======================================================
+Clearing screen...
+
+            _____                    _____          
+           /\    \                  /\    \         
+          /::\____\                /::\    \        
+         /::::|   |               /::::\    \       
+        /:::::|   |              /::::::\    \      
+       /::::::|   |             /:::/\:::\    \     
+      /:::/|::|   |            /:::/__\:::\    \    
+     /:::/ |::|   |           /::::\   \:::\    \   
+    /:::/  |::|___|______    /::::::\   \:::\    \  
+   /:::/   |::::::::\    \  /:::/\:::\   \:::\    \ 
+  /:::/    |:::::::::\____\/:::/__\:::\   \:::\____\
+  \::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /
+   \/____/      /:::/    /  \:::\   \:::\   \/____/ 
+               /:::/    /    \:::\   \:::\    \     
+              /:::/    /      \:::\   \:::\____\    
+             /:::/    /        \:::\   \::/    /    
+            /:::/    /          \:::\   \/____/     
+           /:::/    /            \:::\    \         
+          /:::/    /              \:::\____\        
+          \::/    /                \::/    /        
+           \/____/                  \/____/         
+
+-------------------------------------------------------
+Detail Paket
+-------------------------------------------------------
+Fetching package...
+-------------------------------------------------------
+Nama: Special For You - Special For You - Internet 1GB
+Harga: Rp 2000
+Payment For: BUY_PACKAGE
+Masa Aktif: 1 Day
+Point: 0
+Plan Type: XCL
+-------------------------------------------------------
+Family Code: 6fda76ee-e789-4897-89fb-9114da47b805
+Parent Code (for addon/dummy): N/A
+-------------------------------------------------------
+Benefits:
+-------------------------------------------------------
+ Name: Main Quota
+  Item id: 
+  Quota: 1.00 GB
+-------------------------------------------------------
+Fetching addons...
+Addons:
+{
+  "parent_code": "",
+  "addons": [],
+  "upsell": [],
+  "bonuses": [],
+  "paid_bonuses": [],
+  "force_to_hide_bonus": false
+}
+-------------------------------------------------------
+SnK MyXL:
+Internet 1GB 1 dayTerms and Conditions
+- Package eligible for XL Prabayar
+customer
+- Package will not recurring automatically after package validity is
+over
+- Package only eligible for 1 day
+- Package only contains main internet
+quote
+- If customer have any oher package, this package quota that will be
+consumed first
+- If package quota is over and customer doesn't have any other
+internet package, basic internet tariff will be applied
+-------------------------------------------------------
+Options:
+1. Beli dengan Pulsa
+2. Beli dengan E-Wallet
+3. Bayar dengan QRIS
+4. Pulsa + Decoy
+5. Pulsa + Decoy V2
+6. QRIS + Decoy (+1K)
+7. QRIS + Decoy V2
+8. Pulsa N kali
+0. Tambah ke Bookmark
+00. Kembali ke daftar paket
+Pilihan: Subscriber ID changed from None to 238736013. Resetting decoy data.
+Refreshing decoy data for: default-balance
+Fetching package family...
+Trying is_enterprise=False, migration_type=NONE.
+Success with is_enterprise=False, migration_type=NONE. Family name: XL PASS LITE
+Fetching package...
+Decoy data for default-balance refreshed successfully.
+Fetching package...
+Fetching intercept page...
+Intercept status: SUCCESS - 8116163
+Getting payment methods...
+Sending settlement request...
+Failed to initiate settlement.
+Error: {'code': '213', 'code_detail': '213', 'status': 'FAILED', 'message': 'Bizz-err.InvalidProduct', 'title': '', 'description': ''}
+
+Press enter to continue...

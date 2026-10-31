@@ -1,0 +1,1 @@
+gcloud compute backend-buckets describe $backendBucket --project $projectId --format="json(bucketName)"

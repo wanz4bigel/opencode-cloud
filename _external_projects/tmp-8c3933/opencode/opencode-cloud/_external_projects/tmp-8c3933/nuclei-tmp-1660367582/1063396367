@@ -1,0 +1,1 @@
+az apim nv show --service-name $name --resource-group $resourceGroup --named-value-id $nv --query 'secret'

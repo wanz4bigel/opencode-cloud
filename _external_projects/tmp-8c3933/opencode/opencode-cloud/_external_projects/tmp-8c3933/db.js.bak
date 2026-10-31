@@ -1,0 +1,307 @@
+// Database: SQLite bawaan Node (node:sqlite). Tidak ada tabel file video,
+// karena video tidak pernah di-upload — yang disimpan hanya alamat embed.
+import { DatabaseSync } from "node:sqlite";
+import { mkdirSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { resolve } from "./embed.js";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const dataDir = process.env.DATA_DIR || path.join(here, "..", "data");
+mkdirSync(dataDir, { recursive: true });
+
+export const db = new DatabaseSync(path.join(dataDir, "bokep-kita.db"));
+db.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS categories (
+    id    INTEGER PRIMARY KEY,
+    name  TEXT NOT NULL,
+    slug  TEXT NOT NULL UNIQUE,
+    ord   INTEGER NOT NULL DEFAULT 0
+  );
+
+  CREATE TABLE IF NOT EXISTS videos (
+    id          INTEGER PRIMARY KEY,
+    title       TEXT NOT NULL,
+    slug        TEXT NOT NULL UNIQUE,
+    provider    TEXT NOT NULL,
+    url         TEXT NOT NULL,
+    embed       TEXT NOT NULL,
+    kind        TEXT NOT NULL CHECK (kind IN ('iframe', 'video')),
+    duration    INTEGER NOT NULL DEFAULT 0,
+    category_id INTEGER REFERENCES categories(id) ON DELETE SET NULL,
+    tags        TEXT NOT NULL DEFAULT '',
+    views       INTEGER NOT NULL DEFAULT 0,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE INDEX IF NOT EXISTS idx_videos_added ON videos (added_at DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_views ON videos (views DESC);
+  CREATE INDEX IF NOT EXISTS idx_videos_cat   ON videos (category_id);
+`);
+
+export function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
+
+function uniqueSlug(base) {
+  let slug = base || "video";
+  let n = 2;
+  while (db.prepare("SELECT 1 FROM videos WHERE slug = ?").get(slug)) {
+    slug = `${base}-${n++}`;
+  }
+  return slug;
+}
+
+export function addVideo({ title, url, categoryId = null, tags = "", duration = 0 }) {
+  const target = resolve(url);
+  if (!target) return { error: "Alamat video tidak dikenali. Tempel URL lengkap, misalnya https://..." };
+  if (!title || !title.trim()) return { error: "Judul belum diisi. Tulis judul yang jelas, tanpa nama file." };
+
+  const seconds = Number(duration) || guessDuration(title);
+  const info = db
+    .prepare(
+      `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, added_at)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+    )
+    .run(
+      title.trim(),
+      uniqueSlug(slugify(title)),
+      target.provider,
+      target.direct,
+      target.embed,
+      target.kind,
+      seconds,
+      categoryId,
+      normalizeTags(tags),
+      `-${Math.floor(Math.random() * 20) * 6} minutes`
+    );
+  return { ok: true, id: Number(info.lastInsertRowid), provider: target.provider };
+}
+
+function guessDuration(title) {
+  const m = String(title).match(/(\d{1,2})\s*(menit|minute|min|m\b)/i);
+  return m ? Number(m[1]) * 60 : 60 + Math.floor(Math.random() * 540);
+}
+
+export function normalizeTags(tags) {
+  return String(tags)
+    .split(/[,\s]+/)
+    .map((t) => t.trim().replace(/^#/, "").toLowerCase())
+    .filter(Boolean)
+    .slice(0, 8)
+    .join(",");
+}
+
+export function categories() {
+  return db.prepare("SELECT * FROM categories ORDER BY ord, name").all();
+}
+
+export function categoryIdBySlug(slug) {
+  const row = db.prepare("SELECT id FROM categories WHERE slug = ?").get(String(slug));
+  return row ? row.id : null;
+}
+
+export function categoriesWithCounts() {
+  return db
+    .prepare(
+      `SELECT c.name, c.slug, COUNT(v.id) AS total
+       FROM categories c LEFT JOIN videos v ON v.category_id = c.id
+       GROUP BY c.id ORDER BY total DESC, c.name`
+    )
+    .all();
+}
+
+export function countVideos() {
+  return db.prepare("SELECT COUNT(*) AS n FROM videos").get().n;
+}
+
+/** Daftar video untuk beranda, kategori, tag, dan hasil pencarian. */
+export function listVideos({ sort = "terbaru", categoryId = null, tag = null, query = null, page = 1, per = 24 } = {}) {
+  const where = [];
+  const params = [];
+  if (categoryId) {
+    where.push("v.category_id = ?");
+    params.push(categoryId);
+  }
+  if (tag) {
+    where.push("(',' || v.tags || ',') LIKE ?");
+    params.push(`%,${tag},%`);
+  }
+  if (query) {
+    where.push("(v.title LIKE ? OR v.tags LIKE ?)");
+    params.push(`%${query}%`, `%${query}%`);
+  }
+  const clause = where.length ? `WHERE ${where.join(" AND ")}` : "";
+  const order =
+    sort === "populer" ? "v.views DESC, v.added_at DESC" : "v.added_at DESC, v.views DESC";
+  const total = db.prepare(`SELECT COUNT(*) AS n FROM videos v ${clause}`).get(...params).n;
+  const pages = Math.max(1, Math.ceil(total / per));
+  const current = Math.min(Math.max(1, page), pages);
+  const rows = db
+    .prepare(`SELECT v.*, c.name AS category, c.slug AS category_slug
+              FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+              ${clause} ORDER BY ${order} LIMIT ? OFFSET ?`)
+    .all(...params, per, (current - 1) * per);
+  return { rows, total, pages, current };
+}
+
+export function videoBySlug(slug) {
+  return (
+    db
+      .prepare(
+        `SELECT v.*, c.name AS category, c.slug AS category_slug
+         FROM videos v LEFT JOIN categories c ON c.id = v.category_id WHERE v.slug = ?`
+      )
+      .get(String(slug)) || null
+  );
+}
+
+export function relatedVideos(video, limit = 10) {
+  const rows = db
+    .prepare(
+      `SELECT v.*, c.name AS category, c.slug AS category_slug
+       FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+       WHERE v.id != ? AND (v.category_id = ? OR v.tags LIKE ?)
+       ORDER BY v.views DESC LIMIT ?`
+    )
+    .all(video.id, video.category_id, `%${(video.tags.split(",")[0] || "colmek")}%`, limit);
+  if (rows.length >= limit) return rows;
+
+  // Kategori sepi: isi sisanya dengan video populer supaya daftar berikutnya penuh.
+  const have = new Set([video.id, ...rows.map((r) => r.id)]);
+  const spare = popularVideos(limit + have.size).filter((v) => !have.has(v.id));
+  return [...rows, ...spare].slice(0, limit);
+}
+
+export function popularVideos(limit = 6) {
+  return db
+    .prepare(
+      `SELECT v.*, c.name AS category, c.slug AS category_slug
+       FROM videos v LEFT JOIN categories c ON c.id = v.category_id
+       ORDER BY v.views DESC LIMIT ?`
+    )
+    .all(limit);
+}
+
+export function videoById(id) {
+  return db.prepare("SELECT * FROM videos WHERE id = ?").get(Number(id)) || null;
+}
+
+export function deleteVideo(id) {
+  return db.prepare("DELETE FROM videos WHERE id = ?").run(Number(id)).changes > 0;
+}
+
+export function bumpViews(id) {
+  db.prepare("UPDATE videos SET views = views + 1 WHERE id = ?").run(Number(id));
+}
+
+export function stats() {
+  const v = db.prepare("SELECT COUNT(*) AS videos, COALESCE(SUM(views),0) AS views FROM videos").get();
+  return { videos: v.videos, views: v.views, categories: categoriesWithCounts().length, host: "embed" };
+}
+
+const CATEGORY_SEED = [
+  ["Colmek ABG", "colmek-abg"],
+  ["Colmek Janda", "colmek-janda"],
+  ["Colmek Mahasiswi", "colmek-mahasiswi"],
+  ["Colmek Amoy", "colmek-amoy"],
+  ["Colmek Toge", "colmek-toge"],
+  ["Colmek Toket", "colmek-toket"],
+  ["Ibu-ibu Girang", "ibu-ibu-girang"],
+  ["Asia Tanpa Sensor", "asia-tanpa-sensor"],
+  ["Barat Beranotasi", "barat-beranotasi"],
+  ["Lokal Full Sensor", "lokal-full-sensor"]
+];
+
+// Sumber video contoh: semua sudah dites menjawab HTTP 200/206 dari server ini
+// (lihat scripts/probe.js). Host lama gtv-videos-bucket sekarang membalas 403,
+// jadi tidak dipakai lagi.
+const W = "https://media.w3.org/2010/05/";
+const T = "https://test-videos.co.uk/vids/";
+const YT = (id) => `https://www.youtube.com/watch?v=${id}`;
+const MP4 = [
+  `${W}sintel/trailer.mp4`,
+  `${W}bunny/movie.mp4`,
+  `${W}video/movie_300.mp4`,
+  `${T}bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4`,
+  `${T}jellyfish/mp4/h264/360/Jellyfish_360_10s_1MB.mp4`,
+  `${T}sintel/mp4/h264/360/Sintel_360_10s_1MB.mp4`,
+  "https://cdn.jsdelivr.net/gh/mediaelement/mediaelement-files/big_buck_bunny.mp4",
+  "https://mdn.github.io/shared-assets/videos/flower.mp4"
+];
+const YT_IDS = ["dQw4w9WgXcQ", "9bZkp7q19f0", "kJQP7kiw5Fk", "jNQXAC9IVRw", "60ItHLz5WEA", "hT_nvWreIhg", "CevxZvSJLk8"];
+
+// [judul, kategori, tag, url, durasi detik]
+const SEED = [
+  ["Colmek ABG SMK Selesai Dua Ronde", "colmek-abg", "abg,smk,lokal,full", MP4[0], 52],
+  ["Janda Baru Kening Nonton Drakor Sambil Colmek", "colmek-janda", "janda,drakor,kos,full", MP4[6], 596],
+  ["Mahasiswi Kos Colmek Pakai Headphone Biar Aman", "colmek-mahasiswi", "mahasiswi,kos,headphone", YT(YT_IDS[0]), 213],
+  ["Amoy Bandung Colmek Di Kasur Kos", "colmek-amoy", "amoy,bandung,kos", MP4[1], 60],
+  ["Colmek Toge Bandung Full Sesudah Subuh", "colmek-toge", "toge,bandung,full", "https://vimeo.com/76979871", 405],
+  ["Toket Gede Colmek Depan Cermin", "colmek-toket", "toket,cermin,slowmo", MP4[2], 30],
+  ["ABG Desa Colmek Air Dingin", "colmek-abg", "abg,desa,mandi", MP4[7], 10],
+  ["Janda Dua Anak Colmek Nunggu Suami Pulang", "colmek-janda", "janda,rumah,full", YT(YT_IDS[1]), 253],
+  ["Mahasiswi Yogyakarta Colmek Habis Bimbingan", "colmek-mahasiswi", "mahasiswi,yogya,skripsi", MP4[3], 10],
+  ["Colmek ABG Mandi Shampoo", "colmek-abg", "abg,mandi,shampoo", MP4[4], 10],
+  ["Tante Girang Colmek Dua Jari", "ibu-ibu-girang", "tante,girang,jari", YT(YT_IDS[2]), 272],
+  ["Colmek Cewek SPBU Lembur Malam", "lokal-full-sensor", "lokal,sensor,spbu", MP4[5], 10],
+  ["Colmek ABG Hijab Abu-Abu", "colmek-abg", "abg,hijab,abu", MP4[0], 52],
+  ["Janda Kembang Colmek Pakai Terong", "colmek-janda", "janda,terong,dapur", MP4[1], 60],
+  ["Mahasiswi Kedokteran Colmek Nunggu Shift", "colmek-mahasiswi", "mahasiswi,kos,rumahsakit", YT(YT_IDS[3]), 19],
+  ["Amoy Jakarta Colmek Full Suara", "colmek-amoy", "amoy,jakarta,suara", MP4[6], 596],
+  ["Colmek ABG Les Private Di Rumah", "colmek-abg", "abg,les,private", YT(YT_IDS[4]), 212],
+  ["Toge Lokal Colmek Slow Motion", "colmek-toge", "toge,lokal,slowmo", MP4[2], 30],
+  ["Colmek Janda Sultan Karawaci", "colmek-janda", "janda,tangsel,kamar", MP4[7], 10],
+  ["Colmek ABG Habis Voli", "colmek-abg", "abg,voli,olahraga", YT(YT_IDS[5]), 302],
+  ["Colmek Cewek Fitness Studio", "barat-beranotasi", "barat,cc,fitness", MP4[3], 10],
+  ["Colmek Mahasiswi Bawa Ransel", "colmek-mahasiswi", "mahasiswi,kampus,ransel", MP4[4], 10],
+  ["Toket Kecil Colmek Kelihatan Sekali", "colmek-toket", "toket,kecil,full", YT(YT_IDS[6]), 269],
+  ["Colmek Janda Habis Senam Pagi", "colmek-janda", "janda,senam,pagi", MP4[5], 10],
+  ["Colmek ABG Lagi Nge-Cosplay", "asia-tanpa-sensor", "asia,cosplay,cc", MP4[0], 52],
+  ["Tante Toko Kelontong Colmek Di Belakang Kasir", "ibu-ibu-girang", "tante,toko,kelontong", MP4[1], 60],
+  ["Colmek ABG Parkir Motor Sore", "lokal-full-sensor", "lokal,sensor,parkir", MP4[2], 30],
+  ["Colmek Toge Habis Mandi Bunga Tujuh", "colmek-toge", "toge,mandi,full", "https://vimeo.com/76979871", 405]
+];
+
+export function reseed() {
+  db.exec("DELETE FROM videos; DELETE FROM categories;");
+  CATEGORY_SEED.forEach(([name, slug], i) => {
+    db.prepare("INSERT INTO categories (name, slug, ord) VALUES (?, ?, ?)").run(name, slug, i);
+  });
+  let minutesAgo = 25;
+  SEED.forEach(([title, cat, tags, url, duration]) => {
+    const target = resolve(url);
+    const info = db
+      .prepare(
+        `INSERT INTO videos (title, slug, provider, url, embed, kind, duration, category_id, tags, views, added_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now', ?))`
+      )
+      .run(
+        title,
+        uniqueSlug(slugify(title)),
+        target.provider,
+        target.direct,
+        target.embed,
+        target.kind,
+        duration,
+        categoryIdBySlug(cat),
+        normalizeTags(tags),
+        Math.floor(Math.random() * 90000) + 1500,
+        `-${minutesAgo} minutes`
+      );
+    minutesAgo += 37 + Math.floor(Math.random() * 180);
+    return info;
+  });
+}
+
+if (countVideos() === 0) {
+  reseed();
+  console.log(`Seed selesai: ${countVideos()} video colmek dari host embed.`);
+}

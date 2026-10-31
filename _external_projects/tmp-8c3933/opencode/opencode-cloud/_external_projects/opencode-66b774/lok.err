@@ -1,0 +1,10 @@
+[turnstile] browser Playwright tidak ada, pakai /opt/google/chrome/chrome
+[turnstile] percobaan 1: halaman dimuat (https://sahabatssh.com/auth/register)
+[turnstile] percobaan ini gagal, sesi browser ditutup
+[turnstile] ERROR page.evaluate: Error: [Cloudflare Turnstile] Unknown execution value: "always, expected either: 'render' or 'execute'..
+    at start (eval at evaluate (:370:30), <anonymous>:31:16)
+    at eval (eval at evaluate (:370:30), <anonymous>:36:7)
+    at new Promise (<anonymous>)
+    at renderWidget (eval at evaluate (:370:30), <anonymous>:2:10)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)

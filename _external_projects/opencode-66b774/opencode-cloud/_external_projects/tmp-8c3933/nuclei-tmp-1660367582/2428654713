@@ -1,0 +1,1 @@
+aws rds describe-reserved-db-instances --region $region --reserved-db-instance-id $db --query 'ReservedDBInstances[*].State'

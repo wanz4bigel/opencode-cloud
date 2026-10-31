@@ -1,0 +1,1 @@
+az network nsg list --output json --query '[*].{name:name, resourceGroup:resourceGroup}'

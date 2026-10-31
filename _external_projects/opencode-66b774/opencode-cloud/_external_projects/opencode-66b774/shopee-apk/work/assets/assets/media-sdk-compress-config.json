@@ -1,0 +1,134 @@
+{
+    "android": {
+        "maxPictureLength": 800,
+        "picturelist": [
+            {
+                "sizeInKB": 600,
+                "compressQuality": 70
+            },
+            {
+                "sizeInKB": 450,
+                "compressQuality": 75
+            },
+            {
+                "sizeInKB": 330,
+                "compressQuality": 80
+            },
+            {
+                "sizeInKB": 250,
+                "compressQuality": 85
+            },
+            {
+                "sizeInKB": 150,
+                "compressQuality": 90
+            },
+            {
+                "sizeInKB": 0,
+                "compressQuality": 100
+            }
+        ],
+        "maxVideoLength": 1280,
+        "videoList": [
+            {
+                "resolution": 1920,
+                "bitrate": 5000
+            },
+            {
+                "resolution": 1280,
+                "bitrate": 2400
+            },
+            {
+                "resolution": 1138,
+                "bitrate": 2000
+            },
+            {
+                "resolution": 960,
+                "bitrate": 1500
+            },
+            {
+                "resolution": 854,
+                "bitrate": 1200
+            },
+            {
+                "resolution": 640,
+                "bitrate": 1000
+            },
+            {
+                "resolution": 480,
+                "bitrate": 700
+            }
+        ]
+    },
+    "ios": {
+        "maxPictureLength": 700,
+        "picturelist": [
+            {
+                "sizeInKB": 800,
+                "compressQuality": 60
+            },
+            {
+                "sizeInKB": 700,
+                "compressQuality": 65
+            },
+            {
+                "sizeInKB": 650,
+                "compressQuality": 70
+            },
+            {
+                "sizeInKB": 600,
+                "compressQuality": 75
+            },
+            {
+                "sizeInKB": 500,
+                "compressQuality": 80
+            },
+            {
+                "sizeInKB": 450,
+                "compressQuality": 85
+            },
+            {
+                "sizeInKB": 350,
+                "compressQuality": 90
+            },
+            {
+                "sizeInKB": 150,
+                "compressQuality": 95
+            },
+            {
+                "sizeInKB": 0,
+                "compressQuality": 100
+            }
+        ],
+        "videoFPS":30,
+        "videoList": [
+            {
+                "resolution": 1920,
+                "bitrate": 5000
+            },
+            {
+                "resolution": 1280,
+                "bitrate": 2400
+            },
+            {
+                "resolution": 1138,
+                "bitrate": 2000
+            },
+            {
+                "resolution": 960,
+                "bitrate": 1500
+            },
+            {
+                "resolution": 854,
+                "bitrate": 1200
+            },
+            {
+                "resolution": 640,
+                "bitrate": 1000
+            },
+            {
+                "resolution": 480,
+                "bitrate": 700
+            }
+        ]
+    }
+}

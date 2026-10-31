@@ -1,0 +1,1 @@
+gcloud access-context-manager perimeters describe $perimeterName --project $projectId --format=json | jq -r '.status.restrictedServices[]? // "null"'

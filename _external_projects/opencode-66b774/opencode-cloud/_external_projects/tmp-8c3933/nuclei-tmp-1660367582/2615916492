@@ -1,0 +1,1 @@
+aws ec2 describe-volumes --region $region --query 'Volumes[*].VolumeId'  --output json

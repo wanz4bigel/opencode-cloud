@@ -1,0 +1,69 @@
+name: Keep Alive
+
+run-name: "Keep alive (cron ${{ github.event.schedule || 'manual' }})"
+
+on:
+  schedule:
+    # tiap 15 menit cek: kalau runner VMess-nya mati / kehabisan antrean, nyalakan lagi
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      min_active:
+        description: "Jumlah endpoint (runner) yang harus aktif"
+        required: false
+        default: "1"
+      force:
+        description: "Paksa restart walau sudah aktif"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+  actions: write
+
+env:
+  SERVER_WORKFLOW: vmess-server.yml
+  TOKEN: ${{ secrets.REPO_TOKEN || secrets.GITHUB_TOKEN }}
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Cek & nyalakan ulang server VMess
+        id: guard
+        env:
+          MIN_ACTIVE: ${{ inputs.min_active || vars.MIN_ACTIVE || 1 }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -uo pipefail
+          api="${GITHUB_API_URL:-https://api.github.com}"
+          repo="${GITHUB_REPOSITORY}"
+          hdr=(-H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json"
+               -H "X-GitHub-Api-Version: 2022-11-28")
+
+          count() {
+            curl -sS --max-time 20 "${hdr[@]}" \
+              "$api/repos/$repo/actions/runs?workflow=$SERVER_WORKFLOW&status=$1&per_page=100" \
+              | jq -r '.total_count // 0'
+          }
+
+          active="$(count in_progress)"
+          queued="$(count queued)"
+          running=$(( active + queued ))
+          echo "active=$active queued=$queued target=$MIN_ACTIVE force=$FORCE"
+          echo "active=$active" >>"$GITHUB_OUTPUT"
+
+          if [ "$FORCE" = "true" ] || [ "$running" -lt "$MIN_ACTIVE" ]; then
+            ref="${GITHUB_REF_NAME}"
+            branch="$(curl -sS --max-time 20 "${hdr[@]}" "$api/repos/$repo" | jq -r '.default_branch // "main"')"
+            [ -n "$branch" ] && [ "$branch" != "null" ] && ref="$branch"
+            code="$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' -X POST "${hdr[@]}" \
+              "$api/repos/$repo/actions/workflows/$SERVER_WORKFLOW/dispatches" \
+              -d "{\"ref\":\"$ref\"}")"
+            echo "Dispatch -> HTTP $code"
+            [ "$code" = "204" ] || { echo "Gagal menyalakan ulang workflow."; exit 1; }
+          else
+            echo "Sudah aktif ($running >= $MIN_ACTIVE), tidak ada yang perlu dilakukan."
+          fi

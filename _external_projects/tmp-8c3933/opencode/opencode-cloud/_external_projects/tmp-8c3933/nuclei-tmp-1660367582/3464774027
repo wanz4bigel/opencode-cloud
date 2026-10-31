@@ -1,0 +1,1 @@
+aws rds describe-db-clusters --region $region --output json --query 'DBClusters[?Engine==`aurora-mysql` || Engine==`aurora-postgresql`].DBClusterIdentifier | []'

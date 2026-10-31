@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-06-18 16:33:13.086",
+  "version": "1.15.1",
+  "branch": "master",
+  "commitId": "977d2b3c93ebc5c5563912face0519b52e0ad32e",
+  "moduleCommitId": "977d2b3c93ebc5c5563912face0519b52e0ad32e",
+  "lastMessage": "",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "szwidget",
+  "path": ":szwidget",
+  "remoteUrl": ""
+}

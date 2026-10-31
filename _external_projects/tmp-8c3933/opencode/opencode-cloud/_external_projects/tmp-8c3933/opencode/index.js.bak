@@ -1,0 +1,548 @@
+import process from 'node:process';
+import { GrammyError, HttpError, Bot } from 'grammy';
+import { config, isAllowed } from './config.js';
+import {
+  getSettings,
+  setSetting,
+  toggleSetting,
+} from './state.js';
+import {
+  cancelAllJobs,
+  cancelJob,
+  getActiveJob,
+  rememberMessage,
+  startSpamDetached,
+} from './spam.js';
+import {
+  PRESETS,
+  apiCall,
+  clearStickerCache,
+  getStickerFileId,
+} from './api.js';
+import { RANDOM_STYLES, randomReaction, randomText } from './randomText.js';
+import { HELP_TEXT, ownerHint, settingsKeyboard, settingsText, statusText } from './ui.js';
+
+if (!config.token || config.token.includes('contoh') || config.token === '1234567890:AA_example_token_ganti_dengan_punya_kamu') {
+  console.error(
+    '❌ BOT_TOKEN belum diisi.\n' +
+      '   1. Chat @BotFather di Telegram → /newbot → salin token\n' +
+      '   2. Salin .env.example jadi .env, tempel tokennya ke BOT_TOKEN\n' +
+      '   3. npm start',
+  );
+  process.exit(1);
+}
+
+const bot = new Bot(config.token);
+
+/* ------------------------------ statistik ------------------------------ */
+
+const stats = new Map();
+const chaosCooldown = new Map();
+
+function getStats(chatId) {
+  const key = String(chatId);
+  if (!stats.has(key)) stats.set(key, { seen: 0, chaos: 0, react: 0, sticker: 0 });
+  return stats.get(key);
+}
+
+/* ------------------------------ util teks ------------------------------ */
+
+function parseArgs(rest) {
+  const flags = {};
+  const positional = [];
+  for (const token of rest) {
+    if (token.startsWith('--')) {
+      const body = token.slice(2);
+      const eq = body.indexOf('=');
+      if (eq === -1) flags[body] = true;
+      else flags[body.slice(0, eq)] = body.slice(eq + 1);
+    } else if (positional.length === 0 && /^\d{1,3}$/.test(token)) {
+      flags.count = Number.parseInt(token, 10);
+    } else {
+      positional.push(token);
+    }
+  }
+  flags.text = positional.join(' ');
+  return flags;
+}
+
+function clampCount(value, fallback = 10) {
+  const n = Number.isFinite(value) ? value : fallback;
+  return Math.min(100, Math.max(1, Math.round(n)));
+}
+
+function parseDelay(value) {
+  const n = Number.parseInt(value, 10);
+  if (!Number.isFinite(n)) return undefined;
+  return Math.min(10_000, Math.max(150, n));
+}
+
+function parsePreset(value) {
+  const name = String(value ?? '').trim().toLowerCase();
+  return PRESETS[name] ? name : null;
+}
+
+function parseStyle(value) {
+  const name = String(value ?? '').trim().toLowerCase();
+  return RANDOM_STYLES.includes(name) ? name : 'auto';
+}
+
+function boolArg(value) {
+  const v = String(value ?? '').trim().toLowerCase();
+  if (['on', '1', 'ya', 'y', 'hidup', 'aktif', 'nyala'].includes(v)) return true;
+  if (['off', '0', 'tidak', 'n', 'mati', 'nonaktif'].includes(v)) return false;
+  return null;
+}
+
+function targetMessageId(ctx) {
+  return ctx.msg?.reply_to_message?.message_id ?? ctx.msg?.message_id ?? null;
+}
+
+async function canControl(ctx) {
+  if (!ctx.from) return true;
+  if (config.admins.size === 0) return true;
+  if (isAllowed(ctx.from.id)) return true;
+  if (ctx.chat?.type === 'private') return true;
+  try {
+    const member = await bot.api.getChatMember(ctx.chat.id, ctx.from.id);
+    return ['creator', 'administrator'].includes(member.status);
+  } catch {
+    return true;
+  }
+}
+
+async function reply(ctx, text, extra = {}) {
+  return apiCall(bot.api, 'sendMessage', {
+    chat_id: ctx.chat.id,
+    text,
+    reply_parameters: { message_id: ctx.msg.message_id },
+    link_preview_options: { is_disabled: true },
+    ...extra,
+  });
+}
+
+/* ---------------------------- pencatat pesan ---------------------------- */
+
+bot.use((ctx, next) => {
+  if (ctx.msg?.message_id && ctx.chat) {
+    rememberMessage(ctx.chat.id, ctx.msg.message_id);
+    getStats(ctx.chat.id).seen++;
+  }
+  return next();
+});
+
+/* ------------------------------- perintah ------------------------------- */
+
+const HANDLERS = {
+  start: async (ctx) => {
+    const name = ctx.from?.first_name ?? 'bro';
+    await reply(
+      ctx,
+      `Halo ${name}! 👋\n\nGue bot tukang spam. Nyalain chaos di grup biar gue balesin tiap pesan, atau lempar /spam 20 buat buang waktu.\n\n${HELP_TEXT}${ownerHint()}`,
+    );
+  },
+
+  help: async (ctx) => reply(ctx, `${HELP_TEXT}${ownerHint()}`),
+
+  spam: async (ctx, flags, rest) => {
+    const settings = getSettings(ctx.chat.id);
+    const replyTo = ctx.msg?.reply_to_message ? ctx.msg.message_id : undefined;
+    const preset = parsePreset(flags.preset) ?? settings.preset;
+    const delay = parseDelay(flags.delay);
+    if (flags.text) {
+      // teks literal, tidak pakai generator
+      startSpamDetached(ctx, {
+        chatId: ctx.chat.id,
+        kind: 'text',
+        total: clampCount(flags.count, rest.length ? 10 : 5),
+        preset,
+        delay,
+        text: flags.text.slice(0, config.maxTextLen),
+        replyTo,
+      });
+      return;
+    }
+    startSpamDetached(ctx, {
+      chatId: ctx.chat.id,
+      kind: 'text',
+      total: clampCount(flags.count),
+      preset,
+      delay,
+      style: parseStyle(flags.style),
+      replyTo,
+    });
+  },
+
+  stiker: async (ctx, flags) => {
+    const settings = getSettings(ctx.chat.id);
+    startSpamDetached(ctx, {
+      chatId: ctx.chat.id,
+      kind: 'sticker',
+      total: clampCount(flags.count, 6),
+      preset: parsePreset(flags.preset) ?? settings.preset,
+      delay: parseDelay(flags.delay),
+      stickerSet: typeof flags.set === 'string' ? flags.set : undefined,
+      replyTo: ctx.msg?.reply_to_message ? ctx.msg.message_id : undefined,
+    });
+  },
+
+  reaksi: async (ctx, flags) => {
+    const settings = getSettings(ctx.chat.id);
+    const target = targetMessageId(ctx);
+    startSpamDetached(ctx, {
+      chatId: ctx.chat.id,
+      kind: 'reaction',
+      total: clampCount(flags.count, 5),
+      preset: parsePreset(flags.preset) ?? settings.preset,
+      delay: parseDelay(flags.delay),
+      targetMessageId: target,
+      silent: true,
+    });
+    await reply(ctx, `🔥 Gue reacisin pesan itu ${clampCount(flags.count, 5)} kali.`);
+  },
+
+  campur: async (ctx, flags) => {
+    const settings = getSettings(ctx.chat.id);
+    startSpamDetached(ctx, {
+      chatId: ctx.chat.id,
+      kind: 'mixed',
+      total: clampCount(flags.count, 15),
+      preset: parsePreset(flags.preset) ?? settings.preset,
+      delay: parseDelay(flags.delay),
+      style: parseStyle(flags.style),
+      replyTo: ctx.msg?.reply_to_message ? ctx.msg.message_id : undefined,
+    });
+  },
+
+  gas: async (ctx, flags, rest) => {
+    const settings = getSettings(ctx.chat.id);
+    const seconds = Math.min(300, Math.max(1, Number.parseInt(rest[0] ?? '20', 10) || 20));
+    const preset = parsePreset(flags.preset) ?? settings.preset;
+    const delay = parseDelay(flags.delay) ?? PRESETS[preset].delay;
+    const total = Math.min(100, Math.max(1, Math.floor((seconds * 1000) / delay)));
+    startSpamDetached(ctx, {
+      chatId: ctx.chat.id,
+      kind: 'mixed',
+      total,
+      preset,
+      delay,
+      style: parseStyle(flags.style),
+      replyTo: ctx.msg?.reply_to_message ? ctx.msg.message_id : undefined,
+    });
+  },
+
+  stop: async (ctx) => {
+    const job = cancelJob(ctx.chat.id, `dihentikan oleh ${ctx.from?.first_name ?? 'user'}`);
+    if (job) {
+      await reply(ctx, `⏹ Oke, spam #${job.id} gue berhentiin. (${job.sent}/${job.total} udah kekirim)`);
+      return;
+    }
+    const settings = getSettings(ctx.chat.id);
+    if (settings.chaos || settings.autoReact || settings.autoSticker) {
+      setSetting(ctx.chat.id, 'chaos', false);
+      setSetting(ctx.chat.id, 'autoReact', false);
+      setSetting(ctx.chat.id, 'autoSticker', false);
+      await reply(ctx, '⏹ Gak ada spam jalan, jadi mode chaos/reaksi/stiker otomatis gue matiin semua.');
+      return;
+    }
+    await reply(ctx, '🤷 Gak ada yang lagi di-spam di sini.');
+  },
+
+  preset: async (ctx, flags, rest) => {
+    const name = parsePreset(rest[0] ?? flags.preset);
+    if (!name) {
+      await reply(ctx, `Pilih salah satu: ${Object.keys(PRESETS).join(' / ')}`);
+      return;
+    }
+    setSetting(ctx.chat.id, 'preset', name);
+    await reply(ctx, `⚡ Kecepatan sekarang: ${PRESETS[name].label} (jeda ${PRESETS[name].delay} ms)`);
+  },
+
+  chaos: async (ctx, flags, rest) => {
+    const value = boolArg(rest[0]);
+    const settings = getSettings(ctx.chat.id);
+    const next = value ?? !settings.chaos;
+    setSetting(ctx.chat.id, 'chaos', next);
+    await reply(
+      ctx,
+      next
+        ? '😈 Chaos ON. Mulai sekarang tiap pesan gue bales. /chaos off buat matiin.'
+        : '😇 Chaos OFF. Gue diem dulu.',
+    );
+    if (next) {
+      startSpamDetached(ctx, {
+        chatId: ctx.chat.id,
+        kind: 'mixed',
+        total: 3,
+        preset: settings.preset,
+        silent: true,
+      });
+    }
+  },
+
+  setting: async (ctx) => {
+    const settings = getSettings(ctx.chat.id);
+    await apiCall(bot.api, 'sendMessage', {
+      chat_id: ctx.chat.id,
+      text: settingsText(settings, getActiveJob(ctx.chat.id)),
+      reply_parameters: { message_id: ctx.msg.message_id },
+      reply_markup: settingsKeyboard(settings),
+    });
+  },
+
+  status: async (ctx) => {
+    const settings = getSettings(ctx.chat.id);
+    await reply(ctx, statusText(settings, getActiveJob(ctx.chat.id), getStats(ctx.chat.id)));
+  },
+
+  reaktif: async (ctx) => {
+    clearStickerCache();
+    const fileId = await getStickerFileId(bot.api);
+    await reply(ctx, fileId ? '🩹 Cache stiker disegarkan, contoh:' : '🩹 Cache stiker disegarkan, tapi setnya gak kebaca.');
+    if (fileId) {
+      await apiCall(bot.api, 'sendSticker', {
+        chat_id: ctx.chat.id,
+        sticker: fileId,
+        reply_parameters: { message_id: ctx.msg.message_id },
+      });
+    }
+  },
+};
+
+HANDLERS.settings = HANDLERS.setting;
+HANDLERS.henti = HANDLERS.stop;
+
+/* ----------------------------- dispatcher ----------------------------- */
+
+bot.on('message:text', async (ctx) => {
+  const raw = ctx.msg.text ?? '';
+  if (!raw.startsWith('/') && !raw.startsWith('\\')) return;
+  const cleaned = raw.replace(/^\\/, '/');
+  const [head, ...rest] = cleaned.slice(1).split(/\s+/);
+  const command = String(head ?? '').split('@')[0].trim().toLowerCase();
+  if (!command) return;
+
+  const handler = HANDLERS[command];
+  if (!handler) {
+    if (command.length > 1) await reply(ctx, `🤔 Gak ngerti perintah /${command}. Coba /help`);
+    return;
+  }
+  if (command !== 'stop' && command !== 'henti' && !(await canControl(ctx))) {
+    await reply(ctx, '🔒 Cuma admin grup atau owner bot yang boleh pakai perintah ini.');
+    return;
+  }
+  try {
+    await handler(ctx, parseArgs(rest), rest);
+  } catch (err) {
+    console.error(`[cmd:${command}]`, err?.message ?? err);
+    await reply(ctx, `⚠️ Error: ${err?.message ?? 'tidak diketahui'}`);
+  }
+});
+
+/* ------------------------- tombol pengaturan ------------------------- */
+
+bot.on('callback_query:data', async (ctx) => {
+  const data = ctx.callbackQuery.data;
+  const chatId = ctx.chat?.id ?? ctx.callbackQuery.message?.chat?.id;
+  if (!data.startsWith('tg:') || !chatId) {
+    await ctx.answerCallbackQuery();
+    return;
+  }
+  if (ctx.from && !(await canControl(ctx))) {
+    await ctx.answerCallbackQuery({ text: 'Cuma admin yang boleh pencet tombol ini 😅', show_alert: true });
+    return;
+  }
+
+  const parts = data.slice(3).split(':');
+  const action = parts[0];
+  const settings = getSettings(chatId);
+  let alert = null;
+
+  if (action === 'chaos') {
+    toggleSetting(chatId, 'chaos');
+  } else if (action === 'react') {
+    toggleSetting(chatId, 'autoReact');
+  } else if (action === 'sticker') {
+    toggleSetting(chatId, 'autoSticker');
+  } else if (action === 'preset') {
+    const name = parsePreset(parts[1]);
+    if (name) setSetting(chatId, 'preset', name);
+  } else if (action === 'stop') {
+    cancelJob(chatId, `dihentikan lewat tombol oleh ${ctx.from?.first_name ?? 'user'}`);
+    alert = 'Spam dihentikan ⏹';
+  } else if (action === 'spam') {
+    if (!getActiveJob(chatId)) {
+      startSpamDetached(ctx, {
+        chatId,
+        kind: 'mixed',
+        total: clampCount(Number.parseInt(parts[1] ?? '10', 10)),
+        preset: settings.preset,
+      });
+      alert = 'Gas! 🔥';
+    } else {
+      alert = 'Masih ada spam jalan. Stop dulu.';
+    }
+  }
+
+  await ctx.answerCallbackQuery(alert ? { text: alert } : undefined);
+
+  const fresh = getSettings(chatId);
+  await apiCall(bot.api, 'editMessageText', {
+    chat_id: chatId,
+    message_id: ctx.callbackQuery.message?.message_id,
+    text: settingsText(fresh, getActiveJob(chatId)),
+    reply_markup: settingsKeyboard(fresh),
+  });
+});
+
+/* ----------------------------- mode chaos ----------------------------- */
+
+async function handleChaos(ctx) {
+  if (!ctx.chat || !ctx.msg) return;
+  const text = ctx.msg.text ?? '';
+  const isCommand = text.startsWith('/') || text.startsWith('\\');
+  if (isCommand || ctx.chat.type === 'channel') return;
+  if (ctx.msg.from?.id === bot.botInfo?.id) return;
+  if (ctx.msg.from?.is_bot && !config.spamBots) return;
+  if (ctx.edit_date) return;
+
+  const chatId = ctx.chat.id;
+  const settings = getSettings(chatId);
+  if (!settings.chaos && !settings.autoReact && !settings.autoSticker) return;
+  if (getActiveJob(chatId)) return;
+
+  const now = Date.now();
+  const key = String(chatId);
+  if (now - (chaosCooldown.get(key) ?? 0) < 800) return;
+  chaosCooldown.set(key, now);
+
+  const st = getStats(chatId);
+  const target = ctx.msg.message_id;
+
+  if (settings.autoReact) {
+    const res = await apiCall(bot.api, 'setChatMessageReaction', {
+      chat_id: chatId,
+      message_id: target,
+      reaction: [{ type: 'emoji', emoji: randomReaction() }],
+    });
+    if (!res?.skipped) st.react++;
+  }
+
+  if (!settings.chaos) return;
+
+  if (settings.autoSticker && Math.random() < 0.25) {
+    const fileId = await getStickerFileId(bot.api);
+    if (fileId) {
+      const res = await apiCall(bot.api, 'sendSticker', {
+        chat_id: chatId,
+        sticker: fileId,
+        reply_parameters: { message_id: target },
+      });
+      if (!res?.skipped) {
+        st.sticker++;
+        st.chaos++;
+        return;
+      }
+    }
+  }
+
+  const useQuote = Math.random() < 0.35;
+  const res = await apiCall(bot.api, 'sendMessage', {
+    chat_id: chatId,
+    text: randomText(),
+    ...(useQuote ? { reply_parameters: { message_id: target } } : {}),
+    link_preview_options: { is_disabled: true },
+  });
+  if (!res?.skipped) st.chaos++;
+}
+
+bot.on('message', (ctx) => {
+  handleChaos(ctx).catch((err) => console.error('[chaos]', err?.message ?? err));
+});
+
+/* ------------------------------ error log ------------------------------ */
+
+bot.catch((err) => {
+  const e = err.error;
+  if (e instanceof GrammyError) {
+    if (e.error_code === 403) return; // diblokir / keluar grup
+    console.error('[grammy]', e.error_code, e.description);
+    return;
+  }
+  if (e instanceof HttpError) {
+    console.error('[grammy] jaringan:', e.message);
+    return;
+  }
+  console.error('[grammy]', e?.message ?? e);
+});
+
+/* ------------------------------- mulai ------------------------------- */
+
+const COMMANDS = [
+  { command: 'spam', description: 'Spam teks acak / teks sendiri' },
+  { command: 'stiker', description: 'Spam stiker' },
+  { command: 'reaksi', description: 'Spam reaksi emoji' },
+  { command: 'campur', description: 'Teks + stiker + reaksi campur' },
+  { command: 'gas', description: 'Spam nonstop N detik' },
+  { command: 'chaos', description: 'Nyalain/matikan bales otomatis' },
+  { command: 'preset', description: 'santai / normal / kenceng / brutal' },
+  { command: 'setting', description: 'Buka panel pengaturan' },
+  { command: 'status', description: 'Kondisi chat ini' },
+  { command: 'stop', description: 'Berhenti spam' },
+  { command: 'help', description: 'Daftar perintah' },
+];
+
+const shuttingDown = { value: false };
+
+async function shutdown(signal) {
+  if (shuttingDown.value) return;
+  shuttingDown.value = true;
+  console.log(`\n[${signal}] berhentiin bot...`);
+  cancelAllJobs();
+  try {
+    await bot.stop();
+  } catch {
+    /* abaikan */
+  }
+  process.exit(0);
+}
+
+async function main() {
+  // Cek token dulu biar error 401 langsung kelihatan, bukan setelah banyak warning.
+  const me = await bot.init().then(() => bot.botInfo);
+
+  try {
+    await bot.api.deleteWebhook({ drop_pending_updates: true });
+  } catch (err) {
+    console.warn('[start] deleteWebhook:', err?.message ?? err);
+  }
+
+  try {
+    await bot.api.setMyCommands(COMMANDS);
+  } catch (err) {
+    console.warn('[start] setMyCommands:', err?.message ?? err);
+  }
+
+  console.log(`🤖 @${me?.username} siap nge-spam. (${config.admins.size ? `${config.admins.size} admin` : 'tanpa filter admin'})`);
+  console.log('   Tekan Ctrl+C buat berhenti.');
+
+  for (const id of config.admins) {
+    const res = await apiCall(bot.api, 'sendMessage', { chat_id: id, text: '🟢 Bot tukang spam udah nyala.' });
+    if (res?.skipped && config.admins.size === 1) {
+      console.warn(`   (notifikasi ke ${id} gagal kirim: ${res.reason ?? 'unknown'})`);
+    }
+  }
+
+  process.once('SIGINT', () => shutdown('SIGINT'));
+  process.once('SIGTERM', () => shutdown('SIGTERM'));
+
+  await bot.start();
+}
+
+main().catch((err) => {
+  console.error('❌ Gagal start:', err?.message ?? err);
+  if (err instanceof GrammyError && err.error_code === 401) {
+    console.error('   Token salah. Cek lagi BOT_TOKEN di .env');
+  }
+  process.exit(1);
+});

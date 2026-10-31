@@ -1,0 +1,1 @@
+az postgres server list --output json --query '[*].{"name":name, "resourceGroup":resourceGroup}'

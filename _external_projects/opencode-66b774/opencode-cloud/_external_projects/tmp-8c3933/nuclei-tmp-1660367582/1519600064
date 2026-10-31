@@ -1,0 +1,1 @@
+gcloud sql instances list --project $projectId --filter=DATABASE_VERSION:SQLSERVER* --format="json(name)"

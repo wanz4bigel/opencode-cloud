@@ -1,0 +1,1 @@
+az keyvault show --name $name --query 'properties.{"enableSoftDelete":enableSoftDelete,"enablePurgeProtection":enablePurgeProtection}' --output json

@@ -1,0 +1,1 @@
+az vm list --query '[?(tags.web_tier_tag == "web_tier_tag_value")].{"Id":id}'

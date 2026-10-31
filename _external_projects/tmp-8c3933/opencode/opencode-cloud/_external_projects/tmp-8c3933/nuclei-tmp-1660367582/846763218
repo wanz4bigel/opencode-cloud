@@ -1,0 +1,1 @@
+gcloud compute networks subnets describe $subnetName --project=$projectId --format=json --region $subnetRegion | jq '.enableFlowLogs // "null"'

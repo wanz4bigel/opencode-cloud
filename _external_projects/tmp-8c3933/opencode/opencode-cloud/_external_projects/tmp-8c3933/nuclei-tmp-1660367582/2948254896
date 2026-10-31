@@ -1,0 +1,1 @@
+aws ec2 describe-instances --region $region --instance-ids $ec2instance --query "Reservations[*].Instances[*].NetworkInterfaces[*].Association.IpOwnerId[] | []"

@@ -1,0 +1,1 @@
+gcloud alpha resource-manager org-policies describe compute.vmExternalIpAccess --organization=$orgId --effective --format="json(listPolicy.allValues)"

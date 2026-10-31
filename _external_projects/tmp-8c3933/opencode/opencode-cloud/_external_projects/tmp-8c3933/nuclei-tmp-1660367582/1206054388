@@ -1,0 +1,1 @@
+az functionapp show --name $functionName --resource-group $resourceGroup --query 'identity.userAssignedIdentities' --output json

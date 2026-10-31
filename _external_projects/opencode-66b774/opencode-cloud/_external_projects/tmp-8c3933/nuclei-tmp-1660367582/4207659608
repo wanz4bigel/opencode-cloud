@@ -1,0 +1,1 @@
+gcloud compute instances list --project $projectId --format="json(name,zone.basename())"

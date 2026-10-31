@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --project $projectId --format=json | jq '.settings.databaseFlags // [] | map(select(.name=="3625")) | .[].value'

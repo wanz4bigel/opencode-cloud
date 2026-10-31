@@ -1,0 +1,1 @@
+az storage blob service-properties show --account-name "$name" --query 'staticWebsite.enabled'

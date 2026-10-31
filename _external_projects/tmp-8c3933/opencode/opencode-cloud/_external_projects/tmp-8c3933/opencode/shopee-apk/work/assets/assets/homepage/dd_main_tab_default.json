@@ -1,0 +1,179 @@
+{
+  "SG": {
+    "all_tab_config": {
+      "display_text": "All",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "ID": {
+    "all_tab_config": {
+      "display_text": "Semua",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "MY": {
+    "all_tab_config": {
+      "display_text": "All",
+      "tab_image": "439e072505267a0ee1697ffdd38f886b",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "PH": {
+    "all_tab_config": {
+      "display_text": "All",
+      "tab_image": "f0c0b4f654ffde3b97edb9468b7782d5",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "TH": {
+    "all_tab_config": {
+      "display_text": "สินค้าแนะนำ",
+      "tab_image": "7cb98aae24d04ff82ef2ee8879dbca33",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "TW": {
+    "all_tab_config": {
+      "display_text": "全部",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "VN": {
+    "all_tab_config": {
+      "display_text": "Tất cả",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "BR": {
+    "all_tab_config": {
+      "display_text": "Tudo",
+      "tab_image": "0668017f080a7aa5c62a32cff930bd5b",
+      "text_color": "#000000"
+    }
+  },
+  "MX": {
+    "all_tab_config": {
+      "display_text": "Todo",
+      "tab_image": "c914bd47df5c1905e77af69092f05501",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "CO": {
+    "all_tab_config": {
+      "display_text": "Todo",
+      "tab_image": "c914bd47df5c1905e77af69092f05501",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "CL": {
+    "all_tab_config": {
+      "display_text": "Todo",
+      "tab_image": "c914bd47df5c1905e77af69092f05501",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "AR": {
+    "all_tab_config": {
+      "display_text": "Todos",
+      "tab_image": "3625beb950f8e8e7d4e253c933c2f169",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "PL": {
+    "all_tab_config": {
+      "display_text": "Wszystkie",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "ES": {
+    "all_tab_config": {
+      "display_text": "Todo",
+      "tab_image": "c914bd47df5c1905e77af69092f05501",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "FR": {
+    "all_tab_config": {
+      "display_text": "TOUT",
+      "tab_image": "c914bd47df5c1905e77af69092f05501",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "IN": {
+    "all_tab_config": {
+      "display_text": "All",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "default": {
+    "all_tab_config": {
+      "display_text": "All",
+      "tab_image": "8605794b554a56fbd45124ab53f87ca7",
+      "text_color": "#ee4d2d"
+    }
+  },
+  "endpoint": {
+    "fixed_params": [
+      {
+        "name": "bundle",
+        "value": "daily_discover_main",
+        "type": 3
+      },
+      {
+        "name": "limit",
+        "value": "20",
+        "type": 1
+      }
+    ],
+    "method": "GET",
+    "path": "/api/v4/recommend/recommend",
+    "params": [
+      {
+        "name": "bundle",
+        "value": null,
+        "type": 3
+      },
+      {
+        "name": "offset",
+        "value": null,
+        "type": 1
+      },
+      {
+        "name": "limit",
+        "value": null,
+        "type": 1
+      },
+      {
+        "name": "latitude",
+        "value": null,
+        "type": 2
+      },
+      {
+        "name": "longitude",
+        "value": null,
+        "type": 2
+      },
+      {
+        "name": "city",
+        "value": null,
+        "type": 3
+      },
+      {
+        "name": "district",
+        "value": null,
+        "type": 3
+      },
+      {
+        "name": "friend_visible",
+        "value": null,
+        "type": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+az synapse workspace list --query '[*].id'

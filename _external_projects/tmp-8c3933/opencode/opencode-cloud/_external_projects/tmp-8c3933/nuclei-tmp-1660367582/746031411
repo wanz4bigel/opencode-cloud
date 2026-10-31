@@ -1,0 +1,1 @@
+aws secretsmanager describe-secret --region $region --secret-id $secretlist --query 'RotationEnabled'

@@ -1,0 +1,1 @@
+aws cloudfront get-distribution --region $region --id $distribution --query 'Distribution.DistributionConfig.ViewerCertificate.CloudFrontDefaultCertificate' --output text

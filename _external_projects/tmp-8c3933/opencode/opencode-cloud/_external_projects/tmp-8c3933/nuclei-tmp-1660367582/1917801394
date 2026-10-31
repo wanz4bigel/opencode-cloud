@@ -1,0 +1,1 @@
+az disk show --ids "$ids" --query '{encryptionSettingsCollection: encryptionSettingsCollection}'

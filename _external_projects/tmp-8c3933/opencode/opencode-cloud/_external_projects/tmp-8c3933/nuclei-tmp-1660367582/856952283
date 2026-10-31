@@ -1,0 +1,1 @@
+az storage container list --account-name "$name" --query '[*].{"ContainerName":name, "TimeBasedRetentionPolicy":properties.hasImmutabilityPolicy, "LegalHoldPolicy": properties.hasLegalHold}'

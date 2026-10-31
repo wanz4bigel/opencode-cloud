@@ -1,0 +1,1 @@
+gcloud compute url-maps list --project $projectId --format="json(name)"

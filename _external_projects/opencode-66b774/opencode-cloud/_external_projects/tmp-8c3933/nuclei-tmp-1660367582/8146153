@@ -1,0 +1,1 @@
+az network vnet list --query '[*].{name:name, resourceGroup:resourceGroup}' --output json

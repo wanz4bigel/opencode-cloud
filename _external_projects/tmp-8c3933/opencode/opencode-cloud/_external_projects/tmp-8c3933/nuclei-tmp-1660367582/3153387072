@@ -1,0 +1,1 @@
+az sql server audit-policy show --name "$name" --resource-group "$resourceGroup" --query '{"AuditState":state}' --output json

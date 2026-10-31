@@ -1,0 +1,1 @@
+gcloud sql instances describe $sqlInstance --project $projectId --format=json | jq -r '.ipAddresses[]?.type // "null"'

@@ -1,0 +1,1 @@
+aws guardduty get-detector --region $region --detector-id "$detector" --query 'DataSources.MalwareProtection.ScanEc2InstanceWithFindings.EbsVolumes.Status' --output json

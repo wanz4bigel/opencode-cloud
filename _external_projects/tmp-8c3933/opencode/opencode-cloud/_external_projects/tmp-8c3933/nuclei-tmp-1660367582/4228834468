@@ -1,0 +1,1 @@
+gcloud alpha monitoring policies describe $policyName --project=$projectId --format="json(conditions,enabled)"

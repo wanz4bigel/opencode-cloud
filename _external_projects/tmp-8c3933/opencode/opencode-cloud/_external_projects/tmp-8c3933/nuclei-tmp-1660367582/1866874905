@@ -1,0 +1,1 @@
+aws cloudwatch describe-alarms --region $region --query 'MetricAlarms[].AlarmName' --output json

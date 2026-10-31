@@ -1,0 +1,1 @@
+aws firehose describe-delivery-stream --region $region --delivery-stream-name $delivery --query 'DeliveryStreamDescription.Destinations[*].ExtendedS3DestinationDescription.EncryptionConfiguration' --output json

@@ -1,0 +1,12 @@
+HTTP/2 200 
+last-modified: Thu, 05 Mar 2026 03:48:46 GMT
+accept-ranges: bytes
+content-length: 157
+vary: Accept-Encoding,User-Agent
+cache-control: no-cache, no-store, must-revalidate
+pragma: no-cache
+expires: 0
+content-type: text/html
+date: Wed, 28 Oct 2026 07:38:51 GMT
+server: Apache
+

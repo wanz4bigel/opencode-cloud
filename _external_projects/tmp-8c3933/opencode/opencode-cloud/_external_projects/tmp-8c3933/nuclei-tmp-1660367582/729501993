@@ -1,0 +1,1 @@
+aws elbv2 describe-load-balancer-attributes --region $region --load-balancer-arn $loadbalancer --query 'Attributes[?(Key == `deletion_protection.enabled`)].Value | []'

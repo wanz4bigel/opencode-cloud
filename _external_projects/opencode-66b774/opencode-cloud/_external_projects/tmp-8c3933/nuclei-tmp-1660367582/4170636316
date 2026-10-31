@@ -1,0 +1,1 @@
+gcloud projects get-iam-policy $projectId --format="json(bindings[?(@.role=='roles/cloudkms.cryptoKeyDecrypter' || @.role=='roles/cloudkms.cryptoOperator' || @.role=='roles/cloudkms.cryptoKeyEncrypterDecrypter')])"

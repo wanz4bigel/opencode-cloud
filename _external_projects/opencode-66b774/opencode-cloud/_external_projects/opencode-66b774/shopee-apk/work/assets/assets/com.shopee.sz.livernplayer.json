@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-09-18 18:52:14.491",
+  "version": "0.4.55",
+  "branch": "master",
+  "commitId": "6c39b9dd85546cd0657d6fad730dc1d7dd6b7efe",
+  "moduleCommitId": "b8e1b4a6f330dc7db54bdc0a02cb3e6f39852edc",
+  "lastMessage": "",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "livernplayer",
+  "path": ":livernplayer",
+  "remoteUrl": ""
+}

@@ -1,0 +1,1 @@
+az storage container show --account-name $containerDetails --name insights-operational-logs --query 'properties.publicAccess'

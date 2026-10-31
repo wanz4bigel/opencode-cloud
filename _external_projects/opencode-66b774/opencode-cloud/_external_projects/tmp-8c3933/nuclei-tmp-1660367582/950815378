@@ -1,0 +1,1 @@
+az storage account management-policy show --account-name "$name" --resource-group "$resourceGroup" --output json

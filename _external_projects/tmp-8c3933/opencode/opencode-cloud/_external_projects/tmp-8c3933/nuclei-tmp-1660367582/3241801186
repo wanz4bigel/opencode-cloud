@@ -1,0 +1,1 @@
+aws acm describe-certificate --region $region --certificate-arn $certificatearn --query 'Certificate.DomainName'

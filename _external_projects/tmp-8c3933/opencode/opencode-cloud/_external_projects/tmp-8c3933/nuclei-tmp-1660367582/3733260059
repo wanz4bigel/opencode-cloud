@@ -1,0 +1,1 @@
+aws ec2 describe-nat-gateways --region $region --filter "Name=vpc-id,Values=$vpc" "Name=state,Values=available" --query 'NatGateways'

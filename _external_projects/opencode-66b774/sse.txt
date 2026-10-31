@@ -1,0 +1,12 @@
+event: ready
+data: {"mailboxId":"CKYgo0kX5VqLukCT85trMQ"}
+
+event: message
+data: {"id":"dvXc9_3lNamnR-eWc2qB0A","mailboxId":"CKYgo0kX5VqLukCT85trMQ","fromName":"Angin Test","fromAddress":"sender@example.com","toAddress":"sse@angin.test","subject":"Kode verifikasi 482913","snippet":"Halo! Kode verifikasi Anda adalah 482913. Kode berlaku 10 menit.","otp":"482913","isRead":false,"isStarred":false,"hasAttachments":true,"sizeBytes":1108,"receivedAt":"2026-10-31T12:00:00.000Z"}
+
+: keep-alive
+
+: keep-alive
+
+: keep-alive
+

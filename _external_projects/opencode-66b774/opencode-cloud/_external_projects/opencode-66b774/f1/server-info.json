@@ -1,0 +1,20 @@
+{
+  "address": "20.57.223.165",
+  "uuid": "7576cf38-c85a-467f-b265-8b84293bb84a",
+  "alterId": 0,
+  "core": "v2ray",
+  "endpoints": {
+    "ws_tls": [
+      443
+    ],
+    "ws_plain": [],
+    "grpc": null,
+    "httpupgrade": null
+  },
+  "path": "/m7yj7lf9-x28u",
+  "security": "tls",
+  "sni": "",
+  "runner": "gh-actions",
+  "startedAt": "2026-10-28T12:02:41Z",
+  "link": "vmess://eyJ2IjoiMiIsInBzIjoiY29vbG1heHgtd3MtdGxzQDQ0MyIsImFkZCI6IjIwLjU3LjIyMy4xNjUiLCJwb3J0IjoiNDQzIiwiaWQiOiI3NTc2Y2YzOC1jODVhLTQ2N2YtYjI2NS04Yjg0MjkzYmI4NGEiLCJhaWQiOiIwIiwic2MiOiJhdXRvIiwibmV0Ijoid3MiLCJ0eXBlIjoibm9uZSIsInBhdGgiOiIvbTd5ajdsZjkteDI4dSIsInRscyI6InRscyIsImFscG4iOiJoMixodHRwLzEuMSIsImVtYWlsIjoiZ2l0aHViLWFjdGlvbnMifQ=="
+}

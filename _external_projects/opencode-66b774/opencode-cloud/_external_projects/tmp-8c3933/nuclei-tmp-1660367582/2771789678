@@ -1,0 +1,1 @@
+ossutil ls -s --region $region

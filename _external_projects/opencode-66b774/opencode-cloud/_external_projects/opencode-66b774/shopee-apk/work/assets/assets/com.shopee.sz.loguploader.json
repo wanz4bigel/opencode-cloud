@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "patch",
+  "time": "2026-03-25 20:16:05.758",
+  "version": "1.230.6",
+  "branch": "025d5c45dfef888ce22aa231c29acf927f0825d8",
+  "commitId": "025d5c45dfef888ce22aa231c29acf927f0825d8",
+  "moduleCommitId": "a535f1e2bf618199343fb31fbbe160fab12a1733",
+  "lastMessage": "Merge branch \u0027version-3.71/feature/SPLC-54598-threadpool-opti\u0027 into \u0027v3.71\u0027",
+  "extraInfo": "v3.71",
+  "groupId": "com.shopee.sz",
+  "artifactId": "loguploader",
+  "path": ":loguploader",
+  "remoteUrl": "gitlab@git.garena.com:shopee/live-tech/coreplayersdk/MMCLiveStreamer.git"
+}

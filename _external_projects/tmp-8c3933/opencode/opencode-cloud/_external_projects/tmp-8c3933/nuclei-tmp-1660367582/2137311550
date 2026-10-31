@@ -1,0 +1,1 @@
+gcloud dns managed-zones describe $managedZone --project $projectId --format="json(dnssecConfig)"

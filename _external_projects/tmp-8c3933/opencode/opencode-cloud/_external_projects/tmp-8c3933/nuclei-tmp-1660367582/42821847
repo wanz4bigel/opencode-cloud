@@ -1,0 +1,1 @@
+bq ls --project_id $projectId --format=json

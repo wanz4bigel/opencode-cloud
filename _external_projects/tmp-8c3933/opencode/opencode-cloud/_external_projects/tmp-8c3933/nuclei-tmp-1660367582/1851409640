@@ -1,0 +1,1 @@
+aws eks list-nodegroups --cluster-name $cluster --region $region --query 'nodegroups[]' --output json

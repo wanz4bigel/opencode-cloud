@@ -1,0 +1,89 @@
+name: Self Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ["scripts/**", ".github/workflows/test.yml"]
+  push:
+    paths: ["scripts/**", ".github/workflows/test.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  selftest:
+    name: Uji vmess ws+tls end-to-end
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pasang dependency
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq qrencode uuid-runtime
+
+      - name: Jalankan scripts/test-local.sh
+        env:
+          TEST_PORT: "18443"
+          TEST_PROXY_PORT: "18080"
+        run: bash scripts/test-local.sh
+
+      - name: Jalankan scripts/test-edge.sh (mode CDN)
+        env:
+          CONF_DIR: /tmp/v2ray-vmess-edge
+          TEST_EDGE_PORT: "19080"
+        run: bash scripts/test-edge.sh
+
+      - name: Upload log kalau gagal
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selftest-logs
+          path: /tmp/v2ray-vmess-selftest/
+          retention-days: 3
+
+  transports:
+    name: Uji transport ws/grpc/upgrade (${{ matrix.core }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        core: [xray, v2ray]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pasang dependency
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq openssl uuid-runtime
+
+      - name: Jalankan scripts/test-transports.sh
+        env:
+          CORE: ${{ matrix.core }}
+          CONF_DIR: /tmp/v2ray-vmess-transports
+        run: bash scripts/test-transports.sh
+
+      - name: Upload log kalau gagal
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: transports-logs-${{ matrix.core }}
+          path: /tmp/v2ray-vmess-transports/
+          retention-days: 3
+
+  dns:
+    name: Uji auto-DNS Cloudflare (mock)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pasang dependency
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq curl python3
+
+      - name: Jalankan scripts/test-dns.sh
+        run: bash scripts/test-dns.sh

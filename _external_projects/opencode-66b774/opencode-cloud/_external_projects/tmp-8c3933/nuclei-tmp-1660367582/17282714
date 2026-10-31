@@ -1,0 +1,1 @@
+az role assignment list --assignee $assignee --all --output json

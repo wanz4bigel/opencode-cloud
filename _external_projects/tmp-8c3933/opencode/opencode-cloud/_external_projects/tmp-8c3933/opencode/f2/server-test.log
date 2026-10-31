@@ -1,0 +1,9 @@
+[1;36m[vmess][0m ===============================================
+[1;36m[vmess][0m  Deadline job : 2026-10-28 12:07 UTC
+[1;36m[vmess][0m  Handoff run  : 2026-10-28 12:04 UTC
+[1;36m[vmess][0m ===============================================
+[1;36m[vmess][0m Start: xray run -c /tmp/opencode/f2/config.json
+[1;36m[vmess][0m Inbound: tls=[19443,19444] plain=[19080] grpc=[19053] upgrade=[19052] ws=/vmess
+[1;36m[vmess][0m v2ray hidup, pid=77042
+[1;36m[vmess][0m Shutdown (SIGTERM) ...
+[1;33m[vmess] WARN[0m dispatch dilewati (token/repo kosong).

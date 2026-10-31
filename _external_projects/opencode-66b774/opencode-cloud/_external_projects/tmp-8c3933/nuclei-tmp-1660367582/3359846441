@@ -1,0 +1,1 @@
+aliyun vpc DescribeFlowLogs --RegionId $region --VpcId $vpcid

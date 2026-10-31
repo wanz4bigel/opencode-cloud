@@ -1,0 +1,1 @@
+aliyun cs GET /clusters/$cluster --header "Content-Type=application/json;" --body "{}" --output cols=meta_data

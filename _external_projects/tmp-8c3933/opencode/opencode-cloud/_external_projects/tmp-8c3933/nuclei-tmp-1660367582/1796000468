@@ -1,0 +1,1 @@
+gcloud compute firewall-rules list --filter network=$networkName --sort-by priority --format="json(name,disabled,direction,allowed[].ports)"

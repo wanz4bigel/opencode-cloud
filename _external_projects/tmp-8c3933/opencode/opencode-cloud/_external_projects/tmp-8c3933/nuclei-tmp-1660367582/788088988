@@ -1,0 +1,1 @@
+aws ec2 describe-vpcs --region $region --query 'Vpcs[*].VpcId' --output json

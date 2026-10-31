@@ -1,0 +1,5 @@
+{ "log":{"loglevel":"error"},
+  "inbounds":[{"listen":"127.0.0.1","port":19104,"protocol":"http"}],
+  "outbounds":[{"protocol":"vmess","settings":{"vnext":[{"address":"127.0.0.1","port":19053,
+     "users":[{"id":"44c4ced0-f21c-4961-9659-06ccbe35c53c","alterId":0,"security":"auto"}]}]},
+   "streamSettings":{ "network":"grpc","security":"tls","grpcSettings":{"serviceName":"vmess"},"tlsSettings":{"insecure":true,"serverName":"v2ray.local"} }}] }

@@ -1,0 +1,1 @@
+aws acm list-certificates --region $region --output json

@@ -1,0 +1,1 @@
+gcloud projects get-iam-policy $projectId --format="json(bindings[?(@.role=='roles/owner' || @.role=='roles/editor' || @.role contains 'admin' || @.role contains 'Admin')])"

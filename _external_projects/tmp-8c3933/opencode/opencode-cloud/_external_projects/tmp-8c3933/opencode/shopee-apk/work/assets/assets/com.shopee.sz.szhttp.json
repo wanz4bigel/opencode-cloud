@@ -1,0 +1,15 @@
+{
+  "protocol": "v1",
+  "mode": "release",
+  "time": "2024-06-04 11:09:04.515",
+  "version": "0.23.0",
+  "branch": "master",
+  "commitId": "658b191e1130fa29fb429b3a8ace82750f5cff3c",
+  "moduleCommitId": "658b191e1130fa29fb429b3a8ace82750f5cff3c",
+  "lastMessage": "#feature mixtab common修改sdk注册器",
+  "extraInfo": "master",
+  "groupId": "com.shopee.sz",
+  "artifactId": "szhttp",
+  "path": ":szhttp",
+  "remoteUrl": "ssh://gitlab@git.garena.com:2222/shopee/ssz-client/android/toc/common.git"
+}

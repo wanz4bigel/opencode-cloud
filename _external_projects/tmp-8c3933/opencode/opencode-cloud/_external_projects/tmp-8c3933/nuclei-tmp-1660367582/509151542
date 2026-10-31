@@ -1,0 +1,1 @@
+az monitor log-profiles show --name $profileName --query 'categories[]'

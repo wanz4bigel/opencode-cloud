@@ -1,0 +1,1 @@
+ossutil bucket-encryption --method get $bucket

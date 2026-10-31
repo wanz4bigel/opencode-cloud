@@ -1,0 +1,11 @@
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
+const get = async (u) => (await fetch(u, { headers: { "user-agent": UA }, redirect: "follow", signal: AbortSignal.timeout(25000) })).text();
+const html = await get("https://kingbokep.land/");
+const links = [...new Set([...html.matchAll(/href=["'](https:\/\/kingbokep\.land\/view\/[^"']+)["']/gi)].map((m) => m[1]))];
+console.log("posts:", links.length);
+const p = links[0];
+const page = await get(p);
+const ifr = [...new Set([...page.matchAll(/<iframe[^>]+src=["']([^"']+)["']/gi)].map((m) => m[1]))];
+console.log("post:", p);
+console.log("iframe:", ifr[0]);
+require("fs").writeFileSync("/tmp/test-src.json", JSON.stringify({ king: ifr[0] }, null, 2));

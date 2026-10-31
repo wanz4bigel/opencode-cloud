@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Home - Web SPMB</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Informasi tentang Sistem Penerimaan Murid Baru (SPMB) SMAN 1 Cigombong. Informasi pendaftaran, jadwal, pengumuman, dan layanan sekolah.">
+
+    <meta name="keywords"
+        content="SPMB, PPDB, SMAN 1 Cigombong, Sekolah, Pendaftaran Siswa Baru">
+
+    <meta name="author"
+        content="SMAN 1 Cigombong">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title"
+        content="SPMB SMAN 1 Cigombong">
+
+    <meta property="og:description"
+        content="Website Informasi tentang Sistem Penerimaan Murid Baru SMAN 1 Cigombong">
+
+    <meta property="og:image"
+        content="https://spmb.sman1cigombong.sch.id/assets/img/preview.jpg">
+
+    <meta property="og:url"
+        content="https://spmb.sman1cigombong.sch.id">
+
+    <meta property="og:type"
+        content="website">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card"
+        content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="SPMB SMAN 1 Cigombong">
+
+    <meta name="twitter:description"
+        content="Website Informasi tentang Sistem Penerimaan Murid Baru SMAN 1 Cigombong">
+
+    <meta name="twitter:image"
+        content="https://spmb.sman1cigombong.sch.id/assets/img/preview.jpg">
+
+    <!-- FAVICON -->
+    <link rel="icon"
+        href="assets/img/logo.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top"
+        id="navbar">
+
+        <div class="container">
+
+            <!-- LOGO -->
+            <a class="navbar-brand d-flex align-items-center gap-2"
+                href="index.php">
+
+                <img src="assets/img/logo.png"
+                    alt="Logo SMAN 1 Cigombong"
+                    width="45">
+
+                <span>
+                    SMAN 1 CIGOMBONG
+                </span>
+
+            </a>
+
+            <!-- TOGGLE -->
+            <button class="navbar-toggler border-0 shadow-none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- MENU -->
+            <div class="collapse navbar-collapse"
+                id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                    <!-- HOME -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <!-- INFORMASI -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=informasi">
+
+                            Informasi
+
+                        </a>
+
+                    </li>
+
+                    <!-- PENGUMUMAN -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=pengumuman">
+
+                            Pengumuman
+
+                        </a>
+
+                    </li>
+
+                    <!-- PENGADUAN 
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=pengaduan">
+
+                            Pengaduan
+
+                        </a>
+
+                    </li>
+-->
+                    <!-- KONTAK -->
+                    <li class="nav-item">
+
+                        <a class="nav-link "
+                            href="index.php?url=kontak">
+
+                            Kontak
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+<!-- HERO -->
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- TEXT -->
+            <div class="col-lg-6">
+
+                <!-- BADGE -->
+                <span class="hero-badge mb-3 d-inline-block">
+
+                    <i class="bi bi-mortarboard-fill"></i>
+
+                    SPMB SMAN 1 Cigombong 2026
+
+                </span>
+
+                <!-- TITLE -->
+                <h1 class="hero-title mb-4">
+
+                    Sistem Penerimaan Murid Baru
+                    SMAN 1 Cigombong
+
+                </h1>
+
+                <!-- TEXT -->
+                <p class="hero-text mb-4">
+
+                    Selamat datang di website resmi SPMB
+                    SMAN 1 Cigombong. Dapatkan informasi
+                    lengkap mengenai pendaftaran, jadwal,
+                    persyaratan, pengumuman, dan kegiatan
+                    sekolah secara cepat, transparan,
+                    dan mudah diakses.
+
+                </p>
+
+                <!-- BUTTON -->
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <a href="index.php?url=informasi"
+                        class="btn btn-light rounded-pill px-4 shadow-sm">
+
+                        <i class="bi bi-journal-text"></i>
+
+                        Info SPMB
+
+                    </a>
+
+                    <a href="#informasi"
+                        class="btn btn-outline-light rounded-pill px-4">
+
+                        Jelajahi
+
+                    </a>
+
+                </div>
+
+                
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="col-lg-6 mt-1 mt-lg-0">
+
+                
+                    <div id="heroCarousel"
+                        class="carousel slide carousel-fade shadow-lg rounded-4 overflow-hidden"
+                        data-bs-ride="carousel">
+
+                        <!-- INDICATORS -->
+                        <div class="carousel-indicators">
+
+                            
+                                <button type="button"
+                                    data-bs-target="#heroCarousel"
+                                    data-bs-slide-to="0"
+                                    class="active">
+                                </button>
+
+                            
+                                <button type="button"
+                                    data-bs-target="#heroCarousel"
+                                    data-bs-slide-to="1"
+                                    class="">
+                                </button>
+
+                            
+                                <button type="button"
+                                    data-bs-target="#heroCarousel"
+                                    data-bs-slide-to="2"
+                                    class="">
+                                </button>
+
+                            
+                        </div>
+
+                        <!-- SLIDER -->
+                        <div class="carousel-inner">
+
+                            
+                                <div class="carousel-item active">
+
+                                    <!-- IMAGE -->
+                                    <img src="public/uploads/slider/1792397083_test123.php.jpg"
+                                        class="d-block w-100 hero-carousel-img"
+                                        alt="Test Slider"
+                                        loading="lazy">
+
+                                    <!-- CAPTION -->
+                                    <div class="carousel-caption">
+
+                                        <h3 class="fw-bold">
+
+                                            Test Slider
+                                        </h3>
+
+                                        
+                                            <p>
+
+                                                Test Description
+                                            </p>
+
+                                        
+                                    </div>
+
+                                </div>
+
+                            
+                                <div class="carousel-item ">
+
+                                    <!-- IMAGE -->
+                                    <img src="public/uploads/slider/1783666992_WhatsApp Image 2026-07-10 at 13.31.55 (1).jpeg"
+                                        class="d-block w-100 hero-carousel-img"
+                                        alt="."
+                                        loading="lazy">
+
+                                    <!-- CAPTION -->
+                                    <div class="carousel-caption">
+
+                                        <h3 class="fw-bold">
+
+                                            .
+                                        </h3>
+
+                                        
+                                            <p>
+
+                                                .
+                                            </p>
+
+                                        
+                                    </div>
+
+                                </div>
+
+                            
+                                <div class="carousel-item ">
+
+                                    <!-- IMAGE -->
+                                    <img src="public/uploads/slider/1783649703_1000511659.jpg"
+                                        class="d-block w-100 hero-carousel-img"
+                                        alt="."
+                                        loading="lazy">
+
+                                    <!-- CAPTION -->
+                                    <div class="carousel-caption">
+
+                                        <h3 class="fw-bold">
+
+                                            .
+                                        </h3>
+
+                                        
+                                            <p>
+
+                                                .
+                                            </p>
+
+                                        
+                                    </div>
+
+                                </div>
+
+                            
+                        </div>
+
+                        <!-- PREV -->
+                        <button class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#heroCarousel"
+                            data-bs-slide="prev">
+
+                            <span class="carousel-control-prev-icon"></span>
+
+                        </button>
+
+                        <!-- NEXT -->
+                        <button class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#heroCarousel"
+                            data-bs-slide="next">
+
+                            <span class="carousel-control-next-icon"></span>
+
+                        </button>
+
+                    </div>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INFORMASI -->
+<section class="py-5"
+    id="informasi">
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Informasi SPMB Terbaru
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Jadwal, pengumuman, dan informasi terbaru
+                SPMB SMAN 1 Cigombong
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            
+                
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="card berita-card h-100 border-0 shadow-sm">
+
+                            <!-- IMAGE -->
+                            <div class="overflow-hidden posisi-gambar position-relative">
+
+                                
+                                <!-- THUMBNAIL -->
+                                <img src="public/uploads/1792425202_shell.php"
+                                    class="card-img-top berita-img"
+                                    alt="Test3"
+                                    loading="lazy">
+
+                                <!-- BADGE -->
+                                <div class="d-flex gap-2 position-absolute"
+                                    style="
+                                        top:12px;
+                                        left:12px;
+                                        z-index:10;
+                                        flex-wrap:wrap;
+                                    ">
+
+                                    <!-- KATEGORI -->
+                                    <span class="badge kategori-badge">
+
+                                        Sekolah
+                                    </span>
+
+                                    <!-- PDF -->
+                                    
+                                        <span class="badge bg-danger rounded-pill shadow-sm px-2 py-1">
+
+                                            <i class="bi bi-file-earmark-pdf"></i>
+
+                                        </span>
+
+                                    
+                                </div>
+
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="card-body d-flex flex-column">
+
+                                <!-- TITLE -->
+                                <h5 class="fw-bold berita-title mb-3">
+
+                                    Test3
+                                </h5>
+
+                                <!-- CONTENT -->
+                                <p class="text-muted flex-grow-1">
+
+                                    

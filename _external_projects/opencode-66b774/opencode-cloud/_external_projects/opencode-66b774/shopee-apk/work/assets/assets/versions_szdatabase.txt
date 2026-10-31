@@ -1,0 +1,6 @@
+Time: 2020-02-24 07:44:14.105
+Version: 1.6.0
+branch: feature/trackingkit
+commit id: ce96866a46f473120f340cceffbd2ce077c369e8
+last message: [add]finish szdatabase
+extra info: feature/trackingkit

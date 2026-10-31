@@ -1,0 +1,11 @@
+{
+  "mode": "patch",
+  "time": "2025-08-15 15:55:20.453",
+  "version": "0.8.4",
+  "branch": "v3.56/test_app_3.56",
+  "commitId": "a905aa31832a1beb18f8fbe4a79a1f7f08fabf06",
+  "lastMessage": "Merge branch \u0027pengfeiquan/v3.56/3.56-csa\u0027 into \u0027v3.56/test_app_3.56\u0027",
+  "extraInfo": "v3.56/test_app_3.56",
+  "groupId": "com.shopee.sz.common",
+  "artifactId": "ussuploadsdk"
+}

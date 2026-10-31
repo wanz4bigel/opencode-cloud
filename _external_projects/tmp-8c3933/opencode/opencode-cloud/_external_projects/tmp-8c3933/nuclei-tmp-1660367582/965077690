@@ -1,0 +1,1 @@
+az resource list --output json --query '[*].id'

@@ -1,0 +1,1 @@
+az apim show --name "$name" --resource-group "$resourceGroup" --query 'publicNetworkAccess'

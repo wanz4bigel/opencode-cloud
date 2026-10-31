@@ -1,0 +1,1 @@
+aws cloudformation list-stacks --region $region --stack-status-filter CREATE_COMPLETE --output json --query 'StackSummaries[*].StackName'

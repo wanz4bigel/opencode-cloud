@@ -1,0 +1,20 @@
+————————————————————————————————————
+               VMESS
+————————————————————————————————————
+Remarks        : gh-actions-223165
+CITY           : San Jose
+ISP            : AS8075 Microsoft Corporation
+Domain         : 20.57.223.165
+Port TLS       : 18450
+Port none TLS  : 
+Port any       : -
+id             : bc051ee0-8053-41ab-9f39-f21024fb7c3c
+alterId        : 0
+Security       : auto
+network        : ws
+path ws        : /sp5af8zo-wx1u
+Cert SHA256    : ae1afe98e520ad927da1a6f7422d7952522ba2dcfd391b5921c0e96db27fa3df
+Limit IP       : -
+Expired On     : 2026-10-28 19:07:23 WIB
+————————————————————————————————————
+[1;36m[vmess][0m LINK UTAMA : vmess://eyJ2IjoyLCJwcyI6ImdoLWFjdGlvbnMtMjIzMTY1LXdzLXRsc0AxODQ1MCIsImFkZCI6IjIwLjU3LjIyMy4xNjUiLCJwb3J0IjoiMTg0NTAiLCJpZCI6ImJjMDUxZWUwLTgwNTMtNDFhYi05ZjM5LWYyMTAyNGZiN2MzYyIsImFpZCI6IjAiLCJzYyI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwicGF0aCI6Ii9zcDVhZjh6by13eDF1IiwidGxzIjoidGxzIiwiYWxwbiI6ImgyLGh0dHAvMS4xIiwiZW1haWwiOiJnaXRodWItYWN0aW9ucyJ9

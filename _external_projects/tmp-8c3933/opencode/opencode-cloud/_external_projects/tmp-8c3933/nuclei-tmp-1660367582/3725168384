@@ -1,0 +1,1 @@
+jq --version >/dev/null 2>&1 && echo "jq is installed." || echo "jq is not installed."

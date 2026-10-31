@@ -1,0 +1,51 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 19205,
+      "protocol": "http"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "127.0.0.1",
+            "port": 19052,
+            "users": [
+              {
+                "id": "bf1f2526-7535-43ce-9545-826c8982b106",
+                "alterId": 0,
+                "security": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "v2ray.local",
+          "certificates": [
+            {
+              "usage": "verify",
+              "certificate": [
+                "-----BEGIN CERTIFICATE-----\nMIIEJzCCAw+gAwIBAgIUUSZt6/m4Y5VWCv6fYtIAad9gqg4wDQYJKoZIhvcNAQEL\nBQAwcjELMAkGA1UEBhMCSUQxEjAQBgNVBAgMCUluZG9uZXNpYTEQMA4GA1UEBwwH\nSmFrYXJ0YTEXMBUGA1UECgwOR2l0SHViLUFjdGlvbnMxDjAMBgNVBAsMBVZNZXNz\nMRQwEgYDVQQDDAt2MnJheS5sb2NhbDAeFw0yNjEwMjgxMTU3NDJaFw0zNjEwMjUx\nMTU3NDJaMHIxCzAJBgNVBAYTAklEMRIwEAYDVQQIDAlJbmRvbmVzaWExEDAOBgNV\nBAcMB0pha2FydGExFzAVBgNVBAoMDkdpdEh1Yi1BY3Rpb25zMQ4wDAYDVQQLDAVW\nTWVzczEUMBIGA1UEAwwLdjJyYXkubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IB\nDwAwggEKAoIBAQC/+q6qRnlO28hEW2KqRc9Bst3mzinXY9ZWBY/MBLSV36LXX10j\nINwHNMW8axZrZiMEHUlXkiZGtfpw3SLNN966DJmfsrPziEwzj0tbvKn6t0NyQONQ\nL6Rpk7AKEXozcjIsoVswGJMx+EQUAsjd0OAZrZxpq43vNuR9b+IZQ1+mfVT72FIq\ntEu6VEJ7LlY1jANqX1kZ4cLKOmGSKasj894RPsce9xHkCVGIEUB1NjlGxS2m16z4\nR4ECjcAT3BhkOamEa3F4PFG84KOlCJZRv8mFq/QGHiz0mtInb2qiGW3MZ0t4rzHM\nZ48WMy6QXmpUwSRdn8KerXGvIo8k42zencZ/AgMBAAGjgbQwgbEwHQYDVR0OBBYE\nFNH3+zHrjFqOjJS+jbS0qDTqUZYLMB8GA1UdIwQYMBaAFNH3+zHrjFqOjJS+jbS0\nqDTqUZYLMDkGA1UdEQQyMDCCCWxvY2FsaG9zdIILdjJyYXkubG9jYWyHBH8AAAGH\nEAAAAAAAAAAAAAAAAAAAAAEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC\nBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBALG/YxAV\nsbZTOSKZBFoq1sT7/p5Tr475wN/ESLaHrp/E8nonN185hWb9f9N+jINItT1HUMjQ\nLAKto87PcLAKhdJUuoVPTyR+D3o0hn/UM6zeOyXJA9FcS2wPuzINd5t5X57msULc\n3kQlfv9oQkMn93ocl7H2hjAm4wnCnHLuBNWcAt6J9ec4ip7zmlUiYr8qnJdqIN+k\n/xJvap5UcertzYTPXtqvI2JHgO1JChMuvEmGEvuxagi79dY6SnCfTZfA8wdYQv8c\nhnenO0rHa1KjQ0n04zxltrqh68ifWWppJ6Tl+ZvSHm8HIYFzTZ9Ibht9O689vQGJ\nyMjIt78dzSBAEQM=\n-----END CERTIFICATE-----"
+              ]
+            }
+          ]
+        },
+        "httpupgradeSettings": {
+          "path": "/upvmess",
+          "host": "v2ray.local"
+        }
+      }
+    }
+  ]
+}

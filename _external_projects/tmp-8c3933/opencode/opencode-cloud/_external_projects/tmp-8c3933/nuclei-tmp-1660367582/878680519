@@ -1,0 +1,1 @@
+aws s3api get-bucket-logging --bucket $bucket --query 'LoggingEnabled'

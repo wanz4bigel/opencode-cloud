@@ -1,0 +1,1 @@
+aws s3api get-bucket-acl --bucket $bucket --query 'Grants[?(Grantee.URI==`http://acs.amazonaws.com/groups/global/AllUsers`)]'

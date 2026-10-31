@@ -1,0 +1,1 @@
+aws route53 get-dnssec --region $region --hosted-zone-id "$hostedzone" --query "Status.ServeSignature" --output json

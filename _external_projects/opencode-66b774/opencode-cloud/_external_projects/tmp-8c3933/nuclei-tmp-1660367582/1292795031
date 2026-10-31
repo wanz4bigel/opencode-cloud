@@ -1,0 +1,1 @@
+gcloud pubsub topics describe $pubsubTopic --format="json(kmsKeyName)"
