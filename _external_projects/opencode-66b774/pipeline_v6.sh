@@ -1,6 +1,7 @@
 #!/bin/bash
 # Rebuild Strata + relay agent. v6: paralel, polling rapat, relay opsional.
 set -uo pipefail
+mkdir -p /marimo/llm
 cd /marimo/llm
 LOG=/marimo/llm/pipeline.log
 KEY=sk-strata-d71951f458683d6a913c18fb1e31e4b3
@@ -8,7 +9,7 @@ MODEL=/home/marimo/models/sc117
 say(){ echo "[$(date -u +%T)] $*" >> "$LOG"; }
 phase(){ echo "$1" > /marimo/llm/phase; say "fase: $1"; }
 
-mkdir -p /marimo/llm "$MODEL/IQ3_S" /marimo/llm/sc117-aux /marimo/llm/sc117-data/mtp
+mkdir -p "$MODEL/IQ3_S" /marimo/llm/sc117-aux /marimo/llm/sc117-data/mtp
 echo "$KEY" > /marimo/llm/api_key.txt
 say "===== mulai ====="
 phase start
@@ -23,6 +24,7 @@ phase strata
       PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin \
       sh /tmp/si.sh
   python3 -c "import websockets" 2>/dev/null || python3 -m pip install --quiet websockets
+  python3 -c "import aiohttp" 2>/dev/null || python3 -m pip install --quiet aiohttp
 ) >> "$LOG" 2>&1 &
 STRATA=$!
 
@@ -96,7 +98,7 @@ if [ "$code" = "200" ] && [ -f /marimo/llm/agent.py ]; then
   done
   say "publik=$pub setelah $((i*2))s"
 else
-  say "agent.py tidak ada, relay dilewati"
+  say "agent.py tidak ada atau server gagal, relay dilewati"
 fi
 phase done
 say "===== SELESAI ====="

@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dokumentasi - Sahabat SSH</title>
+    
+    <link rel="shortcut icon" href="../../asset_plugin/images/icon-2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: { brand: { 500: '#6366f1', 600: '#4f46e5' } }
+                }
+            }
+        }
+    </script>
+    
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="https://sahabatssh.com/asset_plugin/images/icon-2.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .animate-gradient-bg { background-size: 300% 300%; animation: gradientMove 12s ease infinite; }
+        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .theme-bg { background-image: linear-gradient(-45deg, #dbeafe, #f3e8ff, #fce7f3, #e0e7ff); }
+        html.dark .theme-bg { background-image: linear-gradient(-45deg, #0f172a, #1e1b4b, #09090b, #172554); }
+        .glass-ui { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .dark .glass-ui { background: rgba(15, 23, 42, 0.6); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.6); border-radius: 10px; }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(71, 85, 105, 0.8); }
+    </style>
+</head>
+
+<body class="theme-bg animate-gradient-bg text-slate-800 dark:text-slate-200 antialiased transition-colors duration-500 min-h-screen flex flex-col">
+
+    <div id="toast-container" class="fixed top-20 right-5 z-[100] flex flex-col gap-3 pointer-events-none"></div>
+
+    <nav class="fixed top-0 w-full z-50 glass-ui border-b border-slate-200/50 dark:border-slate-700/50 shadow-sm h-16">
+        <div class="flex items-center justify-between px-4 sm:px-6 h-full">
+            <div class="flex items-center gap-4">
+                <button id="mobile-btn" class="lg:hidden text-slate-600 dark:text-slate-300 hover:text-brand-600 p-1"><i class="fa-solid fa-bars text-xl"></i></button>
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchPage('page-doc-pengenalan', document.getElementById('link-pengenalan'))">
+                    <img src="https://sahabatssh.com/assets/images/logo-site2.png" alt="SahabatSSH" class="h-10 object-contain drop-shadow-md">
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/40 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+                <a href="https://sahabatssh.com/auth/login"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-sm font-semibold shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket hidden sm:inline-block"></i> Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 pt-16">
+        <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/40 dark:bg-slate-900/70 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+        <aside id="sidebar" class="fixed lg:static top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] glass-ui border-r border-slate-200/50 dark:border-slate-700/50 transition-transform duration-300 -translate-x-full lg:translate-x-0 overflow-y-auto">
+            <div class="p-6">
+                
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-2 text-left">Dokumentasi</p>
+                    <div class="space-y-1">
+                        <a href="javascript:void(0)" id="link-pengenalan" onclick="switchPage('page-doc-pengenalan', this)" class="sidebar-link active-link flex items-center gap-3 px-3 py-2.5 rounded-lg bg-brand-600/10 dark:bg-brand-500/20 text-brand-600 dark:text-brand-400 font-semibold transition-all"><i class="fa-solid fa-book w-5 text-center"></i> Pengenalan</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-doc-auth', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"><i class="fa-solid fa-key w-5 text-center"></i> Autentikasi</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-doc-format', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"><i class="fa-solid fa-file-code w-5 text-center"></i> Format Response</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-doc-code', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"><i class="fa-solid fa-bug w-5 text-center"></i> Response Code</a>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-2 text-left">Account</p>
+                    <div class="space-y-1">
+                        <a href="javascript:void(0)" onclick="switchPage('page-acc-detail', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"><i class="fa-solid fa-user w-5 text-center"></i> Detail Akun</a>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-2 text-left">Server</p>
+                    <div class="space-y-1">
+                        <button onclick="toggleMenu('sub-srv-list', 'ico-srv-list')" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-list w-5 text-center"></i> List Server</div><i id="ico-srv-list" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-srv-list" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-srv-list-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-srv-list-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-srv-list-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-srv-list-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VLess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-srv-list-always', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Always On</a></li>
+                        </ul>
+                        <a href="javascript:void(0)" onclick="switchPage('page-srv-status', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all"><i class="fa-solid fa-chart-line w-5 text-center"></i> Server Status</a>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-2 text-left">Buat Akun</p>
+                    <div class="space-y-1">
+                        <a href="javascript:void(0)" onclick="switchPage('page-buat-ssh', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><i class="fa-solid fa-plus w-5 text-center"></i> SSH</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-buat-trojan', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><i class="fa-solid fa-plus w-5 text-center"></i> Trojan</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-buat-vmess', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><i class="fa-solid fa-plus w-5 text-center"></i> VMess</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-buat-vless', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><i class="fa-solid fa-plus w-5 text-center"></i> VLess</a>
+                        <a href="javascript:void(0)" onclick="switchPage('page-buat-always', this)" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><i class="fa-solid fa-plus w-5 text-center"></i> Always On</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-2 text-left">Kelola Akun</p>
+                    <div class="space-y-1">
+                        
+                        <button onclick="toggleMenu('sub-kel-list', 'ico-kel-list')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-users w-5"></i> List Akun</div><i id="ico-kel-list" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-list" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-list-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-list-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-list-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-list-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VLess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-list-always', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Always On</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-user', 'ico-kel-user')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-id-card w-5"></i> Username</div><i id="ico-kel-user" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-user" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-user-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-pass', 'ico-kel-pass')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-lock w-5"></i> Password</div><i id="ico-kel-pass" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-pass" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-pass-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-pass-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Trojan</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-rep', 'ico-kel-rep')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-wrench w-5"></i> Repair</div><i id="ico-kel-rep" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-rep" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-rep-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-rep-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-rep-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-rep-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VLess</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-reg', 'ico-kel-reg')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-rotate w-5"></i> Regenerate</div><i id="ico-kel-reg" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-reg" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-reg-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-reg-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VLess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-reg-always', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Always On</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-chg', 'ico-kel-chg')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-right-left w-5"></i> Pindah Server</div><i id="ico-kel-chg" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-chg" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-chg-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-chg-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-chg-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-chg-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800/50">VLess</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-cek', 'ico-kel-cek')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-server w-5"></i> Cek Server</div><i id="ico-kel-cek" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-cek" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-cek-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-cek-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-cek-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-cek-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VLess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-cek-always', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Always On</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-stop', 'ico-kel-stop')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-circle-stop w-5"></i> Stop</div><i id="ico-kel-stop" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-stop" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-stop-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-stop-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-stop-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-stop-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VLess</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-aktif', 'ico-kel-aktif')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-calendar-plus w-5"></i> Masa Aktif</div><i id="ico-kel-aktif" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-aktif" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-aktif-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-aktif-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-aktif-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-aktif-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VLess</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-quota', 'ico-kel-quota')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-database w-5"></i> Tambah Quota</div><i id="ico-kel-quota" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-quota" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-quota-always', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Always On</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-quota-harga', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Cek Harga</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-frz', 'ico-kel-frz')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-snowflake w-5"></i> Freeze</div><i id="ico-kel-frz" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-frz" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-frz-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-frz-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-frz-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-frz-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VLess</a></li>
+                        </ul>
+
+                        <button onclick="toggleMenu('sub-kel-ufrz', 'ico-kel-ufrz')" class="w-full flex justify-between px-3 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50"><div class="flex items-center gap-3"><i class="fa-solid fa-fire w-5"></i> Unfreeze</div><i id="ico-kel-ufrz" class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i></button>
+                        <ul id="sub-kel-ufrz" class="hidden pl-3 ml-5 mt-1 space-y-1 border-l border-slate-300 dark:border-slate-600">
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-ufrz-ssh', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">SSH</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-ufrz-trojan', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">Trojan</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-ufrz-vmess', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VMess</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchPage('page-kel-ufrz-vless', this)" class="sidebar-link block px-3 py-2 rounded-lg text-sm text-slate-500 hover:text-brand-600 hover:bg-slate-100">VLess</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="flex-1 w-full min-w-0 p-6 sm:p-10 lg:p-12 overflow-y-auto h-[calc(100vh-4rem)] relative">
+            
+            <div id="page-doc-pengenalan" class="page-section w-full space-y-8 pb-12 block text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Selamat datang di Sahabat SSH</h1><p class="text-slate-600 dark:text-slate-400 mt-2">Sahabat SSH menyediakan berbagai layanan tunneling, seperti SSH, Trojan, VMess, dan VLess.<br><br>
+
+Halaman ini memuat dokumentasi API (Application Programming Interface) / REST API yang disediakan oleh Sahabat SSH. API ini memungkinkan kamu mengintegrasikan aplikasi atau sistem kamu secara langsung dengan layanan Sahabat SSH untuk mengelola akun dan berbagai fitur secara otomatis, cepat, dan efisien.
+</p></header>
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Base URL</h3>
+                    <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                        <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                            <code id="url-pengenalan" class="font-mono text-brand-600 dark:text-brand-400">https://api.sahabatssh.com/v2/</code>
+                            <button onclick="copyCode('url-pengenalan', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </section>
+                </div>
+                
+                
+                <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Sandbox URL</h3>
+                    <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                        <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                            <code id="url-sandbox" class="font-mono text-brand-600 dark:text-brand-400">https://api-sandbox.sahabatssh.com/v2/</code>
+                            <button onclick="copyCode('url-sandbox', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </section>
+                </div>
+                
+                
+                <p>Untuk melakukan uji coba sebelum bertindak aktif ke layanan Sahabat SSH, kamu dapat menggunakan Sandbox Mode.
+                
+                <br><br>Dengan menggunakan API Sahabat SSH, proses seperti pembuatan akun, pengelolaan layanan, pengecekan informasi, hingga otomatisasi lainnya dapat dilakukan tanpa perlu mengakses panel secara manual.</p>
+                
+            </div>
+
+           <div id="page-doc-auth" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header>
+                    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Autentikasi</h1>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">
+                        Semua endpoint API Sahabat SSH membutuhkan <code>api_key</code> yang valid. API key ini dipakai untuk mengenali user, memeriksa akses, dan menjalankan validasi keamanan seperti IP whitelist.
+                    </p>
+                </header>
+
+                <section class="bg-amber-100/50 dark:bg-amber-900/30 border-l-4 border-amber-500 p-5 rounded-r-2xl">
+                    <p class="font-semibold text-amber-800 dark:text-amber-200 mb-2">
+                        <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                        Rahasiakan API Key kamu
+                    </p>
+                    <p class="text-sm text-amber-700 dark:text-amber-300 leading-relaxed">
+                        Jangan pernah membagikan <strong>API Key</strong> kepada pihak yang tidak kamu kenal.
+                        API Key dapat digunakan untuk mengakses akun kamu tanpa konfirmasi.
+                        Untuk meningkatkan keamanan, aktifkan fitur <strong>IP Whitelist</strong>
+                        agar hanya alamat IP tertentu yang dapat menggunakan API Key tersebut.
+                    </p>
+                </section>
+
+                <section class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl p-5 space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Metode Pengiriman API Key</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left">
+                            <thead class="bg-slate-100/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3 font-bold">Method</th>
+                                    <th class="px-4 py-3 font-bold">Cara Kirim</th>
+                                    <th class="px-4 py-3 font-bold">Contoh</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-700/70 text-slate-600 dark:text-slate-300">
+                                <tr>
+                                    <td class="px-4 py-3 font-semibold">GET</td>
+                                    <td class="px-4 py-3">Kirim <code>api_key</code> melalui query string pada URL.</td>
+                                    <td class="px-4 py-3"><code>?api_key=ISI_API_TOKEN</code></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-semibold">POST</td>
+                                    <td class="px-4 py-3">Kirim <code>api_key</code> melalui body <code>application/x-www-form-urlencoded</code>.</td>
+                                    <td class="px-4 py-3"><code>api_key=ISI_API_TOKEN</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-link text-brand-600"></i> Contoh GET
+                        </h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <button onclick="copyCode('auth-get-example', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="auth-get-example" class="font-mono">curl --location 'https://api.sahabatssh.com/v2/account/detail?api_key=ISI_API_TOKEN'</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-paper-plane text-brand-600"></i> Contoh POST
+                        </h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <button onclick="copyCode('auth-post-example', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="auth-post-example" class="font-mono">curl --location --request POST 'https://api.sahabatssh.com/v2/create/ssh' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'api_key=ISI_API_TOKEN' \
+--data-urlencode 'id=123' \
+--data-urlencode 'type=monthly' \
+--data-urlencode 'username=sshbaru01' \
+--data-urlencode 'password=Password123'</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl p-5 space-y-4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">API Key Validasi</h3>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 leading-7 list-disc pl-5">
+                            <li>API Key harus sesuai dengan akun yang terhubung ketika ingin di jalankan.</li>
+                            <li>Kesalahan ketika API yang di proses salah atau tidak benar akan mengalamani kode error <code>401</code>.</li>
+                            <li>IP yang tidak terdaftar saat menjalankan api dan mengaktifkan IP Whitelist akan memberikan kode error <code>403</code>.</li>
+                            <li>Beberapa endpoint juga memeriksa apakah akun atau server yang diminta memang boleh diakses oleh API key tersebut.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl p-5 space-y-4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Cara Terbaik Menjaga API Key</h3>
+                        <ul class="space-y-3 text-slate-600 dark:text-slate-300 leading-7 list-disc pl-5">
+                            <li>Simpanlah API Key di backend atau environment variable, jangan pernah menaruh di frontend publik.</li>
+                            <li>Aktifkan fitur IP Whitelist jika request hanya berasal dari server pribadi, bot, atau server lain yang bersifat private.</li>
+                            <li>Jangan menaruh API Key langsung di dalam client aplikasi.</li>
+                            <li>Jika informasi API Key mengalami kebocoran atau ada orang lain mengetahuinya, segera generate API Key dari akun kamu.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl overflow-hidden">
+                    <div class="px-5 py-4 border-b border-slate-200/70 dark:border-slate-700/70">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Error Terkait Autentikasi</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left">
+                            <thead class="bg-slate-100/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3 font-bold">Code</th>
+                                    <th class="px-4 py-3 font-bold">Pesan</th>
+                                    <th class="px-4 py-3 font-bold">Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-700/70 text-slate-600 dark:text-slate-300">
+                                <tr>
+                                    <td class="px-4 py-3 font-mono font-bold text-amber-600 dark:text-amber-400">400</td>
+                                    <td class="px-4 py-3"><code>Parameter api_key wajib diisi.</code></td>
+                                    <td class="px-4 py-3">Muncul saat parameter <code>api_key</code> tidak di isi atau kosong.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono font-bold text-orange-600 dark:text-orange-400">401</td>
+                                    <td class="px-4 py-3">
+                                        <div class="space-y-2">
+                                            <div><code>API key tidak valid.</code></div>
+                                            <div><code>User API tidak ditemukan.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3">Muncul saat API Key tidak cocok atau tidak ditemukan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono font-bold text-rose-600 dark:text-rose-400">403</td>
+                                    <td class="px-4 py-3"><code>IP kamu tidak masuk whitelist.</code></td>
+                                    <td class="px-4 py-3">Muncul saat fitur IP Whitelist aktif dan IP yang mengirim tidak terdaftar.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-doc-format" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header>
+                    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Format Response</h1>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">
+                        Semua endpoint API Sahabat SSH akan mengembalikan response dalam format JSON.
+                    </p>
+                </header>
+
+                <section class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl p-5 space-y-4">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Struktur</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-7">
+                        Response memakai 4 field utama:
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left">
+                            <thead class="bg-slate-100/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3 font-bold">Field</th>
+                                    <th class="px-4 py-3 font-bold">Tipe</th>
+                                    <th class="px-4 py-3 font-bold">Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-700/70 text-slate-600 dark:text-slate-300">
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-brand-600 dark:text-brand-400">status</td>
+                                    <td class="px-4 py-3">boolean</td>
+                                    <td class="px-4 py-3">Menandakan request atau permintaan berhasil atau gagal.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-brand-600 dark:text-brand-400">code</td>
+                                    <td class="px-4 py-3">integer</td>
+                                    <td class="px-4 py-3">Kode response API, biasanya mengikuti hasil validasi endpoint.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-brand-600 dark:text-brand-400">message</td>
+                                    <td class="px-4 py-3">string</td>
+                                    <td class="px-4 py-3">Respon pesan ringkas yang menjelaskan hasil dari request.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-brand-600 dark:text-brand-400">data</td>
+                                    <td class="px-4 py-3">object</td>
+                                    <td class="px-4 py-3">Berisi data utama yang direquest atau yang diminta seperti detail rincian akun dan lainnya.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-circle-check text-emerald-500"></i> Contoh Response Sukses
+                        </h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <button onclick="copyCode('format-success-json', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="format-success-json" class="font-mono">{
+  "status": true,
+  "code": 200,
+  "message": "Detail akun berhasil diambil.",
+  "data": {
+    "ip_address": "123.123.123.123",
+    "ip_whitelist": false,
+    "account": {
+      "username": "contohuser",
+      "name": "Contoh User",
+      "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="40232f2e342f2800272d21292c6e232f2d">[email&#160;protected]</a>",
+      "balance": "10000"
+    }
+  }
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-circle-xmark text-rose-500"></i> Contoh Response Gagal
+                        </h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <button onclick="copyCode('format-error-json', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="format-error-json" class="font-mono">{
+  "status": false,
+  "code": 400,
+  "message": "Parameter api_key wajib diisi.",
+  "data": {}
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="page-doc-code" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header>
+                    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Response Code</h1>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">
+                        Berikut ini kode response yang akan muncul saat melakukan permintaan atau request.
+                    </p>
+                </header>
+
+                <section class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left">
+                            <thead class="bg-slate-100/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-200">
+                                <tr>
+                                    <th class="px-5 py-4 font-bold">Code</th>
+                                    <th class="px-5 py-4 font-bold">Status</th>
+                                    <th class="px-5 py-4 font-bold">Keterangan</th>
+                                    <th class="px-5 py-4 font-bold">Contoh Kondisi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-700/70 text-slate-600 dark:text-slate-300">
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">200</td>
+                                    <td class="px-5 py-4">Success</td>
+                                    <td class="px-5 py-4">Request Berhasil.</td>
+                                    <td class="px-5 py-4">Permintaan berhasil diproses dan akan menampilkan data sesuai endpoint API yang dijalankan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-amber-600 dark:text-amber-400">400</td>
+                                    <td class="px-5 py-4">Bad Request</td>
+                                    <td class="px-5 py-4">Parameter atau body request tidak lengkap, kosong, atau format input tidak sesuai aturan endpoint.</td>
+                                    <td class="px-5 py-4">`api_key` kosong, `type` salah, `quota` tidak valid, atau parameter wajib tidak dikirim.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-orange-600 dark:text-orange-400">401</td>
+                                    <td class="px-5 py-4">Unauthorized</td>
+                                    <td class="px-5 py-4">API Key tidak valid atau tidak ditemukan pada data user.</td>
+                                    <td class="px-5 py-4">API Key pada parameter `api_key` tidak ditemukan`.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-rose-600 dark:text-rose-400">403</td>
+                                    <td class="px-5 py-4">Forbidden</td>
+                                    <td class="px-5 py-4">Request atau permintaan ditolak.</td>
+                                    <td class="px-5 py-4">Karena IP belum didaftarkan di dashboard API Key.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-fuchsia-600 dark:text-fuchsia-400">422</td>
+                                    <td class="px-5 py-4">Unprocessable Entity</td>
+                                    <td class="px-5 py-4">Request terbaca dengan baik, tetapi ada penolakan karena suatu alasan dari validasi yang dilakukan oleh server.</td>
+                                    <td class="px-5 py-4">Bisa disebabkan oleh server sedang penuh, saldo tidak mencukupi, username sudah terpakai, email belum terverifikasi, atau fitur yang tidak tersedia pada layanan tertentu.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="bg-white/60 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl overflow-hidden">
+                    <div class="px-5 py-4 border-b border-slate-200/70 dark:border-slate-700/70">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Daftar Teks Error API</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                            Berikut contoh pesan error yang muncul setelah dijalankan. Isi pesan bisa muncul sesuai validasi dan kondisi proses pada API.
+                        </p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-sm text-left">
+                            <thead class="bg-slate-100/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-200">
+                                <tr>
+                                    <th class="px-5 py-4 font-bold">Code</th>
+                                    <th class="px-5 py-4 font-bold">Contoh Teks Error</th>
+                                    <th class="px-5 py-4 font-bold">Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200/70 dark:divide-slate-700/70 text-slate-600 dark:text-slate-300 align-top">
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-amber-600 dark:text-amber-400">400</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>Parameter api_key wajib diisi.</code></div>
+                                            <div><code>Type create SSH tidak valid.</code></div>
+                                            <div><code>Type create Trojan tidak valid.</code></div>
+                                            <div><code>Type create VMess tidak valid.</code></div>
+                                            <div><code>Type create VLess tidak valid.</code></div>
+                                            <div><code>Type create Always On harus quota.</code></div>
+                                            <div><code>Protocol Always On tidak valid.</code></div>
+                                            <div><code>Paket quota Always On tidak valid.</code></div>
+                                            <div><code>Parameter id atau username wajib diisi.</code></div>
+                                            <div><code>Parameter type hanya boleh monthly atau hourly.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat parameter wajib belum lengkap, format input salah, atau action yang diminta tidak sesuai aturan endpoint.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-orange-600 dark:text-orange-400">401</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>API key tidak valid.</code></div>
+                                            <div><code>User API tidak ditemukan.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Teks error ini akan muncul ketika kamu salah memasukan API Key.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-rose-600 dark:text-rose-400">403</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>IP kamu tidak masuk whitelist.</code></div>
+                                            <div><code>Server ini hanya untuk user dengan total top up di atas batas minimum.</code></div>
+                                            <div><code>Akun ini bukan milik API key tersebut.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat request ditolak karena hak akses user tidak memenuhi syarat, termasuk whitelist IP dan kepemilikan akun.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-sky-600 dark:text-sky-400">404</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>Server SSH tidak ditemukan.</code></div>
+                                            <div><code>Server Trojan tidak ditemukan.</code></div>
+                                            <div><code>Server VMess tidak ditemukan.</code></div>
+                                            <div><code>Server VLess tidak ditemukan.</code></div>
+                                            <div><code>Server Always On tidak ditemukan.</code></div>
+                                            <div><code>Akun tidak ditemukan.</code></div>
+                                            <div><code>Server akun tidak ditemukan.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat data target seperti server atau akun tidak ditemukan pada database atau relasinya sudah tidak ada.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-fuchsia-600 dark:text-fuchsia-400">422</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>Username root tidak diizinkan.</code></div>
+                                            <div><code>Username sudah dipakai.</code></div>
+                                            <div><code>Username sudah dipakai di layanan lain.</code></div>
+                                            <div><code>Key Trojan sudah dipakai.</code></div>
+                                            <div><code>Remarks sudah dipakai.</code></div>
+                                            <div><code>Email user belum terverifikasi.</code></div>
+                                            <div><code>Server sedang full.</code></div>
+                                            <div><code>Fitur trial sedang dinonaktifkan.</code></div>
+                                            <div><code>Trial hanya tersedia untuk akun yang sudah pernah top up.</code></div>
+                                            <div><code>Kuota trial sudah habis.</code></div>
+                                            <div><code>Minimal penambahan quota 135 GB.</code></div>
+                                            <div><code>Akun trial tidak bisa pindah server.</code></div>
+                                            <div><code>Akun sudah berada di server ini.</code></div>
+                                            <div><code>Harga server tujuan lebih mahal dari harga beli akun ini.</code></div>
+                                            <div><code>Server tujuan sedang full.</code></div>
+                                            <div><code>Server tujuan sedang terjadi gangguan.</code></div>
+                                            <div><code>Pindah server baru bisa dilakukan lagi setelah (waktu).</code></div>
+                                            <div><code>Saldo tidak mencukupi.</code></div>
+                                            <div><code>Akun ini sudah tidak aktif dan tidak bisa dikelola lagi.</code></div>
+                                            <div><code>Tidak bisa unfreeze, server sedang penuh.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat request lolos format, tetapi gagal karena validasi, limit user, kondisi server, atau status akun tidak memungkinkan proses dilanjutkan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-violet-600 dark:text-violet-400">500</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>Konfigurasi tabel server tidak valid.</code></div>
+                                            <div><code>Gagal mengambil daftar server.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat terjadi masalah internal pada konfigurasi atau proses backend sebelum request selesai disusun dengan benar.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-5 py-4 font-mono font-bold text-red-700 dark:text-red-400">502</td>
+                                    <td class="px-5 py-4">
+                                        <div class="space-y-2">
+                                            <div><code>Gagal membuat akun SSH di server.</code></div>
+                                            <div><code>Gagal membuat akun Trojan di server.</code></div>
+                                            <div><code>Gagal membuat akun VMess di server.</code></div>
+                                            <div><code>Gagal membuat akun VLess di server.</code></div>
+                                            <div><code>Login VPS gagal.</code></div>
+                                            <div><code>Gagal update akun di server remote.</code></div>
+                                            <div><code>Gagal regenerate data akun di server.</code></div>
+                                            <div><code>Gagal menghubungi server, quota tidak ditambahkan.</code></div>
+                                            <div><code>Gagal membuat akun di server tujuan. Akun lama tidak diubah.</code></div>
+                                            <div><code>Gagal menghapus akun di server lama. Akun lama tidak diubah.</code></div>
+                                            <div><code>Gagal menghentikan akun di server.</code></div>
+                                            <div><code>Gagal freeze akun di server remote.</code></div>
+                                            <div><code>Gagal unfreeze akun di server remote.</code></div>
+                                        </div>
+                                    </td>
+                                    <td class="px-5 py-4">Dipakai saat validasi lokal lolos tetapi proses ke server remote atau VPS gagal dijalankan dengan sukses.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-acc-detail" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Detail Akun</h1></header></div>
+
+            <div id="page-srv-list-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Server - SSH</h1></header></div>
+            <div id="page-srv-list-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Server - Trojan</h1></header></div>
+            <div id="page-srv-list-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Server - VMess</h1></header></div>
+            <div id="page-srv-list-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Server - VLess</h1></header></div>
+            <div id="page-srv-list-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Server - Always On</h1></header></div>
+            <div id="page-srv-status" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Server Status</h1></header></div>
+
+            <div id="page-buat-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Buat Akun - SSH</h1><p class="text-slate-600 mt-2">API untuk pembuatan akun SSH.</p></header>
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    <div class="px-3 py-1 bg-green-500 text-white font-bold rounded-lg text-sm w-max">POST</div>
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="url-buat-ssh" class="font-mono text-slate-900 dark:text-slate-100 break-all">https://api.sahabatssh.com/v2/create/ssh</code>
+                        <button onclick="copyCode('url-buat-ssh', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-list text-brand-600"></i> Parameters</h3>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>api_key</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>id</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>type</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>username</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-terminal text-brand-600"></i> cURL Example</h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div><div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div><div class="w-3 h-3 rounded-full bg-[#27c93f]"></div></div>
+                                <button onclick="copyCode('curl-buat-ssh', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="curl-buat-ssh" class="font-mono"><span class="text-pink-400">curl</span> <span class="text-blue-300">--location --request</span> POST <span class="text-green-400">'https://api.sahabatssh.com/v2/create/ssh'</span> \
+<span class="text-blue-300">--header</span> <span class="text-green-400">'Content-Type: application/x-www-form-urlencoded'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'api_key=ISI_API_TOKEN'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'id=123'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'type=monthly'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'username=sshbaru01'</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-buat-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Buat Akun - Trojan</h1><p class="text-slate-600 mt-2">API untuk pembuatan akun Trojan.</p></header>
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    <div class="px-3 py-1 bg-green-500 text-white font-bold rounded-lg text-sm w-max">POST</div>
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="url-buat-trojan" class="font-mono text-slate-900 dark:text-slate-100 break-all">https://api.sahabatssh.com/v2/create/trojan</code>
+                        <button onclick="copyCode('url-buat-trojan', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-list text-brand-600"></i> Parameters</h3>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>api_key</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>id</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>type</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>username</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-terminal text-brand-600"></i> cURL Example</h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div><div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div><div class="w-3 h-3 rounded-full bg-[#27c93f]"></div></div>
+                                <button onclick="copyCode('curl-buat-trojan', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="curl-buat-trojan" class="font-mono"><span class="text-pink-400">curl</span> <span class="text-blue-300">--location --request</span> POST <span class="text-green-400">'https://api.sahabatssh.com/v2/create/trojan'</span> \
+<span class="text-blue-300">--header</span> <span class="text-green-400">'Content-Type: application/x-www-form-urlencoded'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'api_key=ISI_API_TOKEN'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'id=123'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'type=monthly'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'username=trojan01'</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-buat-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Buat Akun - VMess</h1></header></div>
+            <div id="page-buat-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Buat Akun - VLess</h1></header></div>
+            <div id="page-buat-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Buat Akun - Always On</h1></header></div>
+
+            <div id="page-kel-list-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Akun - SSH</h1></header></div>
+            <div id="page-kel-list-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Akun - Trojan</h1></header></div>
+            <div id="page-kel-list-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Akun - VMess</h1></header></div>
+            <div id="page-kel-list-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Akun - VLess</h1></header></div>
+            <div id="page-kel-list-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">List Akun - Always On</h1></header></div>
+
+            <div id="page-kel-user-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Kelola Username - SSH</h1><p class="text-slate-600 mt-2">API untuk mengubah atau mengelola Username SSH.</p></header>
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    <div class="px-3 py-1 bg-green-500 text-white font-bold rounded-lg text-sm w-max">POST</div>
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="url-user-ssh" class="font-mono text-slate-900 dark:text-slate-100 break-all">https://api.sahabatssh.com/v2/manage/username/ssh</code>
+                        <button onclick="copyCode('url-user-ssh', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-list text-brand-600"></i> Parameters</h3>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>api_key</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>id</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>type</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>username</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-terminal text-brand-600"></i> cURL Example</h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div><div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div><div class="w-3 h-3 rounded-full bg-[#27c93f]"></div></div>
+                                <button onclick="copyCode('curl-user-ssh', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="curl-user-ssh" class="font-mono"><span class="text-pink-400">curl</span> <span class="text-blue-300">--location --request</span> POST <span class="text-green-400">'https://api.sahabatssh.com/v2/manage/username/ssh'</span> \
+<span class="text-blue-300">--header</span> <span class="text-green-400">'Content-Type: application/x-www-form-urlencoded'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'api_key=ISI_API_TOKEN'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'id=123'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'type=monthly'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'username=sshbaru01'</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-kel-pass-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Kelola Password - SSH</h1></header></div>
+            <div id="page-kel-pass-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Kelola Password - Trojan</h1></header></div>
+
+            <div id="page-kel-rep-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Repair - SSH</h1><p class="text-slate-600 mt-2">API untuk Repair akun SSH.</p></header>
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    <div class="px-3 py-1 bg-green-500 text-white font-bold rounded-lg text-sm w-max">POST</div>
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="url-rep-ssh" class="font-mono text-slate-900 dark:text-slate-100 break-all">https://api.sahabatssh.com/v2/manage/repair/ssh</code>
+                        <button onclick="copyCode('url-rep-ssh', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-list text-brand-600"></i> Parameters</h3>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>api_key</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>id</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>type</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>username</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-terminal text-brand-600"></i> cURL Example</h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div><div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div><div class="w-3 h-3 rounded-full bg-[#27c93f]"></div></div>
+                                <button onclick="copyCode('curl-rep-ssh', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="curl-rep-ssh" class="font-mono"><span class="text-pink-400">curl</span> <span class="text-blue-300">--location --request</span> POST <span class="text-green-400">'https://api.sahabatssh.com/v2/manage/repair/ssh'</span> \
+<span class="text-blue-300">--header</span> <span class="text-green-400">'Content-Type: application/x-www-form-urlencoded'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'api_key=ISI_API_TOKEN'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'id=123'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'type=monthly'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'username=ssh01'</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="page-kel-rep-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left">
+                <header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Repair - Trojan</h1><p class="text-slate-600 mt-2">API untuk Repair akun Trojan.</p></header>
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    <div class="px-3 py-1 bg-green-500 text-white font-bold rounded-lg text-sm w-max">POST</div>
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="url-rep-trojan" class="font-mono text-slate-900 dark:text-slate-100 break-all">https://api.sahabatssh.com/v2/manage/repair/trojan</code>
+                        <button onclick="copyCode('url-rep-trojan', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-list text-brand-600"></i> Parameters</h3>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>api_key</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>id</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>type</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                        <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl flex justify-between border border-slate-200/60 dark:border-slate-700/60"><code>username</code><span class="text-[10px] bg-red-100 text-red-600 px-2 py-1 rounded font-bold uppercase tracking-wider">Required</span></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="fa-solid fa-terminal text-brand-600"></i> cURL Example</h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div><div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div><div class="w-3 h-3 rounded-full bg-[#27c93f]"></div></div>
+                                <button onclick="copyCode('curl-rep-trojan', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="curl-rep-trojan" class="font-mono"><span class="text-pink-400">curl</span> <span class="text-blue-300">--location --request</span> POST <span class="text-green-400">'https://api.sahabatssh.com/v2/manage/repair/trojan'</span> \
+<span class="text-blue-300">--header</span> <span class="text-green-400">'Content-Type: application/x-www-form-urlencoded'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'api_key=ISI_API_TOKEN'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'id=123'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'type=monthly'</span> \
+<span class="text-blue-300">--data-urlencode</span> <span class="text-green-400">'username=trojanbaru01'</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-kel-rep-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Repair - VMess</h1></header></div>
+            <div id="page-kel-rep-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Repair - VLess</h1></header></div>
+
+            <div id="page-kel-reg-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Regenerate - VMess</h1></header></div>
+            <div id="page-kel-reg-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Regenerate - VLess</h1></header></div>
+            <div id="page-kel-reg-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Regenerate - Always On</h1></header></div>
+            <div id="page-kel-chg-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pindah Server - SSH</h1></header></div>
+            <div id="page-kel-chg-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pindah Server - Trojan</h1></header></div>
+            <div id="page-kel-chg-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pindah Server - VMess</h1></header></div>
+            <div id="page-kel-chg-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pindah Server - VLess</h1></header></div>
+
+            <div id="page-kel-cek-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Server - SSH</h1></header></div>
+            <div id="page-kel-cek-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Server - Trojan</h1></header></div>
+            <div id="page-kel-cek-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Server - VMess</h1></header></div>
+            <div id="page-kel-cek-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Server - VLess</h1></header></div>
+            <div id="page-kel-cek-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Server - Always On</h1></header></div>
+
+            <div id="page-kel-stop-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Stop - SSH</h1></header></div>
+            <div id="page-kel-stop-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Stop - Trojan</h1></header></div>
+            <div id="page-kel-stop-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Stop - VMess</h1></header></div>
+            <div id="page-kel-stop-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Stop - VLess</h1></header></div>
+
+            <div id="page-kel-aktif-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tambah Masa Aktif - SSH</h1></header></div>
+            <div id="page-kel-aktif-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tambah Masa Aktif - Trojan</h1></header></div>
+            <div id="page-kel-aktif-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tambah Masa Aktif - VMess</h1></header></div>
+            <div id="page-kel-aktif-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tambah Masa Aktif - VLess</h1></header></div>
+            <div id="page-kel-quota-always" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Tambah Quota - Always On</h1></header></div>
+            <div id="page-kel-quota-harga" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Cek Harga Tambah Quota - Always On</h1></header></div>
+
+            <div id="page-kel-frz-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Freeze - SSH</h1></header></div>
+            <div id="page-kel-frz-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Freeze - Trojan</h1></header></div>
+            <div id="page-kel-frz-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Freeze - VMess</h1></header></div>
+            <div id="page-kel-frz-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Freeze - VLess</h1></header></div>
+
+            <div id="page-kel-ufrz-ssh" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Unfreeze - SSH</h1></header></div>
+            <div id="page-kel-ufrz-trojan" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Unfreeze - Trojan</h1></header></div>
+            <div id="page-kel-ufrz-vmess" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Unfreeze - VMess</h1></header></div>
+            <div id="page-kel-ufrz-vless" class="page-section hidden w-full space-y-8 pb-12 text-left"><header><h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Unfreeze - VLess</h1></header></div>
+
+        </main>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // 1. Toast Notification Setup
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            // Desain Toast Premium
+            toast.className = 'bg-slate-800 dark:bg-white text-white dark:text-slate-800 px-4 py-3 rounded-xl shadow-2xl flex items-center justify-between gap-4 transform transition-all duration-300 translate-x-full border border-slate-700 dark:border-slate-200 w-max pointer-events-auto ml-auto';
+            
+            toast.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-circle-check text-green-400 dark:text-green-500"></i>
+                    <span class="text-sm font-semibold">${message}</span>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-red-400 transition-colors bg-white/10 dark:bg-black/10 rounded-full w-6 h-6 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            `;
+            container.appendChild(toast);
+            
+            // Animasi geser masuk (slide-in)
+            setTimeout(() => toast.classList.remove('translate-x-full'), 10);
+            
+            // Auto hapus setelah 3 detik
+            setTimeout(() => {
+                if(toast.parentElement) {
+                    toast.classList.add('translate-x-full');
+                    setTimeout(() => toast.remove(), 300);
+                }
+            }, 3000);
+        }
+
+        // 2. SPA Switcher (Manual Page Switcher)
+        const mainContent = document.querySelector('main');
+        const sidebar = document.getElementById('sidebar');
+        const SCROLL_STORAGE_KEY = 'docs-main-scroll-position';
+        const SIDEBAR_SCROLL_STORAGE_KEY = 'docs-sidebar-scroll-position';
+        const SIDEBAR_MENU_STORAGE_KEY = 'docs-sidebar-open-menus';
+        const submenuConfigs = Array.from(document.querySelectorAll('ul[id^="sub-"]')).map((menu) => ({
+            menuId: menu.id,
+            iconId: menu.previousElementSibling?.querySelector('i[id^="ico-"]')?.id || null
+        })).filter((config) => config.iconId);
+
+        function saveScrollPosition() {
+            if (!mainContent) {
+                return;
+            }
+
+            sessionStorage.setItem(SCROLL_STORAGE_KEY, String(mainContent.scrollTop));
+        }
+
+        function restoreScrollPosition() {
+            if (!mainContent) {
+                return;
+            }
+
+            const savedPosition = sessionStorage.getItem(SCROLL_STORAGE_KEY);
+            if (savedPosition === null) {
+                return;
+            }
+
+            mainContent.scrollTo({
+                top: Number(savedPosition) || 0,
+                behavior: 'auto'
+            });
+        }
+
+        function saveSidebarScrollPosition() {
+            if (!sidebar) {
+                return;
+            }
+
+            sessionStorage.setItem(SIDEBAR_SCROLL_STORAGE_KEY, String(sidebar.scrollTop));
+        }
+
+        function restoreSidebarScrollPosition() {
+            if (!sidebar) {
+                return;
+            }
+
+            const savedPosition = sessionStorage.getItem(SIDEBAR_SCROLL_STORAGE_KEY);
+            if (savedPosition === null) {
+                return;
+            }
+
+            sidebar.scrollTo({
+                top: Number(savedPosition) || 0,
+                behavior: 'auto'
+            });
+        }
+
+        function setMenuState(menuId, iconId, isOpen) {
+            const menu = document.getElementById(menuId);
+            const icon = document.getElementById(iconId);
+
+            if (!menu || !icon) {
+                return;
+            }
+
+            menu.classList.toggle('hidden', !isOpen);
+            icon.classList.toggle('rotate-180', isOpen);
+        }
+
+        function saveSidebarMenuState() {
+            const openMenus = submenuConfigs
+                .filter(({ menuId }) => {
+                    const menu = document.getElementById(menuId);
+                    return menu && !menu.classList.contains('hidden');
+                })
+                .map(({ menuId }) => menuId);
+
+            sessionStorage.setItem(SIDEBAR_MENU_STORAGE_KEY, JSON.stringify(openMenus));
+        }
+
+        function restoreSidebarMenuState() {
+            const rawValue = sessionStorage.getItem(SIDEBAR_MENU_STORAGE_KEY);
+            if (!rawValue) {
+                return;
+            }
+
+            let openMenus = [];
+
+            try {
+                openMenus = JSON.parse(rawValue);
+            } catch (error) {
+                return;
+            }
+
+            submenuConfigs.forEach(({ menuId, iconId }) => {
+                setMenuState(menuId, iconId, openMenus.includes(menuId));
+            });
+        }
+
+        function expandMenuForElement(element) {
+            const parentMenu = element?.closest('ul[id^="sub-"]');
+            if (!parentMenu) {
+                return;
+            }
+
+            const icon = parentMenu.previousElementSibling?.querySelector('i[id^="ico-"]');
+            if (!icon) {
+                return;
+            }
+
+            setMenuState(parentMenu.id, icon.id, true);
+            saveSidebarMenuState();
+        }
+
+        function switchPage(pageId, element, options = {}) {
+            const { resetScroll = true, closeMobileSidebar = true } = options;
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) targetPage.classList.remove('hidden');
+
+            const links = document.querySelectorAll('.sidebar-link');
+            links.forEach(link => {
+                link.classList.remove('bg-brand-600/10', 'dark:bg-brand-500/20', 'text-brand-600', 'dark:text-brand-400', 'font-semibold');
+                link.classList.add('text-slate-600', 'dark:text-slate-400');
+            });
+
+            if(element) {
+                element.classList.remove('text-slate-600', 'dark:text-slate-400');
+                element.classList.add('bg-brand-600/10', 'dark:bg-brand-500/20', 'text-brand-600', 'dark:text-brand-400', 'font-semibold');
+                expandMenuForElement(element);
+            }
+
+            if (pageId) {
+                window.location.hash = pageId;
+            }
+
+            if (resetScroll && mainContent) {
+                mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+                saveScrollPosition();
+            } else if (resetScroll) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            if (closeMobileSidebar && window.innerWidth < 1024) toggleSidebar();
+        }
+
+        // 3. Submenu Toggle
+        function toggleMenu(menuId, iconId) {
+            const menu = document.getElementById(menuId);
+            const isOpen = menu ? menu.classList.contains('hidden') : false;
+
+            setMenuState(menuId, iconId, isOpen);
+            saveSidebarMenuState();
+        }
+
+        function findNavigationElement(pageId) {
+            return document.querySelector(`[onclick*="'${pageId}'"]`);
+        }
+
+        // 4. Dark/Light Mode Switcher
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        function checkTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                html.classList.remove('dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+        checkTheme();
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // 5. Mobile Sidebar Toggle
+        const mobileBtn = document.getElementById('mobile-btn');
+        const overlay = document.getElementById('sidebar-overlay');
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+        mobileBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // 6. Copy URL / Text
+        function copyCode(elementId, button) {
+            const codeText = document.getElementById(elementId).innerText.trim();
+            const icon = button.querySelector('i');
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                // Munculkan toast notifikasi
+                showToast("Berhasil disalin ke clipboard!");
+                
+                // Ganti ikon menjadi checklist
+                icon.classList.replace('fa-copy', 'fa-check');
+                icon.classList.replace('fa-regular', 'fa-solid');
+                icon.classList.add('text-green-500');
+                
+                setTimeout(() => {
+                    icon.classList.replace('fa-check', 'fa-copy');
+                    icon.classList.replace('fa-solid', 'fa-regular');
+                    icon.classList.remove('text-green-500');
+                }, 2000);
+            });
+        }
+
+        function renderMethodBadges(methods) {
+            const badges = methods.map((method) => {
+                const color = method === 'GET' ? 'bg-green-500' : 'bg-orange-500';
+                return `<div class="px-3 py-1 ${color} text-white font-bold rounded-lg text-sm w-max">${method}</div>`;
+            }).join('');
+
+            return `<div class="w-full sm:w-auto flex flex-wrap justify-start gap-2">${badges}</div>`;
+        }
+
+        function renderParameterCards(params) {
+            return params.map((param) => `
+                <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60">
+                    <div class="flex justify-between items-center gap-3 mb-2">
+                        <code class="font-mono text-brand-600 dark:text-brand-400 text-base font-bold">${param.name}</code>
+                        <span class="text-[10px] ${param.required ? 'bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-400' : 'bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300'} px-2 py-1 rounded font-bold uppercase tracking-wider">${param.required ? 'Required' : 'Optional'}</span>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 text-left">${param.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderNotes(notes) {
+            if (!notes || !notes.length) {
+                return '';
+            }
+
+            return `
+                <div class="bg-white/60 dark:bg-slate-800/50 p-5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60 text-left">
+                    <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white mb-3">
+                        <i class="fa-solid fa-circle-info text-brand-600"></i> Catatan
+                    </h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-300 leading-7 list-disc pl-5">
+                        ${notes.map((note) => `<li>${note}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        function prettyJson(data) {
+            return JSON.stringify(data, null, 2);
+        }
+
+        function buildServerListResponse(serviceLabel) {
+            return prettyJson({
+                status: true,
+                code: 200,
+                message: `Daftar server ${serviceLabel} berhasil diambil.`,
+                data: {
+                    ip_address: '123.123.123.123',
+                    ip_whitelist: false,
+                    total_server: 2,
+                    servers: [
+                        {
+                            id: 1,
+                            isp: `${serviceLabel} Singapore 01`,
+                            host_ws: `${serviceLabel.toLowerCase()}-sg01.sahabatssh.com`,
+                            price: '10000',
+                            price_hourly: '10',
+                            weekly_price: '5000',
+                            status_server: 'Online',
+                            status_limit: 'ready',
+                            domain_sni: 'sg01.sni.sahabatssh.com'
+                        },
+                        {
+                            id: 2,
+                            isp: `${serviceLabel} Indonesia 01`,
+                            host_ws: `${serviceLabel.toLowerCase()}-id01.sahabatssh.com`,
+                            price: '12000',
+                            price_hourly: '12',
+                            weekly_price: '6000',
+                            status_server: 'Online',
+                            status_limit: 'full',
+                            domain_sni: 'id01.sni.sahabatssh.com'
+                        }
+                    ]
+                }
+            });
+        }
+
+        function buildAccountListResponse(serviceLabel) {
+            return prettyJson({
+                status: true,
+                code: 200,
+                message: `List akun ${serviceLabel} berhasil diambil.`,
+                data: {
+                    total_account: 2,
+                    accounts: [
+                        {
+                            id: 123,
+                            username: `${serviceLabel.toLowerCase()}user01`,
+                            type: 'monthly',
+                            expired_on: '2026-08-07 12:00:00',
+                            status: 'active'
+                        },
+                        {
+                            id: 124,
+                            username: `${serviceLabel.toLowerCase()}user02`,
+                            type: 'hourly',
+                            expired_on: '2026-07-07 18:00:00',
+                            status: 'active'
+                        }
+                    ]
+                }
+            });
+        }
+
+        function buildCreateResponse(serviceLabel, extraAccount = {}) {
+            return prettyJson({
+                status: true,
+                code: 200,
+                message: `Akun ${serviceLabel} berhasil dibuat.`,
+                data: {
+                    id: 123,
+                    server_id: 1,
+                    type: 'monthly',
+                    account: {
+                        username: `${serviceLabel.toLowerCase()}baru01`,
+                        expired_on: '2026-08-07 12:00:00',
+                        ...extraAccount
+                    }
+                }
+            });
+        }
+
+        function buildManageResponse(message, extraData = {}) {
+            return prettyJson({
+                status: true,
+                code: 200,
+                message,
+                data: {
+                    id: 123,
+                    username: 'contohuser01',
+                    type: 'monthly',
+                    status: 'success',
+                    ...extraData
+                }
+            });
+        }
+
+        function generateDefaultResponse(config) {
+            if (config.response) {
+                return config.response;
+            }
+
+            switch (config.id) {
+                case 'page-srv-list-ssh':
+                    return buildServerListResponse('SSH');
+                case 'page-srv-list-trojan':
+                    return buildServerListResponse('Trojan');
+                case 'page-srv-list-vmess':
+                    return buildServerListResponse('VMess');
+                case 'page-srv-list-vless':
+                    return buildServerListResponse('VLess');
+                case 'page-srv-list-always':
+                    return buildServerListResponse('Always On');
+                case 'page-srv-status':
+                    return prettyJson({
+                        status: true,
+                        code: 200,
+                        message: 'Status server berhasil diambil.',
+                        data: {
+                            powered_by: 'HetrixTools',
+                            total_monitor: 3,
+                            services: {
+                                ssh: [{ name: 'SSH ID 01', country: 'ID', uptime: '99.99%', status: 'up' }],
+                                trojan: [{ name: 'Trojan SG 01', country: 'SG', uptime: '99.95%', status: 'up' }],
+                                xray: [{ name: 'Xray US 01', country: 'US', uptime: '100%', status: 'up' }]
+                            }
+                        }
+                    });
+                case 'page-buat-ssh':
+                    return buildCreateResponse('SSH', { password: 'Password123' });
+                case 'page-buat-trojan':
+                    return buildCreateResponse('Trojan', {
+                        password: 'trojan-key-123',
+                        ws_tls: 'trojan://trojanbaru01@sg01.sahabatssh.com:443?...'
+                    });
+                case 'page-buat-vmess':
+                    return buildCreateResponse('VMess', {
+                        uuid: '123e4567-e89b-12d3-a456-426614174000',
+                        ws_tls: 'vmess://eyJhZGQiOiJzZzAxLnNhaGFiYXRzc2guY29tIiwiYWlkIjoiMCIsImhvc3QiOiIiLCJpZCI6IjEyM2U0NTY3LWU4OWItMTJkMy1hNDU2LTQyNjYxNDE3NDAwMCJ9',
+                        grpc: 'vmess://grpc-config-example'
+                    });
+                case 'page-buat-vless':
+                    return buildCreateResponse('VLess', {
+                        uuid: '123e4567-e89b-12d3-a456-426614174000',
+                        ws_tls: 'vless://123e4567-e89b-12d3-a456-426614174000@sg01.sahabatssh.com:443?...',
+                        grpc: 'vless://grpc-config-example'
+                    });
+                case 'page-buat-always':
+                    return buildCreateResponse('Always On', {
+                        protocol: 'trojan',
+                        quota: '15000',
+                        uuid: '123e4567-e89b-12d3-a456-426614174000'
+                    });
+            }
+
+            if (config.id.startsWith('page-kel-list-')) {
+                return buildAccountListResponse(config.title.replace('List Akun - ', ''));
+            }
+
+            if (config.id.startsWith('page-kel-user-')) {
+                return buildManageResponse('Username akun berhasil diubah.', {
+                    old_username: 'userlama01',
+                    new_username: 'userbaru01'
+                });
+            }
+
+            if (config.id.startsWith('page-kel-pass-')) {
+                return buildManageResponse('Password akun berhasil diubah.');
+            }
+
+            if (config.id.startsWith('page-kel-rep-')) {
+                return buildManageResponse('Repair akun berhasil diproses.');
+            }
+
+            if (config.id.startsWith('page-kel-reg-')) {
+                return buildManageResponse('Regenerate akun berhasil diproses.', {
+                    uuid: '123e4567-e89b-12d3-a456-426614174000'
+                });
+            }
+
+            if (config.id === 'page-kel-quota-harga') {
+                return prettyJson({
+                    status: true,
+                    code: 200,
+                    message: 'Harga tambah quota berhasil dihitung.',
+                    data: {
+                        service: 'always_on',
+                        quota_gb: 135,
+                        price: '15000',
+                        price_tiers: [
+                            { quota_gb: 135, price: '15000' },
+                            { quota_gb: 190, price: '20000' },
+                            { quota_gb: 265, price: '25000' },
+                            { quota_gb: 450, price: '40000' }
+                        ]
+                    }
+                });
+            }
+
+            if (config.id.startsWith('page-kel-quota-')) {
+                return prettyJson({
+                    status: true,
+                    code: 200,
+                    message: 'Tambah quota berhasil.',
+                    data: {
+                        service: 'always_on',
+                        account: {
+                            id: 123,
+                            username: 'contohuser01',
+                            status: 'active',
+                            added_quota_gb: 135,
+                            limit_quota_gb: 270,
+                            charge: '15000'
+                        }
+                    }
+                });
+            }
+
+            if (config.id.startsWith('page-kel-chg-')) {
+                return prettyJson({
+                    status: true,
+                    code: 200,
+                    message: 'Pindah server berhasil.',
+                    data: {
+                        service: config.id.replace('page-kel-chg-', ''),
+                        type: 'monthly',
+                        account: {
+                            id: 123,
+                            username: 'contohuser01',
+                            status: 'active'
+                        },
+                        from_server: {
+                            id: 1,
+                            isp: 'PT Qwords'
+                        },
+                        to_server: {
+                            id: 35,
+                            isp: 'Digital Ocean'
+                        }
+                    }
+                });
+            }
+
+            if (config.id.startsWith('page-kel-cek-')) {
+                return buildManageResponse('Cek server akun berhasil dilakukan.', {
+                    server: {
+                        id: 1,
+                        host_ws: 'sg01.sahabatssh.com',
+                        status_server: 'Online'
+                    }
+                });
+            }
+
+            if (config.id.startsWith('page-kel-stop-')) {
+                return buildManageResponse('Akun berhasil dihentikan.');
+            }
+
+            if (config.id.startsWith('page-kel-aktif-')) {
+                return buildManageResponse('Masa aktif akun berhasil ditambahkan.', {
+                    expired_on: '2026-08-14 12:00:00'
+                });
+            }
+
+            if (config.id.startsWith('page-kel-frz-')) {
+                return buildManageResponse('Akun berhasil di-freeze.', {
+                    freeze_status: 'active'
+                });
+            }
+
+            if (config.id.startsWith('page-kel-ufrz-')) {
+                return buildManageResponse('Akun berhasil di-unfreeze.', {
+                    freeze_status: 'inactive'
+                });
+            }
+
+            return prettyJson({
+                status: true,
+                code: 200,
+                message: 'Request berhasil diproses.',
+                data: {}
+            });
+        }
+
+        function renderApiPage(config) {
+            const section = document.getElementById(config.id);
+            if (!section) {
+                return;
+            }
+
+            const curlId = `curl-${config.id}`;
+            const urlId = `url-${config.id}`;
+            const methods = renderMethodBadges(config.methods || ['POST']);
+            const endpointCard = config.endpoint ? `
+                <section class="flex flex-col sm:flex-row items-center gap-3 bg-white/60 dark:bg-slate-800/50 p-4 border border-slate-200/60 dark:border-slate-700/60 rounded-2xl">
+                    ${methods}
+                    <div class="flex-1 flex justify-between bg-slate-50 dark:bg-slate-900/60 rounded-xl px-4 py-2.5 w-full border border-slate-200/50 dark:border-slate-700/50">
+                        <code id="${urlId}" class="font-mono text-slate-900 dark:text-slate-100 break-all">${config.endpoint}</code>
+                        <button onclick="copyCode('${urlId}', this)" class="text-slate-400 hover:text-brand-600"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                </section>
+            ` : '';
+
+            const responseContent = generateDefaultResponse(config);
+            const responseBlock = responseContent ? `
+                <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                    <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                        </div>
+                        <button onclick="copyCode('resp-${config.id}', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+                    <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="resp-${config.id}" class="font-mono">${responseContent}</pre>
+                    </div>
+                </div>
+            ` : '';
+
+            section.innerHTML = `
+                <header>
+                    <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">${config.title}</h1>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">${config.description}</p>
+                </header>
+                ${endpointCard}
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-list text-brand-600"></i> Parameters
+                        </h3>
+                        ${renderParameterCards(config.params || [])}
+                        ${renderNotes(config.notes || [])}
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-terminal text-brand-600"></i> cURL Example
+                        </h3>
+                        <div class="rounded-2xl overflow-hidden bg-[#0d1117] border border-[#30363d]">
+                            <div class="flex justify-between items-center px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                </div>
+                                <button onclick="copyCode('${curlId}', this)" class="text-slate-400 hover:text-white"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="p-5 overflow-x-auto text-[13px] leading-loose text-slate-200 text-left">
+<pre id="${curlId}" class="font-mono">${config.curl}</pre>
+                            </div>
+                        </div>
+                        ${responseBlock ? `
+                        <h3 class="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-code text-brand-600"></i> Response Example
+                        </h3>
+                        ${responseBlock}
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        const endpointPages = [
+            {
+                id: 'page-acc-detail',
+                title: 'Detail Akun',
+                description: 'API untuk mengambil informasi akun kamu dari Sahabat SSH.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/account/detail',
+                params: [
+                    { name: 'api_key', required: true, desc: 'API Key milik kamu.' }
+                ],
+                notes: [
+                    'limit_daily_trial mengikuti pengaturan trial terbaru, bisa berbeda tiap akun.'
+                ],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/account/detail?api_key=ISI_API_TOKEN'`,
+                response: `{
+  "status": true,
+  "code": 200,
+  "message": "Detail akun berhasil diambil.",
+  "data": {
+    "ip_address": "123.123.123.123",
+    "ip_whitelist": false,
+    "account": {
+      "username": "contohuser",
+      "name": "Contoh User",
+      "email": "contoh@gmail.com",
+      "balance": "10000",
+      "created_at": "2026-07-06 12:00:00",
+      "trial_usage_today": "0",
+      "limit_daily_trial": "5"
+    }
+  }
+}`
+            },
+            {
+                id: 'page-srv-list-ssh',
+                title: 'List Server - SSH',
+                description: 'Menampilkan daftar server SSH yang tersedia dan masih aktif.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/ssh',
+                params: [
+                    { name: 'api_key', required: true, desc: 'API Key milik kamu.' }
+                ],
+                notes: [
+                    'Harga bisa berubah mengikuti status role akun kamu.'
+                ],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/ssh?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-srv-list-trojan',
+                title: 'List Server - Trojan',
+                description: 'Menampilkan daftar server Trojan yang tersedia dan masih aktif.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/trojan',
+                params: [{ name: 'api_key', required: true, desc: 'API Key milik kamu.' }],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/trojan?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-srv-list-vmess',
+                title: 'List Server - VMess',
+                description: 'Menampilkan daftar server VMess yang tersedia dan masih aktif.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/vmess',
+                params: [{ name: 'api_key', required: true, desc: 'API Key milik kamu.' }],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/vmess?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-srv-list-vless',
+                title: 'List Server - VLess',
+                description: 'Menampilkan daftar server VLess yang tersedia dan masih aktif.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/vless',
+                params: [{ name: 'api_key', required: true, desc: 'API Key milik kamu.' }],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/vless?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-srv-list-always',
+                title: 'List Server - Always On',
+                description: 'Menampilkan daftar server Always On yang aktif untuk pembuatan akun quota dengan protocol Trojan, VMess, atau VLess.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/always_on',
+                params: [{ name: 'api_key', required: true, desc: 'API Key milik kamu.' }],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/always_on?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-srv-status',
+                title: 'Server Status',
+                description: 'Mengambil status realtime server.',
+                methods: ['GET', 'POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/server/status',
+                params: [{ name: 'api_key', required: true, desc: 'API Key milik kamu.' }],
+                curl: `curl --location 'https://api.sahabatssh.com/v2/server/status?api_key=ISI_API_TOKEN'`
+            },
+            {
+                id: 'page-buat-vmess',
+                title: 'Buat Akun - VMess',
+                description: 'API untuk membuat akun VMess.',
+                methods: ['POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/create/vmess',
+                params: [
+                    { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                    { name: 'id', required: true, desc: 'ID server target, bisa didapatkan setelah melakukan list server.' },
+                    { name: 'type', required: true, desc: 'monthly, weekly, trial, atau hourly.' },
+                    { name: 'username', required: true, desc: 'Username atau remarks akun VMess.' }
+                ],
+                curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/create/vmess' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=trial' \\
+--data-urlencode 'username=vmess01'`
+            },
+            {
+                id: 'page-buat-vless',
+                title: 'Buat Akun - VLess',
+                description: 'API untuk membuat akun VLess.',
+                methods: ['POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/create/vless',
+                params: [
+                    { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                    { name: 'id', required: true, desc: 'ID server target, bisa didapatkan setelah melakukan list server.' },
+                    { name: 'type', required: true, desc: 'monthly, weekly, trial, atau hourly.' },
+                    { name: 'username', required: true, desc: 'Username atau remarks akun VLess.' }
+                ],
+                curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/create/vless' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly' \\
+--data-urlencode 'username=vless01'`
+            },
+            {
+                id: 'page-buat-always',
+                title: 'Buat Akun - Always On',
+                description: 'API untuk membuat akun Always On.',
+                methods: ['POST'],
+                endpoint: 'https://api.sahabatssh.com/v2/create/always_on',
+                params: [
+                    { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                    { name: 'id', required: true, desc: 'ID server target, bisa didapatkan setelah melakukan list server.' },
+                    { name: 'type', required: true, desc: 'Hanya tersedia dengan input quota saat ini.' },
+                    { name: 'username', required: true, desc: 'Username atau remarks akun.' },
+                    { name: 'quota', required: true, desc: '15000 (Total Quota Limit 135 GB), 20000 (Total Quota Limit 190 GB), 25000 (Total Quota Limit 265 GB), atau 40000 (Total Quota Limit  50GB).' },
+                    { name: 'protocol', required: true, desc: 'trojan, vmess, atau vless.' }
+                ],
+                curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/create/always_on' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=quota' \\
+--data-urlencode 'username=alwayson01' \\
+--data-urlencode 'quota=15000' \\
+--data-urlencode 'protocol=trojan'`
+            }
+        ];
+
+        const managePageDescriptions = {
+            'page-kel-list-ssh': 'API untuk mengambil daftar akun SSH milik kamu.',
+            'page-kel-list-trojan': 'API untuk mengambil daftar akun Trojan milik kamu.',
+            'page-kel-list-vmess': 'API untuk mengambil daftar akun VMess milik kamu.',
+            'page-kel-list-vless': 'API untuk mengambil daftar akun VLess milik kamu.',
+            'page-kel-list-always': 'API untuk mengambil daftar akun Always On milik kamu.',
+            'page-kel-pass-ssh': 'API untuk mengubah password akun SSH.',
+            'page-kel-pass-trojan': 'API untuk mengubah password akun Trojan.',
+            'page-kel-rep-vmess': 'API untuk melakukan repair atau perbaikan pada akun VMess.',
+            'page-kel-rep-vless': 'API untuk melakukan repair atau perbaikan pada akun VLess',
+            'page-kel-reg-vmess': 'API untuk regenerate konfigurasi akun VMess.',
+            'page-kel-reg-vless': 'API untuk regenerate konfigurasi akun VLess.',
+            'page-kel-reg-always': 'API untuk regenerate konfigurasi akun Always On.',
+            'page-kel-chg-ssh': 'API untuk memindahkan akun SSH monthly ke server lain. ID server tujuan bisa didapatkan dari List Server - SSH.',
+            'page-kel-chg-trojan': 'API untuk memindahkan akun Trojan monthly ke server lain. ID server tujuan bisa didapatkan dari List Server - Trojan.',
+            'page-kel-chg-vmess': 'API untuk memindahkan akun VMess monthly ke server lain. ID server tujuan bisa didapatkan dari List Server - VMess.',
+            'page-kel-chg-vless': 'API untuk memindahkan akun VLess monthly ke server lain. ID server tujuan bisa didapatkan dari List Server - VLess.',
+            'page-kel-cek-ssh': 'API untuk mengecek server dari akun SSH.',
+            'page-kel-cek-trojan': 'API untuk mengecek server dari akun Trojan.',
+            'page-kel-cek-vmess': 'API untuk mengecek server dari akun VMess.',
+            'page-kel-cek-vless': 'API untuk mengecek server dari akun VLess.',
+            'page-kel-cek-always': 'API untuk mengecek server dari akun Always On.',
+            'page-kel-stop-ssh': 'API untuk menghentikan akun SSH (Pay As Go/ Hourly).',
+            'page-kel-stop-trojan': 'API untuk menghentikan akun Trojan (Pay As Go/ Hourly).',
+            'page-kel-stop-vmess': 'API untuk menghentikan akun VMess (Pay As Go/ Hourly).',
+            'page-kel-stop-vless': 'API untuk menghentikan akun VLess (Pay As Go/ Hourly).',
+            'page-kel-aktif-ssh': 'API untuk menambah masa aktif akun SSH.',
+            'page-kel-aktif-trojan': 'API untuk menambah masa aktif akun Trojan.',
+            'page-kel-aktif-vmess': 'API untuk menambah masa aktif akun VMess.',
+            'page-kel-aktif-vless': 'API untuk menambah masa aktif akun VLess.',
+            'page-kel-quota-always': 'API untuk menambah quota akun Always On. Minimal 135 GB, saldo dipotong sesuai harga berjenjang.',
+            'page-kel-quota-harga': 'API untuk mengecek harga tambah quota Always On sebelum membeli. Tidak memotong saldo.',
+            'page-kel-frz-ssh': 'API untuk freeze akun SSH.',
+            'page-kel-frz-trojan': 'API untuk freeze akun Trojan.',
+            'page-kel-frz-vmess': 'API untuk freeze akun VMess.',
+            'page-kel-frz-vless': 'API untuk freeze akun VLess.',
+            'page-kel-ufrz-ssh': 'API untuk unfreeze akun SSH.',
+            'page-kel-ufrz-trojan': 'API untuk unfreeze akun Trojan.',
+            'page-kel-ufrz-vmess': 'API untuk unfreeze akun VMess.',
+            'page-kel-ufrz-vless': 'API untuk unfreeze akun VLess.'
+        };
+
+        const managePageConfigs = [
+            ['page-kel-list-ssh', 'List Akun - SSH', 'ssh', 'list', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'id', required: false, desc: 'Filter berdasarkan ID akun.' },
+                { name: 'username', required: false, desc: 'Filter berdasarkan username akun.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/ssh/list?api_key=ISI_API_TOKEN&type=monthly'`],
+            ['page-kel-list-trojan', 'List Akun - Trojan', 'trojan', 'list', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'id', required: false, desc: 'Filter berdasarkan ID akun.' },
+                { name: 'username', required: false, desc: 'Filter berdasarkan username akun.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/trojan/list?api_key=ISI_API_TOKEN&type=monthly'`],
+            ['page-kel-list-vmess', 'List Akun - VMess', 'vmess', 'list', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'id', required: false, desc: 'Filter berdasarkan ID akun.' },
+                { name: 'username', required: false, desc: 'Filter berdasarkan username akun.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/vmess/list?api_key=ISI_API_TOKEN&type=monthly'`],
+            ['page-kel-list-vless', 'List Akun - VLess', 'vless', 'list', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'id', required: false, desc: 'Filter berdasarkan ID akun.' },
+                { name: 'username', required: false, desc: 'Filter berdasarkan username akun.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/vless/list?api_key=ISI_API_TOKEN&type=monthly'`],
+            ['page-kel-list-always', 'List Akun - Always On', 'always_on', 'list', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: false, desc: 'Filter berdasarkan ID akun.' },
+                { name: 'username', required: false, desc: 'Filter berdasarkan username akun.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/always_on/list?api_key=ISI_API_TOKEN'`],
+            ['page-kel-pass-ssh', 'Kelola Password - SSH', 'ssh', 'password', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun yang ingin diubah.' },
+                { name: 'username', required: false, desc: 'Username akun lama.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'password', required: true, desc: 'Password baru akun SSH.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/password' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly' \\
+--data-urlencode 'password=PasswordBaru123'`],
+            ['page-kel-pass-trojan', 'Kelola Password - Trojan', 'trojan', 'password', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun yang ingin diubah.' },
+                { name: 'username', required: false, desc: 'Username akun lama.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'password', required: true, desc: 'Password baru yang juga akan menjadi username baru Trojan.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/password' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly' \\
+--data-urlencode 'password=TrojanBaru123'`],
+            ['page-kel-rep-vmess', 'Repair - VMess', 'vmess', 'repair', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/repair' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-rep-vless', 'Repair - VLess', 'vless', 'repair', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/repair' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-reg-vmess', 'Regenerate - VMess', 'vmess', 'regenerate', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/regenerate' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-reg-vless', 'Regenerate - VLess', 'vless', 'regenerate', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/regenerate' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-reg-always', 'Regenerate - Always On', 'always_on', 'regenerate', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/always_on/regenerate' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123'`],
+            ['page-kel-chg-ssh', 'Pindah Server - SSH', 'ssh', 'change_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'server_id', required: true, desc: 'ID server tujuan, didapatkan dari List Server - SSH (contoh: 35).' },
+                { name: 'password', required: true, desc: 'Password SSH untuk akun di server tujuan.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/change_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'server_id=35' \\
+--data-urlencode 'password=PasswordBaru123'`],
+            ['page-kel-chg-trojan', 'Pindah Server - Trojan', 'trojan', 'change_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'server_id', required: true, desc: 'ID server tujuan, didapatkan dari List Server - Trojan (contoh: 35).' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/change_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'server_id=35'`],
+            ['page-kel-chg-vmess', 'Pindah Server - VMess', 'vmess', 'change_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'server_id', required: true, desc: 'ID server tujuan, didapatkan dari List Server - VMess (contoh: 35).' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/change_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'server_id=35'`],
+            ['page-kel-chg-vless', 'Pindah Server - VLess', 'vless', 'change_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'server_id', required: true, desc: 'ID server tujuan, didapatkan dari List Server - VLess (contoh: 35).' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/change_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'server_id=35'`],
+            ['page-kel-cek-ssh', 'Cek Server - SSH', 'ssh', 'cek_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/cek_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-cek-trojan', 'Cek Server - Trojan', 'trojan', 'cek_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/cek_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-cek-vmess', 'Cek Server - VMess', 'vmess', 'cek_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/cek_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-cek-vless', 'Cek Server - VLess', 'vless', 'cek_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/cek_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-cek-always', 'Cek Server - Always On', 'always_on', 'cek_server', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/always_on/cek_server' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123'`],
+            ['page-kel-stop-ssh', 'Stop - SSH', 'ssh', 'stop', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/stop' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-stop-trojan', 'Stop - Trojan', 'trojan', 'stop', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/stop' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-stop-vmess', 'Stop - VMess', 'vmess', 'stop', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/stop' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-stop-vless', 'Stop - VLess', 'vless', 'stop', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/stop' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-aktif-ssh', 'Tambah Masa Aktif - SSH', 'ssh', 'add_time', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/add_time' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-aktif-trojan', 'Tambah Masa Aktif - Trojan', 'trojan', 'add_time', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/add_time' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-aktif-vmess', 'Tambah Masa Aktif - VMess', 'vmess', 'add_time', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/add_time' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-aktif-vless', 'Tambah Masa Aktif - VLess', 'vless', 'add_time', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/add_time' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`],
+            ['page-kel-quota-always', 'Tambah Quota - Always On', 'always_on', 'add_quota', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'quota_gb', required: true, desc: 'Jumlah quota yang ditambahkan dalam GB, minimal 135.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/always_on/add_quota' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'quota_gb=135'`],
+            ['page-kel-quota-harga', 'Cek Harga Tambah Quota - Always On', 'always_on', 'cek_harga', ['GET', 'POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'quota_gb', required: true, desc: 'Jumlah quota yang ingin dicek harganya dalam GB, minimal 135.' },
+                { name: 'id', required: false, desc: 'ID akun. Jika diisi, respons menampilkan quota saat ini dan total setelah ditambah.' },
+                { name: 'username', required: false, desc: 'Username akun, alternatif dari id.' }
+            ], `curl --location 'https://api.sahabatssh.com/v2/manage/always_on/cek_harga?api_key=ISI_API_TOKEN&quota_gb=135'`],
+            ['page-kel-frz-ssh', 'Freeze - SSH', 'ssh', 'freeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/freeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-frz-trojan', 'Freeze - Trojan', 'trojan', 'freeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/freeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-frz-vmess', 'Freeze - VMess', 'vmess', 'freeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/freeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-frz-vless', 'Freeze - VLess', 'vless', 'freeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/freeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-ufrz-ssh', 'Unfreeze - SSH', 'ssh', 'unfreeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/unfreeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-ufrz-trojan', 'Unfreeze - Trojan', 'trojan', 'unfreeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/unfreeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-ufrz-vmess', 'Unfreeze - VMess', 'vmess', 'unfreeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vmess/unfreeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`],
+            ['page-kel-ufrz-vless', 'Unfreeze - VLess', 'vless', 'unfreeze', ['POST'], [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'Harus diisi hourly.' }
+            ], `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/vless/unfreeze' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=hourly'`]
+        ];
+
+        managePageConfigs.forEach((item) => {
+            endpointPages.push({
+                id: item[0],
+                title: item[1],
+                description: managePageDescriptions[item[0]] || 'API endpoint untuk pengelolaan akun.',
+                methods: item[4],
+                endpoint: `https://api.sahabatssh.com/v2/manage/${item[2]}/${item[3]}`,
+                params: item[5],
+                curl: item[6]
+            });
+        });
+
+        endpointPages.push({
+            id: 'page-buat-ssh',
+            title: 'Buat Akun - SSH',
+            description: 'API untuk membuat akun SSH.',
+            methods: ['POST'],
+            endpoint: 'https://api.sahabatssh.com/v2/create/ssh',
+            params: [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID server target, bisa didapatkan setelah melakukan list server.' },
+                { name: 'type', required: true, desc: 'monthly, weekly, trial, atau hourly.' },
+                { name: 'username', required: true, desc: 'Username akun SSH.' },
+                { name: 'password', required: true, desc: 'Password akun SSH.' }
+            ],
+            curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/create/ssh' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly' \\
+--data-urlencode 'username=sshbaru01' \\
+--data-urlencode 'password=Password123'`
+        });
+
+        endpointPages.push({
+            id: 'page-buat-trojan',
+            title: 'Buat Akun - Trojan',
+            description: 'API untuk membuat akun Trojan.',
+            methods: ['POST'],
+            endpoint: 'https://api.sahabatssh.com/v2/create/trojan',
+            params: [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID server target, bisa didapatkan setelah melakukan list server.' },
+                { name: 'type', required: true, desc: 'monthly, weekly, trial, atau hourly.' },
+                { name: 'username', required: true, desc: 'Username ini akan menjadi password Trojan.' }
+            ],
+            curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/create/trojan' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly' \\
+--data-urlencode 'username=trojan01'`
+        });
+
+        endpointPages.push({
+            id: 'page-kel-user-ssh',
+            title: 'Kelola Username - SSH',
+            description: 'API untuk mengubah username akun SSH.',
+            methods: ['POST'],
+            endpoint: 'https://api.sahabatssh.com/v2/manage/ssh/username',
+            params: [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun lama.' },
+                { name: 'account_username', required: false, desc: 'Username lama akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' },
+                { name: 'new_username', required: true, desc: 'Username baru akun SSH.' }
+            ],
+            curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/username' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly' \\
+--data-urlencode 'new_username=sshbaru01'`
+        });
+
+        endpointPages.push({
+            id: 'page-kel-rep-ssh',
+            title: 'Repair - SSH',
+            description: 'API untuk melakukan repair atau perbaikan pada akun SSH.',
+            methods: ['POST'],
+            endpoint: 'https://api.sahabatssh.com/v2/manage/ssh/repair',
+            params: [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ],
+            curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/ssh/repair' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`
+        });
+
+        endpointPages.push({
+            id: 'page-kel-rep-trojan',
+            title: 'Repair - Trojan',
+            description: 'API untuk melakukan repair atau perbaikan pada akun Trojan.',
+            methods: ['POST'],
+            endpoint: 'https://api.sahabatssh.com/v2/manage/trojan/repair',
+            params: [
+                { name: 'api_key', required: true, desc: 'API Key milik kamu.' },
+                { name: 'id', required: true, desc: 'ID akun.' },
+                { name: 'username', required: false, desc: 'Username akun.' },
+                { name: 'type', required: true, desc: 'monthly atau hourly.' }
+            ],
+            curl: `curl --location --request POST 'https://api.sahabatssh.com/v2/manage/trojan/repair' \\
+--header 'Content-Type: application/x-www-form-urlencoded' \\
+--data-urlencode 'api_key=ISI_API_TOKEN' \\
+--data-urlencode 'id=123' \\
+--data-urlencode 'type=monthly'`
+        });
+
+        endpointPages.forEach(renderApiPage);
+
+        if (mainContent) {
+            mainContent.addEventListener('scroll', saveScrollPosition, { passive: true });
+        }
+
+        if (sidebar) {
+            sidebar.addEventListener('scroll', saveSidebarScrollPosition, { passive: true });
+        }
+
+        window.addEventListener('beforeunload', saveScrollPosition);
+        window.addEventListener('beforeunload', saveSidebarScrollPosition);
+        window.addEventListener('beforeunload', saveSidebarMenuState);
+
+        window.addEventListener('load', () => {
+            const currentPage = window.location.hash ? window.location.hash.substring(1) : '';
+            restoreSidebarMenuState();
+
+            if (!currentPage) {
+                restoreScrollPosition();
+                restoreSidebarScrollPosition();
+                return;
+            }
+
+            const targetPage = document.getElementById(currentPage);
+            const targetLink = findNavigationElement(currentPage);
+
+            if (targetPage && targetLink) {
+                switchPage(currentPage, targetLink, {
+                    resetScroll: false,
+                    closeMobileSidebar: false
+                });
+                requestAnimationFrame(() => {
+                    restoreScrollPosition();
+                    restoreSidebarScrollPosition();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

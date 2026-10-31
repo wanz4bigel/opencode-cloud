@@ -26,14 +26,14 @@ mo.vstack([
 |---|---|
 | **Base URL** | `https://ai.wanz4bigel.dpdns.org/v1` |
 | **API key** | `{key}` |
-| **Model** | `swift-1.5-iq3_s` · 262.144 konteks · KV int8 |
+| **Model** | `swift-1.5-iq3_s` · 262.144 konteks · KV int8 · ~115–160 tok/s |
 | **Fase** | **{s.get('phase_label', '—')}** · {s.get('elapsed_s', 0)} detik |
 | **Unduhan** | `{bar}` {pct:.1f}% · {s.get('model_gb', 0)} / {s.get('total_gb', 0)} GB · {int(s.get('speed_mbps') or 0)} MB/s · ETA {eta_txt} |
 | **RAM / VRAM** | {s.get('ram_gb', 0)} GB / {s.get('vram_gb', 0)} GB |
 | **Server lokal / publik** | {s.get('server', 0)} / {s.get('public', 0)} |
 | **Diperbarui** | {s.get('t', '—')} |
 
-Model ada di `/home/marimo/models/sc117` (disk), jadi RAM tidak dipakai untuk 79 GB.
+Model ada di `/home/marimo/models/sc117` (disk), jadi RAM tidak dipakai untuk 85 GB.
 
 Kalau sandbox mati: **Relaunch** di molab → `bash /marimo/llm/pipeline.sh`.
 Dashboard ini menyegarkan sendiri tiap 2 detik.
