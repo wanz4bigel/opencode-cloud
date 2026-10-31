@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Bansos Kemensos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    
+    <style>
+        /* ================= STYLE CSS ================= */
+        :root {
+            --gold-start: #FFD700;
+            --gold-end: #FDB931;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(30, 30, 30, 0.6);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(0, 0, 0, 0.4);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            padding-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: radial-gradient(circle at 10% 20%, rgba(253, 185, 49, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 20%);
+        }
+
+        /* Background Glow */
+        .bg-glow-1 { position: fixed; top: -10%; left: -10%; width: 40vw; height: 40vw; background: var(--gold-start); filter: blur(200px); opacity: 0.1; z-index: -1; }
+        .bg-glow-2 { position: fixed; bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: var(--gold-end); filter: blur(200px); opacity: 0.08; z-index: -1; }
+
+        /* Navbar */
+        .navbar-glass {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Text Gradient */
+        .text-gradient {
+            background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* Counter Views in Navbar */
+        .nav-views-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        /* Cards */
+        .card-glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Inputs */
+        .form-label { color: var(--text-secondary); font-weight: 500; margin-left: 0.5rem; font-size: 0.9rem; }
+        .text-gold { color: var(--gold-start) !important; }
+        .input-icon-wrapper { position: relative; }
+        .input-icon-wrapper i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #666; z-index: 2; transition: color 0.3s; }
+        .custom-select, .custom-input {
+            background-color: var(--input-bg); border: 1px solid var(--border-color); color: #fff;
+            border-radius: 0.8rem; padding: 0.9rem 1rem 0.9rem 2.8rem; font-size: 0.95rem; transition: all 0.3s ease;
+        }
+        .custom-select:focus, .custom-input:focus { background-color: #000; border-color: var(--gold-start); box-shadow: 0 0 15px rgba(255, 215, 0, 0.15); color: #fff; }
+        .input-icon-wrapper:focus-within i { color: var(--gold-start); }
+        .custom-select:disabled { background-color: rgba(0,0,0,0.2); color: #555; cursor: not-allowed; }
+
+        /* Button */
+        .btn-gold-gradient {
+            background: linear-gradient(135deg, var(--gold-start) 0%, var(--gold-end) 100%);
+            border: none; color: #000; font-weight: 700; padding: 1rem; border-radius: 0.8rem; letter-spacing: 1px;
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+        }
+        .btn-gold-gradient:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(253, 185, 49, 0.3); color: #000; }
+
+        /* Table */
+        .table-dark-custom { --bs-table-bg: transparent; color: #ddd; }
+        .table-dark-custom thead th { background-color: rgba(0,0,0,0.3); color: var(--gold-start); border-bottom: 1px solid var(--border-color); padding: 1rem; }
+        .table-dark-custom td { border-bottom: 1px solid var(--border-color); padding: 1rem; font-size: 0.9rem; }
+        
+        /* Badge */
+        .badge-gold { background: rgba(255, 215, 0, 0.1); color: var(--gold-start); border: 1px solid var(--gold-start); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; }
+        .badge { padding: 0.5em 0.8em; font-weight: 600; }
+        
+        /* Animations */
+        .animate-fade-down { animation: fadeDown 0.8s ease-out; }
+        .animate-fade-up { animation: fadeUp 0.8s ease-out; }
+        @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .loader-gold { width: 48px; height: 48px; border: 5px solid #FFF; border-bottom-color: var(--gold-start); border-radius: 50%; display: inline-block; animation: rotation 1s linear infinite; }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Footer Buttons */
+        .btn-social { border-radius: 50px; font-weight: 600; transition: all 0.3s ease; border-width: 2px; }
+        .btn-social:hover { transform: translateY(-3px); }
+        .btn-outline-success { color: #25D366; border-color: #25D366; }
+        .btn-outline-success:hover { background-color: #25D366; color: #000; box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+        .btn-outline-info { color: #0088cc; border-color: #0088cc; }
+        .btn-outline-info:hover { background-color: #0088cc; color: #fff; box-shadow: 0 0 15px rgba(0, 136, 204, 0.4); }
+        
+        /* Footer */
+        footer { margin-top: auto; padding: 2rem 0; border-top: 1px solid var(--border-color); background-color: var(--dark-bg-secondary); }
+        main { flex: 1 0 auto; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-white" href="#">
+                <i class="bi bi-shield-check fs-3 text-gradient me-2"></i>
+                Cek <span class="text-gradient ms-1">BANSOS</span>
+            </a>
+            
+            <div class="nav-views-badge">
+                <i class="bi bi-eye-fill text-gold me-2"></i>
+                <span id="viewCount" class="fw-bold">3,192</span>
+                <span class="ms-1 opacity-75">Views</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mb-5">
+        
+        <div class="text-center mb-5 animate-fade-down">
+            <h1 class="display-4 fw-bolder text-white">
+                Cek Data <span class="text-gradient">Penerima Bansos</span>
+            </h1>
+            <p class="text-white-50 lead">
+                Database Terpadu Cek Bantuan Sosial Kemensos RI
+            </p>
+        </div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7112769875269380"
+     data-ad-slot="6891344772"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="card card-glass animate-fade-up">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="text-center mb-4">
+                            <span class="badge-gold mb-2"><i class="bi bi-geo-alt"></i> WILAYAH PENERIMA BANSOS</span>
+                        </div>
+                        
+                        <form id="formCekBansos">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Provinsi</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="bi bi-map"></i>
+                                        <select id="provinsi" class="form-select custom-select" required>
+                                            <option value="" selected disabled>Pilih Provinsi...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Kabupaten/Kota</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="bi bi-building"></i>
+                                        <select id="kabupaten" class="form-select custom-select" disabled required>
+                                            <option value="" selected disabled>Pilih Kabupaten...</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Kecamatan</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="bi bi-signpost-2"></i>
+                                        <select id="kecamatan" class="form-select custom-select" disabled required>
+                                            <option value="" selected disabled>Pilih Kecamatan...</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Desa/Kelurahan</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="bi bi-house"></i>
+                                        <select id="desa" class="form-select custom-select" disabled required>
+                                            <option value="" selected disabled>Pilih Desa...</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label text-gold fw-bold">Nama Sesuai Ktp</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="bi bi-person-vcard text-gold"></i>
+                                        <input type="text" class="form-control custom-input" id="nama_input" placeholder="Ketik Nama Sesuai KTP..." required autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-gold-gradient w-100 shadow-lg" id="btnCek">
+                                        <i class="bi bi-search me-2"></i> CARI DATA
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="loading" class="text-center my-5" style="display: none;">
+                    <div class="loader-gold"></div>
+                    <p class="text-white mt-3 fw-bold letter-spacing-2">MENGAMBIL DATA...</p>
+                </div>
+
+                <div id="resultArea" style="display: none;" class="animate-fade-up">
+                    <div class="d-flex align-items-center justify-content-between mb-3 mt-5">
+                        <h4 class="text-white mb-0 fw-bold"><i class="bi bi-card-list text-gradient me-2"></i> Hasil Pencarian</h4>
+                        <span class="badge bg-dark border border-warning text-warning">Official Data</span>
+                    </div>
+                    
+                    <div class="table-responsive card-glass p-3 rounded-4">
+                        <table class="table table-dark-custom table-hover align-middle mb-0" id="resultTable">
+                            <thead>
+                                <tr class="text-uppercase text-secondary fs-7">
+                                    <th>Nama</th>
+                                    <th>Umur</th>
+                                    <th>BPNT</th>
+                                    <th>PKH</th>
+                                    <th>BST</th>
+                                    <th>PBI JK</th>
+                                    <th>BLT BBM</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7112769875269380"
+     data-ad-slot="6891344772"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <footer class="text-center text-secondary mt-5 py-4 border-top border-dark" style="background-color: var(--dark-bg-secondary);">
+        <div class="container">
+            
+            <div class="mb-4 d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://wa.me/6283879017166" target="_blank" class="btn btn-outline-success btn-social px-4 py-2">
+                    <i class="bi bi-whatsapp fs-5 me-2"></i> Chat Admin
+                </a>
+                <a href="https://t.me/config_geratis" target="_blank" class="btn btn-outline-info btn-social px-4 py-2">
+                    <i class="bi bi-telegram fs-5 me-2"></i> Channel Telegram
+                </a>
+            </div>
+
+            <small class="text-white-50">&copy; 2025 Cek Bansos Kemensos | ❤ Rusmana-ID</small>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+    $(document).ready(function() {
+        // Deteksi nama file saat ini untuk API Call (Otomatis ke index.php jika namanya beda)
+        const apiUrl = window.location.href.split('?')[0];
+
+        // --- AJAX UPDATE VIEWS (REALTIME - OPSIONAL) ---
+        // Ini agar views bertambah tanpa refresh jika diinginkan, tapi PHP di atas sudah cukup.
+        // $.get(apiUrl + '?action=get_views', function(res) {
+        //     if(res.views) $('#viewCount').text(new Intl.NumberFormat('id-ID').format(res.views));
+        // });
+
+        // Fungsi Error Handling
+        function handleError(xhr, status, error) {
+            console.error("Error:", error);
+            $('#loading').hide();
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Gagal mengambil data dari server Kemensos. Silakan coba lagi nanti.',
+                background: '#1e1e1e',
+                color: '#fff',
+                confirmButtonColor: '#FDB931'
+            });
+        }
+
+        // 1. Load Provinsi
+        $.ajax({
+            url: apiUrl + '?action=get_provinsi',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if(response && (response.length > 0 || response.Data)) {
+                    let data = response.Data || response;
+                    data.forEach(function(item) {
+                        $('#provinsi').append(`<option value="${item.KODE_PROVINSI}">${item.NAMA_PROVINSI}</option>`);
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("Gagal load provinsi (mungkin server sibuk).");
+            }
+        });
+
+        // 2. Load Kabupaten
+        $('#provinsi').change(function() {
+            let provId = $(this).val();
+            resetDropdowns(['#kabupaten', '#kecamatan', '#desa']);
+            
+            $.ajax({
+                url: apiUrl + '?action=get_kabupaten',
+                method: 'POST',
+                data: { provinsi: provId },
+                dataType: 'json',
+                success: function(response) {
+                    enableDropdown('#kabupaten', 'Pilih Kabupaten/Kota...');
+                    let data = response.Data || response;
+                    if(data) {
+                        data.forEach(function(item) {
+                            $('#kabupaten').append(`<option value="${item.KODE_KABUPATEN}">${item.NAMA_KABUPATEN}</option>`);
+                        });
+                    }
+                },
+                error: handleError
+            });
+        });
+
+        // 3. Load Kecamatan
+        $('#kabupaten').change(function() {
+            let provId = $('#provinsi').val();
+            let kabId = $(this).val();
+            resetDropdowns(['#kecamatan', '#desa']);
+
+            $.ajax({
+                url: apiUrl + '?action=get_kecamatan',
+                method: 'POST',
+                data: { provinsi: provId, kabupaten: kabId },
+                dataType: 'json',
+                success: function(response) {
+                    enableDropdown('#kecamatan', 'Pilih Kecamatan...');
+                    let data = response.Data || response;
+                    if(data) {
+                        data.forEach(function(item) {
+                            $('#kecamatan').append(`<option value="${item.KODE_KECAMATAN}">${item.NAMA_KECAMATAN}</option>`);
+                        });
+                    }
+                },
+                error: handleError
+            });
+        });
+
+        // 4. Load Desa
+        $('#kecamatan').change(function() {
+            let provId = $('#provinsi').val();
+            let kabId = $('#kabupaten').val();
+            let kecId = $(this).val();
+            resetDropdowns(['#desa']);
+
+            $.ajax({
+                url: apiUrl + '?action=get_desa',
+                method: 'POST',
+                data: { provinsi: provId, kabupaten: kabId, kecamatan: kecId },
+                dataType: 'json',
+                success: function(response) {
+                    enableDropdown('#desa', 'Pilih Desa/Kelurahan...');
+                    let data = response.Data || response;
+                    if(data) {
+                        data.forEach(function(item) {
+                            $('#desa').append(`<option value="${item.KODE_KELURAHAN}">${item.NAMA_KELURAHAN}</option>`);
+                        });
+                    }
+                },
+                error: handleError
+            });
+        });
+
+        // 5. Submit Pencarian
+        $('#formCekBansos').submit(function(e) {
+            e.preventDefault();
+            let nama = $('#nama_input').val();
+            let wilayah = $('#desa').val();
+
+            if(!wilayah) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Data Belum Lengkap',
+                    text: 'Mohon pilih Desa/Kelurahan terlebih dahulu.',
+                    background: '#1e1e1e',
+                    color: '#fff',
+                    confirmButtonColor: '#FDB931'
+                });
+                return;
+            }
+
+            $('#loading').fadeIn();
+            $('#resultArea').hide();
+            $('#resultTable tbody').empty();
+
+            $.ajax({
+                url: apiUrl + '?action=cek_bansos',
+                method: 'POST',
+                data: { nama_input: nama, wilayah_input: wilayah },
+                dataType: 'json',
+                success: function(response) {
+                    $('#loading').hide();
+
+                    if(response.Data && response.Data.length > 0) {
+                        // TAMPILKAN TABEL
+                        $('#resultArea').fadeIn();
+                        
+                        response.Data.forEach(function(data) {
+                            const badge = (val) => val && val !== '0' && val !== '-' 
+                                ? '<span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> YA</span>' 
+                                : '<span class="badge bg-secondary opacity-50">TIDAK</span>';
+
+                            let row = `
+                                <tr>
+                                    <td class="fw-bold text-white">${data.NAMA_PENERIMA}</td>
+                                    <td class="text-gold">${data.UMUR} Th</td>
+                                    <td>${badge(data.BPNT)} <br> <small class="text-secondary" style="font-size:0.7rem">${data.PERIODE_BPNT || ''}</small></td>
+                                    <td>${badge(data.PKH)} <br> <small class="text-secondary" style="font-size:0.7rem">${data.PERIODE_PKH || ''}</small></td>
+                                    <td>${badge(data.BST)} <br> <small class="text-secondary" style="font-size:0.7rem">${data.PERIODE_BST || ''}</small></td>
+                                    <td>${badge(data.PBI)} <br> <small class="text-secondary" style="font-size:0.7rem">${data.PERIODE_PBI || ''}</small></td>
+                                    <td>${badge(data.BBM)} <br> <small class="text-secondary" style="font-size:0.7rem">${data.PERIODE_BBM || ''}</small></td>
+                                </tr>
+                            `;
+                            $('#resultTable tbody').append(row);
+                        });
+                        
+                        // SCROLL KE TABEL
+                        $('html, body').animate({
+                            scrollTop: $("#resultArea").offset().top - 100
+                        }, 1000);
+
+                    } else {
+                        // DATA TIDAK DITEMUKAN
+                        $('#resultTable tbody').html('<tr><td colspan="7" class="text-center text-danger py-4 fw-bold"><i class="bi bi-x-circle fs-1 d-block mb-2"></i>Data Tidak Ditemukan</td></tr>');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Tidak Ditemukan',
+                            text: 'Data PM tidak ditemukan di wilayah tersebut. Cek kembali nama & wilayah.',
+                            background: '#1e1e1e',
+                            color: '#fff',
+                            confirmButtonColor: '#d33'
+                        });
+                    }
+                },
+                error: handleError
+            });
+        });
+
+        // Helper Functions
+        function resetDropdowns(ids) {
+            ids.forEach(id => {
+                $(id).html('<option value="" selected disabled>Loading...</option>').prop('disabled', true);
+            });
+        }
+        
+        function enableDropdown(id, placeholder) {
+            $(id).html(`<option value="" selected disabled>${placeholder}</option>`).prop('disabled', false);
+        }
+    });
+    </script>
+</body>
+</html>

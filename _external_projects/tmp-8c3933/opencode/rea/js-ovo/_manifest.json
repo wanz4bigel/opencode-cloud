@@ -1,0 +1,108 @@
+{
+ "url": "https://www.ovo.id/",
+ "origin": "https://www.ovo.id",
+ "saved": 20,
+ "skipped": 95,
+ "scripts": [
+  {
+   "url": "https://www.datadoghq-browser-agent.com/datadog-rum-us.js",
+   "file": "www.ovo.id__www.datadoghq-browser-agent.com_datadog-rum-us.js.js",
+   "bytes": 65856
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/modernizr-2.8.3.min.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_modernizr-2.8.3.min.js.js",
+   "bytes": 15514
+  },
+  {
+   "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js",
+   "file": "www.ovo.id__ajax.googleapis.com_ajax_libs_jquery_3.5.0_jquery.min.js.js",
+   "bytes": 89493
+  },
+  {
+   "url": "https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js",
+   "file": "www.ovo.id__stackpath.bootstrapcdn.com_bootstrap_3.4.1_js_bootstrap.min.js.js",
+   "bytes": 39680
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/plugins.min.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_plugins.min.js.js",
+   "bytes": 128407
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/ovo.min.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_ovo.min.js.js",
+   "bytes": 1860
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/validator.min.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_validator.min.js.js",
+   "bytes": 7500
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/deals.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_deals.js.js",
+   "bytes": 2770
+  },
+  {
+   "url": "https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js",
+   "file": "www.ovo.id__cdnjs.cloudflare.com_ajax_libs_parsley.js_2.7.0_parsley.min.js.js",
+   "bytes": 42389
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/check-point.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_check-point.js.js",
+   "bytes": 5209
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/notify.min.js",
+   "file": "www.ovo.id__www.ovo.id_ovo_front_res_js_notify.min.js.js",
+   "bytes": 13780
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-NK2RKPN",
+   "file": "www.ovo.id__www.googletagmanager.com_gtm.js_id_GTM-NK2RKPN.js",
+   "bytes": 516632
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.ovo.id__www.google-analytics.com_analytics.js.js",
+   "bytes": 52310
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/fbevents.js",
+   "file": "www.ovo.id__connect.facebook.net_en_US_fbevents.js.js",
+   "bytes": 437578
+  },
+  {
+   "url": "https://static.ads-twitter.com/uwt.js",
+   "file": "www.ovo.id__static.ads-twitter.com_uwt.js.js",
+   "bytes": 62052
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=C4J0MD8ASI8C5G6I2E40&lib=ttq",
+   "file": "www.ovo.id__analytics.tiktok.com_i18n_pixel_events.js_sdkid_C4J0MD8ASI8C5G6I2E40_lib_ttq.js",
+   "bytes": 9794
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=C4J0MD8ASI8C5G6I2E40&lib=ttq",
+   "file": "www.ovo.id__analytics.tiktok.com_i18n_pixel_events.js_sdkid_C4J0MD8ASI8C5G6I2E40_lib_ttq.js",
+   "bytes": 9794
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/static/main.MTJjYzk1MmQ1OA.js",
+   "file": "www.ovo.id__analytics.tiktok.com_i18n_pixel_static_main.MTJjYzk1MmQ1OA.js.js",
+   "bytes": 528848
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/static/main.MTJjYzk1MmQ1OA.js",
+   "file": "www.ovo.id__analytics.tiktok.com_i18n_pixel_static_main.MTJjYzk1MmQ1OA.js.js",
+   "bytes": 528848
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/static/identify_9fbdaf50.js",
+   "file": "www.ovo.id__analytics.tiktok.com_i18n_pixel_static_identify_9fbdaf50.js.js",
+   "bytes": 139540
+  }
+ ]
+}

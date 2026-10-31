@@ -1,0 +1,2 @@
+banner()
+exit(" KangSpam versi gratis sudah tidak tersedia:(\n")

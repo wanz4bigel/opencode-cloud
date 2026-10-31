@@ -1,0 +1,130 @@
+evidence_id: ev_5aa7530c303724118722e17cc652e366edae7933afd8ecf7adb66de3a513f345
+subject: null
+provider:
+  id: rea-cdp-browser
+  name: REA Chrome DevTools Protocol observation provider
+  version: "2"
+analysis_profile: null
+predicate_type: rea.web-bundle-analysis
+operation: analyze_web_bundle
+parameters:
+  cdp_endpoint: "http://127.0.0.1:9222"
+  allowed_origins[1]: "https://www.doku.com"
+  target_id: 82EDDF5E2AF008117D34210A63CB1DED
+  observation_ms: 1500
+  include_accessibility_text: false
+  include_console_text: false
+  include_json_body_shapes: false
+  include_websocket_shapes: false
+  include_storage_keys: false
+  include_storage_fingerprints: false
+  include_script_sources: true
+  fetch_source_maps: false
+raw_result: null
+normalized_result:
+  route_inventory:
+    inventory_id: "jsri:aee2032ff95638d370ddf9193ccb865555a893df613cc0a82b5422a6135c9d03"
+    source_manifest_sha256: badf9d69325da48fb9b7334b48e88daedff35c5d1bcc40662190a784100a5f82
+    sources[16]{id,key,path,url,sha256,container_sha256,status,reported_route_capacity,reason,base_path}:
+      "jss:28879079ad4bba690db38308c3154e59",scr_03b2d3a91b7b29b5b8a24730ca718d6552749ecf29c44edcd38adc4c5825faef,null,"https://www.doku.com/",4d762388b102baa45c3f003d36af61e9eab090e7bc7e3c3a3ae8828d9ae10f90,null,complete,null,null,null
+      "jss:52ba23614c05e31385bff74797bb697f",scr_142bca7a1a725947378ad57705390faa49ddc86596b615de33b402416334c6f5,null,"https://www.doku.com/",36c4535425461a382277f21f807d14736d0f5a048e54bb9f1cb312328529177f,null,complete,null,null,null
+      "jss:91508d6bb9d5458ea3b09667c71281ed",scr_217099e7d307c05edc5ec42145a999504e22c3c9773672c66fa7bf1b8b59f441,null,"https://www.doku.com/",c49bb64f3c1bd538e6a12255df022f768dacd784fe9540a515d6f8ee91c4fd7b,null,complete,null,null,null
+      "jss:fbf135686fdcad303d30c5d39b84d786",scr_3101bad64b6bfd152a74321c6020f13512abcb50209afd21455bf294bbe11866,null,"https://www.doku.com/",1b0173df6a827f41ab58524f10f94457d29c54ca375f062e569e38615b0d0c00,null,complete,null,null,null
+      "jss:eb2f86975bfb6b9b7aea363622c78387",scr_32a351688b3dbb6274f8982794243bee2da724cc84e5632d6aa927b548d1a126,null,"https://www.doku.com/",41fd5d282dfb6f5c33f74abef174cca3337276cf4360c278d20387b6efb6dbfe,null,complete,null,null,null
+      "jss:3586308b98d006f97fdd707152345363",scr_333b8521141f5a5c244bbd00fa8bc0280f221d660c78f67bf5f8cd4b00a662c6,null,"https://www.doku.com/",fda40c613c1cef34aa65449b7de5ede08002ed3d46cd67187aa24806ced83765,null,complete,null,null,null
+      "jss:e7b80dabac50684ff498b56b6955cf69",scr_3e257b445ed8c880da6257e92e18190e1db018a534cf73b55cba1bd14e71de07,null,"https://www.doku.com/",3b4d3de8f0596921514dd2e953ceba6c27bad827399f0d6401ee59fc3c8d9ace,null,complete,null,null,null
+      "jss:34ae0fd6bdf459620741f2839f5ebefa",scr_6cadd3347b9574a141c451b22584897bdc31cbf514600784e81a33daeef4aad2,null,"https://www.doku.com/",1b41b0f103b751f4622275d9eff1e407d7e8e5b46ea0895b2069ff0ee4e47f8c,null,complete,null,null,null
+      "jss:1539fa330f56c1746873b09ba44b8180",scr_7fe8642fa32a29e1aa819cb45e0075c4d271c49e0c05df7ffc46eae9fda0be1d,null,"https://www.doku.com/",9a37601d1f5a5f2fba3b000694d4bf5e035c606d5485dd94e2997cbe2efe5c26,null,complete,null,null,null
+      "jss:a5b39b928d080844f936a2269805096d",scr_93922e042870a26f1b8abd4303d807b0596ab0a884c80639e4f48e0c76f28a45,null,"https://www.doku.com/",3bf6004403fc9320c7833e52a635d795dbb5ddffa0854b473d130be22321f975,null,complete,null,null,null
+      "jss:ae7b5420ae353843d62cd82cd300f398",scr_ade5d6acef9f0e3676d09e12d5c7ec1dc81959eea53486fca6b574c39ae62819,null,"https://www.doku.com/",4fd7df5cd35bb6d0afa6b6242b85df85d07eb63a939d1c06c0b25b29ac55e53a,null,complete,null,null,null
+      "jss:61b83e37f9b7abce23e2db7f89185ef8",scr_bde8d2d677c6124b645b0bb1a209072325db0eadc3299eb1726a97ac8190932a,null,"https://www.doku.com/",f88314a62077f8ae097a229519669156e2a3659817540628f4575f65f7a521c4,null,complete,null,null,null
+      "jss:edfd3e71330debb756920655673a24f2",scr_bf078eea384d7c5ac0d6a79bd61dff218da45d3d1c3bf7ae5c2c93ea8843a3da,null,"https://www.doku.com/",d7337b592ed8c32715497bb26733bf66f19766584ebfe28abad5bc8696cf2815,null,complete,null,null,null
+      "jss:7f896699fb1b1beb8e63886dc578adc5",scr_c33493e81a2532bccc790c927f8afcef0d1c033df048cabc65e1c08e526ff680,null,"https://www.doku.com/",df64b98c0f93b583821f543b2bafbcaf7b0b5358e45031f213f0de73250a033d,null,complete,null,null,null
+      "jss:832ec845ec8c5ab871bf67d16ed1a5ea",scr_cf80eacea5a76a77e18033cc50c198b1544ad77a71d21d567a5e61adba790574,null,"https://www.doku.com/",db528e9d56d187b440c58f6d99c6d2529acba99f55321e4e044a3370ce50a5d4,null,complete,null,null,null
+      "jss:18c03c891b101df69ce69eba55650315",scr_de30712024e41c511e96322ea8941ad955ce3cf8fd76361bbf28fc90e07057d2,null,"https://www.doku.com/",4a83493b2b447085396860a8d06f95825d6c06e8b8e6784b57b6cd115f55e32e,null,complete,null,null,null
+    routes: []
+    occurrences: []
+    unknowns: []
+    coverage:
+      scope: provided-code-sources
+      source_parsing: complete
+      candidate_enumeration: complete
+      application_routes: unknown
+    statistics:
+      sources_seen: 16
+      sources_retained: 16
+      route_patterns: 0
+      occurrences: 0
+      unanchored_literals_excluded: 0
+    capacity: null
+    limitations[4]: "Routes are static candidates from the provided code sources. Reachability, permissions, server-only routes and the complete application route set are unverified.",Pattern IDs are exact path identities within this inventory. Occurrence and source IDs retain source/content identity and precise syntax ranges; metadata-only discoveries have no AST range.,System classification is a path-name heuristic. Asset URL prefixes can differ from routing bases; inferred prefixes retain the original unprefixed path.,Unbound path strings require a top-level segment supported by structural routes or navigation candidates. Unknown or missing source facts do not establish route absence.
+  capture:
+    target_url: "https://www.doku.com/"
+    target_origin: "https://www.doku.com"
+    scripts_observed: 16
+    scripts_analyzed: 16
+    source_artifacts[16]{sha256,bytes,media_type,charset,text_available}:
+      4d762388b102baa45c3f003d36af61e9eab090e7bc7e3c3a3ae8828d9ae10f90,3033,text/javascript,utf-8,true
+      36c4535425461a382277f21f807d14736d0f5a048e54bb9f1cb312328529177f,342,text/javascript,utf-8,true
+      c49bb64f3c1bd538e6a12255df022f768dacd784fe9540a515d6f8ee91c4fd7b,599,text/javascript,utf-8,true
+      1b0173df6a827f41ab58524f10f94457d29c54ca375f062e569e38615b0d0c00,1010,text/javascript,utf-8,true
+      41fd5d282dfb6f5c33f74abef174cca3337276cf4360c278d20387b6efb6dbfe,3627,text/javascript,utf-8,true
+      fda40c613c1cef34aa65449b7de5ede08002ed3d46cd67187aa24806ced83765,1720,text/javascript,utf-8,true
+      3b4d3de8f0596921514dd2e953ceba6c27bad827399f0d6401ee59fc3c8d9ace,335,text/javascript,utf-8,true
+      1b41b0f103b751f4622275d9eff1e407d7e8e5b46ea0895b2069ff0ee4e47f8c,1343,text/javascript,utf-8,true
+      9a37601d1f5a5f2fba3b000694d4bf5e035c606d5485dd94e2997cbe2efe5c26,181,text/javascript,utf-8,true
+      3bf6004403fc9320c7833e52a635d795dbb5ddffa0854b473d130be22321f975,848,text/javascript,utf-8,true
+      4fd7df5cd35bb6d0afa6b6242b85df85d07eb63a939d1c06c0b25b29ac55e53a,676,text/javascript,utf-8,true
+      f88314a62077f8ae097a229519669156e2a3659817540628f4575f65f7a521c4,220,text/javascript,utf-8,true
+      d7337b592ed8c32715497bb26733bf66f19766584ebfe28abad5bc8696cf2815,904,text/javascript,utf-8,true
+      df64b98c0f93b583821f543b2bafbcaf7b0b5358e45031f213f0de73250a033d,2536,text/javascript,utf-8,true
+      db528e9d56d187b440c58f6d99c6d2529acba99f55321e4e044a3370ce50a5d4,229,text/javascript,utf-8,true
+      4a83493b2b447085396860a8d06f95825d6c06e8b8e6784b57b6cd115f55e32e,90,text/javascript,utf-8,true
+  observations:
+    chunks:
+      nodes[16]{script_key,url,artifact_sha256,bytes}:
+        scr_03b2d3a91b7b29b5b8a24730ca718d6552749ecf29c44edcd38adc4c5825faef,"https://www.doku.com/",4d762388b102baa45c3f003d36af61e9eab090e7bc7e3c3a3ae8828d9ae10f90,3033
+        scr_142bca7a1a725947378ad57705390faa49ddc86596b615de33b402416334c6f5,"https://www.doku.com/",36c4535425461a382277f21f807d14736d0f5a048e54bb9f1cb312328529177f,342
+        scr_217099e7d307c05edc5ec42145a999504e22c3c9773672c66fa7bf1b8b59f441,"https://www.doku.com/",c49bb64f3c1bd538e6a12255df022f768dacd784fe9540a515d6f8ee91c4fd7b,599
+        scr_3101bad64b6bfd152a74321c6020f13512abcb50209afd21455bf294bbe11866,"https://www.doku.com/",1b0173df6a827f41ab58524f10f94457d29c54ca375f062e569e38615b0d0c00,1010
+        scr_32a351688b3dbb6274f8982794243bee2da724cc84e5632d6aa927b548d1a126,"https://www.doku.com/",41fd5d282dfb6f5c33f74abef174cca3337276cf4360c278d20387b6efb6dbfe,3627
+        scr_333b8521141f5a5c244bbd00fa8bc0280f221d660c78f67bf5f8cd4b00a662c6,"https://www.doku.com/",fda40c613c1cef34aa65449b7de5ede08002ed3d46cd67187aa24806ced83765,1720
+        scr_3e257b445ed8c880da6257e92e18190e1db018a534cf73b55cba1bd14e71de07,"https://www.doku.com/",3b4d3de8f0596921514dd2e953ceba6c27bad827399f0d6401ee59fc3c8d9ace,335
+        scr_6cadd3347b9574a141c451b22584897bdc31cbf514600784e81a33daeef4aad2,"https://www.doku.com/",1b41b0f103b751f4622275d9eff1e407d7e8e5b46ea0895b2069ff0ee4e47f8c,1343
+        scr_7fe8642fa32a29e1aa819cb45e0075c4d271c49e0c05df7ffc46eae9fda0be1d,"https://www.doku.com/",9a37601d1f5a5f2fba3b000694d4bf5e035c606d5485dd94e2997cbe2efe5c26,181
+        scr_93922e042870a26f1b8abd4303d807b0596ab0a884c80639e4f48e0c76f28a45,"https://www.doku.com/",3bf6004403fc9320c7833e52a635d795dbb5ddffa0854b473d130be22321f975,848
+        scr_ade5d6acef9f0e3676d09e12d5c7ec1dc81959eea53486fca6b574c39ae62819,"https://www.doku.com/",4fd7df5cd35bb6d0afa6b6242b85df85d07eb63a939d1c06c0b25b29ac55e53a,676
+        scr_bde8d2d677c6124b645b0bb1a209072325db0eadc3299eb1726a97ac8190932a,"https://www.doku.com/",f88314a62077f8ae097a229519669156e2a3659817540628f4575f65f7a521c4,220
+        scr_bf078eea384d7c5ac0d6a79bd61dff218da45d3d1c3bf7ae5c2c93ea8843a3da,"https://www.doku.com/",d7337b592ed8c32715497bb26733bf66f19766584ebfe28abad5bc8696cf2815,904
+        scr_c33493e81a2532bccc790c927f8afcef0d1c033df048cabc65e1c08e526ff680,"https://www.doku.com/",df64b98c0f93b583821f543b2bafbcaf7b0b5358e45031f213f0de73250a033d,2536
+        scr_cf80eacea5a76a77e18033cc50c198b1544ad77a71d21d567a5e61adba790574,"https://www.doku.com/",db528e9d56d187b440c58f6d99c6d2529acba99f55321e4e044a3370ce50a5d4,229
+        scr_de30712024e41c511e96322ea8941ad955ce3cf8fd76361bbf28fc90e07057d2,"https://www.doku.com/",4a83493b2b447085396860a8d06f95825d6c06e8b8e6784b57b6cd115f55e32e,90
+      edges: []
+    routes: []
+    endpoints: []
+    webmcp_declarations: []
+    source_maps:
+      status: not_requested
+      requested: 0
+      processed: 0
+      items: []
+  inferences[1]:
+    - kind: endpoint_candidate
+      value: utm_source
+      confidence: low
+      basis[1]{script_key,artifact_sha256,line,column,detector}:
+        scr_6cadd3347b9574a141c451b22584897bdc31cbf514600784e81a33daeef4aad2,1b41b0f103b751f4622275d9eff1e407d7e8e5b46ea0895b2069ff0ee4e47f8c,20,18,"call:params.get:unverified-network-receiver"
+  unknowns: []
+  completeness:
+    status: complete
+    parsed_scripts: 16
+    parse_failures: 0
+    visited_ast_nodes: 2287
+  limitations[5]: Static bundle findings are observations or bounded inferences; REA does not execute captured JavaScript.,"Bare string arguments of unbound HTTP-method-named calls are low-confidence endpoint candidates; form, translation, storage and other APIs can use the same syntax. URL-shaped findings still do not prove network execution.","Endpoint candidates are deduplicated by script, value and detector; basis retains only the first matching source coordinate. They are not a complete call-site inventory or a runtime occurrence count. completeness.status=\"complete\" describes examination of captured source, not a call-site census.","String-built routes and endpoints, encrypted configuration, and server-side behavior may remain unknown.",Page-declared WebMCP metadata is untrusted and is never registered or invoked as an REA tool.
+confidence: observed
+authority: external-service
+environment: null
+limitations[6]: Artifact identity is unavailable for this observation.,Static bundle findings are observations or bounded inferences; REA does not execute captured JavaScript.,"Bare string arguments of unbound HTTP-method-named calls are low-confidence endpoint candidates; form, translation, storage and other APIs can use the same syntax. URL-shaped findings still do not prove network execution.","Endpoint candidates are deduplicated by script, value and detector; basis retains only the first matching source coordinate. They are not a complete call-site inventory or a runtime occurrence count. completeness.status=\"complete\" describes examination of captured source, not a call-site census.","String-built routes and endpoints, encrypted configuration, and server-side behavior may remain unknown.",Page-declared WebMCP metadata is untrusted and is never registered or invoked as an REA tool.
+relationship_coverage: null
+locations: []
+evidence_links: []

@@ -1,0 +1,9 @@
+{
+  "start_url": {"url": "https://www.doku.com/"},
+  "browser": {"mode": "launch", "executable_path": "/usr/bin/google-chrome"},
+  "actions": [
+    {"step_id": "s1", "action": "wait_for_timeout", "duration_ms": 3000},
+    {"step_id": "s2", "action": "goto", "destination": {"url": "https://www.doku.com/login"}},
+    {"step_id": "s3", "action": "wait_for_timeout", "duration_ms": 3000}
+  ]
+}

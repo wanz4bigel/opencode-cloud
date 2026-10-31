@@ -1,0 +1,14 @@
+[waf-detect:bigip] [http] [info] https://berita.depok.go.id
+[waf-detect:asm] [http] [info] https://berita.depok.go.id
+[livewire-detect] [http] [info] https://berita.depok.go.id
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://berita.depok.go.id
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://berita.depok.go.id
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://berita.depok.go.id
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://berita.depok.go.id
+[missing-sri] [http] [info] https://berita.depok.go.id/ ["https://www.googletagmanager.com/gtag/js?id=GT-K8KFJB","https://berita.depok.go.id/vendor/livewire/livewire.min.js?id=951e6947","https://berita.depok.go.id/build/assets/app.3a1533bc.js","https://berita.depok.go.id/build/assets/app.1ff29df9.css"]
+[missing-cookie-samesite-strict] [http] [info] https://berita.depok.go.id ["XSRF-TOKEN=eyJpdiI6Inl5T3R5QUdVSWc5MnIzUzJSN250L3c9PSIsInZhbHVlIjoiNkxab0RxK09XSzdOR0xMeFZ0TEZEMzV4NDhqR3NBTW9uRFhxOVZZcng3U1IvNVp1b0xxdmlvRkdOZUFJSXRINkNsSTJlRitzWVg3MVMxV2hzNUNjZC90aUNDQzFrVlp2UXJ2L2RpNEJqVTVUSHAxamVXaUV6bVZTQ0pybks1MGgiLCJtYWMiOiIxMmE3YzAzNDg5MDg0ZTYzNGYwYzkwMDQzOTNjN2I4YzY3Y2NhN2ZiODJiYzJiNjFhZjc5NjQ0YTBkYTNhZjg4IiwidGFnIjoiIn0%3D; expires=Sat, 31 Oct 2026 11:58:31 GMT; Max-Age=7200; path=/; secure; samesite=lax laravel_session=eyJpdiI6Im1mZjRwQVEwOTRVUUhaMWNwQmtKb2c9PSIsInZhbHVlIjoibzN0R1FUanVlclNzRHBib3hibXllVFdOMDRVWkFBSWdpRVRFN3NWbVJmN2VicStBZlo4TUEyQncrQ291d0d4cDQvWVBUWXU1REZQeSszdlRjQUxhRG5qYWk1VTRXU1g0ejEzWTNtanZVY1Y2MEl2ZG5KbURqOUZLLzhSZUtQVHYiLCJtYWMiOiI4ZjEzYmQ2YmEyZjZkN2IyMDM0YmRhOTk2NjAxZjAzYTllZGExMzkwOTc0NjlhMDVhYTgxNDBiOTgxNTZiYzJkIiwidGFnIjoiIn0%3D; expires=Sat, 31 Oct 2026 11:58:31 GMT; Max-Age=7200; path=/; httponly; samesite=lax Path=/; HttpOnly; Secure TS013ab203=01c87e53a1704d6328b7966b11a76a08460972129f82100fa9a08f08303326350249a85993231a185fc9cb9362e95299d93a47133474789813830ab727a483dedd85167e31f747aa2f465231efd3faf31fceee08622d540fdaa137f291f11e9915a3140deb; Path=/ TScd529f37029=08fc791073ab2800dd79f611cb60f5242fdf374d3d45b48fd2a08f2e35df4b2eaecf914a3dc76404a8fc3c9908548a71; Max-Age=30; Path=/ TSa637350f027=08fc791073ab2000ec223cbf4b253c36053ed2fc23f2cbb5454424b2ac59049c55ff1bb99ae9285008564d4b9211300027ad53f373165e15232af685c33e5a7ce69579eacc5dfb3f3ea0beee991a8744bed4ccfd6874222c1c767e31e26634ea; Path=/"]
+[fingerprinthub-web-fingerprints:laravel] [http] [info] https://berita.depok.go.id
+[fingerprinthub-web-fingerprints:laravel-framework] [http] [info] https://berita.depok.go.id
+[tech-detect:livewire] [http] [info] https://berita.depok.go.id
+[tech-detect:youtube] [http] [info] https://berita.depok.go.id
+[tech-detect:laravel] [http] [info] https://berita.depok.go.id

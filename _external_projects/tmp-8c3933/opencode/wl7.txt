@@ -1,0 +1,8 @@
+/tes/proxy.php?bookId=1&episode=0
+/tes/counter.php?id=1
+/tes/dramas.json
+/tes/index.php.bak
+/tes/config.php
+/tes/admin.php
+/tes/search.php?q=a
+/tes/proxy.php.bak

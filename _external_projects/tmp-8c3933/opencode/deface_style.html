@@ -1,0 +1,53 @@
+<style>
+/* ==== DEFACE :: injected stylesheet ==== */
+#deface-banner, #deface-banner * { font-family: "Courier New", Courier, monospace !important; }
+html { background: #000 !important; }
+#deface-banner {
+  position: fixed; inset: 0; z-index: 2147483647;
+  background: #050505; color: #39ff14;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px; overflow: hidden;
+}
+#deface-banner canvas { position: absolute; inset: 0; opacity: .35; }
+#deface-banner .inner { position: relative; z-index: 2; max-width: 860px; }
+#deface-banner pre.ascii {
+  color: #39ff14; font-size: clamp(5px, 1.6vw, 14px); line-height: 1.15;
+  margin: 0 0 18px; text-shadow: 0 0 8px rgba(57,255,20,.8);
+}
+#deface-banner h1.glitch {
+  font-size: clamp(28px, 7vw, 72px); font-weight: 700; letter-spacing: .12em;
+  margin: 0 0 10px; color: #eee; position: relative; text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(57,255,20,.6);
+  animation: df-glitch .9s infinite steps(2);
+}
+@keyframes df-glitch {
+  0%   { text-shadow: 3px 0 #ff00c1, -3px 0 #00fff9, 0 0 10px rgba(57,255,20,.5); transform: translate(0); }
+  25%  { text-shadow: -3px 2px #ff00c1, 3px -2px #00fff9; transform: translate(2px,-1px) skewX(2deg); }
+  50%  { text-shadow: 3px -3px #ff00c1, -3px 3px #00fff9; transform: translate(-2px,1px); }
+  75%  { text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; transform: translate(1px,2px) skewX(-3deg); }
+  100% { text-shadow: 3px 0 #ff00c1, -3px 0 #00fff9; transform: translate(0); }
+}
+#deface-banner .hacker { color: #ff2d2d; }
+#deface-banner p.sub { color: #9cffab; font-size: clamp(12px, 2.4vw, 18px); margin: 0 0 22px; letter-spacing: .06em; }
+#deface-banner .terminal {
+  text-align: left; background: rgba(0,20,0,.75); border: 1px solid #1e7a1e;
+  padding: 14px 18px; font-size: clamp(11px, 2vw, 14px); white-space: pre-wrap;
+  min-height: 150px; max-width: 640px; margin: 0 auto 20px; box-shadow: 0 0 24px rgba(57,255,20,.25) inset;
+}
+#deface-banner .terminal .cur { animation: df-blink 1s steps(1) infinite; }
+@keyframes df-blink { 50% { opacity: 0; } }
+#deface-banner .marquee {
+  position: absolute; bottom: 0; left: 0; right: 0; background: #0a0a0a;
+  border-top: 1px solid #39ff14; color: #39ff14; font-size: 13px; padding: 8px 0;
+  white-space: nowrap; overflow: hidden;
+}
+#deface-banner .marquee span { display: inline-block; padding-left: 100%; animation: df-scroll 18s linear infinite; }
+@keyframes df-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+#deface-banner .restore {
+  position: absolute; top: 12px; right: 14px; z-index: 3; background: transparent;
+  border: 1px solid #39ff14; color: #39ff14; padding: 6px 12px; cursor: pointer;
+  font-size: 12px; letter-spacing: .08em;
+}
+#deface-banner .restore:hover { background: #39ff14; color: #000; }
+body.defaced #root { filter: grayscale(1) blur(1px); }
+</style>

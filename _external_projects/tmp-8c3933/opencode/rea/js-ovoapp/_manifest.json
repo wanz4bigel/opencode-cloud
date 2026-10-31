@@ -1,0 +1,93 @@
+{
+ "url": "https://www.ovo.id/produk/ovo",
+ "origin": "https://www.ovo.id",
+ "saved": 17,
+ "skipped": 31,
+ "scripts": [
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+   "file": "www.ovo.id__www.buckscore.com_wp-includes_js_jquery_jquery.min.js_ver_3.7.1.js",
+   "bytes": 89493
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+   "file": "www.ovo.id__www.buckscore.com_wp-includes_js_jquery_jquery-migrate.min.js_ver_3.4.1.js",
+   "bytes": 15514
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/uploads/dynamic_avia/avia-head-scripts-a8ba7b2bae75f7d813bf49c48b94d618---66fc6df71e7c5.js",
+   "file": "www.ovo.id__uploads_dynamic_avia_avia-head-scripts-a8ba7b2bae75f7d813bf49c48b94d618---66fc6df71e7c5.js.js",
+   "bytes": 65856
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/underscore.min.js?ver=1.13.8",
+   "file": "www.ovo.id__www.buckscore.com_wp-includes_js_underscore.min.js_ver_1.13.8.js",
+   "bytes": 153
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/awesome-parallax-effects/assets/awp-effects.min.js?ver=7.1.4",
+   "file": "www.ovo.id__kscore.com_wp-content_plugins_awesome-parallax-effects_assets_awp-effects.min.js_ver_7.1.4.js",
+   "bytes": 280
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/complianz-gdpr/DNSMPD/script.min.js?ver=1726169899",
+   "file": "www.ovo.id__www.buckscore.com_wp-content_plugins_complianz-gdpr_DNSMPD_script.min.js_ver_1726169899.js",
+   "bytes": 39680
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.2.3",
+   "file": "www.ovo.id__re.com_wp-content_plugins_woocommerce_assets_js_sourcebuster_sourcebuster.min.js_ver_9.2.3.js",
+   "bytes": 574
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.2.3",
+   "file": "www.ovo.id__e.com_wp-content_plugins_woocommerce_assets_js_frontend_order-attribution.min.js_ver_9.2.3.js",
+   "bytes": 2770
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/themes/enfold/config-lottie-animations/assets/lottie-player/dotlottie-player.js?ver=6.0.4",
+   "file": "www.ovo.id___themes_enfold_config-lottie-animations_assets_lottie-player_dotlottie-player.js_ver_6.0.4.js",
+   "bytes": 3350
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-778de518611d8f497daff26cbb83facb---66fc6df79d867.js",
+   "file": "www.ovo.id__loads_dynamic_avia_avia-footer-scripts-778de518611d8f497daff26cbb83facb---66fc6df79d867.js.js",
+   "bytes": 482
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js",
+   "file": "www.ovo.id__www.buckscore.com_wp-content_plugins_wp-rocket_assets_js_lazyload_17.8.3_lazyload.min.js.js",
+   "bytes": 562749
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.2.3",
+   "file": "www.ovo.id__com_wp-content_plugins_woocommerce_assets_js_js-cookie_js.cookie.min.js_ver_2.1.4-wc.9.2.3.js",
+   "bytes": 887
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=9.2.3",
+   "file": "www.ovo.id__core.com_wp-content_plugins_woocommerce_assets_js_frontend_cart-fragments.min.js_ver_9.2.3.js",
+   "bytes": 611990
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.2.3",
+   "file": "www.ovo.id__tent_plugins_woocommerce_assets_js_jquery-blockui_jquery.blockUI.min.js_ver_2.7.0-wc.9.2.3.js",
+   "bytes": 619545
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.2.3",
+   "file": "www.ovo.id__ckscore.com_wp-content_plugins_woocommerce_assets_js_frontend_woocommerce.min.js_ver_9.2.3.js",
+   "bytes": 437578
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1726169368",
+   "file": "www.ovo.id__core.com_wp-content_plugins_complianz-gdpr_cookiebanner_js_complianz.min.js_ver_1726169368.js",
+   "bytes": 62052
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/fbevents.js?v=next",
+   "file": "www.ovo.id__connect.facebook.net_en_US_fbevents.js_v_next.js",
+   "bytes": 144204
+  }
+ ]
+}

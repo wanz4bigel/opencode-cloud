@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nonton TV - Streaming Global</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root { --primary: #4361ee; --bg: #f8fafc; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg); padding-bottom: 120px; overflow-x: hidden; }
+
+        .header-custom { background: white; border-bottom: 1px solid #e2e8f0; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; }
+        .player-frame { background: #000; border-radius: 25px; border: 4px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; position: relative; }
+        .video-js { width: 100% !important; aspect-ratio: 16/9; height: auto !important; }
+
+        /* NOTIFIKASI ERROR OVERLAY */
+        #errorNotif {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.95);
+            display: none; flex-direction: column; align-items: center;
+            justify-content: center; text-align: center; padding: 20px; z-index: 50;
+        }
+
+        /* IKLAN FULL TANPA BATAS */
+        .ads-container { width: 100%; margin: 15px 0; display: block; text-align: center; overflow: hidden; min-height: 50px; }
+
+        .cat-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
+        .cat-scroll::-webkit-scrollbar { display: none; }
+        .cat-btn { background: white; border: 1px solid #e2e8f0; padding: 8px 18px; border-radius: 50px; font-size: 11px; font-weight: 700; color: #64748b; white-space: nowrap; transition: 0.3s; }
+        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2); }
+
+        .tv-card { background: white; border-radius: 20px; border: 1px solid #f1f5f9; transition: 0.3s; cursor: pointer; height: 100%; display: flex; flex-direction: column; align-items: center; padding: 15px; }
+        .tv-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+        .logo-container { width: 50px; height: 50px; background: #f8fafc; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+
+        .group-header { font-size: 12px; font-weight: 800; color: #1e293b; letter-spacing: 1px; padding: 15px 5px 10px; margin-top: 10px; display: flex; align-items: center; gap: 10px; width: 100%; }
+        .group-header::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+
+        .bottom-nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 12px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 2000; border: 1px solid #fff; }
+        #loadingScreen { position: fixed; inset: 0; background: white; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+
+        /* MODAL ANTI ADBLOCK STYLE */
+        .modal-content { border-radius: 30px; border: none; overflow: hidden; }
+        .modal-header-custom { background: #fee2e2; padding: 30px; text-align: center; }
+        .modal-body-custom { padding: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div id="loadingScreen"><div class="text-center"><div class="spinner-border text-primary" role="status"></div><p class="mt-2 fw-bold text-slate-500 text-sm uppercase">Loading Channel...</p></div></div>
+
+    <header class="header-custom flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg"><i class="fas fa-tv"></i></div>
+            <span class="fw-bold text-dark fs-5 tracking-tight">Nonton <span class="text-primary">TV</span></span>
+        </div>
+        <div id="count" class="badge bg-blue-50 text-primary rounded-pill px-3 py-2 text-[10px] fw-bold uppercase">... ONLINE</div>
+    </header>
+
+    <div class="container mt-4 px-3">
+        
+        <div id="playerSection" class="hidden mb-4">
+            <div class="player-frame">
+                <div id="errorNotif">
+                    <i class="fas fa-exclamation-triangle text-warning text-4xl mb-3"></i>
+                    <h3 class="text-white font-bold text-sm mb-1">Browser Tidak Support</h3>
+                    <p class="text-slate-400 text-[10px] mb-4">Gunakan UC Browser Mini untuk memutar saluran ini dengan lancar.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.uc.browser.en" target="_blank" class="bg-primary text-white px-5 py-2 rounded-full text-[11px] font-bold no-underline uppercase">Download UC Browser Mini</a>
+                </div>
+
+                <video id="tvPlayer" class="video-js vjs-big-play-centered" controls preload="auto" playsinline></video>
+                <div class="p-3 bg-slate-950 flex justify-between items-center">
+                    <h2 id="activeTitle" class="text-white text-[10px] font-bold m-0 w-full text-center uppercase">Memutar Saluran</h2>
+                    <button onclick="closePlayer()" class="text-slate-400 ms-2"><i class="fas fa-times-circle fs-4"></i></button>
+                </div>
+            </div>
+            
+            <div class="ads-container">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+
+        <div class="mb-2"><input type="text" id="search" class="form-control rounded-3xl border-0 shadow-sm py-3 px-4 text-sm" placeholder="Cari stasiun TV..."></div>
+        
+        <div class="cat-scroll">
+            <button class="cat-btn active" onclick="setFilter('ALL', event)">SEMUA</button>
+            <button class="cat-btn" onclick="setFilter('INDONESIA', event)">INDONESIA</button>
+            <button class="cat-btn" onclick="setFilter('MALAYSIA', event)">MALAYSIA</button>
+            <button class="cat-btn" onclick="setFilter('BRUNEI', event)">BRUNEI</button>
+            <button class="cat-btn" onclick="setFilter('SINGAPURA', event)">SINGAPURA</button>
+            <button class="cat-btn" onclick="setFilter('THAILAND', event)">THAILAND</button>
+            <button class="cat-btn" onclick="setFilter('VIETNAM', event)">VIETNAM</button>
+            <button class="cat-btn" onclick="setFilter('SPORTS', event)">OLAHRAGA</button>
+            <button class="cat-btn" onclick="setFilter('KIDS', event)">ANAK-ANAK</button>
+            <button class="cat-btn" onclick="setFilter('MOVIE', event)">FILM</button>
+            <button class="cat-btn" onclick="setFilter('LUAR', event)">LUAR NEGERI</button>
+        </div>
+
+        <div class="ads-container">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div id="grid" class="row g-3 mt-1"></div>
+    </div>
+
+    <div class="modal fade" id="adBlockModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-2xl">
+                <div class="modal-header-custom">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto shadow-lg border-4 border-white">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+                <div class="modal-body-custom">
+                    <h4 class="fw-bold text-dark">AdBlock Terdeteksi!</h4>
+                    <p class="text-slate-500 text-sm mt-2">Mohon nonaktifkan AdBlock untuk terus menikmati layanan streaming gratis kami.</p>
+                    <button onclick="location.reload()" class="btn btn-primary rounded-pill w-100 py-3 mt-4 fw-bold shadow-lg">Sudah Saya Matikan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="#" class="nav-link active" onclick="location.reload()"><i class="fas fa-home"></i></a>
+        <a href="https://t.me/config_geratis" target="_blank" class="nav-link text-blue-500"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#" onclick="location.reload()" class="nav-link text-slate-300"><i class="fas fa-sync-alt"></i></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    <script>
+        const player = videojs('tvPlayer', { html5: { vhs: { overrideNative: true } } });
+        player.on('error', () => { document.getElementById('errorNotif').style.display = 'flex'; });
+
+        let channels = [];
+        let currentFilter = 'ALL';
+
+        fetch('tv.php').then(res => res.json()).then(data => {
+            channels = data; 
+            render(channels);
+            document.getElementById('loadingScreen').style.display = 'none';
+        });
+
+        function render(list) {
+            const grid = document.getElementById('grid');
+            let filtered = currentFilter === 'ALL' ? list : list.filter(c => {
+                const group = c.group.toUpperCase();
+                if(currentFilter === 'LUAR') return !group.includes('INDONESIA');
+                if(currentFilter === 'SPORTS') return group.includes('SPORTS') || group.includes('OLAHRAGA');
+                if(currentFilter === 'KIDS') return group.includes('KIDS') || group.includes('ANAK');
+                if(currentFilter === 'SINGAPURA') return group.includes('SINGAPURA') || group.includes('SINGAPORE');
+                return group.includes(currentFilter);
+            });
+            
+            document.getElementById('count').innerText = `${filtered.length} TV ONLINE`;
+
+            const grouped = {};
+            filtered.forEach(ch => {
+                const groupName = ch.group.toUpperCase();
+                if (!grouped[groupName]) grouped[groupName] = [];
+                grouped[groupName].push(ch);
+            });
+
+            let finalHtml = '';
+            for (const key in grouped) {
+                finalHtml += `<div class="col-12"><div class="group-header uppercase"><i class="fas fa-layer-group text-primary"></i> ${key}</div></div>`;
+                finalHtml += grouped[key].map((ch) => `
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="tv-card shadow-sm" onclick="playTV('${ch.url}', '${ch.name}')">
+                            <div class="logo-container"><img src="${ch.logo}" class="max-w-[35px] max-h-[35px] object-contain" onerror="this.src='https://via.placeholder.com/50?text=TV'"></div>
+                            <h6 class="font-bold text-dark mb-1 truncate w-full text-[10px] uppercase text-center">${ch.name}</h6>
+                            <span class="text-[8px] font-bold text-primary opacity-50 uppercase text-center w-full">${ch.group}</span>
+                        </div>
+                    </div>`).join('');
+            }
+            grid.innerHTML = finalHtml;
+        }
+
+        function setFilter(cat, e) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            if(e) e.target.classList.add('active');
+            render(channels);
+        }
+
+        function playTV(url, name) {
+            document.getElementById('errorNotif').style.display = 'none';
+            document.getElementById('playerSection').classList.remove('hidden');
+            document.getElementById('activeTitle').innerText = name;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            player.src({ src: url, type: url.includes('.mpd') ? 'application/dash+xml' : 'application/x-mpegURL' });
+            player.muted(true);
+            player.play().then(() => { setTimeout(() => { player.muted(false); }, 1000); });
+        }
+
+        function closePlayer() { player.pause(); document.getElementById('playerSection').classList.add('hidden'); }
+        
+        document.getElementById('search').oninput = (e) => {
+            const q = e.target.value.toLowerCase();
+            render(channels.filter(c => c.name.toLowerCase().includes(q)));
+        };
+
+        // --- DETEKSI ANTI ADBLOCK ---
+        const detectAdBlock = async () => {
+            let adBlockDetected = false;
+            const modalEl = document.getElementById('adBlockModal');
+            const adBlockModal = new bootstrap.Modal(modalEl);
+            const adBait = document.createElement('div');
+            adBait.className = 'adsbygoogle ad-banner';
+            adBait.style.cssText = 'width:1px;height:1px;position:absolute;top:-10000px;left:-10000px;';
+            document.body.appendChild(adBait);
+            try { await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD', mode: 'no-cors' }); } catch (e) { adBlockDetected = true; }
+            setTimeout(() => {
+                if (adBait.offsetHeight === 0 || window.getComputedStyle(adBait).display === 'none') { adBlockDetected = true; }
+                adBait.remove();
+                if (adBlockDetected) adBlockModal.show();
+            }, 1500);
+        };
+        document.addEventListener('DOMContentLoaded', detectAdBlock);
+    </script>
+</body>
+</html>

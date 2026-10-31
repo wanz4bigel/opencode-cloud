@@ -1,0 +1,4 @@
+type,device_id,telp,schedule_at,text,url
+text,DEV01,6281248891487,2022-10-04 11:59:01,This is message to receiver,
+image,DEV02,6289609472244,2022-10-04 23:59:03,This is caption of your image,
+document,DEV02,6289609472244,2022-10-04 23:59:02,This is custom name of your file,https://www.africau.edu/images/default/sample.pdf

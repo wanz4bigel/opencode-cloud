@@ -1,0 +1,7 @@
+token-palsu     [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 1 menit","errors":[]}
+token-panjang   [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 1 menit","errors":[]}
+tanpa-field     [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 1 menit","errors":[]}
+recaptcha-null  [400] {"code":"E0001","message":"Mohon centang CAPTCHA sebelum melanjutkan.","errors":[]}
+wa-mode         [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 2 menit","errors":[]}
+wrong-type      [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 2 menit","errors":[]}
+

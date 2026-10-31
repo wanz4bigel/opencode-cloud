@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Pro Downloader</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: #fff; overflow-x: hidden; }
+        
+        /* Glass Navbar */
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Gradient Text & Borders */
+        .text-gradient {
+            background: linear-gradient(to right, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-gradient {
+            position: relative;
+            background: #111;
+            border-radius: 1rem;
+        }
+        .border-gradient::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            z-index: -1;
+            border-radius: 1.1rem;
+            background: linear-gradient(to right, #ef4444, #f97316);
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        .fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* Mobile Menu Transition */
+        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateX(100%); }
+        #mobile-menu.open { transform: translateX(0); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+
+        /* Anti-Adblock Animation & Styles */
+        .shake-chunk { animation: shake 2s ease infinite; }
+        @keyframes shake { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(5deg); } 75% { transform: rotate(-5deg); } }
+        
+        .modal-enter { animation: modalIn 0.4s ease-out forwards; }
+        @keyframes modalIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pt-20">
+
+    <nav class="glass-nav fixed top-0 w-full z-50 h-20 flex items-center">
+        <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            
+            <a href="index.php" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-600 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition duration-300">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl tracking-wide leading-none">YouTube<span class="text-red-500">DL</span></h1>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">Premium Tools</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/6283879017166" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition border border-transparent hover:border-green-500/30">
+                    <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i> Chat Admin
+                </a>
+                <a href="https://t.me/config_geratis" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition border border-transparent hover:border-blue-400/30">
+                    <i class="fa-brands fa-telegram text-blue-400 text-lg"></i> Group Telegram
+                </a>
+                <a href="https://www.facebook.com/rusmanaid" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 transition border border-transparent hover:border-blue-600/30">
+                    <i class="fa-brands fa-facebook text-blue-600 text-lg"></i> Facebook
+                </a>
+            </div>
+
+            <button onclick="toggleMenu()" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 text-white transition">
+                <i class="fa-solid fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-[60] flex flex-col justify-center items-center backdrop-blur-xl">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 w-12 h-12 bg-white/10 rounded-full text-white flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+        
+        <div class="space-y-6 text-center w-full px-8">
+            <h3 class="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4">Kontak Kami</h3>
+            
+            <a href="https://wa.me/6283879017166" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 bg-[#1a1a1a] rounded-2xl border border-gray-800 active:scale-95 transition">
+                <i class="fa-brands fa-whatsapp text-green-500 text-2xl"></i>
+                <span class="font-bold text-lg">Chat Admin</span>
+            </a>
+
+            <a href="https://t.me/config_geratis" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 bg-[#1a1a1a] rounded-2xl border border-gray-800 active:scale-95 transition">
+                <i class="fa-brands fa-telegram text-blue-400 text-2xl"></i>
+                <span class="font-bold text-lg">Group Telegram</span>
+            </a>
+
+            <a href="https://www.facebook.com/rusmanaid" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 bg-[#1a1a1a] rounded-2xl border border-gray-800 active:scale-95 transition">
+                <i class="fa-brands fa-facebook text-blue-600 text-2xl"></i>
+                <span class="font-bold text-lg">Facebook</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="flex-grow px-4 pb-12 flex flex-col items-center relative z-10">
+        
+        <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="w-full max-w-4xl mt-8">
+            
+            <div class="w-full h-auto min-h-[100px] bg-[#111] border border-dashed border-gray-800 rounded-xl mb-12 flex items-center justify-center relative overflow-hidden">
+                <span class="absolute top-1 right-2 text-[9px] text-gray-600">ADS</span>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center; width: 100%;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-7112769875269380"
+                     data-ad-slot="6471363985"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div class="text-center mb-12 fade-up" style="animation-delay: 0.1s;">
+                <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight">
+                    DOWNLOAD <br> <span class="text-gradient">TANPA BATAS</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+                    Konversi video YouTube ke MP4 & MP3 kualitas tertinggi. Gratis, cepat, dan mudah.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto mb-16 fade-up" style="animation-delay: 0.2s;">
+                <form method="POST" onsubmit="document.getElementById('loader').classList.remove('hidden')" class="relative">
+                    <div class="border-gradient p-[1px]">
+                        <div class="bg-[#0a0a0a] rounded-[0.9rem] flex items-center p-2 pl-6">
+                            <i class="fa-solid fa-link text-gray-500 text-xl mr-4"></i>
+                            <input type="text" name="url" 
+                                   value=""
+                                   placeholder="Tempel link YouTube di sini..." 
+                                   class="bg-transparent w-full text-white placeholder-gray-600 focus:outline-none text-lg h-12"
+                                   autocomplete="off" required>
+                            <button type="submit" class="bg-red-600 hover:bg-red-500 text-white rounded-xl px-8 py-3 font-bold transition shadow-lg shadow-red-600/20">
+                                PROSES
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loader" class="hidden text-center my-12">
+                <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
+                    <div class="w-5 h-5 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
+                    <span class="text-sm font-mono text-gray-300">Memulai Convert...</span>
+                </div>
+            </div>
+
+            
+            
+            <div class="w-full h-auto min-h-[100px] mt-12 bg-[#111] border border-dashed border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden">
+                <span class="absolute top-2 right-2 text-[9px] text-gray-600">SPONSORED</span>
+                <ins class="adsbygoogle"
+                     style="display:block; text-align:center; width: 100%;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-7112769875269380"
+                     data-ad-slot="6471363985"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-gray-600 text-xs border-t border-white/5 bg-[#050505]">
+        <p class="mb-3">&copy; 2025 YouTube Downloader Premium.</p>
+        <div class="flex justify-center gap-6 opacity-60">
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a href="#" class="hover:text-white transition">Terms</a>
+            <a href="#" class="hover:text-white transition">DMCA</a>
+        </div>
+    </footer>
+
+    <div id="ad-popup" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <div class="bg-[#151515] border border-gray-700 rounded-2xl p-2 shadow-2xl relative max-w-sm w-full mx-4 modal-enter">
+            <button onclick="closePopup()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-[#121212] transition z-10">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <div class="bg-black rounded-xl overflow-hidden flex items-center justify-center min-h-[250px]">
+                 <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-7112769875269380"
+                     data-ad-slot="6471363985"></ins>
+            </div>
+            <p class="text-center text-[10px] text-gray-600 mt-2 tracking-widest">IKLAN SPONSOR</p>
+        </div>
+    </div>
+
+    <div id="adblock-modal" class="fixed inset-0 z-[999] hidden items-center justify-center bg-[#050505]/98 backdrop-blur-3xl p-4">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-red-600/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-orange-600/20 rounded-full blur-[100px]"></div>
+
+        <div class="relative bg-[#101010] border border-red-500/20 rounded-3xl p-8 max-w-md w-full text-center shadow-[0_0_50px_rgba(220,38,38,0.15)] modal-enter overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-orange-600"></div>
+
+            <div class="w-24 h-24 mx-auto mb-6 relative">
+                <div class="absolute inset-0 bg-red-500/20 rounded-full animate-ping"></div>
+                <div class="relative w-full h-full bg-[#1a1a1a] rounded-full flex items-center justify-center border border-red-500/30 shadow-inner">
+                    <i class="fa-solid fa-shield-halved text-5xl text-red-500 shake-chunk"></i>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-black text-white mb-2 uppercase tracking-tight">AdBlock <span class="text-red-500">Terdeteksi</span></h2>
+            
+            <p class="text-gray-400 text-sm mb-8 leading-relaxed px-2">
+                Sistem kami mendeteksi penggunaan pemblokir iklan. 
+                <br>Website ini 100% gratis dan dikelola berkat pendapatan iklan. Mohon dukung kami.
+            </p>
+
+            <div class="space-y-3">
+                <button onclick="location.reload()" class="w-full group relative bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-red-500/25 overflow-hidden">
+                    <div class="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+                    <span class="relative flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> SAYA SUDAH MATIKAN
+                    </span>
+                </button>
+                <p class="text-[10px] text-gray-600">Matikan AdBlock lalu tekan tombol di atas.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- UI UTILS ---
+        function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+        
+        function switchTab(type) {
+            const vid = document.getElementById('content-video');
+            const aud = document.getElementById('content-audio');
+            const btnV = document.getElementById('btn-video');
+            const btnA = document.getElementById('btn-audio');
+            const activeClass = "bg-[#1a1a1a] text-white border-white/20 shadow-lg";
+            const inactiveClass = "bg-black text-gray-500 border-transparent hover:text-white";
+
+            if(type === 'video') {
+                vid.classList.remove('hidden'); aud.classList.add('hidden');
+                btnV.className = `flex-1 py-3 rounded-lg text-sm font-bold transition-all ${activeClass}`;
+                btnA.className = `flex-1 py-3 rounded-lg text-sm font-bold transition-all ${inactiveClass}`;
+            } else {
+                aud.classList.remove('hidden'); vid.classList.add('hidden');
+                btnA.className = `flex-1 py-3 rounded-lg text-sm font-bold transition-all ${activeClass}`;
+                btnV.className = `flex-1 py-3 rounded-lg text-sm font-bold transition-all ${inactiveClass}`;
+            }
+        }
+
+        // --- DIRECT DOWNLOAD (NO AD POPUP) ---
+        function smartDownload(url) {
+            // Langsung buka link download di tab baru
+            window.open(url, '_blank');
+        }
+
+        // --- ADS POP-UP ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const popup = document.getElementById('ad-popup');
+                const adb = document.getElementById('adblock-modal');
+                // Hanya tampilkan popup iklan jika Adblock TIDAK terdeteksi
+                if(adb.classList.contains('hidden')){
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    setTimeout(() => popup.classList.remove('opacity-0'), 50);
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e){}
+                }
+            }, 3000);
+        });
+
+        function closePopup() {
+            const popup = document.getElementById('ad-popup');
+            popup.classList.add('opacity-0');
+            setTimeout(() => popup.classList.add('hidden'), 300);
+        }
+
+        // --- DETEKSI ANTI ADBLOCK (Update: Network Check & DOM Check) ---
+        const detectAdBlock = async () => {
+            let adBlockDetected = false;
+            // Kita pakai Modal Tailwind yang sudah dibuat (id='adblock-modal')
+            const adBlockModal = document.getElementById('adblock-modal');
+
+            // 1. Metode DOM Bait (Membuat elemen palsu)
+            const adBait = document.createElement('div');
+            adBait.innerHTML = '&nbsp;';
+            adBait.className = 'adsbygoogle ad-banner ad-placement advertising-container';
+            adBait.style.width = '1px';
+            adBait.style.height = '1px';
+            adBait.style.position = 'absolute';
+            adBait.style.top = '-10000px';
+            adBait.style.left = '-10000px';
+            document.body.appendChild(adBait);
+
+            // 2. Metode Network Request (Mencoba fetch file script iklan)
+            try {
+                await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+                    method: 'HEAD',
+                    mode: 'no-cors' // Penting untuk bypass CORS error, tapi jika diblokir ext akan throw error
+                });
+            } catch (e) {
+                // Jika request gagal (network error karena diblokir), tandai sebagai adblock
+                adBlockDetected = true;
+            }
+
+            // 3. Verifikasi & Eksekusi
+            setTimeout(() => {
+                const style = window.getComputedStyle(adBait);
+                
+                // Cek apakah elemen bait disembunyikan atau dihapus oleh ekstensi
+                if (
+                    adBait.offsetHeight === 0 || 
+                    style.display === 'none' || 
+                    style.visibility === 'hidden' ||
+                    adBait.offsetParent === null
+                ) {
+                    adBlockDetected = true;
+                }
+                
+                // Bersihkan elemen bait
+                adBait.remove();
+
+                if (adBlockDetected) {
+                    // Tampilkan Modal Tailwind
+                    adBlockModal.classList.remove('hidden');
+                    adBlockModal.classList.add('flex');
+                    document.body.style.overflow = 'hidden'; // Kunci scroll halaman
+                }
+            }, 1000); // Tunggu 1 detik untuk memastikan ekstensi bekerja
+        };
+
+        // Jalankan deteksi
+        detectAdBlock();
+    </script>
+</body>
+</html>

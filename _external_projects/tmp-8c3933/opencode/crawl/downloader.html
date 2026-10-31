@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIO Premium Downloader</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+
+    <style>
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: #fff; overflow-x: hidden; }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .border-gradient {
+            position: relative; background: #111; border-radius: 1rem;
+        }
+        .border-gradient::before {
+            content: ""; position: absolute; inset: -1px; z-index: -1;
+            border-radius: 1.1rem;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            opacity: 0.5;
+        }
+
+        .fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        
+        /* POPUP IKLAN */
+        #promo-popup { 
+            opacity: 0; 
+            visibility: hidden;
+            pointer-events: none; 
+            transition: all 0.4s ease-in-out; 
+            z-index: 9000; 
+        }
+        #promo-popup.active { 
+            opacity: 1; 
+            visibility: visible;
+            pointer-events: auto; 
+        }
+
+        /* ADBLOCK DETECTOR POPUP */
+        #adblock-popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+        #adblock-popup.detected {
+            display: flex;
+        }
+
+        /* Container Iklan */
+        .ad-slot-container {
+            background: #151515;
+            border: 1px dashed #333;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .ad-label {
+            position: absolute; font-size: 10px; color: #444; top: 5px; left: 50%; transform: translateX(-50%); z-index: 0;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="glass-nav fixed w-full z-50 h-20 flex items-center">
+        <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            <a href="index.php" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-bolt text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl tracking-wide leading-none">AIO<span class="text-purple-500">DL</span></h1>
+                    <p class="text-[10px] text-gray-500 tracking-widest uppercase">Multi Saver</p>
+                </div>
+            </a>
+            <div class="flex items-center gap-4">
+                 <a href="https://t.me/config_geratis" target="_blank" 
+                    class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-full font-bold shadow-lg shadow-blue-500/20 transition-all transform hover:scale-105">
+                    <i class="fa-brands fa-telegram text-xl"></i> 
+                    <span class="hidden md:inline">JOIN TELEGRAM</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow px-4 pb-12 flex flex-col items-center relative z-10 pt-28 md:pt-36 transition-all duration-300">
+        
+        <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-pink-600/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="w-full max-w-4xl">
+            
+            <div class="w-full mb-8 fade-up text-center" style="animation-delay: 0.05s;">
+                <span class="block text-[10px] text-gray-600 mb-1 tracking-widest uppercase">Sponsored</span>
+                <div class="ad-slot-container rounded-xl overflow-hidden">
+                    <span class="ad-label">AREA IKLAN GOOGLE</span>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center; width:100%; z-index: 1;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-7112769875269380"
+                         data-ad-slot="6471363985"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+
+            <div class="text-center mb-10 fade-up" style="animation-delay: 0.1s;">
+                <h1 class="text-5xl md:text-6xl font-black mb-4 tracking-tight">
+                    ALL IN ONE <br> <span class="text-gradient">DOWNLOADER</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-xl mx-auto">
+                    Facebook, TikTok, Instagram, YouTube & Lainnya.
+                </p>
+            </div>
+
+            <div class="max-w-2xl mx-auto mb-8 fade-up" style="animation-delay: 0.2s;">
+                <form method="POST" onsubmit="document.getElementById('loader').classList.remove('hidden')" class="relative">
+                    <div class="border-gradient p-[1px]">
+                        <div class="bg-[#0a0a0a] rounded-[0.9rem] flex items-center p-2 pl-6">
+                            <i class="fa-solid fa-paste text-gray-500 text-xl mr-4"></i>
+                            <input type="text" name="url" 
+                                   value=""
+                                   placeholder="Tempel link di sini..." 
+                                   class="bg-transparent w-full text-white placeholder-gray-600 focus:outline-none text-lg h-12"
+                                   autocomplete="off" required>
+                            <button type="submit" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl px-8 py-3 font-bold transition shadow-lg shadow-purple-600/20">
+                                PROSES
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="w-full mb-10 fade-up text-center max-w-2xl mx-auto" style="animation-delay: 0.3s;">
+                <span class="block text-[10px] text-gray-600 mb-1 tracking-widest uppercase">Sponsored</span>
+                <div class="ad-slot-container rounded-xl overflow-hidden">
+                    <span class="ad-label">AREA IKLAN GOOGLE</span>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center; width:100%; z-index: 1;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-7112769875269380"
+                         data-ad-slot="6471363985"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+
+            <div id="loader" class="hidden text-center my-12">
+                <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
+                    <div class="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                    <span class="text-sm font-mono text-gray-300">SEDANG MEMPROSES...</span>
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-gray-600 text-xs border-t border-white/5 bg-[#050505]">
+        <p class="mb-3">&copy; 2025 All In One Downloader.</p>
+    </footer>
+
+    <div id="promo-popup" class="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
+        <div class="bg-white rounded-lg w-full max-w-[350px] relative shadow-2xl p-2 pb-4">
+            <button onclick="document.getElementById('promo-popup').classList.remove('active')" 
+                    class="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-red-600 transition z-50 cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center">
+                 <p class="text-[10px] text-gray-400 mb-2 uppercase tracking-widest pt-2">Advertisement</p>
+                 <ins class="adsbygoogle"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-7112769875269380"
+                     data-ad-slot="6471363985"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="adblock-popup">
+        <div class="bg-[#1a1a1a] border border-red-500/50 rounded-2xl w-full max-w-md p-6 text-center shadow-2xl relative mx-4">
+            <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-shield-halved text-3xl text-red-500"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">AdBlock Terdeteksi!</h2>
+            <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                Kami mendeteksi Anda menggunakan pemblokir iklan. Website ini bergantung pada iklan untuk tetap online.
+            </p>
+            <button onclick="window.location.reload()" 
+                    class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-red-600/20">
+                SAYA SUDAH MATIKAN ADBLOCK
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Logic Popup Iklan (Muncul setelah 2 detik jika Adblock tidak aktif)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const adblockModal = document.getElementById('adblock-popup');
+                // Jika modal adblock tidak aktif, baru munculkan promo
+                if(!adblockModal.classList.contains('detected')){
+                    const popup = document.getElementById('promo-popup');
+                    if(popup) popup.classList.add('active');
+                }
+            }, 2000); 
+        });
+
+        // 2. DETEKSI ANTI ADBLOCK (Update: Network Check & DOM Check)
+        const detectAdBlock = async () => {
+            let adBlockDetected = false;
+            // Kita arahkan ke ID modal Tailwind kita
+            const adBlockModalElement = document.getElementById('adblock-popup');
+
+            // A. Metode DOM Bait (Membuat elemen palsu)
+            const adBait = document.createElement('div');
+            adBait.innerHTML = '&nbsp;';
+            adBait.className = 'adsbygoogle ad-banner ad-placement advertising-container';
+            adBait.style.width = '1px';
+            adBait.style.height = '1px';
+            adBait.style.position = 'absolute';
+            adBait.style.top = '-10000px';
+            adBait.style.left = '-10000px';
+            document.body.appendChild(adBait);
+
+            // B. Metode Network Request (Fetch script iklan)
+            try {
+                await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                });
+            } catch (e) {
+                // Jika network request gagal, kemungkinan besar diblokir (Browser Brave/Extensions)
+                adBlockDetected = true;
+            }
+
+            // Cek DOM Bait
+            setTimeout(() => {
+                const style = window.getComputedStyle(adBait);
+                if (
+                    adBait.offsetHeight === 0 || 
+                    style.display === 'none' || 
+                    style.visibility === 'hidden' ||
+                    adBait.offsetParent === null
+                ) {
+                    adBlockDetected = true;
+                }
+                adBait.remove();
+
+                if (adBlockDetected) {
+                    // Tampilkan Modal (Gunakan class detected dari CSS kita)
+                    adBlockModalElement.classList.add('detected');
+                    document.body.style.overflow = 'hidden'; 
+                    
+                    // Sembunyikan popup iklan promo jika tertutup adblock warning
+                    const promoPopup = document.getElementById('promo-popup');
+                    if(promoPopup) promoPopup.classList.remove('active');
+                }
+            }, 1000); // Beri waktu 1 detik
+        };
+
+        // Jalankan Deteksi
+        detectAdBlock();
+    </script>
+</body>
+</html>

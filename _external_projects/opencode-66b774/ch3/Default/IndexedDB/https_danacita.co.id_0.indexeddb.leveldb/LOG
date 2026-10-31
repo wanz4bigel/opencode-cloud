@@ -1,0 +1,6 @@
+2026/10/31-08:22:19.533 75ba Creating DB /tmp/opencode/ch3/Default/IndexedDB/https_danacita.co.id_0.indexeddb.leveldb since it was missing.
+2026/10/31-08:22:19.534 75ba Reusing MANIFEST /tmp/opencode/ch3/Default/IndexedDB/https_danacita.co.id_0.indexeddb.leveldb/MANIFEST-000001
+2026/10/31-08:22:19.545 75c1 Level-0 table #5: started
+2026/10/31-08:22:19.545 75c1 Level-0 table #5: 667 bytes OK
+2026/10/31-08:22:19.546 75c1 Delete type=0 #3
+2026/10/31-08:22:19.546 75c1 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

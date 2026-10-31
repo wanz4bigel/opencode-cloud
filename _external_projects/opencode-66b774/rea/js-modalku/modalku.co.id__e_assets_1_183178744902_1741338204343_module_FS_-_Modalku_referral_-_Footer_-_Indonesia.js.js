@@ -1,0 +1,2 @@
+var module_183178425959=void $(document).ready((function(){$(".globe.glb-click").click((function(){$(".globe-language-list").toggle()})),$(document).click((function(event){$(event.target).closest(".globe.glb-click, .globe-language-list").length||$(".globe-language-list").hide()}))}));
+//# sourceURL=https://46262753.fs1.hubspotusercontent-na1.net/hubfs/46262753/hub_generated/module_assets/1/183178744902/1741338204343/module_FS_-_Modalku_referral_-_Footer_-_Indonesia.js

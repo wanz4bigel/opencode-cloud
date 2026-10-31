@@ -1,0 +1,403 @@
+--- adb starting (pid 4575) ---
+10-31 07:07:39.002  4575  4575 I adb     : main.cpp:65 Android Debug Bridge version 1.0.41
+10-31 07:07:39.002  4575  4575 I adb     : main.cpp:65 Version 37.0.1-15733141
+10-31 07:07:39.002  4575  4575 I adb     : main.cpp:65 Installed as /usr/local/lib/android/sdk/platform-tools/adb
+10-31 07:07:39.002  4575  4575 I adb     : main.cpp:65 Running on Linux 7.0.0-1017-azure (x86_64)
+10-31 07:07:39.002  4575  4575 I adb     : main.cpp:65 
+10-31 07:07:39.329  4575  4583 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:39.330  4575  4586 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:39.581  4575  4588 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:39.831  4575  4590 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:40.082  4575  4592 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:40.332  4575  4594 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:40.580  4575  4596 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:40.583  4575  4598 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:40.833  4575  4604 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:41.084  4575  4606 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:41.335  4575  4608 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:41.586  4575  4610 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:41.831  4575  4612 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:41.836  4575  4614 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:42.088  4575  4633 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:42.339  4575  4645 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:42.590  4575  4647 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:42.840  4575  4650 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:07:43.082  4575  4651 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:43.091  4575  4653 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:43.341  4575  4655 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:43.592  4575  4657 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:43.842  4575  4659 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:44.093  4575  4664 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:44.333  4575  4666 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:44.343  4575  4668 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:44.594  4575  4670 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:44.845  4575  4672 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:45.095  4575  4674 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:45.346  4575  4676 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:45.583  4575  4678 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:45.596  4575  4680 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:45.847  4575  4682 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:46.098  4575  4684 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:46.348  4575  4686 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:46.599  4575  4688 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:46.834  4575  4690 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:46.849  4575  4692 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:47.100  4575  4694 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:47.351  4575  4696 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:47.601  4575  4698 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:47.852  4575  4700 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:48.085  4575  4702 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:48.102  4575  4704 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:48.353  4575  4707 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:48.604  4575  4710 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:48.854  4575  4712 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:49.105  4575  4714 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:49.336  4575  4720 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:49.355  4575  4730 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:49.606  4575  4732 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:49.857  4575  4734 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:50.107  4575  4736 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:50.358  4575  4738 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:50.586  4575  4740 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:50.608  4575  4742 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:50.859  4575  4746 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:51.110  4575  4748 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:51.360  4575  4751 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:51.611  4575  4753 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:51.837  4575  4755 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:51.861  4575  4757 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:52.115  4575  4765 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:52.366  4575  4808 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:52.620  4575  4872 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:07:52.874  4575  4926 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:53.089  4575  4955 I adb     : transport.cpp:1222 emulator-5554: connection terminated: write failed
+10-31 07:07:53.125  4575  4959 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:53.380  4575  4974 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:53.630  4575  4982 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:53.884  4575  5092 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:07:54.135  4575  5169 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:07:54.342  4575  5185 I adb     : transport.cpp:1222 emulator-5554: connection terminated: write failed
+10-31 07:07:54.386  4575  5186 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:54.637  4575  5216 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:54.888  4575  5228 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:55.139  4575  5242 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:55.391  4575  5258 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:55.594  4575  5270 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:55.641  4575  5272 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:55.892  4575  5274 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:56.142  4575  5276 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:56.393  4575  5278 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:56.644  4575  5280 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:56.845  4575  5282 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:56.894  4575  5284 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:57.145  4575  5286 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:57.396  4575  5299 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:57.647  4575  5309 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:57.898  4575  5313 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:58.096  4575  5315 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:58.148  4575  5317 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:58.399  4575  5319 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:58.650  4575  5321 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:58.900  4575  5323 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:59.151  4575  5325 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:59.346  4575  5327 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:07:59.402  4575  5329 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:59.652  4575  5331 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:07:59.903  4575  5336 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:00.154  4575  5338 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:00.408  4575  5344 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:00.597  4575  5359 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:00.661  4575  5361 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:00.912  4575  5381 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:01.163  4575  5397 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:01.414  4575  5407 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:01.664  4575  5409 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:01.848  4575  5411 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:01.915  4575  5414 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:02.166  4575  5416 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:02.416  4575  5418 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:02.667  4575  5420 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:02.918  4575  5422 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:03.099  4575  5424 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:03.168  4575  5426 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:03.419  4575  5428 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:03.669  4575  5430 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:03.920  4575  5432 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:04.171  4575  5434 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:04.350  4575  5436 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:04.421  4575  5438 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:04.672  4575  5440 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:04.923  4575  5442 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:05.173  4575  5444 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:05.424  4575  5447 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:05.600  4575  5449 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:05.675  4575  5451 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:05.925  4575  5453 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:06.176  4575  5455 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:06.427  4575  5457 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:06.677  4575  5459 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:06.851  4575  5461 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:06.928  4575  5463 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:07.179  4575  5465 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:07.429  4575  5468 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:07.680  4575  5469 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:07.931  4575  5471 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:08.102  4575  5473 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:08.181  4575  5476 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:08.432  4575  5477 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:08.682  4575  5479 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:08.933  4575  5481 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:09.184  4575  5483 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:09.353  4575  5485 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:09.434  4575  5487 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:09.685  4575  5489 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:09.936  4575  5491 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:10.186  4575  5493 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:10.437  4575  5495 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:10.604  4575  5497 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:10.688  4575  5499 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:10.938  4575  5501 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:11.189  4575  5503 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:11.440  4575  5505 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:11.694  4575  5516 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:11.856  4575  5533 I adb     : transport.cpp:1222 emulator-5554: connection terminated: write failed
+10-31 07:08:11.956  4575  5549 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:12.213  4575  5568 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:12.465  4575  5596 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:12.720  4575  5608 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:12.971  4575  5648 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:13.123  4575  5680 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:13.222  4575  5701 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:13.473  4575  5736 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:13.726  4575  5769 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:14.010  4575  5783 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:14.279  4575  5805 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:14.382  4575  5810 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:14.532  4575  5817 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:14.822  4575  5823 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:15.076  4575  5843 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:15.362  4575  5865 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:15.618  4575  5994 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:15.734  4575  6002 I adb     : transport.cpp:1222 emulator-5554: connection terminated: write failed
+10-31 07:08:15.875  4575  6007 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:16.129  4575  6026 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:16.389  4575  6058 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:16.643  4575  6082 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:16.893  4575  6093 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:17.039  4575  6098 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:17.144  4575  6104 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:17.395  4575  6120 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:17.645  4575  6122 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:17.896  4575  6124 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:18.147  4575  6126 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:18.289  4575  6128 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:18.397  4575  6130 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:18.648  4575  6132 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:18.898  4575  6146 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:19.149  4575  6155 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:19.400  4575  6159 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:19.540  4575  6161 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:19.650  4575  6163 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:19.901  4575  6165 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:20.151  4575  6167 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:20.402  4575  6169 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:20.652  4575  6172 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:20.791  4575  6177 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:20.903  4575  6179 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:21.154  4575  6181 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:21.404  4575  6186 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:21.655  4575  6188 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:21.906  4575  6208 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:22.042  4575  6242 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:22.157  4575  6244 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:22.408  4575  6246 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:22.658  4575  6248 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:22.911  4575  6260 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:23.162  4575  6329 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:23.292  4575  6334 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:23.412  4575  6336 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:23.663  4575  6339 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:23.913  4575  6340 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:24.164  4575  6370 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:24.415  4575  6373 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:08:24.543  4575  6374 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:24.666  4575  6376 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:24.916  4575  6378 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:25.167  4575  6380 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:25.417  4575  6382 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:25.668  4575  6384 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:25.794  4575  6386 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:25.919  4575  6388 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:26.169  4575  6390 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:26.420  4575  6392 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:26.670  4575  6400 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:26.921  4575  6402 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:27.045  4575  6404 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:27.172  4575  6406 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:27.422  4575  6408 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:27.673  4575  6410 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:27.924  4575  6412 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:28.174  4575  6418 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:28.296  4575  6425 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:28.425  4575  6428 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:28.676  4575  6430 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:28.926  4575  6432 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:29.177  4575  6434 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:29.428  4575  6442 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:29.546  4575  6444 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:29.678  4575  6446 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:29.929  4575  6458 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:30.179  4575  6460 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:30.430  4575  6462 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:30.681  4575  6464 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:30.797  4575  6466 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:30.931  4575  6481 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:31.182  4575  6487 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:31.432  4575  6489 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:31.683  4575  6491 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:31.934  4575  6493 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:32.048  4575  6495 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:32.184  4575  6497 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:32.435  4575  6499 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:32.686  4575  6501 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:32.936  4575  4576 W adb     : network.cpp:149 failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:08:32.936  4575  4576 I adb     : transport_emulator.cpp:122 reconnect 127.0.0.1:5555 failed: failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:08:33.300  4575  6664 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:34.551  4575  6672 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:35.802  4575  6797 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:35.936  4575  6800 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:36.187  4575  6805 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:36.438  4575  6808 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:36.688  4575  6811 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:36.939  4575  6817 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:37.053  4575  6819 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:37.190  4575  6821 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:37.440  4575  6825 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:37.691  4575  6829 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:37.942  4575  6831 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:38.192  4575  6839 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:38.303  4575  6841 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:08:38.443  4575  6843 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:38.693  4575  6903 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:38.944  4575  6908 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:39.195  4575  6910 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:39.445  4575  6913 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:08:39.555  4575  6915 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:09:17.313  4575  4575 I adb     : transport.cpp:1123 kicking transport 0x78bb58000c60 127.0.0.1:5555
+10-31 07:09:17.313  4575  6930 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:52.737  4575  8751 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:52.746  4575  7104 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:52.989  4575  4576 W adb     : network.cpp:149 failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:14:52.989  4575  4576 I adb     : transport_emulator.cpp:122 reconnect 127.0.0.1:5555 failed: failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:14:53.998  4575 11450 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:55.250  4575 11567 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:55.990  4575 11583 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:56.241  4575 11587 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:56.492  4575 11592 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:56.500  4575 11594 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:56.742  4575 11597 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:56.993  4575 11603 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:57.244  4575 11605 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:57.494  4575 11611 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:57.745  4575 11615 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:57.751  4575 11617 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:57.996  4575 11619 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:58.247  4575 11628 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:58.497  4575 11632 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:58.748  4575 11690 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:58.999  4575 11701 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:59.001  4575 11703 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:14:59.251  4575 11710 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:59.501  4575 11721 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:14:59.752  4575 11737 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:15:00.003  4575 11741 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: write failed
+10-31 07:15:49.372  4575  4575 I adb     : transport.cpp:1123 kicking transport 0x78bb5c000db0 127.0.0.1:5555
+10-31 07:15:49.372  4575 11785 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:15:57.553  4575 13761 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:00.625  4575 13986 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:03.954  4575 14181 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:07.281  4575 14430 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:10.609  4575 14441 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:13.937  4575 14645 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:17.265  4575 14842 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:20.593  4575 14849 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:23.921  4575 15047 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:27.249  4575 15236 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:30.577  4575 15243 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:33.905  4575 15444 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:37.233  4575 15638 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:40.561  4575 15644 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:43.889  4575 15838 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:47.217  4575 16031 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:50.545  4575 16037 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:53.874  4575 16235 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:16:57.201  4575 16427 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:00.529  4575 16433 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:03.857  4575 16631 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:05.345  4575  4575 I adb     : adb.cpp:1288 adb server killed by remote request
+10-31 07:17:05.348  4575  4575 I adb     : blame_kill.cpp:283 kill-server process callchain
+10-31 07:17:05.348  4575  4575 I adb     : blame_kill.cpp:297 pid:16841 cmdline:adb kill-server
+10-31 07:17:05.348  4575  4575 I adb     : blame_kill.cpp:297 pid:16840 cmdline:/bin/bash -c export PATH=/usr/local/lib/android/sdk/platform-tools:$PATH; adb kill-server; sleep 2; adb start-server; adb connect 127.0.0.1:5555; adb devices -l; echo "---container system_server status---"; docker exec redroid-cloudphone /system/bin/ps -A 2>/dev/null | grep -i 'system_server\|zygote\|SurfaceFlinger' | head
+10-31 07:17:05.348  4575  4575 I adb     : blame_kill.cpp:297 pid: 2724 cmdline:/home/runner/.local/bin/opencode serve --service
+10-31 07:17:05.349  4575  4575 I adb     : transport.cpp:1123 kicking transport 0x78bb580021a0 127.0.0.1:5555
+10-31 07:17:05.349  4575 16834 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:05.349  4575  4575 I adb     : transport.cpp:1123 kicking transport 0x78bb64005020 emulator-5554
+10-31 07:17:05.349  4575 11783 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+--- adb starting (pid 16845) ---
+10-31 07:17:07.357 16845 16845 I adb     : main.cpp:65 Android Debug Bridge version 1.0.41
+10-31 07:17:07.357 16845 16845 I adb     : main.cpp:65 Version 37.0.1-15733141
+10-31 07:17:07.357 16845 16845 I adb     : main.cpp:65 Installed as /usr/local/lib/android/sdk/platform-tools/adb
+10-31 07:17:07.357 16845 16845 I adb     : main.cpp:65 Running on Linux 7.0.0-1017-azure (x86_64)
+10-31 07:17:07.357 16845 16845 I adb     : main.cpp:65 
+10-31 07:17:10.257 16845 16857 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:10.257 16845 16853 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:13.329 16845 17055 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:13.329 16845 17053 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:16.401 16845 17226 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:16.401 16845 17254 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:18.874 16845 17292 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:18.874 16845 17257 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:19.124 16845 16846 W adb     : network.cpp:149 failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:17:19.124 16845 16846 I adb     : transport_emulator.cpp:122 reconnect 127.0.0.1:5555 failed: failed to connect to '127.0.0.1:5555': Connection refused
+10-31 07:17:20.125 16845 17623 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:21.376 16845 17746 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:22.125 16845 17754 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:22.375 16845 17757 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:22.626 16845 17760 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:22.627 16845 17762 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:22.877 16845 17768 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:23.127 16845 17770 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:23.378 16845 17773 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:23.629 16845 17778 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:23.877 16845 17780 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:23.879 16845 17782 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:24.130 16845 17790 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:24.380 16845 17792 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:24.631 16845 17849 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:24.882 16845 17855 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:25.128 16845 17857 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:25.133 16845 17859 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:25.383 16845 17862 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+10-31 07:17:44.194 16845 16845 I adb     : adb.cpp:1288 adb server killed by remote request
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:283 kill-server process callchain
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297 pid:19608 cmdline:adb kill-server
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297 pid:17459 cmdline:/bin/bash -c docker rm -f redroid-cloudphone
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297 docker run -d --privileged --name redroid-cloudphone \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   -p 5555:5555 \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   -v /dev/binderfs:/dev/binderfs \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   redroid/redroid:11.0.0-latest \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   androidboot.redroid_width=720 \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   androidboot.redroid_height=1280 \
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297   androidboot.redroid_gpu_mode=guest
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297 echo started; sleep 25; export PATH=/usr/local/lib/android/sdk/platform-tools:$PATH; adb kill-server >/dev/null 2>&1; sleep 1; adb start-server >/dev/null 2>&1; adb connect 127.0.0.1:5555; adb devices -l; echo "boot:"; adb -s 127.0.0.1:5555 shell getprop sys.boot_completed 2>&1
+10-31 07:17:44.198 16845 16845 I adb     : blame_kill.cpp:297 pid: 2724 cmdline:/home/runner/.local/bin/opencode serve --service
+10-31 07:17:44.198 16845 16845 I adb     : transport.cpp:1123 kicking transport 0x741cac003d50 emulator-5554
+10-31 07:17:44.198 16845 18034 I adb     : transport.cpp:1222 emulator-5554: connection terminated: read failed
+10-31 07:17:44.198 16845 16845 I adb     : transport.cpp:1123 kicking transport 0x741c9c000c60 127.0.0.1:5555
+10-31 07:17:44.199 16845 17883 I adb     : transport.cpp:1222 127.0.0.1:5555: connection terminated: read failed
+--- adb starting (pid 19611) ---
+10-31 07:17:45.207 19611 19611 I adb     : main.cpp:65 Android Debug Bridge version 1.0.41
+10-31 07:17:45.207 19611 19611 I adb     : main.cpp:65 Version 37.0.1-15733141
+10-31 07:17:45.207 19611 19611 I adb     : main.cpp:65 Installed as /usr/local/lib/android/sdk/platform-tools/adb
+10-31 07:17:45.207 19611 19611 I adb     : main.cpp:65 Running on Linux 7.0.0-1017-azure (x86_64)
+10-31 07:17:45.207 19611 19611 I adb     : main.cpp:65 

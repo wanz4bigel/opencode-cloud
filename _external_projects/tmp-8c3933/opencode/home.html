@@ -1,301 +1,546 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4f6f5">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TOOLS INJECT_ID</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
 
-    <title>1FORCR KUOTA - Pulsa, Kuota, Token PLN, Top Up Game, dan Akun VPN</title>
-    <meta name="title" content="1FORCR KUOTA - Pulsa, Kuota, Token PLN, Top Up Game, dan Akun VPN">
-    <meta name="description" content="1FORCR KUOTA menjual pulsa, paket data, token PLN, top up game, e-wallet, dan akun VPN (SSH, VMess, VLess, Trojan, UDP ZiVPN). Cek harga tanpa akun, bayar pakai QRIS, pesanan diproses otomatis.">
-    <meta name="keywords" content="1FORCR, 1FORCR KUOTA, top up pulsa, beli kuota, token PLN, topup game, diamond ML, diamond FF, akun VPN, SSH, VMess, VLess, Trojan, ZiVPN">
-    <meta name="author" content="1FORCR">
-    <meta name="robots" content="index, follow">
+    <style>
+        :root { --neon-green: #0f0; --neon-blue: #00f3ff; --neon-pink: #ff0055; --bg-black: #050505; }
+        body { background-color: var(--bg-black); color: var(--neon-green); font-family: 'Share Tech Mono', monospace; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+        #matrix-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.2; }
+        
+        /* Navigation */
+        .cyber-nav { background: rgba(0,0,0,0.9); border-bottom: 2px solid var(--neon-green); box-shadow: 0 0 15px rgba(0,255,0,0.2); backdrop-filter: blur(10px); padding: 15px 0; z-index: 1000; }
+        .navbar-brand { color: var(--neon-green) !important; text-shadow: 0 0 8px var(--neon-green); letter-spacing: 2px; font-size: 1.5rem; }
+        .menu-toggler { background: transparent; border: 1px solid var(--neon-green); color: var(--neon-green); padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        
+        /* Sidebar */
+        .side-menu { height: 100%; width: 280px; position: fixed; z-index: 1050; top: 0; right: -280px; background: rgba(5, 5, 5, 0.95); border-left: 2px solid var(--neon-green); transition: 0.4s; padding-top: 60px; box-shadow: -5px 0 30px rgba(0,255,0,0.1); }
+        .side-menu.active { right: 0; }
+        .side-menu a { padding: 15px 25px; text-decoration: none; font-size: 1.2rem; color: #aaa; display: block; border-right: 4px solid transparent; transition: 0.3s; }
+        .side-menu a:hover { color: var(--neon-green); background: rgba(0,255,0,0.05); border-right-color: var(--neon-green); }
+        .close-btn { position: absolute; top: 15px; left: 20px; font-size: 1.5rem; color: white; cursor: pointer; }
+        .menu-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index: 1040; display: none; }
+        .menu-overlay.active { display: block; }
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://1forcrkuota.com/">
-    <meta property="og:title" content="1FORCR KUOTA - Pulsa, Kuota, Token PLN, Top Up Game, dan Akun VPN">
-    <meta property="og:description" content="Cek harga pulsa dan kuota tanpa perlu daftar, bayar pakai QRIS, pesanan diproses otomatis.">
-    <meta property="og:image" content="https://1forcrkuota.com/assets/images/og-image.jpg">
+        /* Components */
+        .glitch-text { font-size: 2.8rem; font-weight: bold; color: white; text-shadow: 2px 2px var(--neon-pink), -2px -2px var(--neon-blue); animation: glitch 2.5s infinite alternate-reverse; }
+        @keyframes glitch { 0% { text-shadow: 2px 2px var(--neon-pink); } 100% { text-shadow: -2px -2px var(--neon-blue); } }
+        .terminal-input { background: rgba(0,0,0,0.8); border: 1px solid var(--neon-green); color: var(--neon-green); padding: 12px 20px 12px 50px; width: 100%; border-radius: 5px; font-family: 'Share Tech Mono'; }
+        .prompt-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--neon-green); animation: blink 1s infinite; }
+        
+        /* HUD */
+        .hud-container { border: 1px solid var(--neon-blue); background: rgba(0, 10, 20, 0.8); margin-top: 20px; position: relative; box-shadow: 0 0 15px rgba(0, 243, 255, 0.1); }
+        .hud-item { padding: 15px; text-align: center; border-right: 1px solid rgba(0, 243, 255, 0.2); }
+        .hud-val { font-size: 1.2rem; font-weight: bold; color: white; }
+        .hud-clock { font-size: 1.4rem; color: var(--neon-green); text-shadow: 0 0 8px var(--neon-green); }
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://1forcrkuota.com/">
-    <meta property="twitter:title" content="1FORCR KUOTA - Pulsa, Kuota, Token PLN, Top Up Game, dan Akun VPN">
-    <meta property="twitter:description" content="Cek harga pulsa dan kuota tanpa perlu daftar, bayar pakai QRIS, pesanan diproses otomatis.">
-    <meta property="twitter:image" content="https://1forcrkuota.com/assets/images/og-image.jpg">
+        /* Cards */
+        .cyber-card { background: rgba(10, 20, 10, 0.6); backdrop-filter: blur(5px); border: 1px solid #333; padding: 20px; height: 100%; text-decoration: none; display: block; transition: 0.3s; }
+        .cyber-card:hover { transform: translateY(-5px); background: rgba(0, 30, 0, 0.8); border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); }
+        .tool-icon { font-size: 2rem; margin-bottom: 10px; }
+        .card-title { color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+        .card-desc { color: #aaa; font-size: 0.85rem; font-family: sans-serif; }
 
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
-    <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/landing.css?v=20261027-3">
+        /* IKLAN CONTAINER (FIXED) */
+        .ad-box-fixed {
+            display: block;
+            width: 100%;
+            min-height: 280px; /* PENTING: Tinggi minimal agar slot tidak collapse */
+            background: rgba(0,0,0,0.5); /* Background gelap agar terlihat space-nya */
+            border: 1px dashed #333;
+            text-align: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        /* POPUP STYLING */
+        .cyber-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+        .cyber-modal-content { background-color: #000; margin: 5% auto; border: 1px solid var(--neon-green); width: 95%; max-width: 360px; box-shadow: 0 0 30px rgba(0, 255, 0, 0.3); animation: modalEntry 0.5s ease-out; }
+        .modal-body-cyber { padding: 10px; text-align: center; background: #050505; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+        @keyframes modalEntry { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        footer { border-top: 1px solid #333; background: #020202; padding: 30px 0; color: #666; font-size: 0.9rem; }
+        .social-link { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #333; color: #888; border-radius: 50%; margin: 0 5px; text-decoration: none; transition: 0.3s; }
+        .social-link:hover { border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
+    </style>
 </head>
-<body class="home">
-    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+<body>
 
-    <header class="top">
-        <a class="wordmark" href="#top" aria-label="1FORCR KUOTA, ke atas halaman">
-            <img src="assets/images/1forcr-logo.svg?v=20260626-9" alt="" width="36" height="36">
-            <span>1FORCR KUOTA</span>
-        </a>
-        <nav class="top-nav" aria-label="Navigasi utama">
-            <a href="#harga">Daftar harga</a>
-            <a href="#tanya">Tanya jawab</a>
-            <a href="#alamat">Alamat</a>
-        </nav>
-        <div class="top-actions">
-            <a class="top-login" href="login.html">Masuk</a>
-            <a class="btn btn-small" href="login.html?daftar=1">Daftar</a>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <div class="text-center mb-4"><h4 class="text-white fw-bold">MENU SYSTEM</h4><div class="small text-success">ACCESS GRANTED</div></div>
+        <a href="#"><i class="fas fa-home me-2"></i> Dashboard</a>
+        <a href="https://t.me/config_geratis"><i class="fab fa-telegram me-2"></i> Telegram Group</a>
+        <a href="https://github.com/Inject-ID"><i class="fab fa-github me-2"></i> Source Code</a>
+        <a href="https://youtube.com/@inject1d"><i class="fab fa-youtube me-2"></i> Youtube Channel</a>
+    </div>
+
+    <nav class="navbar cyber-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-terminal me-2"></i>INJECT_ID<span style="animation: blink 1s infinite">_</span></a>
+            <button class="menu-toggler" onclick="toggleMenu()"><i class="fas fa-bars"></i> MENU</button>
         </div>
-    </header>
+    </nav>
 
-    <main id="main">
-        <!-- Hero: judul di kiri, cek harga yang benar-benar bekerja di kanan.
-             Nomor dikenali dari awalan yang sama dengan dashboard dan harganya
-             diambil dari katalog yang sama. -->
-        <section class="hero" id="top" aria-labelledby="heroTitle">
-            <div class="hero-copy">
-                <h1 id="heroTitle">Isi pulsa dan kuota tanpa ribet.</h1>
-                <p class="hero-lead">Ada juga token PLN, top up game, e-wallet, dan akun VPN. Cek harga tanpa perlu daftar, bayar pakai QRIS, pesanan diproses otomatis.</p>
-                <div class="hero-actions">
-                    <a class="btn" href="login.html?daftar=1">Daftar gratis</a>
-                    <a class="text-link" href="login.html">Sudah punya akun? Masuk</a>
+    <div id="adModal" class="cyber-modal">
+        <div class="cyber-modal-content">
+            <div style="background: rgba(0, 255, 0, 0.1); padding: 10px; border-bottom: 1px solid var(--neon-green); display: flex; justify-content: space-between;">
+                <span style="color: var(--neon-green); font-weight: bold;">> INCOMING_MSG...</span>
+                <span style="color: #fff; cursor: pointer;" onclick="closeAdModal()">[X]</span>
+            </div>
+            <div class="modal-body-cyber">
+                <div class="small text-secondary mb-2">SPONSORED CONTENT</div>
+                <div id="popupAdContainer" style="width:100%; min-height:250px; background:#111;"></div>
+            </div>
+            <div class="p-2 text-center border-top border-secondary">
+                <button class="btn btn-sm btn-outline-success rounded-0 w-100" onclick="closeAdModal()">[ CLOSE TRANSMISSION ]</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5 flex-grow-1">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <p class="mb-1" style="color: var(--neon-blue); letter-spacing: 2px;">> SYSTEM_CONNECTED: <b>SELAMAT SORE</b></p>
+                <h1 class="glitch-text mb-3">CYBER TOOLS</h1>
+                <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                    <span class="prompt-icon">></span>
+                    <input type="text" id="searchInput" class="terminal-input" placeholder="Ketik nama tools...">
                 </div>
             </div>
-
-            <div class="check" data-ui>
-                <h2 class="check-title" id="checkTitle">Cek harga dulu</h2>
-                <label class="check-label" for="demoNumber">Nomor HP</label>
-                <input class="check-input" id="demoNumber" type="tel" inputmode="numeric" autocomplete="tel" placeholder="Contoh 0812 3456 7890" aria-describedby="demoOperator">
-                <p class="check-operator" id="demoOperator" aria-live="polite">Belum ada nomor. Di bawah ini contoh untuk Telkomsel.</p>
-                <div class="check-seg" role="radiogroup" aria-label="Jenis produk">
-                    <button type="button" role="radio" aria-checked="true" data-kind="Data">Kuota</button>
-                    <button type="button" role="radio" aria-checked="false" data-kind="Pulsa">Pulsa</button>
+        </div>
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="hud-container d-flex flex-wrap justify-content-center align-items-center">
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">IP ADDRESS</div><div class="hud-val">52.161.60.225</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">VISITORS</div><div class="hud-val">2,711</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">SYSTEM TIME</div><div class="hud-clock font-monospace" id="liveClock">00:00:00</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">CURRENT DATE</div><div class="hud-val small text-uppercase" id="liveDate">...</div></div>
                 </div>
-                <ol class="check-results" id="demoResults">
-                    <li><span class="check-name">Telkomsel Data Malam 1.5 GB 2 Hari<small>Malam</small></span><span class="check-price num">Rp 6.000</span><a href="login.html?sku=datamalam1.5gb2h">Beli</a></li>
-                    <li><span class="check-name">Telkomsel Paket Internet Instagram 1 GB 1 Hari<small>Instagram</small></span><span class="check-price num">Rp 6.100</span><a href="login.html?sku=Ig1gb1h">Beli</a></li>
-                    <li><span class="check-name">Telkomsel Data Malam 1 GB 1 Hari<small>Malam</small></span><span class="check-price num">Rp 6.100</span><a href="login.html?sku=datamalam1gb1h">Beli</a></li>
-                    <li><span class="check-name">Telkomsel Data Mini 500 MB 1 Hari<small>Mini</small></span><span class="check-price num">Rp 6.200</span><a href="login.html?sku=mini500mb1h">Beli</a></li>
-                </ol>
-                <a class="check-all" href="#harga">Lihat semua harga</a>
             </div>
-        </section>
+        </div>
 
-        <!-- Tile kategori dengan tampilan dan logo yang sama seperti Beranda
-             dashboard. Mengetuknya membuka kategori itu di daftar harga. -->
-        <section class="cats" aria-labelledby="catsTitle">
-            <h2 class="cats-title" id="catsTitle">Mau beli apa?</h2>
-            <div class="cat-grid" id="catGrid">
-                <a class="cat-tile" href="#harga" data-category="Pulsa"><span class="cat-name">Pulsa</span><small>67 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="Data"><span class="cat-name">Kuota</span><small>613 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="PLN"><span class="cat-name">Token PLN</span><small>3 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="Games"><span class="cat-name">Games</span><small>165 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="E-Money"><span class="cat-name">E-wallet</span><small>29 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="Masa Aktif"><span class="cat-name">Masa aktif</span><small>2 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="Aktivasi Voucher"><span class="cat-name">Voucher</span><small>1 produk</small></a>
-                <a class="cat-tile" href="#harga" data-category="__vpn"><span class="cat-name">Akun VPN</span><small>SSH, VMess, Trojan</small></a>
-            </div>
-        </section>
+        <div class="ad-box-fixed">
+             <div class="small text-secondary pt-1">[ SPONSOR UTAMA ]</div>
+             <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-7112769875269380"
+                  data-ad-slot="6560918199"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
 
-        <!-- Daftar harga lengkap: kategori sebagai tab di kiri, produknya
-             sebagai pita bergantian di kanan. Server VPN ikut sebagai satu tab
-             dengan sisa slot dari sistem. -->
-        <section class="prices" id="harga" aria-labelledby="pricesTitle">
-            <div class="prices-head">
-                <h2 id="pricesTitle"><span class="soft">Semua harga,</span> tanpa perlu login.</h2>
-                <a class="btn" href="login.html?daftar=1">Daftar gratis</a>
-            </div>
-
-            <div class="promo-strip" id="promoStrip" hidden>
-                <p class="promo-text"><strong id="promoTitle">Promo</strong> <span id="promoPrice"></span></p>
-                <p class="promo-time">Berakhir dalam <strong class="num" id="promoCountdown">--:--:--</strong></p>
-                <a class="text-link" id="promoLink" href="login.html">Beli dengan harga promo</a>
-            </div>
-
-            <div class="prices-body">
-                <div class="price-tabs" id="priceTabs" role="tablist" aria-label="Kategori produk">
-                    <button class="price-tab" type="button" role="tab" aria-selected="true" data-category="Pulsa">Pulsa<small>67 produk</small></button>
-                    <button class="price-tab" type="button" role="tab" aria-selected="false" data-category="Data">Kuota<small>613 produk</small></button>
-                    <button class="price-tab" type="button" role="tab" aria-selected="false" data-category="PLN">Token PLN<small>3 produk</small></button>
-                    <button class="price-tab" type="button" role="tab" aria-selected="false" data-category="Games">Games<small>165 produk</small></button>
-                    <button class="price-tab" type="button" role="tab" aria-selected="false" data-category="E-Money">E-wallet<small>29 produk</small></button>
-                    <button class="price-tab" type="button" role="tab" aria-selected="false" data-category="__vpn">Akun VPN<small>Server dan slot</small></button>
-                </div>
-
-                <div class="price-panel" id="pricePanel" role="tabpanel" aria-labelledby="pricesTitle">
-                    <div class="price-tools">
-                        <label class="visually-hidden" for="priceSearch">Cari di kategori ini</label>
-                        <input type="search" id="priceSearch" placeholder="Cari produk, misal 10 GB" autocomplete="off">
-                        <label class="visually-hidden" for="priceBrand">Brand</label>
-                        <select id="priceBrand">
-                            <option value="">Semua brand</option>
-                        </select>
+        <div class="row g-4" id="toolsGrid">
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="ssh" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fas fa-terminal"></i></div>
+                        <div><div class="card-title">SSH & UDP Creator</div><p class="card-desc">Buat akun SSH & UDP trial gratis.</p></div>
                     </div>
-                    <p class="price-status" id="priceStatus" aria-live="polite">Memuat harga hari ini...</p>
-                    <ol class="price-bands" id="priceBands"></ol>
-                    <button class="btn btn-quiet" type="button" id="priceMore" hidden>Tampilkan lebih banyak</button>
-                </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
             </div>
-        </section>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">AIO Downloader</div><p class="card-desc">Unduh dari berbagai platform sosmed.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-ktp" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-address-card"></i></div>
+                        <div><div class="card-title">NIK KTP Checker</div><p class="card-desc">Cek informasi data KTP dari NIK.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="promo-pulsa" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-tags"></i></div>
+                        <div><div class="card-title">Pulsa Murah</div><p class="card-desc">Isi ulang pulsa dengan harga promo.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="dor-xl" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-rocket"></i></div>
+                        <div><div class="card-title">Tembak Paket XL</div><p class="card-desc">Beli paket murah XL (Dor) jalur khusus.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-bansos" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div><div class="card-title">Cek Bansos</div><p class="card-desc">Cek data penerima Bantuan Sosial.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="spam-wa" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fab fa-whatsapp"></i></div>
+                        <div><div class="card-title">Spam WhatsApp</div><p class="card-desc">Kirim pesan WhatsApp secara massal.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cryptofree" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fab fa-bitcoin"></i></div>
+                        <div><div class="card-title">Claim Crypto Free</div><p class="card-desc">Klaim aset kripto gratis tiap hari.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="email-generator" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-envelope-open-text"></i></div>
+                        <div><div class="card-title">Gmail Generator</div><p class="card-desc">Buat ribuan variasi alamat Gmail.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="bypass-url" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-link"></i></div>
+                        <div><div class="card-title">Shortlink Bypasser</div><p class="card-desc">Lewati shortlink dengan mudah.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="shortlink" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #aaa"><i class="fas fa-compress-alt"></i></div>
+                        <div><div class="card-title">Shortlink Generator</div><p class="card-desc">Perpendek URL Anda disini.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-cloudflare" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fab fa-cloudflare"></i></div>
+                        <div><div class="card-title">Cloudflare Checker</div><p class="card-desc">Periksa status Cloudflare domain.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="domain-ip" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-search-location"></i></div>
+                        <div><div class="card-title">Domain to IP</div><p class="card-desc">Cari tahu alamat IP dari domain.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="https://www.tutorialinjectid.my.id/" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fas fa-book-open"></i></div>
+                        <div><div class="card-title">Website Tutorial</div><p class="card-desc">Kumpulan tutorial pembuatan website.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-kuota" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-sim-card"></i></div>
+                        <div><div class="card-title">Cek Kuota Axis & XL</div><p class="card-desc">Cek Kuota Axis & XL Tanpa OTP</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="drama" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">DramaBOX Premium</div><p class="card-desc">DramaBOX Premium Unlock All Episode</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tiktok-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #fe2c55"><i class="fab fa-tiktok"></i></div>
+                        <div><div class="card-title">Tiktok Downloader No Watermark</div><p class="card-desc">Tiktok downloader no watermark full hd & musik</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="youtube-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fab fa-youtube"></i></div>
+                        <div><div class="card-title">Youtube Downloader</div><p class="card-desc">Download Vidio Youtube & Musik Gratis</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="terabox-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #3277a8"><i class="fas fa-cloud-download-alt"></i></div>
+                        <div><div class="card-title">Terabox Downloader</div><p class="card-desc">Download Vidio Terabox</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tag-youtube" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fas fa-tags"></i></div>
+                        <div><div class="card-title">Youtube Tag Generator</div><p class="card-desc">Tag Youtube Generator seo</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="quizcuan" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-coins"></i></div>
+                        <div><div class="card-title">Quiz Penghasil Saldo Dana</div><p class="card-desc">Penghasil Saldo Dana Terbaru Work</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="melolo" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">Melolo Drama Premium</div><p class="card-desc">Nonton Drama Premium Di Melolo</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="reelife" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">Reelife Drama Premium</div><p class="card-desc">Nonton Drama Premium Di Reelife</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="netflix" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-cloud-download-alt"></i></div>
+                        <div><div class="card-title">Aplikasi Netflix Premium</div><p class="card-desc">Download Aplikasi Netflix Premium Free</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tv" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-desktop"></i></div>
+                        <div><div class="card-title">Nonton TV Online</div><p class="card-desc">Nonton Sepak Bola, tv online secara gratis</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="getcontact" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-address-book"></i></div>
+                        <div><div class="card-title">Getcontact Premium</div><p class="card-desc">Cek Nama Yang Di Save Nomor Kita Sama Orang Lain</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="lacak-nomor" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-location"></i></div>
+                        <div><div class="card-title">Lacak Nomor Handpohone</div><p class="card-desc">Lacak Lokasi, Alamat melalui nomor handphone</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="hatunnel" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #3277a8"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">Download Aplikasi HA Tunnel MOD</div><p class="card-desc">Aplikasi HA Tunnel MOD New 2026 </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tlstunnel" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">Download Aplikasi TLS Tunnel MOD</div><p class="card-desc">Aplikasi TLS Tunnel MOD New 2026 </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="config" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-cogs"></i></div>
+                        <div><div class="card-title">Download All Config Update Terus</div><p class="card-desc">Confignya Selalu Update Terus Tiap Hari </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cekig" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fab fa-instagram"></i></div>
+                        <div><div class="card-title">Cek Akun Instgram</div><p class="card-desc">Cek Profile, Username, Pengikut, Mengikuti </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="sniff-config" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-file-code"></i></div>
+                        <div><div class="card-title">Sniff Config Hc, Ehi, Dark</div><p class="card-desc">Sniff Config Http Custom, Http Injector, Dark Tunnel </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                    </div>
+        <div id="noResults" class="text-center py-5 d-none"><h4 class="text-danger">ERROR 404: MODULE NOT FOUND</h4></div>
 
-        <!-- Penyedia yang benar-benar dipakai sistem, bukan sponsor. Izin dan
-             sertifikasinya milik penyedia masing-masing. -->
-        <section class="partners" id="mitra" aria-labelledby="partnersTitle">
-            <div class="partner-board">
-                <div class="partner-tile partner-head">
-                    <h2 id="partnersTitle">Mitra yang kami pakai</h2>
-                    <p>Pembayaran, pengiriman produk, dan perlindungan akun ditangani penyedia yang khusus di bidangnya.</p>
-                </div>
-                <figure class="partner-tile">
-                    <img src="assets/images/partners/midtrans.svg" alt="Midtrans" width="363" height="60" loading="lazy">
-                    <figcaption>Payment gateway berizin Bank Indonesia, standar keamanan PCI DSS.</figcaption>
-                </figure>
-                <figure class="partner-tile">
-                    <img src="assets/images/partners/qris.png" alt="QRIS" width="1141" height="195" loading="lazy">
-                    <figcaption>Bayar dari e-wallet atau m-banking apa pun yang mendukung QRIS.</figcaption>
-                </figure>
-                <figure class="partner-tile">
-                    <img src="assets/images/partners/digiflazz.png" alt="Digiflazz" width="1183" height="380" loading="lazy">
-                    <figcaption>Pulsa, kuota, voucher game, dan token PLN dikirim lewat jaringan Digiflazz.</figcaption>
-                </figure>
-                <figure class="partner-tile">
-                    <img src="assets/images/partners/cloudflare.png" alt="Cloudflare" width="512" height="173" loading="lazy">
-                    <figcaption>Turnstile memeriksa pendaftaran dan login yang berkali-kali gagal supaya tidak diserang bot.</figcaption>
-                </figure>
-            </div>
-            <p class="partner-note">Logo dan merek di atas milik pemiliknya masing-masing dan ditampilkan sebagai penyedia layanan yang kami gunakan.</p>
-        </section>
+        <div class="mt-5">
+             <div class="text-center small text-success mb-2">>> BOTTOM_SPONSOR_SLOT <<</div>
+             <div class="ad-box-fixed">
+                 <ins class="adsbygoogle"
+                      style="display:block"
+                      data-ad-client="ca-pub-7112769875269380"
+                      data-ad-slot="6560918199"
+                      data-ad-format="auto"
+                      data-full-width-responsive="true"></ins>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+             </div>
+        </div>
 
-        <!-- Ucapan pelanggan yang sudah ada di halaman lama, ditampilkan seperti
-             komentar di aplikasi. -->
-        <section class="voices" aria-labelledby="voicesTitle">
-            <h2 class="quiet-heading" id="voicesTitle">Kata pelanggan</h2>
-            <article class="comment comment-lead" data-ui>
-                <header class="comment-head">
-                    <span class="comment-disc" aria-hidden="true">PA</span>
-                    <span class="comment-who"><strong>Putri Angraeni</strong> Pelanggan setia</span>
-                </header>
-                <p class="comment-body">Proses cepat, harga murah, recommended banget buat top up game.</p>
-            </article>
-            <div class="comment-replies">
-                <article class="comment" data-ui>
-                    <header class="comment-head">
-                        <span class="comment-disc" aria-hidden="true">AO</span>
-                        <span class="comment-who"><strong>Arefan Asbi Oni</strong> Pengguna baru</span>
-                    </header>
-                    <p class="comment-body">Pertama kali pakai langsung puas. Transaksi masuk dan customer service responsif.</p>
-                </article>
-                <article class="comment" data-ui>
-                    <header class="comment-head">
-                        <span class="comment-disc" aria-hidden="true">AR</span>
-                        <span class="comment-who"><strong>Abifemi Reyhan</strong> Gamer</span>
-                    </header>
-                    <p class="comment-body">Pilihan produknya banyak. Top up diamond dan beli kuota jadi lebih praktis.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Pertanyaan di kiri, satu jawaban besar di kanan. Tanpa JS, setiap
-             jawaban tampil di bawah pertanyaannya. -->
-        <section class="faq" id="tanya" aria-labelledby="faqTitle">
-            <div class="faq-list">
-                <h2 class="quiet-heading" id="faqTitle">Tanya jawab</h2>
-                <ul id="faqItems">
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="true" aria-controls="faqA1">Berapa lama pesanan diproses?</button>
-                        <div class="faq-a" id="faqA1"><p>Begitu pembayaran masuk, pesanan langsung dikirim ke operator, siang atau malam. Biasanya selesai dalam beberapa menit.</p></div>
-                    </li>
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA2">Bayarnya pakai apa?</button>
-                        <div class="faq-a" id="faqA2"><p>QRIS dari e-wallet atau m-banking apa pun. Bisa juga pakai saldo akun, yang diisi lewat QRIS juga.</p></div>
-                    </li>
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA3">Kalau pesanannya gagal?</button>
-                        <div class="faq-a" id="faqA3"><p>Sistem mencoba supplier lain untuk produk yang sama. Kalau semuanya gagal, uangnya kembali ke saldo akun dan bisa dipakai lagi.</p></div>
-                    </li>
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA4">Daftarnya bayar?</button>
-                        <div class="faq-a" id="faqA4"><p>Tidak. Cukup email dan password. Kode OTP dikirim ke email itu untuk memastikan email itu milikmu.</p></div>
-                    </li>
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA5">Bisa coba VPN dulu?</button>
-                        <div class="faq-a" id="faqA5"><p>Bisa. Pengguna terdaftar bisa mencoba akun VPN gratis selama satu jam setiap hari.</p></div>
-                    </li>
-                    <li class="faq-item" id="faqCutOffItem" hidden>
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA6">Ada jam tutupnya?</button>
-                        <div class="faq-a" id="faqA6"><p id="faqCutOffText">Ada jeda harian singkat untuk perawatan sistem.</p></div>
-                    </li>
-                    <li class="faq-item">
-                        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqA7">Kapan CS bisa dihubungi?</button>
-                        <div class="faq-a" id="faqA7"><p>Lewat WhatsApp 0895-2715-9281, pukul 08.00 sampai 22.00 WIB. Sebutkan kode pesanan kalau menanyakan transaksi.</p></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="faq-pane" id="faqPane" aria-hidden="true">
-                <p id="faqPaneText">Begitu pembayaran masuk, pesanan langsung dikirim ke operator, siang atau malam. Biasanya selesai dalam beberapa menit.</p>
-            </div>
-        </section>
-
-        <!-- Alamat usaha dan kontak. Peta tidak disematkan karena CSP tidak
-             membuka frame ke Google Maps; tautannya membuka aplikasi peta. -->
-        <section class="place" id="alamat" aria-labelledby="placeTitle">
-            <div class="place-address">
-                <h2 class="quiet-heading" id="placeTitle">Alamat usaha</h2>
-                <p class="place-street">Jl. Rancakendal Luhur</p>
-                <p class="place-area">Kec. Cimenyan, Kab. Bandung, Jawa Barat</p>
-                <a class="text-link" href="https://maps.app.goo.gl/97UWxV4NnRFiZTSi6" rel="noopener" target="_blank">Buka di Google Maps</a>
-            </div>
-            <dl class="place-contact">
-                <div>
-                    <dt>WhatsApp CS</dt>
-                    <dd><a href="https://wa.me/6289527159281" rel="noopener">0895-2715-9281</a><small>Pukul 08.00 sampai 22.00 WIB</small></dd>
-                </div>
-                <div>
-                    <dt>Email</dt>
-                    <dd><a href="mailto:support@1forcrkuota.com">support@1forcrkuota.com</a></dd>
-                </div>
-                <div>
-                    <dt>Pesanan</dt>
-                    <dd>Diproses otomatis, juga di luar jam CS<small>Kecuali saat jeda harian (cut off)</small></dd>
-                </div>
-            </dl>
-        </section>
     </main>
 
-    <footer class="foot">
-        <div class="foot-board">
-            <div class="tile tile-statement">
-                <p class="tile-statement-text">Pulsa, kuota, token PLN, top up game, dan akun VPN dalam satu akun.</p>
-                <p class="tile-legal">&copy; 2026 1FORCR KUOTA &middot; <a href="kebijakan-privasi.html">Kebijakan Privasi</a> &middot; <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a></p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="mb-3">
+                <a href="https://github.com/Inject-ID" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/config_geratis" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="https://youtube.com/@inject1d" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
-            <nav class="tile tile-nav" aria-label="Navigasi bawah">
-                <ul>
-                    <li><a href="#top">Cek harga</a></li>
-                    <li><a href="#harga">Daftar harga</a></li>
-                    <li><a href="#tanya">Tanya jawab</a></li>
-                    <li><a href="#alamat">Alamat</a></li>
-                    <li><a href="login.html">Masuk</a></li>
-                </ul>
-            </nav>
-            <div class="tile tile-mail">
-                <p>Butuh bantuan?</p>
-                <a class="tile-mail-link" href="mailto:support@1forcrkuota.com">support@1forcrkuota.com</a>
-                <a href="https://wa.me/6289527159281" rel="noopener">WhatsApp 0895-2715-9281</a>
-            </div>
-            <div class="tile tile-word">
-                <p class="foot-wordmark">1FORCR KUOTA</p>
-            </div>
-            <a class="tile tile-go" href="login.html?daftar=1">
-                <span>Daftar gratis</span>
-                <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
-                    <path d="M8 24h30M26 12l12 12-12 12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
+            <p class="mb-0">SYSTEM_ROOT © 2026 | INJECT_ID PROJECT</p>
         </div>
     </footer>
 
-    <script src="js/home.js?v=20261027-3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. LOGIKA POPUP (DYNAMIC INJECT) ---
+        function showAdModal() {
+            const modal = document.getElementById('adModal');
+            const container = document.getElementById('popupAdContainer');
+            
+            modal.style.display = "block";
+            
+            // Inject kode iklan HANYA SAAT modal muncul (agar refresh)
+            if(container.innerHTML.trim() === "") {
+                container.innerHTML = `
+                    <ins class="adsbygoogle"
+                         style="display:block; width:100%; height:250px;"
+                         data-ad-client="ca-pub-7112769875269380"
+                         data-ad-slot="6560918199"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                `;
+                // Push script
+                setTimeout(() => {
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                }, 100);
+            }
+        }
+        function closeAdModal() { document.getElementById('adModal').style.display = "none"; }
+        
+        // Tampilkan popup setelah 2.5 detik
+        window.onload = function() { setTimeout(showAdModal, 2500); };
+
+        // --- 2. FITUR LAINNYA ---
+        function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
+        
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('liveClock').textContent = now.toLocaleTimeString('id-ID', { hour12: false });
+            document.getElementById('liveDate').textContent = now.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+        }
+        setInterval(updateClock, 1000); updateClock();
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            let found = false;
+            document.querySelectorAll('.tool-item').forEach(item => {
+                if(item.innerText.toLowerCase().includes(term)) { item.classList.remove('d-none'); found = true; }
+                else { item.classList.add('d-none'); }
+            });
+            document.getElementById('noResults').classList.toggle('d-none', !found);
+        });
+
+        // Matrix Rain
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0"; ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                ctx.fillText(letters.charAt(Math.floor(Math.random() * letters.length)), i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 40);
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    </script>
+    <style>
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+    <script type='text/javascript'>
+    show_9539389({ type: 'inApp', inAppSettings: { frequency: 2, capping: 0.1, interval: 30, timeout: 5, everyPage: false } })
+    </script>
 </body>
 </html>

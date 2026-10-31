@@ -1,0 +1,113 @@
+{
+ "url": "https://www.gramedia.com/",
+ "origin": "https://accounts.gramedia.com",
+ "saved": 21,
+ "skipped": 297,
+ "scripts": [
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/webpack-946820a7c75db0c0.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_webpack-946820a7c75db0c0.js.js",
+   "bytes": 5408
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/6376c52c-7a85552d5d40e924.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_6376c52c-7a85552d5d40e924.js.js",
+   "bytes": 307
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/758-15ceb82b3149f989.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_758-15ceb82b3149f989.js.js",
+   "bytes": 6073
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/575-1193df9b23cf3f17.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_575-1193df9b23cf3f17.js.js",
+   "bytes": 11092
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/main-app-9e2b55a4bae41a22.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_main-app-9e2b55a4bae41a22.js.js",
+   "bytes": 518
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/7ff2e6c3-3eca97d2f1951730.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_7ff2e6c3-3eca97d2f1951730.js.js",
+   "bytes": 168412
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/305-b081782b3cf484f1.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_305-b081782b3cf484f1.js.js",
+   "bytes": 175003
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/113-e3389aeac18d7f96.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_113-e3389aeac18d7f96.js.js",
+   "bytes": 21727
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/545-ec47553a9fc01661.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_545-ec47553a9fc01661.js.js",
+   "bytes": 8989
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/app/layout-5e18f9dcda4c439a.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_app_layout-5e18f9dcda4c439a.js.js",
+   "bytes": 10909
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/956-0166a41c44837db8.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_956-0166a41c44837db8.js.js",
+   "bytes": 20282
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/2d1400c4-da94e8fb4a2116c9.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_2d1400c4-da94e8fb4a2116c9.js.js",
+   "bytes": 305833
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/285-f126a97b8927d614.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_285-f126a97b8927d614.js.js",
+   "bytes": 64563
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/215-7859ee10ff0dbd03.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_215-7859ee10ff0dbd03.js.js",
+   "bytes": 212849
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/455-49dad7c04fd4679b.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_455-49dad7c04fd4679b.js.js",
+   "bytes": 80932
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/186-5724d114af21a5de.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_186-5724d114af21a5de.js.js",
+   "bytes": 15092
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/app/oauth/authorize/page-944a24ed7a9206b0.js",
+   "file": "accounts.gramedia.com__gramedia.net_accounts-web__next_static_chunks_app_oauth_authorize_page-944a24ed7a9206b0.js.js",
+   "bytes": 10108
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/666-e1ba81a3ebbc9dd3.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_666-e1ba81a3ebbc9dd3.js.js",
+   "bytes": 775
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/905-ccc1be16056db275.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_905-ccc1be16056db275.js.js",
+   "bytes": 4306
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/app/login/page-28edffb6bdb71707.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_app_login_page-28edffb6bdb71707.js.js",
+   "bytes": 16440
+  },
+  {
+   "url": "https://static.gramedia.net/accounts-web/_next/static/chunks/581-626f63ea20a3bff2.js",
+   "file": "accounts.gramedia.com__static.gramedia.net_accounts-web__next_static_chunks_581-626f63ea20a3bff2.js.js",
+   "bytes": 80726
+  }
+ ]
+}

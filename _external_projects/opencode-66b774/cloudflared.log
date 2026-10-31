@@ -1,0 +1,226 @@
+2026-10-31T07:11:56Z INF Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
+2026-10-31T07:11:56Z INF Requesting new quick Tunnel on trycloudflare.com...
+2026-10-31T07:11:59Z INF +--------------------------------------------------------------------------------------------+
+2026-10-31T07:11:59Z INF |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
+2026-10-31T07:11:59Z INF |  https://wallpaper-titten-journals-tone.trycloudflare.com                                  |
+2026-10-31T07:11:59Z INF +--------------------------------------------------------------------------------------------+
+2026-10-31T07:11:59Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]
+2026-10-31T07:11:59Z INF Version 2026.10.7 (Checksum 1f99fb518b83dec2ba8d870a7cc991d82a77e6196295a3d2754ba17ab9f91872)
+2026-10-31T07:11:59Z INF GOOS: linux, GOVersion: go1.27.3, GoArch: amd64
+2026-10-31T07:11:59Z INF Settings: map[ha-connections:1 no-autoupdate:true protocol:quic url:http://127.0.0.1:8080]
+2026-10-31T07:11:59Z INF Generated Connector ID: a5ea5375-adda-4d31-824d-ba42a37fa106
+2026-10-31T07:11:59Z INF Initial protocol quic
+2026-10-31T07:11:59Z INF ICMP proxy will use 10.1.0.97 as source for IPv4
+2026-10-31T07:11:59Z INF ICMP proxy will use fe80::222:48ff:fec4:3f95 in zone eth0 as source for IPv6
+2026-10-31T07:11:59Z WRN The user running cloudflared process has a GID (group ID) that is not within ping_group_range. You might need to add that user to a group within that range, or instead update the range to encompass a group the user is already in by modifying /proc/sys/net/ipv4/ping_group_range. Otherwise cloudflared will not be able to ping this network error="Group ID 1001 is not between ping group 1 to 0"
+2026-10-31T07:11:59Z WRN ICMP proxy feature is disabled error="cannot create ICMPv4 proxy: Group ID 1001 is not between ping group 1 to 0 nor ICMPv6 proxy: socket: permission denied"
+2026/10/31 07:11:59 failed to sufficiently increase receive buffer size (was: 1024 kiB, wanted: 7168 kiB, got: 2048 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.
+2026-10-31T07:11:59Z INF ICMP proxy will use 10.1.0.97 as source for IPv4
+2026-10-31T07:11:59Z INF ICMP proxy will use fe80::222:48ff:fec4:3f95 in zone eth0 as source for IPv6
+2026-10-31T07:11:59Z INF Starting metrics server on 127.0.0.1:20242/metrics
+2026-10-31T07:11:59Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.192.27
+2026-10-31T07:11:59Z INF Registered tunnel connection connIndex=0 connection=f595b1dc-256b-423d-9a98-c41d14e9ebf2 event=0 ip=198.41.192.27 location=dfw16 protocol=quic
+2026-10-31T07:12:05Z INF +-------------------------------------------------------------------------------------+
+2026-10-31T07:12:05Z INF |                               CONNECTIVITY PRE-CHECKS                               |
+2026-10-31T07:12:05Z INF +-------------------------------------------------------------------------------------+
+2026-10-31T07:12:05Z INF |  COMPONENT         TARGET                     STATUS  DETAILS                       |
+2026-10-31T07:12:05Z INF |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-10-31T07:12:05Z INF |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully     |
+2026-10-31T07:12:05Z INF |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-10-31T07:12:05Z INF |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful    |
+2026-10-31T07:12:05Z INF |  TCP Connectivity  region1.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-10-31T07:12:05Z INF |  TCP Connectivity  region2.v2.argotunnel.com  PASS    HTTP/2 connection successful  |
+2026-10-31T07:12:05Z INF |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable              |
+2026-10-31T07:12:05Z INF |                                                                                     |
+2026-10-31T07:12:05Z INF |  SUMMARY: Environment is healthy. cloudflared will use 'quic' as primary protocol.  |
+2026-10-31T07:12:05Z INF +-------------------------------------------------------------------------------------+
+2026-10-31T07:12:05Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region1.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="DNS Resolution" details="DNS Resolved successfully" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region2.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region1.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="UDP Connectivity" details="QUIC connection successful" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region2.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region1.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=region2.v2.argotunnel.com
+2026-10-31T07:12:05Z INF precheck component="Cloudflare API" details="API is reachable" run_id=b98eefa9-c6a4-4470-b89a-b4749253799c status=pass target=api.cloudflare.com:443
+2026-10-31T07:12:05Z INF precheck complete hard_fail=false run_id=b98eefa9-c6a4-4470-b89a-b4749253799c suggested_protocol=quic
+2026-10-31T07:12:37Z ERR  error="stream 109 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:12:37Z ERR Request failed error="stream 109 canceled by remote with error code 0" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793430756473 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:13:43Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:13:43Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793430823571 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:18:37Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:18:37Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431116343 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:18:49Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:18:49Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431128243 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:11Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:11Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431209979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:11Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:11Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431211401 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:13Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:13Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431212479 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:13Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:13Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431212979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:14Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:14Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431213015 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:14Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:14Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431213479 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:14Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:14Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431213523 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:14Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:14Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431213979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:15Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:15Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431214722 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:15Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:15Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431214979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:16Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:16Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431215479 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:16Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:16Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431215834 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:16Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:16Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431216443 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:17Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:17Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431216979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:18Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:18Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431217530 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:18Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:18Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431217979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:18Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:18Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431218318 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431218507 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431218979 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431219232 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431219481 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:20Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:20Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431219662 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:20Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:20Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431220479 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:21Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:21Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431220634 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:20:59Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: EOF" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:20:59Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: EOF" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431259112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:00Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:00Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431260112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:01Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:01Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431261112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:18Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:18Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431277624 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:18Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:18Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431277810 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431279123 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:19Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431279312 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:21Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:21Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431281123 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:22Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:22Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431282623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:23Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:23Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431283125 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:23Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:23Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431283431 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431287623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431287907 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288123 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288149 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288189 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288423 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:29Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:29Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:29Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:29Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431288982 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:30Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:30Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431289623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:30Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:30Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431290287 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:31Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:31Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431290623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:31Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:31Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431290959 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:31Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:31Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431291123 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:31Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:31Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431291344 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:33Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:33Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431292198 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:33Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:33Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431292689 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:33Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:33Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431292974 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:33Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:33Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431293153 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:34Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:34Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294189 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:34Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:34Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294340 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:34Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:34Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294426 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:34Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:34Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294623 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:35Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:35Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294661 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:35Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:35Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431294720 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:21:46Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:21:46Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431306112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:22Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:22Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431342178 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:24Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:24Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431343894 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:26Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:26Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431345394 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:27Z ERR  error="stream 2577 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:27Z ERR Request failed error="stream 2577 canceled by remote with error code 0" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431346427 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:27Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:27Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431346894 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431348268 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:29Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:29Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431348894 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:55Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:55Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431375112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:22:56Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:22:56Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8080: connect: connection refused" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431376112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:15Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:15Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431394737 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:15Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:15Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431395142 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:22Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:22Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431401737 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:27Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:27Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431406737 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:31Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:31Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431411578 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:32Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:32Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431412553 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:33Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:33Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431413494 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:34Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:34Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431414579 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:35Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:35Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431414737 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:36Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:36Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431415737 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:23:39Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:23:39Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431419113 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:13Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:13Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431453112 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:28Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:28Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431468502 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:30Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:30Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431469502 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:30Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:30Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431469794 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:30Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:30Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431470502 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:41Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:41Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431480736 event=0 ip=198.41.192.27 type=http
+2026-10-31T07:24:51Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8080
+2026-10-31T07:24:51Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://wallpaper-titten-journals-tone.trycloudflare.com/screen.png?t=1793431491112 event=0 ip=198.41.192.27 type=http

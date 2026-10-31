@@ -1,0 +1,80 @@
+<div id="deface-banner">
+  <canvas id="df-matrix"></canvas>
+  <button class="restore" onclick="document.getElementById('deface-banner').style.display='none';document.body.classList.remove('defaced');">&times; RESTORE</button>
+  <div class="inner">
+<pre class="ascii">
+      .-"""--.
+     /        |   ___   _   _ ___ ___ ___
+     |.-----.  |  | __| /_\ | _ / __| __|
+     ||  |  |  |  | _| / _ \| _ \__ \ _||
+     |'-'|'-''  /  |___/_/ \_\___/___/___|
+  ___/  /V  \  \___
+ / _ \_/\__/_______\  S Y S T E M   C O M P R O M I S E D
+(_/ \   _________  \_)
+   \   |  _   _  |  /
+    \__| |_| |_| |_/
+</pre>
+    <h1 class="glitch">Hacked By <span class="hacker">N30-B0T</span></h1>
+    <p class="sub">dw.com/id &mdash; Berita Utama &bull; 31 Oktober 2026 &bull; akses root dicapai</p>
+    <div class="terminal" id="df-term"></div>
+  </div>
+  <div class="marquee"><span>*** WE ARE IN *** root@n30-b0t:~# cat /etc/shadow &mdash;&mdash; SQL injection + misconfigured nginx + default credentials &mdash;&mdash; patch your server, DW! &mdash;&mdash; gl &amp; hf &mdash;&mdash; 127.0.0.1 &rarr; 20.60.106.202 &mdash;&mdash;</span></div>
+</div>
+<script>
+(function () {
+  // 1. paksa title tetap "hacked" walau React hydration menimpa
+  var t = '\u26A0 HACKED BY N30-B0T \u26A0 \u2014 DW';
+  var setTitle = function () { if (document.title !== t) document.title = t; };
+  setTitle(); setInterval(setTitle, 400);
+
+  // 2. redupkan konten asli di belakang banner
+  document.body.classList.add('defaced');
+
+  // 3. hujan matrix di dalam banner
+  var cv = document.getElementById('df-matrix');
+  if (cv && cv.getContext) {
+    var ctx = cv.getContext('2d'), cols, drops, fs = 14;
+    var resize = function () {
+      cv.width = cv.offsetWidth; cv.height = cv.offsetHeight;
+      cols = Math.floor(cv.width / fs);
+      drops = Array(cols).fill(1).map(function () { return Math.random() * -100; });
+    };
+    resize(); window.addEventListener('resize', resize);
+    var chars = 'アイウエオカキクケコ0123456789ABCDEF<>/\\{}[]$#@%&';
+    setInterval(function () {
+      ctx.fillStyle = 'rgba(0,0,0,.08)'; ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.fillStyle = '#39ff14'; ctx.font = fs + 'px monospace';
+      for (var i = 0; i < cols; i++) {
+        ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * fs, drops[i] * fs);
+        if (drops[i] * fs > cv.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }, 60);
+  }
+
+  // 4. terminal yang mengetik sendiri
+  var term = document.getElementById('df-term');
+  var lines = [
+    '$ nmap -sV dw.com',
+    'PORT   STATE  SERVICE   VERSION',
+    '443/tcp open   https    nginx (outdated!)',
+    '$ curl -sk https://dw.com/id/ | grep "Built with"',
+    'got root shell...',
+    '$ id',
+    'uid=0(root) gid=0(root) groups=0(root)',
+    '$ echo "pwned" > /var/www/victory.txt',
+    '> connected from 127.0.0.1 as n30-b0t'
+  ];
+  var li = 0, ci = 0, txt = '';
+  (function type() {
+    if (li >= lines.length) {
+      term.innerHTML = txt + '<span class="cur">█</span>';
+      return;
+    }
+    if (ci < lines[li].length) { txt += lines[li][ci++]; }
+    else { txt += '\n'; li++; ci = 0; }
+    term.innerHTML = txt + '<span class="cur">█</span>';
+    setTimeout(type, 22);
+  })();
+})();
+</script>

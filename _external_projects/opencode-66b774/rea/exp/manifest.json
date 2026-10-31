@@ -1,0 +1,473 @@
+{
+  "capture_path": "/tmp/opencode/rea/cap-data.json",
+  "capture_sha256": "d0a2376507eeec737fe19276b7fc7e20078c66255b6d32e53dc0df3ca6c2f925",
+  "capture_kind": "page-inspection",
+  "source_evidence_id": "ev_347bac03a1ef469a596dd136f659d99aefeb726b30a8d1f1f8efb8c214d1fba5",
+  "capture_completeness": {
+    "status": "policy_filtered",
+    "conditions": [
+      "attach_limited",
+      "policy_filtered"
+    ],
+    "policy_filtered_sections": [
+      "accessibility",
+      "console_events",
+      "console_text",
+      "json_body_shapes",
+      "metadata",
+      "resources",
+      "scripts",
+      "storage_keys",
+      "websocket_shapes"
+    ],
+    "attach_limited_sections": [
+      "console_events",
+      "metadata",
+      "network_requests",
+      "websocket_connections",
+      "websocket_frames",
+      "workers"
+    ],
+    "truncated_sections": [],
+    "unavailable_sections": [],
+    "excluded": [
+      {
+        "section": "accessibility",
+        "reason": "not_approved",
+        "count": 731
+      },
+      {
+        "section": "console_events",
+        "reason": "disallowed_origin",
+        "count": 5
+      },
+      {
+        "section": "console_text",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "json_body_shapes",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "metadata",
+        "reason": "disallowed_origin",
+        "count": 268
+      },
+      {
+        "section": "resources",
+        "reason": "disallowed_origin",
+        "count": 102
+      },
+      {
+        "section": "resources",
+        "reason": "unsupported_url",
+        "count": 1
+      },
+      {
+        "section": "scripts",
+        "reason": "disallowed_origin",
+        "count": 65
+      },
+      {
+        "section": "scripts",
+        "reason": "unattributed_origin",
+        "count": 6
+      },
+      {
+        "section": "storage_keys",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "websocket_shapes",
+        "reason": "not_approved",
+        "count": null
+      }
+    ],
+    "dropped_events": {
+      "scripts": 0,
+      "network_requests": 0,
+      "console_events": 0,
+      "websocket_connections": 0,
+      "websocket_frames": 0,
+      "webmcp_tools": 0,
+      "timeline_events": 0,
+      "total": 0
+    }
+  },
+  "output_directory": "/tmp/opencode/rea/exp",
+  "analysis_input": {
+    "input_path": "/tmp/opencode/rea/exp/files",
+    "format": "directory"
+  },
+  "scripts": [
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_03b2d3a91b7b29b5b8a24730ca718d6552749ecf29c44edcd38adc4c5825faef",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-1-80778f0f9a9d5d8b6631a977f4c6cd78246da989552a1e2ce0c9c9730dd58d82.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "4d762388b102baa45c3f003d36af61e9eab090e7bc7e3c3a3ae8828d9ae10f90",
+        "bytes": 3033,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_142bca7a1a725947378ad57705390faa49ddc86596b615de33b402416334c6f5",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-2-63f5aafada8901aa15caeeffc7f95748f5c7d164bba7aa95c7c11cf289f7bf82.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "36c4535425461a382277f21f807d14736d0f5a048e54bb9f1cb312328529177f",
+        "bytes": 342,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_217099e7d307c05edc5ec42145a999504e22c3c9773672c66fa7bf1b8b59f441",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-3-6d8964e61ed1489e647d971fb8869d263d4a35f20787fff6ad1995bf10c47428.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "c49bb64f3c1bd538e6a12255df022f768dacd784fe9540a515d6f8ee91c4fd7b",
+        "bytes": 599,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3101bad64b6bfd152a74321c6020f13512abcb50209afd21455bf294bbe11866",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-4-2f01f7fb1b5b5c4db7cf73493ba5dd47e342ade972541f4651664766b68676f0.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "1b0173df6a827f41ab58524f10f94457d29c54ca375f062e569e38615b0d0c00",
+        "bytes": 1010,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_32a351688b3dbb6274f8982794243bee2da724cc84e5632d6aa927b548d1a126",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-5-62e34bb55542b2b86079ab29289545f748c02f6ce071911c351ce8619a91f9ea.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "41fd5d282dfb6f5c33f74abef174cca3337276cf4360c278d20387b6efb6dbfe",
+        "bytes": 3627,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_333b8521141f5a5c244bbd00fa8bc0280f221d660c78f67bf5f8cd4b00a662c6",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-6-bbdc0362256a8e03c0201466c936028d19de6d10ade978ff43d184a43092217e.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "fda40c613c1cef34aa65449b7de5ede08002ed3d46cd67187aa24806ced83765",
+        "bytes": 1720,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3e257b445ed8c880da6257e92e18190e1db018a534cf73b55cba1bd14e71de07",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-7-a1418abce593d105c77ad51f75f06f869511fc565f688a359ed31232b7d8232f.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "3b4d3de8f0596921514dd2e953ceba6c27bad827399f0d6401ee59fc3c8d9ace",
+        "bytes": 335,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6cadd3347b9574a141c451b22584897bdc31cbf514600784e81a33daeef4aad2",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-8-08246eaa36ed3fcf1d0f7719fe9087059fa0db1ed862d1d6ba3990ac80745501.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "1b41b0f103b751f4622275d9eff1e407d7e8e5b46ea0895b2069ff0ee4e47f8c",
+        "bytes": 1343,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_7fe8642fa32a29e1aa819cb45e0075c4d271c49e0c05df7ffc46eae9fda0be1d",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-9-5521edbd4b8d2ab8d23593260fa115b7d74cf3601d18cc7b6e8a1179884cd294.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "9a37601d1f5a5f2fba3b000694d4bf5e035c606d5485dd94e2997cbe2efe5c26",
+        "bytes": 181,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_93922e042870a26f1b8abd4303d807b0596ab0a884c80639e4f48e0c76f28a45",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-10-94e42c9516a89f40883366de5f5bc739cd04bc49fa7a89646dcfac6ff6807353.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "3bf6004403fc9320c7833e52a635d795dbb5ddffa0854b473d130be22321f975",
+        "bytes": 848,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_ade5d6acef9f0e3676d09e12d5c7ec1dc81959eea53486fca6b574c39ae62819",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-11-5fd0907a5271e09ba82efd8392194f1120232b21dd7dc621cd613694042af7d3.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "4fd7df5cd35bb6d0afa6b6242b85df85d07eb63a939d1c06c0b25b29ac55e53a",
+        "bytes": 676,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bde8d2d677c6124b645b0bb1a209072325db0eadc3299eb1726a97ac8190932a",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-12-0a0e9aec35514b7280d6c4e166fa75592b83286aa51384a6c6a5baccb4f9d5f5.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "f88314a62077f8ae097a229519669156e2a3659817540628f4575f65f7a521c4",
+        "bytes": 220,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bf078eea384d7c5ac0d6a79bd61dff218da45d3d1c3bf7ae5c2c93ea8843a3da",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-13-ac38b66ccac39da15ed5fdc270cd0bffd268e5a37937fc5ebdbba28644cc7d4a.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "d7337b592ed8c32715497bb26733bf66f19766584ebfe28abad5bc8696cf2815",
+        "bytes": 904,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_c33493e81a2532bccc790c927f8afcef0d1c033df048cabc65e1c08e526ff680",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-14-d161619e982ae406907be058991861448693130506a74b36b4437d76f7d3db7d.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "df64b98c0f93b583821f543b2bafbcaf7b0b5358e45031f213f0de73250a033d",
+        "bytes": 2536,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_cf80eacea5a76a77e18033cc50c198b1544ad77a71d21d567a5e61adba790574",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-15-ae8a3cf9c07b9b5cf5c620bb2929ad3ab81bd299b307e47c35687aa0d395b496.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "db528e9d56d187b440c58f6d99c6d2529acba99f55321e4e044a3370ce50a5d4",
+        "bytes": 229,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_de30712024e41c511e96322ea8941ad955ce3cf8fd76361bbf28fc90e07057d2",
+        "frame_id": "82EDDF5E2AF008117D34210A63CB1DED",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://www.doku.com/",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-16-25e2eb565693fb41de35bc38498796391672f48227b37b248e13d775fa00423b.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "4a83493b2b447085396860a8d06f95825d6c06e8b8e6784b57b6cd115f55e32e",
+        "bytes": 90,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    }
+  ],
+  "limitations": [
+    "Observation starts when REA attaches; prior network and console activity is unavailable.",
+    "Worker targets are a final inventory snapshot, not worker-session observation. Their attached flag describes any debugging client; this page-session collector does not observe worker network, console, or script events, and short-lived workers may be absent from the snapshot.",
+    "Raw network headers, bodies, cookies, storage values, console objects, and WebSocket payloads are never retained; explicitly requested primitive console text is retained verbatim, while payload captures retain value-free shapes.",
+    "Source maps are reported only as declarative URLs and are not fetched.",
+    "URL-less scripts and console events without an allowed source URL are excluded because their origin cannot be proven.",
+    "CDP discovery omitted the target attachment state; attached is reported as unknown.",
+    "Only script bytes retained in this capture are exported. Sources are not refetched or executed, and a response or Debugger source does not prove execution.",
+    "Ordinary unambiguous URL paths preserve relative module layouts by origin, including case-distinct spellings. Query variants, exact path collisions, file/directory prefixes, inline sources, and unrepresentable paths are isolated. A case-distinct pair is isolated only when the destination filesystem cannot store both spellings; the record names that pair. Browser module relationships of isolated paths remain unknown.",
+    "Local JavaScript analysis does not implement browser import maps, root-relative URL resolution, remote URL loading, or browser runtime behavior. It may strip import queries and fragments; isolated variants are not canonical targets.",
+    "Source-map declarations are retained as metadata. No source maps or missing dependencies are fetched or reconstructed.",
+    "Scenario response bytes preserve the output of Playwright's Response.body() API; any source-body provenance caveat from the capture is retained in this manifest. Debugger sources are the exposed text encoded as UTF-8. Redacted bytes are exported exactly as retained, and may no longer parse as JavaScript."
+  ]
+}

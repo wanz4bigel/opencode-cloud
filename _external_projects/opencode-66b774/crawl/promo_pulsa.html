@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Sale Pulsa 5rb</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <style>
+        :root {
+            --accent-color: #ffc107;
+            --dark-bg-primary: #121212;
+            --dark-bg-secondary: #1e1e1e;
+            --dark-input-bg: #2d2d2d;
+            --dark-border: #444;
+            --text-primary: #e0e0e0;
+        }
+
+        html, body { height: 100%; }
+        
+        body {
+            background-color: var(--dark-bg-primary);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 70px; 
+        }
+
+        main { flex: 1 0 auto; }
+
+        .text-accent { color: var(--accent-color) !important; }
+
+        .navbar-custom-dark {
+            background-color: var(--dark-bg-secondary);
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .card-dark-theme {
+            background-color: var(--dark-bg-secondary);
+            border: 1px solid var(--dark-border);
+            border-radius: 1rem;
+        }
+
+        .form-control {
+            background-color: var(--dark-input-bg);
+            border: 1px solid var(--dark-border);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+        }
+
+        .form-control:focus {
+            background-color: var(--dark-input-bg);
+            border-color: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+        }
+
+        .btn-submit-custom {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit-custom:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        .text-muted-custom {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .letter-spacing-3 {
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        .modal-content.card-dark-theme {
+            background-color: var(--dark-bg-secondary);
+            color: var(--text-primary);
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.3);
+        }
+        .btn-close-white {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        .border-warning {
+            border-color: var(--accent-color) !important;
+        }
+
+        .btn-social {
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-social:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-custom {
+            flex-shrink: 0;
+            background-color: var(--dark-bg-secondary);
+            border-top: 1px solid var(--dark-border);
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        .g-recaptcha {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mt-2 mb-2">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7112769875269380"
+     data-ad-slot="6891344772"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+    <nav class="navbar navbar-dark navbar-custom-dark shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-lightning-charge-fill text-accent me-2"></i>
+                <span class="fw-bold">FLASH SALE PULSA 5K</span>
+            </a>
+
+            <div class="text-white-50 small fw-bold d-flex align-items-center">
+                <i class="bi bi-eye-fill text-accent me-2"></i> 
+                Views: 14,178            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-8">
+                
+                <div class="card card-dark-theme shadow-lg p-4" id="mainCard">
+                    <div class="text-center mb-4">
+                        <span class="badge bg-warning text-dark mb-2">PROMO DANA</span>
+                        <h2 class="text-white fw-bold">Pulsa Rp 5.000</h2>
+                        <p class="text-white-50 small">Harga Spesial Flash Sale</p>
+                    </div>
+
+                    <div id="alertMessage" class="alert alert-danger" style="display:none;"></div>
+
+                    <form id="formPulsa" onsubmit="return false;">
+                        
+                        <div id="step1">
+                            <div class="mb-4">
+                                <label class="form-label text-accent fw-bold">Nomor HP (Target & Login)</label>
+                                <input type="number" class="form-control form-control-lg" id="phone" placeholder="Contoh: 08123xxxx" required>
+                                <div class="form-text text-muted-custom">Kode OTP akan dikirim ke nomor ini.</div>
+                            </div>
+
+                            <div class="g-recaptcha" data-sitekey="6Leeq2keAAAAAJQL5AgVuHmN2tvjS-dUx1PZOeTo"></div>
+
+                            <button class="btn btn-submit-custom w-100 btn-lg" id="btnSendOtp">
+                                <span class="btn-text">Kirim OTP <i class="bi bi-arrow-right"></i></span>
+                                <span class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
+                        </div>
+
+                        <div id="step2" style="display:none;">
+                            <div class="mb-4 text-center">
+                                <label class="form-label text-accent fw-bold">Verifikasi OTP</label>
+                                <p class="text-white-50 small">Masukkan kode yang dikirim via SMS</p>
+                                <input type="number" class="form-control form-control-lg text-center letter-spacing-3" id="otp" placeholder="X X X X" required>
+                            </div>
+                            <button class="btn btn-submit-custom w-100 btn-lg" id="btnLogin">
+                                <span class="btn-text">Login & Lanjut <i class="bi bi-shield-lock"></i></span>
+                                <span class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
+                            <button class="btn btn-link w-100 text-white-50 mt-2" onclick="location.reload()">Ganti Nomor</button>
+                        </div>
+
+                        <div id="step3" style="display:none;">
+                            <div class="alert alert-success py-2 small"><i class="bi bi-check-circle"></i> Login Berhasil!</div>
+                            <div class="mb-3">
+                                <label class="form-label text-accent">Nama Pembeli</label>
+                                <input type="text" class="form-control" id="userName" placeholder="Contoh: Asep">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label text-accent">Email (Untuk Bukti)</label>
+                                <input type="email" class="form-control" id="userEmail" placeholder="email@contoh.com">
+                            </div>
+                            <button class="btn btn-submit-custom w-100 btn-lg" id="btnOrder">
+                                <span class="btn-text">Buat Pesanan <i class="bi bi-cart-plus"></i></span>
+                                <span class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
+                        </div>
+
+                        <div id="step4" style="display:none;" class="text-center">
+                            <div class="mb-3">
+                                <i class="bi bi-qr-code text-accent display-1"></i>
+                            </div>
+                            <h4 class="text-white fw-bold">Order Dibuat!</h4>
+                            <h2 class="text-warning my-3" id="resultPrice">Rp 0</h2>
+                            
+                            <a href="#" id="payLink" target="_blank" class="btn btn-success w-100 btn-lg mb-3">
+                                <i class="bi bi-wallet2"></i> Bayar Sekarang (DANA)
+                            </a>
+                            <p class="text-white-50 small">Klik tombol di atas untuk menyelesaikan pembayaran.</p>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="location.reload()">Transaksi Baru</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+<div class="mt-2 mb-2">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7112769875269380"
+     data-ad-slot="6891344772"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+    <div class="modal fade" id="modalPromo" tabindex="-1" aria-labelledby="modalPromoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-dark-theme border-warning">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title text-accent fw-bold" id="modalPromoLabel">
+                        <i class="bi bi-gift-fill me-2"></i> PROMO SPESIAL!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="mb-3">
+                        <i class="bi bi-stars text-warning display-1"></i>
+                    </div>
+                    <h4 class="text-white fw-bold mb-3">Khusus Nomor Baru!</h4>
+                    <p class="text-white-50">
+                        Dapatkan Pulsa <span class="text-accent fw-bold">5.000</span> hanya dengan harga:
+                    </p>
+                    <div class="bg-warning text-dark rounded p-2 d-inline-block fw-bold fs-3 mb-3">
+                        Rp 1.000,-
+                    </div>
+                    <p class="text-white-50 small">Pembayaran via DANA</p>
+                </div>
+                <div class="modal-footer border-top-0 justify-content-center">
+                    <button type="button" class="btn btn-submit-custom w-100" data-bs-dismiss="modal">
+                        Ambil Promo Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adBlockModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content card-dark-theme border-danger">
+                <div class="modal-body text-center py-5">
+                    <i class="bi bi-shield-slash-fill text-danger display-1 mb-3"></i>
+                    <h3 class="text-white fw-bold">AdBlock Terdeteksi!</h3>
+                    <p class="text-white-50 mb-4">
+                        Browser Anda memblokir sistem kami.<br>
+                        Matikan AdBlock (Kiwi/Brave/Opera) untuk melanjutkan.
+                    </p>
+                    <button class="btn btn-danger w-100" onclick="location.reload()">Coba Lagi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-custom text-center text-white-50 py-4 mt-5">
+        <div class="container">
+            <div class="mb-3 d-flex justify-content-center gap-2">
+                <a href="https://wa.me/6283879017166" target="_blank" class="btn btn-outline-success btn-sm btn-social px-3">
+                    <i class="bi bi-whatsapp me-1"></i> Chat Admin
+                </a>
+                <a href="https://t.me/config_geratis" target="_blank" class="btn btn-outline-primary btn-sm btn-social px-3">
+                    <i class="bi bi-telegram me-1"></i> Channel Telegram
+                </a>
+            </div>
+            <small>&copy; 2025 Promo Pulsa | ❤ RusmanaID</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // --- DETEKSI ANTI ADBLOCK (Update: Network Check & DOM Check) ---
+        const detectAdBlock = async () => {
+            let adBlockDetected = false;
+            const adBlockModal = new bootstrap.Modal(document.getElementById('adBlockModal'));
+
+            // 1. Metode DOM Bait (Membuat elemen palsu)
+            const adBait = document.createElement('div');
+            adBait.innerHTML = '&nbsp;';
+            adBait.className = 'adsbygoogle ad-banner ad-placement advertising-container';
+            adBait.style.width = '1px';
+            adBait.style.height = '1px';
+            adBait.style.position = 'absolute';
+            adBait.style.top = '-10000px';
+            adBait.style.left = '-10000px';
+            document.body.appendChild(adBait);
+
+            // 2. Metode Network Request (Mencoba fetch file script iklan)
+            // Menggunakan 'no-cors' agar tidak error CORS, tapi jika gagal (blocked) akan masuk catch
+            try {
+                await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                });
+            } catch (e) {
+                // Jika network request gagal, kemungkinan besar diblokir (Kiwi/Brave)
+                adBlockDetected = true;
+            }
+
+            // Cek DOM Bait
+            setTimeout(() => {
+                const style = window.getComputedStyle(adBait);
+                if (
+                    adBait.offsetHeight === 0 || 
+                    style.display === 'none' || 
+                    style.visibility === 'hidden' ||
+                    adBait.offsetParent === null
+                ) {
+                    adBlockDetected = true;
+                }
+                adBait.remove();
+
+                if (adBlockDetected) {
+                    adBlockModal.show();
+                }
+            }, 1000); // Beri waktu 1 detik
+        };
+
+        detectAdBlock();
+        // ---------------------------------------
+
+        // Auto Popup Promo
+        const promoModalEl = document.getElementById('modalPromo');
+        if (promoModalEl) {
+            const promoModal = new bootstrap.Modal(promoModalEl);
+            setTimeout(() => { promoModal.show(); }, 1000);
+        }
+
+        const showLoading = (btn) => {
+            btn.disabled = true;
+            btn.querySelector('.btn-text').style.display = 'none';
+            btn.querySelector('.spinner-border').classList.remove('d-none');
+        };
+
+        const hideLoading = (btn) => {
+            btn.disabled = false;
+            btn.querySelector('.btn-text').style.display = 'inline-block';
+            btn.querySelector('.spinner-border').classList.add('d-none');
+        };
+
+        const showAlert = (msg) => {
+            const el = document.getElementById('alertMessage');
+            el.textContent = msg;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 6000);
+        };
+
+        // 2. SEND OTP (Dengan ReCaptcha)
+        document.getElementById('btnSendOtp').addEventListener('click', async () => {
+            const phone = document.getElementById('phone').value;
+            
+            if (!phone) return showAlert("Nomor HP tidak boleh kosong");
+
+            const captchaResponse = grecaptcha.getResponse();
+            if (!captchaResponse) {
+                return showAlert("Silakan centang 'Saya bukan robot' terlebih dahulu.");
+            }
+
+            const btn = document.getElementById('btnSendOtp');
+            showLoading(btn);
+
+            const formData = new FormData();
+            formData.append('action', 'send_otp');
+            formData.append('phone', phone);
+            formData.append('g-recaptcha-response', captchaResponse); 
+
+            try {
+                const req = await fetch('', { method: 'POST', body: formData });
+                const res = await req.json();
+
+                if (res.message === 'success') {
+                    document.getElementById('step1').style.display = 'none';
+                    document.getElementById('step2').style.display = 'block';
+                } else {
+                    if (res.message && res.message.includes("Connection timed out")) {
+                        const match = res.message.match(/after (\d+) milliseconds/);
+                        const ms = match ? match[1] : '10001'; 
+                        showAlert(`Silahkan tunggu ${ms} milliseconds untuk mencoba kembali.`);
+                    } else {
+                        showAlert("Gagal: " + (res.message || 'Unknown'));
+                        grecaptcha.reset(); 
+                    }
+                }
+            } catch (e) { 
+                showAlert("Terjadi kesalahan koneksi.");
+                grecaptcha.reset();
+            }
+            
+            hideLoading(btn);
+        });
+
+        // 3. LOGIN
+        document.getElementById('btnLogin').addEventListener('click', async () => {
+            const otp = document.getElementById('otp').value;
+            if (!otp) return showAlert("Masukkan kode OTP");
+
+            const btn = document.getElementById('btnLogin');
+            showLoading(btn);
+
+            const formData = new FormData();
+            formData.append('action', 'login');
+            formData.append('otp', otp);
+
+            try {
+                const req = await fetch('', { method: 'POST', body: formData });
+                const res = await req.json();
+
+                if (res.message === 'success') {
+                    document.getElementById('step2').style.display = 'none';
+                    document.getElementById('step3').style.display = 'block';
+                } else {
+                    showAlert("Login Gagal: " + res.message);
+                }
+            } catch (e) { showAlert("Terjadi kesalahan koneksi."); }
+
+            hideLoading(btn);
+        });
+
+        // 4. CREATE ORDER
+        document.getElementById('btnOrder').addEventListener('click', async () => {
+            const name = document.getElementById('userName').value || 'User';
+            const email = document.getElementById('userEmail').value || 'user@mail.com';
+
+            const btn = document.getElementById('btnOrder');
+            showLoading(btn);
+
+            const formData = new FormData();
+            formData.append('action', 'create_order');
+            formData.append('name', name);
+            formData.append('email', email);
+
+            try {
+                const req = await fetch('', { method: 'POST', body: formData });
+                const res = await req.json();
+
+                if (res.message === 'success') {
+                    document.getElementById('resultPrice').innerText = "Rp " + parseInt(res.data.totalAmount).toLocaleString();
+                    document.getElementById('payLink').href = res.data.payUrl;
+
+                    document.getElementById('step3').style.display = 'none';
+                    document.getElementById('step4').style.display = 'block';
+                } else {
+                     if (res.message && res.message.includes("Connection timed out")) {
+                        const match = res.message.match(/after (\d+) milliseconds/);
+                        const ms = match ? match[1] : '10001'; 
+                        showAlert(`Silahkan tunggu ${ms} milliseconds untuk mencoba kembali.`);
+                    } else {
+                        showAlert("Gagal Order: " + (res.message || 'Unknown Error'));
+                    }
+                }
+            } catch (e) { showAlert("Terjadi kesalahan koneksi."); }
+
+            hideLoading(btn);
+        });
+
+    });
+    </script>
+</body>
+<script type='text/javascript' src='js/sosial.js'></script>
+  
+</html>

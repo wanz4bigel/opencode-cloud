@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SSH STORE PRO - QuizCuan Style</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --gold: #ffd700;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f2f5;
+            background-image: radial-gradient(at 40% 20%, rgba(67, 97, 238, 0.05) 0px, transparent 50%);
+            padding-bottom: 120px; /* Jarak untuk menu melayang */
+            overflow-x: hidden;
+        }
+
+        /* Navbar Atas */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .brand-text {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
+        }
+
+        /* Container & Card */
+        .security-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 20px 50px rgba(67, 97, 238, 0.1);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Grid Negara */
+        .grid-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-btn:hover {
+            border-color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+            transform: translateY(-3px);
+        }
+        .flag-img {
+            width: 45px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        /* Server Card Premium */
+        .server-card {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 22px;
+            padding: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .server-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.1);
+        }
+        .server-badge {
+            font-size: 9px;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .badge-vip { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+        .badge-speed { background: #ecfdf5; color: #10b981; }
+
+        /* Scanning Animation */
+        .modern-loader {
+            width: 80px; height: 80px;
+            margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .pulse-ring {
+            position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 3px solid var(--primary);
+            animation: ringPulse 2s infinite ease-out;
+        }
+        @keyframes ringPulse { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }
+        .progress-fill { height: 8px; background: var(--primary); width: 0%; transition: width 2.5s linear; border-radius: 10px; }
+
+        /* BOTTOM NAV CENTERED */
+        .bottom-nav-container {
+            position: fixed; bottom: 20px; left: 0; width: 100%;
+            display: flex; justify-content: center; z-index: 9999;
+            pointer-events: none;
+        }
+        .bottom-nav-box {
+            pointer-events: auto; width: 92%; max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); border-radius: 30px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            display: flex; justify-content: space-around; align-items: center;
+            padding: 10px 15px; border: 1px solid rgba(255,255,255,0.8);
+        }
+        .nav-link-float { color: #94a3b8; font-size: 22px; text-decoration: none; padding: 10px; transition: 0.3s; }
+        .nav-link-float.active { color: var(--primary); }
+        .nav-mid-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px;
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
+            position: relative; top: -35px; border: 5px solid #f0f2f5; transition: 0.3s;
+        }
+        .nav-mid-btn:hover { transform: scale(1.1) rotate(15deg); color: #fff; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar-custom sticky-top animate__animated animate__fadeInDown">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div style="background: var(--primary); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+            <i class="fas fa-bolt" style="font-size: 16px;"></i>
+        </div>
+        <span class="brand-text">SSH STORE PRO</span>
+    </div>
+</nav>
+
+<div class="container mt-4">
+<style>
+    /* Top Bar Views */
+    .top-bar {
+        display: flex; justify-content: space-between; align-items: center;
+        background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+        padding: 10px 20px; border-radius: 15px; margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.8);
+    }
+    .view-badge {
+        background: #eef2ff; color: #4361ee; font-weight: 700; font-size: 12px;
+        padding: 5px 12px; border-radius: 20px; display: flex; align-items: center; gap: 5px;
+    }
+    .view-badge i { font-size: 14px; }
+    
+    /* Loading */
+    #loadingOverlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 10000; display: none;
+        flex-direction: column; align-items: center; justify-content: center;
+    }
+    .lds-ripple { display: inline-block; position: relative; width: 80px; height: 80px; }
+    .lds-ripple div { position: absolute; border: 4px solid #4361ee; opacity: 1; border-radius: 50%; animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite; }
+    .lds-ripple div:nth-child(2) { animation-delay: -0.5s; }
+    @keyframes lds-ripple {
+        0% { top: 36px; left: 36px; width: 0; height: 0; opacity: 0; }
+        4.9% { top: 36px; left: 36px; width: 0; height: 0; opacity: 0; }
+        5% { top: 36px; left: 36px; width: 0; height: 0; opacity: 1; }
+        100% { top: 0px; left: 0px; width: 72px; height: 72px; opacity: 0; }
+    }
+    .loading-text { margin-top: 20px; color: #4361ee; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+    
+    /* Form */
+    .captcha-container { display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; border-radius: 50px; padding: 5px; margin-bottom: 15px; }
+    #captchaImg { border-radius: 40px; cursor: pointer; height: 40px; }
+    .refresh-btn { background: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; color: #4361ee; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+    /* --- CSS IKLAN MELAYANG --- */
+    #floatingAd {
+        display: none; 
+        position: fixed; bottom: 85px; left: 50%; transform: translateX(-50%);
+        width: 95%; max-width: 400px;
+        z-index: 9998; text-align: center;
+        animation: slideUp 0.5s ease-out;
+    }
+    .sticky-ad-content {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        padding: 5px; border-radius: 10px;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+        position: relative;
+        min-height: 50px;
+        border: 1px solid #e2e8f0;
+    }
+    .ad-close-btn {
+        position: absolute; top: -12px; right: -10px;
+        background: #ef4444; color: white; border: none;
+        width: 24px; height: 24px; border-radius: 50%;
+        font-size: 12px; cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        display: flex; align-items: center; justify-content: center;
+        font-weight: bold;
+    }
+    @keyframes slideUp { from {bottom: -100px;} to {bottom: 85px;} }
+
+    /* --- CSS POPUP ANTI ADBLOCK --- */
+    #adblockModal {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(15px);
+        z-index: 99999; justify-content: center; align-items: center;
+        flex-direction: column; padding: 20px;
+    }
+    .adblock-box {
+        background: #fff; width: 100%; max-width: 350px;
+        border-radius: 20px; padding: 30px 20px; text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        animation: zoomIn 0.3s ease;
+    }
+    .adblock-icon {
+        width: 70px; height: 70px; background: #fee2e2; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 20px auto; color: #ef4444; font-size: 32px;
+    }
+    .adblock-title { font-weight: 800; font-size: 20px; color: #1e293b; margin-bottom: 10px; }
+    .adblock-desc { font-size: 14px; color: #64748b; margin-bottom: 25px; line-height: 1.5; }
+    .adblock-btn {
+        background: #4361ee; color: #fff; border: none; width: 100%;
+        padding: 12px; border-radius: 12px; font-weight: 700;
+        font-size: 14px; cursor: pointer; transition: 0.2s;
+    }
+    .adblock-btn:hover { background: #3a0ca3; }
+    @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+</style>
+
+<div id="adblockModal">
+    <div class="adblock-box">
+        <div class="adblock-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="adblock-title">AdBlock Terdeteksi!</div>
+        <div class="adblock-desc">
+            Website ini gratis 100% berkat iklan.<br>
+            Mohon <b>matikan AdBlock</b> Anda atau whitelist website ini untuk melanjutkan.
+        </div>
+        <button class="adblock-btn" onclick="location.reload()">SUDAH SAYA MATIKAN <i class="fas fa-sync-alt ms-2"></i></button>
+    </div>
+</div>
+
+<div id="loadingOverlay">
+    <div class="lds-ripple"><div></div><div></div></div>
+    <div class="loading-text" id="loadingStatus">MENGHUBUNGKAN...</div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+        <div class="top-bar animate__animated animate__fadeInDown">
+            <div class="fw-bold text-dark"><i class="fas fa-bolt text-warning me-2"></i>SSH STORE</div>
+            <div class="view-badge">
+                <i class="far fa-eye"></i> 6,686 Views
+            </div>
+        </div>
+        
+        <div class="mb-3 text-center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7112769875269380"
+                 data-ad-slot="6471363985"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div id="resultArea" style="display:none;" class="security-card animate__animated animate__fadeInDown bg-white border-primary border-2 mb-3">
+            <div class="text-center mb-3">
+                <div class="mb-2"><i class="fas fa-check-circle text-success fa-3x"></i></div>
+                <h4 class="fw-bold text-dark">Akun Berhasil Dibuat!</h4>
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3" id="resExpired"></span>
+            </div>
+            <div class="p-3 rounded-3 mb-3 text-start" style="background: #1e1e1e; color: #00ff00; font-family: 'Courier New', monospace; font-size: 11px; overflow-x: auto; border: 1px solid #333;">
+                <span id="resHtml"></span>
+            </div>
+            <div class="row g-2">
+                <div class="col-6"><button id="btnCopy" class="btn btn-primary w-100 rounded-pill fw-bold"><i class="fas fa-copy me-1"></i> SALIN</button></div>
+                <div class="col-6"><button onclick="location.reload()" class="btn btn-outline-secondary w-100 rounded-pill fw-bold"><i class="fas fa-redo me-1"></i> BUAT LAGI</button></div>
+            </div>
+        </div>
+
+        <div id="wizardArea" class="security-card animate__animated animate__fadeInUp">
+            <div id="step-negara">
+                <h6 class="text-center fw-bold text-muted mb-4 small text-uppercase">1. Pilih Lokasi</h6>
+                <div class="row g-3" id="countryList">
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-Japan-free-servers')">
+                            <img src="https://flagcdn.com/w160/jp.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">Japan</span>
+                        </div>
+                    </div>
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-Philippines-free-servers')">
+                            <img src="https://flagcdn.com/w160/ph.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">Philippines</span>
+                        </div>
+                    </div>
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-Singapore-free-servers')">
+                            <img src="https://flagcdn.com/w160/sg.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">Singapore</span>
+                        </div>
+                    </div>
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-Malaysia-free-servers')">
+                            <img src="https://flagcdn.com/w160/my.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">Malaysia</span>
+                        </div>
+                    </div>
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-India-free-servers')">
+                            <img src="https://flagcdn.com/w160/in.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">India</span>
+                        </div>
+                    </div>
+                                        <div class="col-6">
+                        <div class="grid-btn" onclick="pilihNegara(this, 'https://sshs8.com/SSH-Websocket-config-Australia-free-servers')">
+                            <img src="https://flagcdn.com/w160/au.png" class="flag-img">
+                            <span class="fw-bold small text-truncate w-100">Australia</span>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+            <div id="step-scanning" style="display:none;" class="text-center py-4">
+                <div class="modern-loader"><div class="pulse-ring"></div><i class="fas fa-search-location text-primary fa-2x"></i></div>
+                <h5 class="fw-bold mt-3">Scanning Server...</h5>
+            </div>
+            <div id="step-server" style="display:none;">
+                <h6 class="text-center fw-bold text-muted mb-4 small text-uppercase">2. Tersedia</h6>
+                <div id="serverList" class="row g-2"></div>
+            </div>
+            <div id="step-final" style="display:none;">
+                <h6 class="text-center fw-bold text-muted mb-4 small text-uppercase">3. Keamanan</h6>
+                <form id="createForm" onsubmit="handleCreate(event)">
+                    <input type="hidden" name="action" value="create_ssh">
+                    <input type="hidden" name="server_id" id="valId">
+                    <input type="hidden" name="server_name_display" id="valName">
+                    
+                    <div class="captcha-container">
+                        <img src="captcha.php" id="captchaImg" onclick="refreshCaptcha()" title="Klik untuk refresh">
+                        <button type="button" class="refresh-btn" onclick="refreshCaptcha()"><i class="fas fa-sync-alt"></i></button>
+                    </div>
+                    <input type="text" name="captcha_code" class="form-control text-center rounded-pill mb-3 py-3 shadow-sm" placeholder="MASUKKAN KODE GAMBAR" required autocomplete="off">
+                    
+                    <input type="password" name="password" class="form-control text-center rounded-pill mb-3 py-3 shadow-sm" placeholder="PASSWORD (MIN 6 DIGIT)" required minlength="6">
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill fw-bold py-3 shadow">BUAT AKUN</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center">
+             <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7112769875269380"
+                 data-ad-slot="6471363985"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-4 mb-3 px-2 animate__animated animate__fadeIn">
+            <div class="d-flex align-items-center">
+                <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-primary border border-light"><i class="fas fa-history fa-lg"></i></div>
+                <div><h6 class="fw-bold m-0 text-dark">Live History</h6><small class="text-muted" style="font-size: 10px;">6 Aktivitas Terakhir</small></div>
+            </div>
+            <div><span class="badge bg-danger bg-opacity-10 text-danger animate__animated animate__pulse animate__infinite infinite border border-danger">LIVE</span></div>
+        </div>
+
+        <div id="historyList">
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/jp.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Japan - Server 1</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u6543744285</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 26 Oct 21:14</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-30</small>
+                    </div>
+                </div>
+                            <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/sg.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Singapore - Server 17</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u5961519086</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 26 Oct 17:37</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-30</small>
+                    </div>
+                </div>
+                            <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/sg.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Singapore - Server 17</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u1069652483</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 26 Oct 17:20</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-30</small>
+                    </div>
+                </div>
+                            <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/sg.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Singapore - Server 17</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u4104093486</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 26 Oct 13:41</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-30</small>
+                    </div>
+                </div>
+                            <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/sg.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Singapore - Server 25</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u7203867688</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 26 Oct 00:53</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-29</small>
+                    </div>
+                </div>
+                            <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex align-items-center" style="width: 60%;">
+                            <img src="https://flagcdn.com/w160/sg.png" class="rounded-1 me-2 shadow-sm" style="width: 24px; height: 16px; object-fit: cover;">
+                            <span class="fw-bold text-dark small text-truncate w-100">Singapore - Server 25</span>
+                        </div>
+                        <div class="text-end" style="width: 40%;">
+                            <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-2 text-truncate" style="font-size: 10px; max-width: 100%;"><i class="fas fa-user me-1"></i> u2327151043</span>
+                        </div>
+                    </div>
+                    <hr class="my-1 border-light">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" style="font-size: 9px;">Create: 25 Oct 19:42</small>
+                        <small class="text-danger fw-bold" style="font-size: 9px;">Exp: 2026-10-29</small>
+                    </div>
+                </div>
+                            </div>
+
+    </div>
+</div>
+
+<div id="floatingAd">
+    <div class="sticky-ad-content" id="adContent">
+        <button class="ad-close-btn" onclick="document.getElementById('floatingAd').style.display='none'">X</button>
+        
+        <script type="text/javascript">
+            // Contoh Placeholder Adsterra (Ganti dengan kode asli kamu)
+            // atOptions = { 'key' : '...', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+            // document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.example.com/invoke.js"></scr' + 'ipt>');
+        </script>
+        </div>
+</div>
+
+<script>
+// --- LOGIKA ANTI ADBLOCK ---
+async function checkAdBlock() {
+    let isBlocked = false;
+    
+    // 1. Buat Umpan Iklan
+    const bait = document.createElement('div');
+    bait.innerHTML = '&nbsp;';
+    bait.className = 'adsbygoogle ad-banner advertising-container';
+    bait.style.position = 'absolute';
+    bait.style.top = '-999px';
+    bait.style.left = '-999px';
+    document.body.appendChild(bait);
+
+    // 2. Cek apakah Umpan Diblokir (Tingginya 0)
+    if (bait.offsetHeight === 0) {
+        isBlocked = true;
+    }
+    bait.remove();
+
+    // 3. Cek Jaringan (Opsional, lebih ketat)
+    try {
+        await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+            method: 'HEAD',
+            mode: 'no-cors'
+        });
+    } catch (e) {
+        isBlocked = true;
+    }
+
+    // Tampilkan Popup jika Terdeteksi
+    if (isBlocked) {
+        document.getElementById('adblockModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Kunci Scroll
+    }
+}
+
+// Jalankan Pengecekan setelah halaman dimuat
+window.addEventListener('load', function() {
+    setTimeout(checkAdBlock, 2000);
+});
+
+function refreshCaptcha() {
+    document.getElementById('captchaImg').src = 'captcha.php?' + new Date().getTime();
+}
+
+function pilihNegara(el, url) {
+    const flagSrc = el.querySelector('.flag-img').src;
+    document.getElementById('step-negara').style.display = 'none';
+    document.getElementById('step-scanning').style.display = 'block';
+    
+    fetch(`fetch_helper.php?url=${encodeURIComponent(url)}`)
+    .then(r => r.json())
+    .then(data => {
+        let html = '';
+        data.forEach(s => {
+            html += `<div class="col-6 mb-2"><div class="server-card p-3 border rounded-4 bg-white shadow-sm" onclick="pilihServer('${s.id}', '${s.name}')" style="cursor:pointer;"><div class="d-flex justify-content-between align-items-center mb-2"><img src="${flagSrc}" style="width:28px; height:18px; border-radius:3px; object-fit:cover;"><i class="fas fa-signal text-success" style="font-size:10px;"></i></div><span class="fw-bold small d-block text-truncate" style="font-size:10px;">${s.name}</span><div class="mt-2 pt-2 border-top d-flex justify-content-between"><span class="badge bg-success bg-opacity-10 text-success" style="font-size:8px;">VIP</span><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:8px;">1GBPS</span></div></div></div>`;
+        });
+        setTimeout(() => {
+            document.getElementById('serverList').innerHTML = html;
+            document.getElementById('step-scanning').style.display = 'none';
+            document.getElementById('step-server').style.display = 'block';
+        }, 1500);
+    });
+}
+
+function pilihServer(id, name) {
+    document.getElementById('valId').value = id;
+    document.getElementById('valName').value = name;
+    document.getElementById('step-server').style.display = 'none';
+    document.getElementById('step-final').style.display = 'block';
+    refreshCaptcha();
+}
+
+function handleCreate(e) {
+    e.preventDefault();
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    
+    fetch('index.php', { method: 'POST', body: new FormData(e.target) })
+    .then(r => r.json())
+    .then(res => {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        refreshCaptcha();
+
+        if (res.status === 'success') {
+            document.getElementById('wizardArea').style.display = 'none';
+            document.getElementById('resultArea').style.display = 'block';
+            document.getElementById('resExpired').innerText = "Exp: " + res.data.expired;
+            document.getElementById('resHtml').innerHTML = res.data.html;
+            document.getElementById('btnCopy').onclick = function() { copyToClipboard(res.data.raw); };
+        } else {
+            Swal.fire({ icon: 'error', title: 'Gagal', text: res.message });
+            document.querySelector('input[name="captcha_code"]').value = '';
+        }
+    })
+    .catch(() => {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        Swal.fire({ icon: 'error', title: 'Error', text: 'Koneksi error.' });
+    });
+}
+
+function copyToClipboard(text) {
+    let t = document.createElement("textarea"); t.value = text; t.style.position="fixed"; t.style.left="-9999px";
+    document.body.appendChild(t); t.focus(); t.select(); document.execCommand('copy'); document.body.removeChild(t);
+    Swal.fire({icon: 'success', title: 'Tersalin!', toast: true, position: 'top-end', showConfirmButton: false, timer: 1500});
+}
+
+window.onload = function() {
+    setTimeout(function() {
+        var adContainer = document.getElementById('floatingAd');
+        var adContent = document.getElementById('adContent');
+        if (adContent.clientHeight > 10) {
+            adContainer.style.display = 'block';
+        }
+    }, 3000); 
+};
+</script>
+
+<script src="js/sosial.js"></script>
+
+</div> <div class="bottom-nav-container animate__animated animate__slideInUp">
+    <div class="bottom-nav-box" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 400px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-radius: 30px; box-shadow: 0 15px 45px rgba(0,0,0,0.15); display: flex; justify-content: space-around; align-items: center; padding: 10px 15px; border: 1px solid rgba(255,255,255,0.8); z-index: 9999;">
+        <a href="index.php" class="nav-link-float active" style="color:#4361ee; font-size:22px;"><i class="fas fa-home"></i></a>
+        <a href="https://t.me/config_geratis" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-telegram-plane"></i></a>
+        
+        <div style="width: 60px; height: 30px; position: relative;">
+            <a href="#" onclick="location.reload()" style="background: linear-gradient(135deg, #4361ee, #3a0ca3); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; position: absolute; top: -45px; border: 5px solid #f0f2f5;"><i class="fas fa-sync-alt"></i></a>
+        </div>
+
+        <a href="https://wa.me/6283879017166" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@config_geratis" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+async function pilihNegara(el, url) {
+    const flagSrc = el.querySelector('.flag-img').src;
+    document.getElementById('step-negara').style.display = 'none';
+    document.getElementById('step-scanning').style.display = 'block';
+    setTimeout(() => { document.getElementById('progressFill').style.width = '100%'; }, 100);
+
+    try {
+        const response = await fetch(`fetch_helper.php?url=${encodeURIComponent(url)}`);
+        const data = await response.json();
+        let html = '';
+        data.forEach(s => {
+            html += `
+            <div class="col-6 mb-2">
+                <div class="server-card p-3 border rounded-4 bg-white shadow-sm" onclick="pilihServer('${s.id}', '${s.name}')" style="cursor:pointer;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="${flagSrc}" style="width:28px; height:18px; border-radius:3px; object-fit:cover;">
+                        <i class="fas fa-signal text-success" style="font-size:10px;"></i>
+                    </div>
+                    <span class="fw-bold small d-block text-truncate" style="font-size:10px;">${s.name}</span>
+                    <div class="mt-2 pt-2 border-top d-flex justify-content-between"><span class="badge bg-success bg-opacity-10 text-success" style="font-size:8px;">VIP</span><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:8px;">1GBPS</span></div>
+                </div>
+            </div>`;
+        });
+        setTimeout(() => {
+            document.getElementById('serverList').innerHTML = html;
+            document.getElementById('step-scanning').style.display = 'none';
+            document.getElementById('step-server').style.display = 'block';
+        }, 2800);
+    } catch (e) { location.reload(); }
+}
+
+function pilihServer(id, name) {
+    document.getElementById('valId').value = id;
+    document.getElementById('valName').value = name;
+    document.getElementById('step-server').style.display = 'none';
+    document.getElementById('step-final').style.display = 'block';
+}
+</script>
+</body>
+</html>

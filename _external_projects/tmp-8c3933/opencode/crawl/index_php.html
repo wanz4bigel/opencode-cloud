@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TOOLS INJECT_ID</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+
+    <style>
+        :root { --neon-green: #0f0; --neon-blue: #00f3ff; --neon-pink: #ff0055; --bg-black: #050505; }
+        body { background-color: var(--bg-black); color: var(--neon-green); font-family: 'Share Tech Mono', monospace; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+        #matrix-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.2; }
+        
+        /* Navigation */
+        .cyber-nav { background: rgba(0,0,0,0.9); border-bottom: 2px solid var(--neon-green); box-shadow: 0 0 15px rgba(0,255,0,0.2); backdrop-filter: blur(10px); padding: 15px 0; z-index: 1000; }
+        .navbar-brand { color: var(--neon-green) !important; text-shadow: 0 0 8px var(--neon-green); letter-spacing: 2px; font-size: 1.5rem; }
+        .menu-toggler { background: transparent; border: 1px solid var(--neon-green); color: var(--neon-green); padding: 5px 12px; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        
+        /* Sidebar */
+        .side-menu { height: 100%; width: 280px; position: fixed; z-index: 1050; top: 0; right: -280px; background: rgba(5, 5, 5, 0.95); border-left: 2px solid var(--neon-green); transition: 0.4s; padding-top: 60px; box-shadow: -5px 0 30px rgba(0,255,0,0.1); }
+        .side-menu.active { right: 0; }
+        .side-menu a { padding: 15px 25px; text-decoration: none; font-size: 1.2rem; color: #aaa; display: block; border-right: 4px solid transparent; transition: 0.3s; }
+        .side-menu a:hover { color: var(--neon-green); background: rgba(0,255,0,0.05); border-right-color: var(--neon-green); }
+        .close-btn { position: absolute; top: 15px; left: 20px; font-size: 1.5rem; color: white; cursor: pointer; }
+        .menu-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index: 1040; display: none; }
+        .menu-overlay.active { display: block; }
+
+        /* Components */
+        .glitch-text { font-size: 2.8rem; font-weight: bold; color: white; text-shadow: 2px 2px var(--neon-pink), -2px -2px var(--neon-blue); animation: glitch 2.5s infinite alternate-reverse; }
+        @keyframes glitch { 0% { text-shadow: 2px 2px var(--neon-pink); } 100% { text-shadow: -2px -2px var(--neon-blue); } }
+        .terminal-input { background: rgba(0,0,0,0.8); border: 1px solid var(--neon-green); color: var(--neon-green); padding: 12px 20px 12px 50px; width: 100%; border-radius: 5px; font-family: 'Share Tech Mono'; }
+        .prompt-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--neon-green); animation: blink 1s infinite; }
+        
+        /* HUD */
+        .hud-container { border: 1px solid var(--neon-blue); background: rgba(0, 10, 20, 0.8); margin-top: 20px; position: relative; box-shadow: 0 0 15px rgba(0, 243, 255, 0.1); }
+        .hud-item { padding: 15px; text-align: center; border-right: 1px solid rgba(0, 243, 255, 0.2); }
+        .hud-val { font-size: 1.2rem; font-weight: bold; color: white; }
+        .hud-clock { font-size: 1.4rem; color: var(--neon-green); text-shadow: 0 0 8px var(--neon-green); }
+
+        /* Cards */
+        .cyber-card { background: rgba(10, 20, 10, 0.6); backdrop-filter: blur(5px); border: 1px solid #333; padding: 20px; height: 100%; text-decoration: none; display: block; transition: 0.3s; }
+        .cyber-card:hover { transform: translateY(-5px); background: rgba(0, 30, 0, 0.8); border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); }
+        .tool-icon { font-size: 2rem; margin-bottom: 10px; }
+        .card-title { color: white; font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+        .card-desc { color: #aaa; font-size: 0.85rem; font-family: sans-serif; }
+
+        /* IKLAN CONTAINER (FIXED) */
+        .ad-box-fixed {
+            display: block;
+            width: 100%;
+            min-height: 280px; /* PENTING: Tinggi minimal agar slot tidak collapse */
+            background: rgba(0,0,0,0.5); /* Background gelap agar terlihat space-nya */
+            border: 1px dashed #333;
+            text-align: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        /* POPUP STYLING */
+        .cyber-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+        .cyber-modal-content { background-color: #000; margin: 5% auto; border: 1px solid var(--neon-green); width: 95%; max-width: 360px; box-shadow: 0 0 30px rgba(0, 255, 0, 0.3); animation: modalEntry 0.5s ease-out; }
+        .modal-body-cyber { padding: 10px; text-align: center; background: #050505; min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+        @keyframes modalEntry { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        footer { border-top: 1px solid #333; background: #020202; padding: 30px 0; color: #666; font-size: 0.9rem; }
+        .social-link { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #333; color: #888; border-radius: 50%; margin: 0 5px; text-decoration: none; transition: 0.3s; }
+        .social-link:hover { border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <div class="text-center mb-4"><h4 class="text-white fw-bold">MENU SYSTEM</h4><div class="small text-success">ACCESS GRANTED</div></div>
+        <a href="#"><i class="fas fa-home me-2"></i> Dashboard</a>
+        <a href="https://t.me/config_geratis"><i class="fab fa-telegram me-2"></i> Telegram Group</a>
+        <a href="https://github.com/Inject-ID"><i class="fab fa-github me-2"></i> Source Code</a>
+        <a href="https://youtube.com/@inject1d"><i class="fab fa-youtube me-2"></i> Youtube Channel</a>
+    </div>
+
+    <nav class="navbar cyber-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-terminal me-2"></i>INJECT_ID<span style="animation: blink 1s infinite">_</span></a>
+            <button class="menu-toggler" onclick="toggleMenu()"><i class="fas fa-bars"></i> MENU</button>
+        </div>
+    </nav>
+
+    <div id="adModal" class="cyber-modal">
+        <div class="cyber-modal-content">
+            <div style="background: rgba(0, 255, 0, 0.1); padding: 10px; border-bottom: 1px solid var(--neon-green); display: flex; justify-content: space-between;">
+                <span style="color: var(--neon-green); font-weight: bold;">> INCOMING_MSG...</span>
+                <span style="color: #fff; cursor: pointer;" onclick="closeAdModal()">[X]</span>
+            </div>
+            <div class="modal-body-cyber">
+                <div class="small text-secondary mb-2">SPONSORED CONTENT</div>
+                <div id="popupAdContainer" style="width:100%; min-height:250px; background:#111;"></div>
+            </div>
+            <div class="p-2 text-center border-top border-secondary">
+                <button class="btn btn-sm btn-outline-success rounded-0 w-100" onclick="closeAdModal()">[ CLOSE TRANSMISSION ]</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5 flex-grow-1">
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <p class="mb-1" style="color: var(--neon-blue); letter-spacing: 2px;">> SYSTEM_CONNECTED: <b>SELAMAT SORE</b></p>
+                <h1 class="glitch-text mb-3">CYBER TOOLS</h1>
+                <div style="position: relative; max-width: 600px; margin: 0 auto;">
+                    <span class="prompt-icon">></span>
+                    <input type="text" id="searchInput" class="terminal-input" placeholder="Ketik nama tools...">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10">
+                <div class="hud-container d-flex flex-wrap justify-content-center align-items-center">
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">IP ADDRESS</div><div class="hud-val">52.161.60.225</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">VISITORS</div><div class="hud-val">2,717</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">SYSTEM TIME</div><div class="hud-clock font-monospace" id="liveClock">00:00:00</div></div>
+                    <div class="hud-item col-6 col-md-3"><div class="hud-label">CURRENT DATE</div><div class="hud-val small text-uppercase" id="liveDate">...</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-box-fixed">
+             <div class="small text-secondary pt-1">[ SPONSOR UTAMA ]</div>
+             <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-7112769875269380"
+                  data-ad-slot="6560918199"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="row g-4" id="toolsGrid">
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="ssh" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fas fa-terminal"></i></div>
+                        <div><div class="card-title">SSH & UDP Creator</div><p class="card-desc">Buat akun SSH & UDP trial gratis.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">AIO Downloader</div><p class="card-desc">Unduh dari berbagai platform sosmed.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-ktp" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-address-card"></i></div>
+                        <div><div class="card-title">NIK KTP Checker</div><p class="card-desc">Cek informasi data KTP dari NIK.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="promo-pulsa" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-tags"></i></div>
+                        <div><div class="card-title">Pulsa Murah</div><p class="card-desc">Isi ulang pulsa dengan harga promo.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="dor-xl" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-rocket"></i></div>
+                        <div><div class="card-title">Tembak Paket XL</div><p class="card-desc">Beli paket murah XL (Dor) jalur khusus.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-bansos" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div><div class="card-title">Cek Bansos</div><p class="card-desc">Cek data penerima Bantuan Sosial.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="spam-wa" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fab fa-whatsapp"></i></div>
+                        <div><div class="card-title">Spam WhatsApp</div><p class="card-desc">Kirim pesan WhatsApp secara massal.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cryptofree" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fab fa-bitcoin"></i></div>
+                        <div><div class="card-title">Claim Crypto Free</div><p class="card-desc">Klaim aset kripto gratis tiap hari.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="email-generator" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-envelope-open-text"></i></div>
+                        <div><div class="card-title">Gmail Generator</div><p class="card-desc">Buat ribuan variasi alamat Gmail.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="bypass-url" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-link"></i></div>
+                        <div><div class="card-title">Shortlink Bypasser</div><p class="card-desc">Lewati shortlink dengan mudah.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="shortlink" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #aaa"><i class="fas fa-compress-alt"></i></div>
+                        <div><div class="card-title">Shortlink Generator</div><p class="card-desc">Perpendek URL Anda disini.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-cloudflare" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fab fa-cloudflare"></i></div>
+                        <div><div class="card-title">Cloudflare Checker</div><p class="card-desc">Periksa status Cloudflare domain.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="domain-ip" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #00f3ff"><i class="fas fa-search-location"></i></div>
+                        <div><div class="card-title">Domain to IP</div><p class="card-desc">Cari tahu alamat IP dari domain.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="https://www.tutorialinjectid.my.id/" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #0f0"><i class="fas fa-book-open"></i></div>
+                        <div><div class="card-title">Website Tutorial</div><p class="card-desc">Kumpulan tutorial pembuatan website.</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cek-kuota" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-sim-card"></i></div>
+                        <div><div class="card-title">Cek Kuota Axis & XL</div><p class="card-desc">Cek Kuota Axis & XL Tanpa OTP</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="drama" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">DramaBOX Premium</div><p class="card-desc">DramaBOX Premium Unlock All Episode</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tiktok-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #fe2c55"><i class="fab fa-tiktok"></i></div>
+                        <div><div class="card-title">Tiktok Downloader No Watermark</div><p class="card-desc">Tiktok downloader no watermark full hd & musik</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="youtube-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fab fa-youtube"></i></div>
+                        <div><div class="card-title">Youtube Downloader</div><p class="card-desc">Download Vidio Youtube & Musik Gratis</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="terabox-downloader" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #3277a8"><i class="fas fa-cloud-download-alt"></i></div>
+                        <div><div class="card-title">Terabox Downloader</div><p class="card-desc">Download Vidio Terabox</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tag-youtube" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fas fa-tags"></i></div>
+                        <div><div class="card-title">Youtube Tag Generator</div><p class="card-desc">Tag Youtube Generator seo</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="quizcuan" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-coins"></i></div>
+                        <div><div class="card-title">Quiz Penghasil Saldo Dana</div><p class="card-desc">Penghasil Saldo Dana Terbaru Work</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="melolo" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">Melolo Drama Premium</div><p class="card-desc">Nonton Drama Premium Di Melolo</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="reelife" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0000"><i class="fas fa-video"></i></div>
+                        <div><div class="card-title">Reelife Drama Premium</div><p class="card-desc">Nonton Drama Premium Di Reelife</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="netflix" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-cloud-download-alt"></i></div>
+                        <div><div class="card-title">Aplikasi Netflix Premium</div><p class="card-desc">Download Aplikasi Netflix Premium Free</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tv" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-desktop"></i></div>
+                        <div><div class="card-title">Nonton TV Online</div><p class="card-desc">Nonton Sepak Bola, tv online secara gratis</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="getcontact" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-address-book"></i></div>
+                        <div><div class="card-title">Getcontact Premium</div><p class="card-desc">Cek Nama Yang Di Save Nomor Kita Sama Orang Lain</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="lacak-nomor" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-location"></i></div>
+                        <div><div class="card-title">Lacak Nomor Handpohone</div><p class="card-desc">Lacak Lokasi, Alamat melalui nomor handphone</p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="hatunnel" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #3277a8"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">Download Aplikasi HA Tunnel MOD</div><p class="card-desc">Aplikasi HA Tunnel MOD New 2026 </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="tlstunnel" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ff0055"><i class="fas fa-download"></i></div>
+                        <div><div class="card-title">Download Aplikasi TLS Tunnel MOD</div><p class="card-desc">Aplikasi TLS Tunnel MOD New 2026 </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="config" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fas fa-cogs"></i></div>
+                        <div><div class="card-title">Download All Config Update Terus</div><p class="card-desc">Confignya Selalu Update Terus Tiap Hari </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="cekig" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #118EEA"><i class="fab fa-instagram"></i></div>
+                        <div><div class="card-title">Cek Akun Instgram</div><p class="card-desc">Cek Profile, Username, Pengikut, Mengikuti </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                        <div class="col-md-6 col-lg-4 tool-item">
+                <a href="sniff-config" class="cyber-card">
+                    <div class="d-flex align-items-center">
+                        <div class="tool-icon me-3" style="color: #ffff00"><i class="fas fa-file-code"></i></div>
+                        <div><div class="card-title">Sniff Config Hc, Ehi, Dark</div><p class="card-desc">Sniff Config Http Custom, Http Injector, Dark Tunnel </p></div>
+                    </div>
+                    <div style="position:absolute; top:5px; right:10px; font-size:0.7rem; color: #333;">v1.0</div>
+                </a>
+            </div>
+                    </div>
+        <div id="noResults" class="text-center py-5 d-none"><h4 class="text-danger">ERROR 404: MODULE NOT FOUND</h4></div>
+
+        <div class="mt-5">
+             <div class="text-center small text-success mb-2">>> BOTTOM_SPONSOR_SLOT <<</div>
+             <div class="ad-box-fixed">
+                 <ins class="adsbygoogle"
+                      style="display:block"
+                      data-ad-client="ca-pub-7112769875269380"
+                      data-ad-slot="6560918199"
+                      data-ad-format="auto"
+                      data-full-width-responsive="true"></ins>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+             </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="mb-3">
+                <a href="https://github.com/Inject-ID" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/config_geratis" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="https://youtube.com/@inject1d" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-0">SYSTEM_ROOT © 2026 | INJECT_ID PROJECT</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. LOGIKA POPUP (DYNAMIC INJECT) ---
+        function showAdModal() {
+            const modal = document.getElementById('adModal');
+            const container = document.getElementById('popupAdContainer');
+            
+            modal.style.display = "block";
+            
+            // Inject kode iklan HANYA SAAT modal muncul (agar refresh)
+            if(container.innerHTML.trim() === "") {
+                container.innerHTML = `
+                    <ins class="adsbygoogle"
+                         style="display:block; width:100%; height:250px;"
+                         data-ad-client="ca-pub-7112769875269380"
+                         data-ad-slot="6560918199"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                `;
+                // Push script
+                setTimeout(() => {
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                }, 100);
+            }
+        }
+        function closeAdModal() { document.getElementById('adModal').style.display = "none"; }
+        
+        // Tampilkan popup setelah 2.5 detik
+        window.onload = function() { setTimeout(showAdModal, 2500); };
+
+        // --- 2. FITUR LAINNYA ---
+        function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
+        
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('liveClock').textContent = now.toLocaleTimeString('id-ID', { hour12: false });
+            document.getElementById('liveDate').textContent = now.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+        }
+        setInterval(updateClock, 1000); updateClock();
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            let found = false;
+            document.querySelectorAll('.tool-item').forEach(item => {
+                if(item.innerText.toLowerCase().includes(term)) { item.classList.remove('d-none'); found = true; }
+                else { item.classList.add('d-none'); }
+            });
+            document.getElementById('noResults').classList.toggle('d-none', !found);
+        });
+
+        // Matrix Rain
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0"; ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                ctx.fillText(letters.charAt(Math.floor(Math.random() * letters.length)), i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 40);
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    </script>
+    <style>
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+    <script type='text/javascript'>
+    show_9539389({ type: 'inApp', inAppSettings: { frequency: 2, capping: 0.1, interval: 30, timeout: 5, everyPage: false } })
+    </script>
+</body>
+</html>

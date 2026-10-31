@@ -1,0 +1,288 @@
+{
+ "url": "https://www.doku.com/",
+ "origin": "https://www.doku.com",
+ "saved": 56,
+ "skipped": 104,
+ "scripts": [
+  {
+   "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=674ab654de930b217c6389c1",
+   "file": "www.doku.com__54v103j8qbb.cloudfront.net_js_jquery-3.5.1.min.dc5e7f18c8.js_site_674ab654de930b217c6389c1.js",
+   "bytes": 89476
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.c2fc1ac8.af3ac15d82f6852c.js",
+   "file": "www.doku.com__dn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.c2fc1ac8.af3ac15d82f6852c.js.js",
+   "bytes": 4623
+  },
+  {
+   "url": "https://app.doku.com/gas/embed/chatbot.js",
+   "file": "www.doku.com__app.doku.com_gas_embed_chatbot.js.js",
+   "bytes": 577577
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/madebyunderscore/wf-client/dist/client/doku/main.min.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_gh_madebyunderscore_wf-client_dist_client_doku_main.min.js.js",
+   "bytes": 4554
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/madebyunderscore/wf-client/dist/client/doku/utils/navbar-scroll.min.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_gh_madebyunderscore_wf-client_dist_client_doku_utils_navbar-scroll.min.js.js",
+   "bytes": 921
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_attributes.js.js",
+   "bytes": 3656
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-J3PPETVR.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-J3PPETVR.js.js",
+   "bytes": 679
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-WIALCYDY.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-WIALCYDY.js.js",
+   "bytes": 610
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-XRTLPMPO.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-XRTLPMPO.js.js",
+   "bytes": 656
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-N2ZCN6XY.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-N2ZCN6XY.js.js",
+   "bytes": 1235
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-ADKL4AJZ.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-ADKL4AJZ.js.js",
+   "bytes": 1575
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-VDEO3AAR.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-VDEO3AAR.js.js",
+   "bytes": 1247
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-CB6LZ537.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-CB6LZ537.js.js",
+   "bytes": 351
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-OF4NI3Y7.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-OF4NI3Y7.js.js",
+   "bytes": 197
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-L4B2V5MO.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-L4B2V5MO.js.js",
+   "bytes": 713
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-ZI7TAH2K.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-ZI7TAH2K.js.js",
+   "bytes": 1523
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-K46K3RI5.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-K46K3RI5.js.js",
+   "bytes": 605
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-GGDEANQW.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-GGDEANQW.js.js",
+   "bytes": 320
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1%2F682802823a36b46cd2ed207b%2F6a0b71fa20d39d647c65261b%2Fcms_filter_script-0.0.4-production.zA0yyrP9.js",
+   "file": "www.doku.com__36b46cd2ed207b_2F6a0b71fa20d39d647c65261b_2Fcms_filter_script-0.0.4-production.zA0yyrP9.js.js",
+   "bytes": 176
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes-scrolldisable_1_scrolldisable.js.js",
+   "bytes": 9461
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_dayjs_1_dayjs.min.js.js",
+   "bytes": 7161
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_dayjs_1_plugin_relativeTime.js.js",
+   "bytes": 1422
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes-socialshare_1_socialshare.js.js",
+   "bytes": 8572
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/src-VWGKX7LV.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_src-VWGKX7LV.js.js",
+   "bytes": 6309
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-7CAOOJVW.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-7CAOOJVW.js.js",
+   "bytes": 333
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/dist/chunk-UAA7M346.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_finsweet_attributes_2_dist_chunk-UAA7M346.js.js",
+   "bytes": 1285
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MMQXBXKC",
+   "file": "www.doku.com__www.googletagmanager.com_gtm.js_id_GTM-MMQXBXKC.js",
+   "bytes": 528020
+  },
+  {
+   "url": "https://us-assets.i.posthog.com/static/array.js",
+   "file": "www.doku.com__us-assets.i.posthog.com_static_array.js.js",
+   "bytes": 338529
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.22b66e874d42861f.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.22b66e874d42861f.js.js",
+   "bytes": 23971
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.64873797e35e968c.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.64873797e35e968c.js.js",
+   "bytes": 1285
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.65add74e46fe5245.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.65add74e46fe5245.js.js",
+   "bytes": 1216
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.ad6dcd2fc75b294c.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.ad6dcd2fc75b294c.js.js",
+   "bytes": 2672
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.db80639074bc0296.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.db80639074bc0296.js.js",
+   "bytes": 1007
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.5959ac50b3c857f1.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.5959ac50b3c857f1.js.js",
+   "bytes": 2416
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.496d56dd8c063ec0.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.496d56dd8c063ec0.js.js",
+   "bytes": 1587
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.2aaad8b9b407aaec.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.2aaad8b9b407aaec.js.js",
+   "bytes": 2365
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.36b8fb49256177c8.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.36b8fb49256177c8.js.js",
+   "bytes": 41429
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.58f76f2901951073.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.58f76f2901951073.js.js",
+   "bytes": 77424
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.e8e7e6855b442808.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.e8e7e6855b442808.js.js",
+   "bytes": 1146
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.43f4d187dbb3f1f5.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.43f4d187dbb3f1f5.js.js",
+   "bytes": 7623
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.40144d8322818807.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.40144d8322818807.js.js",
+   "bytes": 6183
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.2f8fd4260fe41f39.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.2f8fd4260fe41f39.js.js",
+   "bytes": 4320
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.87e89c442abdd574.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.87e89c442abdd574.js.js",
+   "bytes": 9805
+  },
+  {
+   "url": "https://cdn.matomo.cloud/dokucom.matomo.cloud/matomo.js",
+   "file": "www.doku.com__cdn.matomo.cloud_dokucom.matomo.cloud_matomo.js.js",
+   "bytes": 156399
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/fbevents.js",
+   "file": "www.doku.com__connect.facebook.net_en_US_fbevents.js.js",
+   "bytes": 437578
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=CRL9DPBC77U855HREQBG&lib=ttq",
+   "file": "www.doku.com__analytics.tiktok.com_i18n_pixel_events.js_sdkid_CRL9DPBC77U855HREQBG_lib_ttq.js",
+   "bytes": 8959
+  },
+  {
+   "url": "https://us-assets.i.posthog.com/static/1.444.0/web-vitals-with-attribution.js",
+   "file": "www.doku.com__us-assets.i.posthog.com_static_1.444.0_web-vitals-with-attribution.js.js",
+   "bytes": 27027
+  },
+  {
+   "url": "https://us-assets.i.posthog.com/static/1.444.0/dead-clicks-autocapture.js",
+   "file": "www.doku.com__us-assets.i.posthog.com_static_1.444.0_dead-clicks-autocapture.js.js",
+   "bytes": 24085
+  },
+  {
+   "url": "https://us-assets.i.posthog.com/array/phc_OQZg2yOGV7e5YQ41x88EIfToTjpaqtJk0d4r7ygAExL/config.js",
+   "file": "www.doku.com__us-assets.i.posthog.com_array_phc_OQZg2yOGV7e5YQ41x88EIfToTjpaqtJk0d4r7ygAExL_config.js.js",
+   "bytes": 886
+  },
+  {
+   "url": "https://cdn.flowappz.cloud/cms-filter/production/0.0.4/cms-filters.js",
+   "file": "www.doku.com__cdn.flowappz.cloud_cms-filter_production_0.0.4_cms-filters.js.js",
+   "bytes": 52661
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/674ab654de930b217c6389c1/js/webflow.achunk.85d5f84872ff17ab.js",
+   "file": "www.doku.com__cdn.prod.website-files.com_674ab654de930b217c6389c1_js_webflow.achunk.85d5f84872ff17ab.js.js",
+   "bytes": 152888
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.doku.com__www.google-analytics.com_analytics.js.js",
+   "bytes": 52310
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/static/main.MTJjYzk1MmQ1MQ.js",
+   "file": "www.doku.com__analytics.tiktok.com_i18n_pixel_static_main.MTJjYzk1MmQ1MQ.js.js",
+   "bytes": 497121
+  },
+  {
+   "url": "https://us-assets.i.posthog.com/static/1.444.0/surveys.js",
+   "file": "www.doku.com__us-assets.i.posthog.com_static_1.444.0_surveys.js.js",
+   "bytes": 112153
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/meta-capi-param-builder-clientjs/dist/clientParamBuilder.bundle.js",
+   "file": "www.doku.com__cdn.jsdelivr.net_npm_meta-capi-param-builder-clientjs_dist_clientParamBuilder.bundle.js.js",
+   "bytes": 56558
+  },
+  {
+   "url": "https://analytics.tiktok.com/i18n/pixel/static/identify_9fbdaf50.js",
+   "file": "www.doku.com__analytics.tiktok.com_i18n_pixel_static_identify_9fbdaf50.js.js",
+   "bytes": 139540
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "url": "https://mytelkomsel.com/",
+ "origin": "https://mytelkomsel.com",
+ "saved": 1,
+ "skipped": 35,
+ "scripts": [
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-41wn15jdsnhaf.js",
+   "file": "mytelkomsel.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-41wn15jdsnhaf.js.js",
+   "bytes": 304
+  }
+ ]
+}

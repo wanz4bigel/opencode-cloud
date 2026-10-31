@@ -1,0 +1,18 @@
+{
+ "url": "https://www.julo.co.id/",
+ "origin": "https://www.julo.co.id",
+ "saved": 2,
+ "skipped": 46,
+ "scripts": [
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+   "file": "www.julo.co.id__www.buckscore.com_wp-includes_js_jquery_jquery.min.js_ver_3.7.1.js",
+   "bytes": 1139
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/awesome-parallax-effects/assets/awp-effects.min.js?ver=7.1.4",
+   "file": "www.julo.co.id__kscore.com_wp-content_plugins_awesome-parallax-effects_assets_awp-effects.min.js_ver_7.1.4.js",
+   "bytes": 298
+  }
+ ]
+}

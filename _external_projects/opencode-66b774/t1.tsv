@@ -1,0 +1,21 @@
+ssh-fetch_helper	GET	/ssh/fetch_helper.php?url=https%3A%2F%2Fexample.com
+ssh-fetch_helper-nourl	GET	/ssh/fetch_helper.php
+ssh-captcha	GET	/ssh/captcha.php
+ssh-index	POST	/ssh/index.php	server_id=1&server_name_display=test&captcha=ABCD
+lacak-process	GET	/lacak-nomor/process.php?phone=081234567890
+gc-api-init	GET	/getcontact/api.php?action=init
+gc-api-check	GET	/getcontact/api.php?action=check
+gc-api-tags	GET	/getcontact/api.php?action=tags
+drama-counter	GET	/drama/counter.php?id=1
+drama-proxy	GET	/drama/proxy.php?bookId=1&episode=0
+drama-json	GET	/drama/dramas.json
+melolo-search	GET	/melolo/search.php?q=admin
+reelife-search	GET	/reelife/search.php?q=admin
+tv-php	GET	/tv/tv.php
+config-index-p1	GET	/config/index.php?page=1
+about-php	GET	/about.php
+contact-php	GET	/contact.php
+privacy-php	GET	/privacy-policy.php
+disclaimer-php	GET	/disclaimer.php
+root-search	GET	/search.php?q=test
+root-fetch_helper	GET	/fetch_helper.php?url=https%3A%2F%2Fexample.com

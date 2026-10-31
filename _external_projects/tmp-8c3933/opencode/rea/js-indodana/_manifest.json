@@ -1,0 +1,93 @@
+{
+ "url": "https://www.indodana.id/",
+ "origin": "https://www.indodana.id",
+ "saved": 17,
+ "skipped": 75,
+ "scripts": [
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255",
+   "file": "www.indodana.id__www.buckscore.com_wp-includes_js_dist_hooks.min.js_ver_f0f188028580e8dc1255.js",
+   "bytes": 886
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216",
+   "file": "www.indodana.id__www.buckscore.com_wp-includes_js_dist_i18n.min.js_ver_1dfe7db3940c23ea9216.js",
+   "bytes": 226456
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js",
+   "file": "www.indodana.id__www.buckscore.com_wp-content_plugins_wp-rocket_assets_js_lazyload_17.8.3_lazyload.min.js.js",
+   "bytes": 72821
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js",
+   "file": "www.indodana.id__www.buckscore.com_wp-content_plugins_wp-rocket_assets_js_wpr-beacon.min.js.js",
+   "bytes": 202
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+   "file": "www.indodana.id__www.buckscore.com_wp-includes_js_jquery_jquery.min.js_ver_3.7.1.js",
+   "bytes": 45792
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.8.18",
+   "file": "www.indodana.id__www.buckscore.com_wp-content_plugins_gravityforms_js_jquery.json.min.js_ver_2.8.18.js",
+   "bytes": 99144
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/cache/min/1/90511a25dfec28cd6ab0a870bbae08d7.js",
+   "file": "www.indodana.id__www.buckscore.com_wp-content_cache_min_1_90511a25dfec28cd6ab0a870bbae08d7.js.js",
+   "bytes": 18443
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.indodana.id__www.google-analytics.com_analytics.js.js",
+   "bytes": 130
+  },
+  {
+   "url": "https://connect.facebook.net/signals/plugins/openbridge3.js?v=next",
+   "file": "www.indodana.id__connect.facebook.net_signals_plugins_openbridge3.js_v_next.js",
+   "bytes": 130
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P9WC4NV&gtm_auth=&gtm_preview=&gtm_cookies_win=x",
+   "file": "www.indodana.id__www.googletagmanager.com_gtm.js_id_GTM-P9WC4NV_gtm_auth_gtm_preview_gtm_cookies_win_x.js",
+   "bytes": 570411
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/104.b6f1ade35a0fd1ac4423.js",
+   "file": "www.indodana.id__9_1a446ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_104.b6f1ade35a0fd1ac4423.js.js",
+   "bytes": 5162
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/promo-f84edc7a7f3b63dd6848.js",
+   "file": "www.indodana.id__e6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_promo-f84edc7a7f3b63dd6848.js.js",
+   "bytes": 1047
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/penghargaan-0b04eccd13be3b82e086.js",
+   "file": "www.indodana.id__8b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_penghargaan-0b04eccd13be3b82e086.js.js",
+   "bytes": 1698
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/merchant/all-4d30e249b49f735d3991.js",
+   "file": "www.indodana.id__b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_merchant_all-4d30e249b49f735d3991.js.js",
+   "bytes": 976
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/co-branding-ec917ed172b9c715af2d.js",
+   "file": "www.indodana.id__8b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_co-branding-ec917ed172b9c715af2d.js.js",
+   "bytes": 797
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/merchant-3ed47dfd42bfaa01965a.js",
+   "file": "www.indodana.id__c608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_merchant-3ed47dfd42bfaa01965a.js.js",
+   "bytes": 17854
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/developers-b3805b8a388cc98b8d01.js",
+   "file": "www.indodana.id__08b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_developers-b3805b8a388cc98b8d01.js.js",
+   "bytes": 960
+  }
+ ]
+}

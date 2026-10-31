@@ -1,0 +1,123 @@
+{
+ "url": "https://www.buckscore.com/id/login",
+ "origin": "https://www.buckscore.com",
+ "saved": 23,
+ "skipped": 25,
+ "scripts": [
+  {
+   "url": "",
+   "file": "www.buckscore.com__.js",
+   "bytes": 13577
+  },
+  {
+   "url": "",
+   "file": "www.buckscore.com__.js",
+   "bytes": 1617
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+   "file": "www.buckscore.com__www.buckscore.com_wp-includes_js_jquery_jquery.min.js_ver_3.7.1.js",
+   "bytes": 87553
+  },
+  {
+   "url": "https://www.buckscore.com/wp-includes/js/underscore.min.js?ver=1.13.8",
+   "file": "www.buckscore.com__www.buckscore.com_wp-includes_js_underscore.min.js_ver_1.13.8.js",
+   "bytes": 19012
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/awesome-parallax-effects/assets/awp-effects.min.js?ver=7.1.4",
+   "file": "www.buckscore.com__kscore.com_wp-content_plugins_awesome-parallax-effects_assets_awp-effects.min.js_ver_7.1.4.js",
+   "bytes": 13825
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/complianz-gdpr/DNSMPD/script.min.js?ver=1726169899",
+   "file": "www.buckscore.com__www.buckscore.com_wp-content_plugins_complianz-gdpr_DNSMPD_script.min.js_ver_1726169899.js",
+   "bytes": 1647
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.2.3",
+   "file": "www.buckscore.com__re.com_wp-content_plugins_woocommerce_assets_js_sourcebuster_sourcebuster.min.js_ver_9.2.3.js",
+   "bytes": 15315
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.2.3",
+   "file": "www.buckscore.com__e.com_wp-content_plugins_woocommerce_assets_js_frontend_order-attribution.min.js_ver_9.2.3.js",
+   "bytes": 2356
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/themes/enfold/config-lottie-animations/assets/lottie-player/dotlottie-player.js?ver=6.0.4",
+   "file": "www.buckscore.com___themes_enfold_config-lottie-animations_assets_lottie-player_dotlottie-player.js_ver_6.0.4.js",
+   "bytes": 405798
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/uploads/dynamic_avia/avia-footer-scripts-778de518611d8f497daff26cbb83facb---66fc6df79d867.js",
+   "file": "www.buckscore.com__loads_dynamic_avia_avia-footer-scripts-778de518611d8f497daff26cbb83facb---66fc6df79d867.js.js",
+   "bytes": 477779
+  },
+  {
+   "url": "",
+   "file": "www.buckscore.com__.js",
+   "bytes": 398
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js",
+   "file": "www.buckscore.com__www.buckscore.com_wp-content_plugins_wp-rocket_assets_js_lazyload_17.8.3_lazyload.min.js.js",
+   "bytes": 8892
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.2.3",
+   "file": "www.buckscore.com__com_wp-content_plugins_woocommerce_assets_js_js-cookie_js.cookie.min.js_ver_2.1.4-wc.9.2.3.js",
+   "bytes": 1720
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=9.2.3",
+   "file": "www.buckscore.com__core.com_wp-content_plugins_woocommerce_assets_js_frontend_cart-fragments.min.js_ver_9.2.3.js",
+   "bytes": 2939
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.2.3",
+   "file": "www.buckscore.com__tent_plugins_woocommerce_assets_js_jquery-blockui_jquery.blockUI.min.js_ver_2.7.0-wc.9.2.3.js",
+   "bytes": 9636
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.2.3",
+   "file": "www.buckscore.com__ckscore.com_wp-content_plugins_woocommerce_assets_js_frontend_add-to-cart.min.js_ver_9.2.3.js",
+   "bytes": 3058
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.2.3",
+   "file": "www.buckscore.com__ckscore.com_wp-content_plugins_woocommerce_assets_js_frontend_woocommerce.min.js_ver_9.2.3.js",
+   "bytes": 2467
+  },
+  {
+   "url": "https://www.buckscore.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1726169368",
+   "file": "www.buckscore.com__core.com_wp-content_plugins_complianz-gdpr_cookiebanner_js_complianz.min.js_ver_1726169368.js",
+   "bytes": 40430
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/fbevents.js?v=next",
+   "file": "www.buckscore.com__connect.facebook.net_en_US_fbevents.js_v_next.js",
+   "bytes": 437575
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.buckscore.com__www.google-analytics.com_analytics.js.js",
+   "bytes": 52310
+  },
+  {
+   "url": "https://connect.facebook.net/signals/plugins/openbridge3.js?v=next",
+   "file": "www.buckscore.com__connect.facebook.net_signals_plugins_openbridge3.js_v_next.js",
+   "bytes": 183174
+  },
+  {
+   "url": "https://connect.facebook.net/signals/config/1246845368792898?v=next&r=stable&domain=www.buckscore.com&hme=4453c87d489b6902031c012cadd2731893cd69feb64fe8a61b339727247a7703&ex_m=118%2C242%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C211%2C263%2C84%2C283%2C282%2C281%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C333%2C334%2C335%2C332%2C349%2C371%2C256%2C238%2C70%2C239%2C237%2C374%2C365%2C59%2C257%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+   "file": "www.buckscore.com__99_2C91_2C81_2C131_2C120_2C169_2C50_2C159_2C0_2C94_2C152_2C156_2C170_2C45_2C122_2C13_2C189.js",
+   "bytes": 421682
+  },
+  {
+   "url": "",
+   "file": "www.buckscore.com__.js",
+   "bytes": 298
+  }
+ ]
+}

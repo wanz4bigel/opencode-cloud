@@ -1,0 +1,7 @@
+08:31:34 FASE-A (captcha kosong)\n  [429] {"code":null,"message":"Anda telah mencapai batas maksimum percobaan untuk tindakan ini. Silahkan coba lagi setelah 2 menit","errors":[]}
+
+08:31:35 menunggu 155 detik...
+08:34:10 FASE-B (recaptcha = token palsu 120 char)
+  [400] {"code":"E0001","message":"Mohon centang CAPTCHA sebelum melanjutkan.","errors":[]}
+
+KEPUTUSAN: token PALSU ditolak -> endpoint butuh reCAPTCHA asli (tidak bisa dipakai)

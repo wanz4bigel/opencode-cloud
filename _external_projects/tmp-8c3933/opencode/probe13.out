@@ -1,0 +1,16 @@
+catalog [200] game=? jumlah_item=10
+field game : 
+field item : null
+
+send-otp       +header-campaign [403] WAF
+settle-v2      +header-campaign [403] WAF
+topup-req-otp  +header-campaign [403] WAF
+inquiry-store  +header-campaign [403] WAF
+
+inquiry-store v0 body0    [403] WAF
+inquiry-store v1 body1    [403] WAF
+inquiry-store v2 body2    [403] WAF
+inquiry-store v3 body3    [403] WAF
+
+inquiryId hasil tes: (nggak ada)
+

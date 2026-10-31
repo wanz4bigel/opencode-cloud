@@ -1,0 +1,603 @@
+{
+ "url": "https://duniagames.co.id/profile",
+ "origin": "https://duniagames.co.id",
+ "saved": 119,
+ "skipped": 23,
+ "scripts": [
+  {
+   "url": "https://duniagames.co.id/static/polyfills.c8fc0b3f7f027a49.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_polyfills.c8fc0b3f7f027a49.js_v_1793293210.js",
+   "bytes": 178
+  },
+  {
+   "url": "https://duniagames.co.id/static/runtime.3786a34eddc3c774.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_runtime.3786a34eddc3c774.js_v_1793293210.js",
+   "bytes": 15079
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-05204196.a87cdbb80ec361e4.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-05204196.a87cdbb80ec361e4.js_v_1793293210.js",
+   "bytes": 59157
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-149fd0e2.60a168fa20124691.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-149fd0e2.60a168fa20124691.js_v_1793293210.js",
+   "bytes": 55500
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-169c97a9.416fa51663feb642.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-169c97a9.416fa51663feb642.js_v_1793293210.js",
+   "bytes": 97293
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-16e240a9.748a9a1004a4d062.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-16e240a9.748a9a1004a4d062.js_v_1793293210.js",
+   "bytes": 78013
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-1ac6714d.f2950f0de28640ec.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-1ac6714d.f2950f0de28640ec.js_v_1793293210.js",
+   "bytes": 38807
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-213238cf.0d2d052b8dadd19b.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-213238cf.0d2d052b8dadd19b.js_v_1793293210.js",
+   "bytes": 108569
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-2e2a4c8e.3d3f326471a1fb94.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-2e2a4c8e.3d3f326471a1fb94.js_v_1793293210.js",
+   "bytes": 57212
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-44c875af.31ceda4894eff619.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-44c875af.31ceda4894eff619.js_v_1793293210.js",
+   "bytes": 100414
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-5eb5d9d1.3c626b9ce0ac2f4e.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-5eb5d9d1.3c626b9ce0ac2f4e.js_v_1793293210.js",
+   "bytes": 34202
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-79bfeeb9.9a4c376956378a91.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-79bfeeb9.9a4c376956378a91.js_v_1793293210.js",
+   "bytes": 63890
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-7dc7a2b9.254841bc4cc9fcd1.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-7dc7a2b9.254841bc4cc9fcd1.js_v_1793293210.js",
+   "bytes": 64399
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-8b4e2864.a1fff85cd082082d.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-8b4e2864.a1fff85cd082082d.js_v_1793293210.js",
+   "bytes": 110799
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-92f70689.cc4b37d5d13f5ebb.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-92f70689.cc4b37d5d13f5ebb.js_v_1793293210.js",
+   "bytes": 38080
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-ae4ab877.6b9decfc40835fee.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-ae4ab877.6b9decfc40835fee.js_v_1793293210.js",
+   "bytes": 45141
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-b0327d5e.353fb1212ae7d866.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-b0327d5e.353fb1212ae7d866.js_v_1793293210.js",
+   "bytes": 69608
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-b1abd21e.e3faaedb4ddf08e5.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-b1abd21e.e3faaedb4ddf08e5.js_v_1793293210.js",
+   "bytes": 11874
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-b99a6324.ca8a9d98b14a95d4.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-b99a6324.ca8a9d98b14a95d4.js_v_1793293210.js",
+   "bytes": 219844
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-bcfc2296.9b6e5d52763531dc.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-bcfc2296.9b6e5d52763531dc.js_v_1793293210.js",
+   "bytes": 46132
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-calendar-082009b5.48fd0cea3ea34d77.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-calendar-082009b5.48fd0cea3ea34d77.js_v_1793293210.js",
+   "bytes": 75471
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-calendar-9cc5f71d.1d3b777fa85fa742.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-calendar-9cc5f71d.1d3b777fa85fa742.js_v_1793293210.js",
+   "bytes": 435
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-d8773e6c.14802bece1cfcc85.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-d8773e6c.14802bece1cfcc85.js_v_1793293210.js",
+   "bytes": 36623
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-dab17ee2.5a8addcbd9fbfaa3.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-dab17ee2.5a8addcbd9fbfaa3.js_v_1793293210.js",
+   "bytes": 31146
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-ec7ce8fc.d0652a3cd7b59779.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-ec7ce8fc.d0652a3cd7b59779.js_v_1793293210.js",
+   "bytes": 51289
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-f2c64725.862febf4c560ade2.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-f2c64725.862febf4c560ade2.js_v_1793293210.js",
+   "bytes": 61431
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-angular-f2efb8ac.34edf8267a96ed22.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-angular-f2efb8ac.34edf8267a96ed22.js_v_1793293210.js",
+   "bytes": 31093
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-axios.3144b1a7ae146dc8.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-axios.3144b1a7ae146dc8.js_v_1793293210.js",
+   "bytes": 51796
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-canvg.bbb5fb8af5267da7.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-canvg.bbb5fb8af5267da7.js_v_1793293210.js",
+   "bytes": 81781
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-core-js.54624885cb6f7f8f.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-core-js.54624885cb6f7f8f.js_v_1793293210.js",
+   "bytes": 42785
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-crypto-js-ef39e8ad.054205db652bf392.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-crypto-js-ef39e8ad.054205db652bf392.js_v_1793293210.js",
+   "bytes": 31102
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-crypto-js-fa891bfe.7814e9f3677f9b48.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-crypto-js-fa891bfe.7814e9f3677f9b48.js_v_1793293210.js",
+   "bytes": 33137
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-date-fns.a62f266031a42499.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-date-fns.a62f266031a42499.js_v_1793293210.js",
+   "bytes": 30805
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-emoji-toolkit.853f3b319c2e654d.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-emoji-toolkit.853f3b319c2e654d.js_v_1793293210.js",
+   "bytes": 383552
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-fortawesome-d69e48aa.5d446641ec5ec495.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-fortawesome-d69e48aa.5d446641ec5ec495.js_v_1793293210.js",
+   "bytes": 2197
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-fortawesome-d76c0a37.304906fde1114ca5.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-fortawesome-d76c0a37.304906fde1114ca5.js_v_1793293210.js",
+   "bytes": 96170
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-html2canvas.26a5f29d25166146.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-html2canvas.26a5f29d25166146.js_v_1793293210.js",
+   "bytes": 201894
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-joeattardi.07a3582f35cd601a.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-joeattardi.07a3582f35cd601a.js_v_1793293210.js",
+   "bytes": 288934
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-jspdf.ea32557421ef6020.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-jspdf.ea32557421ef6020.js_v_1793293210.js",
+   "bytes": 346785
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-leaflet.9d034388f101455f.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-leaflet.9d034388f101455f.js_v_1793293210.js",
+   "bytes": 148937
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-lodash.286819a46eabe84a.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-lodash.286819a46eabe84a.js_v_1793293210.js",
+   "bytes": 71390
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-luxon.8a6c53f6ef451129.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-luxon.8a6c53f6ef451129.js_v_1793293210.js",
+   "bytes": 72809
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-moment.ac2a948d742e2abf.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-moment.ac2a948d742e2abf.js_v_1793293210.js",
+   "bytes": 64935
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-ngx-editor.562330075e35c74d.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-ngx-editor.562330075e35c74d.js_v_1793293210.js",
+   "bytes": 64302
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-ngx-material-timepicker.2021557b6cb27e0a.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-ngx-material-timepicker.2021557b6cb27e0a.js_v_1793293210.js",
+   "bytes": 77368
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-ngx-scrollbar.b76062b72b0be468.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-ngx-scrollbar.b76062b72b0be468.js_v_1793293210.js",
+   "bytes": 52466
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-prosemirror-model.ef1b62358ef4a1b3.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-prosemirror-model.ef1b62358ef4a1b3.js_v_1793293210.js",
+   "bytes": 44711
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-prosemirror-view.207f194d76f240c5.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-prosemirror-view.207f194d76f240c5.js_v_1793293210.js",
+   "bytes": 97704
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-qiscus-sdk-core-85eb170f.61731abb162fe1d0.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-qiscus-sdk-core-85eb170f.61731abb162fe1d0.js_v_1793293210.js",
+   "bytes": 6508
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-qiscus-sdk-core-a4a9eb7a.392c0f5cef4a8fed.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-qiscus-sdk-core-a4a9eb7a.392c0f5cef4a8fed.js_v_1793293210.js",
+   "bytes": 328858
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-rxjs-5155cae3.1a0b559fdf354350.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-rxjs-5155cae3.1a0b559fdf354350.js_v_1793293210.js",
+   "bytes": 64681
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-rxjs-compat-7eab49d0.c550b50e9062ffdf.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-rxjs-compat-7eab49d0.c550b50e9062ffdf.js_v_1793293210.js",
+   "bytes": 27571
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-rxjs-compat-9d3f82a0.38caea4ba86bb82c.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-rxjs-compat-9d3f82a0.38caea4ba86bb82c.js_v_1793293210.js",
+   "bytes": 10205
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-rxjs-fc4ffce8.9649f4219713c41b.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-rxjs-fc4ffce8.9649f4219713c41b.js_v_1793293210.js",
+   "bytes": 70871
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-swimlane.3312975cf2cf9cd0.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-swimlane.3312975cf2cf9cd0.js_v_1793293210.js",
+   "bytes": 384508
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-swiper-91a21fe6.6cdcd7dfb54f6937.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-swiper-91a21fe6.6cdcd7dfb54f6937.js_v_1793293210.js",
+   "bytes": 75110
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-swiper-a9a8c684.aae0a374d0231de4.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-swiper-a9a8c684.aae0a374d0231de4.js_v_1793293210.js",
+   "bytes": 43997
+  },
+  {
+   "url": "https://duniagames.co.id/static/chunk-zone.js.2804f21c1f2e4c25.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_chunk-zone.js.2804f21c1f2e4c25.js_v_1793293210.js",
+   "bytes": 34979
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-022e7a37.bf8c7ba53b56761e.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-022e7a37.bf8c7ba53b56761e.js_v_1793293210.js",
+   "bytes": 80750
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-166ae03c.28a5f8bf82201e39.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-166ae03c.28a5f8bf82201e39.js_v_1793293210.js",
+   "bytes": 238420
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-4c120c8f.8488fe57fd4071ce.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-4c120c8f.8488fe57fd4071ce.js_v_1793293210.js",
+   "bytes": 102795
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-c3373795.a0db257faa1f6d32.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-c3373795.a0db257faa1f6d32.js_v_1793293210.js",
+   "bytes": 77905
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-db47b94f.484788d067604bfe.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-db47b94f.484788d067604bfe.js_v_1793293210.js",
+   "bytes": 76331
+  },
+  {
+   "url": "https://duniagames.co.id/static/main-e1f66ab5.1d4e84e8bd21efa7.js?v=1793293210",
+   "file": "duniagames.co.id__duniagames.co.id_static_main-e1f66ab5.1d4e84e8bd21efa7.js_v_1793293210.js",
+   "bytes": 58335
+  },
+  {
+   "url": "https://duniagames.co.id/static/9195.f34dcee58e23cc08.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_9195.f34dcee58e23cc08.js.js",
+   "bytes": 38168
+  },
+  {
+   "url": "https://duniagames.co.id/static/5482.71d80c1ce19c1a3f.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_5482.71d80c1ce19c1a3f.js.js",
+   "bytes": 89516
+  },
+  {
+   "url": "https://duniagames.co.id/static/1325.d8e73b763a285c93.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1325.d8e73b763a285c93.js.js",
+   "bytes": 64431
+  },
+  {
+   "url": "https://duniagames.co.id/static/4967.512d12dcd31ba524.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_4967.512d12dcd31ba524.js.js",
+   "bytes": 88798
+  },
+  {
+   "url": "https://duniagames.co.id/static/637.c1cc4bd8d7a46da4.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_637.c1cc4bd8d7a46da4.js.js",
+   "bytes": 71384
+  },
+  {
+   "url": "https://duniagames.co.id/static/3706.9f0bf597fb60bad4.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3706.9f0bf597fb60bad4.js.js",
+   "bytes": 74402
+  },
+  {
+   "url": "https://duniagames.co.id/static/7473.dd1f179e3f46e65d.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_7473.dd1f179e3f46e65d.js.js",
+   "bytes": 54217
+  },
+  {
+   "url": "https://duniagames.co.id/static/9881.0248f2fbb8cb2cba.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_9881.0248f2fbb8cb2cba.js.js",
+   "bytes": 72650
+  },
+  {
+   "url": "https://duniagames.co.id/static/6609.3c077fdc3f741451.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_6609.3c077fdc3f741451.js.js",
+   "bytes": 63214
+  },
+  {
+   "url": "https://duniagames.co.id/static/6387.97bdbb1dc87ac55f.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_6387.97bdbb1dc87ac55f.js.js",
+   "bytes": 50461
+  },
+  {
+   "url": "https://duniagames.co.id/static/187.86661e1f027bdfa1.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_187.86661e1f027bdfa1.js.js",
+   "bytes": 84642
+  },
+  {
+   "url": "https://duniagames.co.id/static/3293.ef5651d77064241e.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3293.ef5651d77064241e.js.js",
+   "bytes": 62027
+  },
+  {
+   "url": "https://duniagames.co.id/static/2558.d3c50487dfd7d3dd.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2558.d3c50487dfd7d3dd.js.js",
+   "bytes": 46697
+  },
+  {
+   "url": "https://duniagames.co.id/static/8326.3ef2245cccf655a0.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_8326.3ef2245cccf655a0.js.js",
+   "bytes": 80725
+  },
+  {
+   "url": "https://duniagames.co.id/static/2154.f421fa0326efc1a2.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2154.f421fa0326efc1a2.js.js",
+   "bytes": 60277
+  },
+  {
+   "url": "https://duniagames.co.id/static/1698.240303284e43997e.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1698.240303284e43997e.js.js",
+   "bytes": 137088
+  },
+  {
+   "url": "https://duniagames.co.id/static/113.82ec9242bfba2d55.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_113.82ec9242bfba2d55.js.js",
+   "bytes": 107273
+  },
+  {
+   "url": "https://duniagames.co.id/static/5981.9bab1a114009362a.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_5981.9bab1a114009362a.js.js",
+   "bytes": 68804
+  },
+  {
+   "url": "https://duniagames.co.id/static/3137.77772b16ce3a7d02.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3137.77772b16ce3a7d02.js.js",
+   "bytes": 40237
+  },
+  {
+   "url": "https://duniagames.co.id/static/4883.86836800a79a8380.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_4883.86836800a79a8380.js.js",
+   "bytes": 131976
+  },
+  {
+   "url": "https://duniagames.co.id/static/3555.d94262a1b5d2be57.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3555.d94262a1b5d2be57.js.js",
+   "bytes": 160148
+  },
+  {
+   "url": "https://duniagames.co.id/static/2353.5565cee4ae0266cf.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2353.5565cee4ae0266cf.js.js",
+   "bytes": 147047
+  },
+  {
+   "url": "https://duniagames.co.id/static/4835.ef5e46a93dfcef00.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_4835.ef5e46a93dfcef00.js.js",
+   "bytes": 112475
+  },
+  {
+   "url": "https://duniagames.co.id/static/1797.75e9e0c3c0d1032c.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1797.75e9e0c3c0d1032c.js.js",
+   "bytes": 70761
+  },
+  {
+   "url": "https://duniagames.co.id/static/6636.5b2a554596ce4227.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_6636.5b2a554596ce4227.js.js",
+   "bytes": 80410
+  },
+  {
+   "url": "https://duniagames.co.id/static/2100.cf48806eafdeabeb.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2100.cf48806eafdeabeb.js.js",
+   "bytes": 85797
+  },
+  {
+   "url": "https://duniagames.co.id/static/1955.dd3a4b6e5d350330.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1955.dd3a4b6e5d350330.js.js",
+   "bytes": 68295
+  },
+  {
+   "url": "https://duniagames.co.id/static/4069.7c64fa498fc7673c.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_4069.7c64fa498fc7673c.js.js",
+   "bytes": 53896
+  },
+  {
+   "url": "https://duniagames.co.id/static/1871.05781d85148d64dd.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1871.05781d85148d64dd.js.js",
+   "bytes": 106606
+  },
+  {
+   "url": "https://duniagames.co.id/static/2698.a618dd3dcf70a38e.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2698.a618dd3dcf70a38e.js.js",
+   "bytes": 73962
+  },
+  {
+   "url": "https://duniagames.co.id/static/5771.ab92753629210808.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_5771.ab92753629210808.js.js",
+   "bytes": 41623
+  },
+  {
+   "url": "https://duniagames.co.id/static/482.2b8c264d1687b7fb.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_482.2b8c264d1687b7fb.js.js",
+   "bytes": 60091
+  },
+  {
+   "url": "https://duniagames.co.id/static/5885.768598f237c4b4c3.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_5885.768598f237c4b4c3.js.js",
+   "bytes": 3690
+  },
+  {
+   "url": "https://duniagames.co.id/static/3994.ce936a16092a4b4b.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3994.ce936a16092a4b4b.js.js",
+   "bytes": 86882
+  },
+  {
+   "url": "https://duniagames.co.id/static/4993.ee42ba63dc7c7afb.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_4993.ee42ba63dc7c7afb.js.js",
+   "bytes": 66148
+  },
+  {
+   "url": "https://duniagames.co.id/static/8960.6643d190e79015fc.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_8960.6643d190e79015fc.js.js",
+   "bytes": 72501
+  },
+  {
+   "url": "https://duniagames.co.id/static/2442.a321e15cbe36ca27.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2442.a321e15cbe36ca27.js.js",
+   "bytes": 89861
+  },
+  {
+   "url": "https://duniagames.co.id/static/2566.c48dcdb5171b67af.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_2566.c48dcdb5171b67af.js.js",
+   "bytes": 59729
+  },
+  {
+   "url": "https://duniagames.co.id/static/1204.8bd9080f6d319bd0.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_1204.8bd9080f6d319bd0.js.js",
+   "bytes": 85232
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-displayvmaxad-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-displayvmaxad-module.js.js",
+   "bytes": 17229
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-admanager-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-admanager-module.js.js",
+   "bytes": 48053
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-googleaddisplay-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-googleaddisplay-module.js.js",
+   "bytes": 18405
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-vmaxgoogleima-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-vmaxgoogleima-module.js.js",
+   "bytes": 28923
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-googleadsense-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-googleadsense-module.js.js",
+   "bytes": 16804
+  },
+  {
+   "url": "https://duniagames.co.id/static/vmax-videobillboardvmaxad-module.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_vmax-videobillboardvmaxad-module.js.js",
+   "bytes": 65292
+  },
+  {
+   "url": "https://duniagames.co.id/static/684.753dee7bc8f4416c.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_684.753dee7bc8f4416c.js.js",
+   "bytes": 72267
+  },
+  {
+   "url": "https://duniagames.co.id/static/3049.deb70da8dbe77b08.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3049.deb70da8dbe77b08.js.js",
+   "bytes": 84742
+  },
+  {
+   "url": "https://duniagames.co.id/static/656.4b052b008d29c30d.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_656.4b052b008d29c30d.js.js",
+   "bytes": 33286
+  },
+  {
+   "url": "https://duniagames.co.id/static/9927.668962d3d07fb4eb.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_9927.668962d3d07fb4eb.js.js",
+   "bytes": 5547
+  },
+  {
+   "url": "",
+   "file": "duniagames.co.id__.js",
+   "bytes": 284
+  },
+  {
+   "url": "https://duniagames.co.id/static/3065.98933c797b4b5829.js",
+   "file": "duniagames.co.id__duniagames.co.id_static_3065.98933c797b4b5829.js.js",
+   "bytes": 9461
+  },
+  {
+   "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+   "file": "duniagames.co.id__pagead2.googlesyndication.com_pagead_js_adsbygoogle.js.js",
+   "bytes": 208413
+  },
+  {
+   "url": "https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202610280101/show_ads_impl.js?bust=122881956",
+   "file": "duniagames.co.id__glesyndication.com_pagead_managed_js_adsense_m202610280101_show_ads_impl.js_bust_122881956.js",
+   "bytes": 625110
+  },
+  {
+   "url": "https://ep2.adtrafficquality.google/sodar/sodar2.js",
+   "file": "duniagames.co.id__ep2.adtrafficquality.google_sodar_sodar2.js.js",
+   "bytes": 22418
+  },
+  {
+   "url": "https://omnichannel.qiscus.com/js/qismo-v4.js",
+   "file": "duniagames.co.id__omnichannel.qiscus.com_js_qismo-v4.js.js",
+   "bytes": 41862
+  }
+ ]
+}

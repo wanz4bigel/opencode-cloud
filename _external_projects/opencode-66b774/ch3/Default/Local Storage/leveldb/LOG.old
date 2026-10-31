@@ -1,0 +1,5 @@
+2026/10/31-08:09:50.519 75e7 Creating DB /tmp/opencode/ch3/Default/Local Storage/leveldb since it was missing.
+2026/10/31-08:09:50.527 75e7 Reusing MANIFEST /tmp/opencode/ch3/Default/Local Storage/leveldb/MANIFEST-000001
+2026/10/31-08:24:40.763 75e7 Level-0 table #5: started
+2026/10/31-08:24:40.766 75e7 Level-0 table #5: 121977 bytes OK
+2026/10/31-08:24:40.767 75e7 Delete type=0 #3

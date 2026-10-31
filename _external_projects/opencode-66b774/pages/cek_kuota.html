@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kuota Semua Operator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #0b0f1a; }
+        .neo-border { border: 3px solid #000; }
+        .neo-shadow { box-shadow: 6px 6px 0 0 #000; }
+        .neo-shadow-sm { box-shadow: 4px 4px 0 0 #000; }
+        .neo-btn {
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0 0 #000;
+            transition: all 0.1s ease;
+        }
+        .neo-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 #000; }
+        .neo-btn:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 0 #000; }
+        .neo-input, .neo-select {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0 0 #000;
+            transition: all 0.1s ease;
+            background: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            height: 100%;
+            min-height: 54px;
+        }
+        .neo-input:focus, .neo-select:focus {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 0 #000;
+            outline: none;
+        }
+        .neo-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2rem;
+            padding-right: 2.5rem;
+        }
+        .neo-card { border: 3px solid #000; box-shadow: 8px 8px 0 0 #000; }
+        .bg-grid {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        #floatads {
+            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9999;
+            background: rgba(11,15,26,0.92); backdrop-filter: blur(4px);
+            padding: 0.75rem 1rem; border-top: 3px solid #000;
+            box-shadow: 0 -6px 0 0 #000;
+        }
+        #close-floatads {
+            position: absolute; top: -12px; right: 12px;
+            background: #ef4444; color: #fff; width: 28px; height: 28px;
+            border-radius: 50%; border: 3px solid #000;
+            box-shadow: 3px 3px 0 0 #000;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: 900; cursor: pointer;
+            transition: 0.1s ease;
+        }
+        #close-floatads:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 #000; }
+        .footer-link { color: #94a3b8; transition: 0.2s; }
+        .footer-link:hover { color: #fff; text-decoration: underline; }
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            border-bottom: 1px dashed #334155;
+        }
+        .stat-item:last-child { border-bottom: none; }
+        .stat-number { font-size: 1.1rem; font-weight: 700; }
+        .stat-success { color: #4ade80; }
+        .stat-fail { color: #f87171; }
+        .input-group {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            height: 100%;
+        }
+        .input-group .neo-input {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+        }
+        .input-group .input-addon {
+            flex-shrink: 0;
+            border-right: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            width: 60px;
+        }
+        .select-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: stretch;
+        }
+        .select-wrapper .neo-select {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOADING OVERLAY -->
+<div id="loadingOverlay" class="fixed inset-0 bg-[#0b0f1a]/80 backdrop-blur-sm z-[9999] hidden flex-col items-center justify-center transition-all duration-300">
+    <div class="neo-card bg-[#facc15] p-8 text-black flex flex-col items-center gap-4 text-center max-w-sm mx-4 transform scale-100">
+        <i class="fa-solid fa-spinner fa-spin text-5xl"></i>
+        <div>
+            <h3 class="font-extrabold text-2xl mb-1">Mengecek Kuota...</h3>
+            <p class="text-sm font-bold opacity-80 mt-2">Mohon tunggu sebentar, proses ini dapat memakan waktu 10 - 15 detik.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FLOATING ADS -->
+<div id="floatads">
+    <div id="close-floatads" onclick="document.getElementById('floatads').style.display='none'">✕</div>
+    <div class="max-w-3xl mx-auto text-center">
+        <div class="text-white text-sm opacity-60">✨ Iklan</div>
+        <div id="adm-container-7101"></div>
+        <script data-cfasync="false" async type="text/javascript" src="//adoto.net/dashboard/display/items.php?7101&3012&300&250&4&0&0"></script>
+        <script data-cfasync="false" type="text/javascript" src="//adoto.net/dashboard/display/serve.js"></script>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#0b0f1a] border-b-4 border-black neo-shadow">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-3">
+        <a href="#" class="flex items-center gap-2 text-white font-extrabold text-xl">
+            <i class="fa-solid fa-wifi text-[#facc15]"></i>
+            <span>CekKuota</span>
+        </a>
+        <div class="flex items-center gap-4">
+            <a href="https://quizdana.com/cek-kuota" class="text-white font-bold text-sm neo-border px-4 py-1.5 bg-[#1e293b] neo-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition">Home</a>
+            <a href="https://quizdana.com" class="text-white font-bold text-sm neo-border px-4 py-1.5 bg-[#1e293b] neo-shadow-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition">Website</a>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="pt-28 pb-32 px-4 max-w-2xl mx-auto bg-grid min-h-screen">
+
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-white tracking-tight drop-shadow-[4px_4px_0_#000]">
+            Cek Kuota <span class="text-[#facc15]">📱</span>
+        </h1>
+        <p class="text-slate-400 mt-1 text-sm font-medium">Telkomsel · Axis · XL · Tri · Indosat · Smartfren</p>
+    </div>
+
+    <!-- IKLAN ADSENSE -->
+    <div class="w-full flex justify-center mb-8 overflow-hidden">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block; width: 100%;"
+             data-ad-client="ca-pub-7112769875269380"
+             data-ad-slot="5531129822"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <div class="neo-card bg-[#1e293b] rounded-none p-6 md:p-8">
+
+        <!-- Visitor & IP -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+                        <div class="neo-border bg-[#0f172a] px-4 py-1.5 text-white font-bold text-sm flex items-center gap-2 neo-shadow-sm">
+                <i class="fa-solid fa-users text-[#facc15]"></i> Visitor <span class="bg-[#facc15] text-black px-2 py-0.5 ml-1">1100</span>
+            </div>
+            <div class="neo-border bg-[#0f172a] px-4 py-1.5 text-white font-bold text-sm flex items-center gap-2 neo-shadow-sm">
+                <i class="fa-solid fa-wifi text-[#facc15]"></i> IP <span class="bg-[#facc15] text-black px-2 py-0.5 ml-1">52.161.60.225</span>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <form method="POST" action="" onsubmit="return showLoading();">
+            <div class="space-y-4">
+                <div class="neo-border bg-[#0f172a] p-3 text-white text-sm font-bold flex items-center gap-2 neo-shadow-sm">
+                    <i class="fa-solid fa-circle-info text-[#facc15]"></i> Masukkan nomor & pilih operator
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+                    <div class="input-group">
+                        <span id="provider-icon" class="input-addon neo-border bg-[#facc15] px-4 text-black font-bold text-lg neo-shadow-sm border-r-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        <input type="text" name="no" id="no" required
+                               class="neo-input px-4 py-3 font-bold text-black text-lg placeholder:text-slate-400"
+                               placeholder="08xxxxxxxxxx atau +62xxx">
+                    </div>
+                    <div class="select-wrapper">
+                        <select name="id" required class="neo-select px-4 py-3 pr-12 font-bold text-black text-base">
+                            <option value="">Pilih Kartu</option>
+                            <option value="6324,cetak_voucher,591">Cek Kuota Telkomsel</option>
+                            <option value="6327,cetak_voucher,591">Cek Kuota Axis</option>
+                            <option value="6326,cetak_voucher,591">Cek Kuota XL</option>
+                            <option value="6325,cetak_voucher,591">Cek Kuota Three</option>
+                            <option value="6323,cetak_voucher,591">Cek Kuota Indosat</option>
+                            <option value="13938,cetak_voucher,591">Cek Kuota Smartfren</option>
+                            <option value="2121,tagihan,92">Cek Tagihan Listrik</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" name="login" id="btnSubmit"
+                        class="neo-btn w-full bg-[#facc15] text-black font-extrabold text-xl py-3.5 flex items-center justify-center gap-2 hover:bg-[#fde047] transition cursor-pointer">
+                    <i class="fa-solid fa-circle-right"></i> Cek Kuota
+                </button>
+            </div>
+        </form>
+
+        <!-- ====== HASIL CEK ====== -->
+        
+        <!-- ====== STATISTIK PER OPERATOR ====== -->
+        <div class="mt-10">
+            <h2 class="text-xl font-extrabold text-white flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-chart-simple text-[#facc15]"></i> Statistik Pengecekan
+            </h2>
+
+            <div class="neo-border bg-[#0f172a] p-4 neo-shadow-sm space-y-1"><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/telkomsel.png" alt="Telkomsel" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 1</span></div></div><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/axis.png" alt="Axis" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 7</span></div></div><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/xl.png" alt="XL" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 9</span></div></div><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/tri.png" alt="Three" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 2</span></div></div><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/indosat.png" alt="Indosat" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 1</span></div></div><div class="stat-item flex items-center justify-between py-2 border-b border-slate-800 last:border-0"><div class="flex items-center gap-2"><img src="assets/smartfren.png" alt="Smartfren" class="h-8 w-16 object-contain bg-white px-2 py-1 rounded border-2 border-black neo-shadow-sm"></div><div class="flex items-center gap-3"><span class="stat-success stat-number">✅ 0</span><span class="stat-fail stat-number">❌ 0</span></div></div></div>        </div>
+
+        <!-- Telegram Bots -->
+        <div class="mt-6 space-y-2">
+            <div class="neo-border bg-[#0f172a] p-3 text-sm text-white neo-shadow-sm">
+                🤖 <a href="https://t.me/quizpenghasildana_bot" class="text-[#facc15] font-bold hover:underline">Bot Telegram Penghasil Dana</a>
+            </div>
+            <div class="neo-border bg-[#0f172a] p-3 text-sm text-white neo-shadow-sm">
+                🤖 <a href="https://t.me/cekpaketkuota_bot" class="text-[#facc15] font-bold hover:underline">Bot Telegram Cek Kuota</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="mt-10 text-center text-slate-500 text-xs font-medium border-t-2 border-slate-800 pt-6">
+        <p class="mb-2">© Mode With ❤ Rusmana-ID</p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="index.php" class="footer-link">Home</a>
+            <a href="about.php" class="footer-link">About</a>
+            <a href="contact.php" class="footer-link">Contact</a>
+            <a href="privacy-policy.php" class="footer-link">Privacy Policy</a>
+            <a href="disclaimer.php" class="footer-link">Disclaimer</a>
+        </div>
+    </footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script Loading & Deteksi Operator Otomatis -->
+<script>
+    function showLoading() {
+        const overlay = document.getElementById('loadingOverlay');
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        
+        const btn = document.getElementById('btnSubmit');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses...';
+        btn.classList.add('opacity-80', 'cursor-wait');
+        
+        return true;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.getElementById('no');
+        const iconContainer = document.getElementById('provider-icon');
+        const operatorSelect = document.querySelector('select[name="id"]');
+        const defaultIcon = '<i class="fa-solid fa-phone"></i>';
+
+        const providers = {
+            'telkomsel': {
+                codes: ['0811', '0812', '0813', '0821', '0822', '0823', '0851', '0852', '0853'],
+                logo: 'assets/telkomsel.png',
+                selectValue: '6324,cetak_voucher,591'
+            },
+            'axis': {
+                codes: ['0831', '0832', '0833', '0838'],
+                logo: 'assets/axis.png',
+                selectValue: '6327,cetak_voucher,591'
+            },
+            'xl': {
+                codes: ['0817', '0818', '0819', '0859', '0877', '0878'],
+                logo: 'assets/xl.png',
+                selectValue: '6326,cetak_voucher,591'
+            },
+            'tri': {
+                codes: ['0895', '0896', '0897', '0898', '0899'],
+                logo: 'assets/tri.png',
+                selectValue: '6325,cetak_voucher,591'
+            },
+            'indosat': {
+                codes: ['0814', '0815', '0816', '0855', '0856', '0857', '0858'],
+                logo: 'assets/indosat.png',
+                selectValue: '6323,cetak_voucher,591'
+            },
+            'smartfren': {
+                codes: ['0881', '0882', '0883', '0884', '0885', '0886', '0887', '0888', '0889'],
+                logo: 'assets/smartfren.png',
+                selectValue: '13938,cetak_voucher,591'
+            }
+        };
+
+        phoneInput.addEventListener('input', function() {
+            let val = this.value.replace(/\D/g, ''); 
+
+            if (val.startsWith('62')) {
+                val = '0' + val.substring(2);
+            }
+
+            if (val.length >= 4) {
+                const prefix = val.substring(0, 4);
+                let isFound = false;
+
+                for (const [key, data] of Object.entries(providers)) {
+                    if (data.codes.includes(prefix)) {
+                        iconContainer.innerHTML = `<img src="${data.logo}" alt="${key}" class="h-7 w-auto object-contain">`;
+                        operatorSelect.value = data.selectValue;
+                        isFound = true;
+                        break;
+                    }
+                }
+
+                if (!isFound) {
+                    iconContainer.innerHTML = defaultIcon;
+                    operatorSelect.value = "";
+                }
+            } else {
+                iconContainer.innerHTML = defaultIcon;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

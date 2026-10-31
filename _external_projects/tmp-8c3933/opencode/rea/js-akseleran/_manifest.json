@@ -1,0 +1,173 @@
+{
+ "url": "https://www.akseleran.co.id/login",
+ "origin": "https://www.akseleran.co.id",
+ "saved": 33,
+ "skipped": 26,
+ "scripts": [
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/main-669dd6c5ac8499cb9944.js",
+   "file": "www.akseleran.co.id___1a446ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_main-669dd6c5ac8499cb9944.js.js",
+   "bytes": 52310
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/webpack-1a5ad4b15ec3a3484e65.js",
+   "file": "www.akseleran.co.id__446ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_webpack-1a5ad4b15ec3a3484e65.js.js",
+   "bytes": 31853
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/ee759108.bf2a89e13700e70cb6b8.js",
+   "file": "www.akseleran.co.id__46ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_ee759108.bf2a89e13700e70cb6b8.js.js",
+   "bytes": 295
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/commons.f3ec9db33a05256c29bb.js",
+   "file": "www.akseleran.co.id__446ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_commons.f3ec9db33a05256c29bb.js.js",
+   "bytes": 14776
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/b009a839ff5a6b579b97695bee8e82f4090f4c0b.11d11cb1e08753a80014.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_b009a839ff5a6b579b97695bee8e82f4090f4c0b.11d11cb1e08753a80014.js.js",
+   "bytes": 59759
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/379814656b961473727f15a179e713a52b8f977e.0bcc36b647a97398cfcd.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_379814656b961473727f15a179e713a52b8f977e.0bcc36b647a97398cfcd.js.js",
+   "bytes": 437578
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/5bf7e9a1a20770d24db5a867e8c29495218e2343.c2fe367652bcaab22054.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_5bf7e9a1a20770d24db5a867e8c29495218e2343.c2fe367652bcaab22054.js.js",
+   "bytes": 86927
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/b21dae1db472b7731a9bf0d388f4518724625094.c6655ef2700bd16e8d3b.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_b21dae1db472b7731a9bf0d388f4518724625094.c6655ef2700bd16e8d3b.js.js",
+   "bytes": 395
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/a25966e14fcd48625fcec3935291ffd722784c96.fc00ede3f070ae2ffc46.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_a25966e14fcd48625fcec3935291ffd722784c96.fc00ede3f070ae2ffc46.js.js",
+   "bytes": 1152702
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/styles.4c9e8b06825295253c16.js",
+   "file": "www.akseleran.co.id__a446ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_styles.4c9e8b06825295253c16.js.js",
+   "bytes": 128955
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/a34fc7579db26b8f34773f3beb7508c64ed4a303.45f396ba790f56b6a867.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_a34fc7579db26b8f34773f3beb7508c64ed4a303.45f396ba790f56b6a867.js.js",
+   "bytes": 119552
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/c52682145cd14b55d6207bda31b90945955d4f83.3680af346f28268c8132.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_c52682145cd14b55d6207bda31b90945955d4f83.3680af346f28268c8132.js.js",
+   "bytes": 528835
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/48c5baad8c0e0f144219c686f7f55e4644864fd9.5e04ec0f08316d868616.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_48c5baad8c0e0f144219c686f7f55e4644864fd9.5e04ec0f08316d868616.js.js",
+   "bytes": 2310255
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/index-0e65f5893483bb08d0c2.js",
+   "file": "www.akseleran.co.id__e6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages_index-0e65f5893483bb08d0c2.js.js",
+   "bytes": 625574
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/65ce08abb99bc493c2b75e9c7b7ef01566f586a0.dfd9fa277ddb98b90697.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_65ce08abb99bc493c2b75e9c7b7ef01566f586a0.dfd9fa277ddb98b90697.js.js",
+   "bytes": 20200
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/pages/_app-38beefdd510e78fb01f9.js",
+   "file": "www.akseleran.co.id__ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_pages__app-38beefdd510e78fb01f9.js.js",
+   "bytes": 534
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/9dc5373f02b02ce08443a0fb521026a2526bdc37.96a9bd81d6c8cea2d0c9.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_9dc5373f02b02ce08443a0fb521026a2526bdc37.96a9bd81d6c8cea2d0c9.js.js",
+   "bytes": 62283
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/29107295.c6cb63b9a2df7160bef1.js",
+   "file": "www.akseleran.co.id__46ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_29107295.c6cb63b9a2df7160bef1.js.js",
+   "bytes": 480
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/18d751328cdc730f2fa377fba9cdfe665ee1f747.e5fa8a068cafc641e1aa.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_18d751328cdc730f2fa377fba9cdfe665ee1f747.e5fa8a068cafc641e1aa.js.js",
+   "bytes": 599862
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/e1ed9ae9cdd635baa45b6cc68e016ae58edd58ae.97ff6614fb421867c34f.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_e1ed9ae9cdd635baa45b6cc68e016ae58edd58ae.97ff6614fb421867c34f.js.js",
+   "bytes": 6708
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_buildManifest.js",
+   "file": "www.akseleran.co.id__3fc2f1f9592c301ce4__next_static_1a446ae6ac608b780ab7da3fc2f1f9592c301ce4__buildManifest.js.js",
+   "bytes": 366
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_ssgManifest.js",
+   "file": "www.akseleran.co.id__da3fc2f1f9592c301ce4__next_static_1a446ae6ac608b780ab7da3fc2f1f9592c301ce4__ssgManifest.js.js",
+   "bytes": 434
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/framework.7f2596db756ea56b328c.js",
+   "file": "www.akseleran.co.id__6ae6ac608b780ab7da3fc2f1f9592c301ce4__next_static_chunks_framework.7f2596db756ea56b328c.js.js",
+   "bytes": 11398
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/72f9e2c61e9c40e02b277f397158b9aa0ee1e36d.147547bbec8fc822a19c.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_72f9e2c61e9c40e02b277f397158b9aa0ee1e36d.147547bbec8fc822a19c.js.js",
+   "bytes": 86927
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/e0094c32a6da1f20a2268958304ad7aa3a7414ab.f6cdd8fb60a421ba0c95.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_e0094c32a6da1f20a2268958304ad7aa3a7414ab.f6cdd8fb60a421ba0c95.js.js",
+   "bytes": 8620
+  },
+  {
+   "url": "https://cdn.indodanafinance.co.id/paylater-tmf-web-app/build-artifacts/2026-10-29/1a446ae6ac608b780ab7da3fc2f1f9592c301ce4/_next/static/chunks/2f3c627bad3c3e330ad7106876528ffc7b2f2b12.2f4b70a76ec3720b6f58.js",
+   "file": "www.akseleran.co.id__01ce4__next_static_chunks_2f3c627bad3c3e330ad7106876528ffc7b2f2b12.2f4b70a76ec3720b6f58.js.js",
+   "bytes": 528835
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-P9WC4NV&gtm_auth=&gtm_preview=&gtm_cookies_win=x",
+   "file": "www.akseleran.co.id__www.googletagmanager.com_gtm.js_id_GTM-P9WC4NV_gtm_auth_gtm_preview_gtm_cookies_win_x.js",
+   "bytes": 22890
+  },
+  {
+   "url": "https://www.akseleran.co.id/static/js/0.bf88dafd.chunk.js",
+   "file": "www.akseleran.co.id__www.akseleran.co.id_static_js_0.bf88dafd.chunk.js.js",
+   "bytes": 28044
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.akseleran.co.id__www.google-analytics.com_analytics.js.js",
+   "bytes": 52310
+  },
+  {
+   "url": "https://www.akseleran.co.id/static/js/41.c810bc06.chunk.js",
+   "file": "www.akseleran.co.id__www.akseleran.co.id_static_js_41.c810bc06.chunk.js.js",
+   "bytes": 288273
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js?onload=onloadcallback&render=explicit",
+   "file": "www.akseleran.co.id__www.google.com_recaptcha_api.js_onload_onloadcallback_render_explicit.js",
+   "bytes": 1607
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/sdk.js",
+   "file": "www.akseleran.co.id__connect.facebook.net_en_US_sdk.js.js",
+   "bytes": 12459
+  },
+  {
+   "url": "https://www.gstatic.com/recaptcha/releases/bSuJ2xBC8cHT21-c68JXN31m/recaptcha__en.js",
+   "file": "www.akseleran.co.id__www.gstatic.com_recaptcha_releases_bSuJ2xBC8cHT21-c68JXN31m_recaptcha__en.js.js",
+   "bytes": 859220
+  }
+ ]
+}

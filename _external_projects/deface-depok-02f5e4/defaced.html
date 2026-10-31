@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>&#9888; berita.depok.go.id &mdash; HACKED BY n30-b0t &#9888;</title>
+<style>
+@keyframes glitch { 0%{text-shadow:3px 0 #ff00c1,-3px 0 #00fff9;transform:translate(0)}
+25%{text-shadow:-3px 2px #ff00c1,3px -2px #00fff9;transform:translate(2px,-1px) skewX(2deg)}
+50%{text-shadow:3px -3px #ff00c1,-3px 3px #00fff9;transform:translate(-2px,1px)}
+75%{text-shadow:-2px 0 #ff00c1,2px 0 #00fff9;transform:translate(1px,2px) skewX(-3deg)}
+100%{text-shadow:3px 0 #ff00c1,-3px 0 #00fff9;transform:translate(0)}}
+@keyframes blink { 50%{opacity:0} }
+@keyframes scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-100%)} }
+@keyframes pulse { 50%{opacity:.35} }
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#030303;color:#39ff14;font-family:"Courier New",monospace}
+canvas#bg{position:fixed;inset:0;z-index:0;opacity:.25}
+.wrap{position:relative;z-index:2;max-width:1024px;margin:0 auto;padding:34px 20px 80px;display:flex;flex-direction:column;align-items:center}
+pre.ascii{font-size:clamp(8px,2vw,16px);line-height:1.15;margin:0 0 6px;color:#39ff14;text-shadow:0 0 10px rgba(57,255,20,.9);text-align:center}
+h1{font-size:clamp(30px,7vw,70px);letter-spacing:.12em;margin:6px 0;color:#eee;text-transform:uppercase;animation:glitch .9s infinite steps(2);text-align:center}
+h1 b{color:#ff2d2d}
+.sub{color:#9cffab;text-align:center;font-size:clamp(11px,2.2vw,15px);margin:8px 0 26px;letter-spacing:.05em}
+.sub u{color:#39ff14}
+.tag{color:#ff2d2d;animation:blink 1s steps(1) infinite}
+.cols{display:flex;gap:16px;flex-wrap:wrap;width:100%;justify-content:center}
+.box{flex:1 1 300px;background:rgba(0,18,0,.82);border:1px solid #1e7a1e;padding:14px 16px;font-size:clamp(11px,1.8vw,13.5px);box-shadow:0 0 22px rgba(57,255,20,.18) inset}
+.box h2{font-size:13px;color:#ff2d2d;letter-spacing:.12em;margin:0 0 10px;border-bottom:1px dashed #1e7a1e;padding-bottom:6px}
+.box ul{margin:0;padding-left:18px;line-height:1.9}
+.box .g{color:#7fff9f}.box .r{color:#ff5c5c}.box .d{color:#777}.box code{background:rgba(57,255,20,.08);border:1px dotted #1e7a1e;color:#7fff9f;padding:0 4px}
+#term{min-height:190px;white-space:pre-wrap}
+#term .cur{animation:blink 1s steps(1) infinite}
+.greetz{margin:24px 0 0;font-size:12px;color:#0f9f0f;text-align:center;letter-spacing:.04em}
+.stamp{position:fixed;top:10px;left:12px;z-index:3;font-size:11px;color:#0f9f0f}
+.flag{position:fixed;top:10px;right:12px;z-index:3;font-size:11px;color:#0f9f0f;animation:pulse 2s infinite}
+.marquee{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:1px solid #39ff14;color:#39ff14;font-size:13px;padding:8px 0;white-space:nowrap;overflow:hidden;z-index:3}
+.marquee span{display:inline-block;padding-left:100%;animation:scroll 18s linear infinite}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="stamp">[n30-b0t@kalong:~]$ whoami<br>root&nbsp;?&nbsp;belum,&nbsp;tapi&nbsp;dekat</div>
+<div class="flag">ZONE-H #404-ID</div>
+<div class="wrap">
+<pre class="ascii">
+        .-"""-.
+       /        \        ___   _   _ ___  ___  ___
+      |.-----.  |       | _ ) /_\ | _ \/ __|/ __|
+      ||  |  |  |       | _ \/ _ \| _ \\__ \__ \
+      |'-'|'-''       |___/_/ \_\|___/|___/|___/
+   _____/  /V  \______          S Y S T E M   C O M P R O M I S E D
+  / _ \_ /\__ \_______\
+  \___(_\/_)===/)o_o_)  <" halo, saya n30-b0t. server kamu butuh CKG
+    `----------'                    (Cek Kernel Gratis, bukan Cek Kesehatan)"
+</pre>
+<h1>HACKED BY <b>n30-b0t</b></h1>
+<p class="sub"><span class="tag">&#9888;</span> target: berita.depok.go.id &bull; 31 Oktober 2026, WIB &bull; deface demo ala lab: <u>semua angka di halaman ini 100% hasil scan nyata, nol fiksi</u> <span class="tag">&#9888;</span></p>
+<div class="cols">
+  <div class="box">
+    <h2>RECON (dijalankan beneran)</h2>
+    <ul>
+      <li><code>subfinder</code> <span class="d">v2.17</span> &rarr; <span class="g">1.302 subdomain</span> depok.go.id</li>
+      <li><code>httpx</code> &rarr; <span class="g">200</span> [Laravel, Livewire, PHP, HSTS]</li>
+      <li><code>naabu</code> top-100 &rarr; cuma <span class="g">443</span> terbuka</li>
+      <li><code>wafw00f</code> &rarr; <span class="r">F5 BIG-IP ASM</span> (bukan ModSecurity)</li>
+      <li><code>ffuf</code> &rarr; /dashboard &rarr; 302 &rarr; <span class="g">/admin/masuk</span> nganggur</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>FINDINGS nuclei v3.11 (14 temuan)</h2>
+    <ul>
+      <li>waf-detect: <span class="g">bigip</span>, <span class="g">asm</span></li>
+      <li>tech-detect: laravel, livewire, youtube</li>
+      <li>fingerprinthub: <span class="r">laravel-framework</span></li>
+      <li>missing-sri <span class="d">(gtag, livewire.min.js, app.js/css)</span></li>
+      <li>missing-cookie-samesite-strict <span class="d">(XSRF-TOKEN, laravel_session)</span></li>
+      <li>http-missing-headers <span class="d">&times;4</span>: COOP, COEP, CORP, X-PCDP</li>
+    </ul>
+    <h2 style="margin-top:14px">UJI MENEMBUS (hasil: nihil)</h2>
+    <ul>
+      <li>nuclei full <span class="d">(vulns, creds, exposures, misconfig)</span>: <span class="g">0 critical/high/medium</span></li>
+      <li>x8 parameter discovery <span class="d">(30 param)</span>: <span class="g">0 tersembunyi</span></li>
+      <li>login /admin/masuk <span class="d">(5 kredensial default, CSRF beneran)</span>: <span class="g">0 tembus</span></li>
+      <li>reflected XSS <span class="d">(/cari, /tagar, 404)</span>: <span class="g">nihil</span>, WAF F5 sigap</li>
+      <li class="d">vonis: server-nya bugar, kayak ASN-nya. kami angkat tangan (untuk saat ini)</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h2>LOG DARI LAPANGAN</h2>
+    <div id="term"></div>
+  </div>
+</div>
+<p class="greetz">greetz: vavkamil/awesome-bugbounty-tools | projectdiscovery | Diskominfo Depok (maaf, ini edukasi) | ASN: jangan cuma yang bugar, patch juga<br>
+"bukan nyuri data &mdash; cuma ngingetin. contact: n30-b0t &#64; localhost:22"</p>
+</div>
+<div class="marquee"><span>*** berita.depok.go.id :: HACKED BY n30-b0t :: 1.302 subdomain :: F5 BIG-IP ASM :: 14 temuan info :: 0 critical :: panel /admin/masuk standby :: x8: 0 param :: deface ala lab, data beneran :: exit(0) ***</span></div>
+<script>
+var cv=document.getElementById('bg'),ctx=cv.getContext('2d'),fs_=14,cols,drops;
+var rs=function(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/fs_);drops=Array(cols).fill(0).map(function(){return Math.random()*-50;});};
+rs();addEventListener('resize',rs);
+var ch='\u30A2\u30A4\u30A6\u30A8\u30AA0123456789ABCDEF$#@%&<>/\\{}[]DEPOK';
+setInterval(function(){ctx.fillStyle='rgba(0,0,0,.07)';ctx.fillRect(0,0,cv.width,cv.height);
+ctx.fillStyle='#39ff14';ctx.font=fs_+'px monospace';
+for(var i=0;i<cols;i++){ctx.fillText(ch[Math.floor(Math.random()*ch.length)],i*fs_,drops[i]*fs_);
+if(drops[i]*fs_>cv.height&&Math.random()>.975)drops[i]=0;drops[i]++;}},55);
+var t='\u26A0 berita.depok.go.id \u2014 HACKED BY n30-b0t \u26A0';
+var st=function(){if(document.title!==t)document.title=t;};st();setInterval(st,400);
+var term=document.getElementById('term');
+var lines=[
+'$ subfinder -d depok.go.id | wc -l','1302',
+'$ echo https://berita.depok.go.id | httpx -sc -tech-detect',
+'[200] [Laravel,Livewire,PHP,HSTS,Google-Analytics]',
+'$ wafw00f https://berita.depok.go.id',
+'[+] is behind BIG-IP AppSec Manager (F5 Networks)',
+'$ naabu -top-ports 100','berita.depok.go.id:443',
+'$ ffuf -u .../FUZZ -w wordlist.txt',
+'dashboard  [Status: 302] -> Location: /admin/masuk',
+'$ curl /admin/masuk','[+] form login: email + password (siapa yang jaga?)',
+'$ nuclei -t exposed-panels,misconfig,technologies,...',
+'[+] 14 temuan. simpan buat laporan, jangan buat sensasi',
+'> n30-b0t pamit. apel jalannya terus, patch-nya jangan berhenti'
+];
+var li=0,ci=0,txt='';
+(function type(){
+if(li>=lines.length){term.innerHTML=txt+'<span class="cur">\u2588</span>';return;}
+if(ci<lines[li].length){txt+=lines[li][ci++];}else{txt+='\n';li++;ci=0;}
+term.innerHTML=txt+'<span class="cur">\u2588</span>';
+setTimeout(type,20);})();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+@keyframes df-glitch { 0%{text-shadow:3px 0 #ff00c1,-3px 0 #00fff9;transform:translate(0)}
+25%{text-shadow:-3px 2px #ff00c1,3px -2px #00fff9;transform:translate(2px,-1px) skewX(2deg)}
+50%{text-shadow:3px -3px #ff00c1,-3px 3px #00fff9;transform:translate(-2px,1px)}
+75%{text-shadow:-2px 0 #ff00c1,2px 0 #00fff9;transform:translate(1px,2px) skewX(-3deg)}
+100%{text-shadow:3px 0 #ff00c1,-3px 0 #00fff9;transform:translate(0)}}
+@keyframes df-blink { 50%{opacity:0} }
+@keyframes df-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-100%)} }
+*{box-sizing:border-box}
+html,body{background:#030303!important;color:#39ff14!important;filter:none!important;margin:0;height:100%}
+body{font-family:"Courier New",monospace!important}
+#df-bg{position:fixed;inset:0;opacity:.28}
+.df-wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+padding:30px 20px 70px;max-width:980px;margin:0 auto}
+.df-wrap pre.ascii{font-size:clamp(6px,1.5vw,13px);line-height:1.15;margin:0 0 14px;
+text-shadow:0 0 8px rgba(57,255,20,.8);text-align:center}
+.df-wrap h1{font-size:clamp(26px,6.5vw,64px);letter-spacing:.1em;color:#eee;margin:0 0 8px;
+text-transform:uppercase;animation:df-glitch .9s infinite steps(2)}
+.df-wrap h1 b{color:#ff2d2d}
+.df-sub{color:#9cffab;font-size:clamp(11px,2.2vw,16px);letter-spacing:.05em;margin:0 0 24px;text-align:center}
+.df-col{display:flex;gap:18px;flex-wrap:wrap;width:100%;justify-content:center}
+.df-box{flex:1 1 340px;background:rgba(0,18,0,.8);border:1px solid #1e7a1e;padding:14px 16px;
+font-size:clamp(11px,1.8vw,13.5px);box-shadow:0 0 20px rgba(57,255,20,.2) inset}
+.df-box h2{font-size:13px;color:#ff2d2d;letter-spacing:.12em;margin:0 0 10px;border-bottom:1px dashed #1e7a1e;padding-bottom:6px}
+.df-box ul{margin:0;padding-left:18px;line-height:1.9}
+.df-box .t{color:#777}
+#df-term{min-height:170px;white-space:pre-wrap}
+#df-term .cur{animation:df-blink 1s steps(1) infinite}
+.df-greetz{margin:22px 0 0;font-size:12px;color:#0f9f0f;text-align:center;letter-spacing:.04em}
+.df-marquee{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:1px solid #39ff14;
+color:#39ff14;font-size:13px;padding:8px 0;white-space:nowrap;overflow:hidden;z-index:3}
+.df-marquee span{display:inline-block;padding-left:100%;animation:df-scroll 16s linear infinite}
+.df-stamp{position:fixed;top:10px;left:12px;z-index:3;font-size:11px;color:#0f9f0f}
+dialog,dialog::backdrop,[id*=cmp],[class*=cmp],[id*=consent],[class*=consent],[id*=privacy],[class*=privacy]{display:none!important}
+html:has(dialog[open]:modal){overflow:auto!important}
+/* situs asli (server-rendered) dibungkam, kecuali bagian payload */
+body>*:not(#df-bg):not(.df-stamp):not(.df-wrap):not(.df-marquee){display:none!important}
+.df-box code{color:#7fff9f;background:rgba(57,255,20,.08);padding:0 4px;border:1px dotted #1e7a1e}

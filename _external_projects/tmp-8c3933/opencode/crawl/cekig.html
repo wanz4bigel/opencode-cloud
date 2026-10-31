@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Instagram Viewer - Cek Profil</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --gold: #ffd700;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f2f5;
+            background-image: radial-gradient(at 40% 20%, rgba(67, 97, 238, 0.05) 0px, transparent 50%);
+            padding-bottom: 120px; /* Jarak untuk menu melayang */
+            overflow-x: hidden;
+        }
+
+        /* Navbar Atas */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .brand-text {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
+        }
+
+        /* Container & Card */
+        .security-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 20px 50px rgba(67, 97, 238, 0.1);
+            border: 1px solid rgba(67, 97, 238, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Grid Negara (tidak digunakan, tapi tetap ada untuk konsistensi) */
+        .grid-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-btn:hover {
+            border-color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+            transform: translateY(-3px);
+        }
+        .flag-img {
+            width: 45px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        /* Server Card Premium (tidak digunakan, tapi tetap) */
+        .server-card {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 22px;
+            padding: 15px;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .server-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.1);
+        }
+
+        /* BOTTOM NAV CENTERED (akan di footer) */
+        .bottom-nav-container {
+            position: fixed; bottom: 20px; left: 0; width: 100%;
+            display: flex; justify-content: center; z-index: 9999;
+            pointer-events: none;
+        }
+        .bottom-nav-box {
+            pointer-events: auto; width: 92%; max-width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px); border-radius: 30px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            display: flex; justify-content: space-around; align-items: center;
+            padding: 10px 15px; border: 1px solid rgba(255,255,255,0.8);
+        }
+        .nav-link-float { color: #94a3b8; font-size: 22px; text-decoration: none; padding: 10px; transition: 0.3s; }
+        .nav-link-float.active { color: var(--primary); }
+        .nav-mid-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 24px;
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
+            position: relative; top: -35px; border: 5px solid #f0f2f5; transition: 0.3s;
+        }
+        .nav-mid-btn:hover { transform: scale(1.1) rotate(15deg); color: #fff; }
+
+        /* Ad floating */
+        .sticky-ad-container {
+            position: fixed; bottom: 85px;
+            left: 50%; transform: translateX(-50%);
+            width: 95%; max-width: 400px;
+            z-index: 9998; text-align: center;
+            animation: slideUp 0.5s ease-out;
+        }
+
+/* Verified Badge ala Instagram */
+.verified-badge-ig {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #1da1f2;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+    margin-left: 4px;
+    flex-shrink: 0;
+}
+.verified-badge-ig i {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+        .sticky-ad-content {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 5px; border-radius: 10px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            min-height: 50px;
+        }
+        .ad-close-btn {
+            position: absolute; top: -10px; right: -10px;
+            background: #ef4444; color: white; border: none;
+            width: 24px; height: 24px; border-radius: 50%;
+            font-size: 12px; cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        @keyframes slideUp { from {bottom: -100px;} to {bottom: 85px;} }
+    </style>
+</head>
+<body>
+
+<nav class="navbar-custom animate__animated animate__fadeInDown">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div style="background: var(--primary); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+            <i class="fas fa-bolt" style="font-size: 16px;"></i>
+        </div>
+        <span class="brand-text">Instagram Viewer</span>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+        <!-- Top Bar: Views -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="fw-bold text-dark"><i class="fas fa-bolt text-warning me-2"></i>Instagram Viewer</div>
+            <div class="bg-white px-3 py-1 rounded-pill shadow-sm border">
+                <i class="far fa-eye text-primary me-1"></i> 11,011 Views
+            </div>
+        </div>
+
+        <!-- Iklan Atas -->
+        <div class="mb-3 text-center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+                    <div class="alert alert-warning">⚠️ Gagal mengambil csrftoken.</div>
+        
+                    <!-- FORM PENCARIAN AWAL / ERROR -->
+            <div class="security-card text-center">
+                <div class="display-1 mb-3">🔍</div>
+                <h4 class="fw-bold">Instagram Viewer</h4>
+                <p class="text-muted">Lihat profil, postingan, pengikut, dan mengikuti</p>
+                                <form method="get" class="d-flex gap-2 mt-3">
+                    <input type="text" name="username" class="form-control rounded-pill" placeholder="Masukkan username" required>
+                    <button type="submit" class="btn btn-primary rounded-pill px-4">Cari</button>
+                </form>
+            </div>
+        
+        <!-- ===== LIVE HISTORY ===== -->
+        <div class="mt-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="bg-white p-2 rounded-circle shadow-sm me-3 text-primary border border-light"><i class="fas fa-history fa-lg"></i></div>
+                    <div><h6 class="fw-bold m-0 text-dark">Live History</h6><small class="text-muted" style="font-size: 10px;">10 Pencarian Terakhir</small></div>
+                </div>
+                <div><span class="badge bg-danger bg-opacity-10 text-danger animate__animated animate__pulse animate__infinite infinite border border-danger">LIVE</span></div>
+            </div>
+
+            <div id="historyList">
+                                                <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-2.cdninstagram.com/v/t51.82787-19/670865773_17984497530003737_4318025599700091656_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFx2hIMqswPclq0e1DetJipwQTGexvJm-ry_uzDFLJjSEvJZODN9dLAqfQJ8TkqAZE&_nc_ohc=hrs39OHgXe4Q7kNvwFoXW3Q&_nc_gid=MhpS52xaIL9V_eqeexrHbQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQJidFV5iFMFkeE60e8K3rBJD5q1fAxpt-0VYh9u9Nauqw&oe=6AA91B6A&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=renzstore_co" class="text-dark text-decoration-none">@renzstore_co</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 08:08</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-1.cdninstagram.com/v/t51.82787-19/775416600_18421177261197602_8946424195604448463_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gHMuNhAOnWVs57DI0BsesxXcsQK4AcLKh6ItDIv4Rde67oeiSSkjWYRgHg9yR3TkRo&_nc_ohc=xgSYQddOrMEQ7kNvwGtyITI&_nc_gid=YI6MqLkXeZLZlUsNs0Ysjg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQLEz5CgeFgF4givfAR9tGSqJjcvO0KwUnIP9Ev93_1TVg&oe=6AA912C0&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=li_anaa06" class="text-dark text-decoration-none">@li_anaa06</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 08:06</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-2.cdninstagram.com/v/t51.82787-19/654738590_18073063730542272_3653231045378391833_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2gGHMxeHi0xXvo9zE5czYwXntDIJ4KjKRG0gpiBvZMYtVC_mTI_GqydTvEGFiXdD9jQ&_nc_ohc=iMfY6E4ogo8Q7kNvwGZDXS7&_nc_gid=lmgLk7QvE-2RcvUpu0wcMA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQI7zNYkwu46Og1McBPnF_PbzF8lX6WLXTGaDfKCC04nNQ&oe=6AA915B4&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=hrnindyaglng_" class="text-dark text-decoration-none">@hrnindyaglng_</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 08:03</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-1.cdninstagram.com/v/t51.82787-19/794141175_17987130990048782_5710369303691652380_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gGwLMEVIpvks-bSukeEZ3WC13NMMlHy650fXzT2awQRvqyUtNlLf19BQucgSrMoZyA&_nc_ohc=YthK-9F9XTAQ7kNvwHcCgOP&_nc_gid=lqI0BT5Uq9gnMmUz7u2Qiw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQJMSg2kIzzefq6wSzerybjWTJ8Gc6daU0CQKeFCtkn8HA&oe=6AA9413E&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=eljasptra" class="text-dark text-decoration-none">@eljasptra</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 08:01</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk1-2.cdninstagram.com/v/t51.82787-19/789843904_18095853569547691_511706293347449835_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby43MzYuYzIifQ&_nc_ht=scontent-cgk1-2.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2gETnCINw3puckkv7hqxwQBFI2NlmPya_5Q4u_7pFo4irB7cdpn875LFgz-50HPlZCw&_nc_ohc=T0yqlcpjpoEQ7kNvwHqHZo0&_nc_gid=XWfsPnMoIq5B3tq88U7Y3w&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQKDlU1c6RoW42Db9vtqxvBPBd1CLAruJBClnoo49SHaNw&oe=6AA93666&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=dederefki13" class="text-dark text-decoration-none">@dederefki13</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 07:59</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-2.cdninstagram.com/v/t51.82787-19/587044537_18087384920053673_2835411523926189141_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gH7RyGNfrLqPIhopn3CBmEU6xHuXXnKEcRtc4-iIZYEkfWFNCLt2D9oUQ6TRK3eg_s&_nc_ohc=Ibb6ur6al7cQ7kNvwEi--sB&_nc_gid=hjDZ-lesyi4MUkUdVcGfHw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQLQX3TzdPaw9_VlBY-nC6_NgY-U5l8HBVneBDTlOWQHTg&oe=6AA939D8&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=_cayuut" class="text-dark text-decoration-none">@_cayuut</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 07:57</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk1-2.cdninstagram.com/v/t51.82787-19/788259221_18002077275004459_3570897510065776749_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk1-2.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2gFOl4V7pVWocpmogrv_Ot0LIwCjBAialKJIPk1NWxgiWTpIVEzA1ydxn4K-DRGoXyA&_nc_ohc=Xljl8Wqf8hgQ7kNvwFuXEY1&_nc_gid=FNnMdGLuni0u5PLaVjU9VA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQKBIm9-ZZqEtRZIlRnD3eM8qvo1dalu1Lnm5GiJUBRhJw&oe=6AA937E1&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=12whly" class="text-dark text-decoration-none">@12whly</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">11 Sep 07:55</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk1-2.cdninstagram.com/v/t51.82787-19/540748315_18400374844190039_1118274227110521580_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk1-2.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gHwdmEH_UEpAcztdQ0V9oYzJkkaiGAl-qPmzh9vzHHlVaVcApECWOgL5y-6DWBvGxI&_nc_ohc=FjW702ka8PYQ7kNvwEPIiHA&_nc_gid=d7P_bazYZR1W_HoiKSZfIg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQLpC1mCNMCy9jWhjzgXjU_MZKtzrevtlPQPFIMkS8PW3A&oe=6A9CADAC&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=windaaanp" class="text-dark text-decoration-none">@windaaanp</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">01 Sep 19:43</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://scontent-cgk2-1.cdninstagram.com/v/t51.82787-19/683622596_17948530125145143_1155963618478622943_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-cgk2-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gHZCmHeLxJEwCwQo6dQ_0ruRNEUhmKH6gwonPCK51EN9dD950sk9Ub1eBZcJ_M0DEU&_nc_ohc=XtWfYkbbYNoQ7kNvwFyWp7a&_nc_gid=cmqAge9AtHMvbVPiYeY-Sg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AQKApyOCIT_ygO4rIC5xXuex39f9MIRHLbTUtA1W7--L_Q&oe=6A9A5364&_nc_sid=8b3546" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=ripall_srya" class="text-dark text-decoration-none">@ripall_srya</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">31 Aug 03:11</small>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="security-card p-3 mb-2 animate__animated animate__fadeIn">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center" style="width: 70%;">
+                                <img src="https://instagram.fnak4-2.fna.fbcdn.net/v/t51.2885-19/573323465_1219825463302212_7278921664109726296_n.png?stp=dst-webp&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xNTAuYzIifQ&_nc_ht=instagram.fnak4-2.fna.fbcdn.net&_nc_cat=1&_nc_oc=Q6cZ2gHfoSK_NCg3GHEscgZTsLD_uaiiiZxcgkk-8bw5HMhKwpk010zglxZDknLiY7Sx3qeQJDJ_27WlxjiowEI0N4PZ&_nc_ohc=TH5pU-FT6FUQ7kNvwF5cRgE&_nc_gid=h3DXwpBAIXwhE40rzA0N8g&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.3-ccb7-5&oh=00_AQEgMKj52GCUsJs_7-Pb1pE9K7oT7HztkqMCA7tPG2U_Hw&oe=6A96522A&_nc_sid=10d13b" class="rounded-circle me-2" style="width:32px; height:32px; object-fit:cover;">
+                                <span class="fw-bold text-dark small text-truncate w-100">
+                                    <a href="?username=wahyu.mau17na" class="text-dark text-decoration-none">@wahyu.mau17na</a>
+                                </span>
+                            </div>
+                            <div class="text-end" style="width: 30%;">
+                                <small class="text-muted" style="font-size: 10px;">28 Aug 02:50</small>
+                            </div>
+                        </div>
+                    </div>
+                                        </div>
+        </div>
+
+        <!-- Iklan Bawah -->
+        <div class="mt-3 text-center">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+    </div>
+</div>
+
+</div> <!-- penutup container -->
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav-container animate__animated animate__slideInUp">
+    <div class="bottom-nav-box">
+        <a href="index.php" class="nav-link-float active" style="color:#4361ee; font-size:22px;"><i class="fas fa-home"></i></a>
+        <a href="https://t.me/config_geratis" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-telegram-plane"></i></a>
+        
+        <div style="width: 60px; height: 30px; position: relative;">
+            <a href="#" onclick="location.reload()" class="nav-mid-btn"><i class="fas fa-sync-alt"></i></a>
+        </div>
+
+        <a href="https://wa.me/6283879017166" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@config_geratis" target="_blank" class="nav-link-float" style="color:#94a3b8; font-size:22px;"><i class="fab fa-youtube"></i></a>
+    </div>
+</div>
+
+<!-- Iklan Melayang (Adsense) - di tengah -->
+<div id="floatingAd" class="sticky-ad-container" style="position:fixed; bottom:85px; left:50%; transform:translateX(-50%); width:95%; max-width:400px; z-index:9998; text-align:center;">
+    <div class="sticky-ad-content" style="background:rgba(255,255,255,0.95); backdrop-filter:blur(5px); padding:5px; border-radius:10px; box-shadow:0 -5px 20px rgba(0,0,0,0.1); position:relative; min-height:50px;">
+        <button class="ad-close-btn" onclick="document.getElementById('floatingAd').style.display='none'" style="position:absolute; top:-10px; right:-10px; background:#ef4444; color:white; border:none; width:24px; height:24px; border-radius:50%; font-size:12px; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,0.2);">X</button>
+        <!-- Kode iklan AdSense di sini -->
+        <div style="padding:10px;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+            <!-- Iklan Melayang -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7112769875269380"
+                 data-ad-slot="6471363985"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

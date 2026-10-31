@@ -1,0 +1,1 @@
+[[31mERR[0m] failed to load provider keys got cause="couldn't write provider config file(%s): %s\n" /home/runner/.config/uncover/provider-config.yaml=open /home/runner/.config/uncover/provider-config.yaml: permission denied

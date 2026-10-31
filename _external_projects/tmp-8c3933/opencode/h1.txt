@@ -1,0 +1,8 @@
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+cache-control: private, no-cache, no-store, must-revalidate, max-age=0
+cf-edge-cache: no-cache
+content-length: 11879
+date: Sat, 31 Oct 2026 08:21:20 GMT
+server: Apache
+

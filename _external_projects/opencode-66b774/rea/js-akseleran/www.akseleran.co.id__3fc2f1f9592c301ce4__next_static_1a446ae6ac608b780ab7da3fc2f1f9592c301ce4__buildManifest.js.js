@@ -1,0 +1,1 @@
+(this["webpackJsonpakseleran-web-2.0"]=this["webpackJsonpakseleran-web-2.0"]||[]).push([[182],{1859:function(e,t,a){"use strict";a.r(t);a(3);var n=a(43),s=(a(380),a(4));t.default=Object(n.withRouter)((function(e){return e.history.listen((function(e){window.dataLayer.push({event:"pageview",page:{url:e.pathname+e.search,title:""}})})),Object(s.jsx)("div",{})}))}}]);

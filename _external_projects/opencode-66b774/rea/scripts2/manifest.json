@@ -1,0 +1,1938 @@
+{
+  "capture_path": "/tmp/opencode/rea/topup-evidence.json",
+  "capture_sha256": "3a46d07092189db95cea9febf08193dcef27c0dd39c7a3761b77aad8291dfdc5",
+  "capture_kind": "page-inspection",
+  "source_evidence_id": "ev_7740c18838a6dd48c14286e7a35ee6b45a8026860dc7a699aabe58936b636a6d",
+  "capture_completeness": {
+    "status": "policy_filtered",
+    "conditions": [
+      "attach_limited",
+      "policy_filtered"
+    ],
+    "policy_filtered_sections": [
+      "accessibility",
+      "console_text",
+      "json_body_shapes",
+      "metadata",
+      "resources",
+      "scripts",
+      "storage_keys",
+      "websocket_shapes"
+    ],
+    "attach_limited_sections": [
+      "console_events",
+      "metadata",
+      "network_requests",
+      "websocket_connections",
+      "websocket_frames",
+      "workers"
+    ],
+    "truncated_sections": [],
+    "unavailable_sections": [
+      "workers"
+    ],
+    "excluded": [
+      {
+        "section": "accessibility",
+        "reason": "not_approved",
+        "count": 1017
+      },
+      {
+        "section": "console_text",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "json_body_shapes",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "metadata",
+        "reason": "disallowed_origin",
+        "count": 30
+      },
+      {
+        "section": "resources",
+        "reason": "disallowed_origin",
+        "count": 22
+      },
+      {
+        "section": "scripts",
+        "reason": "unattributed_origin",
+        "count": 3
+      },
+      {
+        "section": "storage_keys",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "websocket_shapes",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "workers",
+        "reason": "unattributed_target",
+        "count": 1
+      }
+    ],
+    "dropped_events": {
+      "scripts": 0,
+      "network_requests": 0,
+      "console_events": 0,
+      "websocket_connections": 0,
+      "websocket_frames": 0,
+      "webmcp_tools": 0,
+      "timeline_events": 0,
+      "total": 0
+    }
+  },
+  "output_directory": "/tmp/opencode/rea/scripts2",
+  "analysis_input": {
+    "input_path": "/tmp/opencode/rea/scripts2/files",
+    "format": "directory"
+  },
+  "scripts": [
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_001fffaa4c2fc933a75c4f53ab60bf2037af75a6651eec9ad1c212f530093901",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-rxjs-compat-7eab49d0.c550b50e9062ffdf.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-1-247e85d00666cfc3d6e8e772186dbec0a72ebbf8fec939283188e031a7149667.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "7733811ad018d911e585dfa3be12e350151f956919895dd9079d314011c1b65e",
+        "bytes": 27571,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_0188b713754031ebada6d35ca84257a29830a5a85dc774847cf5907a14eab9c8",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-joeattardi.07a3582f35cd601a.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-2-a5aa0d73cf755db25848cfe2c1b90a33c3a16d6c936492c3a2aa62cd2e20228c.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "6af8da6628f4634e460171eb518997ba89bd76cf00f6c4fa1e78df138c3cb22c",
+        "bytes": 288934,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_06f6fdd0df34c30400d4d93e8212026d918927d0a935c9501495c1ad194f4cda",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-zone.js.2804f21c1f2e4c25.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-3-bab65c4330828f4d8237a98d3c1e67b234a5d0985a206cac78314875273f99bf.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "68c12bc65c17a23b4a3d77e8f7550cf0ebe400082211d0047bada3042235a266",
+        "bytes": 34979,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_073c7235d10173d1ae7b27d02562a2eaa9537e45738ad93316359126421d8ce2",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-dab17ee2.5a8addcbd9fbfaa3.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-4-1bf671a41121d6750166b9202043fc09bfdfece0d4711672bbb225450ae80ba7.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "4f9d25f4485316052be906a6f49e734e998fb7e22d9f4005e202bff621e1990e",
+        "bytes": 31146,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_0faeecfb1d7735b75ca805d03d5a4016de5c586f96f8b17bc5cc0352b88d905c",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-ngx-material-timepicker.2021557b6cb27e0a.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-5-f357003b641d5df03fe74245cd47a2600f048fa0613d38e1402a4a0b50661d6e.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "7254d8db9aabad5c2064fd21051a886b90a2854f360bc87356121d7844e5d832",
+        "bytes": 77368,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_1055fc3e1236a3b0db24c5c99eed776e924d88e7598ff96082328b98abbe0624",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-prosemirror-model.ef1b62358ef4a1b3.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-6-688fa471fbf878e3b1e36deac8da8578f7940e4182c84705b86e3c8c45e8f692.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "d67eaf16f23b691119557e0b0ae12fa37288f3a414e105b27fc88e51ac7debfc",
+        "bytes": 44711,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_113c7a268592ac8dd3aa21343ae887d74d8e5d7ceceb63e1acc50630ecc46a59",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-213238cf.0d2d052b8dadd19b.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-7-65eaa03dc56635079bfb8a6edd4547e65103560774d2f493557e77e10fb70dc0.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "150fcf3db80a26f10750f7b644b6866873e3bd825291a3ec202130104bea3171",
+        "bytes": 108569,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_117b81b3465acbdb5caa7aceb3ba48c0f0f6e4380aea9244c823d9838ad45d05",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-rxjs-compat-9d3f82a0.38caea4ba86bb82c.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-8-2f9d1c78d799555adc28dab8439419af6175c98710155a6b605795a8ba3d194f.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "25c759859a715a0363996c157c9c3431705fc10c594cee6e5e924156e99c873b",
+        "bytes": 10205,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_12f113305c654be2a94bec8c3566dcce124030df38306e9a81a1e562a8e74192",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-169c97a9.416fa51663feb642.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-9-1d93bf7ae6c5c892fd53ff1de0f50c0202934ad18265a78f55715f2e77fad888.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "c85456896edd3e1d4f1161b2f5048693c5abc56fd233dd13a5c95031b8a07263",
+        "bytes": 97293,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_1301d5f1b1be0c7b072f2717056b6e81d2fb32fb3ac85bd7ca996bf3b361d87f",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-emoji-toolkit.853f3b319c2e654d.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-10-f9a833ace0dc6c8c0b16991c75de36e6a0a265deb88415797bf30a610f67f338.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "b4310b6baa87092141d984ff8d4849fa1954cee36931150ea3286d200604e30d",
+        "bytes": 383552,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_1530f5fd2782dc62d7337aa1725e0de70c14ec0710b306b7f0d2e075b3b2c450",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-05204196.a87cdbb80ec361e4.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-11-e0452a6d9e2adc94860655b5902111afac756dc24cda56dbfd179cf0df488893.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "490975a587d071a45a2378f862dd5d4842e269fa3732dde00bf9ec2e4a25158e",
+        "bytes": 59157,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_16934dc149e2a2e55660d55fb546025eae0726696bd7e60ee3407785af5519d3",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-8b4e2864.a1fff85cd082082d.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-12-3b3b924dbe497936cd9282a76f2d4e50d07353f10484ddb3004db97887c47ab1.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "86f53acd5667f5f9c8914aa1d108a9d88bd424b29599959e4030e9196aa3f803",
+        "bytes": 110799,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_1dede8e83f0f12ccc25461456c6e8111b87085d7a5ba13caee5b4dfbf9ced106",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/5771.ab92753629210808.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/5771.ab92753629210808.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "b6966c9edd0f1d9c0bb3997e119c219a14f7eddee98d96eb8e0564b2ca28720b",
+        "bytes": 41623,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_211ae89834db7561c29cc5c2fcad2a63ff75d8a40bdd610c167fdbc6ee448ec2",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-7dc7a2b9.254841bc4cc9fcd1.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-14-058e9067259a0518c4084ee73d68e00a5bcf8be1f895bc190ab1f936c31a060d.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "23e93c099994b7011c0a7ce81ea4fa6d917c90540a509370322bb743b2dc8d01",
+        "bytes": 64399,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_224706c6dea979e9092a9d64fce38163bb619620d67276e7719c912048a695e4",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-luxon.8a6c53f6ef451129.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-15-5aec2517755e26b7e68a684262f7a63f579a9bfdeec4c287514177b76e61a23f.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "ab5083ddca475c2c9ab615e20f170eb76542e05af40bfb7e568d8af096a015ea",
+        "bytes": 72809,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_225ce23b694cf96c8bb02f869691f94e4af9b6db7ba4925f9c79fa0eb9822ca4",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-swiper-a9a8c684.aae0a374d0231de4.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-16-103642777654aedaea15312b60cfe0e9175e1fc04732ad156ad1cc87a0a89c59.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "e198acb79078cc95884279d1053f3c2e60d3632383d6448018a15e3ae5967702",
+        "bytes": 43997,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_23c670043b129a8cad2a64fd5b276f3e416dc87d54e44a4c6134b37ebcb66b17",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-44c875af.31ceda4894eff619.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-17-b64169d150c4abbbe149810780e0767219890ebf2ae5024348600a3858a72dda.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "f68f9684950fae534d3f11ce840efd1807d1f2344a9e784f69fe2d1973689d0b",
+        "bytes": 100414,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_249e9032d86b87dfdfdd999be3b0d7cb34770f5362d3f5d0562cf38a47eefbb4",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-swimlane.3312975cf2cf9cd0.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-18-c4169a18e55b209429fac1566b92ab38c57cce49e74174702037b91a81a5c630.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "5ef57f7146e96f101783666086a6f07d6f6296d8a54e09ca7cdb375e564837e4",
+        "bytes": 384508,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_250ce69f6d0b5d3e5b8ef4ebe94d78463098b63ca78bdff16405bf95fea76384",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-admanager-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-admanager-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "860e5d959f12b1577142a5fb3544111c54f87033a3735737574de6315635a9fe",
+        "bytes": 48053,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_277ca2de6a2dae4d43741e5be6f6ac174298c1166af5b9e5e5f08b1619419c49",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-2e2a4c8e.3d3f326471a1fb94.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-20-e773f82b0223f40768b7fe956dfc7d1a7be232bcaaf636e3ca5765529f2a5a26.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "91f62007bb5c33814e99f792bb8df24ccb3ae3c2033b76a6c0b50b9745e2aabb",
+        "bytes": 57212,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_27f2094b5908aeb6292c31ca6608126dac378a0b9ec30715ef61c0c9e880cdad",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-moment.ac2a948d742e2abf.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-21-370fe8c26f486a2c5804f3308e13656305db965549111e5a4a99dc1f45f28f76.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "1d0e771d5711829770fc6888b693217f9f4691d511251d65d284993ef91183d1",
+        "bytes": 64935,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_29179d0685c33e4e979bb6e001eb336dff073eadc5f40f67b33f5f8186b6fe15",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-displayvmaxad-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-displayvmaxad-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "fbf03028b2dff6e7a41f61d26dfd08fa14122d2911a30a166791be7e5a502e1e",
+        "bytes": 17229,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_29ea2ceeeaf3a5018c46225268531e2173fa1a349080740bee95435b86bbbc3d",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-crypto-js-fa891bfe.7814e9f3677f9b48.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-23-ce524b94175b03da13bd6c8eadc93b3888281c0ea5363f7dc7690ecf0ad64fab.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "20dc7913433728b8e987e6047481eca15aa0088092e9ad4de6aaf26ae95d9b0c",
+        "bytes": 33137,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_2c145ac1d3f4127809abbcefeb3a56fcda31fc45ca654e951adfc2b35d4d3446",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-axios.3144b1a7ae146dc8.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-24-52d490bea4d520266495bf53c0b7aad3480bdf19e61f82ee96795e82d41b0f24.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "25d67c8e85ecc243460ffc10b105d2f14fe05dc178eb581aa98665e3da7b428e",
+        "bytes": 51796,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_2f768a607f0fed5157bfc3ab2c54fc955a13ea53d21b28d1244c1f4ce1364814",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-b1abd21e.e3faaedb4ddf08e5.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-25-25a021cd01c8e24fd74cfdd6d1954aa7e744509be8563de777f867e5dcc748e7.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "e81695031609d5307d237e5dca2ed46d225ffe7ac8babcb18d57a0127b1def58",
+        "bytes": 11874,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_2fa2b38e8e1ffb6a4c76c444d36f3437b3771df8b441bd2e858bf8703cdfbd42",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/3049.deb70da8dbe77b08.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/3049.deb70da8dbe77b08.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "dbbdae817a02abb5ef649bf91d9bce733f88de4ff4b6dba59937b08f557f09c1",
+        "bytes": 84742,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_33606775d08386b744400be6663d7847eb829cef7dfc8adf5eac88e39a824eee",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-vmaxgoogleima-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-vmaxgoogleima-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "c9f77903e312516e8c8f5ec1b88c41b64b4a1c685ef41a8a52b9edf59a51b08c",
+        "bytes": 28923,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_35a6509274e9b2a1e8b262366bd12fcd8efd7c2ce7be8a1f3f960780e7565d86",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/482.2b8c264d1687b7fb.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/482.2b8c264d1687b7fb.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "bc9a3183d20dae1bf130439c223e412ca02420198185df09ab4d516431765812",
+        "bytes": 60091,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3652b1d3a7490ae2f2ba3fff59072a62339cb13c96110fd4c67aadd097ef8c86",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-qiscus-sdk-core-a4a9eb7a.392c0f5cef4a8fed.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-29-1b1b3adbee241e7d0bb7d0c73c61d822986769b9b27e9ab85503b6e57118367d.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "1dd6091fae255975b9ae893778201296554f668caa1147d2aba260e89ec35a92",
+        "bytes": 328858,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_39096608953b7d47f4b7abf9a24505ef337fde16702bf9f84f4bcef856efb205",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-rxjs-fc4ffce8.9649f4219713c41b.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-30-fd36feed4695dacdb56c825c89fd4e1da206ed6e3b0a106bcc703a5cc988c03b.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "e32979da68fba3b331e34000f45ed6e79c15d7e0848048454d9d980176cc5739",
+        "bytes": 70871,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_41af5d632fdcdbb77f6d11b71e0ec502fe8f38c8ebb0a872ab87661214759b17",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-f2efb8ac.34edf8267a96ed22.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-31-8f9b11541ce94d6df6ac54e46f93986f45a6ba52d0edd6f141e8bdb23d160063.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "1dc6ba14ddbbdd1bbe49b118cd70276e33b425b81ab863361bd06eec3659b596",
+        "bytes": 31093,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_42eb13b8e36966ad4e4649e368c5e417ac150594a3ab52bc18602d5d0126d773",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-jspdf.ea32557421ef6020.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-32-628283bb80ea8f3f6416a36a99fa7b6d7e05f8344809c9266637951c9b0b0c63.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "753998d57e1fd8566cc936de4c5a392341edbf8a997ff4b631e054cc50e691f4",
+        "bytes": 346785,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_44af0da16e1791141b18dd88390dd72ce657edd6e4b8846c9783c7e92104db1b",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-ngx-editor.562330075e35c74d.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-33-886c940b7e2705aca2f309cba950b6aa9b7f07fdde6dfe96586c43b2df5f7eee.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "6b4ece310c0c43ba21db94003bdf44a26a81dd50d219497f427796b1c8626299",
+        "bytes": 64302,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_4711789f0f4a45681d65b2ca6f951dff375c615421f2e09dac2737cfa6e67698",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-f2c64725.862febf4c560ade2.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-34-7039adcad5f5e18f5124e0e6a2e5b5689ab10a2e09762d908590232040770c34.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "1a1f96afa88321a2b51018f4906ca2bf46996a5fef5386c9bbf6314dc00b4a36",
+        "bytes": 61431,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_48c9c04abee163e6566846afb2dbacdc9fdf02d3743f978a9e1ae6198dfa721c",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-googleadsense-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-googleadsense-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "586c1557309347251fcdfa6d3422d71ac18b9fa31c511a41e1234ff8ceef4c8d",
+        "bytes": 16804,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_4a93c977a694ff201664466a7250e6888cdbdbaf1e753cbf7bddf2afb9a346c7",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-ngx-scrollbar.b76062b72b0be468.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-36-9a7997a74e40c5fa011c9044523344c0781d546a702d18be8a7a16221ed8f8ac.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "d2b09bb5e066c54941985be9260df421a8803279affb25912707370dcbc3aaad",
+        "bytes": 52466,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_4bacd8f964e0e9b6f38fe7bbe88731678c457760766f9d01a2f6138c17645571",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/8960.6643d190e79015fc.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/8960.6643d190e79015fc.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "76bc3a1a7c3d61dc72d95a293f0e0dc9b0b0b4d1a73cddb83a2977cdbe2bfeac",
+        "bytes": 72501,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_51625b584eb3be1733d8542dedc743d8ea5f720f11947f649e66fb451423b625",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/684.753dee7bc8f4416c.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/684.753dee7bc8f4416c.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "653e223b3762625cee173f5c77395f615a6faf1cebc5117784d31165a621e7c2",
+        "bytes": 72267,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_51df47b1375a307512ecdccb9f7ce8fec05e7e9df6429c7ec6c401edc8461104",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/2442.a321e15cbe36ca27.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/2442.a321e15cbe36ca27.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "863ef36211f060e6807733054da4b9e4c825051a797b7e2bf04e87dc8e32e54c",
+        "bytes": 89861,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5521f914a62d3aa1c2ae3d6d427bd5436840ff8f8fd9b84cb7f0602b8be507da",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-date-fns.a62f266031a42499.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-40-b07a8afbfcd647646675b4adafd61b4ff7c234341863dbb20d2d6cf40d49079a.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "7ef3900e830e1e03d193069cde76c604ab3bd6b84311119a2f5e9a3c82ef765e",
+        "bytes": 30805,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5a46bf3a40136113431fe4c17c557e2240e4bdd6d734ab5d40f4b622224689b7",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/1204.8bd9080f6d319bd0.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/1204.8bd9080f6d319bd0.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "641da83fcc2f6d374cfa830b2de8e41afac1df62050b6e3cd000257b91a42e6b",
+        "bytes": 85232,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5a8232933db59825930e6a5a561b2d4d57a6c84468277c29eb1140735233978a",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/runtime.3786a34eddc3c774.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-42-a7a3a01d42061cde890a0b8961c6841a151f4c641d3e5a0c5917d3b794189cba.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "ae0a56d3b373dc6586cc200ccf332c4eb621c91c72120ecd3a4b2fd15b7f99d4",
+        "bytes": 15079,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5f73491e685c8a4c1c20c044927b447f6c072f237ae96eba5d77c4f01739cb6b",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-bcfc2296.9b6e5d52763531dc.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-43-01d2b0a417f0bf2d0a95029d2eed7d4087160bfca908aff5b6dca95102d7e99e.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "5f9cf2b36e39840d43865861a6d4acb8f653b8bdafc4458c37b777de28e11ec0",
+        "bytes": 46132,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_622d98310b353dbc1cb34b5feacd58d775a4bb741d56f0c3c7d1fe26dcb5682e",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-16e240a9.748a9a1004a4d062.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-44-a708ce8f4cbf878e5e1753e7edcecf376b4362ce68aebbd08aa345ce5b0a2415.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "91769a350eaac91b4c4e48a50c96eaf186dffd1a40a98c4187361fd3d4fb5e21",
+        "bytes": 78013,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6735cc6a5c051bc09aae7b66a3b8a0d52f08594d6c857044791c584485e6e0cf",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-videobillboardvmaxad-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-videobillboardvmaxad-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "38223e7c0509e7a415b36f2817a89ef0cd59e28012503d431dec407dc4009927",
+        "bytes": 65292,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_68d37113cdb1bed3a39fd403ba5c39c899e254c5a171db61f438f306300a92a9",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-e1f66ab5.1d4e84e8bd21efa7.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-46-a84196ac34f975891324dfbf001b42a39851fd06a832c33ca423cbd6a2b176c4.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "f11f520c4774eb08c88679cec6d01b0b0f059e9381bb9221b33efc3f0bab8bde",
+        "bytes": 58335,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6b41ff5ba252cf854057526ffb6213f5ee3c1b194f0a33bad7f988b913d29507",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-rxjs-5155cae3.1a0b559fdf354350.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-47-78229a739f11339f482515e5c1928543e2912a01b06cc536d2570681d686b326.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "ae350cdc43d6734ed88fa4016b75579fb099cd9c90f012ca56999eafd002f056",
+        "bytes": 64681,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6badcf514a90592f482c313e880e3114854c6260577571fc7e8160bed9c882c8",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/vmax-googleaddisplay-module.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/vmax-googleaddisplay-module.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "7c395367db61ea2d200655303529c9e42bd5438f772e9ecfc82b6e212befb182",
+        "bytes": 18405,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6bd57c56fc063ef4cf37cbad10b5d081c529631233e338323e8c571eb6681f47",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/9508.7af393d8c2f136b5.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/9508.7af393d8c2f136b5.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "e741e284877c6de2755680b2c66c480186cce70aa5d2cbd9f19ea2d6645fdc5d",
+        "bytes": 6341,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_734fc594426cd89a6f4045e837c3fc170137ea966c9e69056063d443b86079d0",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-html2canvas.26a5f29d25166146.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-50-0f617afdb7a7b02a58dde913241d3fc24bcf33a553e21355490471a2d8fc046c.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "ba8a99860fe2f82f769c5059b0897375dc4cfb7429f4ada80a1d2bf5fe7d42a7",
+        "bytes": 201894,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_79f36befbaa54f5a5628886d9c0e4b6355277556ea64c99bb28f4687cd0d45fc",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/2566.c48dcdb5171b67af.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/2566.c48dcdb5171b67af.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "9455606bb19797c6def8d7fc0f392c16d63647d5a2516ff198e8020109a24290",
+        "bytes": 59729,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_7d4d1fa55a6a5ee9063647afaf60f6d3128d43487cf0ece3ba9c5916a6120bf5",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-fortawesome-d69e48aa.5d446641ec5ec495.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-52-05e556cee7d587504d30359dca58b2cde3a705b257a2553ca273a437479c93c7.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "3e3ec731230e1947348c7a27e554a5504765db768132a28a168601b0d6b2a7ee",
+        "bytes": 2197,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_7e2962b644f0db132dffb0586748c47509a0cf44fe0046e2012c51ab244738d7",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-db47b94f.484788d067604bfe.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-53-7c1cf6b69310e66a61a24edeeea3fb43ae788c73b3bf27e8c663ba81e7937a62.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "b256f79eca4768a691a2e950e43ea52f9ba4e1082d9c184acf8d9d34c2f8fa82",
+        "bytes": 76331,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_8398394d15ce9387a66af6c6e384c60bdc75b531e954c430f1b5db99121841b4",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-166ae03c.28a5f8bf82201e39.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-54-c5aca5146969e51e4323811f9371cc752ef3984ab7a1b85b9cc1e5aa95e5f959.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "ab2bba8d4ccab068094732a4020d279b82dcef0debe3404cd180e711fd5cbb95",
+        "bytes": 238420,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_87d1cc371a92f5c57ba37c8209158cf716ce608e21a644bc7c74f44f24cc92db",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-149fd0e2.60a168fa20124691.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-55-72c73411c464e406536b12c33861eb01263f850d5c88409fc405f4d590672aca.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "6b4e092d804235c50e2b2850e87ab76dd7c601ece2659cddf87a23ba677df9c6",
+        "bytes": 55500,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_895dfb5cfed29433b2398c1b9b3c22ba9c974ff3a2ed98cb9fe6b9e8def135e1",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-swiper-91a21fe6.6cdcd7dfb54f6937.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-56-c58ce71bab418e603be47aa84c9ee0c6ce377faedeb65cff71b39460ed31a350.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "65a43b6299f17f9a550993a30e4bf436d36b34bdcedd049fe47503876c96f38a",
+        "bytes": 75110,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_8ef3e9e67a17bf8a4d44efd1c543d26836980a6d81edf0a2c3da9e9ed72d3ccb",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-prosemirror-view.207f194d76f240c5.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-57-64eb9d60e2f2fce8104b0cba7843023a0dc05795d90be581a44e0b29abf8fa57.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "4d1c5c38b6941f422a2c6b614ab4d2867becbee7137f25b90a575e5b2cd77ab6",
+        "bytes": 97704,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_8fa4091bdbcf3d42530390e6b397d3769e0eef38b6f8c4c4ebc7bfa185e057fc",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-lodash.286819a46eabe84a.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-58-fae0f607c7e4450d4928184d290dc2a9be572b7df219ab06bf69de5f98d83501.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "8c52bdc85b73e812e60e06496d8eb7278836ae6341e428e8278c5070041e2a7b",
+        "bytes": 71390,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_90479f2f0a12aed12e8536a6d7620321693694b587e88a24336ecb230db91006",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/5885.768598f237c4b4c3.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/5885.768598f237c4b4c3.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "5863b670bbb323ecf901d8b7f9b1d21ec3b52e5c215de9cb7f5600a74d96b209",
+        "bytes": 3690,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_91e274ea0d19ebf05f9dcbd4f8701748096aa6156c1c3dfe533fa1bca249dc20",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/polyfills.c8fc0b3f7f027a49.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-60-a2fd552cd870c9c7abb26c083f2f030af86f8f693abbbb4e185e5055eb79a5fe.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "068ff8a70b8c50f53aa92e90f5826a5fb3b49e377761ad15df98811cbda890a9",
+        "bytes": 178,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_9f17f25c9dc2f872c5ceb4d1243594821d247ade79c2474e19c085dbfc3d74ef",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-crypto-js-ef39e8ad.054205db652bf392.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-61-7b3d1d81fa141d7f268311fa61493c3b99f5b90c730cb4d2c2c0a1ec1268e346.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "eae87d965e30673940ba727042eae67556b18c7a42b03f0c399c0664922cfcc8",
+        "bytes": 31102,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_a68f9524bd40a3e0d1c16cbca14d20151291d737bf16b5c2eb39afb559a61743",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-calendar-9cc5f71d.1d3b777fa85fa742.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-62-b0ad69082b743bfdbaf15889d5ef8d005adaf3ea75e6ff94261ba575ba827db3.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "87af0389833dd4499ec75cb77d554ddcfdeb822c6424c68ee32b2d9d191b6c67",
+        "bytes": 435,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_a8041a80deae6d8d10d722095b34e07e0c3f3a23dea4b1eba82ded6e6afb0bb6",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-4c120c8f.8488fe57fd4071ce.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-63-9bef737d8215f0f16aa847595550a702a162c46dcf7d39d2104f1eafa3f22e43.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "c1b5b79bccaeb216fd8a075dc0c45c38f7bb4a98871dfe26f69267eac91cc851",
+        "bytes": 102795,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_a84c0f830438d49c563cf465c97e711f5e6bf84ba253dc8dba69e837fb3bc787",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-calendar-082009b5.48fd0cea3ea34d77.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-64-865b47d1ef69ac1dcbdf4505d118f5d48200efbcaea43b0982502a05d45ccdba.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "753befc263ae72a4dc5785911ba92aa61d67fae160465093960f16bdc413e109",
+        "bytes": 75471,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_b319b83c438b1b1e5815cd88062b08f677382c955a2e08178bb50d401a4c64b6",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-c3373795.a0db257faa1f6d32.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-65-cad6366857f5027dba11b5a8a67b6159fd88a46cfd913312042833523a5948a2.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "f291ae2d4534f7de842102baed8796c9fe45bcc66e054207a3f1bd8ea2136522",
+        "bytes": 77905,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_b6386ddfeb7742980b27f9c1e046d2d49e62eeb8384ac71b5edca06747fbdf8a",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-b99a6324.ca8a9d98b14a95d4.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-66-fd53f8e7a559605e5b1d168fb778921c86b58663fdb283efaf4e3069759511ab.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "67fcf5d9dbd59758d7498f6c8969dcc84999ffbffebfcc0ccf49d75074bb6245",
+        "bytes": 219844,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_b7fa14ade7646f39574e7a5a171ba9be1c0838db71bb582265e07abdfecb92b5",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-qiscus-sdk-core-85eb170f.61731abb162fe1d0.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-67-6ef1c52943029367015d1ce325f0e07d67e34c76c4059d8b7e5b98b5d7c2816e.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "b12bcfd07448c1bb04078d426f1cc571a82debcbb8d564498eed70ff69c94f41",
+        "bytes": 6508,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bc8097d3975320021e36b6242e1c7506a44e8f684164f961e14359c5970d514c",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-d8773e6c.14802bece1cfcc85.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-68-5c5459a10e02008b216ae6500fa3a1770975f3f8a234972a6512f899bcf494c3.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "fff74d725fa0bd35a7ed479fdde0c861db4712312aa49570c0da23ab2ebe5dad",
+        "bytes": 36623,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bc9171587adb64ddc109cc038b28226901bc2f6e460d308b24a66edec9ebd857",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/3994.ce936a16092a4b4b.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/3994.ce936a16092a4b4b.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "86103e6c7fc7cea56ee0f86d89a6024e797aacaddb7d83bf4ed68647ec22c013",
+        "bytes": 86882,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bd405c5c7211fca342cd0004fb29d0919ac8850fae6100f18cd3bf41bc2b63f7",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/2698.a618dd3dcf70a38e.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/2698.a618dd3dcf70a38e.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "73a76363024cb97129bfbaed3f2e6ba3357f51d4752b8f973e08fd9baddfd029",
+        "bytes": 73962,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_beaec5a45a7ee6c91980cc6eb8ee74cb06e986ca31135539ddefb522d04a7430",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-canvg.bbb5fb8af5267da7.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-71-39736df6492aa15f7b6e58bf79034a3af9972535ebfa8ba4c3b7294ee1d891ed.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "bde75ea26db95dd994819c0850c556e8056f1a1ffaeafa0a234ae02a3ed10f05",
+        "bytes": 81781,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bef0013d75904ca16575afe4c2bc7db93a153d19db895f1d4049774e1a0fed8f",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-5eb5d9d1.3c626b9ce0ac2f4e.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-72-371755080b2c86b6a73e2b4a371b2a0e7553cea0762a0efc961ad5a6eb34e831.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "96349ac50e67b74334a6e73ee0db87db2eba38d82d06c7a1b4740b8b6aed7fce",
+        "bytes": 34202,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d174590a273299ea1a90daee9cbd48179f457590fa8515ca3b1fa930deafef44",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/main-022e7a37.bf8c7ba53b56761e.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-73-9d0e2fb67d84cf5b3be64b30da976df2e6c6ab847b870995b9d8ddd1fbbb4509.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "596456bcdf0111331bf4b7e4befd595860787bee13f0d770a7d919c51969a105",
+        "bytes": 80750,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d26b79374cf4220ce743245d3c7ad6d9127476f7d7b8c182be59e271a4a19744",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": true,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/4993.ee42ba63dc7c7afb.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/2df56e3d95d25a4d6cf2f1ba0e38dacdc1acf0ddba8bedf4b649eaf3f712b9a1/static/4993.ee42ba63dc7c7afb.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "3fceccb325192f4af4b496902ebde4a256a06bb12a68ca64d78d522ef054c16c",
+        "bytes": 66148,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d95a6b62c3e152306b7042e56e61bac77d13635fdc4f0a01e86deb0074162ca8",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-92f70689.cc4b37d5d13f5ebb.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-75-4555daef303cf35d690a8fdd6493669dd623ca7f7ef33b033120c95d332f7f0b.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "6ecc41ac800f46d2c9c5eeff385fc4324d75060d28c0c50982bfdefbc864817e",
+        "bytes": 38080,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_dd87d401f3a24502720dc28995d5b0d3505b4ca5d1480e98866f4976944c6977",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-ec7ce8fc.d0652a3cd7b59779.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-76-ced20b77ef54e5aa8ac5d7e9609cf916227040bdc2f3122e88b2e2b5142be8a0.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "9569bb408291a448cde7ceaf63568fcfe0d2a3736d58da04a27b06b85e6014ee",
+        "bytes": 51289,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_e06aba1c65843d37903392dfde1febe801bfa93de091e53c056f71f564f8eb01",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-b0327d5e.353fb1212ae7d866.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-77-93502f371e77eea288c339e75632e66d866e8a686b5bb697b630d028387b2948.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "70d3dd4e2f4a27d4007d55211d8365e71ce2eec39de6164cb57f09dccf7da545",
+        "bytes": 69608,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_e1739caaad04b850302a999f59c21c8cd4a3be93f7b7bc8590e000962acf5669",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-79bfeeb9.9a4c376956378a91.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-78-6a572185ee5be64b5060c1587022fc28f492092838ff58f91d469c865720b920.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "4006ff7a70e7b4407ff3000eb6f75d81f4b62db1057b4a260c114456cc4f27c1",
+        "bytes": 63890,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_e4ac8c89622ebec4a67ebf7d5a65c209361a0271f123e3d1e5c994c220d1c9cb",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-leaflet.9d034388f101455f.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-79-81d785896dfe712a896e739b3bdb5e00a3dcbad221797e82c872a81c07bf1f6d.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "7ace10753f2f5017b421cf4435b941b67eb5e4dbb294a91197f9741a7d84c7d1",
+        "bytes": 148937,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_e583c0887f58fbbb678de47b5a4acc8639dd28a723ba09dff946a88357b642f1",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-ae4ab877.6b9decfc40835fee.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-80-e09339fe68e76e3cdbe275de4a4bf70eb64ee378fb9adb5b920ed0b575da894d.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "eac2d068b9ac9f545a0e8053e153978f14c13f095c3b33ef94504d106be7603f",
+        "bytes": 45141,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_fa00a87cce7e80b3286b4597dc9434d4ea8826283152055ffc72dba5bf200545",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-angular-1ac6714d.f2950f0de28640ec.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-81-fc3428382e99a961d208bce538855f963872e49336fb4d64b101f984153ab890.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "456b59553e5a85f86efa51801dd0d5b44cf62ffd8929c4af040b590bb89863a0",
+        "bytes": 38807,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_fc5fcbc71c1df815381164c3917659ae3e48c56c7cdaf7815627867353749275",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-core-js.54624885cb6f7f8f.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-82-807cc9ae94d59367f18495ac11199f92fe0f14b886dc4bebae4bd4d0798c0ccc.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "e67e48cb4a9c32f6e2faec23ab5f480e102709fb2914d5d5f12d4602dd6174b2",
+        "bytes": 42785,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_fdde360f9803026ea9de72bd412801dbde0fc44b14a5f416bcaab48dbdcd670f",
+        "frame_id": "7114102A221E25C6BC9375DD407B4BBD",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://duniagames.co.id/static/chunk-fortawesome-d76c0a37.304906fde1114ca5.js?v=1793255911",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-83-57596eb19d78e19f718505e4f14d782e993d37e28306b56c1ce1e7710a7fd99a.js",
+        "layout": "isolated",
+        "layout_reason": "URL query, fragment, or credentials cannot select a canonical local module.",
+        "sha256": "63edc3cce247c4f08655473930c4dc7567d8497cd3004054217c5bd6aa8345ef",
+        "bytes": 96170,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    }
+  ],
+  "limitations": [
+    "Observation starts when REA attaches; prior network and console activity is unavailable.",
+    "Worker targets are a final inventory snapshot, not worker-session observation. Their attached flag describes any debugging client; this page-session collector does not observe worker network, console, or script events, and short-lived workers may be absent from the snapshot.",
+    "Raw network headers, bodies, cookies, storage values, console objects, and WebSocket payloads are never retained; explicitly requested primitive console text is retained verbatim, while payload captures retain value-free shapes.",
+    "Source maps are reported only as declarative URLs and are not fetched.",
+    "URL-less scripts and console events without an allowed source URL are excluded because their origin cannot be proven.",
+    "CDP discovery omitted the target attachment state; attached is reported as unknown.",
+    "Only script bytes retained in this capture are exported. Sources are not refetched or executed, and a response or Debugger source does not prove execution.",
+    "Ordinary unambiguous URL paths preserve relative module layouts by origin, including case-distinct spellings. Query variants, exact path collisions, file/directory prefixes, inline sources, and unrepresentable paths are isolated. A case-distinct pair is isolated only when the destination filesystem cannot store both spellings; the record names that pair. Browser module relationships of isolated paths remain unknown.",
+    "Local JavaScript analysis does not implement browser import maps, root-relative URL resolution, remote URL loading, or browser runtime behavior. It may strip import queries and fragments; isolated variants are not canonical targets.",
+    "Source-map declarations are retained as metadata. No source maps or missing dependencies are fetched or reconstructed.",
+    "Scenario response bytes preserve the output of Playwright's Response.body() API; any source-body provenance caveat from the capture is retained in this manifest. Debugger sources are the exposed text encoded as UTF-8. Redacted bytes are exported exactly as retained, and may no longer parse as JavaScript."
+  ]
+}

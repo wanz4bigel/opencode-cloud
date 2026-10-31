@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lacak Nomor HP - Intelligence System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f2f5;
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(67, 97, 238, 0.05) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(247, 37, 133, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            padding-bottom: 110px; /* Tambah padding bawah agar konten tidak tertutup footer */
+        }
+
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            padding: 12px 0;
+            z-index: 1000;
+        }
+
+        .brand-logo {
+            width: 42px; height: 42px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4); border: 2px solid #fff;
+        }
+
+        .brand-text {
+            font-size: 18px; font-weight: 800;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-left: 10px; letter-spacing: -0.5px;
+        }
+
+        /* CARD STYLE */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .data-label { font-size: 10px; font-weight: 800; color: #4361ee; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .data-value { font-weight: 700; color: #1e293b; font-size: 14px; font-family: 'JetBrains Mono', monospace; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-custom sticky-top animate__animated animate__fadeInDown">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand p-0 d-flex align-items-center" href="index.php">
+            <div class="brand-logo"><i class="fas fa-search-location text-white"></i></div>
+            <span class="brand-text">Lacak Nomor HP</span>
+        </a>
+        <div class="d-none d-md-block">
+            <span class="badge rounded-pill bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2">
+                <i class="fas fa-satellite-dish me-1"></i> System Online
+            </span>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+<style>
+    .ktp-visual {
+        width: 240px; height: 150px;
+        background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+        border-radius: 16px; position: relative; margin: 0 auto 25px;
+        overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .ktp-chip { width: 38px; height: 28px; background: linear-gradient(45deg, #fbbf24, #d97706); border-radius: 6px; position: absolute; top: 35px; left: 25px; opacity: 0.9; }
+    .ktp-photo { width: 65px; height: 80px; background: #94a3b8; position: absolute; top: 35px; right: 25px; border-radius: 6px; }
+    .ktp-line { height: 6px; background: #94a3b8; border-radius: 3px; position: absolute; left: 25px; opacity: 0.4; }
+    .l1 { width: 90px; top: 75px; } .l2 { width: 110px; top: 90px; } .l3 { width: 80px; top: 105px; }
+    .laser-scan { position: absolute; width: 100%; height: 3px; background: #10b981; box-shadow: 0 0 15px #10b981, 0 0 30px #10b981; top: 0; left: 0; z-index: 10; animation: scanMove 1.8s infinite ease-in-out; }
+    @keyframes scanMove { 0% { top: -10%; opacity: 0; } 10% { opacity: 1; } 50% { top: 110%; opacity: 1; } 90% { opacity: 1; } 100% { top: -10%; opacity: 0; } }
+
+    .ad-container { margin: 20px auto; text-align: center; max-width: 100%; overflow: hidden; min-height: 100px; display: flex; justify-content: center; align-items: center; }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        
+        <div id="search-box" class="premium-card text-center animate__animated animate__fadeInUp" style="position: relative; z-index: 10;">
+            <div class="mb-4">
+                <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3 border border-primary border-opacity-25">
+                    <i class="fas fa-search-location text-primary fs-1"></i>
+                </div>
+                <h4 class="fw-bold text-dark">Lacak Nomor HP</h4>
+                <p class="text-muted small px-4">
+                    Melacak Identitas Kependudukan, Data BPJS, & Jaringan Keluarga secara Real-Time.
+                </p>
+            </div>
+
+            <form id="trackerForm" autocomplete="off" style="position: relative; z-index: 20;">
+                <div class="d-flex bg-white border border-2 border-primary rounded-pill overflow-hidden mb-4 mx-auto shadow-sm" style="max-width: 350px;">
+                    <input type="tel" id="phone" class="form-control border-0 bg-transparent py-3 px-4 fw-bold text-center text-dark" placeholder="08xxxxxxxxxx" required style="font-size: 18px; outline: none; box-shadow: none;">
+                    <button type="submit" class="btn btn-primary px-4 fw-bold" style="background: linear-gradient(135deg, #4361ee, #3a0ca3); border:none; border-radius: 0 50px 50px 0; min-width: 70px; cursor: pointer; transition: 0.3s;">
+                        <i class="fas fa-crosshairs fs-5"></i>
+                    </button>
+                </div>
+            </form>
+            
+            <div class="mt-2">
+                <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 rounded-pill">
+                    <i class="fas fa-satellite me-1"></i> Satelit V20.0: Active
+                </span>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div id="scanning-hud" style="display:none; position: relative; z-index: 10;" class="premium-card text-center">
+            <div class="ktp-visual">
+                <div class="ktp-chip"></div> <div class="ktp-photo"></div>
+                <div class="ktp-line l1"></div> <div class="ktp-line l2"></div> <div class="ktp-line l3"></div>
+                <div class="laser-scan"></div>
+            </div>
+            <h6 id="status-txt" class="fw-bold text-dark mb-2 tracking-wide text-uppercase">MEMULAI PELACAKAN...</h6>
+            <div class="progress rounded-pill bg-light mb-2 shadow-inner" style="height: 12px; border: 1px solid #e2e8f0;">
+                <div id="p-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 0%; background: linear-gradient(90deg, #4361ee, #3a0ca3);"></div>
+            </div>
+            <div id="perc" class="small fw-bold text-primary">0%</div>
+        </div>
+
+        <div id="result-area" style="position: relative; z-index: 5;"></div>
+
+        <div class="ad-container mt-4">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7112769875269380" data-ad-slot="6471363985"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div style="height: 100px;"></div>
+    </div>
+</div>
+
+<div class="modal fade" id="adBlockModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" style="z-index: 10000;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 shadow-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
+            <div class="modal-body text-center p-5">
+                
+                <div class="mb-4">
+                    <div class="bg-danger bg-opacity-10 p-4 rounded-circle d-inline-block animate__animated animate__pulse animate__infinite">
+                        <i class="fas fa-shield-alt text-danger display-1"></i>
+                    </div>
+                </div>
+
+                <h3 class="fw-bold text-dark mb-3">AdBlock Terdeteksi!</h3>
+                <p class="text-muted mb-4">
+                    Sistem mendeteksi penghalang iklan. <br>
+                    Website ini <b>100% Gratis</b> berkat dukungan iklan.<br>
+                    Mohon dukung kami dengan <b>Mematikan AdBlock</b>.
+                </p>
+
+                <button onclick="location.reload()" class="btn btn-danger btn-lg w-100 rounded-pill fw-bold shadow-sm" style="background: linear-gradient(135deg, #ef4444, #b91c1c); border: none; transition: 0.3s;">
+                    <i class="fas fa-sync-alt me-2"></i> SAYA SUDAH MATIKAN
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const detectAdBlock = async () => {
+            let adBlockDetected = false;
+            // Inisialisasi Modal Bootstrap
+            const modalEl = document.getElementById('adBlockModal');
+            if (!modalEl) return;
+            const adBlockModal = new bootstrap.Modal(modalEl);
+
+            // 1. Metode DOM Bait
+            const adBait = document.createElement('div');
+            adBait.innerHTML = '&nbsp;';
+            adBait.className = 'adsbygoogle ad-banner ad-placement advertising-container';
+            adBait.style.width = '1px'; adBait.style.height = '1px';
+            adBait.style.position = 'absolute'; adBait.style.top = '-10000px'; adBait.style.left = '-10000px';
+            document.body.appendChild(adBait);
+
+            // 2. Metode Network Request
+            try {
+                await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', { method: 'HEAD', mode: 'no-cors' });
+            } catch (e) {
+                adBlockDetected = true; // Request diblokir
+            }
+
+            // Cek DOM
+            setTimeout(() => {
+                const style = window.getComputedStyle(adBait);
+                if (adBait.offsetHeight === 0 || style.display === 'none' || style.visibility === 'hidden' || adBait.offsetParent === null) {
+                    adBlockDetected = true;
+                }
+                adBait.remove();
+
+                if (adBlockDetected) {
+                    adBlockModal.show();
+                }
+            }, 1000);
+        };
+        detectAdBlock();
+    });
+
+    // SCRIPT TRACKER
+    document.getElementById('trackerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let rawPhone = document.getElementById('phone').value;
+        let cleanPhone = rawPhone.replace(/[^0-9]/g, '');
+        if(cleanPhone.startsWith('0')) { cleanPhone = '62' + cleanPhone.substring(1); }
+        
+        document.getElementById('search-box').style.display = 'none';
+        document.getElementById('scanning-hud').style.display = 'block';
+
+        const sTexts = ["MENGHUBUNGKAN SATELIT...", "MELACAK TITIK KOORDINAT...", "MENARIK DATA BIOMETRIK...", "DEKRIPSI DATA KELUARGA..."];
+        let prog = 0;
+        const pBar = document.getElementById('p-bar'); const pTxt = document.getElementById('perc'); const sTxt = document.getElementById('status-txt');
+        
+        const timer = setInterval(() => {
+            if (prog < 90) { prog += Math.floor(Math.random() * 3) + 1; } 
+            if (prog < 25) sTxt.innerText = sTexts[0];
+            else if (prog < 50) sTxt.innerText = sTexts[1];
+            else if (prog < 75) sTxt.innerText = sTexts[2];
+            else if (prog < 90) sTxt.innerText = sTexts[3];
+            else sTxt.innerText = "MENUNGGU RESPONS SERVER...";
+            pBar.style.width = prog + '%'; pTxt.innerText = prog + '%';
+        }, 100);
+
+        fetch('process.php?phone=' + encodeURIComponent(rawPhone))
+            .then(res => res.text())
+            .then(data => {
+                clearInterval(timer);
+                prog = 100; pBar.style.width = '100%'; pTxt.innerText = '100%';
+                sTxt.innerText = "PELACAKAN BERHASIL!";
+                pBar.classList.remove('progress-bar-animated'); pBar.classList.add('bg-success');
+                setTimeout(() => {
+                    document.getElementById('scanning-hud').style.display = 'none';
+                    document.getElementById('result-area').innerHTML = data;
+                    document.getElementById('result-area').scrollIntoView({ behavior: 'smooth' });
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                }, 800);
+            })
+            .catch(err => {
+                clearInterval(timer); alert("Gagal melacak nomor."); location.reload();
+            });
+    });
+</script>
+
+<style>
+    /* FLOATING NAV TENGAH (FIXED POSITIONING) */
+    .bottom-nav {
+        position: fixed;
+        bottom: 25px;
+        left: 0; right: 0; margin: 0 auto; /* Tengah Presisi */
+        width: 90%;
+        max-width: 420px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border-radius: 35px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 75px;
+        z-index: 99999;
+        border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .nav-item-float {
+        color: #94a3b8;
+        font-size: 26px; /* Ikon sedikit diperbesar */
+        transition: all 0.3s ease;
+        text-decoration: none;
+        padding: 10px;
+        display: flex; align-items: center; justify-content: center;
+        position: relative;
+        flex: 1; /* Distribusi ruang rata */
+    }
+    
+    /* Warna khusus saat hover */
+    .nav-item-float:hover { transform: translateY(-4px); }
+    .nav-home:hover { color: #4361ee; }
+    .nav-tele:hover { color: #229ED9; } /* Warna Telegram */
+    .nav-wa:hover { color: #25D366; }   /* Warna WA */
+    .nav-user:hover { color: #3a0ca3; }
+
+    .nav-item-float.active { color: #4361ee; }
+
+    /* WRAPPER TOMBOL TENGAH */
+    .nav-center-wrapper {
+        position: relative;
+        width: 70px; height: 70px;
+        display: flex; justify-content: center; align-items: center;
+        z-index: 100001;
+        margin-top: -35px;
+        flex: 0 0 auto;
+    }
+
+    /* TOMBOL SEARCH UTAMA */
+    .nav-search-btn {
+        background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        width: 70px; height: 70px;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-size: 28px;
+        box-shadow: 0 10px 30px rgba(67, 97, 238, 0.5);
+        border: 6px solid #f0f2f5;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .nav-search-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(67, 97, 238, 0.7);
+        color: white;
+    }
+    
+    .nav-search-btn:active { transform: scale(0.95); }
+</style>
+
+<div class="bottom-nav animate__animated animate__fadeInUp">
+    <a href="index.php" class="nav-item-float nav-home active" title="Beranda">
+        <i class="fas fa-home"></i>
+    </a>
+    
+    <a href="https://t.me/config_geratis" target="_blank" class="nav-item-float nav-tele" title="Telegram Channel">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+    
+    <div class="nav-center-wrapper">
+        <a href="index.php" class="nav-search-btn" title="Mulai Pelacakan">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+
+    <a href="https://wa.me/6283879017166" target="_blank" class="nav-item-float nav-wa" title="Hubungi Admin">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#" class="nav-item-float nav-user" title="Akun">
+        <i class="fas fa-user-circle"></i>
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>.swal2-container { z-index: 200000 !important; }</style>
+</body>
+</html>

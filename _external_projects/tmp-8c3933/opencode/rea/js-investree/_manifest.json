@@ -1,0 +1,48 @@
+{
+ "url": "https://www.investree.id/beranda",
+ "origin": "https://www.investree.id",
+ "saved": 8,
+ "skipped": 3,
+ "scripts": [
+  {
+   "url": "https://assets.abovedomains.com/javascript/forsale.min.js?d=mytelkomsel.com",
+   "file": "www.investree.id__assets.abovedomains.com_javascript_forsale.min.js_d_mytelkomsel.com.js",
+   "bytes": 10737
+  },
+  {
+   "url": "",
+   "file": "www.investree.id__.js",
+   "bytes": 125473
+  },
+  {
+   "url": "",
+   "file": "www.investree.id__.js",
+   "bytes": 131882
+  },
+  {
+   "url": "https://static.parastorage.com/unpkg-semver/fedops-logger@5/fedops-logger.bundle.min.js",
+   "file": "www.investree.id__static.parastorage.com_unpkg-semver_fedops-logger_5_fedops-logger.bundle.min.js.js",
+   "bytes": 78082
+  },
+  {
+   "url": "https://static.parastorage.com/unpkg-semver/header-footer-provider/app.bundle.min.js",
+   "file": "www.investree.id__static.parastorage.com_unpkg-semver_header-footer-provider_app.bundle.min.js.js",
+   "bytes": 35597
+  },
+  {
+   "url": "https://static.parastorage.com/polyfill/v2/polyfill.min.js?features=default,es6,es7,es2017&flags=gated&unknown=polyfill&rum=0",
+   "file": "www.investree.id__fill_v2_polyfill.min.js_features_default_es6_es7_es2017_flags_gated_unknown_polyfill_rum_0.js",
+   "bytes": 556
+  },
+  {
+   "url": "https://static.parastorage.com/services/classic-error-pages-statics/ce64f4b282c98f2f0aca9ad506ac193c874d44e0fee9a07883fa6bd4/852.chunk.min.js",
+   "file": "www.investree.id__or-pages-statics_ce64f4b282c98f2f0aca9ad506ac193c874d44e0fee9a07883fa6bd4_852.chunk.min.js.js",
+   "bytes": 5012
+  },
+  {
+   "url": "",
+   "file": "www.investree.id__.js",
+   "bytes": 304
+  }
+ ]
+}

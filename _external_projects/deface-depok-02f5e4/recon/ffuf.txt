@@ -1,0 +1,9 @@
+.git/HEAD
+.env
+.env.backup
+.phpmyadmin
+dashboard
+server-status
+robots.txt
+storage
+web.config

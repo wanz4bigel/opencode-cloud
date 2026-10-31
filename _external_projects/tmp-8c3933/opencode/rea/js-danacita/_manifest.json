@@ -1,0 +1,138 @@
+{
+ "url": "https://www.danacita.co.id/",
+ "origin": "https://app.danacita.co.id",
+ "saved": 26,
+ "skipped": 59,
+ "scripts": [
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/579748033279f27f.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_579748033279f27f.js.js",
+   "bytes": 19242
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/5dd578fe601f4f62.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_5dd578fe601f4f62.js.js",
+   "bytes": 41568
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/turbopack-a3dc66c65e450aca.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_turbopack-a3dc66c65e450aca.js.js",
+   "bytes": 10233
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/7846fdc85509a670.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_7846fdc85509a670.js.js",
+   "bytes": 59733
+  },
+  {
+   "url": "https://app.danacita.co.id/login",
+   "file": "app.danacita.co.id__app.danacita.co.id_login.js",
+   "bytes": 2375
+  },
+  {
+   "url": "https://app.danacita.co.id/login",
+   "file": "app.danacita.co.id__app.danacita.co.id_login.js",
+   "bytes": 4153
+  },
+  {
+   "url": "https://app.danacita.co.id/login",
+   "file": "app.danacita.co.id__app.danacita.co.id_login.js",
+   "bytes": 884
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/cfb0fdfecbed3b68.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_cfb0fdfecbed3b68.js.js",
+   "bytes": 115187
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/1bb93c5c1e553bce.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_1bb93c5c1e553bce.js.js",
+   "bytes": 6991
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/8a8fc05e62b1efad.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_8a8fc05e62b1efad.js.js",
+   "bytes": 224497
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/ca5e787dcfb8ec5c.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_ca5e787dcfb8ec5c.js.js",
+   "bytes": 283
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/2746d413b4c24bdd.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_2746d413b4c24bdd.js.js",
+   "bytes": 56200
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/3d6a4eae1e10af23.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_3d6a4eae1e10af23.js.js",
+   "bytes": 48697
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/45aa0be3dc0c3a65.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_45aa0be3dc0c3a65.js.js",
+   "bytes": 192471
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/950295eadba5bce1.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_950295eadba5bce1.js.js",
+   "bytes": 22581
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/7e17f7a75c51a91a.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_7e17f7a75c51a91a.js.js",
+   "bytes": 522168
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/b94c230e15ea094c.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_b94c230e15ea094c.js.js",
+   "bytes": 865
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/6ade9ca29d497452.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_6ade9ca29d497452.js.js",
+   "bytes": 26167
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/8cd9b274fe882f88.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_8cd9b274fe882f88.js.js",
+   "bytes": 30765
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/b4f8c4ad34d899fd.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_b4f8c4ad34d899fd.js.js",
+   "bytes": 66378
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/fa5f5904b7832282.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_fa5f5904b7832282.js.js",
+   "bytes": 135170
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/f419579ec76ad161.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_f419579ec76ad161.js.js",
+   "bytes": 58399
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/ba23945b82918db1.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_ba23945b82918db1.js.js",
+   "bytes": 76238
+  },
+  {
+   "url": "https://app.danacita.co.id/_next/static/chunks/79df53a40ebf98a0.js",
+   "file": "app.danacita.co.id__app.danacita.co.id__next_static_chunks_79df53a40ebf98a0.js.js",
+   "bytes": 204789
+  },
+  {
+   "url": "",
+   "file": "app.danacita.co.id__.js",
+   "bytes": 435
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-W3CQB7XX&gtm_auth=&gtm_preview=&gtm_cookies_win=x",
+   "file": "app.danacita.co.id__www.googletagmanager.com_gtm.js_id_GTM-W3CQB7XX_gtm_auth_gtm_preview_gtm_cookies_win_x.js",
+   "bytes": 384972
+  }
+ ]
+}

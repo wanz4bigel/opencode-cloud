@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Domain to IP Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script type='text/javascript' src='js/sosial.js'></script>
+    
+    <style>
+        :root, [data-bs-theme="light"] { --bg-color: #f8f9fa; --panel-bg: #ffffff; --panel-border: #dee2e6; --input-bg: #ffffff; --text-color: #212529; --text-secondary: #6c757d; }
+        [data-bs-theme="dark"] { --bg-color: #0d1117; --panel-bg: #161b22; --panel-border: #30363d; --input-bg: #0d1117; --text-color: #c9d1d9; --text-secondary: #8b949e; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+        .panel { background-color: var(--panel-bg); border: 1px solid var(--panel-border); padding: 2rem !important; }
+        .form-control { background-color: var(--input-bg); }
+        .footer { padding: 2rem 0; background-color: transparent; color: var(--text-secondary); font-size: 0.9em; }
+        #theme-toggle .fa-sun, #theme-toggle .fa-moon { display: none; }
+        [data-bs-theme="dark"] #theme-toggle .fa-sun { display: inline-block; }
+        [data-bs-theme="light"] #theme-toggle .fa-moon { display: inline-block; }
+
+        /* Custom CSS untuk SweetAlert2 Sesuai Tema */
+        .swal2-popup {
+            background-color: var(--panel-bg) !important;
+            color: var(--text-color) !important;
+            border: 1px solid var(--panel-border) !important;
+            border-radius: 1rem !important;
+        }
+        .swal2-title {
+            color: var(--text-color) !important;
+        }
+        .swal2-html-container {
+             color: var(--text-secondary) !important;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div id="resultToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i id="toast-icon" class="fas fa-check-circle me-2"></i>
+      <strong class="me-auto" id="toast-title"></strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="toast-body"></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#"><i class="fas fa-search-location me-2"></i>Domain to IP</a>
+        <div class="ms-auto"><button id="theme-toggle" class="btn btn-outline-secondary" title="Ganti Tema"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button></div>
+    </div>
+</nav>
+
+<main class="container my-auto py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold display-5">Domain to IP Converter</h1>
+                <p class="text-body-secondary">Cari tahu alamat IP dari sebuah nama domain.</p>
+            </div>
+
+            <div class="panel rounded-4 shadow-sm">
+                <form method="POST" action="" class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control form-control-lg" id="domain" name="domain" placeholder="google.com" value="" required>
+                        <label for="domain">Masukkan Nama Domain</label>
+                    </div>
+                    <button class="btn btn-primary btn-lg" type="submit" name="convert"><i class="fas fa-sync-alt me-2"></i>Convert</button>
+                </form>
+            </div>
+            <div class="mt-2 mb-2">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112769875269380"
+                     crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     id="main-ad-slot"
+                     style="display:block; text-align:center;"
+                     data-ad-layout="in-article"
+                     data-ad-format="fluid"
+                     data-ad-client="ca-pub-7112769875269380"
+                     data-ad-slot="6560918199"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+                            
+        </div>
+    </div>
+</main>
+            
+<footer class="text-center footer mt-auto pt-5 border-top">
+    <div class="container">
+        <div class="mb-3">
+            <a href="https://github.com/Inject-ID" class="btn btn-outline-secondary btn-sm mx-1" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://tutorialinjectid.my.id" class="btn btn-outline-secondary btn-sm mx-1" title="Website"><i class="fas fa-globe"></i></a>
+            <a href="https://t.me/config_geratis" class="btn btn-outline-secondary btn-sm mx-1" title="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://youtube.com/@inject1d?si=gGX9nJVd4S7-cte_" class="btn btn-outline-secondary btn-sm mx-1" title="Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@rusmanaid?_t=ZS-8xm9h6GpDrM&_r=1" class="btn btn-outline-secondary btn-sm mx-1" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/rusmana.id.96" class="btn btn-outline-secondary btn-sm mx-1" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p class="text-body-secondary">© 2026 Domain To Ip Mode With ❤ Rusmana-ID</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Skrip untuk fungsionalitas halaman (tema, copy, notifikasi)
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+        const setTheme = (theme) => { htmlEl.setAttribute('data-bs-theme', theme); localStorage.setItem('theme', theme); };
+        themeToggleBtn.addEventListener('click', () => { const currentTheme = htmlEl.getAttribute('data-bs-theme'); setTheme(currentTheme === 'dark' ? 'light' : 'dark'); });
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme) { setTheme(savedTheme); } else { setTheme(prefersDark ? 'dark' : 'light'); }
+
+        const copyBtn = document.getElementById('copy-button');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const textToCopy = copyBtn.getAttribute('data-copy-text');
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalHtml = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check me-2"></i>Tersalin!';
+                    copyBtn.classList.remove('btn-outline-secondary');
+                    copyBtn.classList.add('btn-success');
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHtml;
+                        copyBtn.classList.remove('btn-success');
+                        copyBtn.classList.add('btn-outline-secondary');
+                    }, 2000);
+                }).catch(err => { console.error('Gagal menyalin: ', err); });
+            });
+        }
+
+            });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Memberi waktu lebih lama agar ad script sempat mencoba mengisi slot
+    setTimeout(detectAdBlock, 1500); 
+});
+
+function detectAdBlock() {
+    let adBlockerDetected = false;
+
+    // Pengecekan #1: Elemen Umpan
+    const baitElement = document.createElement('div');
+    baitElement.innerHTML = ' ';
+    baitElement.className = 'adsbox ad-banner ad-container ad-unit text-ad-container google-ads';
+    baitElement.style.position = 'absolute';
+    baitElement.style.height = '1px';
+    baitElement.style.width = '1px';
+    baitElement.style.top = '-10px';
+    baitElement.style.left = '-10px';
+    document.body.appendChild(baitElement);
+
+    if (!baitElement.clientHeight) {
+        adBlockerDetected = true;
+    }
+    document.body.removeChild(baitElement);
+    
+    // Pengecekan #2: Variabel Global Google AdSense
+    if (typeof adsbygoogle === 'undefined') {
+        adBlockerDetected = true;
+    }
+
+    // Pengecekan #3 (Paling Kuat): Apakah slot iklan benar-benar kosong?
+    const mainAdSlot = document.getElementById('main-ad-slot');
+    if (mainAdSlot && mainAdSlot.childElementCount === 0 && mainAdSlot.clientHeight === 0) {
+        adBlockerDetected = true;
+    }
+
+    // Jika salah satu dari tiga pengecekan berhasil, tampilkan peringatan
+    if (adBlockerDetected) {
+        showAdBlockWarning();
+    }
+}
+
+function showAdBlockWarning() {
+    Swal.fire({
+        title: 'Ad Blocker Terdeteksi!',
+        html: "Website ini didukung oleh iklan agar tetap gratis.<br>Mohon nonaktifkan <b>Ad Blocker</b> Anda dan muat ulang halaman untuk mendukung kami. Terima kasih!",
+        icon: 'warning',
+        iconColor: '#ffc107',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        showCancelButton: false,
+        confirmButtonText: '<i class="fas fa-sync-alt me-2"></i>Muat Ulang Halaman',
+        confirmButtonColor: '#0d6efd',
+        customClass: {
+            popup: 'swal2-popup',
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            location.reload();
+        }
+    });
+}
+</script>
+
+</body>
+</html>

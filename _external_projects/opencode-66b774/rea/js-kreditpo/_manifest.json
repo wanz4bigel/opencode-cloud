@@ -1,0 +1,248 @@
+{
+ "url": "https://www.kreditpintar.com/produk/saya",
+ "origin": "https://www.kreditpintar.com",
+ "saved": 48,
+ "skipped": 21,
+ "scripts": [
+  {
+   "url": "https://www.datadoghq-browser-agent.com/datadog-rum-us.js",
+   "file": "www.kreditpintar.com__www.datadoghq-browser-agent.com_datadog-rum-us.js.js",
+   "bytes": 19209
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/modernizr-2.8.3.min.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_modernizr-2.8.3.min.js.js",
+   "bytes": 168
+  },
+  {
+   "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js",
+   "file": "www.kreditpintar.com__ajax.googleapis.com_ajax_libs_jquery_3.5.0_jquery.min.js.js",
+   "bytes": 27587
+  },
+  {
+   "url": "https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js",
+   "file": "www.kreditpintar.com__stackpath.bootstrapcdn.com_bootstrap_3.4.1_js_bootstrap.min.js.js",
+   "bytes": 30138
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/plugins.min.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_plugins.min.js.js",
+   "bytes": 19043
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/ovo.min.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_ovo.min.js.js",
+   "bytes": 25280
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/validator.min.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_validator.min.js.js",
+   "bytes": 63929
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/deals.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_deals.js.js",
+   "bytes": 53788
+  },
+  {
+   "url": "https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js",
+   "file": "www.kreditpintar.com__cdnjs.cloudflare.com_ajax_libs_parsley.js_2.7.0_parsley.min.js.js",
+   "bytes": 104857
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/check-point.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_check-point.js.js",
+   "bytes": 56821
+  },
+  {
+   "url": "https://www.ovo.id/ovo_front_res/js/notify.min.js",
+   "file": "www.kreditpintar.com__www.ovo.id_ovo_front_res_js_notify.min.js.js",
+   "bytes": 74013
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtm.js?id=GTM-NK2RKPN",
+   "file": "www.kreditpintar.com__www.googletagmanager.com_gtm.js_id_GTM-NK2RKPN.js",
+   "bytes": 132475
+  },
+  {
+   "url": "",
+   "file": "www.kreditpintar.com__.js",
+   "bytes": 41747
+  },
+  {
+   "url": "",
+   "file": "www.kreditpintar.com__.js",
+   "bytes": 58349
+  },
+  {
+   "url": "",
+   "file": "www.kreditpintar.com__.js",
+   "bytes": 50962
+  },
+  {
+   "url": "",
+   "file": "www.kreditpintar.com__.js",
+   "bytes": 71354
+  },
+  {
+   "url": "https://static.ads-twitter.com/uwt.js",
+   "file": "www.kreditpintar.com__static.ads-twitter.com_uwt.js.js",
+   "bytes": 4153
+  },
+  {
+   "url": "https://www.google-analytics.com/analytics.js",
+   "file": "www.kreditpintar.com__www.google-analytics.com_analytics.js.js",
+   "bytes": 37075
+  },
+  {
+   "url": "https://connect.facebook.net/en_US/fbevents.js",
+   "file": "www.kreditpintar.com__connect.facebook.net_en_US_fbevents.js.js",
+   "bytes": 61138
+  },
+  {
+   "url": "https://connect.facebook.net/signals/config/1511587792295875?v=2.9.433&r=stable&domain=www.ovo.id&hme=4453c87d489b6902031c012cadd2731893cd69feb64fe8a61b339727247a7703&ex_m=118%2C242%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C211%2C263%2C84%2C283%2C282%2C281%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C333%2C334%2C335%2C332%2C349%2C371%2C256%2C238%2C70%2C239%2C237%2C374%2C365%2C59%2C257%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+   "file": "www.kreditpintar.com__99_2C91_2C81_2C131_2C120_2C169_2C50_2C159_2C0_2C94_2C152_2C156_2C170_2C45_2C122_2C13_2C189.js",
+   "bytes": 129
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/1010ya3gqr7qw.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_1010ya3gqr7qw.js.js",
+   "bytes": 386
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/2pgoh-b_g3790.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_2pgoh-b_g3790.js.js",
+   "bytes": 381
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/025txspd6gz-3.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_025txspd6gz-3.js.js",
+   "bytes": 382
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/353hmxcxkvh60.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_353hmxcxkvh60.js.js",
+   "bytes": 380
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/35klo7ink805z.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_35klo7ink805z.js.js",
+   "bytes": 431
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/1x959vr0mymi1.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_1x959vr0mymi1.js.js",
+   "bytes": 379
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/2rznaer87z9hg.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_2rznaer87z9hg.js.js",
+   "bytes": 12660
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-0e3_tn6b82g4j.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-0e3_tn6b82g4j.js.js",
+   "bytes": 19010
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/3l_d_euqatw1w.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_3l_d_euqatw1w.js.js",
+   "bytes": 14680
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-1ycb-e99lxd8j.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-1ycb-e99lxd8j.js.js",
+   "bytes": 19010
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/0sszlbuim7tth.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_0sszlbuim7tth.js.js",
+   "bytes": 15111
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-1ckw09bo6pg36.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-1ckw09bo6pg36.js.js",
+   "bytes": 19010
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/3egud2_9sv_zq.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_3egud2_9sv_zq.js.js",
+   "bytes": 14166
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-1o7aitasjjy1x.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-1o7aitasjjy1x.js.js",
+   "bytes": 19010
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/0o77zj1e6994h.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_0o77zj1e6994h.js.js",
+   "bytes": 21202
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-0-rbj6kej76j0.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-0-rbj6kej76j0.js.js",
+   "bytes": 19043
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/3hzfk045lkxh7.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_3hzfk045lkxh7.js.js",
+   "bytes": 40208
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-20bymxn79-sv9.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-20bymxn79-sv9.js.js",
+   "bytes": 19010
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/0d1fxvxlfzi8e.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_0d1fxvxlfzi8e.js.js",
+   "bytes": 34733
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/3856r4fq_dzxt.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_3856r4fq_dzxt.js.js",
+   "bytes": 770
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/2_iko9w-1uy83.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_2_iko9w-1uy83.js.js",
+   "bytes": 2335
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/3w8a251zyjjih.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_3w8a251zyjjih.js.js",
+   "bytes": 24076
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/2imn6i8pkfo0o.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_2imn6i8pkfo0o.js.js",
+   "bytes": 35259
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/05l52dmhv17tz.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_05l52dmhv17tz.js.js",
+   "bytes": 26127
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/turbopack-2qlcrgbdqj5b9.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_turbopack-2qlcrgbdqj5b9.js.js",
+   "bytes": 19373
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/0ja8pfz1kwdsp.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_0ja8pfz1kwdsp.js.js",
+   "bytes": 19059
+  },
+  {
+   "url": "https://static.kreditpintar.com/k8s-kp-website/_next/static/chunks/1eke25ksytp-0.js",
+   "file": "www.kreditpintar.com__static.kreditpintar.com_k8s-kp-website__next_static_chunks_1eke25ksytp-0.js.js",
+   "bytes": 57076
+  },
+  {
+   "url": "",
+   "file": "www.kreditpintar.com__.js",
+   "bytes": 298
+  }
+ ]
+}
